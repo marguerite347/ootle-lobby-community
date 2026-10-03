@@ -38,39 +38,7 @@
   .ritual-dock .ritual-summary-action { max-width:94px; padding:8px 10px; font-size:10px; }
 }
 
-/* Keep an explicit exit in view throughout the scrollable game. */
-.ritual-dock-toolbar {
-  position:sticky;
-  top:0;
-  z-index:10;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  padding:4px 12px;
-  border-bottom:1px solid var(--season-line);
-  background:var(--season-ink);
-  color:var(--season-cloud);
-  font-size:13px;
-  font-weight:600;
-}
-.ritual-dock .ritual-dock-close {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  min-height:44px;
-  padding:8px 14px;
-  border:1px solid #d6c7f277;
-  border-radius:8px;
-  background:#322346;
-  color:#fff;
-  font:inherit;
-  cursor:pointer;
-}
-.ritual-dock-close span { font-size:24px; line-height:1; }
-.ritual-dock .ritual-dock-close:hover { background:#4a3264; }
-.ritual-dock-close:focus-visible { outline:2px solid var(--season-lime); outline-offset:2px; }
-.ritual-disclosure.ritual-dock[open] .ritual-summary-action { display:none; }
+/* The lime disclosure action is the single close control in the sticky header. */
+.ritual-disclosure.ritual-dock[open] .ritual-summary-action { background:var(--season-lime); color:#08091f; }
 /* The dock owns scrolling; prevent focused controls from scrolling a second, hidden viewport. */
 .ritual-dock .daily-spark { margin-bottom:0; overflow:clip; }
