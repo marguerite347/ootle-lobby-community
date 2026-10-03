@@ -1,24 +1,5 @@
 import type {Game} from './DailyTrivia';
 
-const PLAYTEST_SESSION_KEY = 'ootle-reward-playtest';
-let sessionPlaytest = false;
-
-const LOCAL_PREVIEW_HOSTS = new Set(['localhost', '127.0.0.1', '[::1]']);
-
-/** Local previews always open the current wheel. Legacy comparison requires an explicit URL. */
-export function isRewardPlaytest() {
-  const choice = new URLSearchParams(window.location.search).get('rewardPlaytest');
-  if (choice === '1' || choice === '0') {
-    sessionPlaytest = choice === '1';
-    try { sessionStorage.setItem(PLAYTEST_SESSION_KEY, choice); } catch { /* Memory fallback for restricted storage. */ }
-  } else if (LOCAL_PREVIEW_HOSTS.has(window.location.hostname)) {
-    // A fresh tab, cleared storage or an old opt-out must not restore the retired wheel.
-    sessionPlaytest = true;
-  } else {
-    try { sessionPlaytest = sessionStorage.getItem(PLAYTEST_SESSION_KEY) === '1' || sessionPlaytest; } catch { /* Keep the in-memory choice. */ }
-  }
-  return sessionPlaytest;
-}
 const questions = [
   ['What does a game’s “core loop” describe?', 'The actions a player repeats', 'The loading screen', 'The file size', 'The end credits'],
   ['What makes a Riff your own?', 'A meaningful creative change', 'Renaming a folder only', 'Removing the credits', 'Changing the download date'],

@@ -1,5 +1,5 @@
 import {describe, it, expect, vi} from 'vitest';
-import {createPlaytestRequest, isRewardPlaytest} from './rewardPlaytest';
+import {createPlaytestRequest, playtestRequest} from './rewardPlaytest';
 
 describe('isolated reward playtest', () => {
   it('runs both jackpots without network writes and ignores duplicate settlement', async () => {
@@ -50,55 +50,17 @@ describe('isolated reward playtest', () => {
   });
 });
 
-// A project link drops query parameters; that must not switch a test to real rewards.
-describe('playtest navigation', () => {
-  it('keeps opt-in through navigation and reload, and permits explicit exit', () => {
-    const values = new Map<string, string>();
-    vi.stubGlobal('sessionStorage', {getItem: (key: string) => values.get(key) ?? null, setItem: (key: string, value: string) => values.set(key, value)});
-    const location = {search: '?rewardPlaytest=1'};
-    vi.stubGlobal('window', {location});
-    expect(isRewardPlaytest()).toBe(true);
-    location.search = '';
-    expect(isRewardPlaytest()).toBe(true);
-    location.search = '?rewardPlaytest=0';
-    expect(isRewardPlaytest()).toBe(false);
-    location.search = '';
-    expect(isRewardPlaytest()).toBe(false);
-    vi.unstubAllGlobals();
-  });
-});
-
-
-describe('current wheel in local previews', () => {
-  it.each(['localhost', '127.0.0.1', '[::1]'])('defaults %s to the current flow without an opt-in', hostname => {
-    vi.stubGlobal('window', {location: {hostname, search: ''}});
-    vi.stubGlobal('sessionStorage', {getItem: () => null});
-    expect(isRewardPlaytest()).toBe(true);
-    vi.unstubAllGlobals();
-  });
-  it('does not carry a legacy comparison into normal local navigation', () => {
-    const values = new Map<string, string>([['ootle-reward-playtest', '0']]);
-    vi.stubGlobal('sessionStorage', {getItem: (key: string) => values.get(key) ?? null, setItem: (key: string, value: string) => values.set(key, value)});
-    const location = {hostname: 'localhost', search: '?rewardPlaytest=0'};
-    vi.stubGlobal('window', {location});
-    expect(isRewardPlaytest()).toBe(false);
-    location.search = '';
-    expect(isRewardPlaytest()).toBe(true);
-    expect(values.get('ootle-reward-playtest')).toBe('0');
-    vi.unstubAllGlobals();
-  });
-  it('uses the current flow when local storage is restricted', () => {
-    vi.stubGlobal('window', {location: {hostname: 'localhost', search: ''}});
-    vi.stubGlobal('sessionStorage', {getItem: () => {throw new Error('Blocked');}});
-    expect(isRewardPlaytest()).toBe(true);
-    vi.unstubAllGlobals();
-  });
-  it('does not opt a fresh hosted visit into simulated rewards', async () => {
-    vi.resetModules();
-    const {isRewardPlaytest: freshVisit} = await import('./rewardPlaytest');
-    vi.stubGlobal('window', {location: {hostname: 'lobby.example.com', search: ''}});
-    vi.stubGlobal('sessionStorage', {getItem: () => null});
-    expect(freshVisit()).toBe(false);
-    vi.unstubAllGlobals();
+describe('single current trivia flow', () => {
+  it('starts the current replayable flow despite an old URL or stored legacy preference', async () => {
+    vi.stubGlobal('window', {location: {hostname: 'ootle-lobby-preview.vercel.app', search: '?rewardPlaytest=0'}});
+    vi.stubGlobal('sessionStorage', {getItem: () => '0', setItem: () => {}});
+    const network = vi.spyOn(globalThis, 'fetch').mockRejectedValue(new Error('No legacy requests'));
+    try {
+      expect((await playtestRequest()).phase).toBe('ready');
+      const started = await playtestRequest('start');
+      expect(started.round?.id).toMatch(/^playtest-/);
+      expect(started.round?.options).toHaveLength(4);
+      expect(network).not.toHaveBeenCalled();
+    } finally { network.mockRestore(); vi.unstubAllGlobals(); }
   });
 });

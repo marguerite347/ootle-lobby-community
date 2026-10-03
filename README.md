@@ -131,3 +131,19 @@ npm run build
 ## Rights and attribution
 
 Project names, descriptions and source references describe independently created community work. Their presence here does not relicense upstream projects, artwork or trademarks. Only contribute text you have the right to share publicly and allow the Lobby to display. Preserve the original project attribution.
+
+## Current Daily Ritual testing flow
+
+Daily Ritual now has one client flow: trivia → 3D first wheel → Super wheel,
+with simulated, replayable Sparks. **Test again ↻** clears the playtest and
+starts fresh. The retired 2D renderer, its animation handlers, the alternate
+client API path and the hostname/query/session selector have been removed.
+`rewardPlaytest=0` and stale browser preferences cannot restore the old flow.
+Authored Riffs use the same renderer with their own isolated request source.
+The existing private server records are separate from these simulated rewards.
+
+Selection receipt: the shared page showed the retired “Let the wheel cook”
+state because only localhost selected the current preview. At the user's
+request, remove the alternate client flow entirely and reuse the existing 3D
+renderer, simulator and replay control. The current-flow tests are included in
+required website CI. Keep server data intact; no player records are deleted.
