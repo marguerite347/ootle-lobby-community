@@ -1,0 +1,34 @@
+name: Monitor October submissions
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 9 * * *' # Once daily at 09:17 UTC
+permissions:
+  contents: read
+concurrency:
+  group: october-submission-monitor
+  cancel-in-progress: false
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - run: npm run monitor:october -- --output work/october-monitor.json
+      - name: Summarize public review queue
+        run: |
+          node --input-type=module <<'JS'
+          import {readFileSync,appendFileSync} from 'node:fs';
+          const report=JSON.parse(readFileSync('work/october-monitor.json','utf8'));
+          const pending=report.candidates.filter(post=>post.review!=='listed');
+          appendFileSync(process.env.GITHUB_STEP_SUMMARY, `October forum checked: ${report.checkedAt}\n\n${report.observedSubmissionPosts} submission posts; ${pending.length} new or edited posts need review.\n\nDownload the report artifact and follow docs/COMMUNITY_WORKFLOW.md. No entries were published automatically.\n`);
+          JS
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: october-submission-report
+          path: work/october-monitor.json
+          retention-days: 30
+          if-no-files-found: error

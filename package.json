@@ -12,7 +12,8 @@
     "build": "node scripts/build.mjs",
     "setup:site": "npm --prefix creator-hub/hub ci",
     "build:site": "npm --prefix creator-hub/hub ci && npm --prefix creator-hub/hub run build && node scripts/prepare-site.mjs",
-    "start:site": "node scripts/start-site.mjs"
+    "start:site": "node scripts/start-site.mjs",
+    "monitor:october": "node scripts/monitor-contest.mjs"
   },
   "dependencies": {
     "@vercel/blob": "2.8.0",

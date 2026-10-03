@@ -1,0 +1,32 @@
+name: Add or update an October project
+description: Suggest an October listing, correction or reviewed recording.
+title: "October project: "
+body:
+  - type: markdown
+    attributes:
+      value: "Submit to the official Tari October forum thread first. A Lobby listing is a community index, not a Council acceptance or eligibility decision. Do not paste payment addresses or private security findings here."
+  - type: input
+    id: submission
+    attributes:
+      label: Official October submission URL
+      placeholder: https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/2
+    validations:
+      required: true
+  - type: input
+    id: repository
+    attributes:
+      label: Public source repository
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: Project and proposed listing or update
+      description: Include title, creator credit, factual description, optional demo URL and source links for the components used.
+    validations:
+      required: true
+  - type: textarea
+    id: recording
+    attributes:
+      label: Optional recording
+      description: Link a reviewed clip and poster, capture date, source revision, recording scope and contributor credit. Describe any missing or blocked steps.

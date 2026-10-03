@@ -1,0 +1,13 @@
+node_modules/
+out/
+.remotion/
+*.log
+
+# Generated (AI) concept backgrounds — demo outputs, reproduced via scripts/generate-hf.mjs.
+# The committed public/placeholder-bg.png (non-AI) stays tracked for the offline example.
+public/concept-bg.png
+public/*.provenance.json
+
+# User media and generated outputs, except the reviewed fixture.
+public/*
+!public/placeholder-bg.png

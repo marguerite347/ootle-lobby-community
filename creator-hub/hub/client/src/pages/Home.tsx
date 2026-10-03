@@ -2,6 +2,7 @@ import {useEffect} from 'react';
 import {useLocation} from 'react-router-dom';
 import ConcoctionArt from '../components/ConcoctionArt';
 import ContestProjects from '../components/ContestProjects';
+import OctoberSubmissions from '../components/OctoberSubmissions';
 import {ContestCards, CreatorResources, SeasonStatus} from '../components/SeasonalLobby';
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
     </section>
     <ContestCards/>
     <CreatorResources/>
+    <OctoberSubmissions/>
     <div id="community-entries"><ContestProjects/></div>
     <section className="season-community" id="creator-community">
       <div className="season-community-copy">

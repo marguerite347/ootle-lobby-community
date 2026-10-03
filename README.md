@@ -6,6 +6,12 @@
 
 This repository contains the public website source and the community content shown on the live Ootle Lobby. It includes the React frontend, Express server, styles, public artwork, runtime dependencies and a review workflow. Private repository history, credentials, unrelated business data and local user/chat state are excluded.
 
+## Community submissions and recordings
+
+[Contributor workflow](docs/COMMUNITY_WORKFLOW.md) · [Shared video library](docs/MEDIA_LIBRARY.md) · [October listings](content/submissions/october-2026/) · [Capture tool](creator-hub/capture/README.md) · [Editable video templates](creator-hub/video-templates/README.md)
+
+The October gallery reads reviewed entries from the shared content feed. Add one JSON file per new project; accepted listings are shared with every visitor. The read-only monitor detects new and edited official forum posts. Its scheduled GitHub workflow begins after merge to `main`; it never publishes entries automatically. In-app Riff/project saves are separate preview runtime state, not public GitHub submissions.
+
 ## Website source
 
 | What to change | Location |
@@ -108,7 +114,7 @@ You do not need to install anything. GitHub may first prompt you to fork the rep
 - Project titles and plain-text descriptions.
 - The names of templates/Tari components used, with HTTPS links to public source evidence.
 
-Creator attribution, contest rules/prizes/deadlines, submission dates, cover artwork and automatically collected GitHub/forum metrics are outside this first editing surface. Use an issue to request a correction to those. Do not replace source dates or popularity counts with guesses.
+For September cards, creator attribution, submission dates, cover artwork and collected metrics use the reviewed registry and media workflow; request corrections with public evidence. New October listings include verified creator/date/source fields and optional credited recordings through the contributor workflow above. Contest rules, prizes and deadlines remain authoritative on the forum. Do not replace source dates or popularity counts with guesses.
 
 ## Review and publishing
 

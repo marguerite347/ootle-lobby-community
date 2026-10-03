@@ -2,7 +2,7 @@
 
 Records short clips of the **live community app webpages** listed in the Ootle app directory, for use as Ootle Lobby card previews. This is real third-party footage — accurate, but **not an endorsement and not a security review**. Apps that need a wallet or interaction will only show their landing state.
 
-Pairs with the generated [`AppCover`](../video-templates/src/compositions/AppCover.tsx) fallback: capture real footage where a site is reachable, and use a generated cover for GitHub-only or unreachable apps.
+Follow the [community submission and recording workflow](../../docs/COMMUNITY_WORKFLOW.md). Capture real footage where a site is reachable. For unavailable apps retain a reviewed source image; do not substitute generic generated cover art or pretend a capture succeeded.
 
 ## Requirements
 
@@ -39,10 +39,10 @@ Each run writes `out/manifest.json` recording, per app, the captured URL, whethe
 Captures are wired onto the Discover cards as `resource.preview` (matched by canonical URL, then title slug). To assemble everything in one step, from `creator-hub/hub`:
 
 ```bash
-npm run previews   # render covers -> capture webpages (best-effort) -> prepare served dir
+npm run previews   # capture webpages (best-effort) -> prepare served dir -> audit missing previews
 ```
 
-`npm run previews` runs cover rendering, this capture tool, then `prepare-previews.mjs`, writing the runtime previews dir (git-ignored). A **committed cover-poster seed** (`hub/data/seed/previews/`) means a fresh instance already shows album-cover thumbnails; real capture clips overlay the seed once assembled. Auto-refreshing previews for newly ingested apps and object-storage hosting remain follow-ons.
+`npm run previews` runs this capture tool, then `prepare-previews.mjs`, and audits missing source-specific previews. Runtime output is ignored. The public repository includes a **curated seed of 14 reviewed clips and posters** in `hub/data/seed/previews/`; see the [media library](../../docs/MEDIA_LIBRARY.md). Runtime clips overlay that seed after assembly. Automatic capture of new submissions is not installed.
 
 Capture uses a fresh, sandboxed browser context. macOS and Linux Chrome paths are detected; use CHROME_PATH elsewhere. Run as a non-root operator where the Chromium sandbox is available. HTTP errors, navigation failures and MP4/poster failures are marked unsuccessful. Transient recordings are removed. App names must have unique nonempty output slugs. Inputs are operator-reviewed URLs, not an untrusted public capture API.
 

@@ -1,5 +1,9 @@
 # Contributing and accepting edits
 
+## October listings, capture tools and media
+
+Follow [the community workflow](docs/COMMUNITY_WORKFLOW.md) to monitor new submissions, add project records, identify elements used, record demos and contribute reviewed media. The monitor is a public read-only review queue; it cannot approve or publish entries. All accepted listings are shared through the same published feed.
+
 ## Contributors
 
 Keep one focused change per pull request. For design or functionality changes, edit the website source and include before/after screenshots plus the results of `npm run build:site`. For project-card copy, use content/projects/. Explain the correction and link directly to supporting public evidence. Plain text only; no HTML, scripts, credentials, wallet secrets, personal contact information or unpublished work. Technology links must use HTTPS. Avoid claims that a project is secure, audited or deployed unless the linked evidence establishes that claim.

@@ -1,0 +1,23 @@
+// Small drawing primitives, not scene templates. Every scene is authored below.
+export const C={ink:'#040723',paper:'#ECEEFF',purple:'#813BF5',lime:'#C9EB00',pink:'#FF78B9',blue:'#73D5FF',muted:'#343252'};
+export const R=(x,y,w,h,c=C.purple,r=0)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}" fill="${c}"/>`;
+export const O=(x,y,r,c=C.lime)=>`<circle cx="${x}" cy="${y}" r="${r}" fill="${c}"/>`;
+export const P=(d,c=C.paper,stroke='none',sw=2)=>`<path d="${d}" fill="${c}" stroke="${stroke}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round"/>`;
+export const L=(x,y,a,b,c=C.paper,w=3)=>`<path d="M${x} ${y}L${a} ${b}" fill="none" stroke="${c}" stroke-width="${w}" stroke-linecap="round"/>`;
+export const T=(x,y,s,size=20,c=C.paper)=>`<text x="${x}" y="${y}" fill="${c}" font-family="Arial,sans-serif" font-size="${size}" font-weight="800">${String(s).replaceAll('&','&amp;').replaceAll('<','&lt;')}</text>`;
+export const G=(s,x=0,y=0,rot=0)=>`<g transform="translate(${x} ${y}) rotate(${rot})">${s}</g>`;
+export const ring=(x,y,r,c=C.purple,w=2)=>`<circle cx="${x}" cy="${y}" r="${r}" fill="none" stroke="${c}" stroke-width="${w}"/>`;
+export const star=(x,y,r=14,c=C.lime)=>P(`M${x} ${y-r}L${x+r*.28} ${y-r*.28}L${x+r} ${y}L${x+r*.28} ${y+r*.28}L${x} ${y+r}L${x-r*.28} ${y+r*.28}L${x-r} ${y}L${x-r*.28} ${y-r*.28}Z`,c);
+export const cube=(x,y,s=30,c=C.purple)=>P(`M${x} ${y-s}l${s} ${s*.5}v${s}l${-s} ${s*.5}l${-s} ${-s*.5}v${-s}Z`,c)+P(`M${x-s} ${y-s*.5}l${s} ${s*.5}l${s} ${-s*.5}M${x} ${y}v${s}`, 'none',C.ink,2);
+export const tree=(x,y,s=1,c=C.lime)=>G(R(-4,0,8,35,C.muted)+P('M0 -85L-28 -20H-17L-37 8H37L17 -20H28Z',c),x,y,0).replace('<g ',`<g data-size="${s}" `);
+export const coin=(x,y,r=20)=>O(x,y,r,C.lime)+ring(x,y,r-5,C.ink,2)+L(x-5,y,x+5,y,C.ink,3);
+export const card=(x,y,w=55,h=78,suit='♦',c=C.paper,rot=0)=>G(R(0,0,w,h,c,5)+T(8,22,suit,18,C.ink)+T(w*.33,h*.68,suit,25,C.ink),x,y,rot);
+export const windowBox=(x,y,w,h)=>R(x,y,w,h,C.muted,8)+R(x+3,y+20,w-6,h-23,C.ink,5)+O(x+10,y+10,3,C.pink)+O(x+21,y+10,3,C.lime)+O(x+32,y+10,3,C.blue);
+export const cloud=(x,y,c=C.paper)=>O(x,y,22,c)+O(x+25,y-8,29,c)+O(x+55,y,20,c)+R(x,y,55,20,c);
+export const person=(x,y,c=C.paper)=>O(x,y-28,10,c)+P(`M${x-10} ${y-13}h20l7 32h-34Z`,c)+L(x-6,y+18,x-12,y+40,c,6)+L(x+6,y+18,x+12,y+40,c,6);
+export const arrow=(x,y,a,b,c=C.lime)=>L(x,y,a,b,c,4)+P(`M${a-10} ${b-9}L${a} ${b}L${a-10} ${b+9}`,'none',c,4);
+export const rays=(x,y,r,n=12,c=C.purple)=>Array.from({length:n},(_,i)=>{let a=i*2*Math.PI/n;return L(x+Math.cos(a)*r,y+Math.sin(a)*r,x+Math.cos(a)*(r+16),y+Math.sin(a)*(r+16),c,2)}).join('');
+export const mountain=(d,c=C.muted)=>P(d,c);
+export const grass=(x,y,n=7)=>Array.from({length:n},(_,i)=>P(`M${x+i*12} ${y}q-8 -${15+i%3*10} 2 -${26+i%3*10}M${x+i*12} ${y}q12 -20 16 -18`,'none',i%2?C.lime:C.purple,3)).join('');
+export const car=(x,y,c=C.pink)=>G(P('M-45 0L-30 -25H25L42 0H53V20H-53V0Z',c)+P('M-23 -20H19L29 -2H-32Z',C.ink)+O(-32,20,12,C.ink)+ring(-32,20,6,C.paper,2)+O(32,20,12,C.ink)+ring(32,20,6,C.paper,2),x,y);
+export const flower=(x,y,c=C.pink)=>Array.from({length:6},(_,i)=>O(x+15*Math.cos(i*Math.PI/3),y+15*Math.sin(i*Math.PI/3),10,c)).join('')+O(x,y,9,C.lime);

@@ -17,6 +17,11 @@ jobs:
           node-version: '22'
       - run: npm test
       - run: npm run validate
+      - run: npm --prefix creator-hub/capture ci --ignore-scripts
+      - run: npm --prefix creator-hub/capture test
+      - run: npm --prefix creator-hub/video-templates ci --ignore-scripts
+      - run: npm --prefix creator-hub/video-templates test
+      - run: npm --prefix creator-hub/video-templates run typecheck
   website:
     name: Validate website
     runs-on: ubuntu-latest
