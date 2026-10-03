@@ -9,7 +9,7 @@ mkdirSync(server,{recursive:true});
 cpSync(new URL('creator-hub/hub/client/dist/',root),output,{recursive:true});
 cpSync(new URL('creator-hub/hub/data/seed/previews/',root),new URL('previews/',output),{recursive:true});
 // Include the published runtime dependencies, without client source, assets or node_modules.
-for (const name of ['creator-hub','skills','.agents']) {
+for (const name of ['creator-hub','skills','.agents','content']) {
   cpSync(new URL(`${name}/`,root),new URL(`${name}/`,server),{recursive:true,filter:source => {
     const normalized=source.replaceAll('\\','/');
     if (normalized.includes('/node_modules') || normalized.includes('/.env')) return false;

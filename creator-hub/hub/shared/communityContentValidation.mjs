@@ -1,3 +1,4 @@
+import {validateContests} from './contestContentValidation.mjs';
 const FIELDS = ['id', 'title', 'summary', 'technologies'];
 function text(value, label, max) {
   if (typeof value !== 'string' || !value.trim() || value.length > max || /[<>\u0000-\u0008]/.test(value)) {
@@ -36,5 +37,6 @@ export function validateProjects(projects) {
 export function validateFeed(feed) {
   if (feed?.schemaVersion !== 1 || !/^[0-9a-f]{40}$/.test(feed.revision || '') || !Number.isFinite(Date.parse(feed.publishedAt))) throw new Error('Invalid content feed metadata.');
   validateProjects(feed.projects);
+  if (feed.contests !== undefined) validateContests(feed.contests);
   return feed;
 }
