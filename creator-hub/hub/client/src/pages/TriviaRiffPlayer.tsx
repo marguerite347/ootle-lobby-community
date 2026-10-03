@@ -9,7 +9,7 @@ function RitualRound({preview, onRestart}: {preview: Preview; onRestart: () => v
   const {riff, questionIndex, fullRewardPath} = preview;
   const request = useMemo(() => createPlaytestRequest(0, Date.now, 20, {question: riff.questions[questionIndex], randomSpins: !fullRewardPath}), []);
   const artwork = RITUAL_ART[riff.artwork];
-  return <TriviaProvider requestGame={request} cinematic>
+  return <TriviaProvider requestGame={request}>
     <DailyTrivia presentation={{title: riff.title, subtitle: riff.subtitle, leftArt: artwork.left, rightArt: artwork.right}} onRestart={onRestart}/>
   </TriviaProvider>;
 }

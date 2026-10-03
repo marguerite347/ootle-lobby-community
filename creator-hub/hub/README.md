@@ -68,7 +68,7 @@ Read [the agent setup checklist](AGENT_START.md#setup-and-access-check-before-yo
 
 Clone current `main`, run `npm ci` and `npm run build` here, then `npm start`. A Git
 clone includes the app and catalog; there are no published game snapshots to restore.
-Local browser previews (`localhost`, `127.0.0.1`, `[::1]`) use the current 3D Daily Ritual playtest by default, including plain URLs, fresh tabs and reloads. AI Sparks are simulated and no server daily attempt is consumed. `?rewardPlaytest=0` explicitly opens the legacy server-backed comparison for diagnostics; that opt-out does not carry into normal local navigation. Hosted behavior is unchanged. Verify both wheels from the plain homepage after reward or preview-routing changes.
+Daily Ritual uses only the current 3D trivia → first wheel → Super wheel flow on every host. The retired renderer and `rewardPlaytest` selector have been removed. Old URLs and stored preferences cannot select an alternate flow. AI Sparks are simulated during testing; **Test again ↻** resets the current round. Authored Riffs reuse this renderer with isolated questions and rewards. Verify the full sequence and replay on the plain shared homepage after changes.
 
 `npm run build` restores the Daily Spark wheel runtime if it is missing
 (`npm run restore:wheel` forces it); the Daily Spark reward media sources are in

@@ -15,6 +15,7 @@
     "start:site": "node scripts/start-site.mjs"
   },
   "dependencies": {
+    "@vercel/blob": "2.8.0",
     "express": "4.21.2"
   }
 }

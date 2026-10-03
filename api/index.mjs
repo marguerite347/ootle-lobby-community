@@ -2,6 +2,10 @@ import express from 'express';
 import {join} from 'node:path';
 import {tmpdir} from 'node:os';
 process.env.CREATOR_HUB_DATA_DIR = join(tmpdir(), 'ootle-lobby-preview');
+process.env.PUBLIC_SITE_URL = 'https://ootle-lobby-preview.vercel.app';
+process.env.TRIVIA_STORAGE = 'blob';
+// Temporary shared playtesting: disable this flag when daily attempts go live.
+process.env.TRIVIA_ALLOW_RESET = '1';
 const catalog = await import('../server-content/creator-hub/hub/server/catalog.mjs');
 const {createInspirationLobby} = await import('../server-content/creator-hub/hub/server/inspirationLobby.mjs');
 catalog.load();

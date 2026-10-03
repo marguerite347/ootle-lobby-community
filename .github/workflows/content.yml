@@ -27,7 +27,8 @@ jobs:
           node-version: '22'
       - run: npm ci
       - run: npm run build:site
-      - run: node --test creator-hub/hub/server/test/communityContent.test.mjs creator-hub/hub/server/test/contestMetrics.test.mjs creator-hub/hub/server/test/projectChat.test.mjs
+      - run: npm --prefix creator-hub/hub/client test -- src/components/rewardPlaytest.test.ts
+      - run: node --test creator-hub/hub/server/test/communityContent.test.mjs creator-hub/hub/server/test/contestMetrics.test.mjs creator-hub/hub/server/test/projectChat.test.mjs creator-hub/hub/server/test/dailyTrivia*.test.mjs
   publish:
     name: Publish accepted content
     needs: [validate, website]

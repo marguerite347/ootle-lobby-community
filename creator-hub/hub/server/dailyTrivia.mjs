@@ -56,10 +56,11 @@ export function selectSuperFactor(ticket) {
  return SUPER_SPINS[SUPER_SPINS.length-1].factor;
 }
 
-export function createDailyTrivia(root,{now=Date.now,random=randomInt}={}) {
+export function createDailyTrivia(root,{now=Date.now,random=randomInt,storage}={}) {
  const file=path.join(root,'daily-trivia.json');
- const load=()=>existsSync(file)?JSON.parse(readFileSync(file,'utf8')):{players:{}};
+ const load=storage?.load || (()=>existsSync(file)?JSON.parse(readFileSync(file,'utf8')):{players:{}});
  function save(store) {
+  if(storage)return storage.save(store);
   mkdirSync(root,{recursive:true});
   writeFileSync(file+'.tmp',JSON.stringify(store),{mode:0o600});renameSync(file+'.tmp',file);
  }
@@ -158,7 +159,9 @@ export function isLocalRequest(req) {
 }
 
 export function dailyTriviaRouter(root,options) {
- const router=express.Router(),game=createDailyTrivia(root,options),requests=new Map();
+ const router=express.Router(),game=options?.game || createDailyTrivia(root,options),requests=new Map();
+ // TLS can terminate before Express. Use deployment configuration, never untrusted forwarded headers.
+ const publicOrigin=options?.publicOrigin ? new URL(options.publicOrigin).origin : null;
  router.use((req,res,next)=>{
   res.set('Cache-Control','no-store');
   const time=Date.now(),ip=req.ip;
@@ -166,28 +169,33 @@ export function dailyTriviaRouter(root,options) {
   if(!requests.has(ip) && requests.size>=4096)return res.status(503).json({error:'Please try again shortly.'});
   const bucket=requests.get(ip)||{start:time,count:0};bucket.count++;requests.set(ip,bucket);
   if(bucket.count>90)return res.status(429).json({error:'Too many requests. Try again in a minute.'});
-  if(req.method==='POST' && (req.get('X-Hub-Trivia')!=='1' || (req.get('Origin') && req.get('Origin')!==`${req.protocol}://${req.get('host')}`)))return res.status(403).json({error:'Use the daily challenge on this Hub.'});
+  const expectedOrigin=publicOrigin || `${req.protocol}://${req.get('host')}`;
+  if(req.method==='POST' && (req.get('X-Hub-Trivia')!=='1' || (req.get('Origin') && req.get('Origin')!==expectedOrigin)))return res.status(403).json({error:'Use the daily challenge on this Hub.'});
   next();
  });
- router.use((req,res,next)=>{
+ router.use(async (req,res,next)=>{
   try {
    let id=req.headers.cookie?.split(';').map(part=>part.trim()).find(part=>part.startsWith('hub_trivia='))?.slice(11);
-   if(!id || !/^[a-f0-9-]{36}$/.test(id) || !game.get(id)) {
+   let state=id && /^[a-f0-9-]{36}$/.test(id) ? await game.get(id) : null;
+   if(!state) {
     if(req.method!=='GET')return res.status(401).json({error:'Reload the daily challenge to begin.'});
-    id=game.register();res.cookie('hub_trivia',id,{httpOnly:true,sameSite:'strict',secure:req.secure,maxAge:365*86400000,path:'/api/daily-trivia'});
+    id=await game.register();
+    state=await game.get(id);
+    res.cookie('hub_trivia',id,{httpOnly:true,sameSite:'strict',secure:req.secure || publicOrigin?.startsWith('https:'),maxAge:365*86400000,path:'/api/daily-trivia'});
    }
-   req.triviaPlayer=id;next();
+   req.triviaPlayer=id;req.triviaState=state;next();
   }catch(error){next(error);}
  });
- const send=(req,res,state)=>res.json({...state,canReset:isLocalRequest(req)});
- router.get('/',(req,res)=>send(req,res,game.get(req.triviaPlayer)));
- for(const action of ['start','answer','spin','super','decline'])router.post('/'+action,(req,res,next)=>{
-  try{send(req,res,game.mutate(req.triviaPlayer,action,req.body||{}));}catch(error){next(error);}
+ const canReset=req=>options?.allowReset===true || isLocalRequest(req);
+ const send=(req,res,state)=>res.json({...state,canReset:canReset(req)});
+ router.get('/',(req,res)=>send(req,res,req.triviaState));
+ for(const action of ['start','answer','spin','super','decline'])router.post('/'+action,async (req,res,next)=>{
+  try{send(req,res,await game.mutate(req.triviaPlayer,action,req.body||{}));}catch(error){next(error);}
  });
- router.post('/reset',(req,res,next)=>{
+ router.post('/reset',async (req,res,next)=>{
   try{
-   if(!isLocalRequest(req))return res.status(403).json({error:'Reset is only available on the machine running this Hub.'});
-   send(req,res,game.reset(req.triviaPlayer));
+   if(!canReset(req))return res.status(403).json({error:'Reset is only available on the machine running this Hub.'});
+   send(req,res,await game.reset(req.triviaPlayer));
   }catch(error){next(error);}
  });
  router.use((error,req,res,next)=>res.status(error.status||500).json({error:error.status?error.message:'Could not save your round. Please retry.'}));
