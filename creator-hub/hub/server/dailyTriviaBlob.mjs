@@ -1,8 +1,12 @@
-import {get, put, BlobPreconditionFailedError} from '@vercel/blob';
+import {get, put, BlobError, BlobPreconditionFailedError} from '@vercel/blob';
+import {setTimeout as pause} from 'node:timers/promises';
 import {createDailyTrivia} from './dailyTrivia.mjs';
 
 const MAX_WRITE_ATTEMPTS=5;
 const unavailable=()=>Object.assign(new Error('Your round could not be saved. Please try again.'),{status:503});
+const writeConflict=error=>error instanceof BlobPreconditionFailedError || (
+ error instanceof BlobError && error.message.includes('conditional request cannot succeed due to a conflicting operation')
+);
 
 /** Private per-player records; consistent reads and conditional writes prevent lost or duplicate awards. */
 export function createBlobDailyTrivia({token,client={get,put},now=Date.now,...gameOptions}={}) {
@@ -50,7 +54,8 @@ export function createBlobDailyTrivia({token,client={get,put},now=Date.now,...ga
     return state;
    } catch(error) {
     // Another instance won this update. Reload its result before considering a retry.
-    if(!(error instanceof BlobPreconditionFailedError))throw error;
+    if(!writeConflict(error))throw error;
+    await pause(25*2**attempt);
    }
   }
   throw unavailable();

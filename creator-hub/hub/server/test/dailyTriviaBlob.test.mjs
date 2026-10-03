@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import express from 'express';
-import {BlobPreconditionFailedError} from '@vercel/blob';
+import {BlobError,BlobPreconditionFailedError} from '@vercel/blob';
 import {createBlobDailyTrivia} from '../dailyTriviaBlob.mjs';
 import {dailyTriviaRouter,QUESTIONS,questionForDay} from '../dailyTrivia.mjs';
 
@@ -67,6 +67,17 @@ test('storage failure does not return an award or replace the durable round',asy
  await assert.rejects(broken.mutate(id,'answer',session.answer(started.round)),/storage unavailable/);
  assert.equal((await game.get(id)).balance,0);
  assert.equal((await game.get(id)).phase,'playing');
+});
+
+test('a pending conditional write conflict retries against the latest record',async()=>{
+ const session=fixture(),game=session.instance(),id=await game.register();
+ let attempts=0;
+ const racing=createBlobDailyTrivia({token:'test-only',client:{...session.client,put:async(...args)=>{
+  if(attempts++===0)throw new BlobError('The conditional request cannot succeed due to a conflicting operation against this resource.');
+  return session.client.put(...args);
+ }}});
+ assert.equal((await racing.mutate(id,'start')).phase,'playing');
+ assert.equal(attempts,2);
 });
 
 test('unconfigured cloud storage fails closed and asynchronous errors reach the HTTP error handler',async t=>{
