@@ -4,6 +4,7 @@
 import type { CommunityMessage } from './communityChatApi';
 
 export const DOCKED_MEDIA_QUERY = '(min-width: 1100px)';
+export const CHAT_GREETING_EVENT = 'ootle:chat-greeting';
 export const COMMUNITY_POLL_INTERVAL_MS = 4000;
 export const MAX_RENDERED_MESSAGES = 200;
 
