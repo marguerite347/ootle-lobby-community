@@ -71,6 +71,6 @@
 .ritual-dock-close span { font-size:24px; line-height:1; }
 .ritual-dock .ritual-dock-close:hover { background:#4a3264; }
 .ritual-dock-close:focus-visible { outline:2px solid var(--season-lime); outline-offset:2px; }
-.ritual-disclosure.ritual-dock[open] .ritual-summary-action { background:var(--season-lime); color:#08091f; }
+.ritual-disclosure.ritual-dock[open] .ritual-summary-action { display:none; }
 /* The dock owns scrolling; prevent focused controls from scrolling a second, hidden viewport. */
 .ritual-dock .daily-spark { margin-bottom:0; overflow:clip; }
