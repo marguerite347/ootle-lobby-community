@@ -1,0 +1,15 @@
+{
+  "id": "tari-ootle:app:threshold-bounties",
+  "title": "Bounties powered by Threshold",
+  "summary": "Reviewer-approved GitHub bounty escrow with a historical Ootle testnet proof archive.",
+  "technologies": [
+    {
+      "label": "BountyEscrow template",
+      "sourceUrl": "https://github.com/Seal-Clubber/Threshold/blob/4ccfd91688a3124c634436282f3aa25b873d9fe3/crates/threshold-bounty-template/src/lib.rs"
+    },
+    {
+      "label": "Stealth escrow",
+      "sourceUrl": "https://github.com/Seal-Clubber/Threshold/blob/4ccfd91688a3124c634436282f3aa25b873d9fe3/crates/threshold-bounty-template/src/lib.rs"
+    }
+  ]
+}

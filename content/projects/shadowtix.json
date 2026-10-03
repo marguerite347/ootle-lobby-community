@@ -1,0 +1,15 @@
+{
+  "id": "tari-ootle:app:shadowtix",
+  "title": "ShadowTix",
+  "summary": "An event ticketing platform built on Tari Ootle. ShadowTix provides a public event catalogue, on-chain ticket purchases, QR-based door check-in, refunds, and a capped resale market. Independent community-built project — not production-ready",
+  "technologies": [
+    {
+      "label": "TicketingPlatform",
+      "sourceUrl": "https://github.com/zvovanz-a1/tari-ticket-public/blob/0757a6266b90ff9109d949567c4745a6ba6a089a/README.md"
+    },
+    {
+      "label": "EventTicketing",
+      "sourceUrl": "https://github.com/zvovanz-a1/tari-ticket-public/blob/0757a6266b90ff9109d949567c4745a6ba6a089a/README.md"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "tari-ootle:app:sapient",
+  "title": "Sapient",
+  "summary": "A self-custody browser wallet for Tari Ootle.",
+  "technologies": [
+    {
+      "label": "Ootle SDK",
+      "sourceUrl": "https://github.com/chironbuilds/tari-wallet/blob/f2f48bf1ef9a938afc0eb5e92a04255eab7784a5/package.json"
+    },
+    {
+      "label": "CipherSeed",
+      "sourceUrl": "https://github.com/chironbuilds/tari-wallet/blob/f2f48bf1ef9a938afc0eb5e92a04255eab7784a5/README.md"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "tari-ootle:app:wunschswap",
+  "title": "WunschSwap",
+  "summary": "Peer-to-peer voucher swaps using private redemption proofs and Ootle settlement.",
+  "technologies": [
+    {
+      "label": "Custom escrow template",
+      "sourceUrl": "https://git.disroot.org/comiama/wunschswap/src/commit/f645576297feea11afed4314995b569f6f5a305c/README.md"
+    },
+    {
+      "label": "Ootle WASM",
+      "sourceUrl": "https://git.disroot.org/comiama/wunschswap/src/commit/f645576297feea11afed4314995b569f6f5a305c/README.md"
+    }
+  ]
+}

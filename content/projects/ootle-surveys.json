@@ -1,0 +1,15 @@
+{
+  "id": "tari-ootle:app:ootle-surveys",
+  "title": "Ootle Surveys",
+  "summary": "Self-hosted encrypted questionnaires with organizer-approved testnet participation rewards.",
+  "technologies": [
+    {
+      "label": "PrivateRewards template",
+      "sourceUrl": "https://github.com/JustAResearcher/ootle-surveys/blob/d263bfbd630f1f80b20a55c6a4bbd903d9670ec4/contract/src/lib.rs"
+    },
+    {
+      "label": "Stealth payouts",
+      "sourceUrl": "https://github.com/JustAResearcher/ootle-surveys/blob/d263bfbd630f1f80b20a55c6a4bbd903d9670ec4/contract/src/lib.rs"
+    }
+  ]
+}

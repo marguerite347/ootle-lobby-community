@@ -1,0 +1,15 @@
+{
+  "id": "tari-ootle:app:threshold",
+  "title": "Threshold",
+  "summary": "Configurable community funding with sponsor matching, milestones and reviewer approvals.",
+  "technologies": [
+    {
+      "label": "Threshold template",
+      "sourceUrl": "https://github.com/Seal-Clubber/Threshold/blob/4ccfd91688a3124c634436282f3aa25b873d9fe3/crates/threshold-template/src/lib.rs"
+    },
+    {
+      "label": "Stealth escrow",
+      "sourceUrl": "https://github.com/Seal-Clubber/Threshold/blob/4ccfd91688a3124c634436282f3aa25b873d9fe3/crates/threshold-template/src/lib.rs"
+    }
+  ]
+}

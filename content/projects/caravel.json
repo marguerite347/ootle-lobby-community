@@ -1,0 +1,15 @@
+{
+  "id": "tari-ootle:app:caravel",
+  "title": "Caravel",
+  "summary": "Ootle wallet, encrypted Nostr chat and on-chain names in one browser app.",
+  "technologies": [
+    {
+      "label": "Ootle SDK",
+      "sourceUrl": "https://github.com/okansaglam016161-pixel/caravel/blob/5763c824eb5711d96efe081127e7329e8f9e4a93/package.json"
+    },
+    {
+      "label": "Ootle Name Service",
+      "sourceUrl": "https://github.com/okansaglam016161-pixel/caravel/blob/5763c824eb5711d96efe081127e7329e8f9e4a93/vendor/README.md"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "tari-ootle:app:legacy-vault",
+  "title": "Legacy Vault",
+  "summary": "Guardian-approved recovery with heartbeat, waiting period and beneficiary controls.",
+  "technologies": [
+    {
+      "label": "LegacyVault template",
+      "sourceUrl": "https://github.com/huzhazha/legacy-vault-ootle/blob/911da552fa8248570e6f554c70289be8e9682399/src/lib.rs"
+    },
+    {
+      "label": "Vault + access rules",
+      "sourceUrl": "https://github.com/huzhazha/legacy-vault-ootle/blob/911da552fa8248570e6f554c70289be8e9682399/src/lib.rs"
+    }
+  ]
+}

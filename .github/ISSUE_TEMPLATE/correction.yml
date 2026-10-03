@@ -1,0 +1,24 @@
+name: Suggest a correction
+description: Report a content problem or request a change outside the editable project fields.
+title: "[Content] "
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page or project
+      description: Link to the affected page or name the project.
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: What should change, and why?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Public sources
+      description: Links that support the proposed correction. Do not include private information.
+    validations:
+      required: true

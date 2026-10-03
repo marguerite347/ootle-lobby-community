@@ -1,0 +1,15 @@
+{
+  "id": "tari-ootle:app:private-ballot",
+  "title": "Private Ballot",
+  "summary": "Independent open-source privacy-preserving desktop voting app (Tor transport, Tari Triptych eligibility proofs, independently verifiable offline archives) with OPTIONAL Tari Ootle anchoring. Alpha for non-binding governance pilots on the Esmeralda testnet — indexed for education, community-app discovery and game-balancing workflows.",
+  "technologies": [
+    {
+      "label": "Triptych proofs",
+      "sourceUrl": "https://github.com/GSXRspartan/private-ballot/blob/47f77606070a65845a5116a69c4525423af4d46e/README.md"
+    },
+    {
+      "label": "Optional Ootle anchor",
+      "sourceUrl": "https://github.com/GSXRspartan/private-ballot/blob/47f77606070a65845a5116a69c4525423af4d46e/templates/ootle-anchor-event-template-v2/src/lib.rs"
+    }
+  ]
+}

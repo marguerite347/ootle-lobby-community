@@ -1,0 +1,58 @@
+[
+  {
+    "id": "tari-ootle:app:tariorg",
+    "slug": "tariorg"
+  },
+  {
+    "id": "tari-ootle:app:private-ballot",
+    "slug": "private-ballot"
+  },
+  {
+    "id": "tari-ootle:app:signal-vault",
+    "slug": "signal-vault"
+  },
+  {
+    "id": "tari-ootle:app:ootle-pay",
+    "slug": "ootle-pay"
+  },
+  {
+    "id": "tari-ootle:app:shadowtix",
+    "slug": "shadowtix"
+  },
+  {
+    "id": "tari-ootle:app:legacy-vault",
+    "slug": "legacy-vault"
+  },
+  {
+    "id": "tari-ootle:app:sapient",
+    "slug": "sapient"
+  },
+  {
+    "id": "tari-ootle:app:ootle-surveys",
+    "slug": "ootle-surveys"
+  },
+  {
+    "id": "tari-ootle:app:tari-l1-web-wallet",
+    "slug": "tari-l1-web-wallet"
+  },
+  {
+    "id": "tari-ootle:app:threshold",
+    "slug": "threshold"
+  },
+  {
+    "id": "tari-ootle:app:wunschswap",
+    "slug": "wunschswap"
+  },
+  {
+    "id": "tari-ootle:app:outruna",
+    "slug": "outruna"
+  },
+  {
+    "id": "tari-ootle:app:caravel",
+    "slug": "caravel"
+  },
+  {
+    "id": "tari-ootle:app:threshold-bounties",
+    "slug": "threshold-bounties"
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "id": "tari-ootle:app:ootle-pay",
+  "title": "Ootle Pay",
+  "summary": "Stake-gated merchant registration, storefronts, subscriptions and refund workflows.",
+  "technologies": [
+    {
+      "label": "MerchantRegistry",
+      "sourceUrl": "https://github.com/imphila/ootle-pay/blob/2b22eb8d5007019087983d39dd451203835be6cd/contracts/merchant_registry/src/lib.rs"
+    },
+    {
+      "label": "Storefront",
+      "sourceUrl": "https://github.com/imphila/ootle-pay/blob/2b22eb8d5007019087983d39dd451203835be6cd/contracts/storefront/src/lib.rs"
+    },
+    {
+      "label": "SubscriptionManager",
+      "sourceUrl": "https://github.com/imphila/ootle-pay/blob/2b22eb8d5007019087983d39dd451203835be6cd/contracts/subscription/src/lib.rs"
+    }
+  ]
+}

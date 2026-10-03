@@ -1,0 +1,15 @@
+{
+  "id": "tari-ootle:app:signal-vault",
+  "title": "Signal Vault",
+  "summary": "Commit and reveal trading signals with an Ootle purchase and badge flow.",
+  "technologies": [
+    {
+      "label": "SignalVault template",
+      "sourceUrl": "https://github.com/Lrifton92/signal-vault/blob/b3727b6b0e1108d3de4342fb3cea1f26f7a9a100/src/lib.rs"
+    },
+    {
+      "label": "NFT access badges",
+      "sourceUrl": "https://github.com/Lrifton92/signal-vault/blob/b3727b6b0e1108d3de4342fb3cea1f26f7a9a100/src/lib.rs"
+    }
+  ]
+}
