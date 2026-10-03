@@ -37,3 +37,8 @@
   .ritual-dock .ritual-summary-copy > span { font-size:10px; }
   .ritual-dock .ritual-summary-action { max-width:94px; padding:8px 10px; font-size:10px; }
 }
+
+/* The lime disclosure action is the single close control in the sticky header. */
+.ritual-disclosure.ritual-dock[open] .ritual-summary-action { background:var(--season-lime); color:#08091f; }
+/* The dock owns scrolling; prevent focused controls from scrolling a second, hidden viewport. */
+.ritual-dock .daily-spark { margin-bottom:0; overflow:clip; }
