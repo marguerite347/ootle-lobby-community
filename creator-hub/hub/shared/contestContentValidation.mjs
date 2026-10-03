@@ -23,7 +23,7 @@ export function validateContests(contests) {
   const slugs=new Set(),posts=new Set();
   for (const entry of contest.entries) {
     fields(entry,['slug','title','summary','creator','sourceUrl','repoUrl','demoUrl','publishedAt','updatedAt','technologies','recording']);
-    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(entry.slug) || slugs.has(entry.slug)) throw new Error('Invalid or duplicate submission slug.');
+    if (typeof entry.slug !== 'string' || entry.slug.length > 100 || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(entry.slug) || slugs.has(entry.slug)) throw new Error('Invalid or duplicate submission slug.');
     slugs.add(entry.slug);plain(entry.title,'entry title',100);plain(entry.summary,'summary');plain(entry.creator,'creator',80);
     https(entry.sourceUrl);
     if (!entry.sourceUrl.startsWith(`${OCTOBER_THREAD}/`) || !/^[2-9]\d*$|^1\d+$/.test(entry.sourceUrl.slice(OCTOBER_THREAD.length+1)) || posts.has(entry.sourceUrl)) throw new Error('Expected a unique October submission post.');

@@ -15,6 +15,9 @@ test('accepts an empty month, then a new shared entry with a credited recording'
 test('rejects duplicate posts, unsafe media, mismatched months, hidden fields and malformed dates',()=>{
  for(const entries of [[entry,{...entry,slug:'other'}],[{...entry,sourceUrl:'https://community.tari.com/t/september-contest-thread/324/2'}],[{...entry,publishedAt:'yesterday'}],[{...entry,paymentAddress:'not part of the public listing'}],[{...entry,recording:{url:'javascript:alert(1)',capturedAt:entry.updatedAt,sourceRevision:'main',kind:'public-page',credit:'creator'}}]])assert.throws(()=>validateContests([{...contest,entries}]));
 });
+test('rejects missing, numeric and oversized slugs before remote cards can render',()=>{
+ for(const slug of [undefined,123,'a'.repeat(101)])assert.throws(()=>validateContests([{...contest,entries:[{...entry,slug}]}]),/slug/);
+});
 test('monitor retrieves all posts, ignores moderator actions and emits no raw post body',async()=>{
  const calls=[];
  const read=async url=>{calls.push(url);return calls.length===1?{id:396,post_stream:{stream:[1,2,101],posts:[{id:1,post_number:1,post_type:1},{id:2,post_number:2,post_type:3}]}}:{post_stream:{posts:[post]}};};
