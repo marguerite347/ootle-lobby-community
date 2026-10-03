@@ -7,6 +7,7 @@ import {createGrowthRouter} from './growth.mjs';
 import {STUDIO_RECIPES, STUDIO_STAGES} from '../shared/studio.mjs';
 import {rollToolkit} from './buildBlueprints.mjs';
 import {dailyTriviaRouter} from './dailyTrivia.mjs';
+import {createBlobDailyTrivia} from './dailyTriviaBlob.mjs';
 import {buildToolkit} from './buildToolkit.mjs';
 import {editions as journalEditions} from './challenges.mjs';
 import {publishedArticles,launch,journalHtml,journalFeed} from './journal.mjs';
@@ -79,7 +80,9 @@ export function createApp() {
     if (!localCalendarRequest(req)) return res.status(403).json({error: 'Marketing calendar requires local access.'});
     res.json(await marketingCalendar());
   }));
-  api.use('/daily-trivia',dailyTriviaRouter(runtimeDir,{publicOrigin:process.env.PUBLIC_SITE_URL}));
+  const triviaGame=process.env.TRIVIA_STORAGE==='blob'
+    ? createBlobDailyTrivia({token:process.env.BLOB_READ_WRITE_TOKEN}) : undefined;
+  api.use('/daily-trivia',dailyTriviaRouter(runtimeDir,{publicOrigin:process.env.PUBLIC_SITE_URL,game:triviaGame}));
   api.use('/growth', createGrowthRouter());
   api.get('/journal', (req,res)=>res.json({articles:publishedArticles(),origin:publicOrigin,calendar:journalEditions().filter(item=>item.phase!=='archive').slice(0,2)}));
   api.get('/launch', (req,res)=>res.json(launch));
