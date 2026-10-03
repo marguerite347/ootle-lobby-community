@@ -7,10 +7,27 @@ type Entry={slug:string;title:string;summary:string;creator:string;sourceUrl:str
 export type OctoberContest={id:string;title:string;threadUrl:string;checkedAt:string;observedSubmissionPosts:number;entries:Entry[]};
 const THREAD='https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396';
 const date=(value:string)=>new Date(value).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'});
+const mysteries=[
+  {title:'Something is brewing.',art:'ritual-cauldron-v2.png'},
+  {title:'A secret worth keeping.',art:'ritual-spellbook-v3.png'},
+  {title:'Unknown. For now.',art:'creator-ghost.png'},
+];
+function OctoberMysteries(){
+  return <div className="october-mysteries">
+    <div className="mystery-grid" aria-label="Teasers for future October submissions">
+      {mysteries.map((mystery,index)=><article className={`mystery-card mystery-card-${index+1}`} key={mystery.art}>
+        <div className="mystery-card-top"><span>SECRET {String(index+1).padStart(2,'0')}</span><span className="mystery-seal">Unrevealed</span></div>
+        <div className="mystery-art" aria-hidden="true"><img src={`/seasonal/october-2026/${mystery.art}`} alt="" width="1254" height="1254" loading="lazy"/><span className="mystery-question">?</span></div>
+        <h3>{mystery.title}</h3><p>Your build could be here.</p>
+      </article>)}
+    </div>
+    <p className="mystery-invitation">The first reveals are still to come. <a href={THREAD} target="_blank" rel="noreferrer">Bring your secret to life <span aria-hidden="true">↗</span></a></p>
+  </div>;
+}
 export function OctoberGallery({contest}:{contest:OctoberContest}){
   const entries=[...contest.entries].sort((a,b)=>Date.parse(b.publishedAt)-Date.parse(a.publishedAt)||a.slug.localeCompare(b.slug));
   return <>
-    {!entries.length ? <div className="october-empty"><strong>The next confidential concoction could be yours.</strong><p>No October projects are listed yet. Share your build in the official contest thread.</p></div> : <div className="grid">{entries.map(entry=><article className="card contest-project-card" key={entry.slug}>
+    {!entries.length ? <OctoberMysteries/> : <div className="grid">{entries.map(entry=><article className="card contest-project-card" key={entry.slug}>
       {entry.recording && <figure className="submission-recording"><video controls playsInline preload="none" poster={entry.recording.posterUrl} aria-label={`${entry.title} ${entry.recording.kind} recording`} src={entry.recording.url}/><figcaption>{entry.recording.kind.replaceAll('-',' ')} · Recorded {date(entry.recording.capturedAt)} · {entry.recording.credit}</figcaption></figure>}
       <h3><a href={entry.sourceUrl} target="_blank" rel="noreferrer">{entry.title}</a></h3>
       <div className="contest-project-dates"><a href={entry.sourceUrl} target="_blank" rel="noreferrer">Submitted <time dateTime={entry.publishedAt}>{date(entry.publishedAt)}</time></a></div>
