@@ -27,7 +27,7 @@
 :root[data-hub-effects] .daily-spark.spark-showcase .spark-ready .btn.spark-question-cta{background:linear-gradient(110deg,#e9ff91,#d5f544 65%,#a7f2c9);color:#171222;box-shadow:0 6px 28px #d5f54430,inset 0 1px 0 #fff9}
 
 /* Pre-play is one invitation. Gameplay keeps its existing focused layout. */
-.daily-spark.spark-showcase.is-ready-invitation{display:flex;flex-direction:column;align-items:center;gap:12px;padding:32px clamp(20px,4vw,48px) 20px;background:radial-gradient(ellipse at 50% 40%,#743aa944,transparent 52%),linear-gradient(145deg,#19112b,#0c0a19 75%)}
+.daily-spark.spark-showcase.is-ready-invitation{display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px clamp(20px,4vw,48px);background:radial-gradient(ellipse at 50% 40%,#743aa944,transparent 52%),linear-gradient(145deg,#19112b,#0c0a19 75%)}
 .is-ready-invitation .spark-intro{display:contents}
 .is-ready-invitation .spark-kicker{order:0;justify-content:center;margin:0}
 .spark-showcase.is-ready-invitation .spark-intro h1{order:0;text-align:center;font-size:clamp(38px,5vw,64px);line-height:1.03;margin:2px 0;letter-spacing:-.055em}
@@ -37,10 +37,10 @@
 .daily-spark.spark-showcase.is-ready-invitation .spark-game{order:1;width:100%;max-width:480px;align-self:center;min-height:0;border:0;border-radius:0;background:none;box-shadow:none;padding:0;overflow:visible}
 .is-ready-invitation .spark-game-top{position:absolute;right:0;top:8px;z-index:3}
 .is-ready-invitation .spark-game-top>span{display:none}
-.spark-showcase.is-ready-invitation .spark-ready .spark-reactor{height:210px;margin:0 auto;max-width:340px}
+.spark-showcase.is-ready-invitation .spark-ready .spark-reactor{height:170px;margin:0 auto;max-width:340px}
 .is-ready-invitation .spark-ready .spark-question-cta{max-width:380px;margin:0 auto;min-height:60px;font-size:16px}
 .is-ready-invitation .spark-carry{font-size:11px;margin:0 0 8px}
-.is-ready-invitation>.spark-journey{order:2;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;width:100%;max-width:600px;margin:12px 0 0}
+.is-ready-invitation>.spark-journey{order:2;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;width:100%;max-width:600px;margin:4px 0 0}
 .is-ready-invitation .spark-journey li{flex-direction:column;gap:7px;text-align:center;padding:10px 8px;border:0;border-radius:0;background:none}
 /* The horizontal journey has no cards. Animate badges, never rectangular text panels. */
 .is-ready-invitation .spark-journey li[data-animate=true]{animation:none;box-shadow:none}
@@ -56,7 +56,7 @@
 .is-ready-invitation .spark-build-notes{order:5;width:100%;margin:4px 0 0;padding-top:12px}
 .is-ready-invitation .reward-playtest-bar{order:6;width:100%;box-sizing:border-box;margin:0}
 .is-ready-invitation .question-sheen[data-animate=true]{animation-delay:2400ms}
-@media(max-width:760px){.daily-spark.spark-showcase.is-ready-invitation{padding:22px 16px 16px;gap:10px}.spark-showcase.is-ready-invitation .spark-intro h1{font-size:38px;max-width:320px}.is-ready-invitation .spark-intro>p{font-size:12px;max-width:290px}.spark-showcase.is-ready-invitation .spark-ready .spark-reactor{height:170px;max-width:260px}.is-ready-invitation .spark-game-top{top:4px;right:0}.is-ready-invitation .spark-sound{font-size:9px;padding:6px 8px}.is-ready-invitation .spark-journey strong{font-size:11px}.is-ready-invitation .spark-journey li{padding:8px 3px}.is-ready-invitation .spark-journey small{font-size:7px;letter-spacing:.08em}.is-ready-invitation .spark-reset{font-size:9px}.is-ready-invitation .spark-ready .spark-question-cta{min-height:54px;font-size:14px}}
+@media(max-width:760px){.daily-spark.spark-showcase.is-ready-invitation{padding:12px 16px;gap:8px}.spark-showcase.is-ready-invitation .spark-intro h1{font-size:38px;max-width:320px}.is-ready-invitation .spark-intro>p{font-size:12px;max-width:290px}.spark-showcase.is-ready-invitation .spark-ready .spark-reactor{height:140px;max-width:260px}.is-ready-invitation .spark-game-top{top:4px;right:0}.is-ready-invitation .spark-sound{font-size:9px;padding:6px 8px}.is-ready-invitation .spark-journey strong{font-size:11px}.is-ready-invitation .spark-journey li{padding:8px 3px}.is-ready-invitation .spark-journey small{font-size:7px;letter-spacing:.08em}.is-ready-invitation .spark-reset{font-size:9px}.is-ready-invitation .spark-ready .spark-question-cta{min-height:54px;font-size:14px}}
 .is-ready-invitation .spark-intro h1{animation:invitation-arrive 500ms ease-out both}
 .is-ready-invitation .spark-ready .spark-reactor{animation:invitation-arrive 700ms 200ms ease-out both}
 .is-ready-invitation .spark-question-cta:hover .question-sheen,.is-ready-invitation .spark-question-cta:focus-visible .question-sheen{animation-delay:0ms}
@@ -96,3 +96,7 @@
 .spark-odds ul{list-style:none;padding:0;display:grid;gap:4px;max-width:250px}
 .spark-odds li{display:flex;justify-content:space-between;gap:16px;font-variant-numeric:tabular-nums}
 .daily-spark .spark-rules-content .spark-rules-note{margin-bottom:0;color:#b8a9cc}
+
+.is-ready-invitation .spark-footer{order:5;align-self:stretch;display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:4px;padding-top:8px;border-top:1px solid #b798dc25}
+.is-ready-invitation .spark-footer .spark-build-notes{width:auto;margin:0;padding:0;border:0}
+.is-ready-invitation .spark-footer .reward-playtest-bar{width:auto;margin:0}
