@@ -1,4 +1,5 @@
 import {useEffect, useId, useRef, useState} from 'react';
+import {CHAT_GREETING_EVENT} from '../chat/chatSidebarState';
 
 const art = '/seasonal/october-2026';
 
@@ -7,6 +8,14 @@ export default function ConcoctionArt() {
   const id = useId().replace(/:/g, '');
   const scene = useRef<HTMLDivElement>(null);
   const [greeting, setGreeting] = useState(0);
+  const [helloRequest, setHelloRequest] = useState(0);
+
+  useEffect(() => {
+    if (!helloRequest) return;
+    // The spider reaches the bottom of its 4.8s greeting at 38%.
+    const timer = window.setTimeout(() => window.dispatchEvent(new Event(CHAT_GREETING_EVENT)), 1900);
+    return () => window.clearTimeout(timer);
+  }, [helloRequest]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
@@ -54,7 +63,7 @@ export default function ConcoctionArt() {
         <div className="spider-visit"><span className="spider-silk"/><img src={`${art}/friendly-spider.png`} alt="" width="1254" height="1254"/></div>
         <img className="corner-pumpkin" src={`${art}/pumpkin-leaves.png`} alt="" width="1254" height="1254"/>
       </div>
-      <button className="spider-greeting" type="button" onClick={() => setGreeting(count => count + 1)} aria-label="Replay the spider and pumpkin greeting">Say hello</button>
+      <button className="spider-greeting" type="button" onClick={() => {setGreeting(count => count + 1); setHelloRequest(count => count + 1);}} aria-label="Replay the spider and pumpkin greeting">Say hello</button>
     </div>
   </div>;
 }

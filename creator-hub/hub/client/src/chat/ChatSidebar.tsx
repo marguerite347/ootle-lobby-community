@@ -14,6 +14,7 @@ import {
 import ProjectChat from './ProjectChat';
 import { copy, sidebarCopy } from './copy';
 import {
+  CHAT_GREETING_EVENT,
   DOCKED_MEDIA_QUERY,
   STORAGE_KEYS,
   type DockPreference,
@@ -83,6 +84,7 @@ export default function ChatSidebar() {
   const isDockedViewport = useDockedViewport();
   const [dockPreference, setDockPreference] = useState<DockPreference>(() => readDockPreference(browserStorage()));
   const [isSheetOpen, setIsSheetOpen] = useState(false);
+  const [greetingAttention, setGreetingAttention] = useState(false);
   const pendingFocus = useRef<FocusTarget>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -91,6 +93,18 @@ export default function ChatSidebar() {
 
   const isSheetMode = !isPopOut && !isDockedViewport;
   const isOpen = isPopOut || (isDockedViewport ? dockPreference === 'open' : isSheetOpen);
+
+  useEffect(() => {
+    if (isOpen) {setGreetingAttention(false); return;}
+    let timer: number | undefined;
+    const greet = () => {
+      setGreetingAttention(true);
+      window.clearTimeout(timer);
+      timer = window.setTimeout(() => setGreetingAttention(false), 8000);
+    };
+    window.addEventListener(CHAT_GREETING_EVENT, greet);
+    return () => {window.removeEventListener(CHAT_GREETING_EVENT, greet); window.clearTimeout(timer);};
+  }, [isOpen]);
 
   const openSidebar = useCallback(() => {
     pendingFocus.current = 'panel';
@@ -155,7 +169,7 @@ export default function ChatSidebar() {
         <button
           ref={toggleRef}
           type="button"
-          className={isDockedViewport ? 'chat-sidebar-edge' : 'collective-chat-launcher'}
+          className={`${isDockedViewport ? 'chat-sidebar-edge' : 'collective-chat-launcher'}${greetingAttention ? ' is-greeting-glow' : ''}`}
           aria-expanded={false}
           aria-controls={sidebarId}
           aria-label={copy.launcherOpen}

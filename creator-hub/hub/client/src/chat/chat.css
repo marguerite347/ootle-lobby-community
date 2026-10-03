@@ -110,6 +110,23 @@ html[data-chat-dock='sheet'] .chat-sidebar-root::before {
   outline-offset: -3px;
 }
 
+/* A brief invitation after the spider drops; opening chat dismisses it. */
+.chat-sidebar-edge.is-greeting-glow,
+.collective-chat-launcher.is-greeting-glow {
+  border-color: var(--cc-focus);
+  background: #303c24;
+  color: #efffab;
+  box-shadow: 0 0 22px #d5f54480, inset 0 0 16px #d5f54424;
+  animation: chat-greeting-glow 1.4s ease-in-out 2;
+}
+@keyframes chat-greeting-glow {
+  50% { box-shadow: 0 0 36px #d5f544b3, inset 0 0 22px #d5f54440; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .is-greeting-glow { animation: none !important; }
+}
+:root[data-hub-effects='off'] .is-greeting-glow { animation: none !important; }
+
 /* ---- Sidebar shell ---- */
 .chat-sidebar {
   position: fixed;
