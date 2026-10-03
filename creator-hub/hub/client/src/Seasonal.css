@@ -314,6 +314,8 @@
   padding-top:40px;
   scroll-margin-top:185px
 }
+.contest-paths { padding-top:28px; }
+.contest-paths .season-section-heading { margin-bottom:16px; gap:10px; }
 .quest-grid  {
   display:grid;
   grid-template-columns:minmax(0,1fr);
@@ -1232,14 +1234,14 @@ answers and wheels stay clear. */
 .season-hero-foot { order: 2; position: static; }
 .season-hero h1 { font-size: clamp(43px, 6vw, 74px); }
 .season-hero-copy { min-width: 0; }
-.quest-card { padding: 22px; }
+.quest-card { padding: 18px; }
 .quest-build::before { display: none; }
 .quest-number { margin-bottom: 16px; padding-right: 22px; }
 .quest-art {
   position: relative;
-  aspect-ratio: 2 / 1;
+  height: clamp(110px, 12vw, 150px);
   width: 100%;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   display: grid;
   place-items: center;
   border-radius: 10px;
@@ -1256,8 +1258,8 @@ answers and wheels stay clear. */
 }
 .quest-card h3 { font-size: clamp(30px, 3.2vw, 42px); max-width: none; }
 .quest-card > p { max-width: none; }
-.quest-prize { margin-top: auto; padding-top: 18px; }
-.quest-card > p { margin-bottom: 8px; }
+.quest-prize { margin-top: auto; padding-top: 12px; }
+.quest-card > p { margin: 10px 0 0; line-height: 1.5; }
 .builder-art {
   min-height: 0;
   display: grid;
@@ -1295,9 +1297,9 @@ answers and wheels stay clear. */
 .quest-campaign-line {
   display: block;
   color: var(--season-lavender);
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
 .season-community {
