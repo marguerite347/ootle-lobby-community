@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ootle Lobby · Multiplier wheel proof</title>
+<style>html,body{background:#08071c}.wheel-embed,.wheel-embed body{background:transparent}#stage > canvas:not(.electric-charge){visibility:hidden}</style>
+<script>if(new URLSearchParams(location.search).has("embed"))document.documentElement.classList.add("wheel-embed");</script>
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="/reward-buttons.css">
+<link rel="stylesheet" href="/reward-type.css">
+<script type="importmap">{"imports":{"three":"../crystal-lab/vendor/three.module.js"}}</script></head>
+<body>
+<header><a href="../crystal-lab/index.html?v=9">OOTLE LOBBY <span>/ REWARD LAB</span></a><span class="badge">DEMO · NO CREDITS AWARDED</span></header>
+<main>
+<section class="story"><p class="eyebrow">YOU BEAT THE QUESTION.</p><h1>Make it<br><em>multiply.</em></h1><p class="description">One good answer. A whole lot of potential.</p><div class="bank"><span>YOUR DEMO WIN</span><strong>100 <small>AI Sparks</small></strong></div><fieldset class="palette"><legend>Three-color palettes · edges / facets / core</legend><div id="palettes"></div><label>Inner energy <select id="energy"><option value="electric">Electric spark</option><option value="flame">Soft flame</option></select></label><label><input type="checkbox" id="compare-still"> Hold crystal still for comparison</label></fieldset><p class="source">Original Spline wheel by Chris Gannon.<br>Ootle materials, crystal and spin treatment.</p></section>
+<section class="experience" aria-label="Interactive multiplier wheel">
+<div class="reward-rays" aria-hidden="true"></div><div id="stage"><div class="aura"></div><div id="loading" role="status">Loading the wheel…</div></div>
+<div class="result" aria-live="polite"><span id="phase">READY WHEN YOU ARE</span><strong id="reward" class="reward-type">Let it spin.</strong><span id="win-unit" hidden>AI Sparks banked</span><span id="detail">A visual proof with a scripted outcome.</span></div>
+<p id="super-offer" hidden></p><ul id="super-odds" hidden></ul><div class="actions"><button id="continue-super" hidden>Continue to Super ↗</button><button id="decline-super" class="secondary" hidden>Keep my haul</button><button id="spin" disabled>Spin for the multiplier <span>↗</span></button><button id="skip" class="secondary" hidden>Show result</button></div>
+<details><summary>Proof controls</summary><label>Demo landing <select id="target"><option value="11">5×</option><option value="3">3×</option><option value="1">2×</option><option value="0">1×</option></select></label><label><input type="checkbox" id="effects" checked> Spark effects</label><label><input type="checkbox" id="reduced"> Reduced motion</label></details>
+</section></main><script type="module" src="./native.js"></script></body></html>

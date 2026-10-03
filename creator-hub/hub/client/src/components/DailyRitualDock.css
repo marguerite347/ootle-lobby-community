@@ -1,0 +1,39 @@
+.season-ritual-nav { padding-bottom:12px; }
+.ritual-disclosure.ritual-dock {
+  position:relative;
+  margin:0;
+  z-index:19;
+  border-radius:12px;
+  box-shadow:none;
+}
+.ritual-dock .ritual-summary {
+  min-height:56px;
+  padding:8px 14px;
+  gap:12px;
+  border-radius:11px;
+}
+.ritual-dock .ritual-summary > img { width:40px; height:40px; }
+.ritual-dock .ritual-summary-copy { gap:2px; }
+.ritual-dock .ritual-summary-copy strong { font-size:16px; }
+.ritual-dock .ritual-summary-copy > span { font-size:11px; }
+.ritual-dock .ritual-summary-action { padding:9px 16px; font-size:12px; }
+.ritual-dock-content {
+  position:absolute;
+  top:calc(100% + 12px);
+  left:0;
+  right:0;
+  max-height:calc(100dvh - var(--ritual-header-height, 240px) - 8px);
+  overflow-y:auto;
+  overscroll-behavior-y:contain;
+  border:1px solid var(--season-line);
+  border-radius:16px;
+  background:var(--season-ink);
+  box-shadow:0 16px 40px #04072390;
+}
+@media (max-width:600px) {
+  .ritual-dock .ritual-summary { gap:8px; padding:8px 10px; }
+  .ritual-dock .ritual-summary > img { width:34px; height:34px; }
+  .ritual-dock .ritual-summary-copy strong { font-size:14px; }
+  .ritual-dock .ritual-summary-copy > span { font-size:10px; }
+  .ritual-dock .ritual-summary-action { max-width:94px; padding:8px 10px; font-size:10px; }
+}

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TariSkill metadata",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "description",
+    "version",
+    "lifecycle",
+    "networks",
+    "tools",
+    "sources",
+    "sourceCheckedAt",
+    "technicalValidatedAt",
+    "validation",
+    "related",
+    "issue",
+    "remaining"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "lifecycle": {
+      "enum": [
+        "draft",
+        "verified",
+        "stale",
+        "deprecated"
+      ]
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "technicalValidatedAt": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1
+    },
+    "validation": {
+      "type": "object",
+      "required": [
+        "scope",
+        "evidence"
+      ]
+    }
+  }
+}

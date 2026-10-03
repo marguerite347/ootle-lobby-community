@@ -1,0 +1,12 @@
+.creator-ideas { margin:2rem 0; padding:clamp(1rem,3vw,2rem); border:1px solid var(--border); border-radius:1.25rem; background:linear-gradient(140deg,#252039,#12111c 70%); }
+.creator-ideas-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:1rem;margin:1.5rem 0;}
+.creator-idea {padding:1.25rem;border:1px solid var(--border);border-radius:.75rem;background:var(--bg-elev);display:flex;flex-direction:column;gap:.85rem;min-width:0;}
+.creator-idea h3 {font-size:1.45rem;line-height:1.2;}
+.creator-idea h4 {font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;margin-top:.5rem;}
+.creator-idea p {font-size:.875rem;line-height:1.65;color:var(--muted);}
+.creator-idea .creator-idea-goal {color:var(--accent);font-size:.75rem;}
+.creator-idea-links,.creator-idea-actions {display:flex;flex-wrap:wrap;gap:1rem;font-size:.8rem;align-items:center;}
+.creator-idea-actions {margin-top:auto;padding-top:1rem;}
+.creator-idea details {font-size:.8rem;line-height:1.6;}
+.creator-idea summary {cursor:pointer;padding:.5rem 0;}
+.creator-idea pre {white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;border-left:2px solid var(--accent);padding:1rem;}

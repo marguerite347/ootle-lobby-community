@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ootle Lobby demo capture"
+  short_description: "Capture walkthroughs and editable cinematic product reels"
+  default_prompt: "Use $creator-hub-demo-capture to capture a verified Ootle Lobby walkthrough or produce an editable Remotion trailer from real product footage."

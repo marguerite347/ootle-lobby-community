@@ -1,0 +1,20 @@
+{
+  "sourceCheckedAt": "2026-09-19",
+  "repositories": [
+    {
+      "repo": "tari-project/tari-ootle",
+      "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+      "role": "Implementation and official docs; development source is not a deployed release"
+    },
+    {
+      "repo": "tari-project/wasm-template",
+      "revision": "95f86279ff3905af4f60cb2d5e9875fcf14e9908",
+      "role": "Official generator and frontend starter"
+    }
+  ],
+  "discrepancies": [
+    "Wallet manifest signing_key_id in older guide differs from seal_signer_key_id/signing_key_ids in inspected implementation.",
+    "Testing guide dev-dependency 0.39 differs from current template generator 0.41.",
+    "API overview contains illustrative names that require source validation before execution."
+  ]
+}

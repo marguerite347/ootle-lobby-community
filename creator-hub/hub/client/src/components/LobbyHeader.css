@@ -1,0 +1,11 @@
+.season-utility { padding-block:8px; }
+.season-utility .launch-ticket { flex-shrink:0; }
+@media(max-width:759px) {
+  .season-utility { flex-wrap:wrap; gap:4px 12px; }
+  .season-utility .launch-ticket { margin-right:auto; }
+  .season-utility .community-logo-links { margin-left:0; }
+}
+@media(max-width:599px) {
+  .season-utility .launch-ticket { width:100%; justify-content:space-between; }
+  .season-utility .launch-ticket-digits { margin-left:auto; }
+}

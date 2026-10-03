@@ -1,0 +1,6 @@
+{
+  "repository": "https://github.com/huggingface/skills",
+  "revision": "abc20ae526d8b4c0e4dff89f904adce28a4a0eb6",
+  "path": "skills/huggingface-zerogpu",
+  "license": "Apache-2.0"
+}

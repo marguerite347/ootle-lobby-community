@@ -1,0 +1,48 @@
+{
+  "_comment": "Tari concept b-roll — SDXL text-to-image, API (prompt) format for the ComfyUI /prompt endpoint. Generates a background-only concept still. Brand logo/type/captions are applied later in Remotion, never here. Keep outputs labeled as concept, not gameplay. Native SDXL size 832x1216 gives a 9:16-friendly background; upscale/crop in Remotion.",
+  "3": {
+    "class_type": "KSampler",
+    "inputs": {
+      "seed": 42,
+      "steps": 25,
+      "cfg": 7,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": ["4", 0],
+      "positive": ["6", 0],
+      "negative": ["7", 0],
+      "latent_image": ["5", 0]
+    }
+  },
+  "4": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": { "ckpt_name": "sd_xl_base_1.0.safetensors" }
+  },
+  "5": {
+    "class_type": "EmptyLatentImage",
+    "inputs": { "width": 832, "height": 1216, "batch_size": 1 }
+  },
+  "6": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "abstract dark background, deep ink navy #040723 with soft purple #813BF5 and lime green #C9EB00 glow, subtle geometric privacy grid, cinematic lighting, high detail, no text, no logos, no watermark",
+      "clip": ["4", 1]
+    }
+  },
+  "7": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "text, letters, words, logo, watermark, signature, ui, faces, people, low quality, jpeg artifacts",
+      "clip": ["4", 1]
+    }
+  },
+  "8": {
+    "class_type": "VAEDecode",
+    "inputs": { "samples": ["3", 0], "vae": ["4", 2] }
+  },
+  "9": {
+    "class_type": "SaveImage",
+    "inputs": { "filename_prefix": "tari_concept_bg", "images": ["8", 0] }
+  }
+}

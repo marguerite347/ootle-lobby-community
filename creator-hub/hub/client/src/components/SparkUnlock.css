@@ -1,0 +1,65 @@
+/* Charge, split, count, collect. Presentation never changes the credited amount. */
+.spark-unlock{position:fixed;inset:0;z-index:10000;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 50% 38%,var(--tari-purple),var(--bg) 68%);color:var(--text);font-family:var(--font-sans);animation:unlock-enter .2s ease-out}
+.unlock-wallet{position:absolute;right:5vw;top:4vh;padding:12px 22px;border:1px solid var(--accent);border-radius:18px;background:var(--bg);z-index:5}.unlock-wallet span{display:block;font-size:11px;letter-spacing:.16em;color:var(--accent)}.unlock-wallet b{font-size:28px}.unlock-wallet small{font-size:13px}
+.unlock-stage{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;padding:80px 20px 65px;box-sizing:border-box}.unlock-kicker{font-size:12px;letter-spacing:.2em;font-weight:800;margin-bottom:8px}
+.unlock-object{width:240px;height:300px;position:relative;flex-shrink:0;filter:drop-shadow(0 0 32px var(--accent));animation:unlock-charge 1s ease-in both}.unlock-object svg{position:absolute;inset:0;width:100%;height:100%}
+.unlock-crystal-left{clip-path:polygon(0 0,52% 0,46% 29%,56% 41%,43% 55%,54% 68%,50% 100%,0 100%);animation:unlock-left .7s 1s cubic-bezier(.12,.8,.2,1) both}.unlock-crystal-right{clip-path:polygon(52% 0,100% 0,100% 100%,50% 100%,54% 68%,43% 55%,56% 41%,46% 29%);animation:unlock-right .7s 1s cubic-bezier(.12,.8,.2,1) both}
+.unlock-core{position:absolute;inset:0;display:grid;place-items:center;color:var(--tari-green);font-size:180px;animation:unlock-core 1s .95s both}
+.unlock-rays{position:absolute;inset:-80%;background:repeating-conic-gradient(from 12deg,transparent 0deg 16deg,color-mix(in srgb,var(--accent) 18%,transparent) 17deg 24deg);mask-image:radial-gradient(circle,black,transparent 62%);animation:unlock-rays 6.8s ease-out both}
+.unlock-payoff{position:relative;z-index:3;margin-top:-55px;animation:unlock-payoff .5s 1.2s both}.unlock-payoff h2{font-size:clamp(36px,5vw,72px);line-height:1.1;letter-spacing:-.05em;margin:0;text-shadow:0 5px 0 var(--tari-purple),0 9px 0 var(--bg);font-weight:800}.unlock-amount{font-size:clamp(76px,10vw,128px);font-weight:800;line-height:1.15;letter-spacing:-.06em;color:var(--tari-green);text-shadow:0 6px 0 var(--bg);font-variant-numeric:tabular-nums}.unlock-payoff p{font-size:22px;font-weight:600;margin:0}
+.unlock-next{position:relative;z-index:5;margin-top:24px}.unlock-next p{margin:0 0 12px;font-size:14px}.unlock-next .btn{min-height:52px;padding:14px 28px;background:var(--tari-green);color:var(--bg);font-weight:800;font-size:16px;gap:20px}
+.unlock-loot{position:absolute;inset:0;pointer-events:none;z-index:2}.unlock-loot i{position:absolute;top:42%;left:50%;font-size:clamp(35px,5vw,76px);color:var(--accent);font-style:normal;text-shadow:3px 4px var(--tari-purple),-1px -1px var(--text);animation:unlock-loot 4s calc(1s + var(--delay)) both}.unlock-loot i:nth-child(3n){color:var(--tari-green)}
+@keyframes unlock-enter{from{opacity:0}to{opacity:1}}
+@keyframes unlock-charge{0%{transform:scale(.45) rotate(-12deg)}65%{transform:scale(1.1) rotate(3deg)}85%{transform:scale(.94) rotate(-2deg)}100%{transform:scale(1)}}
+@keyframes unlock-left{to{transform:translate(-130px,-40px) rotate(-25deg);opacity:0}}
+@keyframes unlock-right{to{transform:translate(130px,-40px) rotate(25deg);opacity:0}}
+@keyframes unlock-core{0%{opacity:0;transform:scale(.1)}35%{opacity:1;transform:scale(1.4)}100%{opacity:1;transform:scale(.75)}}
+@keyframes unlock-payoff{from{opacity:0;transform:scale(.65) translateY(20px)}65%{opacity:1;transform:scale(1.08)}to{opacity:1;transform:scale(1)}}
+@keyframes unlock-rays{0%,12%{opacity:0;transform:rotate(-15deg) scale(.7)}23%{opacity:1}100%{opacity:.4;transform:rotate(20deg)}}
+@keyframes unlock-loot{0%{opacity:0;transform:translate(0,0) scale(.1)}8%{opacity:1}35%,65%{opacity:1;transform:translate(var(--x),var(--y)) rotate(var(--turn)) scale(1)}100%{opacity:0;transform:translate(40vw,-36vh) rotate(360deg) scale(.1)}}
+@media(max-width:600px){.unlock-wallet{top:18px;right:18px;padding:8px 14px}.unlock-wallet b{font-size:20px}.unlock-stage{padding-top:110px}.unlock-object{width:180px;height:225px}.unlock-core{font-size:135px}.unlock-kicker{font-size:10px}.unlock-payoff{margin-top:-25px}.unlock-payoff h2{font-size:36px}.unlock-next{margin-top:20px}.unlock-loot i{font-size:36px}}
+@media(max-height:740px){.unlock-object{width:140px;height:175px}.unlock-core{font-size:100px}.unlock-stage{padding-top:100px}.unlock-payoff h2{font-size:32px}.unlock-amount{font-size:70px}.unlock-next{margin-top:12px}}
+.spark-unlock[data-still] *{animation:none!important}.spark-unlock[data-still] .unlock-loot,.spark-unlock[data-still] .unlock-rays,.spark-unlock[data-still] .unlock-core{display:none}.spark-unlock[data-still] .unlock-payoff{margin-top:0}
+@media(prefers-reduced-motion:reduce){.spark-unlock,.spark-unlock *{animation:none!important}.unlock-loot,.unlock-rays,.unlock-core{display:none}.unlock-payoff{margin-top:0}}
+/* Short viewports retain access to the action rather than cropping it. */
+.spark-unlock{overflow-y:auto;overflow-x:hidden}
+.unlock-stage{min-height:620px}
+.spark-unlock[data-still]{animation:none!important}
+@media(max-height:740px){.unlock-stage{height:auto;min-height:100%;padding:95px 20px 65px}.unlock-object{width:100px;height:125px}.unlock-core{font-size:80px}.unlock-payoff{margin-top:0}.unlock-kicker{margin-bottom:4px}}
+/* Canonical BRAND.md palette, scoped until the legacy shell imports tokens.css. */
+.spark-unlock{--tari-purple:#813bf5;--tari-green:#c9eb00;--font-sans:'Poppins',sans-serif;background-color:var(--bg)}
+/* Crystal v2: thick refractive glass, a visible inner Spark and a fracture-led split. */
+.unlock-object{width:350px;height:350px;filter:drop-shadow(0 14px 22px var(--bg)) drop-shadow(0 0 24px var(--tari-purple));perspective:900px}
+.unlock-object img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.unlock-crystal-left{clip-path:polygon(0 0,46% 0,46% 15%,48% 23%,57% 30%,62% 42%,58% 53%,55% 66%,49% 75%,50% 100%,0 100%)}
+.unlock-crystal-right{clip-path:polygon(46% 0,100% 0,100% 100%,50% 100%,49% 75%,55% 66%,58% 53%,62% 42%,57% 30%,48% 23%,46% 15%)}
+@keyframes unlock-charge{0%{transform:scale(.62) rotate(-8deg);filter:drop-shadow(0 8px 18px var(--bg))}60%{transform:scale(1.05) rotate(2deg)}85%{transform:scale(.97) rotate(-1deg)}100%{transform:scale(1);filter:drop-shadow(0 0 35px var(--accent))}}
+@keyframes unlock-left{0%{opacity:1;transform:translate(0,0)}55%{opacity:1;transform:translate(-95px,-20px) rotate(-20deg) rotateY(-25deg)}100%{transform:translate(-160px,80px) rotate(-35deg) rotateY(-45deg);opacity:0}}
+@keyframes unlock-right{0%{opacity:1;transform:translate(0,0)}55%{opacity:1;transform:translate(95px,-20px) rotate(20deg) rotateY(25deg)}100%{transform:translate(160px,80px) rotate(35deg) rotateY(45deg);opacity:0}}
+@media(max-width:600px){.unlock-object{width:260px;height:260px}}
+@media(max-height:740px){.unlock-object{width:150px;height:150px}}
+
+/* Accepted v9 material and licensed orbit, isolated in the same-origin scene.
+   Keep the physical collectible on stage while the authoritative award settles. */
+.unlock-object-live{width:min(680px,96vw);height:300px;filter:none;animation:none}
+.unlock-object-live iframe{border:0;width:100%;height:100%;pointer-events:none;background:transparent}
+.unlock-object-live + .unlock-payoff{margin-top:0}
+.spark-unlock[data-still] .unlock-object-live{display:none}
+@media(max-width:600px){.unlock-object-live{height:240px;width:96vw}.unlock-stage{padding-bottom:55px}}
+@media(max-height:740px){.unlock-object-live{height:160px}.unlock-stage{min-height:650px}}
+
+.spark-unlock[data-loading] .unlock-payoff,.spark-unlock[data-loading] .unlock-loot,.spark-unlock[data-loading] .reward-rays{animation-play-state:paused!important;visibility:hidden}
+
+.unlock-glitter{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;opacity:.8;mask-image:radial-gradient(ellipse at center,transparent 15%,black 65%);animation:glitter-fade 10s linear both}
+@keyframes glitter-fade{0%{opacity:0}8%,75%{opacity:.8}100%{opacity:0}}
+/* Embedded reward beat: stay inside the Lobby stage, without a modal or body lock. */
+.spark-unlock.spark-unlock-inline{position:relative;inset:auto;z-index:1;width:100%;min-height:580px;background:transparent;border-radius:20px}
+.spark-unlock-inline .unlock-stage{min-height:580px;padding:65px 12px 20px}
+.spark-unlock-inline .unlock-wallet{top:8px;right:8px;padding:7px 12px}
+.spark-unlock-inline .unlock-wallet b{font-size:19px}.spark-unlock-inline .unlock-wallet span{font-size:9px}
+.spark-unlock-inline .unlock-object{width:210px;height:260px}
+.spark-unlock-inline .unlock-payoff h2{font-size:36px}.spark-unlock-inline .unlock-amount{font-size:76px}
+.spark-unlock-inline .unlock-payoff p{font-size:16px}.spark-unlock-inline .unlock-kicker{font-size:10px;letter-spacing:.12em}
+.spark-unlock-inline .unlock-next{margin-top:18px}
+@media(max-width:600px){.spark-unlock.spark-unlock-inline,.spark-unlock-inline .unlock-stage{min-height:540px}.spark-unlock-inline .unlock-object{height:230px;width:190px}.spark-unlock-inline .unlock-next .btn{padding:12px;font-size:13px}.spark-unlock-inline .unlock-payoff h2{font-size:30px}}
+.spark-unlock-inline .unlock-wallet{right:auto;left:8px}

@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-09-19",
+  "status": "live_catalogs_polyhaven_ambientcg_kenney; other providers linked",
+  "providers": [
+    {
+      "id": "poly-haven",
+      "url": "https://polyhaven.com/",
+      "docs_url": "https://polyhaven.com/our-api",
+      "terms_url": "https://github.com/Poly-Haven/Public-API/blob/master/ToS.md",
+      "asset_types": [
+        "models",
+        "materials",
+        "hdri"
+      ],
+      "asset_license": "CC0",
+      "ingestion_proposal": "documented_api",
+      "notes": "Current published API terms allow commercial use; unique User-Agent and visible provider credit required. No SLA."
+    },
+    {
+      "id": "ambientcg",
+      "url": "https://ambientcg.com/",
+      "docs_url": "https://docs.ambientcg.com/api/",
+      "terms_url": "https://docs.ambientcg.com/license/",
+      "asset_types": [
+        "materials",
+        "models",
+        "hdri"
+      ],
+      "asset_license": "CC0; confirm record coverage",
+      "ingestion_proposal": "documented_api",
+      "notes": "Full metadata catalog ingested through the v3 API, with source-hosted previews and download links. Asset files remain upstream."
+    },
+    {
+      "id": "kenney",
+      "url": "https://kenney.nl/assets",
+      "docs_url": "https://kenney.nl/support",
+      "asset_types": [
+        "2d",
+        "3d",
+        "ui",
+        "audio"
+      ],
+      "asset_license": "CC0 for asset-page game assets",
+      "ingestion_proposal": "curated_pack_manifests",
+      "notes": "Individual free asset packs indexed from the paginated public directory. Source-hosted previews and download links; no bulk API or binary mirror."
+    },
+    {
+      "id": "blendkit",
+      "url": "https://www.blendkit.com/",
+      "terms_url": "https://www.blendkit.com/docs/licenses/",
+      "asset_types": [
+        "models",
+        "materials",
+        "hdri",
+        "scenes"
+      ],
+      "asset_license": "per_asset: CC0 or Royalty Free",
+      "ingestion_proposal": "discovery_links_pending_api_and_reuse_validation",
+      "notes": "Formerly BlenderKit. Do not treat royalty-free assets as freely redistributable marketplace stock. API/partner access and free-tier eligibility unverified."
+    },
+    {
+      "id": "freesound",
+      "url": "https://freesound.org/",
+      "asset_types": [
+        "audio",
+        "sfx",
+        "ambience"
+      ],
+      "notes": "Free-download discovery source. Browse and download from the provider; individual catalog API is not connected.",
+      "ingestion_proposal": "source_link",
+      "asset_license": "review_later"
+    },
+    {
+      "id": "opengameart",
+      "url": "https://opengameart.org/",
+      "asset_types": [
+        "2d",
+        "3d",
+        "audio"
+      ],
+      "notes": "Free-download discovery source. Browse and download from the provider; individual catalog API is not connected.",
+      "ingestion_proposal": "source_link",
+      "asset_license": "review_later"
+    },
+    {
+      "id": "sonniss-gdc",
+      "url": "https://sonniss.com/gameaudiogdc/",
+      "asset_types": [
+        "audio",
+        "sfx"
+      ],
+      "notes": "Free-download discovery source. Browse and download from the provider; individual catalog API is not connected.",
+      "ingestion_proposal": "source_link",
+      "asset_license": "review_later"
+    },
+    {
+      "id": "incompetech",
+      "url": "https://incompetech.com/music/royalty-free/music.html",
+      "asset_types": [
+        "audio",
+        "music"
+      ],
+      "notes": "Free-download discovery source. Browse and download from the provider; individual catalog API is not connected.",
+      "ingestion_proposal": "source_link",
+      "asset_license": "review_later"
+    },
+    {
+      "id": "pixabay-music",
+      "url": "https://pixabay.com/music/",
+      "asset_types": [
+        "audio",
+        "music"
+      ],
+      "notes": "Free-download discovery source. Browse and download from the provider; individual catalog API is not connected.",
+      "ingestion_proposal": "source_link",
+      "asset_license": "review_later"
+    },
+    {
+      "id": "pixabay-sfx",
+      "url": "https://pixabay.com/sound-effects/",
+      "asset_types": [
+        "audio",
+        "sfx"
+      ],
+      "notes": "Free-download discovery source. Browse and download from the provider; individual catalog API is not connected.",
+      "ingestion_proposal": "source_link",
+      "asset_license": "review_later"
+    }
+  ]
+}

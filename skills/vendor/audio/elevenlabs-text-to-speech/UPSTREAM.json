@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/elevenlabs/skills",
+  "revision": "9edcbd4b80ed57b8e07a3f86ea520333969fbc3c",
+  "path": "text-to-speech",
+  "license": "MIT",
+  "importedAt": "2026-09-22",
+  "executionStatus": "Instructions imported; provider access and output quality require task-specific verification."
+}

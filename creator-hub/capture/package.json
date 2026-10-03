@@ -1,0 +1,18 @@
+{
+  "name": "tari-app-capture",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Record short clips of live community app webpages for Ootle Lobby previews.",
+  "scripts": {
+    "capture": "node capture-apps.mjs",
+    "test": "node --test test/*.test.mjs",
+    "setup:video": "playwright-core install ffmpeg"
+  },
+  "dependencies": {
+    "playwright-core": "1.47.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

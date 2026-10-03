@@ -1,0 +1,26 @@
+.project-chat-shell,.project-chat-conversation { display:flex; flex-direction:column; min-height:0; flex:1; }
+.project-chat-conversation[hidden] { display:none; }
+.project-chat-navigation { display:flex; align-items:center; justify-content:space-between; gap:8px; padding:12px 16px; border-bottom:1px solid #ffffff16; font-size:13px; }
+.project-chat-shell button { border:1px solid #ffffff24; border-radius:7px; color:#e4dced; background:transparent; padding:7px 9px; font:inherit; font-size:11px; cursor:pointer; }
+.project-chat-shell button:hover { border-color:#cbe879; }
+.project-chat-shell button:focus-visible { outline:2px solid #d7f581; outline-offset:2px; }
+.project-chat-shell button:disabled { opacity:.5; cursor:default; }
+.project-room-directory { padding:10px 16px; border-bottom:1px solid #ffffff16; font-size:11px; flex:none; }
+.project-room-directory summary { cursor:pointer; color:#ccbeda; }
+.project-room-directory summary span { margin-left:5px; color:#d7f581; }
+.project-room-list { max-height:240px; overflow:auto; margin-top:8px; }
+.project-room-card { padding:12px; border:1px solid #ffffff1c; border-radius:9px; background:#211b2d; margin-bottom:8px; }
+.project-room-card h3,.project-room-about h3 { font-size:14px; margin:0 0 6px; color:#e6f5b8; overflow-wrap:anywhere; }
+.project-room-card p,.project-room-about p { font-size:12px; line-height:1.5; white-space:pre-wrap; overflow-wrap:anywhere; margin:0 0 8px; }
+.project-room-card small,.project-room-about small { color:#b3a5c2; font-size:10px; }
+.project-room-actions { display:flex; align-items:center; gap:8px; margin-top:10px; }
+.project-chat-shell .project-room-primary { color:#18210b; background:#d1ef78; border-color:#d1ef78; font-weight:600; }
+.project-room-about { padding:14px 16px; border-bottom:1px solid #ffffff16; max-height:180px; overflow:auto; flex:none; }
+.project-room-create { overflow:auto; padding:18px 16px; }
+.project-room-create h3 { margin:0 0 8px; font-size:20px; color:#e5f1c4; }
+.project-room-create p { font-size:12px; line-height:1.6; color:#c8bdd4; }
+.project-room-create label { display:grid; gap:6px; margin:16px 0; font-size:12px; }
+.project-room-create input,.project-room-create textarea { width:100%; box-sizing:border-box; border:1px solid #ffffff36; border-radius:8px; background:#ffffff06; color:#f1eafa; padding:10px; font:inherit; }
+.project-room-create textarea { min-height:120px; resize:vertical; }
+.project-room-create .project-room-hint,.project-room-status { font-size:10px; color:#b3a5c2; }
+.project-room-status { margin:8px 16px; }

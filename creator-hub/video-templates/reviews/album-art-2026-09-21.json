@@ -1,0 +1,2514 @@
+[
+  {
+    "id": "tari-ootle:starter:wasm-templates-airdrop",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "tari-ootle:starter:wasm-templates-airdrop",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589391+00:00",
+      "sceneDescription": "A fleet of parachutes delivers luminous token parcels to an open community landing field.",
+      "references": [
+        "https://ootle.tari.com/guides/cli/"
+      ],
+      "videoSha256": "0a40771397064b6b5847c2147514634d22abe5c41cb1d01794ef269c6db667b5"
+    }
+  },
+  {
+    "id": "tari-ootle:learn:building-a-guessing-game-template",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "tari-ootle:learn:building-a-guessing-game-template",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589559+00:00",
+      "sceneDescription": "A blueprint desk unfolds into a mystery-door lesson, with a drawn question becoming a playable choice.",
+      "references": [
+        "https://ootle.tari.com/guides/build-a-guessing-game/"
+      ],
+      "videoSha256": "cd26c8cd8900008695f4ff9a740d610b7a57dd19a8c74fe95adb7c53f2c635ad"
+    }
+  },
+  {
+    "id": "tari-ootle:app:caravel-labs",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "tari-ootle:app:caravel-labs",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589561+00:00",
+      "sceneDescription": "A night-sailing caravel carries an illuminated identity flag between private communication beacons.",
+      "references": [
+        "https://caravellabs.net/"
+      ],
+      "videoSha256": "464cb95af0cc10d012e99954b2ad2b8fe059de0dbd73a55bc1671fbd6d77cc84"
+    }
+  },
+  {
+    "id": "tari-ootle:starter:wasm-templates-counter",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "tari-ootle:starter:wasm-templates-counter",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589562+00:00",
+      "sceneDescription": "A monumental mechanical odometer rolls its center digit as a lever counts discrete events.",
+      "references": [
+        "https://ootle.tari.com/guides/cli/"
+      ],
+      "videoSha256": "1a5ccb92f6c7b323a975cfce03e1691c706016e98dadf3407957a7cc96ca34ce"
+    }
+  },
+  {
+    "id": "tari-ootle:starter:wasm-templates-empty",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "tari-ootle:starter:wasm-templates-empty",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589564+00:00",
+      "sceneDescription": "An open folded sheet becomes an unbuilt world: a single clean luminous foundation and an unfolding corner.",
+      "references": [
+        "https://ootle.tari.com/guides/cli/"
+      ],
+      "videoSha256": "a3390a55749556024f901e5a0b8fe46c39a200d5a2c58cd05e20558570f058b9"
+    }
+  },
+  {
+    "id": "tari-ootle:starter:wasm-templates-fungible",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "tari-ootle:starter:wasm-templates-fungible",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589565+00:00",
+      "sceneDescription": "Identical token discs move through a mint press into neatly interchangeable stacks.",
+      "references": [
+        "https://ootle.tari.com/guides/cli/"
+      ],
+      "videoSha256": "c66e7753f66c411150318278ad202a7bd963c7ad878f33082d8155e6025c261e"
+    }
+  },
+  {
+    "id": "tari-ootle:starter:examples-guessing-game-template",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "tari-ootle:starter:examples-guessing-game-template",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589566+00:00",
+      "sceneDescription": "Three theatrical shell-game domes orbit a secret glowing answer, inviting a choice rather than showing an actual UI.",
+      "references": [
+        "https://ootle.tari.com/guides/build-a-guessing-game/"
+      ],
+      "videoSha256": "631473554d7d1a400cd82aae3480edc7127d47a50b9e3d0aeafaed1c4040e2f7"
+    }
+  },
+  {
+    "id": "tari-ootle:starter:wasm-templates-ico",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "tari-ootle:starter:wasm-templates-ico",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589567+00:00",
+      "sceneDescription": "A launchpad releases a token-bearing paper rocket through concentric subscription milestones.",
+      "references": [
+        "https://ootle.tari.com/guides/cli/"
+      ],
+      "videoSha256": "7e22b212ac7c114fdd66a1064602c71e44628e84303fe23919d2ec68070e0abd"
+    }
+  },
+  {
+    "id": "tari-ootle:app:labyrinthos",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "tari-ootle:app:labyrinthos",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589567+00:00",
+      "sceneDescription": "A luminous payment path finds a private route through a circular labyrinth around a hidden central vault.",
+      "references": [
+        "https://labyrinthos.markets/"
+      ],
+      "videoSha256": "8a19d67f26e9d3203cc842811c58f338c8a8c6609e1e68e8b3c1a8a9bbe5eb81"
+    }
+  },
+  {
+    "id": "tari-ootle:starter:wasm-templates-meme-coin",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "tari-ootle:starter:wasm-templates-meme-coin",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589568+00:00",
+      "sceneDescription": "A mischievous original moon-cat mascot bursts from a token-shaped speech bubble with comic motion lines.",
+      "references": [
+        "https://ootle.tari.com/guides/cli/"
+      ],
+      "videoSha256": "9fa577e4ede7faf3ac33ba9110a110eea6b521d884d397afc9d860c9ec35cee2"
+    }
+  },
+  {
+    "id": "tari-ootle:starter:wasm-templates-nft",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "tari-ootle:starter:wasm-templates-nft",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589572+00:00",
+      "sceneDescription": "One singular faceted artifact floats inside a collectors display frame, with its own numbered provenance seal.",
+      "references": [
+        "https://ootle.tari.com/guides/cli/"
+      ],
+      "videoSha256": "b3ed9a5623834aeea407716968b24c2013d52e94c1ce86fab7073e66831f7f43"
+    }
+  },
+  {
+    "id": "tari-ootle:starter:wasm-templates-no-std",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "tari-ootle:starter:wasm-templates-no-std",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589573+00:00",
+      "sceneDescription": "A stripped-back microchip with only essential circuits, surrounded by deliberately removed modules.",
+      "references": [
+        "https://ootle.tari.com/guides/cli/"
+      ],
+      "videoSha256": "99b5c780d012bb74ccf49cc8bc418e27e629824260ed7053105bda16ae9fa0b4"
+    }
+  },
+  {
+    "id": "tari-ootle:app:private-ballot",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "tari-ootle:app:private-ballot",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589574+00:00",
+      "sceneDescription": "Anonymous folded votes enter a velvet-black ballot box beneath a protective veil of private consensus.",
+      "references": [
+        "https://github.com/GSXRspartan/private-ballot/blob/main/docs/OPERATOR_SETUP.md"
+      ],
+      "videoSha256": "58d920808bd816f0483982cda2ea6c9fa0f351c1d4c97f7b4961109c1c81f612"
+    }
+  },
+  {
+    "id": "tari-ootle:learn:publishing-templates-to-testnet",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "tari-ootle:learn:publishing-templates-to-testnet",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589574+00:00",
+      "sceneDescription": "A compiled package passes from a workbench through an upload beam onto a test-network satellite.",
+      "references": [
+        "https://ootle.tari.com/guides/publishing-templates/"
+      ],
+      "videoSha256": "f5ede0a5effec0234abe6f3e50b04a84f6785c1b336f6ddefd096f187c954222"
+    }
+  },
+  {
+    "id": "tari-ootle:app:sapient",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "tari-ootle:app:sapient",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589575+00:00",
+      "sceneDescription": "A self-custody wallet becomes a wise mechanical owl protecting a key inside its folded wings.",
+      "references": [
+        "https://sapient.tari.com/"
+      ],
+      "videoSha256": "ac67f90c592a98f50bbf0b3cc17ef99a5a137da173d2ed35c71af80df5a3f8f7"
+    }
+  },
+  {
+    "id": "tari-ootle:app:shadowtix",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "tari-ootle:app:shadowtix",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589576+00:00",
+      "sceneDescription": "An oversized perforated ticket becomes a doorway to a neon stage, with a scanning light across the admission stub.",
+      "references": [
+        "https://shadowtix.shop"
+      ],
+      "videoSha256": "315fe53058e1cd7f1afe5726949071ba365548adc775df65eeb84f806d3997ae"
+    }
+  },
+  {
+    "id": "tari-ootle:app:sooon-fun",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "tari-ootle:app:sooon-fun",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589577+00:00",
+      "sceneDescription": "A playful prediction fairground balances yes and no pennants around an oversized spinning possibility wheel.",
+      "references": [
+        "https://sooon.fun/"
+      ],
+      "videoSha256": "8c66de047e3dcab38748ed8094d2625c8fc16314d2ed834650d0983e5cbe4872"
+    }
+  },
+  {
+    "id": "tari-ootle:starter:wasm-templates-stable-coin",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "tari-ootle:starter:wasm-templates-stable-coin",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589578+00:00",
+      "sceneDescription": "A token balances calmly on a pendulum scale amid exaggerated waves, a metaphor for a stable-unit starter.",
+      "references": [
+        "https://ootle.tari.com/guides/cli/"
+      ],
+      "videoSha256": "b577976a4bee812ede9c31b40c18d04913cadf00bce27e17d826df0f7e77def5"
+    }
+  },
+  {
+    "id": "tari-ootle:starter:wasm-templates-swap",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "tari-ootle:starter:wasm-templates-swap",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589579+00:00",
+      "sceneDescription": "Two unlike geometric assets cross a twisted exchange ribbon in opposite directions.",
+      "references": [
+        "https://ootle.tari.com/guides/cli/"
+      ],
+      "videoSha256": "c32e905cd5eebc99d5761f26b3ae8ad2e762c0fa1e90af447b5101aa6b09899c"
+    }
+  },
+  {
+    "id": "tari-ootle:app:tari-agent-pay",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "tari-ootle:app:tari-agent-pay",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589580+00:00",
+      "sceneDescription": "Autonomous mechanical couriers pass a payment capsule between separate agent stations.",
+      "references": [
+        "https://community.tari.com/t/ootle-testnet-community-apps-directory/281/9"
+      ],
+      "videoSha256": "559a75ea1bf686fa3377fe80539b10c1434cb81b1ff058ad0a73000a3342f151"
+    }
+  },
+  {
+    "id": "tari-ootle:app:tari-market-0-21-a-tari-concept",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "tari-ootle:app:tari-market-0-21-a-tari-concept",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589582+00:00",
+      "sceneDescription": "A night-market stall holds distinct digital goods behind a transparent escrow vault.",
+      "references": [
+        "https://tari-market.johnnytsunami14.chatgpt.site/"
+      ],
+      "videoSha256": "0a07b332a98ac5fc159bcf0f9cdd0b58f6a75d43fcb83e647115fb0b71de5fd0"
+    }
+  },
+  {
+    "id": "tari-ootle:app:tari-ootle-playground",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "tari-ootle:app:tari-ootle-playground",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589583+00:00",
+      "sceneDescription": "A playful laboratory of composable ramps, gears and bridges turns little primitives into a large creation.",
+      "references": [
+        "https://feeltherevolt-xehqj-studio.wp.build/"
+      ],
+      "videoSha256": "5b03fe22aae53fd126c1a42d3d133a6eec304523641f95c0b04160be77446e6a"
+    }
+  },
+  {
+    "id": "tari-ootle:app:tari-universe",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "tari-ootle:app:tari-universe",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589584+00:00",
+      "sceneDescription": "A miniature solar system places a wallet-shaped observatory at the center of an expanding universe.",
+      "references": [
+        "https://universe.tari.mw/"
+      ],
+      "videoSha256": "a04e86d77d0ea4ab955765dc44618a8d073cc1b3630a290da2f07a7047061600"
+    }
+  },
+  {
+    "id": "tari-ootle:app:tariorg",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "tari-ootle:app:tariorg",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589585+00:00",
+      "sceneDescription": "A cooperative round table brings member seats around a shared transparent treasury and proposal scroll.",
+      "references": [
+        "https://tariorg.pages.dev/"
+      ],
+      "videoSha256": "a75f7e8156a8b4bb23374676a24fb5a9273c67dc2d1c4026ac18fa4f0a55000f"
+    }
+  },
+  {
+    "id": "tari-ootle:learn:using-the-tari-ootle-cli",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "tari-ootle:learn:using-the-tari-ootle-cli",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589585+00:00",
+      "sceneDescription": "A command cursor becomes a construction crane lifting a WASM block out of a terminal.",
+      "references": [
+        "https://ootle.tari.com/guides/cli/"
+      ],
+      "videoSha256": "564b27ecda4592017b7416e64f45aceb7f8ddafa168b9b31114c8ff346b244a0"
+    }
+  },
+  {
+    "id": "tari-ootle:learn:what-is-the-tari-ootle-playground",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "tari-ootle:learn:what-is-the-tari-ootle-playground",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589586+00:00",
+      "sceneDescription": "A fold-out illustrated map guides a newcomer through wallet, template and testnet islands.",
+      "references": [
+        "https://ootle.tari.com/"
+      ],
+      "videoSha256": "988ad349e246583da0a22b5e0a4b818bd9eee34c1fffb5bfb2e623336331d0cd"
+    }
+  },
+  {
+    "id": "creative:starter:dark-forest",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "creative:starter:dark-forest",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589587+00:00",
+      "sceneDescription": "One small campfire reveals a path through an otherwise impenetrable ink-black forest.",
+      "references": [
+        "https://tinytakinteller.itch.io/the-best-game-ever"
+      ],
+      "videoSha256": "76f7294a9546c0afcf138d0ce777c3a590ac93892539303e5bcf2164eefc0507"
+    }
+  },
+  {
+    "id": "polyhaven:asset:aarfontein-dawn-2",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "polyhaven:asset:aarfontein-dawn-2",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589588+00:00",
+      "sceneDescription": "Pale dawn washes a wide valley while staggered acacias emerge through thin mist.",
+      "references": [
+        "https://polyhaven.com/a/aarfontein_dawn_2"
+      ],
+      "videoSha256": "ad7a2a225df0025f18942a73649adb7616f8ac7328b7ee41d61a675a37c81f70"
+    }
+  },
+  {
+    "id": "polyhaven:asset:aarfontein-pan",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "polyhaven:asset:aarfontein-pan",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589589+00:00",
+      "sceneDescription": "A still salt pan mirrors a low circular sun beneath a vast open horizon.",
+      "references": [
+        "https://polyhaven.com/a/aarfontein_pan"
+      ],
+      "videoSha256": "5d3bf3eb4bf43d3c6dfb6203e3b3c7e7a0f5102db3c2365eda6ae1f7fab4344c"
+    }
+  },
+  {
+    "id": "polyhaven:asset:aarfontein-sunrise",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "polyhaven:asset:aarfontein-sunrise",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589590+00:00",
+      "sceneDescription": "Sunbeams break over a sharp ridge and illuminate angular scrubland.",
+      "references": [
+        "https://polyhaven.com/a/aarfontein_sunrise"
+      ],
+      "videoSha256": "53744c201870f711c693dca51e2e618684dcd92977192aee7b57011607ee5559"
+    }
+  },
+  {
+    "id": "creative:asset:ambientcg",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "creative:asset:ambientcg",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589590+00:00",
+      "sceneDescription": "A material-study still life contrasts a ribbed cylinder, polished orb and rough-cut stone slab.",
+      "references": [
+        "https://docs.ambientcg.com/api/"
+      ],
+      "videoSha256": "aa444e77a3254831634044f0e184b43a6079ef4c05d53d4cc1a31186b7af7010"
+    }
+  },
+  {
+    "id": "creative:learn:uhub-awesome-css",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "creative:learn:uhub-awesome-css",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589591+00:00",
+      "sceneDescription": "A cascading typographic sculpture turns style rules into a fluid ribbon and responsive shapes.",
+      "references": [
+        "https://github.com/uhub/awesome-css"
+      ],
+      "videoSha256": "6363533c54596cd3f6f39345cee61cf2e6f30969cd2616e43a250b46183e1d6d"
+    }
+  },
+  {
+    "id": "creative:learn:roobyx-awesome-game-design",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "creative:learn:roobyx-awesome-game-design",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589592+00:00",
+      "sceneDescription": "A designers tabletop connects a paper prototype, a branching choice and a hand-drawn win condition.",
+      "references": [
+        "https://github.com/Roobyx/awesome-game-design"
+      ],
+      "videoSha256": "3c63a14c35b7a09ceb3107bedb40e9e06ce81e7ffe32b8a2f82f8d132d02bb29"
+    }
+  },
+  {
+    "id": "creative:learn:stevinz-awesome-game-engine-dev",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "creative:learn:stevinz-awesome-game-engine-dev",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589593+00:00",
+      "sceneDescription": "An exploded engine core separates rendering, physics and logic into exposed mechanical layers.",
+      "references": [
+        "https://github.com/stevinz/awesome-game-engine-dev"
+      ],
+      "videoSha256": "83d18f251e7b6283cd439751974e50bc4863e9a3e2c61cf2d9895edb6929411d"
+    }
+  },
+  {
+    "id": "creative:learn:mongkoneiadon-awesome-game-networking",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "creative:learn:mongkoneiadon-awesome-game-networking",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589594+00:00",
+      "sceneDescription": "Two player arenas exchange synchronized packets across a visible network bridge.",
+      "references": [
+        "https://github.com/MongkonEiadon/Awesome-Game-Networking"
+      ],
+      "videoSha256": "bf015bab3b61c5eb94f70dc6adc075ab33b5a49269293601cdfba4cfa7ad02e5"
+    }
+  },
+  {
+    "id": "creative:learn:vhladiienko-awesome-game-production",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "creative:learn:vhladiienko-awesome-game-production",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589595+00:00",
+      "sceneDescription": "A production runway turns sketches into a shipping crate through editorial milestones.",
+      "references": [
+        "https://github.com/vhladiienko/awesome-game-production"
+      ],
+      "videoSha256": "fb2acf75fb1373fe0a6a1518638545180cff7552dfd5857a95add65b732919ef"
+    }
+  },
+  {
+    "id": "creative:learn:calinou-awesome-gamedev",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "creative:learn:calinou-awesome-gamedev",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589595+00:00",
+      "sceneDescription": "A makers toolbox spills a tiny world, controller, pencil and sound disc into one illustrated workbench.",
+      "references": [
+        "https://github.com/Calinou/awesome-gamedev"
+      ],
+      "videoSha256": "eab3d569daac83f9f18c5dc420ec548dfa4f7e13ff4be8689f79ba84567c5154"
+    }
+  },
+  {
+    "id": "creative:learn:bytecauldron-awesome-gamemaker",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "creative:learn:bytecauldron-awesome-gamemaker",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589596+00:00",
+      "sceneDescription": "A visual event sheet becomes a tiny playable platform scene, a metaphor for GameMaker learning resources.",
+      "references": [
+        "https://github.com/bytecauldron/awesome-gamemaker"
+      ],
+      "videoSha256": "e810ac3766e5c0dbee0fad7d6ede57b754f3a6cdb511136db06cde03bee7b829"
+    }
+  },
+  {
+    "id": "creative:learn:calinou-awesome-godot",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "creative:learn:calinou-awesome-godot",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589597+00:00",
+      "sceneDescription": "An open scene tree grows modular play spaces from a central editor node.",
+      "references": [
+        "https://github.com/Calinou/awesome-godot"
+      ],
+      "videoSha256": "05f4602236bb42e6734e3ef20f6ee1ae11c315a6ee72d34464f632c4e08b1253"
+    }
+  },
+  {
+    "id": "creative:learn:axiomecg-awesome-threejs",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "creative:learn:axiomecg-awesome-threejs",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589598+00:00",
+      "sceneDescription": "A wireframe torus knots through a glass-like sphere above a projected web grid.",
+      "references": [
+        "https://github.com/AxiomeCG/awesome-threejs"
+      ],
+      "videoSha256": "49eafe7c071a46fed739f730d67b9e66b6cfbe822db68fbbfa10f3124d9e6a00"
+    }
+  },
+  {
+    "id": "creative:learn:twofactor-awesome-web-games",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "creative:learn:twofactor-awesome-web-games",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589599+00:00",
+      "sceneDescription": "A browser window is a tiny arcade cabinet with a world escaping its frame.",
+      "references": [
+        "https://github.com/twofactor/awesome-web-games"
+      ],
+      "videoSha256": "dd6427ecef1f8dda5b3afb541c230e75181e9cf110d044a7f16ec7dda96dacba"
+    }
+  },
+  {
+    "id": "creative:learn:balatro-godot-reference",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "creative:learn:balatro-godot-reference",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589600+00:00",
+      "sceneDescription": "A speculative deckbuilder cover combines a joker silhouette, five-card fan and a theatrical score burst.",
+      "references": [
+        "https://github.com/r2d2meuleu/balatro"
+      ],
+      "videoSha256": "e8f206cce23490b0343b46bd3d7c4db1a223803ccc142217c4f42bcdf10c77bb"
+    }
+  },
+  {
+    "id": "creative:learn:bevyengine-bevy-assets",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "creative:learn:bevyengine-bevy-assets",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589600+00:00",
+      "sceneDescription": "A Rust-colored honeycomb workshop holds distinct modular game components with a flying helper bee.",
+      "references": [
+        "https://github.com/bevyengine/bevy-assets"
+      ],
+      "videoSha256": "f8f09b828579c538a55c23f4620a8e586ca773f0a9c3ffa3773df4695f42e26b"
+    }
+  },
+  {
+    "id": "creative:asset:blendkit",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "creative:asset:blendkit",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589601+00:00",
+      "sceneDescription": "A curated 3D shelf displays a sculpted chair, ceramic vessel and lighting rig ready for a scene.",
+      "references": [
+        "https://www.blendkit.com/docs/licenses/"
+      ],
+      "videoSha256": "60e4c9ffcf7bf654a0adb40c85d67475c50dd3505af03b151fc96a8f03062734"
+    }
+  },
+  {
+    "id": "asset-workflow:video",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "asset-workflow:video",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589602+00:00",
+      "sceneDescription": "A film editing ribbon stitches three different content frames into a finished spotlight reel.",
+      "references": [
+        "https://github.com/marguerite347/tari-growth/blob/main/creator-hub/video-templates/README.md"
+      ],
+      "videoSha256": "6569cff0ceeb608abc0028e8a13cd1c6dd72c9e538e5916f5c9b53bb8b29319c"
+    }
+  },
+  {
+    "id": "polyhaven:asset:brick-pavement-04",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "polyhaven:asset:brick-pavement-04",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589603+00:00",
+      "sceneDescription": "An isometric herringbone walkway bends around a single sprout, celebrating the paving material.",
+      "references": [
+        "https://polyhaven.com/a/brick_pavement_04"
+      ],
+      "videoSha256": "a2478719800a3b379b0890e8478435ed8dfaae240f5700982548fabf858be1b5"
+    }
+  },
+  {
+    "id": "asset-workflow:comfyui",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "asset-workflow:comfyui",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589604+00:00",
+      "sceneDescription": "A node graph paints a surreal mountain canvas one luminous connection at a time.",
+      "references": [
+        "https://github.com/marguerite347/tari-growth/blob/main/creator-hub/video-templates/comfyui/README.md"
+      ],
+      "videoSha256": "add13444df025322a8e8b25497d5daa7c8c118a0237cb198f6d109c8f3035322"
+    }
+  },
+  {
+    "id": "polyhaven:asset:damp-beach-sand",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "polyhaven:asset:damp-beach-sand",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589604+00:00",
+      "sceneDescription": "A shallow tidal ribbon washes across rippled sand with a single shell in the foreground.",
+      "references": [
+        "https://polyhaven.com/a/damp_beach_sand"
+      ],
+      "videoSha256": "9bb9ca7484c1a86fbbcc8f79db856e0cd4d1a1001d21d57484b3e595c59b689a"
+    }
+  },
+  {
+    "id": "polyhaven:asset:damp-beach-sand-02",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "polyhaven:asset:damp-beach-sand-02",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589605+00:00",
+      "sceneDescription": "A macro-scale sand dune forms concentric wet ripples around a smooth reflecting pebble.",
+      "references": [
+        "https://polyhaven.com/a/damp_beach_sand_02"
+      ],
+      "videoSha256": "3284d14ec7ed51bcd115cca56087fe1fb4ff6ca61b348ee7dc93708e2da43fa8"
+    }
+  },
+  {
+    "id": "polyhaven:asset:dark-paneled-wood",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "polyhaven:asset:dark-paneled-wood",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589606+00:00",
+      "sceneDescription": "A tall dark timber doorway opens onto a narrow violet light, with visible carved panel grain.",
+      "references": [
+        "https://polyhaven.com/a/dark_paneled_wood"
+      ],
+      "videoSha256": "e409ee955bffa32e21716204fbce12eaf4874396ad154ca32a2a2583aa09c601"
+    }
+  },
+  {
+    "id": "creative:starter:deckbuilder-framework",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "creative:starter:deckbuilder-framework",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589607+00:00",
+      "sceneDescription": "An assembly line separates draw pile, hand fan and discard well with cards in mid-transfer.",
+      "references": [
+        "https://github.com/insideout-andrew/deckbuilder-framework"
+      ],
+      "videoSha256": "ab10e8e493d4afc04ea6e22cfa7e95531ce78690bf85565748e3d549affe3677"
+    }
+  },
+  {
+    "id": "creative:learn:bradtraversy-design-resources-for-developers",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "creative:learn:bradtraversy-design-resources-for-developers",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589608+00:00",
+      "sceneDescription": "A giant typographic ampersand anchors a designers swatch fan and precision layout guides.",
+      "references": [
+        "https://github.com/bradtraversy/design-resources-for-developers"
+      ],
+      "videoSha256": "55ab911e7319d80c4e3db4b603d9af79929e290653cc8960930767c6889b0ed8"
+    }
+  },
+  {
+    "id": "polyhaven:asset:eucalyptus-bark",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "polyhaven:asset:eucalyptus-bark",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589609+00:00",
+      "sceneDescription": "Peeling ribbons of eucalyptus bark curl around a pale trunk with a hanging leaf branch.",
+      "references": [
+        "https://polyhaven.com/a/eucalyptus_bark"
+      ],
+      "videoSha256": "ac4d7869e8a98f1b2bcc949df1170d210e5eac62f8cca32351d02917629e20f4"
+    }
+  },
+  {
+    "id": "polyhaven:asset:farm-soil",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "polyhaven:asset:farm-soil",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589609+00:00",
+      "sceneDescription": "A cutaway soil bed exposes roots beneath a new seedling and distinct furrowed rows.",
+      "references": [
+        "https://polyhaven.com/a/farm_soil"
+      ],
+      "videoSha256": "e2884b9343c5e5cd53f67c2912dc903da65b617441980dc1b7af676ba1e186d8"
+    }
+  },
+  {
+    "id": "creative:starter:godot-demos",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "creative:starter:godot-demos",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589610+00:00",
+      "sceneDescription": "A museum of miniature demos shows a vehicle ramp, bouncing body and UI dial on separate pedestals.",
+      "references": [
+        "https://godotengine.github.io/godot-demo-projects/"
+      ],
+      "videoSha256": "2b59b66138499eb5a9ce6b065cc1eaa4dc07f853501d9e020285b016b145e353"
+    }
+  },
+  {
+    "id": "polyhaven:asset:grass-ground",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "polyhaven:asset:grass-ground",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589611+00:00",
+      "sceneDescription": "A close grass meadow arcs over a cross-section of earth dotted with fine roots.",
+      "references": [
+        "https://polyhaven.com/a/grass_ground"
+      ],
+      "videoSha256": "b32f84c577426b90f15fe01aaf8e9a20f4239af069896d02ad0fc79575a4044a"
+    }
+  },
+  {
+    "id": "polyhaven:asset:highway-bridge-sunset",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "polyhaven:asset:highway-bridge-sunset",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589612+00:00",
+      "sceneDescription": "A silhouetted suspension bridge cuts through a massive setting sun above moving river glints.",
+      "references": [
+        "https://polyhaven.com/a/highway_bridge_sunset"
+      ],
+      "videoSha256": "704f375e9ab3c2a9777b70ecd0e2cbeb7d99576aa8cc6b2e23ff38aca9147a21"
+    }
+  },
+  {
+    "id": "polyhaven:asset:hinoki-planks",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "polyhaven:asset:hinoki-planks",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589613+00:00",
+      "sceneDescription": "A Japanese timber study layers pale aromatic planks beside a curled shaving and woodworking chisel.",
+      "references": [
+        "https://polyhaven.com/a/hinoki_planks"
+      ],
+      "videoSha256": "a3f8209fbb054ddcd3ae9ad1bd3e8075d70f4faf4893d591ee9b0bdeee20e0b7"
+    }
+  },
+  {
+    "id": "creative:asset:kenney",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "creative:asset:kenney",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589614+00:00",
+      "sceneDescription": "A cheerful collection of reusable game pieces tumbles from a toy-box crate, each with a different silhouette.",
+      "references": [
+        "https://kenney.nl/support"
+      ],
+      "videoSha256": "2e9a725f95c7061ff8d070cfd6121cf18bd8ee39f86da047be6383d56e73573a"
+    }
+  },
+  {
+    "id": "polyhaven:asset:nowhere-road",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "polyhaven:asset:nowhere-road",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589614+00:00",
+      "sceneDescription": "A lonely road converges on a distant horizon under an oversized sky with no destination in sight.",
+      "references": [
+        "https://polyhaven.com/a/nowhere_road"
+      ],
+      "videoSha256": "c41bf937e215b8d98bb3b95b8b9c25c590cb0d4a099e336072b2e1b906c2ec07"
+    }
+  },
+  {
+    "id": "polyhaven:asset:nqweba-dawn",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "polyhaven:asset:nqweba-dawn",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589615+00:00",
+      "sceneDescription": "A dawn reservoir with reed silhouettes and a low island reflects bands of lavender sky.",
+      "references": [
+        "https://polyhaven.com/a/nqweba_dawn"
+      ],
+      "videoSha256": "4f8d22518644e304c196e3ffcb8d9476fab4be6bf7a5192a5ccfe5e404f1436b"
+    }
+  },
+  {
+    "id": "creative:learn:bobeff-open-source-games",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "creative:learn:bobeff-open-source-games",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589616+00:00",
+      "sceneDescription": "An open treasure chest releases playable worlds as source pages and little game pieces.",
+      "references": [
+        "https://github.com/bobeff/open-source-games"
+      ],
+      "videoSha256": "cbf98bd15b07facb13cf4013e39cbd9161d3cb138e3bac65a8d452f428ee65b5"
+    }
+  },
+  {
+    "id": "creative:asset:poly-haven",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "creative:asset:poly-haven",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589618+00:00",
+      "sceneDescription": "A miniature studio world combines a terrain island, a material sphere and a panoramic lighting arch.",
+      "references": [
+        "https://polyhaven.com/our-api"
+      ],
+      "videoSha256": "68bcd674fb29cca3ec97665c41755ac7c6eeeb5227cfd980799464259fb58f2d"
+    }
+  },
+  {
+    "id": "creative:learn:kchapelier-procedural-generation",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "creative:learn:kchapelier-procedural-generation",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589619+00:00",
+      "sceneDescription": "A landscape emerges along a contour-map spiral, with successive terrain tiles becoming mountains.",
+      "references": [
+        "https://github.com/kchapelier/procedural-generation"
+      ],
+      "videoSha256": "5eea84790e9f7c51d5f371e6bd6ca245cf02d0dc2c4e279c9eea349e9afc87f1"
+    }
+  },
+  {
+    "id": "polyhaven:asset:rock-wall-17",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "polyhaven:asset:rock-wall-17",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589620+00:00",
+      "sceneDescription": "An architectural cutaway reveals irregular fitted stones and a glowing seam between them.",
+      "references": [
+        "https://polyhaven.com/a/rock_wall_17"
+      ],
+      "videoSha256": "2284e490c7642d90603b91bafd80dedf81a89f5e8012f62eae1520748b9c9831"
+    }
+  },
+  {
+    "id": "polyhaven:asset:stacked-brick-wall",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "polyhaven:asset:stacked-brick-wall",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589621+00:00",
+      "sceneDescription": "An offset masonry wall rises from a single suspended final brick and a sculptural corner.",
+      "references": [
+        "https://polyhaven.com/a/stacked_brick_wall"
+      ],
+      "videoSha256": "2e55a09fb79e5a6c92ac2820384017cda8bbc3aaf20fe5e00cad0238c25ed947"
+    }
+  },
+  {
+    "id": "creative:component:steamodded",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "creative:component:steamodded",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589622+00:00",
+      "sceneDescription": "A card is being remixed on a modders workbench, with plug-in sockets and an original crowned wildcard.",
+      "references": [
+        "https://docs.smods.dev/"
+      ],
+      "videoSha256": "a97304f1ea3cc455d945be75f718c3fd9e04f0b103a61af29184b4e5484a548a"
+    }
+  },
+  {
+    "id": "creative:starter:modding-tree",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "creative:starter:modding-tree",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589623+00:00",
+      "sceneDescription": "A prestige tree grows from one seed into increasingly elaborate branching upgrade constellations.",
+      "references": [
+        "https://github.com/Acamaeda/The-Modding-Tree/blob/master/docs/tutorials/getting-started.md"
+      ],
+      "videoSha256": "dfb7c1c7de6814c1a381a78a92b0c49bca32d0bec6857a20d3338694fe80d8ab"
+    }
+  },
+  {
+    "id": "polyhaven:asset:toposcope-sunset",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "polyhaven:asset:toposcope-sunset",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589624+00:00",
+      "sceneDescription": "A circular summit orientation dial frames distant mountain ranges at sunset.",
+      "references": [
+        "https://polyhaven.com/a/toposcope_sunset"
+      ],
+      "videoSha256": "1d1676913a1e8a353d3b60d7160ca558c44d95fadda4d68d89a561ac2b5684c4"
+    }
+  },
+  {
+    "id": "polyhaven:asset:waterkloof-farm",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "polyhaven:asset:waterkloof-farm",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589625+00:00",
+      "sceneDescription": "A farmstead sits among alternating planted fields, with a windmill moving beneath large morning clouds.",
+      "references": [
+        "https://polyhaven.com/a/waterkloof_farm"
+      ],
+      "videoSha256": "657bdea7caeacf7c0b78019db891a7a7b4bdb9cb39a521b568fd90086ff7cdc8"
+    }
+  },
+  {
+    "id": "gdevelop:starter:360-platformer",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "gdevelop:starter:360-platformer",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589626+00:00",
+      "sceneDescription": "A tiny runner leaps around a complete circular planet, turning the usual platform horizon on its head.",
+      "references": [
+        "https://editor.gdevelop.io/?project=example://360\u00b0-platformer"
+      ],
+      "videoSha256": "4e28f3684c6d54c1524826f0f2024356dd6a38bdaafe100b990c127c2d0e38d1"
+    }
+  },
+  {
+    "id": "gdevelop:starter:3d-bomber-bunny",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "gdevelop:starter:3d-bomber-bunny",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589627+00:00",
+      "sceneDescription": "A long-eared bomber character hops beside a comic fuse in a destructible block maze.",
+      "references": [
+        "https://editor.gdevelop.io/?project=example://3d-bomber-bunny"
+      ],
+      "videoSha256": "29e08ec4ca183aaa35cbcd8fc66a62f9b7286daaab56f78725f7cfdd9c8f2dbe"
+    }
+  },
+  {
+    "id": "gdevelop:starter:3d-car-coin-hunt",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "gdevelop:starter:3d-car-coin-hunt",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589628+00:00",
+      "sceneDescription": "A little car banks around a coin trail on an isometric treasure circuit.",
+      "references": [
+        "https://editor.gdevelop.io/?project=example://3d-car-coin-hunt"
+      ],
+      "videoSha256": "c1155e04ccf555feb9cb83a1e8b337e8ae4a396382f8d09dc8274e60ee039dae"
+    }
+  },
+  {
+    "id": "gdevelop:starter:3d-endless-terrain",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "gdevelop:starter:3d-endless-terrain",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589629+00:00",
+      "sceneDescription": "A river cuts through successive terrain layers that continue beyond the frame.",
+      "references": [
+        "https://editor.gdevelop.io/?project=example://3d-endless-terrain"
+      ],
+      "videoSha256": "ca74c059cc439fa50d107c568b8fc931669f646e90740c7125dbef6ab4dd1894"
+    }
+  },
+  {
+    "id": "gdevelop:starter:3d-first-person",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "gdevelop:starter:3d-first-person",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589630+00:00",
+      "sceneDescription": "A first-person view looks down an angular corridor toward a bright open threshold.",
+      "references": [
+        "https://editor.gdevelop.io/?project=example://3d-first-person"
+      ],
+      "videoSha256": "af7f99a0f9124a790dd4910869f1c2f22decf9e9fb4c90ee059c7886639c0ea8"
+    }
+  },
+  {
+    "id": "gdevelop:starter:3d-lane-runner",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "gdevelop:starter:3d-lane-runner",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589631+00:00",
+      "sceneDescription": "A runner threads between offset lane barriers on a vanishing-point track.",
+      "references": [
+        "https://editor.gdevelop.io/?project=example://3d-lane-runner"
+      ],
+      "videoSha256": "f480741ddbef1f94b81b7fec698ebd943a13eeabb9df9d2c1c0b7a8bf07d73ab"
+    }
+  },
+  {
+    "id": "gdevelop:starter:3d-light-playground",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "gdevelop:starter:3d-light-playground",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589632+00:00",
+      "sceneDescription": "Three theatrical spotlights mix colored beams onto a sculptural plinth.",
+      "references": [
+        "https://editor.gdevelop.io/?project=example://3d-light-playground"
+      ],
+      "videoSha256": "6cb68bfe8d6fc3ba40d6eeda1c1ec9824d7b114dca9e4cf4ae353b8721a713e5"
+    }
+  },
+  {
+    "id": "gdevelop:starter:3d-platformer",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "gdevelop:starter:3d-platformer",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589633+00:00",
+      "sceneDescription": "Floating ledges form a climbing route across a deep violet sky, with a jumping explorer.",
+      "references": [
+        "https://editor.gdevelop.io/?project=example://3d-platformer"
+      ],
+      "videoSha256": "4686b771ec1361eb45c8b686f0688dfe59781d11f3a87423c0def2fbabb0cf5d"
+    }
+  },
+  {
+    "id": "gdevelop:starter:3d-racing-game",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "gdevelop:starter:3d-racing-game",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589634+00:00",
+      "sceneDescription": "An apex-striped racetrack curves behind a low racing silhouette and checkered finish marker.",
+      "references": [
+        "https://editor.gdevelop.io/?project=example://3d-racing-game"
+      ],
+      "videoSha256": "332f9695653ab5015ac3b42d1c13ed68705117d1736729c91d816c99db42aefc"
+    }
+  },
+  {
+    "id": "gdevelop:starter:3d-road-crosser",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "gdevelop:starter:3d-road-crosser",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589635+00:00",
+      "sceneDescription": "A pedestrian waits between perpendicular traffic lanes as vehicles pass in alternating directions.",
+      "references": [
+        "https://editor.gdevelop.io/?project=example://3d-road-crosser"
+      ],
+      "videoSha256": "4a325ebab1d969624c1df980e5291221a19897857ed8eb8211bb0032bd9c1e1e"
+    }
+  },
+  {
+    "id": "gdevelop:starter:3d-shark-frenzy",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "gdevelop:starter:3d-shark-frenzy",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589636+00:00",
+      "sceneDescription": "An angular shark arcs through a swarm of tiny fish beneath a rippling ocean surface.",
+      "references": [
+        "https://editor.gdevelop.io/?project=example://3d-shark-frenzy"
+      ],
+      "videoSha256": "c48b1edbe514968127659abd500e13deb065d0bf42ad03f12728300d65ee7ca1"
+    }
+  },
+  {
+    "id": "gdevelop:starter:3d-shooting-gallery",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "gdevelop:starter:3d-shooting-gallery",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589636+00:00",
+      "sceneDescription": "A carnival gallery sets up staggered bullseyes and a moving aim reticle.",
+      "references": [
+        "https://editor.gdevelop.io/?project=example://3d-shooting-gallery"
+      ],
+      "videoSha256": "450085bab4b5979d5a2be8631c6029576b3b2aa892d01e2bfa3022797a50319c"
+    }
+  },
+  {
+    "id": "gdevelop:starter:3d-sokoban",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "gdevelop:starter:3d-sokoban",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589637+00:00",
+      "sceneDescription": "One crate slides toward a marked goal through a compact illustrated warehouse puzzle.",
+      "references": [
+        "https://editor.gdevelop.io/?project=example://3d-sokoban"
+      ],
+      "videoSha256": "8fef100e4ff4a3f84d066a48cee5fe35c0575815bf30bfd535317b7fe995ecd5"
+    }
+  },
+  {
+    "id": "gdevelop:starter:3d-tile-based-city-builder",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "gdevelop:starter:3d-tile-based-city-builder",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589638+00:00",
+      "sceneDescription": "A city grows from planning tiles into distinctive towers around a central civic square.",
+      "references": [
+        "https://editor.gdevelop.io/?project=example://3d-tile-based-city-builder"
+      ],
+      "videoSha256": "e0cd34a7c480cc3e91e30ad04a036ef8da627266a2426ec5b60ff89d4b0896f9"
+    }
+  },
+  {
+    "id": "gdevelop:starter:3d-wall-sliding",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "gdevelop:starter:3d-wall-sliding",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589639+00:00",
+      "sceneDescription": "A climber descends a vertical wall leaving a streak of friction sparks between two towers.",
+      "references": [
+        "https://editor.gdevelop.io/?project=example://3d-wall-sliding"
+      ],
+      "videoSha256": "6ce616ab6d90eb574bb9cb4f135a9fbfa09f752068cfc66aaf67f1a51aab9ccc"
+    }
+  },
+  {
+    "id": "gdevelop:starter:absorbus",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "gdevelop:starter:absorbus",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589778+00:00",
+      "sceneDescription": "A soft cellular giant absorbs smaller bright bodies through a visibly rippling membrane.",
+      "references": [
+        "https://editor.gdevelop.io/?project=example://absorbus"
+      ],
+      "videoSha256": "af8856e711b3e3a77f2a3b8792b7572ec523762f0676d37952bb295090c48969"
+    }
+  },
+  {
+    "id": "gdevelop:starter:achievement-system",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "gdevelop:starter:achievement-system",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589779+00:00",
+      "sceneDescription": "An elaborate medal opens like a flower above a staircase of earned milestones.",
+      "references": [
+        "https://editor.gdevelop.io/?project=example://achievement-system"
+      ],
+      "videoSha256": "04eb8dcb33f5bfde62365b8976eb5a17a981fc3b9232f60cb8c575e955296091"
+    }
+  },
+  {
+    "id": "gdevelop:starter:admob",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "gdevelop:starter:admob",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589780+00:00",
+      "sceneDescription": "A mobile screen pairs a small promotional placard with a reward token, illustrating optional ad integration.",
+      "references": [
+        "https://editor.gdevelop.io/?project=example://admob"
+      ],
+      "videoSha256": "ce47b4fddd2cbf58a5259276a9bebd61116514d9173e591975d81adfb1b77bf7"
+    }
+  },
+  {
+    "id": "gdevelop:starter:advanced-projectile",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "gdevelop:starter:advanced-projectile",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589781+00:00",
+      "sceneDescription": "A projectile follows a plotted ballistic arc while ghost positions expose velocity and trajectory.",
+      "references": [
+        "https://editor.gdevelop.io/?project=example://advanced-projectile"
+      ],
+      "videoSha256": "a22a6502a3efcc2be23f8efab4df8de349ce689d32fb622bbeac2d721ecff5c9"
+    }
+  },
+  {
+    "id": "gdevelop:starter:advanced-shape-based-painter",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "gdevelop:starter:advanced-shape-based-painter",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589782+00:00",
+      "sceneDescription": "A sweeping brush builds a composition of overlapping polygons, contour lines and opaque paint.",
+      "references": [
+        "https://editor.gdevelop.io/?project=example://advanced-shape-based-painter"
+      ],
+      "videoSha256": "0f80c43302dca06f44045b034de243790326bffde37569d857715ac60f9b84c7"
+    }
+  },
+  {
+    "id": "gdevelop:starter:animation-speed-scale",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "gdevelop:starter:animation-speed-scale",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589783+00:00",
+      "sceneDescription": "Three successive poses cross a timing ruler while a large speed dial adjusts the spacing.",
+      "references": [
+        "https://editor.gdevelop.io/?project=example://animation-speed-scale"
+      ],
+      "videoSha256": "205b2d69f132fdee4c39db11d01373ee1e1955a397efadc4f58775ae010bc22a"
+    }
+  },
+  {
+    "id": "gdevelop:starter:asteroids",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "gdevelop:starter:asteroids",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589784+00:00",
+      "sceneDescription": "A triangular spacecraft threads between irregular shattered rocks in a sparse star field.",
+      "references": [
+        "https://editor.gdevelop.io/?project=example://asteroids"
+      ],
+      "videoSha256": "7405a7326d0f8df1c752e89c62404d601055b6b4aa2c102ffa8d4a646a63289f"
+    }
+  },
+  {
+    "id": "gdevelop:starter:babyfoot-3d",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "gdevelop:starter:babyfoot-3d",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589785+00:00",
+      "sceneDescription": "A tilted tabletop football pitch shows spinning player bars and a rolling ball.",
+      "references": [
+        "https://editor.gdevelop.io/?project=example://babyfoot-3d"
+      ],
+      "videoSha256": "d0003efc5996a901848421e3afbfa410f83fa24876a3c9f8600004933aa229b7"
+    }
+  },
+  {
+    "id": "gdevelop:starter:backpack-inventory",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "gdevelop:starter:backpack-inventory",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589786+00:00",
+      "sceneDescription": "An open expedition backpack reveals organized item pockets and a floating compass.",
+      "references": [
+        "https://editor.gdevelop.io/?project=example://backpack-inventory"
+      ],
+      "videoSha256": "fec35b793c167889fcd44ad8bb79e6849ad5a2dd99732eb825cd5a4c2f1c7dba"
+    }
+  },
+  {
+    "id": "luanti:mod:stu-3d-armor",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:mod:stu-3d-armor",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589787+00:00",
+      "sceneDescription": "A suspended suit of angular armor is assembled around an empty silhouette, showing wearable equipment.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "5e7368c7fae65502247116ce7fc936db1113eba5d1feb91caa3303504c899616"
+    }
+  },
+  {
+    "id": "luanti:game:sumianvoice-pmb-core",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:game:sumianvoice-pmb-core",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589788+00:00",
+      "sceneDescription": "A broken landscape is stitched back together by a builders glowing thread and a rising new home.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "fb266fd1575d6315cdea9332f8173238ffe4707048f6eb96e1c89a2cad1ef2d2"
+    }
+  },
+  {
+    "id": "luanti:game:yaman-alter",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:game:yaman-alter",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589789+00:00",
+      "sceneDescription": "A dystopian puzzle monolith splits a stark city into incompatible geometric routes.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "08533437377a0072d4db1a879ca962eec40c90f7c9c4bbdcd8b3da4585ff3165"
+    }
+  },
+  {
+    "id": "luanti:mod:elceejo-animalia",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:mod:elceejo-animalia",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589790+00:00",
+      "sceneDescription": "A fox-like woodland animal meets a hovering bird beneath a canopy of giant leaves.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "ef679be90a669c1d62711a930393e8f3cd96286c1ec7ec32aaa999d38ed43af1"
+    }
+  },
+  {
+    "id": "luanti:game:emptystar-asuna",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:game:emptystar-asuna",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589790+00:00",
+      "sceneDescription": "A dreamlike biome panorama layers a waterfall, lavender mountain and luminous flowering valley.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "ca09f022f7ae46ee8f708cf92f04e613c4016762f3c8fda6577276ece01c7d04"
+    }
+  },
+  {
+    "id": "luanti:mod:apercy-automobiles-pck",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:mod:apercy-automobiles-pck",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589791+00:00",
+      "sceneDescription": "A showroom lineup contrasts a boxy utility vehicle, a compact coupe and a motorcycle silhouette.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "be87cdf25f459498829a49d34b9e73e77978032eecf6f9905d5246c795fe742d"
+    }
+  },
+  {
+    "id": "luanti:game:sumianvoice-backroomtest",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:game:sumianvoice-backroomtest",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589792+00:00",
+      "sceneDescription": "An uncanny fluorescent corridor repeats into a dead-end doorway with one subtly unstable light.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "79e9b46ac6da8b76d66318bcc1ede2c44ba539841e35db47c171ddb2070792ac"
+    }
+  },
+  {
+    "id": "luanti:game:splizard-buildacity",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:game:splizard-buildacity",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589793+00:00",
+      "sceneDescription": "Two community cranes raise a new shared neighborhood from a labeled planning grid.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "337d228c5acc3a958f0f355d813e6461195cd78a9dbd9429cf9a05660d82f023"
+    }
+  },
+  {
+    "id": "luanti:game:wuzzy-cow",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:game:wuzzy-cow",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589795+00:00",
+      "sceneDescription": "A cybernetic cow stares out of a neon revenge poster with a mechanical eye and reinforced horn.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "e5767efa024f87419c3ae3bb60de9cef7970f0e5513dc894a6319c17887839e0"
+    }
+  },
+  {
+    "id": "luanti:game:irevol-citadel",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:game:irevol-citadel",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589796+00:00",
+      "sceneDescription": "A time-traveling citadel is divided by a clock portal, with ancient steps meeting future towers.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "9ad334ad2363f4d5417dadbd2f70bacb52863737ee20ab65cf3144ca47888763"
+    }
+  },
+  {
+    "id": "luanti:mod:elceejo-draconis",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:mod:elceejo-draconis",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589797+00:00",
+      "sceneDescription": "A dragon unfurls jagged wings around a glowing egg above a volcanic perch.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "83d5d463e2d231ebc07bc7776e1e0b8f9cf0ccc21e03a7e831ef25185792ab1e"
+    }
+  },
+  {
+    "id": "luanti:mod:mr-rar-edit-skin",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:mod:mr-rar-edit-skin",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589798+00:00",
+      "sceneDescription": "A character silhouette is painted by a floating palette and brush, emphasizing custom identity.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "d470cfaae85ba85225d369a5595cacc9ac691b5bccbbd352e81566dfee87558d"
+    }
+  },
+  {
+    "id": "luanti:mod:tenplus1-ethereal",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:mod:tenplus1-ethereal",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589799+00:00",
+      "sceneDescription": "A floating mushroom biome crosses impossible vertical strata and hanging roots.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "0849d3e2df7c71f4b477af5e2fc008ee2194fc302cb076e8580b7ccd5fc40b09"
+    }
+  },
+  {
+    "id": "luanti:mod:sakel-everness",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:mod:sakel-everness",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589800+00:00",
+      "sceneDescription": "An otherworldly crystal grove rises from layered soil, each mineral reflecting a different biome color.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "e9aa7b2f9c213dc2388003307e096e767e614c345249e72bac1bef87b4b7fd94"
+    }
+  },
+  {
+    "id": "luanti:game:mantar-exile",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:game:mantar-exile",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589800+00:00",
+      "sceneDescription": "A solitary survivor shelters beneath a rough lean-to beside a hand-built fire in an austere wilderness.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "26d60de8ac17d380991ce9afb10859795b15a2551adcf80f748ae799ed0215bd"
+    }
+  },
+  {
+    "id": "luanti:game:sumianvoice-extra-ordinance",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:game:sumianvoice-extra-ordinance",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589801+00:00",
+      "sceneDescription": "An underground artillery duel cuts jagged tunnels through a destructible cross-section.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "a9c11c2f64412a873b57d3eec9bcb6190ce0836ad83e8447d8276c4351883f3d"
+    }
+  },
+  {
+    "id": "luanti:mod:tenplus1-farming",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:mod:tenplus1-farming",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589802+00:00",
+      "sceneDescription": "A harvest still life combines ripe produce, a watering can and tidy planted rows.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "d68900c8c98e9c39f57c8fb1e229f83f5ac038bf4395c7efb62f9a0894d35a28"
+    }
+  },
+  {
+    "id": "luanti:game:wuzzy-glitch",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:game:wuzzy-glitch",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589803+00:00",
+      "sceneDescription": "An electron runner escapes broken grids through a fractured cyberspace portal.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "922bdeead5ef09115843bfb13d714087ed02c33b0e175d87eb713a14f31bf0a2"
+    }
+  },
+  {
+    "id": "luanti:game:wuzzy-hades-revisited",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:game:wuzzy-hades-revisited",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589804+00:00",
+      "sceneDescription": "A terraforming dome turns a volcanic planet from ash into a small green oasis.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "004c07f3fb63a9f4e3006f8b0d5dcd66b9732e1c10ac2a297cf704dbf9448bcf"
+    }
+  },
+  {
+    "id": "luanti:mod:mt-mods-hangglider",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:mod:mt-mods-hangglider",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589805+00:00",
+      "sceneDescription": "A triangular glider sails above a sprawling valley seen from a dramatic overhead angle.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "324ad5504b43348cb7fa113a7604bb0abf06ca884b118342fa07f23194b4c98e"
+    }
+  },
+  {
+    "id": "luanti:mod:surv-i-have-hands",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:mod:surv-i-have-hands",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589806+00:00",
+      "sceneDescription": "Two oversized hands lift an intact inventory cube without breaking its contents.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "16aef2b686a6153556054f73066e687ffebd935b75896c04efb985096f97bdb2"
+    }
+  },
+  {
+    "id": "luanti:mod:mt-mods-i3",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:mod:mt-mods-i3",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589806+00:00",
+      "sceneDescription": "A next-generation inventory becomes a circular constellation of searchable item drawers.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "8097a5619a0f3cafd8365ecf31a74dd0676eda7060e999fdfc4469ba39fffebc"
+    }
+  },
+  {
+    "id": "luanti:game:warr1024-klots",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:game:warr1024-klots",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589807+00:00",
+      "sceneDescription": "An alien sliding-block puzzle leaves one deliberate gap between sculptural interlocking forms.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "f62a85ce07d9e98a1260e268acb229052023962776b2a6b42c5cdd6ccd240658"
+    }
+  },
+  {
+    "id": "luanti:game:just-visiting-littlelady",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:game:just-visiting-littlelady",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589808+00:00",
+      "sceneDescription": "A tiny ladybug explores a gigantic leaf bridge among dew drops, shifting the sense of scale.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "1986a589dcbb0683e2ccf7188225e37b84dd31d97f6722dda1623abcfb64153e"
+    }
+  },
+  {
+    "id": "luanti:mod:jeija-mesecons",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:mod:jeija-mesecons",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589809+00:00",
+      "sceneDescription": "A logic circuit connects a physical switch to lamps and a programmable block with visible signal pulses.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "2b177595e76271a4a4bfa8ebdeb96ff8ce517b3799108b53a3791360d92d9bbd"
+    }
+  },
+  {
+    "id": "luanti:game:ryvnf-mineclonia",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:game:ryvnf-mineclonia",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589809+00:00",
+      "sceneDescription": "A survival diorama layers a blocky hillside, wooden shelter and underground ore vein.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "3ac8fa54a1ccbb216b173dcb8340c3831db3136b2e795f09b78915f888c5a880"
+    }
+  },
+  {
+    "id": "luanti:game:jordan4ibanez-mineos",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:game:jordan4ibanez-mineos",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589810+00:00",
+      "sceneDescription": "A voxel computer runs a tiny desktop in a world of block-based hardware.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "03c80caf29f6a966a32c06f1bf725c2922fe39b1c7752ccf94095327f8d9b71b"
+    }
+  },
+  {
+    "id": "luanti:game:luanti-minetest-game",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:game:luanti-minetest-game",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589811+00:00",
+      "sceneDescription": "A basic mining and building toolkit rests above an open voxel excavation.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "70c9b8a5d7f22a83c081e36e420b2de5d90682c9c66eafbcb604e2f28ec42f6c"
+    }
+  },
+  {
+    "id": "luanti:mod:tenplus1-mobs-animal",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:mod:tenplus1-mobs-animal",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589812+00:00",
+      "sceneDescription": "A farmyard portrait pairs a woolly sheep and a small hen beside a simple fence.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "aef00fceb49d2599f930c7f1e67a6442b54a47cfa596dc6dcfb05fecb9f18a12"
+    }
+  },
+  {
+    "id": "luanti:mod:tenplus1-mobs-monster",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:mod:tenplus1-mobs-monster",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589813+00:00",
+      "sceneDescription": "Three different monster silhouettes emerge from an ominous cave mouth, each with distinct eyes.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "096ce7d77b7189f0b94043a8e847c9c494fadbfb92afc6851864138da82bbf6b"
+    }
+  },
+  {
+    "id": "luanti:mod:tenplus1-mobs",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:mod:tenplus1-mobs",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589813+00:00",
+      "sceneDescription": "A creature blueprint is connected to configurable behavior blocks, illustrating a mob-building API.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "000a99ec8321768de227ff3c0303503385e7b97330877539476feebb709d735b"
+    }
+  },
+  {
+    "id": "luanti:game:warr1024-nodecore",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:game:warr1024-nodecore",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589814+00:00",
+      "sceneDescription": "Surreal cubes align into an impossible balancing structure above a field of abstract patterns.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "72e07e6a17317028d79bc363026ddab64c196758be986e2d1b5298b08be87c16"
+    }
+  },
+  {
+    "id": "luanti:mod:wuzzy-pride-flags",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:mod:wuzzy-pride-flags",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589815+00:00",
+      "sceneDescription": "A sweeping multi-color flag billows across the frame on a sculptural tall mast.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "77364acb6c9cb6eeb7a855c9963c300441ad48bd55357103cfcfe8a3e05de75b"
+    }
+  },
+  {
+    "id": "luanti:mod:lars-rangedweapons",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:mod:lars-rangedweapons",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589816+00:00",
+      "sceneDescription": "A precision crossbow and a thrown projectile demonstrate distinct ranged trajectories on a diagrammatic field.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "69b425dca48546ee66b2775b77b748ee3cf287e9e5973f6b3a2b3fe3fc7e4e22"
+    }
+  },
+  {
+    "id": "luanti:game:wuzzy-repixture",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:game:wuzzy-repixture",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589816+00:00",
+      "sceneDescription": "A peaceful settlement with simple hand tools sits beside a lush winding river.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "602e999502f22c7c3983eb242a5f4b2752360785cde94f0ec10de45b071dac85"
+    }
+  },
+  {
+    "id": "luanti:game:zanderdev-skyblock-zero",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:game:zanderdev-skyblock-zero",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589817+00:00",
+      "sceneDescription": "A nearly empty floating island carries a single sapling and an hourglass, making time the visible resource.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "f86b003bcfb94673c949868b205b7353b12a509d7de37bd5921b4ff51b00e448"
+    }
+  },
+  {
+    "id": "luanti:mod:apercy-steampunk-blimp",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:mod:apercy-steampunk-blimp",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589818+00:00",
+      "sceneDescription": "An ornate airship with stitched balloon panels and hanging propeller cabin drifts through high clouds.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "e2d13831bb2eb86187eb8e039b7880df972c394ed9407c92ee9433879c57a4b2"
+    }
+  },
+  {
+    "id": "luanti:mod:lnj-drawers",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:mod:lnj-drawers",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589819+00:00",
+      "sceneDescription": "A cabinet of illustrated item drawers opens one compartment to reveal its stored contents.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "a877dc330a1850bbc9761e28a14bc6d24a5735c7771f8563fc93d04a3d4ae32c"
+    }
+  },
+  {
+    "id": "luanti:game:afcm-subway-miner",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:game:afcm-subway-miner",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589820+00:00",
+      "sceneDescription": "A runner races down mine rails toward a tunnel with a cart and warning stripes.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "971172a10921232839181cf3025a04e6fd88bcbfae18ac8151935792e077281d"
+    }
+  },
+  {
+    "id": "luanti:game:buckaroobanzay-super-sam",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:game:buckaroobanzay-super-sam",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589821+00:00",
+      "sceneDescription": "A cheerful adventurer vaults a stair-step landscape toward a shining goal flag.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "027c0b4ffa96b03cdf20dc2890366ec65c5a205e94f1f9ef136e7f7bb675c877"
+    }
+  },
+  {
+    "id": "luanti:mod:joe7575-techage-modpack",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:mod:joe7575-techage-modpack",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589822+00:00",
+      "sceneDescription": "A timeline of invention moves from a hand wheel through a furnace to a modern transmission tower.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "6bd6bdabd8fda856806180e24c90fe6ead482072a8e678d5d2897b55a3c5f612"
+    }
+  },
+  {
+    "id": "luanti:game:regulus-regulus-mtgj2024",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:game:regulus-regulus-mtgj2024",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589822+00:00",
+      "sceneDescription": "A glowing open spellbook lights a dark wall of shelves, offering a way to banish the surrounding shadow.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "fa9d6837fce1365c4fb9c0a37ece8776d55b188f8356d92730a5efae0b32897d"
+    }
+  },
+  {
+    "id": "luanti:game:wuzzy-tutorial",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:game:wuzzy-tutorial",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589823+00:00",
+      "sceneDescription": "A friendly onboarding path marks three progressively larger stepping stones with an encouraging guide.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "1369edcec5208063104876b5a55a0757d19fd5e0e9105567545459d5a692f0f4"
+    }
+  },
+  {
+    "id": "luanti:mod:realbadangel-unified-inventory",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:mod:realbadangel-unified-inventory",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589824+00:00",
+      "sceneDescription": "A crafting guide links a recipe grid to the assembled item and its organized storage.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "625ff61cc47e1c466297a1b860d2e7cadfaf392c34221357a2f713bd94e31629"
+    }
+  },
+  {
+    "id": "luanti:game:linuxdirk-void",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:game:linuxdirk-void",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589825+00:00",
+      "sceneDescription": "A solitary empty frame floats in immense negative space, a deliberately clean testing environment.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "49ad357fbb024dd67e5dbc3db295ee92286fce31279d01f0087c1dd4d3761c71"
+    }
+  },
+  {
+    "id": "luanti:game:wuzzy-mineclone2",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:game:wuzzy-mineclone2",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589827+00:00",
+      "sceneDescription": "A cooperative block world shows a farm, tower and two explorers connected by a bridge.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "abe1337b69afc67144536644d35e86737f424c021f559167137d2c226d92cd28"
+    }
+  },
+  {
+    "id": "luanti:mod:bell07-wielded-light",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:mod:bell07-wielded-light",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589828+00:00",
+      "sceneDescription": "A held lantern casts a wide cone of warm light through a dark underground passage.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "0f5c43db933e757b149eae928ace0f3403c919d392ef626ecda213300e576b47"
+    }
+  },
+  {
+    "id": "luanti:mod:sfan5-worldedit",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:mod:sfan5-worldedit",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589829+00:00",
+      "sceneDescription": "A wireframe selection box lifts a slice of landscape into the air for precise editing.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "9c0d33d46ad1a596f701be4b81522b75404177d1db5dac2d3ed1fe4fafcec2de"
+    }
+  },
+  {
+    "id": "luanti:mod:wuzzy-xdecor",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "luanti:mod:wuzzy-xdecor",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589829+00:00",
+      "sceneDescription": "A cozy room vignette pairs an angular sofa, floor lamp and hanging art, celebrating decoration.",
+      "references": [
+        "https://docs.luanti.org/"
+      ],
+      "videoSha256": "746641a4ada15da2d4292b9a630b7433e61bbe0cc6e699d7e95eacf8ba7c7714"
+    }
+  },
+  {
+    "id": "playcanvas:learn:animation",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "playcanvas:learn:animation",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589830+00:00",
+      "sceneDescription": "An articulated figure moves between keyframe diamonds on a visible animation timeline.",
+      "references": [
+        "https://developer.playcanvas.com/user-manual/animation/"
+      ],
+      "videoSha256": "e58da8abc7ec77a5770672858a860030939d967afd6f3d98ea049ca16a17bec1"
+    }
+  },
+  {
+    "id": "playcanvas:learn:cameras",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "playcanvas:learn:cameras",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589831+00:00",
+      "sceneDescription": "A viewfinder projects a cropped frame onto a miniature scene, making framing and perspective visible.",
+      "references": [
+        "https://developer.playcanvas.com/user-manual/graphics/cameras/"
+      ],
+      "videoSha256": "93a4f470459beed3dcfc9a7e4a52ca1af36399e1f7951fe7c6efa5e269108de3"
+    }
+  },
+  {
+    "id": "playcanvas:learn:debugging-playcanvas-apps",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "playcanvas:learn:debugging-playcanvas-apps",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589832+00:00",
+      "sceneDescription": "A magnifying glass isolates a broken link in a script trail and illuminates the exact fault.",
+      "references": [
+        "https://developer.playcanvas.com/user-manual/scripting/debugging/"
+      ],
+      "videoSha256": "21ec705fb485b8eb33e5860297e855987473e1977f28595e56b1f38b762d8210"
+    }
+  },
+  {
+    "id": "playcanvas:learn:game-ui-user-interface",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "playcanvas:learn:game-ui-user-interface",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589834+00:00",
+      "sceneDescription": "A heads-up display assembles health, map and interaction controls around a tiny play scene.",
+      "references": [
+        "https://developer.playcanvas.com/user-manual/user-interface/"
+      ],
+      "videoSha256": "7241c512dae2a1de4ceee6d98efcdf08d3a5cf220c92ca1b8ee595e7256412b8"
+    }
+  },
+  {
+    "id": "playcanvas:learn:input-controls",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "playcanvas:learn:input-controls",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589834+00:00",
+      "sceneDescription": "Keyboard, touch and gamepad gestures converge on one responsive player marker.",
+      "references": [
+        "https://developer.playcanvas.com/user-manual/user-interface/input/"
+      ],
+      "videoSha256": "292167a58a6455c13f1c7900ab91ab465efa5b720da0105a47df0015662a2bf5"
+    }
+  },
+  {
+    "id": "playcanvas:learn:physics",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "playcanvas:learn:physics",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589835+00:00",
+      "sceneDescription": "A pendulum transfers energy to a stack of bodies above a rigid-body collision floor.",
+      "references": [
+        "https://developer.playcanvas.com/user-manual/physics/"
+      ],
+      "videoSha256": "fd2dfec1e34a0b3daab021d74143dae6ba0bcc3b41a0180cb8ef3f0fdcd11320"
+    }
+  },
+  {
+    "id": "playcanvas:learn:playcanvas-getting-started",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "playcanvas:learn:playcanvas-getting-started",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589838+00:00",
+      "sceneDescription": "A blank browser canvas opens like a stage curtain onto a simple first 3D creation.",
+      "references": [
+        "https://developer.playcanvas.com/user-manual/"
+      ],
+      "videoSha256": "8389f042fd0b99f3b8aee1591e01e95a32e3faab7116d6fdb0b793d09d349d5b"
+    }
+  },
+  {
+    "id": "playcanvas:learn:playcanvas-agent-skills-external",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "playcanvas:learn:playcanvas-agent-skills-external",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589839+00:00",
+      "sceneDescription": "An agent apprentice learns from open technical cards that form a bridge to a web-engine workbench.",
+      "references": [
+        "https://github.com/playcanvas/skills"
+      ],
+      "videoSha256": "ad22c1303decc5ab5560b9dbd79b6271bff1a3923712a69e6c09b444787bae0d"
+    }
+  },
+  {
+    "id": "playcanvas:learn:playcanvas-engine-open-source",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "playcanvas:learn:playcanvas-engine-open-source",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589840+00:00",
+      "sceneDescription": "An exposed rendering turbine powers a wireframe world through a browser-shaped engine housing.",
+      "references": [
+        "https://github.com/playcanvas/engine"
+      ],
+      "videoSha256": "10d3170d40a36d1128eb102591f5202f4304c74e91bf954fcfcacebf421523fa"
+    }
+  },
+  {
+    "id": "playcanvas:learn:playcanvas-engine-api-reference",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "playcanvas:learn:playcanvas-engine-api-reference",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589840+00:00",
+      "sceneDescription": "A technical reference atlas opens into indexed tabs and a precise function-signature constellation.",
+      "references": [
+        "https://api.playcanvas.com/"
+      ],
+      "videoSha256": "4c634d86e368ef6a81edf3216142dbc3d67c2461bc8ab55170ed17fb05ba9f5c"
+    }
+  },
+  {
+    "id": "playcanvas:learn:playcanvas-examples",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "playcanvas:learn:playcanvas-examples",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589841+00:00",
+      "sceneDescription": "Three runnable example windows demonstrate a sphere, terrain and light experiment as a miniature exhibition.",
+      "references": [
+        "https://playcanvas.com/examples/"
+      ],
+      "videoSha256": "ad90de364aec1bffd36e846e043bf85f3c36d4feb05ad3ec6cd336281539b7d5"
+    }
+  },
+  {
+    "id": "playcanvas:learn:playcanvas-tutorials",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "playcanvas:learn:playcanvas-tutorials",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589842+00:00",
+      "sceneDescription": "An illustrated workshop notebook follows a pencil path from first sketch to an assembled world.",
+      "references": [
+        "https://developer.playcanvas.com/tutorials/"
+      ],
+      "videoSha256": "259667576ce998b1029fe2743f10df2dd6a357e850dd3c50d8b7d63485d04962"
+    }
+  },
+  {
+    "id": "playcanvas:learn:publishing-a-web-game",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "playcanvas:learn:publishing-a-web-game",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589843+00:00",
+      "sceneDescription": "A little arcade world launches from a browser window onto an orbiting network of destinations.",
+      "references": [
+        "https://developer.playcanvas.com/user-manual/publishing/web/"
+      ],
+      "videoSha256": "e0042066b7059a932299993f50ebe8fc228724663a975a48fd6f308edccfa35c"
+    }
+  },
+  {
+    "id": "playcanvas:learn:sound-audio",
+    "review": {
+      "policyVersion": 1,
+      "resourceId": "playcanvas:learn:sound-audio",
+      "faithfulToSource": true,
+      "uniqueVisual": true,
+      "reviewer": "Codex visual review",
+      "reviewedAt": "2026-09-21T20:38:13.589844+00:00",
+      "sceneDescription": "Spatial sound rings travel from a speaker across a sculptural waveform to a listening point.",
+      "references": [
+        "https://developer.playcanvas.com/user-manual/editor/scenes/components/sound/"
+      ],
+      "videoSha256": "0e74bdf599acb7d5469ed30855a6f84ee4cba1a24da3ec6bfc869fd52dfc1022"
+    }
+  }
+]

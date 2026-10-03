@@ -1,0 +1,114 @@
+[
+  {
+    "id": "tari-ootle:app:tariorg",
+    "slug": "tariorg",
+    "url": "https://tariorg.pages.dev",
+    "source": "capture",
+    "video": "/previews/contest-tariorg-9aea8781fa8f.mp4",
+    "image": "/previews/contest-tariorg-9aea8781fa8f.poster.png",
+    "review": {
+      "reviewedAt": "2026-09-22",
+      "videoSha256": "9aea8781fa8f31e63ced5e66054834969a6775a72708dac467fd9365468cede4",
+      "scope": "Public webpage",
+      "notes": "Reviewed four spaced frames for correct project, readable content and scroll movement. No wallet operations, functionality verification or gameplay claim."
+    }
+  },
+  {
+    "id": "tari-ootle:app:private-ballot",
+    "slug": "private-ballot",
+    "url": "https://github.com/GSXRspartan/private-ballot",
+    "source": "capture",
+    "video": "/previews/contest-private-ballot-29069caef9c8.mp4",
+    "image": "/previews/contest-private-ballot-29069caef9c8.poster.png",
+    "review": {
+      "reviewedAt": "2026-09-22",
+      "videoSha256": "29069caef9c888d6f786f9a2c878cc04b802d284a413abde8a06a890b225d5d0",
+      "scope": "Public repository and README",
+      "notes": "Reviewed four spaced frames for correct project, readable content and scroll movement. No wallet operations, functionality verification or gameplay claim."
+    }
+  },
+  {
+    "id": "tari-ootle:app:signal-vault",
+    "slug": "signal-vault",
+    "url": "https://github.com/Lrifton92/signal-vault",
+    "source": "capture",
+    "video": "/previews/contest-signal-vault-5fef0a926e43.mp4",
+    "image": "/previews/contest-signal-vault-5fef0a926e43.poster.png",
+    "review": {
+      "reviewedAt": "2026-09-22",
+      "videoSha256": "5fef0a926e43c00a330402b1de93ae743322485bf878d1ec8e9081fecd3d12ff",
+      "scope": "Public repository and README",
+      "notes": "Reviewed four spaced frames for correct project, readable content and scroll movement. No wallet operations, functionality verification or gameplay claim."
+    }
+  },
+  {
+    "id": "tari-ootle:app:ootle-pay",
+    "slug": "ootle-pay",
+    "url": "https://imphila.github.io/ootle-pay/",
+    "source": "capture",
+    "video": "/previews/contest-ootle-pay-e9e8cdedaaee.mp4",
+    "image": "/previews/contest-ootle-pay-e9e8cdedaaee.poster.png",
+    "review": {
+      "reviewedAt": "2026-09-22",
+      "videoSha256": "e9e8cdedaaee3fd7d43e27f9e300959e02ffe5f56ddacca5f3b5d042df726ee7",
+      "scope": "Public webpage",
+      "notes": "Reviewed four spaced frames for correct project, readable content and scroll movement. No wallet operations, functionality verification or gameplay claim."
+    }
+  },
+  {
+    "id": "tari-ootle:app:shadowtix",
+    "slug": "shadowtix",
+    "url": "https://shadowtix.shop",
+    "source": "capture",
+    "video": "/previews/contest-shadowtix-3c2ce0442e1e.mp4",
+    "image": "/previews/contest-shadowtix-3c2ce0442e1e.poster.png",
+    "review": {
+      "reviewedAt": "2026-09-22",
+      "videoSha256": "3c2ce0442e1e7fcc5fdfac26daa2555a9b56ac8d7e5f1dc5528fa87638de3416",
+      "scope": "Public webpage",
+      "notes": "Reviewed four spaced frames for correct project, readable content and scroll movement. No wallet operations, functionality verification or gameplay claim."
+    }
+  },
+  {
+    "id": "tari-ootle:app:legacy-vault",
+    "slug": "legacy-vault",
+    "url": "https://huzhazha.github.io/legacy-vault-ootle/demo/",
+    "source": "capture",
+    "video": "/previews/contest-legacy-vault-c8d645f66933.mp4",
+    "image": "/previews/contest-legacy-vault-c8d645f66933.poster.png",
+    "review": {
+      "reviewedAt": "2026-09-22",
+      "videoSha256": "c8d645f669334f4d2395f193bc2fcabefc5fb00487df01f4ac52df147cd029f7",
+      "scope": "Public webpage",
+      "notes": "Reviewed four spaced frames for correct project, readable content and scroll movement. No wallet operations, functionality verification or gameplay claim."
+    }
+  },
+  {
+    "id": "tari-ootle:app:sapient",
+    "slug": "sapient",
+    "url": "https://sapient.tari.mw",
+    "source": "capture",
+    "video": "/previews/contest-sapient-766c35be1502.mp4",
+    "image": "/previews/contest-sapient-766c35be1502.poster.png",
+    "review": {
+      "reviewedAt": "2026-09-22",
+      "videoSha256": "766c35be150242a6472d567a4c621c8f52aca13de0b3ae4699559e8a2eab5113",
+      "scope": "Public webpage",
+      "notes": "Reviewed four spaced frames for correct project, readable content and scroll movement. No wallet operations, functionality verification or gameplay claim."
+    }
+  },
+  {
+    "id": "tari-ootle:app:ootle-surveys",
+    "slug": "ootle-surveys",
+    "url": "https://github.com/JustAResearcher/ootle-surveys",
+    "source": "capture",
+    "video": "/previews/contest-ootle-surveys-bdd43beeaabc.mp4",
+    "image": "/previews/contest-ootle-surveys-bdd43beeaabc.poster.png",
+    "review": {
+      "reviewedAt": "2026-09-22",
+      "videoSha256": "bdd43beeaabcc3df2140fc8f1535d7003d7c88d3e4567223e8a2c048b5fa5da1",
+      "scope": "Public repository and README",
+      "notes": "Reviewed four spaced frames for correct project, readable content and scroll movement. No wallet operations, functionality verification or gameplay claim."
+    }
+  }
+]

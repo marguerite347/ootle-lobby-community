@@ -1,0 +1,48 @@
+{
+  "slug": "build-your-first-playable-game-loop",
+  "title": "One good loop: build a tiny game worth playing again",
+  "description": "A practical Ootle Lobby guide to choosing one satisfying game mechanic, testing its feedback and publishing a clear playable demo.",
+  "category": "Game design",
+  "art": "loop",
+  "sections": [
+    [
+      "Start with the moment, not the feature list",
+      "A first game does not need a sprawling world to make an impression. It needs one action that produces a result people understand and want to repeat. A jump that lands cleanly, a card that changes the odds, or a switch that transforms a room can carry a complete small experience. The Ootle Lobby challenge \u201cOne good loop\u201d asks you to make that relationship visible in a tiny playable game or useful app."
+    ],
+    [
+      "Write a promise you can test",
+      "Describe your loop in one sentence: \u201cWhen the player does this, that happens.\u201d Then choose the signal that makes the result clear. Movement, sound, a score change or an animation can all help, but the player should not need every effect to understand the action. Try the experience with sound muted and with reduced motion. Keep the important feedback readable in both cases."
+    ],
+    [
+      "Borrow a foundation; own the decision",
+      "Discover is a place to find starters and resources. Learn explains approaches; Skills gives an agent a reusable workflow; Create is where you choose a starting point for your project. Start with a foundation that already supports your core interaction. Change one meaningful rule before adding more systems. That makes it easier to tell whether your idea is working."
+    ],
+    [
+      "Show the result, then publish the evidence",
+      "Record a short demonstration that includes the input and its consequence. Publish a working version and explain one success condition: what should a new player be able to do? If you enter a challenge, check the current edition and submit the requested project version and evidence. The challenge calendar is the source of truth for dates and requirements."
+    ],
+    [
+      "Your next move",
+      "Pick one interaction, make it understandable and ask someone to try it without instructions. Their first moment of confusion is useful design feedback. Improve that moment before expanding the game. A small loop that works gives your next collaborator something concrete to riff on."
+    ]
+  ],
+  "sources": [
+    {
+      "label": "Weekly challenges and calendar",
+      "url": "/challenges"
+    },
+    {
+      "label": "Game starters and resources",
+      "url": "/explore"
+    },
+    {
+      "label": "Start a project",
+      "url": "/create"
+    }
+  ],
+  "status": "published",
+  "publishedAt": "2026-09-23",
+  "updatedAt": "2026-09-23",
+  "author": "Ootle Lobby",
+  "reviewedAt": "2026-09-23"
+}

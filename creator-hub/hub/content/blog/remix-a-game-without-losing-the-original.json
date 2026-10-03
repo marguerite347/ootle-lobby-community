@@ -1,0 +1,48 @@
+{
+  "slug": "remix-a-game-without-losing-the-original",
+  "title": "The Riff is the point: turn one game into a new possibility",
+  "description": "Learn a practical game Riff workflow: choose a source, change a meaningful rule, compare the result and publish a credited version.",
+  "category": "Community playbook",
+  "art": "remix",
+  "sections": [
+    [
+      "A Riff starts with a question",
+      "What would happen if the same game rewarded a different decision? That question is more useful than changing a title or a color. A meaningful Riff keeps enough of the original to make the relationship understandable while giving players a new reason to think, experiment or return."
+    ],
+    [
+      "Play before you change",
+      "Try the source creation and identify the decision at its center. In a risk-and-reward game, that might be whether to bank progress or push for a bigger result. Write down what the player knows, what they risk and what feedback follows. These observations give you a baseline for your Riff."
+    ],
+    [
+      "Make one rule visibly different",
+      "Choose one rule to change, such as the number of turns, the scoring condition or the cost of taking another chance. Avoid changing every system at once. A focused variation is easier to test and easier to explain. A separately playable version matters: people should be able to try both and experience the difference themselves."
+    ],
+    [
+      "Keep the trail back to the source",
+      "Record the source project and version. Credit its creator and describe your changes in plain language. Preserve the original while you develop your own version. Check the source project\u2019s reuse terms before distributing assets or code. Good attribution lets the next creator understand which parts they can build on and who made them possible."
+    ],
+    [
+      "Publish a comparison, not just a claim",
+      "Use the same starting situation in both versions and show how the changed rule affects a choice. Include a short playable demo or capture and explain what you learned. Then invite a specific kind of feedback: is the new risk readable, does the reward feel earned, or is the Riff easier to understand? That gives the community a useful way to respond."
+    ]
+  ],
+  "sources": [
+    {
+      "label": "Published originals and Riffs",
+      "url": "/projects?view=published"
+    },
+    {
+      "label": "Create a Riff",
+      "url": "/create"
+    },
+    {
+      "label": "Challenge briefs",
+      "url": "/challenges"
+    }
+  ],
+  "status": "published",
+  "publishedAt": "2026-09-23",
+  "updatedAt": "2026-09-23",
+  "author": "Ootle Lobby",
+  "reviewedAt": "2026-09-23"
+}

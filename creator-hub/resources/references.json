@@ -1,0 +1,731 @@
+{
+  "schema_version": 1,
+  "description": "Reviewed individual resources and inspiration. External tools are optional; runtime and Tari compatibility are not verified.",
+  "resources": [
+    {
+      "id": "jettelly-godot-vfx",
+      "title": "Godot All About VFX Bundle",
+      "bucket": "godot",
+      "source_url": "https://jettelly.com/bundles/godot-all-about-vfx-bundle",
+      "summary": "Jettelly educational bundle about shaders, particles and visual effects for Godot.",
+      "use_in_hub": "Learn visual polish for game clients. Pricing and access follow the publisher.",
+      "references": [
+        "https://x.com/jettelly/status/2102382420653744582"
+      ],
+      "repository": null,
+      "type": "learn",
+      "format": "reference",
+      "tags": [
+        "godot",
+        "shaders",
+        "vfx"
+      ],
+      "license": null,
+      "checked_on": "2026-09-22",
+      "native_ootle_compatibility": "not_verified"
+    },
+    {
+      "id": "forbidden-solitaire-study",
+      "title": "Forbidden Solitaire: design and launch study",
+      "bucket": "game-design",
+      "source_url": "https://store.steampowered.com/app/3414580/Forbidden_Solitaire/",
+      "summary": "Horror solitaire reference for genre mixing, presentation and expansion marketing.",
+      "use_in_hub": "Study the game and DLC campaign. This is inspiration, not a reusable game framework. The June 2025 wishlist post is a historical creator report, not a current metric.",
+      "references": [
+        "https://x.com/greyalien/status/2102375436353474560",
+        "https://bigbossbattle.com/forbidden-solitaire-the-discarded-dlc-coming-soon/",
+        "https://x.com/greyalien/status/1931016617107804443"
+      ],
+      "repository": null,
+      "type": "learn",
+      "format": "reference",
+      "tags": [
+        "cards",
+        "horror",
+        "marketing"
+      ],
+      "license": null,
+      "checked_on": "2026-09-22",
+      "native_ootle_compatibility": "not_verified"
+    },
+    {
+      "id": "blightrole-study",
+      "title": "Blightrole: dice RPG design study",
+      "bucket": "game-design",
+      "source_url": "https://store.steampowered.com/app/4596980/Blightrole/",
+      "summary": "Nautilus Games horror RPG built around dice, roles, items and risky choices.",
+      "use_in_hub": "Study atmosphere and interactions between dice and passive abilities; no source code or assets are offered by this listing.",
+      "references": [
+        "https://x.com/horrorvisuals/status/2102373068047782204"
+      ],
+      "repository": null,
+      "type": "learn",
+      "format": "reference",
+      "tags": [
+        "dice",
+        "horror",
+        "rpg"
+      ],
+      "license": null,
+      "checked_on": "2026-09-22",
+      "native_ootle_compatibility": "not_verified"
+    },
+    {
+      "id": "voicestudio",
+      "title": "VoiceStudio",
+      "bucket": "audio",
+      "source_url": "https://github.com/debpalash/VoiceStudio",
+      "summary": "Local voice tooling covering synthesis, voice design, dubbing and transcription.",
+      "use_in_hub": "Explore an optional voice-production workflow. Check supported engines, model terms and hardware before setup.",
+      "references": [
+        "https://x.com/roundtablespace/status/2102333331073642889"
+      ],
+      "repository": "debpalash/VoiceStudio",
+      "type": "asset",
+      "format": "reference",
+      "tags": [
+        "voice",
+        "tts",
+        "transcription",
+        "audio"
+      ],
+      "license": null,
+      "checked_on": "2026-09-22",
+      "native_ootle_compatibility": "not_verified"
+    },
+    {
+      "id": "deadhand-theater-study",
+      "title": "Deadhand Theater: card combat and effects study",
+      "bucket": "game-design",
+      "source_url": "https://bagtrackgames.com/",
+      "summary": "Bag Track Games poker-based roguelike deckbuilder with a theatrical visual identity.",
+      "use_in_hub": "Study card combat feedback and distinctive practical-style effects. Reference game, not a forkable starter.",
+      "references": [
+        "https://x.com/80level/status/2092613943944421876",
+        "https://80.lv/articles/poker-deckbuilder-with-practical-effects-instead-of-generic-vfx"
+      ],
+      "repository": null,
+      "type": "learn",
+      "format": "reference",
+      "tags": [
+        "cards",
+        "deckbuilder",
+        "game-feel"
+      ],
+      "license": null,
+      "checked_on": "2026-09-22",
+      "native_ootle_compatibility": "not_verified"
+    },
+    {
+      "id": "balatro-feel",
+      "title": "Balatro Feel: Mix and Jam Unity example",
+      "bucket": "game-design",
+      "source_url": "https://github.com/mixandjam/Balatro-Feel",
+      "summary": "Unity example studying Balatro-inspired card movement and shader effects.",
+      "use_in_hub": "Study or adapt card presentation; requires Unity 2022.3+ and DOTween. This is a game-feel example, not the complete Balatro game.",
+      "references": [
+        "https://x.com/80level/status/1785888857751183814",
+        "https://80.lv/articles/balatro-s-card-movements-shaders-recreated-in-unity/",
+        "https://dotween.demigiant.com/"
+      ],
+      "repository": "mixandjam/Balatro-Feel",
+      "type": "component",
+      "format": "reference",
+      "tags": [
+        "unity",
+        "cards",
+        "shaders",
+        "game-feel"
+      ],
+      "license": "MIT",
+      "checked_on": "2026-09-22",
+      "native_ootle_compatibility": "not_verified"
+    },
+    {
+      "id": "edition-cards",
+      "title": "Edition Cards: Blender card materials",
+      "bucket": "web-design",
+      "source_url": "https://ko-fi.com/s/ea06f1b732",
+      "summary": "CMZW card-shader study with Blender materials and replaceable card artwork.",
+      "use_in_hub": "Explore card surface treatments in Blender 4.5 or later. Check the creator listing for current download and reuse terms.",
+      "references": [
+        "https://x.com/80level/status/1985708611629129856",
+        "https://80.lv/articles/enjoy-these-magical-balatro-like-card-effects-animation-made-with-blender"
+      ],
+      "repository": null,
+      "type": "asset",
+      "format": "reference",
+      "tags": [
+        "blender",
+        "cards",
+        "materials",
+        "shaders"
+      ],
+      "license": null,
+      "checked_on": "2026-09-22",
+      "native_ootle_compatibility": "not_verified"
+    },
+    {
+      "id": "cinematique",
+      "title": "Cinematique: cinematic prompt reference",
+      "bucket": "video-production",
+      "source_url": "https://vvsvs.pro/cinematique",
+      "summary": "VVSVS reference library for cinematic language, framing, lighting and camera choices.",
+      "use_in_hub": "Develop prompts and shot briefs for creator trailers and generated footage; link to the library instead of copying its contents.",
+      "references": [],
+      "repository": null,
+      "type": "learn",
+      "format": "reference",
+      "tags": [
+        "video",
+        "cinematography",
+        "prompts"
+      ],
+      "license": null,
+      "checked_on": "2026-09-22",
+      "native_ootle_compatibility": "not_verified"
+    },
+    {
+      "id": "sarvesh-seo-prompts",
+      "title": "SEO prompt workflow reference",
+      "bucket": "market-and-promotion",
+      "source_url": "https://x.com/bloggersarvesh/status/2095896040155340809",
+      "summary": "Sarvesh Shrivastava article outlining prompts for business context, SEO audits and competitor research.",
+      "use_in_hub": "Adapt the questions for creator landing pages. Independently verify generated claims and measure results; promotional outcomes are not guarantees.",
+      "references": [],
+      "repository": null,
+      "type": "learn",
+      "format": "reference",
+      "tags": [
+        "seo",
+        "marketing",
+        "prompts"
+      ],
+      "license": null,
+      "checked_on": "2026-09-22",
+      "native_ootle_compatibility": "not_verified"
+    },
+    {
+      "id": "stefan-ai-level-workflow",
+      "title": "AI game-level workflow: Stefan 3D AI",
+      "bucket": "ai-creation",
+      "source_url": "https://www.youtube.com/watch?v=6Ytluv_DiSo",
+      "summary": "Video walkthrough from environment concept and model creation through textures, UVs, PBR materials, Blender assembly and Unreal setup.",
+      "use_in_hub": "Follow as a learning workflow; the title describes free tools, but linked services can have paid tiers and changing limits.",
+      "references": [
+        "https://learn3d.ai/3d-ai/free-level",
+        "https://studio.tripo3d.ai/home",
+        "https://top3d.ai"
+      ],
+      "repository": null,
+      "type": "learn",
+      "format": "video",
+      "tags": [
+        "blender",
+        "unreal",
+        "3d",
+        "environment",
+        "ai"
+      ],
+      "license": null,
+      "checked_on": "2026-09-22",
+      "native_ootle_compatibility": "not_verified"
+    },
+    {
+      "id": "tripo-studio",
+      "title": "Tripo Studio",
+      "bucket": "ai-creation",
+      "source_url": "https://studio.tripo3d.ai/home",
+      "summary": "AI 3D creation service linked in Stefan 3D AI\u2019s environment workflow.",
+      "use_in_hub": "Evaluate model generation as an optional asset-creation step; review current quotas and export terms.",
+      "references": [
+        "https://www.youtube.com/watch?v=6Ytluv_DiSo"
+      ],
+      "repository": null,
+      "type": "asset",
+      "format": "reference",
+      "tags": [
+        "3d",
+        "ai",
+        "models"
+      ],
+      "license": null,
+      "checked_on": "2026-09-22",
+      "native_ootle_compatibility": "not_verified"
+    },
+    {
+      "id": "learn3d-environments",
+      "title": "Learn3D AI environment course",
+      "bucket": "ai-creation",
+      "source_url": "https://learn3d.ai/3d-ai/free-level",
+      "summary": "Environment-building course linked by Stefan 3D AI, from rough concept to an Unreal scene.",
+      "use_in_hub": "Use for structured environment education; access and pricing follow the provider.",
+      "references": [
+        "https://www.youtube.com/watch?v=6Ytluv_DiSo"
+      ],
+      "repository": null,
+      "type": "learn",
+      "format": "reference",
+      "tags": [
+        "3d",
+        "unreal",
+        "environment"
+      ],
+      "license": null,
+      "checked_on": "2026-09-22",
+      "native_ootle_compatibility": "not_verified"
+    },
+    {
+      "id": "top3d-tools",
+      "title": "Top3D AI tools directory",
+      "bucket": "ai-creation",
+      "source_url": "https://top3d.ai",
+      "summary": "3D AI tools directory linked by Stefan 3D AI.",
+      "use_in_hub": "Discover candidate tools, then check each provider\u2019s actual capabilities and terms.",
+      "references": [
+        "https://www.youtube.com/watch?v=6Ytluv_DiSo"
+      ],
+      "repository": null,
+      "type": "learn",
+      "format": "reference",
+      "tags": [
+        "3d",
+        "ai",
+        "collection"
+      ],
+      "license": null,
+      "checked_on": "2026-09-22",
+      "native_ootle_compatibility": "not_verified"
+    },
+    {
+      "id": "interdimensional-game",
+      "title": "LAST FRAME: realtime video adventure",
+      "bucket": "ai-creation",
+      "source_url": "https://github.com/blendi-remade/interdimensional-game",
+      "summary": "Video-driven adventure experiment with branching generated clips and continuous live scenes.",
+      "use_in_hub": "Study its Next.js and fal-based workflow. Requires a server-side fal key and paid inference; license and Tari integration are not verified.",
+      "references": [
+        "https://x.com/blendibyl/status/2094337651189166368"
+      ],
+      "repository": "blendi-remade/interdimensional-game",
+      "type": "learn",
+      "format": "reference",
+      "tags": [
+        "ai",
+        "video",
+        "adventure",
+        "web-game"
+      ],
+      "license": null,
+      "checked_on": "2026-09-22",
+      "native_ootle_compatibility": "not_verified"
+    },
+    {
+      "id": "labyrinth-demo",
+      "title": "Labyrinth procedural generation demo",
+      "bucket": "game-design",
+      "source_url": "https://dev-rygy.itch.io/labyrinth-procedural-generator",
+      "summary": "dev_rygy procedural labyrinth demonstration distributed as a Windows download.",
+      "use_in_hub": "Study generated layouts. The linked download is a demo executable, not verified reusable source code.",
+      "references": [],
+      "repository": null,
+      "type": "learn",
+      "format": "reference",
+      "tags": [
+        "procedural-generation",
+        "level-design"
+      ],
+      "license": null,
+      "checked_on": "2026-09-22",
+      "native_ootle_compatibility": "not_verified"
+    },
+    {
+      "id": "shadertoy",
+      "title": "Shadertoy",
+      "bucket": "web-design",
+      "source_url": "https://www.shadertoy.com/",
+      "summary": "Browser shader community and interactive graphics examples.",
+      "use_in_hub": "Learn GLSL and prototype visual effects. Review each shader\u2019s individual license before incorporating code.",
+      "references": [],
+      "repository": null,
+      "type": "learn",
+      "format": "reference",
+      "tags": [
+        "glsl",
+        "webgl",
+        "shaders",
+        "graphics"
+      ],
+      "license": null,
+      "checked_on": "2026-09-22",
+      "native_ootle_compatibility": "not_verified"
+    },
+    {
+      "id": "davidhdev--react-bits",
+      "title": "React Bits",
+      "bucket": "web-design",
+      "source_url": "https://github.com/DavidHDev/react-bits",
+      "summary": "Animated React component collection",
+      "use_in_hub": "Select spotlight cards and an art-led hero example; inspect individual dependencies.",
+      "references": [
+        "https://github.com/DavidHDev/react-bits"
+      ],
+      "repository": "DavidHDev/react-bits",
+      "type": "learn",
+      "format": "reference",
+      "tags": [
+        "gaming-ui",
+        "reuse-kit",
+        "animation"
+      ],
+      "license": null,
+      "checked_on": "2026-09-22",
+      "source_revision": "c5df8610c0b47d7cd805cda480baba402f7267c1",
+      "native_ootle_compatibility": "not_verified"
+    },
+    {
+      "id": "motiondivision--motion",
+      "title": "Motion",
+      "bucket": "web-design",
+      "source_url": "https://github.com/motiondivision/motion",
+      "summary": "React and JavaScript animation library",
+      "use_in_hub": "Use lazy-loaded motion features for reveal/layout transitions; preserve reduced motion.",
+      "references": [
+        "https://github.com/motiondivision/motion"
+      ],
+      "repository": "motiondivision/motion",
+      "type": "learn",
+      "format": "reference",
+      "tags": [
+        "gaming-ui",
+        "reuse-kit",
+        "animation"
+      ],
+      "license": null,
+      "checked_on": "2026-09-22",
+      "source_revision": "823947dcc1703fb7a99e9801dddafb423c34fa76",
+      "native_ootle_compatibility": "not_verified"
+    },
+    {
+      "id": "gsimone--awesome-react-three-fiber",
+      "title": "Awesome React Three Fiber",
+      "bucket": "web-design",
+      "source_url": "https://github.com/gsimone/awesome-react-three-fiber",
+      "summary": "Curated R3F examples and learning links",
+      "use_in_hub": "Find a coherent showcase scene instead of writing scene infrastructure.",
+      "references": [
+        "https://github.com/gsimone/awesome-react-three-fiber"
+      ],
+      "repository": "gsimone/awesome-react-three-fiber",
+      "type": "learn",
+      "format": "reference",
+      "tags": [
+        "gaming-ui",
+        "reuse-kit",
+        "animation"
+      ],
+      "license": null,
+      "checked_on": "2026-09-22",
+      "source_revision": "f70b03df98853d76f812d72aabbb2f158f6b381b",
+      "native_ootle_compatibility": "not_verified"
+    },
+    {
+      "id": "pmndrs--drei",
+      "title": "Drei",
+      "bucket": "web-design",
+      "source_url": "https://github.com/pmndrs/drei",
+      "summary": "Reusable helpers for React Three Fiber",
+      "use_in_hub": "Reuse model staging, environments and camera controls in optional 3D recipes.",
+      "references": [
+        "https://github.com/pmndrs/drei"
+      ],
+      "repository": "pmndrs/drei",
+      "type": "learn",
+      "format": "reference",
+      "tags": [
+        "gaming-ui",
+        "reuse-kit",
+        "animation"
+      ],
+      "license": null,
+      "checked_on": "2026-09-22",
+      "source_revision": "1397c37cbdf2e93b29a7ff4189ce71fb7cb05c0e",
+      "native_ootle_compatibility": "not_verified"
+    },
+    {
+      "id": "pmndrs--uikit",
+      "title": "pmndrs UIKit",
+      "bucket": "web-design",
+      "source_url": "https://github.com/pmndrs/uikit",
+      "summary": "User interface primitives for three-dimensional scenes",
+      "use_in_hub": "Optional in-game spatial UI; preserve DOM navigation and forms.",
+      "references": [
+        "https://github.com/pmndrs/uikit"
+      ],
+      "repository": "pmndrs/uikit",
+      "type": "learn",
+      "format": "reference",
+      "tags": [
+        "gaming-ui",
+        "reuse-kit",
+        "animation"
+      ],
+      "license": null,
+      "checked_on": "2026-09-22",
+      "source_revision": "2aaf8aba2e5d7acab7a38426d575d51dcf541597",
+      "native_ootle_compatibility": "not_verified"
+    },
+    {
+      "id": "rive-app--rive-react",
+      "title": "Rive React runtime",
+      "bucket": "web-design",
+      "source_url": "https://github.com/rive-app/rive-react",
+      "summary": "State-driven vector animation playback",
+      "use_in_hub": "Optional animated badges/characters with input-state bindings.",
+      "references": [
+        "https://github.com/rive-app/rive-react"
+      ],
+      "repository": "rive-app/rive-react",
+      "type": "learn",
+      "format": "reference",
+      "tags": [
+        "gaming-ui",
+        "reuse-kit",
+        "animation"
+      ],
+      "license": null,
+      "checked_on": "2026-09-22",
+      "source_revision": "c5470664406d161cd7b3dfe4683d580d59a90940",
+      "native_ootle_compatibility": "not_verified"
+    },
+    {
+      "id": "catdad--canvas-confetti",
+      "title": "Canvas Confetti",
+      "bucket": "web-design",
+      "source_url": "https://github.com/catdad/canvas-confetti",
+      "summary": "Browser confetti effect library",
+      "use_in_hub": "Bounded celebration at confirmed publish or achievement events.",
+      "references": [
+        "https://github.com/catdad/canvas-confetti"
+      ],
+      "repository": "catdad/canvas-confetti",
+      "type": "learn",
+      "format": "reference",
+      "tags": [
+        "gaming-ui",
+        "reuse-kit",
+        "animation"
+      ],
+      "license": null,
+      "checked_on": "2026-09-22",
+      "source_revision": "20eebad51dde793070c373d594099a7ed8d96e22",
+      "native_ootle_compatibility": "not_verified"
+    },
+    {
+      "id": "pixijs-userland--particle-emitter",
+      "title": "Pixi particle emitter",
+      "bucket": "web-design",
+      "source_url": "https://github.com/pixijs-userland/particle-emitter",
+      "summary": "Particle simulation and editable configurations",
+      "use_in_hub": "Evaluate exact Pixi version compatibility; older editor formats need conversion.",
+      "references": [
+        "https://github.com/pixijs-userland/particle-emitter"
+      ],
+      "repository": "pixijs-userland/particle-emitter",
+      "type": "learn",
+      "format": "reference",
+      "tags": [
+        "gaming-ui",
+        "reuse-kit",
+        "animation"
+      ],
+      "license": null,
+      "checked_on": "2026-09-22",
+      "source_revision": "0fffdd9d18cabd99e5ee1d5dc94136613d5fcb04",
+      "native_ootle_compatibility": "not_verified"
+    },
+    {
+      "id": "calinou--awesome-gamedev",
+      "title": "Awesome Gamedev",
+      "bucket": "web-design",
+      "source_url": "https://github.com/Calinou/awesome-gamedev",
+      "summary": "Aggregate game-making tools, assets and learning",
+      "use_in_hub": "Discovery source, not a tested bundle or an activity guarantee.",
+      "references": [
+        "https://github.com/Calinou/awesome-gamedev"
+      ],
+      "repository": "Calinou/awesome-gamedev",
+      "type": "learn",
+      "format": "reference",
+      "tags": [
+        "gaming-ui",
+        "reuse-kit",
+        "animation"
+      ],
+      "license": null,
+      "checked_on": "2026-09-22",
+      "source_revision": "9918eea4f16a122e86df4e1176b1346ea8a22aac",
+      "native_ootle_compatibility": "not_verified"
+    },
+    {
+      "id": "bradtraversy--design-resources-for-developers",
+      "title": "Design Resources for Developers",
+      "bucket": "web-design",
+      "source_url": "https://github.com/bradtraversy/design-resources-for-developers",
+      "summary": "Aggregated visual design and web resources",
+      "use_in_hub": "Find typography, UI kits and source assets for coherent themed presets.",
+      "references": [
+        "https://github.com/bradtraversy/design-resources-for-developers"
+      ],
+      "repository": "bradtraversy/design-resources-for-developers",
+      "type": "learn",
+      "format": "reference",
+      "tags": [
+        "gaming-ui",
+        "reuse-kit",
+        "animation"
+      ],
+      "license": null,
+      "checked_on": "2026-09-22",
+      "source_revision": "e71627409ec9df19337048897b5bbb9b7d6b75df",
+      "native_ootle_compatibility": "not_verified"
+    },
+    {
+      "id": "kenney-ui-pack",
+      "title": "Kenney UI Pack",
+      "bucket": "web-design",
+      "source_url": "https://kenney.nl/assets/ui-pack",
+      "summary": "Ready-made game UI asset pack for buttons, panels and game interface studies.",
+      "use_in_hub": "Select concrete elements for the reuse-first gaming presentation kit.",
+      "references": [
+        "https://kenney.nl/assets/ui-pack"
+      ],
+      "repository": null,
+      "type": "learn",
+      "format": "reference",
+      "tags": [
+        "gaming-ui",
+        "reuse-kit"
+      ],
+      "license": null,
+      "checked_on": "2026-09-22",
+      "native_ootle_compatibility": "not_verified"
+    },
+    {
+      "id": "gaming-website-composition-references",
+      "title": "Gaming website composition references",
+      "bucket": "web-design",
+      "source_url": "https://websitevice.com/gaming-examples",
+      "summary": "Gaming-site inspiration catalogue; use for visual composition, not as an asset or code download.",
+      "use_in_hub": "Select concrete elements for the reuse-first gaming presentation kit.",
+      "references": [
+        "https://websitevice.com/gaming-examples"
+      ],
+      "repository": null,
+      "type": "learn",
+      "format": "reference",
+      "tags": [
+        "gaming-ui",
+        "reuse-kit"
+      ],
+      "license": null,
+      "checked_on": "2026-09-22",
+      "native_ootle_compatibility": "not_verified"
+    },
+    {
+      "id": "tsparticles-vfx",
+      "title": "tsParticles: interactive particle effects",
+      "bucket": "frontend",
+      "source_url": "https://github.com/tsparticles/tsparticles",
+      "summary": "Configurable JavaScript particle effects with React components, trails, confetti and fireworks.",
+      "use_in_hub": "Use for tuned particle trails and celebration effects. Start with a small particle budget; respect Effects off and reduced motion.",
+      "references": [
+        "https://github.com/tsparticles/tsparticles"
+      ],
+      "repository": "tsparticles/tsparticles",
+      "type": "tool",
+      "format": "reference",
+      "tags": [
+        "particles",
+        "cursor",
+        "vfx",
+        "react",
+        "javascript"
+      ],
+      "license": "MIT",
+      "checked_on": "2026-09-23",
+      "native_ootle_compatibility": "not_verified"
+    },
+    {
+      "id": "react-bits-splash-cursor",
+      "title": "React Bits: Splash Cursor",
+      "bucket": "frontend",
+      "source_url": "https://reactbits.dev/animations/splash-cursor",
+      "summary": "React component demonstrating a flowing fluid cursor effect.",
+      "use_in_hub": "Reference for fluid motion and hero interactions. Evaluate GPU cost and keep the effect behind readable content; do not install the whole collection for one effect.",
+      "references": [
+        "https://reactbits.dev/animations/splash-cursor"
+      ],
+      "repository": "DavidHDev/react-bits",
+      "type": "component",
+      "format": "reference",
+      "tags": [
+        "cursor",
+        "fluid",
+        "vfx",
+        "react",
+        "webgl"
+      ],
+      "license": null,
+      "checked_on": "2026-09-23",
+      "native_ootle_compatibility": "not_verified"
+    },
+    {
+      "id": "cursor-effects",
+      "title": "Cursor Effects: trails and fairy dust",
+      "bucket": "frontend",
+      "source_url": "https://github.com/tholman/cursor-effects",
+      "summary": "JavaScript cursor effects including trailing cursors, following dots, bubbles and fairy dust.",
+      "use_in_hub": "Useful for lightweight cursor inspiration and prototypes. Tune trail rate, density and colors; preserve native pointer accuracy and clean up with destroy().",
+      "references": [
+        "https://github.com/tholman/cursor-effects"
+      ],
+      "repository": "tholman/cursor-effects",
+      "type": "library",
+      "format": "reference",
+      "tags": [
+        "cursor",
+        "particles",
+        "vfx",
+        "javascript"
+      ],
+      "license": null,
+      "checked_on": "2026-09-23",
+      "native_ootle_compatibility": "not_verified"
+    },
+    {
+      "id": "codrops-dreamy-particles",
+      "title": "Codrops: dreamy interactive particles",
+      "bucket": "frontend",
+      "source_url": "https://tympanus.net/codrops/2024/12/19/crafting-a-dreamy-particle-effect-with-three-js-and-gpgpu/",
+      "summary": "Tutorial on interactive particle motion using Three.js, shaders and GPGPU.",
+      "use_in_hub": "Study flowing particle fields for hero art or game backgrounds. More complex than a cursor trail; profile on lower-powered devices.",
+      "references": [
+        "https://tympanus.net/codrops/2024/12/19/crafting-a-dreamy-particle-effect-with-three-js-and-gpgpu/"
+      ],
+      "repository": null,
+      "type": "learn",
+      "format": "reference",
+      "tags": [
+        "particles",
+        "vfx",
+        "threejs",
+        "shaders",
+        "tutorial"
+      ],
+      "license": null,
+      "checked_on": "2026-09-23",
+      "native_ootle_compatibility": "not_verified"
+    }
+  ]
+}

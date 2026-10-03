@@ -1,0 +1,26 @@
+{
+  "purpose": "Community chat blocklist: slurs and obvious abuse only. Whole-word match after lowercasing and undoing common character swaps (0->o, 1->i, 3->e, 4->a, 5->s, 7->t, @->a, $->s). Keep it short; a human moderator reviews everything else. See creator-hub/agents/chat/community-chat-rules.md.",
+  "terms": [
+    "nigger",
+    "nigga",
+    "faggot",
+    "fag",
+    "retard",
+    "tranny",
+    "chink",
+    "spic",
+    "kike",
+    "wetback",
+    "gook",
+    "coon",
+    "dyke"
+  ],
+  "phrases": [
+    "kill yourself",
+    "kill urself",
+    "kys",
+    "go die",
+    "hope you die",
+    "neck yourself"
+  ]
+}

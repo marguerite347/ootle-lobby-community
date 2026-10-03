@@ -1,0 +1,2775 @@
+[
+  {
+    "id": "gamedev-router",
+    "title": "Master Router \u2014 Game-Development Skill Dispatcher",
+    "description": "Routes any game-development request to the right specialized skill(s): it detects the engine (Godot, Unity, Unreal, Bevy, Phaser, PixiJS, three.js, L\u00d6VE, pygame, Roblox) and the task, then reads the chosen skill before acting. Use to make a game or to decide which skill applies \u2014 for players, levels, enemies, shaders, art direction, sprites, tiles, textures, 3D assets, UI/UX, cameras, game feel, physics, input, audio, saving, multiplayer, AI, dialogue, procedural generation, or performance, for genres (platformer, roguelike, RPG, FPS, tower-defense, card game, visual novel, survival-crafting, puzzle), and for shipping (game jam, Steam, itch). Start here when unsure which gamedev skill to use.",
+    "directory": "skills/vendor/gamedev/router",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/router/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "agents/openai.yaml",
+      "references/engine-detection.md",
+      "references/routing-table.md"
+    ]
+  },
+  {
+    "id": "gamedev-ai-behavior-trees-utility-ai",
+    "title": "Behavior Trees & Utility AI",
+    "description": "Build a production behavior-tree runtime (Blackboard, action/condition leaves, sequence/selector/parallel composites, decorators) and a Utility AI system (response curves \u2014 linear, exponential, sigmoid, quadratic \u2014 considerations, and action evaluators), plus hybrid BT-drives-Utility agents. Use when implementing a reusable behavior-tree or utility-based decision system, or tuning enemy/NPC decisions beyond a simple FSM, or when the user mentions behavior tree, blackboard, decorator, selector, sequence, tick status, utility AI, response/scoring curve, or consideration. For choosing between FSM/BT/steering or for pathfinding, use game-ai; for Unreal's BehaviorTree/Blackboard assets, use unreal-behavior-trees.",
+    "directory": "skills/vendor/gamedev/skills/disciplines/ai-behavior-trees-utility-ai",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/disciplines/ai-behavior-trees-utility-ai/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/behavior-tree-core.md",
+      "references/best-practices-and-pitfalls.md",
+      "references/practical-examples.md",
+      "references/utility-ai-system.md"
+    ]
+  },
+  {
+    "id": "gamedev-audio-design",
+    "title": "Audio design",
+    "description": "Implement game audio practice \u2014 bus/mixer architecture and gain in decibels, ducking (sidechain), adaptive/dynamic music via layering and re-sequencing, SFX variation, and beat synchronization. Engine-neutral. Use when the user mentions audio mixing, audio buses, adaptive/dynamic music, ducking, SFX variation, music layers, or syncing gameplay to the beat.",
+    "directory": "skills/vendor/gamedev/skills/disciplines/audio-design",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/disciplines/audio-design/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/adaptive-music.md"
+    ]
+  },
+  {
+    "id": "gamedev-camera-systems",
+    "title": "Camera systems",
+    "description": "Build game cameras that feel good \u2014 2D follow with a deadzone, look-ahead, smoothing, and level-bounds clamping; 3D third-person orbit with collision and first-person look; plus multi-target framing and a shake hook. Engine-neutral techniques that pair with the engine's camera node and rigs like Unity Cinemachine or Godot Camera2D/PhantomCamera. Use when the user mentions camera follow, follow camera, deadzone, look-ahead, camera smoothing, camera bounds/ limits, third-person camera, orbit camera, first-person look, Cinemachine, or camera jitter.",
+    "directory": "skills/vendor/gamedev/skills/disciplines/camera-systems",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/disciplines/camera-systems/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/follow-and-framing.md"
+    ]
+  },
+  {
+    "id": "gamedev-create-game-assets",
+    "title": "Create Game Assets",
+    "description": "Plan, generate, source, normalize, and validate cohesive visual game assets. Use for art direction, style bibles, sprites, tilesets, backgrounds, UI art, icons, textures, concept art, or 3D asset briefs.",
+    "directory": "skills/vendor/gamedev/skills/disciplines/create-game-assets",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/disciplines/create-game-assets/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "agents/openai.yaml",
+      "assets/art-direction-brief.md",
+      "assets/asset-manifest.json",
+      "references/art-direction.md",
+      "references/provenance.md",
+      "references/raster-pipeline.md",
+      "references/three-d-pipeline.md",
+      "scripts/asset_report.py",
+      "scripts/build_preview_sheet.py",
+      "scripts/requirements.txt"
+    ]
+  },
+  {
+    "id": "gamedev-dialogue-systems",
+    "title": "Dialogue systems",
+    "description": "Build branching dialogue and narrative \u2014 a node/choice graph with conditions, variables, and localization hooks \u2014 and choose between authoring tools Ink and Yarn Spinner or a custom data-driven runner. Engine-neutral. Use when the user mentions dialogue system, branching dialogue, conversation tree, choices, Ink (.ink), Yarn Spinner (.yarn), or NPC dialogue.",
+    "directory": "skills/vendor/gamedev/skills/disciplines/dialogue-systems",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/disciplines/dialogue-systems/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/ink-and-yarn.md",
+      "references/runner.md"
+    ]
+  },
+  {
+    "id": "gamedev-game-ai",
+    "title": "Game AI: decisions, steering, and pathfinding",
+    "description": "Design NPC and enemy decision-making with finite state machines, behavior trees, steering behaviors, and A* pathfinding \u2014 engine-neutral algorithms that pair with the detected engine's navigation API. Use when building enemy AI, an FSM or behavior tree, steering/flocking, or pathfinding, or when the user mentions state machine, behavior tree, blackboard, A*, navmesh, seek, or patrol/chase.",
+    "directory": "skills/vendor/gamedev/skills/disciplines/game-ai",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/disciplines/game-ai/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/behavior-trees.md",
+      "references/pathfinding.md"
+    ]
+  },
+  {
+    "id": "gamedev-game-feel",
+    "title": "Game feel (juice)",
+    "description": "Add \"juice\" and game feel that makes actions satisfying \u2014 screen shake, hit-stop/freeze frames, tweened/eased motion, squash & stretch, knockback, and layered audio-visual feedback \u2014 as engine-neutral techniques that pair with the detected engine's tween, particle, and camera APIs. Use when the user mentions game feel, juice, \"make it feel good/punchy\", screen shake, hit stop, screen freeze, easing, squash and stretch, impact frames, or feedback/polish on hits, jumps, pickups, and deaths.",
+    "directory": "skills/vendor/gamedev/skills/disciplines/game-feel",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/disciplines/game-feel/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/feedback-recipes.md"
+    ]
+  },
+  {
+    "id": "gamedev-game-ui-ux",
+    "title": "Game UI/UX",
+    "description": "Design and build game UI/UX \u2014 HUDs, menus, and overlays \u2014 that survive every screen: anchor- based responsive layout, resolution/aspect scaling and safe areas, keyboard/gamepad focus navigation, a screen/menu state stack, and event-driven (not polled) HUD updates. Engine- neutral patterns that pair with the detected engine's UI skill. Use when the user mentions HUD, health bar, main menu, pause menu, settings screen, UI layout, anchors, UI scaling, aspect ratio, safe area, controller/keyboard menu navigation, or wiring UI to game state.",
+    "directory": "skills/vendor/gamedev/skills/disciplines/game-ui-ux",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/disciplines/game-ui-ux/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/layout-and-flow.md"
+    ]
+  },
+  {
+    "id": "gamedev-input-systems",
+    "title": "Input systems",
+    "description": "Architect game input \u2014 action mapping (abstracting keys into named actions), rebinding with conflict detection and persistence, multi-device support (keyboard, gamepad, touch), analog deadzones, and feel features like input buffering and coyote time, plus accessibility. Engine-neutral. Use when the user mentions input mapping, rebind controls, gamepad support, deadzone, input buffering, coyote time, or accessible controls.",
+    "directory": "skills/vendor/gamedev/skills/disciplines/input-systems",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/disciplines/input-systems/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/buffering-and-accessibility.md"
+    ]
+  },
+  {
+    "id": "gamedev-level-design",
+    "title": "Level design",
+    "description": "Design and build playable levels \u2014 the blockout/whitebox-to-playable workflow, player metrics and grid layout, pacing and flow (tension/rest curve), gating and the critical path, and encounter design. Engine-neutral practice. Use when the user mentions level design, blockout/whitebox/greybox, level layout, level pacing, encounter design, or the critical path through a level.",
+    "directory": "skills/vendor/gamedev/skills/disciplines/level-design",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/disciplines/level-design/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/pacing-and-flow.md"
+    ]
+  },
+  {
+    "id": "gamedev-performance-optimization",
+    "title": "Performance optimization",
+    "description": "Find and fix game performance problems methodically \u2014 measure with the engine profiler first, reason about the frame-time budget, locate the CPU-vs-GPU bottleneck, then apply the right fix: object pooling, draw-call batching, fewer allocations/GC spikes, and asset budgets. Engine- neutral method that pairs with each engine's profiler. Use when the user mentions performance, optimize, low/dropping FPS, frame drops, stutter, lag, profiler, frame budget, draw calls, batching, garbage collection/GC spikes, object pooling, or \"the game runs slow\".",
+    "directory": "skills/vendor/gamedev/skills/disciplines/performance-optimization",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/disciplines/performance-optimization/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/profiling-and-budgets.md"
+    ]
+  },
+  {
+    "id": "gamedev-physics-tuning",
+    "title": "Physics tuning",
+    "description": "Tune game physics for stable, good-feeling motion \u2014 fixed vs variable timestep, render interpolation, mass/gravity/drag, continuous collision detection (CCD) to stop tunneling, fixing jitter, and collision layers/masks. Engine-neutral. Use when the user mentions physics feel, jitter, tunneling, fixed timestep, FixedUpdate, CCD, bouncing/unstable physics, or collision layers.",
+    "directory": "skills/vendor/gamedev/skills/disciplines/physics-tuning",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/disciplines/physics-tuning/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/timestep-and-ccd.md"
+    ]
+  },
+  {
+    "id": "gamedev-procedural-gen",
+    "title": "Procedural generation",
+    "description": "Generate game content procedurally \u2014 seeded deterministic RNG, value/Perlin/ Simplex noise for terrain and heightmaps, grid dungeon generation (rooms + corridors, BSP, random walk), and weighted loot/drop tables. Engine-neutral algorithms. Use when the user mentions procedural generation, perlin/simplex noise, random seed, dungeon generator, heightmap/terrain, or loot tables.",
+    "directory": "skills/vendor/gamedev/skills/disciplines/procedural-gen",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/disciplines/procedural-gen/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/dungeon-generation.md",
+      "references/noise.md"
+    ]
+  },
+  {
+    "id": "gamedev-save-systems",
+    "title": "Save systems",
+    "description": "Design save/load for game state \u2014 choosing what to serialize, file formats, save slots, atomic crash-safe writes, schema versioning and migration, and autosave. Engine-neutral. Use when the user mentions save system, save/load, game state persistence, save slots, autosave, save file corruption, or migrating old saves to a new version.",
+    "directory": "skills/vendor/gamedev/skills/disciplines/save-systems",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/disciplines/save-systems/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/versioning-and-migration.md"
+    ]
+  },
+  {
+    "id": "gamedev-shader-programming",
+    "title": "Shader programming (cross-engine)",
+    "description": "Write game shaders from cross-engine fundamentals \u2014 the vertex\u2192fragment pipeline, coordinate spaces, UV math, and common 2D/3D effects (tint, UV scroll, dissolve, outline, fresnel rim, vignette) in GLSL with HLSL equivalents. Use when the user mentions shaders, fragment/pixel shader, vertex shader, UV, GLSL, HLSL, or effects like dissolve, outline, or rim light.",
+    "directory": "skills/vendor/gamedev/skills/disciplines/shader-programming",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/disciplines/shader-programming/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/effects.md"
+    ]
+  },
+  {
+    "id": "gamedev-card-game",
+    "title": "Card Game",
+    "description": "Build a card game: card data, deck/hand/discard zones, draw/shuffle/reshuffle, a turn structure, costs, and effect resolution. Use for a deckbuilder, TCG/CCG, or roguelike deckbuilder.",
+    "directory": "skills/vendor/gamedev/skills/genres/card-game",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/genres/card-game/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/effect-resolution.md"
+    ]
+  },
+  {
+    "id": "gamedev-fps-shooter",
+    "title": "FPS Shooter",
+    "description": "Build a first-person shooter: move+mouse-look controller, hitscan or projectile shooting, weapons, health, and enemy AI. Use for an FPS, or tuning aim feel, time-to-kill, recoil, or spread.",
+    "directory": "skills/vendor/gamedev/skills/genres/fps-shooter",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/genres/fps-shooter/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/shooting-and-feel.md"
+    ]
+  },
+  {
+    "id": "gamedev-platformer",
+    "title": "Platformer",
+    "description": "Build a 2D platformer: run/jump control with coyote time, jump buffering, and variable jump height, plus tiled levels and hazards. Use for a platformer or Mario/Celeste-like, or tuning jump feel.",
+    "directory": "skills/vendor/gamedev/skills/genres/platformer",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/genres/platformer/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/feel-tuning.md"
+    ]
+  },
+  {
+    "id": "gamedev-puzzle",
+    "title": "Puzzle",
+    "description": "Build a puzzle game: grid/board state, move input, rule-based resolution (match-3 cascades, sokoban pushes, tile logic), scoring, and undo. Use for a match-3, sokoban, or grid-logic puzzle.",
+    "directory": "skills/vendor/gamedev/skills/genres/puzzle",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/genres/puzzle/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/board-and-resolution.md"
+    ]
+  },
+  {
+    "id": "gamedev-roguelike",
+    "title": "Roguelike",
+    "description": "Build a roguelike: turn-based grid movement, procedural dungeons, permadeath, field-of-view, and loot tables. Use for a roguelike/roguelite or turn-based grid dungeon crawler with procedural levels.",
+    "directory": "skills/vendor/gamedev/skills/genres/roguelike",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/genres/roguelike/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/generation-fov-loot.md"
+    ]
+  },
+  {
+    "id": "gamedev-rpg",
+    "title": "RPG",
+    "description": "Build an RPG: stats and leveling, inventory and equipment, quests, branching dialogue, save/load, and combat. Use for an RPG/JRPG, or designing stat, inventory, quest, or combat systems.",
+    "directory": "skills/vendor/gamedev/skills/genres/rpg",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/genres/rpg/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/stats-combat-quests.md"
+    ]
+  },
+  {
+    "id": "gamedev-survival-crafting",
+    "title": "Survival Crafting",
+    "description": "Build a survival-crafting game: resource gathering, inventory, crafting and a tech tree, needs (hunger/thirst/temperature), and base building. Use for a survival or crafting/base-building game.",
+    "directory": "skills/vendor/gamedev/skills/genres/survival-crafting",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/genres/survival-crafting/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/needs-and-crafting.md"
+    ]
+  },
+  {
+    "id": "gamedev-tower-defense",
+    "title": "Tower Defense",
+    "description": "Build a tower defense: enemies pathing along lanes, wave spawning, towers that auto-target and fire, an economy, and lives. Use for a tower-defense/wave-defense game, or balancing waves and economy.",
+    "directory": "skills/vendor/gamedev/skills/genres/tower-defense",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/genres/tower-defense/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/balancing.md"
+    ]
+  },
+  {
+    "id": "gamedev-visual-novel",
+    "title": "Visual Novel",
+    "description": "Build a visual novel: a branching script, character and background display, a text box with choices, save/load, backlog, and skip/auto. Use for a VN, dating sim, or branching story game.",
+    "directory": "skills/vendor/gamedev/skills/genres/visual-novel",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/genres/visual-novel/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/script-and-flow.md"
+    ]
+  },
+  {
+    "id": "gamedev-godot-2d-movement",
+    "title": "Godot 2D Movement (4.x)",
+    "description": "Implement 2D kinematic character movement in Godot 4.7 with CharacterBody2D and move_and_slide(): platformer run/jump with gravity, top-down 8-direction motion, slope handling, and reading collisions. Use when coding a 2D player or enemy controller, a platformer or top-down character, or fixing move_and_slide()/ is_on_floor() behavior in a .tscn with a CharacterBody2D.",
+    "directory": "skills/vendor/gamedev/skills/godot/godot-2d-movement",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/godot/godot-2d-movement/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/controller-recipes.md"
+    ]
+  },
+  {
+    "id": "gamedev-godot-3d-essentials",
+    "title": "Godot 3D Essentials (4.x)",
+    "description": "Set up a Godot 4.7 3D scene: Node3D transforms, Camera3D, lighting (DirectionalLight3D/OmniLight3D), WorldEnvironment for sky/ambient/tonemap/post, MeshInstance3D materials, and GridMap for tile-based 3D levels. Use when building a 3D scene in a Godot project, placing cameras/lights, configuring environment and post-processing, or working with Node3D/.tscn 3D content and GridMap.",
+    "directory": "skills/vendor/gamedev/skills/godot/godot-3d-essentials",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/godot/godot-3d-essentials/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/scene-and-environment.md"
+    ]
+  },
+  {
+    "id": "gamedev-godot-animation",
+    "title": "Godot Animation (4.x)",
+    "description": "Animate in Godot 4.7 three ways: AnimationPlayer for keyframed clips (incl. call and signal tracks), AnimationTree with state machines and blend spaces for character animation, and Tween for short procedural/UI tweens via create_tween(). Use when working with AnimationPlayer/AnimationTree nodes in a .tscn, blending character states, sprite-sheet animation, or code-driven Tweens.",
+    "directory": "skills/vendor/gamedev/skills/godot/godot-animation",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/godot/godot-animation/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/animation-tree-and-tween.md"
+    ]
+  },
+  {
+    "id": "gamedev-godot-audio",
+    "title": "Godot Audio (4.x)",
+    "description": "Play and mix audio in Godot 4.7: AudioStreamPlayer (2D/3D variants), audio buses with volume/mute and effects, music vs SFX routing, db/linear volume, and precise sync-to-beat playback timing. Use when playing sounds or music in a Godot project, routing AudioStreamPlayer nodes to buses, adjusting bus volume via AudioServer, or syncing gameplay to the beat.",
+    "directory": "skills/vendor/gamedev/skills/godot/godot-audio",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/godot/godot-audio/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/buses-and-effects.md"
+    ]
+  },
+  {
+    "id": "gamedev-godot-csharp",
+    "title": "Godot C# / .NET (4.x)",
+    "description": "Use C#/.NET in Godot 4.7: partial classes extending nodes, the PascalCase lifecycle (_Ready/_Process/_PhysicsProcess), [Export] fields, [Signal] delegates as C# events, type-safe node lookup, and calling between C# and GDScript. Use when writing Godot game code in C# (.cs files, .csproj), needing the Godot .NET build, converting GDScript patterns to C#, or wiring Godot signals as C# events.",
+    "directory": "skills/vendor/gamedev/skills/godot/godot-csharp",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/godot/godot-csharp/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/csharp-setup-and-interop.md"
+    ]
+  },
+  {
+    "id": "gamedev-godot-export",
+    "title": "Godot Export & Builds (4.x)",
+    "description": "Export and build a Godot 4.7 project for distribution: install export templates, define export presets (Windows/macOS/Linux/Web/Android), run headless command-line exports for CI, and handle web (HTML5) COOP/COEP and dedicated-server/headless builds. Use when exporting a Godot game, configuring export_presets.cfg, building for web/desktop/mobile, or automating builds from the command line.",
+    "directory": "skills/vendor/gamedev/skills/godot/godot-export",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/godot/godot-export/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/presets-and-cli.md"
+    ]
+  },
+  {
+    "id": "gamedev-godot-gdscript",
+    "title": "Godot GDScript (4.x)",
+    "description": "Write idiomatic GDScript for Godot 4.7: static typing, the node lifecycle (_ready/_process/_physics_process), @export/@onready/@tool annotations, signals, and await for asynchronous flow. Use when editing .gd scripts in a Godot project (project.godot), writing or debugging GDScript, or porting 3.x GDScript to 4.x (function signatures, yield to await, export to @export).",
+    "directory": "skills/vendor/gamedev/skills/godot/godot-gdscript",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/godot/godot-gdscript/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/annotations-and-typing.md"
+    ]
+  },
+  {
+    "id": "gamedev-godot-multiplayer",
+    "title": "Godot Multiplayer (4.x high-level)",
+    "description": "Build networked games with Godot 4.7 high-level multiplayer: set up an ENetMultiplayerPeer server/client, define RPCs with the @rpc annotation (call via rpc()/rpc_id()), set per-node multiplayer authority, and replicate state with MultiplayerSpawner and MultiplayerSynchronizer. Use when adding multiplayer/networking to a Godot project, writing @rpc functions, or syncing player/world state across peers.",
+    "directory": "skills/vendor/gamedev/skills/godot/godot-multiplayer",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/godot/godot-multiplayer/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/replication-and-rpc.md"
+    ]
+  },
+  {
+    "id": "gamedev-godot-nodes-scenes",
+    "title": "Godot Nodes & Scenes (4.x)",
+    "description": "Structure a Godot 4.7 project with the scene tree and node composition: build reusable scenes, instance PackedScenes at runtime, navigate the tree safely, and register autoload singletons. Use when designing .tscn scenes, deciding how to split nodes, spawning instances with instantiate(), wiring autoloads, or fixing \"node not found\"/freed-node errors in a Godot project.",
+    "directory": "skills/vendor/gamedev/skills/godot/godot-nodes-scenes",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/godot/godot-nodes-scenes/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/tree-and-instancing.md"
+    ]
+  },
+  {
+    "id": "gamedev-godot-physics",
+    "title": "Godot Physics (4.x, 2D + 3D)",
+    "description": "Use Godot 4.7 physics bodies and detection in 2D and 3D: RigidBody, StaticBody, Area, and CharacterBody; collision layers vs masks; contact/overlap signals; and raycasts (RayCast nodes and direct space-state queries). Use when configuring collision layers/masks, detecting overlaps with Area2D/Area3D, applying forces to a RigidBody, or casting rays in a Godot project (.tscn with physics bodies).",
+    "directory": "skills/vendor/gamedev/skills/godot/godot-physics",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/godot/godot-physics/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/bodies-and-queries.md"
+    ]
+  },
+  {
+    "id": "gamedev-godot-resources",
+    "title": "Godot Resources (4.x)",
+    "description": "Design data-driven Godot 4.7 games with custom Resource classes: define typed data with class_name + @export, save/load .tres/.res files, instance and duplicate resources, and load on demand with ResourceLoader (incl. threaded loading). Use when modeling items/stats/configs as data in a Godot project, creating .tres resources, or working with custom Resource subclasses and ResourceLoader/ResourceSaver.",
+    "directory": "skills/vendor/gamedev/skills/godot/godot-resources",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/godot/godot-resources/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/resource-patterns.md"
+    ]
+  },
+  {
+    "id": "gamedev-godot-shaders",
+    "title": "Godot Shaders (4.x)",
+    "description": "Write Godot 4.7 shaders in the Godot Shading Language: canvas_item shaders for 2D and spatial shaders for 3D, with vertex/fragment functions, uniforms (source_color, hint_range), TIME/UV animation, and screen-reading via hint_screen_texture. Use when authoring .gdshader files, writing fragment/vertex code, making 2D/3D visual effects, or porting 3.x shaders (SCREEN_TEXTURE, hint_color) to 4.x.",
+    "directory": "skills/vendor/gamedev/skills/godot/godot-shaders",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/godot/godot-shaders/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/shading-language.md"
+    ]
+  },
+  {
+    "id": "gamedev-godot-signals-groups",
+    "title": "Godot Signals & Groups (4.x)",
+    "description": "Build event-driven, decoupled Godot 4.7 gameplay with signals and node groups: declare and emit custom signals, connect with Callables (incl. bind/one-shot), and broadcast to many nodes via groups and call_group. Use when wiring node communication in a Godot project, replacing tight references with signals, emitting/connecting events, or porting 3.x connect(\"sig\", self, \"method\") code.",
+    "directory": "skills/vendor/gamedev/skills/godot/godot-signals-groups",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/godot/godot-signals-groups/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/signal-patterns.md"
+    ]
+  },
+  {
+    "id": "gamedev-godot-tilemap",
+    "title": "Godot TileMap (4.7 TileMapLayer)",
+    "description": "Build and edit tile-based 2D levels in Godot 4.7 with TileMapLayer and TileSet: paint layers, set up collision/navigation/custom-data on tiles, autotile with terrain sets, and read/write cells from code (set_cell, get_cell_tile_data, local_to_map). Use when working with TileMapLayer nodes, .tres TileSets, autotiling, or migrating a deprecated TileMap node to TileMapLayer.",
+    "directory": "skills/vendor/gamedev/skills/godot/godot-tilemap",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/godot/godot-tilemap/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/tileset-and-terrains.md"
+    ]
+  },
+  {
+    "id": "gamedev-godot-ui-control",
+    "title": "Godot UI / Control nodes (4.x)",
+    "description": "Build Godot 4.7 user interfaces with Control nodes: anchors and offsets for responsive layout, Container nodes (VBox/HBox/Grid/Margin) for automatic arrangement, Theme resources for consistent styling, and keyboard/gamepad focus navigation. Use when laying out a HUD, menu, or UI in a Godot project, working with Control/Container nodes, anchors, themes, or focus in a .tscn.",
+    "directory": "skills/vendor/gamedev/skills/godot/godot-ui-control",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/godot/godot-ui-control/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/layout-and-theming.md"
+    ]
+  },
+  {
+    "id": "gamedev-bevy-ecs",
+    "title": "Bevy ECS",
+    "description": "Structure a Bevy app around its Entity Component System: build the App with plugins, define Component/Resource types, write systems with Query/Res/Commands, filter and order systems, and use the Time resource for frame-rate-independent motion. Use when building or debugging a Bevy game in Rust \u2014 when the user mentions Bevy, ECS, App::new, add_systems, Query, Commands, components/systems, or a Cargo.toml depending on bevy.",
+    "directory": "skills/vendor/gamedev/skills/other-engines/bevy-ecs",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/other-engines/bevy-ecs/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/queries-and-scheduling.md"
+    ]
+  },
+  {
+    "id": "gamedev-love2d-core",
+    "title": "L\u00d6VE (Love2D) Core",
+    "description": "Structure and debug a L\u00d6VE (Love2D) game in Lua: the love.load/update/draw loop, delta-time movement, input, and screen states. Use when building a L\u00d6VE 11.x game (main.lua, conf.lua, .love).",
+    "directory": "skills/vendor/gamedev/skills/other-engines/love2d-core",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/other-engines/love2d-core/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/state-stack.md"
+    ]
+  },
+  {
+    "id": "gamedev-pygame-core",
+    "title": "pygame Core",
+    "description": "Structure a pygame (pygame-ce) game in Python: the init/event/update/draw loop, delta-time movement, Surface/Rect blitting, keyboard/mouse input, and Sprite/Group management with collision. Use when building or debugging a pygame game \u2014 when the user mentions pygame, pygame-ce, the game loop, blit, Surface, Rect, sprite groups, or clock.tick. Targets pygame-ce.",
+    "directory": "skills/vendor/gamedev/skills/other-engines/pygame-core",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/other-engines/pygame-core/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/sprites-and-collision.md"
+    ]
+  },
+  {
+    "id": "gamedev-roblox-characters",
+    "title": "Roblox characters",
+    "description": "Build respawn-safe Roblox character systems around Players, CharacterAdded/CharacterRemoving, Humanoid, HumanoidRootPart, Animator, R6/R15 rigs, movement, animations and markers, death, tools, accessories, ownership, and custom characters. Use when character scripts break after respawn, cache stale Humanoids, control movement or velocity, load AnimationTracks, handle death, equip Tools, modify avatars, or support custom player rigs.",
+    "directory": "skills/vendor/gamedev/skills/other-engines/roblox-characters",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/other-engines/roblox-characters/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "agents/openai.yaml",
+      "references/lifecycle-and-animation.md"
+    ]
+  },
+  {
+    "id": "gamedev-roblox-datastores",
+    "title": "Roblox DataStores",
+    "description": "Persist player data in Roblox with DataStoreService: GetDataStore, GetAsync/ SetAsync/UpdateAsync/IncrementAsync wrapped in pcall, load-on-join and save-on-leave plus BindToClose, retries, and OrderedDataStore leaderboards. Use when saving or loading persistent data in a Roblox experience \u2014 when the user mentions DataStore, DataStoreService, GetAsync, SetAsync, UpdateAsync, save player data, or leaderboards. For general Luau scripting use roblox-luau.",
+    "directory": "skills/vendor/gamedev/skills/other-engines/roblox-datastores",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/other-engines/roblox-datastores/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/sessions-and-limits.md"
+    ]
+  },
+  {
+    "id": "gamedev-roblox-luau",
+    "title": "Roblox Luau Scripting",
+    "description": "Script a Roblox experience in Luau: get services, create and parent Instances, connect events, run server Scripts vs client LocalScripts, and communicate across the client/server boundary with RemoteEvents/RemoteFunctions (server-authoritative). Use when building or debugging Roblox Studio scripts \u2014 when the user mentions Roblox, Luau, services, RemoteEvent, Instance.new, PlayerAdded, or client vs server. For saving player data use roblox-datastores.",
+    "directory": "skills/vendor/gamedev/skills/other-engines/roblox-luau",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/other-engines/roblox-luau/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/client-server.md"
+    ]
+  },
+  {
+    "id": "gamedev-roblox-networking",
+    "title": "Roblox networking",
+    "description": "Design and harden Roblox client/server networking with RemoteEvent, RemoteFunction, and UnreliableRemoteEvent; server authority, argument and Instance validation, rate limits, proximity/ownership checks, targeted replication, streaming, lifecycle, prediction, and reconciliation. Use for Roblox remotes, exploits, request spam, multiplayer replication, network ownership, high-frequency cosmetic updates, or server/client desynchronization.",
+    "directory": "skills/vendor/gamedev/skills/other-engines/roblox-networking",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/other-engines/roblox-networking/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "agents/openai.yaml",
+      "references/validation-and-testing.md"
+    ]
+  },
+  {
+    "id": "gamedev-roblox-physics",
+    "title": "Roblox physics",
+    "description": "Implement Roblox physical simulation and queries with assemblies, anchoring, constraints, collision groups, CanCollide/CanTouch/CanQuery, raycasts and overlap queries, mass, impulses, forces, velocity, moving assemblies, cleanup, and network ownership. Use for Roblox collisions, hit detection, RaycastParams, PhysicsService, projectiles, vehicles, knockback, constraints, deprecated BodyMovers, unstable motion, or client-owned physics exploits.",
+    "directory": "skills/vendor/gamedev/skills/other-engines/roblox-physics",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/other-engines/roblox-physics/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "agents/openai.yaml",
+      "references/queries-and-ownership.md"
+    ]
+  },
+  {
+    "id": "gamedev-roblox-studio-workflow",
+    "title": "Roblox Studio workflow",
+    "description": "Modify living Roblox Studio projects safely: inspect Explorer and execution locations, preserve existing structure, reuse modules/remotes, create meaningful Instances, apply Attributes and CollectionService tags, test server/client and multiple devices, inspect Output, and remove experiments/debug objects. Use when an agent edits a place or rbxl/rbxlx/Rojo project, operates in Studio, adds Scripts/LocalScripts/ModuleScripts, or must verify a Roblox change in context.",
+    "directory": "skills/vendor/gamedev/skills/other-engines/roblox-studio-workflow",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/other-engines/roblox-studio-workflow/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "agents/openai.yaml",
+      "references/studio-verification.md"
+    ]
+  },
+  {
+    "id": "gamedev-roblox-ui",
+    "title": "Roblox UI",
+    "description": "Build production Roblox interfaces with ScreenGui/PlayerGui lifecycle, responsive UDim2 layouts, safe insets, reusable editable Instances, cross-device input and selection, restrained motion, cleanup, and multi-viewport verification. Use for Roblox HUDs, inventories, shops, settings, ability bars, ScrollingFrames, AutomaticSize, GuiService, gamepad focus, touch UI, or UI that clips, resets on respawn, looks generic, or was generated as one giant LocalScript.",
+    "directory": "skills/vendor/gamedev/skills/other-engines/roblox-ui",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/other-engines/roblox-ui/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "agents/openai.yaml",
+      "assets/inventory-quality-test.model.json",
+      "assets/inventory-quality-test.project.json",
+      "references/input-navigation.md",
+      "references/responsive-layout.md"
+    ]
+  },
+  {
+    "id": "gamedev-unity-animation",
+    "title": "Unity Animation (Animator / Mecanim)",
+    "description": "Drive Unity 6.3 LTS character animation with Animator Controllers: states, transitions, parameters, blend trees, animation layers, and humanoid Avatar IK. Use when wiring an Animator, setting parameters from script (SetFloat/SetBool/SetTrigger), building blend trees, or when the user mentions Animator, Mecanim, state machine, blend tree, or .controller.",
+    "directory": "skills/vendor/gamedev/skills/unity/unity-animation",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/unity/unity-animation/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/blend-trees-and-ik.md"
+    ]
+  },
+  {
+    "id": "gamedev-unity-build-pipeline",
+    "title": "Unity Build Pipeline",
+    "description": "Build and ship Unity 6.3 LTS players: build settings and scenes, player/quality settings, the IL2CPP vs Mono scripting backend, managed code stripping, scripted BuildPipeline.BuildPlayer, and CI/headless builds. Use when configuring or automating a build, choosing a scripting backend, shrinking build size, or when the user mentions Unity build, player settings, IL2CPP, code stripping, or Addressables.",
+    "directory": "skills/vendor/gamedev/skills/unity/unity-build-pipeline",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/unity/unity-build-pipeline/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/ci-build-script.md"
+    ]
+  },
+  {
+    "id": "gamedev-unity-csharp-scripting",
+    "title": "Unity C# Scripting (MonoBehaviour)",
+    "description": "Write Unity 6.3 LTS C# gameplay scripts: the MonoBehaviour lifecycle (Awake/OnEnable/Start/Update/FixedUpdate/LateUpdate), GameObject and component access, coroutines, and Inspector serialization. Use when creating or editing .cs scripts in a Unity project, or when the user mentions MonoBehaviour, Start/Update, GetComponent, SerializeField, coroutines, or \"Unity script\".",
+    "directory": "skills/vendor/gamedev/skills/unity/unity-csharp-scripting",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/unity/unity-csharp-scripting/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/lifecycle-and-coroutines.md"
+    ]
+  },
+  {
+    "id": "gamedev-unity-input-system",
+    "title": "Unity Input System (new)",
+    "description": "Wire player input in Unity 6.3 LTS with the Input System package: Input Actions, action maps, the PlayerInput component, and reading values via callbacks or polling. Use when the project has a .inputactions asset or com.unity.inputsystem, or when the user mentions the Unity Input System, InputAction, action maps, PlayerInput, control schemes, or rebinding.",
+    "directory": "skills/vendor/gamedev/skills/unity/unity-input-system",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/unity/unity-input-system/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/rebinding.md"
+    ]
+  },
+  {
+    "id": "gamedev-unity-navmesh",
+    "title": "Unity NavMesh (AI Navigation)",
+    "description": "Add AI navigation in Unity 6.3 LTS: bake a NavMesh with the AI Navigation package (NavMeshSurface), move agents with NavMeshAgent.SetDestination, and handle dynamic obstacles. Use when setting up pathfinding, making an enemy chase the player, baking navigation, or when the user mentions NavMesh, NavMeshAgent, NavMeshSurface, NavMeshObstacle, or Unity pathfinding.",
+    "directory": "skills/vendor/gamedev/skills/unity/unity-navmesh",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/unity/unity-navmesh/SKILL.md",
+    "files": [
+      "SKILL.md"
+    ]
+  },
+  {
+    "id": "gamedev-unity-physics",
+    "title": "Unity Physics (Rigidbody / PhysX)",
+    "description": "Set up 3D physics in Unity 6.3 LTS: Rigidbody movement and forces, colliders, triggers vs collisions, layer-based collision, raycasts, and joints. Use when adding a Rigidbody, handling OnCollisionEnter/OnTriggerEnter, tuning collision layers, casting rays, or when the user mentions Unity physics, AddForce, isKinematic, or linearVelocity.",
+    "directory": "skills/vendor/gamedev/skills/unity/unity-physics",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/unity/unity-physics/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/raycasting-and-joints.md"
+    ]
+  },
+  {
+    "id": "gamedev-unity-scriptableobjects",
+    "title": "Unity ScriptableObject Architecture",
+    "description": "Architect Unity 6.3 LTS data and decoupling with ScriptableObjects: config/data assets, shared runtime variables, event channels, and runtime sets/registries. Use when designing data-driven systems, replacing singletons/managers, creating .asset data with CreateAssetMenu, or when the user mentions ScriptableObject, SO architecture, or data assets.",
+    "directory": "skills/vendor/gamedev/skills/unity/unity-scriptableobjects",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/unity/unity-scriptableobjects/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/event-channels.md"
+    ]
+  },
+  {
+    "id": "gamedev-unity-tilemap-2d",
+    "title": "Unity 2D Tilemap",
+    "description": "Build and script 2D tilemaps in Unity 6.3 LTS: the Grid + Tilemap components, the Tile Palette, tilemap colliders, rule tiles, and runtime SetTile/GetTile painting. Use when painting tile levels, adding a TilemapCollider2D, using rule or animated tiles, generating tilemaps from code, or when the user mentions Unity tilemap, tile palette, rule tile, or Grid.",
+    "directory": "skills/vendor/gamedev/skills/unity/unity-tilemap-2d",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/unity/unity-tilemap-2d/SKILL.md",
+    "files": [
+      "SKILL.md"
+    ]
+  },
+  {
+    "id": "gamedev-unreal-behavior-trees",
+    "title": "Unreal Behavior Trees",
+    "description": "Build NPC AI in Unreal Engine 5 with Behavior Trees and Blackboards: composites (Selector/Sequence), tasks, decorators, services, and running the tree from an AIController. Use when creating enemy/NPC AI, BT_/BB_ assets, custom BTTask or BTService nodes, or when the user mentions Behavior Tree, Blackboard, AIController, BTTask, decorator, or service.",
+    "directory": "skills/vendor/gamedev/skills/unreal/unreal-behavior-trees",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/unreal/unreal-behavior-trees/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/custom-bttask.md"
+    ]
+  },
+  {
+    "id": "gamedev-unreal-blueprints",
+    "title": "Unreal Blueprints (Visual Scripting)",
+    "description": "Build Unreal Engine 5 gameplay with Blueprint visual scripting: Blueprint Classes, the Event Graph and Construction Script, variables/functions/macros, and Blueprint communication (Cast, Interfaces, Event Dispatchers). Use when working in Blueprints, wiring an event graph, deciding how Blueprints talk to each other, or when the user mentions Blueprint, BP, event graph, construction script, or a Blueprint .uasset.",
+    "directory": "skills/vendor/gamedev/skills/unreal/unreal-blueprints",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/unreal/unreal-blueprints/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/communication.md"
+    ]
+  },
+  {
+    "id": "gamedev-unreal-cpp-gameplay",
+    "title": "Unreal C++ Gameplay",
+    "description": "Write Unreal Engine 5 C++ gameplay code: the UCLASS/UPROPERTY/UFUNCTION reflection macros, the Gameplay Framework (GameMode, Pawn, Character, PlayerController, Actor components), and the module Build.cs. Use when writing or debugging UE C++, deriving from AActor/ACharacter/ AGameModeBase, exposing properties to the editor or Blueprints, or when the user mentions Unreal C++, UCLASS, GENERATED_BODY, GameMode, ACharacter, or .Build.cs.",
+    "directory": "skills/vendor/gamedev/skills/unreal/unreal-cpp-gameplay",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/unreal/unreal-cpp-gameplay/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/components-and-gc.md"
+    ]
+  },
+  {
+    "id": "gamedev-unreal-enhanced-input",
+    "title": "Unreal Enhanced Input",
+    "description": "Set up player input in Unreal Engine 5 with Enhanced Input: Input Actions, Input Mapping Contexts, modifiers and triggers, adding the mapping context, and binding actions by ETriggerEvent. Use when wiring movement/look/jump input, creating IA_/IMC_ assets, binding in C++ or Blueprints, or when the user mentions Enhanced Input, Input Mapping Context, Input Action, IA_/IMC_, or ETriggerEvent.",
+    "directory": "skills/vendor/gamedev/skills/unreal/unreal-enhanced-input",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/unreal/unreal-enhanced-input/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/cpp-setup.md"
+    ]
+  },
+  {
+    "id": "gamedev-unreal-niagara",
+    "title": "Unreal Niagara VFX",
+    "description": "Create and control VFX in Unreal Engine 5 with Niagara: systems and emitters, modules and the spawn/update stages, exposed User parameters, and spawning or driving effects from Blueprints or C++. Use when building particle effects, NS_/NE_ assets, spawning a Niagara system at runtime, setting User parameters, or when the user mentions Niagara, VFX, or a particle system in Unreal.",
+    "directory": "skills/vendor/gamedev/skills/unreal/unreal-niagara",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/unreal/unreal-niagara/SKILL.md",
+    "files": [
+      "SKILL.md"
+    ]
+  },
+  {
+    "id": "gamedev-unreal-packaging",
+    "title": "Unreal Packaging & Cooking",
+    "description": "Package and ship an Unreal Engine 5 project: the Platforms menu Package Project flow, build configurations (Development vs Shipping), cooking content, packaging settings and the Game Default Map, and command-line builds with RunUAT BuildCookRun. Use when packaging a build, making a shipping build, cooking content, configuring packaging settings, or when the user mentions package Unreal, cook content, shipping build, or BuildCookRun.",
+    "directory": "skills/vendor/gamedev/skills/unreal/unreal-packaging",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/unreal/unreal-packaging/SKILL.md",
+    "files": [
+      "SKILL.md"
+    ]
+  },
+  {
+    "id": "gamedev-phaser-arcade-physics",
+    "title": "Phaser 4 Arcade Physics",
+    "description": "Use Phaser 4 Arcade Physics: enable the world, give sprites bodies, set velocity/acceleration/gravity, and resolve collisions with colliders, overlaps, groups, and world bounds. Use when a Phaser game needs movement or collisions \u2014 when the user mentions Arcade Physics, this.physics, setVelocity, collider, overlap, gravity, onFloor, or a platformer/top-down controller. For game config, scenes, and the loader use phaser-core.",
+    "directory": "skills/vendor/gamedev/skills/web-engines/phaser-arcade-physics",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/web-engines/phaser-arcade-physics/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/bodies-and-collision.md"
+    ]
+  },
+  {
+    "id": "gamedev-phaser-core",
+    "title": "Phaser 4 Core",
+    "description": "Set up and debug a Phaser 4 game: the Game config, the Scene lifecycle (init/preload/create/update), the asset loader, cameras, and cross-scene communication. Use when building or debugging a Phaser game \u2014 when the user mentions Phaser, Phaser.Game, Phaser.Scene, preload/create/update, this.load, this.add, or scene transitions. For Arcade Physics movement/collisions use phaser-arcade-physics.",
+    "directory": "skills/vendor/gamedev/skills/web-engines/phaser-core",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/web-engines/phaser-core/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/scene-flow.md"
+    ]
+  },
+  {
+    "id": "gamedev-pixijs-rendering",
+    "title": "PixiJS 8.19 Rendering",
+    "description": "Build a PixiJS v8 render layer: create the async Application, load textures with Assets, compose the scene graph with Container and Sprite, drive the ticker loop, wire pointer events, and group draws with render groups. Use when building or debugging PixiJS v8 \u2014 when the user mentions PixiJS, Pixi, Application, app.stage, Container, Sprite, Assets.load, app.ticker, or eventMode. Pins the v8 async init() API.",
+    "directory": "skills/vendor/gamedev/skills/web-engines/pixijs-rendering",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/web-engines/pixijs-rendering/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/assets-and-display.md"
+    ]
+  },
+  {
+    "id": "gamedev-threejs-gltf-loading",
+    "title": "three.js glTF Loading",
+    "description": "Load glTF/GLB models in three.js with GLTFLoader and play their skinned animations with AnimationMixer, including DRACO/Meshopt-compressed meshes and KTX2 textures. Use when importing 3D models into three.js \u2014 when the user mentions glTF, GLB, GLTFLoader, AnimationMixer, animation clips, DRACOLoader, or \"load a 3D model\". For scene/camera/renderer setup use threejs-scene-setup; for materials and lights use threejs-materials-lighting.",
+    "directory": "skills/vendor/gamedev/skills/web-engines/threejs-gltf-loading",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/web-engines/threejs-gltf-loading/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/loaders-and-animation.md"
+    ]
+  },
+  {
+    "id": "gamedev-threejs-materials-lighting",
+    "title": "three.js Materials & Lighting",
+    "description": "Light and shade a three.js scene: choose materials (MeshStandardMaterial PBR vs unlit MeshBasicMaterial), add ambient/hemisphere/directional/point/spot lights, turn on shadow maps, and use an environment map (IBL) for realistic reflections. Use when a three.js model looks black, flat, or wrong \u2014 when the user mentions three.js materials, MeshStandardMaterial, lights, shadows, envMap, or PBR. For renderer/loop setup use threejs-scene-setup; for loading models use threejs-gltf-loading.",
+    "directory": "skills/vendor/gamedev/skills/web-engines/threejs-materials-lighting",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/web-engines/threejs-materials-lighting/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/materials-lights-table.md"
+    ]
+  },
+  {
+    "id": "gamedev-threejs-scene-setup",
+    "title": "three.js Scene Setup",
+    "description": "Stand up a three.js scene: import maps and the three/addons path, the Scene/PerspectiveCamera/WebGLRenderer trio, the setAnimationLoop render loop, responsive resize, and OrbitControls. Use when starting or debugging a three.js app \u2014 when the user mentions three.js, THREE.Scene, WebGLRenderer, PerspectiveCamera, the render loop, resizing, or OrbitControls. For models use threejs-gltf-loading; for materials/lights use threejs-materials-lighting.",
+    "directory": "skills/vendor/gamedev/skills/web-engines/threejs-scene-setup",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/web-engines/threejs-scene-setup/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/scene-graph.md"
+    ]
+  },
+  {
+    "id": "gamedev-game-jam",
+    "title": "Game Jam",
+    "description": "Plan and ship a game under a jam deadline: lock scope to the clock, schedule the hours, cut features, and submit on time. Use for a game jam (Ludum Dare, GMTK Jam, Global Game Jam), a 48-hour or weekend build, or scoping and submitting a jam entry.",
+    "directory": "skills/vendor/gamedev/skills/workflows/game-jam",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/workflows/game-jam/SKILL.md",
+    "files": [
+      "SKILL.md"
+    ]
+  },
+  {
+    "id": "gamedev-itch-publish",
+    "title": "itch.io Publish (butler)",
+    "description": "Publish and update a game on itch.io: create the project page and upload builds with the butler CLI (butler push) to named channels. Use for itch.io publishing, butler push, channel naming for Windows/macOS/Linux/HTML5, versioning uploads, or shipping a jam or release build to itch.io.",
+    "directory": "skills/vendor/gamedev/skills/workflows/itch-publish",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/workflows/itch-publish/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/butler-ci.md"
+    ]
+  },
+  {
+    "id": "gamedev-prototype-fast",
+    "title": "Prototype Fast",
+    "description": "Build a playable prototype in about an hour to answer one question \u2014 is it fun? \u2014 with greybox primitives, a hard timebox, and explicit keep/kill criteria. Use when prototyping a mechanic, making a vertical slice or MVP, greyboxing/blockout, or judging throwaway vs keep.",
+    "directory": "skills/vendor/gamedev/skills/workflows/prototype-fast",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/workflows/prototype-fast/SKILL.md",
+    "files": [
+      "SKILL.md"
+    ]
+  },
+  {
+    "id": "gamedev-steam-publish",
+    "title": "Steam Publish (Steamworks + SteamPipe)",
+    "description": "Publish or update a game on Steam with Steamworks and SteamPipe: configure depots and packages, upload builds with steamcmd, set a build live on a branch, and run the release checklists. Use for Steam publishing, app_build.vdf/steamcmd uploads, depots, beta branches, or a store page release.",
+    "directory": "skills/vendor/gamedev/skills/workflows/steam-publish",
+    "creatorId": "gamedev-skills",
+    "version": "b105e1cf617a",
+    "sourceUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/workflows/steam-publish/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/steampipe-build-scripts.md"
+    ]
+  },
+  {
+    "id": "tari-game-development",
+    "title": "Tari Game Development",
+    "description": "Route game design, development, assets, audio and engine work to repository skills with explicit Tari integration boundaries.",
+    "directory": ".agents/skills/tari-game-development",
+    "creatorId": "tari",
+    "version": "1.1.0",
+    "sourceUrl": "https://github.com/marguerite347/tari-growth/tree/e68b6a37f5ee9afad9a9845da8f262df05067ecc/.agents/skills/tari-game-development",
+    "files": [
+      "SKILL.md"
+    ]
+  },
+  {
+    "id": "creator-hub-demo-capture",
+    "title": "Ootle Lobby Demo Capture",
+    "description": "Capture real product walkthroughs and create editable cinematic Remotion trailers with verified exports and playback.",
+    "directory": ".agents/skills/creator-hub-demo-capture",
+    "creatorId": "tari",
+    "version": "1.1.0",
+    "sourceUrl": "https://github.com/marguerite347/tari-growth/tree/e68b6a37f5ee9afad9a9845da8f262df05067ecc/.agents/skills/creator-hub-demo-capture",
+    "files": [
+      "SKILL.md",
+      "agents/openai.yaml",
+      "references/recorded-workflow.md",
+      "references/trailer-workflow.md"
+    ]
+  },
+  {
+    "id": "creator-workflow-improvement",
+    "title": "Creator Workflow Improvement",
+    "description": "Improve skills, success criteria and repository workflows using observed failures, reproducible evidence and bounded correction loops.",
+    "directory": ".agents/skills/creator-workflow-improvement",
+    "creatorId": "tari",
+    "version": "31c963c97550",
+    "sourceUrl": "https://github.com/marguerite347/tari-growth/blob/31c963c975508accafeed128a0a171ba40cedee0/.agents/skills/creator-workflow-improvement/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/open-air-patterns.md"
+    ]
+  },
+  {
+    "id": "hf-hf-cli",
+    "title": "Hugging Face \u00b7 CLI",
+    "description": "Hugging Face Hub CLI (`hf`) for downloading, uploading, and managing models, datasets, spaces, buckets, repos, papers, jobs, and more on the Hugging Face Hub. Use when: handling authentication; managing local cache; managing Hugging Face Buckets; running or scheduling jobs on Hugging Face infrastructure; managing Hugging Face repos; discussions and pull requests; browsing models, datasets and spaces; reading, searching, or browsing academic papers; managing collections; querying datasets; configuring spaces; setting up webhooks; or deploying and managing HF Inference Endpoints. Make sure to use this skill whenever the user mentions 'hf', 'huggingface', 'Hugging Face', 'huggingface-cli', or 'hugging face cli', or wants to do anything related to the Hugging Face ecosystem and to AI and ML in general. Also use for cloud storage needs like training checkpoints, data pipelines, or agent traces. Use even if the user doesn't explicitly ask for a CLI command. Replaces the deprecated `huggingface-cli`.",
+    "directory": "skills/vendor/huggingface/hf-cli",
+    "creatorId": "huggingface",
+    "version": "abc20ae526d8",
+    "sourceUrl": "https://github.com/huggingface/skills/blob/abc20ae526d8b4c0e4dff89f904adce28a4a0eb6/skills/hf-cli/SKILL.md",
+    "files": [
+      "LICENSE",
+      "SKILL.md",
+      "UPSTREAM.json"
+    ]
+  },
+  {
+    "id": "hf-hf-cloud-aws-context-discovery",
+    "title": "Hugging Face \u00b7 Cloud AWS Context Discovery",
+    "description": "Discover the user's local AWS context (active profile, region, account ID, caller identity) at the start of any AWS task. Use this skill before any other AWS work \u2014 deploying to SageMaker, creating resources, calling AWS APIs, or anything that touches an AWS account. Use it especially when the user has not specified a region or profile explicitly, when they say things like \"use my AWS account\", \"deploy to AWS\", \"use my profile\", or when about to make any AWS CLI or SDK call. Never guess the region or account ID \u2014 always use this skill to read it from the local configuration first.",
+    "directory": "skills/vendor/huggingface/hf-cloud-aws-context-discovery",
+    "creatorId": "huggingface",
+    "version": "abc20ae526d8",
+    "sourceUrl": "https://github.com/huggingface/skills/blob/abc20ae526d8b4c0e4dff89f904adce28a4a0eb6/skills/hf-cloud-aws-context-discovery/SKILL.md",
+    "files": [
+      "LICENSE",
+      "SKILL.md",
+      "UPSTREAM.json"
+    ]
+  },
+  {
+    "id": "hf-hf-cloud-python-env-setup",
+    "title": "Hugging Face \u00b7 Cloud Python Env Setup",
+    "description": "Set up an isolated Python environment for SageMaker / AWS work, with the right Python version and current boto3. Use this skill whenever Python code will be executed for a SageMaker deployment, training job, or any AWS automation \u2014 including when about to run `pip install`, when about to invoke `boto3`, when creating or activating a virtualenv, or when the user asks to \"set up the environment\". Never use system Python and never `pip install` into it. Always isolate. This skill prevents the most common failure modes: wrong Python version, dependency conflicts, and stale SDKs.",
+    "directory": "skills/vendor/huggingface/hf-cloud-python-env-setup",
+    "creatorId": "huggingface",
+    "version": "abc20ae526d8",
+    "sourceUrl": "https://github.com/huggingface/skills/blob/abc20ae526d8b4c0e4dff89f904adce28a4a0eb6/skills/hf-cloud-python-env-setup/SKILL.md",
+    "files": [
+      "LICENSE",
+      "SKILL.md",
+      "UPSTREAM.json",
+      "requirements.txt",
+      "scripts/check_versions.py",
+      "scripts/setup_env.py"
+    ]
+  },
+  {
+    "id": "hf-hf-cloud-sagemaker-deployment-planner",
+    "title": "Hugging Face \u00b7 Cloud SageMaker Deployment Planner",
+    "description": "Plan and coordinate the deployment of a model to Amazon SageMaker AI. Use this skill whenever the user wants to deploy, host, serve, or expose a model on SageMaker or AWS \u2014 including phrases like \"deploy a model\", \"host this LLM on AWS\", \"serve this embedding model\", \"deploy a reranker\", \"deploy a text-to-image / diffusion model\", \"host this for async inference\", \"create an endpoint\", \"serve my fine-tuned model\", or any request that involves making a model available for inference on AWS. Use this even when the user is vague (e.g. \"I just want to get this running on AWS, you figure it out\"). Works for text-generation LLMs, embedding models, rerankers, classifiers, text-to-image / diffusion models \u2014 picks the right serving stack and chooses between real-time and async inference. This is the entry-point skill for SageMaker deployment work \u2014 it asks clarifying questions, picks a deployment pathway, and coordinates the other deployment skills.",
+    "directory": "skills/vendor/huggingface/hf-cloud-sagemaker-deployment-planner",
+    "creatorId": "huggingface",
+    "version": "abc20ae526d8",
+    "sourceUrl": "https://github.com/huggingface/skills/blob/abc20ae526d8b4c0e4dff89f904adce28a4a0eb6/skills/hf-cloud-sagemaker-deployment-planner/SKILL.md",
+    "files": [
+      "LICENSE",
+      "SKILL.md",
+      "UPSTREAM.json"
+    ]
+  },
+  {
+    "id": "hf-hf-cloud-sagemaker-iam-preflight",
+    "title": "Hugging Face \u00b7 Cloud SageMaker IAM Preflight",
+    "description": "Ensure a usable SageMaker execution role exists before deploying or training. Use this skill whenever about to create a SageMaker endpoint, model, training job, or any resource that requires an execution role. Use it especially when the user has not provided a role ARN explicitly, when scripts are about to call `iam:CreateRole`, or when an AccessDenied error mentions an IAM action. Never blindly call `iam:CreateRole` \u2014 always check for existing roles first. This skill prevents the most common SageMaker deployment failure: trying to create IAM resources from an SSO principal that has no IAM write permissions.",
+    "directory": "skills/vendor/huggingface/hf-cloud-sagemaker-iam-preflight",
+    "creatorId": "huggingface",
+    "version": "abc20ae526d8",
+    "sourceUrl": "https://github.com/huggingface/skills/blob/abc20ae526d8b4c0e4dff89f904adce28a4a0eb6/skills/hf-cloud-sagemaker-iam-preflight/SKILL.md",
+    "files": [
+      "LICENSE",
+      "SKILL.md",
+      "UPSTREAM.json",
+      "references/minimum-permissions.json",
+      "references/trust-policy.json",
+      "scripts/check_role.py",
+      "scripts/create_role.py"
+    ]
+  },
+  {
+    "id": "hf-hf-cloud-sagemaker-production-defaults",
+    "title": "Hugging Face \u00b7 Cloud SageMaker Production Defaults",
+    "description": "Create a SageMaker endpoint (real-time, real-time scale-to-zero, or async) with autoscaling, CloudWatch alarms, and tagging enabled by default. Use this skill whenever about to create a SageMaker endpoint, write deployment code that calls `create_endpoint`, or finalize a deployment after the image URI and IAM role are known. Provides deploy.py for real-time endpoints, deploy_ic.py for real-time endpoints that scale to zero instances via inference components, and deploy_async.py for async endpoints (also scale-to-zero). This is the last step in the SageMaker deployment workflow. Never generate a bare `create_endpoint` call without these defaults \u2014 endpoints without autoscaling or alarms are demos, not deployments.",
+    "directory": "skills/vendor/huggingface/hf-cloud-sagemaker-production-defaults",
+    "creatorId": "huggingface",
+    "version": "abc20ae526d8",
+    "sourceUrl": "https://github.com/huggingface/skills/blob/abc20ae526d8b4c0e4dff89f904adce28a4a0eb6/skills/hf-cloud-sagemaker-production-defaults/SKILL.md",
+    "files": [
+      "LICENSE",
+      "SKILL.md",
+      "UPSTREAM.json",
+      "references/deployment-template.md",
+      "scripts/_common.py",
+      "scripts/deploy.py",
+      "scripts/deploy_async.py",
+      "scripts/deploy_ic.py",
+      "scripts/invoke_endpoint.py",
+      "scripts/teardown.py"
+    ]
+  },
+  {
+    "id": "hf-hf-cloud-serving-image-selection",
+    "title": "Hugging Face \u00b7 Cloud Serving Image Selection",
+    "description": "Pick the right serving container for a SageMaker model deployment and find its current image URI. Use this skill whenever about to deploy a model to a SageMaker endpoint and an image URI needs to be chosen \u2014 including when the user says \"deploy this LLM\", \"host this HuggingFace model\", \"serve this fine-tuned model\", \"deploy this embedding model\", \"host a reranker\", \"serve a sentence-transformers model\", or when about to hardcode any container URI in deployment code. HuggingFace-curated Deep Learning Containers are ALWAYS preferred: HuggingFace vLLM (LLMs and generative rerankers), HuggingFace vLLM-Omni (multimodal), TEI (embeddings/cross-encoder rerankers), HF Inference Toolkit (other transformers). Generic images (AWS vLLM, DJL-LMI, SGLang) are used only when no HuggingFace image is compatible \u2014 never merely because they carry a newer version. Never hardcode a container URI from memory and never default to TGI. Prevents stale-image failures and wrong-region URIs.",
+    "directory": "skills/vendor/huggingface/hf-cloud-serving-image-selection",
+    "creatorId": "huggingface",
+    "version": "abc20ae526d8",
+    "sourceUrl": "https://github.com/huggingface/skills/blob/abc20ae526d8b4c0e4dff89f904adce28a4a0eb6/skills/hf-cloud-serving-image-selection/SKILL.md",
+    "files": [
+      "LICENSE",
+      "SKILL.md",
+      "UPSTREAM.json",
+      "references/model-to-image.md",
+      "scripts/mirror_image.py"
+    ]
+  },
+  {
+    "id": "hf-hf-mem",
+    "title": "Hugging Face \u00b7 Memory Estimator",
+    "description": "Hugging Face CLI to estimate the required memory to load Safetensors or GGUF model weights for inference from the Hugging Face Hub",
+    "directory": "skills/vendor/huggingface/hf-mem",
+    "creatorId": "huggingface",
+    "version": "abc20ae526d8",
+    "sourceUrl": "https://github.com/huggingface/skills/blob/abc20ae526d8b4c0e4dff89f904adce28a4a0eb6/skills/hf-mem/SKILL.md",
+    "files": [
+      "LICENSE",
+      "SKILL.md",
+      "UPSTREAM.json"
+    ]
+  },
+  {
+    "id": "hf-huggingface-best",
+    "title": "Hugging Face \u00b7 Model Selection",
+    "description": "Use when the user asks about finding the best, top, or recommended model for a task, wants to know what AI model to use, or wants to compare models by benchmark scores. Triggers on: \"best model for X\", \"what model should I use for\", \"top models for [task]\", \"which model runs on my laptop/machine/device\", \"recommend a model for\", \"what LLM should I use for\", \"compare models for\", \"what's state of the art for\", or any question about choosing an AI model for a specific use case. Always use this skill when the user wants model recommendations or comparisons, even if they don't explicitly mention HuggingFace or benchmarks.",
+    "directory": "skills/vendor/huggingface/huggingface-best",
+    "creatorId": "huggingface",
+    "version": "abc20ae526d8",
+    "sourceUrl": "https://github.com/huggingface/skills/blob/abc20ae526d8b4c0e4dff89f904adce28a4a0eb6/skills/huggingface-best/SKILL.md",
+    "files": [
+      "LICENSE",
+      "SKILL.md",
+      "UPSTREAM.json"
+    ]
+  },
+  {
+    "id": "hf-huggingface-community-evals",
+    "title": "Hugging Face \u00b7 Community Evals",
+    "description": "Run evaluations for Hugging Face Hub models using inspect-ai and lighteval on local hardware. Use for backend selection, local GPU evals, and choosing between vLLM / Transformers / accelerate. Not for HF Jobs orchestration, model-card PRs, .eval_results publication, or community-evals automation.",
+    "directory": "skills/vendor/huggingface/huggingface-community-evals",
+    "creatorId": "huggingface",
+    "version": "abc20ae526d8",
+    "sourceUrl": "https://github.com/huggingface/skills/blob/abc20ae526d8b4c0e4dff89f904adce28a4a0eb6/skills/huggingface-community-evals/SKILL.md",
+    "files": [
+      "LICENSE",
+      "SKILL.md",
+      "UPSTREAM.json",
+      "examples/.env.example",
+      "examples/USAGE_EXAMPLES.md",
+      "scripts/inspect_eval_uv.py",
+      "scripts/inspect_vllm_uv.py",
+      "scripts/lighteval_vllm_uv.py"
+    ]
+  },
+  {
+    "id": "hf-huggingface-datasets",
+    "title": "Hugging Face \u00b7 Datasets",
+    "description": "Use this skill for Hugging Face Dataset Viewer API workflows that fetch subset/split metadata, paginate rows, search text, apply filters, download parquet URLs, and read size or statistics.",
+    "directory": "skills/vendor/huggingface/huggingface-datasets",
+    "creatorId": "huggingface",
+    "version": "abc20ae526d8",
+    "sourceUrl": "https://github.com/huggingface/skills/blob/abc20ae526d8b4c0e4dff89f904adce28a4a0eb6/skills/huggingface-datasets/SKILL.md",
+    "files": [
+      "LICENSE",
+      "SKILL.md",
+      "UPSTREAM.json"
+    ]
+  },
+  {
+    "id": "hf-huggingface-gradio",
+    "title": "Hugging Face \u00b7 Gradio",
+    "description": "Build Gradio web UIs and demos in Python. Use when creating or editing Gradio apps, components, event listeners, layouts, or chatbots.",
+    "directory": "skills/vendor/huggingface/huggingface-gradio",
+    "creatorId": "huggingface",
+    "version": "abc20ae526d8",
+    "sourceUrl": "https://github.com/huggingface/skills/blob/abc20ae526d8b4c0e4dff89f904adce28a4a0eb6/skills/huggingface-gradio/SKILL.md",
+    "files": [
+      "LICENSE",
+      "SKILL.md",
+      "UPSTREAM.json",
+      "examples.md"
+    ]
+  },
+  {
+    "id": "hf-huggingface-llm-trainer",
+    "title": "Hugging Face \u00b7 LLM Trainer",
+    "description": "Train or fine-tune language and vision models using TRL (Transformer Reinforcement Learning) or Unsloth with Hugging Face Jobs infrastructure. Covers SFT, DPO, GRPO and reward modeling training methods, plus GGUF conversion for local deployment. Includes guidance on the TRL Jobs package, UV scripts with PEP 723 format, dataset preparation and validation, hardware selection, cost estimation, Trackio monitoring, Hub authentication, model selection/leaderboards and model persistence. Use for tasks involving cloud GPU training, GGUF conversion, or when users mention training on Hugging Face Jobs without local GPU setup.",
+    "directory": "skills/vendor/huggingface/huggingface-llm-trainer",
+    "creatorId": "huggingface",
+    "version": "abc20ae526d8",
+    "sourceUrl": "https://github.com/huggingface/skills/blob/abc20ae526d8b4c0e4dff89f904adce28a4a0eb6/skills/huggingface-llm-trainer/SKILL.md",
+    "files": [
+      "LICENSE",
+      "SKILL.md",
+      "UPSTREAM.json",
+      "references/gguf_conversion.md",
+      "references/hardware_guide.md",
+      "references/hub_saving.md",
+      "references/local_training_macos.md",
+      "references/reliability_principles.md",
+      "references/trackio_guide.md",
+      "references/training_methods.md",
+      "references/training_patterns.md",
+      "references/troubleshooting.md",
+      "references/unsloth.md",
+      "scripts/convert_to_gguf.py",
+      "scripts/dataset_inspector.py",
+      "scripts/estimate_cost.py",
+      "scripts/hf_benchmarks.py",
+      "scripts/train_dpo_example.py",
+      "scripts/train_grpo_example.py",
+      "scripts/train_sft_example.py",
+      "scripts/unsloth_sft_example.py"
+    ]
+  },
+  {
+    "id": "hf-huggingface-local-models",
+    "title": "Hugging Face \u00b7 Local Models",
+    "description": "Use to select models to run locally with llama.cpp and GGUF on CPU, Mac Metal, CUDA, or ROCm. Covers finding GGUFs, quant selection, running servers, exact GGUF file lookup, conversion, and OpenAI-compatible local serving.",
+    "directory": "skills/vendor/huggingface/huggingface-local-models",
+    "creatorId": "huggingface",
+    "version": "abc20ae526d8",
+    "sourceUrl": "https://github.com/huggingface/skills/blob/abc20ae526d8b4c0e4dff89f904adce28a4a0eb6/skills/huggingface-local-models/SKILL.md",
+    "files": [
+      "LICENSE",
+      "SKILL.md",
+      "UPSTREAM.json",
+      "references/hardware.md",
+      "references/hub-discovery.md",
+      "references/quantization.md"
+    ]
+  },
+  {
+    "id": "hf-huggingface-lora-space-builder",
+    "title": "Hugging Face \u00b7 LoRA Space Builder",
+    "description": "Build and publish a Gradio demo on Hugging Face Spaces for a user-provided LoRA. Use when someone asks to create, generate, ship, or publish a Space, demo, Gradio app, or playground for a LoRA \u2014 including LoRAs for Qwen-Image, Qwen-Image-Edit, LTX-Video, Wan, FLUX, SDXL, or other diffusion base models. Also triggers when someone describes a LoRA they trained or hosts on the Hub and wants to share it. Covers picking the right base pipeline and `diffusers` inference recipe, designing a UI tailored to the LoRA's task and inputs (Union/multi-task control, edit, video, image, etc.), respecting model-card recommendations (trigger words, steps, guidance, LoRA scale, example inputs), and shipping to ZeroGPU hardware as a private Space by default.",
+    "directory": "skills/vendor/huggingface/huggingface-lora-space-builder",
+    "creatorId": "huggingface",
+    "version": "abc20ae526d8",
+    "sourceUrl": "https://github.com/huggingface/skills/blob/abc20ae526d8b4c0e4dff89f904adce28a4a0eb6/skills/huggingface-lora-space-builder/SKILL.md",
+    "files": [
+      "LICENSE",
+      "SKILL.md",
+      "UPSTREAM.json",
+      "references/adapting-to-the-lora.md",
+      "references/base-models/krea-2.md",
+      "references/base-models/ltx.md",
+      "references/base-models/qwen-image.md",
+      "references/creative-mode.md",
+      "references/tasks.md",
+      "references/zerogpu-and-publishing.md"
+    ]
+  },
+  {
+    "id": "hf-huggingface-paper-publisher",
+    "title": "Hugging Face \u00b7 Paper Publisher",
+    "description": "Publish and manage research papers on Hugging Face Hub. Supports creating paper pages, linking papers to models/datasets, claiming authorship, and generating professional markdown-based research articles.",
+    "directory": "skills/vendor/huggingface/huggingface-paper-publisher",
+    "creatorId": "huggingface",
+    "version": "abc20ae526d8",
+    "sourceUrl": "https://github.com/huggingface/skills/blob/abc20ae526d8b4c0e4dff89f904adce28a4a0eb6/skills/huggingface-paper-publisher/SKILL.md",
+    "files": [
+      "LICENSE",
+      "SKILL.md",
+      "UPSTREAM.json",
+      "examples/example_usage.md",
+      "references/quick_reference.md",
+      "scripts/paper_manager.py",
+      "templates/arxiv.md",
+      "templates/ml-report.md",
+      "templates/modern.md",
+      "templates/standard.md"
+    ]
+  },
+  {
+    "id": "hf-huggingface-papers",
+    "title": "Hugging Face \u00b7 Papers",
+    "description": "Look up and read Hugging Face paper pages in markdown, and use the papers API for structured metadata such as authors, linked models/datasets/spaces, Github repo and project page. Use when the user shares a Hugging Face paper page URL, an arXiv URL or ID, or asks to summarize, explain, or analyze an AI research paper.",
+    "directory": "skills/vendor/huggingface/huggingface-papers",
+    "creatorId": "huggingface",
+    "version": "abc20ae526d8",
+    "sourceUrl": "https://github.com/huggingface/skills/blob/abc20ae526d8b4c0e4dff89f904adce28a4a0eb6/skills/huggingface-papers/SKILL.md",
+    "files": [
+      "LICENSE",
+      "SKILL.md",
+      "UPSTREAM.json"
+    ]
+  },
+  {
+    "id": "hf-huggingface-spaces",
+    "title": "Hugging Face \u00b7 Spaces",
+    "description": "Build, deploy, and maintain applications on Hugging Face Spaces \u2014 Gradio / Docker / Static SDKs, ZeroGPU and dedicated hardware, model loading, debugging, buckets, inference providers, community grants. Use whenever the user asks to create or host an app on Hugging Face, port code onto ZeroGPU, fix a Space that won't build or run, or otherwise work with `hf spaces \u2026`, `@spaces.GPU`, Space README frontmatter, or the `spaces` Python package.",
+    "directory": "skills/vendor/huggingface/huggingface-spaces",
+    "creatorId": "huggingface",
+    "version": "abc20ae526d8",
+    "sourceUrl": "https://github.com/huggingface/skills/blob/abc20ae526d8b4c0e4dff89f904adce28a4a0eb6/skills/huggingface-spaces/SKILL.md",
+    "files": [
+      "LICENSE",
+      "README.md",
+      "SKILL.md",
+      "UPSTREAM.json",
+      "references/3d-cuda-extensions.md",
+      "references/3d-generation.md",
+      "references/3d-gsplat.md",
+      "references/3d-models.md",
+      "references/3d-outputs.md",
+      "references/buckets.md",
+      "references/debugging.md",
+      "references/gradio.md",
+      "references/grants.md",
+      "references/inference-providers.md",
+      "references/known-errors.md",
+      "references/requirements.md",
+      "references/zerogpu.md"
+    ]
+  },
+  {
+    "id": "hf-huggingface-tool-builder",
+    "title": "Hugging Face \u00b7 Tool Builder",
+    "description": "Use this skill when the user wants to build tool/scripts or achieve a task where using data from the Hugging Face API would help. This is especially useful when chaining or combining API calls or the task will be repeated/automated. This Skill creates a reusable script to fetch, enrich or process data.",
+    "directory": "skills/vendor/huggingface/huggingface-tool-builder",
+    "creatorId": "huggingface",
+    "version": "abc20ae526d8",
+    "sourceUrl": "https://github.com/huggingface/skills/blob/abc20ae526d8b4c0e4dff89f904adce28a4a0eb6/skills/huggingface-tool-builder/SKILL.md",
+    "files": [
+      "LICENSE",
+      "SKILL.md",
+      "UPSTREAM.json",
+      "references/baseline_hf_api.py",
+      "references/baseline_hf_api.sh",
+      "references/baseline_hf_api.tsx",
+      "references/find_models_by_paper.sh",
+      "references/hf_enrich_models.sh",
+      "references/hf_model_card_frontmatter.sh",
+      "references/hf_model_papers_auth.sh"
+    ]
+  },
+  {
+    "id": "hf-huggingface-trackio",
+    "title": "Hugging Face \u00b7 Trackio",
+    "description": "Track and visualize ML training experiments with Trackio. Use when logging metrics during training (Python API), firing alerts for training diagnostics, or retrieving/analyzing logged metrics (CLI). Supports real-time dashboard visualization, alerts with webhooks, HF Space syncing, and JSON output for automation.",
+    "directory": "skills/vendor/huggingface/huggingface-trackio",
+    "creatorId": "huggingface",
+    "version": "abc20ae526d8",
+    "sourceUrl": "https://github.com/huggingface/skills/blob/abc20ae526d8b4c0e4dff89f904adce28a4a0eb6/skills/huggingface-trackio/SKILL.md",
+    "files": [
+      "LICENSE",
+      "SKILL.md",
+      "UPSTREAM.json",
+      "references/alerts.md",
+      "references/logging_metrics.md",
+      "references/retrieving_metrics.md"
+    ]
+  },
+  {
+    "id": "hf-huggingface-vision-trainer",
+    "title": "Hugging Face \u00b7 Vision Trainer",
+    "description": "Trains and fine-tunes vision models for object detection (D-FINE, RT-DETR v2, DETR, YOLOS), image classification (timm models \u2014 MobileNetV3, MobileViT, ResNet, ViT/DINOv3 \u2014 plus any Transformers classifier), and SAM/SAM2 segmentation using Hugging Face Transformers on Hugging Face Jobs cloud GPUs. Covers COCO-format dataset preparation, Albumentations augmentation, mAP/mAR evaluation, accuracy metrics, SAM segmentation with bbox/point prompts, DiceCE loss, hardware selection, cost estimation, Trackio monitoring, and Hub persistence. Use when users mention training object detection, image classification, SAM, SAM2, segmentation, image matting, DETR, D-FINE, RT-DETR, ViT, timm, MobileNet, ResNet, bounding box models, or fine-tuning vision models on Hugging Face Jobs.",
+    "directory": "skills/vendor/huggingface/huggingface-vision-trainer",
+    "creatorId": "huggingface",
+    "version": "abc20ae526d8",
+    "sourceUrl": "https://github.com/huggingface/skills/blob/abc20ae526d8b4c0e4dff89f904adce28a4a0eb6/skills/huggingface-vision-trainer/SKILL.md",
+    "files": [
+      "LICENSE",
+      "SKILL.md",
+      "UPSTREAM.json",
+      "references/finetune_sam2_trainer.md",
+      "references/hub_saving.md",
+      "references/image_classification_training_notebook.md",
+      "references/object_detection_training_notebook.md",
+      "references/reliability_principles.md",
+      "references/timm_trainer.md",
+      "scripts/dataset_inspector.py",
+      "scripts/estimate_cost.py",
+      "scripts/image_classification_training.py",
+      "scripts/object_detection_training.py",
+      "scripts/sam_segmentation_training.py"
+    ]
+  },
+  {
+    "id": "hf-huggingface-zerogpu",
+    "title": "Hugging Face \u00b7 ZeroGPU",
+    "description": "AI demos and GPU compute with Gradio Spaces and Hugging Face Spaces ZeroGPU. Use when writing or reviewing code that uses `@spaces.GPU`, configuring `python_version` or `requirements.txt` for a ZeroGPU Space, or handling ZeroGPU-specific code constraints \u2014 pickle-based process isolation, `gr.State` semantics across the worker boundary, no `torch.compile` (use AoTI instead), CUDA wheel-only builds (no `nvcc` at build or runtime), large vs xlarge sizing, and dynamic duration callables. Make sure to use this skill whenever the user mentions ZeroGPU, `@spaces.GPU`, or the `spaces` Python package, or hits ZeroGPU-specific code errors like `PicklingError` across the worker boundary, `illegal duration`, or `flash-attn` wheel-build failures \u2014 even when the user does not explicitly ask for ZeroGPU coding guidance. Trigger on `import spaces` or `@spaces.GPU` in code.",
+    "directory": "skills/vendor/huggingface/huggingface-zerogpu",
+    "creatorId": "huggingface",
+    "version": "abc20ae526d8",
+    "sourceUrl": "https://github.com/huggingface/skills/blob/abc20ae526d8b4c0e4dff89f904adce28a4a0eb6/skills/huggingface-zerogpu/SKILL.md",
+    "files": [
+      "LICENSE",
+      "SKILL.md",
+      "UPSTREAM.json",
+      "references/concurrency.md",
+      "references/cuda-and-deps.md",
+      "references/how-quota-works.md",
+      "references/how-zerogpu-works.md"
+    ]
+  },
+  {
+    "id": "hf-train-sentence-transformers",
+    "title": "Hugging Face \u00b7 Train Sentence Transformers",
+    "description": "Train or fine-tune sentence-transformers models across `SentenceTransformer` (bi-encoder, dense or static embedding model for retrieval, similarity, clustering, classification, paraphrase mining, dedup, multimodal), `CrossEncoder` (reranker, pair scoring for two-stage retrieval / pair classification), `SparseEncoder` (SPLADE, sparse embedding model for learned-sparse retrieval), and `MultiVectorEncoder` (ColBERT / late-interaction, per-token embeddings scored with MaxSim). Covers loss selection, hard-negative mining, evaluators, distillation, LoRA, Matryoshka, and Hugging Face Hub publishing. Use for any sentence-transformers training task.",
+    "directory": "skills/vendor/huggingface/train-sentence-transformers",
+    "creatorId": "huggingface",
+    "version": "abc20ae526d8",
+    "sourceUrl": "https://github.com/huggingface/skills/blob/abc20ae526d8b4c0e4dff89f904adce28a4a0eb6/skills/train-sentence-transformers/SKILL.md",
+    "files": [
+      "LICENSE",
+      "SKILL.md",
+      "UPSTREAM.json",
+      "references/base_model_selection.md",
+      "references/dataset_formats.md",
+      "references/evaluators_cross_encoder.md",
+      "references/evaluators_multi_vector_encoder.md",
+      "references/evaluators_sentence_transformer.md",
+      "references/evaluators_sparse_encoder.md",
+      "references/hardware_guide.md",
+      "references/hf_jobs_execution.md",
+      "references/losses_cross_encoder.md",
+      "references/losses_multi_vector_encoder.md",
+      "references/losses_sentence_transformer.md",
+      "references/losses_sparse_encoder.md",
+      "references/model_architectures.md",
+      "references/prompts_and_instructions.md",
+      "references/training_args.md",
+      "references/troubleshooting.md",
+      "scripts/mine_hard_negatives.py",
+      "scripts/train_cross_encoder_distillation_example.py",
+      "scripts/train_cross_encoder_example.py",
+      "scripts/train_cross_encoder_listwise_example.py",
+      "scripts/train_multi_vector_encoder_example.py",
+      "scripts/train_sentence_transformer_distillation_example.py",
+      "scripts/train_sentence_transformer_example.py",
+      "scripts/train_sentence_transformer_make_multilingual_example.py",
+      "scripts/train_sentence_transformer_matryoshka_example.py",
+      "scripts/train_sentence_transformer_multi_dataset_example.py",
+      "scripts/train_sentence_transformer_static_embedding_example.py",
+      "scripts/train_sentence_transformer_with_lora_example.py",
+      "scripts/train_sparse_encoder_distillation_example.py",
+      "scripts/train_sparse_encoder_example.py"
+    ]
+  },
+  {
+    "id": "hf-transformers-js",
+    "title": "Hugging Face \u00b7 Transformers JavaScript",
+    "description": "Use Transformers.js to run state-of-the-art machine learning models directly in JavaScript/TypeScript. Supports NLP (text classification, translation, summarization), computer vision (image classification, object detection), audio (speech recognition, audio classification), and multimodal tasks. Works in browsers and server-side runtimes (Node.js, Bun, Deno) with WebGPU/WASM using pre-trained models from Hugging Face Hub.",
+    "directory": "skills/vendor/huggingface/transformers-js",
+    "creatorId": "huggingface",
+    "version": "abc20ae526d8",
+    "sourceUrl": "https://github.com/huggingface/skills/blob/abc20ae526d8b4c0e4dff89f904adce28a4a0eb6/skills/transformers-js/SKILL.md",
+    "files": [
+      "LICENSE",
+      "SKILL.md",
+      "UPSTREAM.json",
+      "references/CACHE.md",
+      "references/CONFIGURATION.md",
+      "references/EXAMPLES.md",
+      "references/MODEL_ARCHITECTURES.md",
+      "references/MODEL_REGISTRY.md",
+      "references/PIPELINE_OPTIONS.md",
+      "references/TEXT_GENERATION.md"
+    ]
+  },
+  {
+    "id": "hf-trl-training",
+    "title": "Hugging Face \u00b7 TRL Training",
+    "description": "Train and fine-tune transformer language models using TRL (Transformers Reinforcement Learning). Supports SFT, DPO, GRPO, KTO, RLOO and Reward Model training via CLI commands.",
+    "directory": "skills/vendor/huggingface/trl-training",
+    "creatorId": "huggingface",
+    "version": "abc20ae526d8",
+    "sourceUrl": "https://github.com/huggingface/skills/blob/abc20ae526d8b4c0e4dff89f904adce28a4a0eb6/skills/trl-training/SKILL.md",
+    "files": [
+      "LICENSE",
+      "SKILL.md",
+      "UPSTREAM.json"
+    ]
+  },
+  {
+    "id": "hf-hf-mcp",
+    "title": "Hugging Face \u00b7 MCP",
+    "description": "Use Hugging Face Hub via MCP server tools. Search models, datasets, Spaces, papers. Get repo details, fetch documentation, run compute jobs, and use Gradio Spaces as AI tools. Available when connected to the HF MCP server.",
+    "directory": "skills/vendor/huggingface/hf-mcp",
+    "creatorId": "huggingface",
+    "version": "abc20ae526d8",
+    "sourceUrl": "https://github.com/huggingface/skills/blob/abc20ae526d8b4c0e4dff89f904adce28a4a0eb6/hf-mcp/skills/hf-mcp/SKILL.md",
+    "files": [
+      "LICENSE",
+      "SKILL.md",
+      "UPSTREAM.json"
+    ]
+  },
+  {
+    "id": "resource-first-workflow",
+    "title": "Resource-first project workflow",
+    "description": "Find the best existing skills, tools, resources and proven workflows before building a new pipeline. Verify availability and run a small acceptance trial before expensive work.",
+    "directory": ".agents/skills/resource-first-workflow",
+    "creatorId": "tari",
+    "version": "31c963c97550",
+    "sourceUrl": "https://github.com/marguerite347/tari-growth/blob/31c963c975508accafeed128a0a171ba40cedee0/.agents/skills/resource-first-workflow/SKILL.md",
+    "files": [
+      "SKILL.md",
+      "references/selection-record.md",
+      "scripts/discover.py"
+    ]
+  },
+  {
+    "id": "qwen3-tts-production",
+    "title": "Qwen3-TTS voice-over production",
+    "description": "Voice casting, concise performance direction, pronunciation, voice consistency and listening-based production QA. Local open-weight or hosted Qwen workflows; access differs by route.",
+    "directory": "skills/vendor/audio/qwen3-tts-production",
+    "creatorId": "calesthio",
+    "sourceKind": "upstream",
+    "version": "8c85352d5d75",
+    "sourceUrl": "https://github.com/calesthio/generative-media-skills/blob/8c85352d5d75d4dcbe58480bd138e37b9742bab1/skills/providers/text-to-speech/qwen3-tts/SKILL.md",
+    "files": [
+      "EVAL.md",
+      "LICENSE",
+      "SKILL.md",
+      "UPSTREAM.json"
+    ]
+  },
+  {
+    "id": "elevenlabs-text-to-speech",
+    "title": "ElevenLabs speech and narration",
+    "description": "Voice selection, expressive speech settings, request stitching and narration generation. Requires an ElevenLabs API key and appropriate output rights; not configured by installing this skill.",
+    "directory": "skills/vendor/audio/elevenlabs-text-to-speech",
+    "creatorId": "elevenlabs",
+    "sourceKind": "upstream",
+    "version": "9edcbd4b80ed",
+    "sourceUrl": "https://github.com/elevenlabs/skills/blob/9edcbd4b80ed57b8e07a3f86ea520333969fbc3c/text-to-speech/SKILL.md",
+    "files": [
+      "LICENSE",
+      "SKILL.md",
+      "UPSTREAM.json",
+      "references/installation.md",
+      "references/streaming.md",
+      "references/voice-settings.md"
+    ]
+  },
+  {
+    "id": "elevenlabs-sound-effects",
+    "title": "ElevenLabs cinematic sound effects",
+    "description": "Generate cinematic impacts, transitions, ambience and other effects. Requires an ElevenLabs API key; a skill installation does not provide service access.",
+    "directory": "skills/vendor/audio/elevenlabs-sound-effects",
+    "creatorId": "elevenlabs",
+    "sourceKind": "upstream",
+    "version": "9edcbd4b80ed",
+    "sourceUrl": "https://github.com/elevenlabs/skills/blob/9edcbd4b80ed57b8e07a3f86ea520333969fbc3c/sound-effects/SKILL.md",
+    "files": [
+      "LICENSE",
+      "SKILL.md",
+      "UPSTREAM.json",
+      "references/installation.md"
+    ]
+  },
+  {
+    "id": "elevenlabs-music",
+    "title": "ElevenLabs music production",
+    "description": "Instrumental score generation and composition plans. Requires an ElevenLabs API key and applicable plan rights; no spending is enabled by this import.",
+    "directory": "skills/vendor/audio/elevenlabs-music",
+    "creatorId": "elevenlabs",
+    "sourceKind": "upstream",
+    "version": "9edcbd4b80ed",
+    "sourceUrl": "https://github.com/elevenlabs/skills/blob/9edcbd4b80ed57b8e07a3f86ea520333969fbc3c/music/SKILL.md",
+    "files": [
+      "LICENSE",
+      "SKILL.md",
+      "UPSTREAM.json",
+      "references/api_reference.md",
+      "references/installation.md"
+    ]
+  },
+  {
+    "id": "marketing-copywriting",
+    "title": "Marketing copywriting",
+    "description": "Write stronger video scripts, trailer narration, headlines and calls to action from product context, with benefit-led marketing copy.",
+    "directory": "skills/vendor/marketing/copywriting",
+    "creatorId": "coreyhaines31",
+    "sourceKind": "upstream",
+    "version": "5b2c0007766c",
+    "sourceUrl": "https://github.com/coreyhaines31/marketingskills/blob/5b2c0007766c6a1cf1d53fd8fc73e979e0821022/skills/copywriting/SKILL.md",
+    "files": [
+      "LICENSE",
+      "SKILL.md",
+      "UPSTREAM.json",
+      "evals/evals.json",
+      "references/copy-frameworks.md",
+      "references/natural-transitions.md"
+    ]
+  },
+  {
+    "id": "marketing-copy-editing",
+    "title": "Marketing copy editing",
+    "description": "Polish marketing copy and spoken video scripts for clarity, voice, benefits, evidence, specificity, emotion and a clear next action.",
+    "directory": "skills/vendor/marketing/copy-editing",
+    "creatorId": "coreyhaines31",
+    "sourceKind": "upstream",
+    "version": "5b2c0007766c",
+    "sourceUrl": "https://github.com/coreyhaines31/marketingskills/blob/5b2c0007766c6a1cf1d53fd8fc73e979e0821022/skills/copy-editing/SKILL.md",
+    "files": [
+      "LICENSE",
+      "SKILL.md",
+      "UPSTREAM.json",
+      "evals/evals.json",
+      "references/checklist.md",
+      "references/content-refresh.md",
+      "references/plain-english-alternatives.md"
+    ]
+  },
+  {
+    "id": "creator-learning-loop",
+    "title": "Creator learning loop",
+    "description": "Turn selected project sessions and Beacon candidates into reviewed, trial-tested reusable skills with private evidence and measured outcomes.",
+    "directory": ".agents/skills/creator-learning-loop",
+    "creatorId": "tari",
+    "sourceKind": "repository",
+    "version": "1.0.0",
+    "sourceUrl": "https://github.com/marguerite347/ootle-lobby/tree/main/.agents/skills/creator-learning-loop",
+    "files": [
+      "SKILL.md",
+      "references/api.md"
+    ]
+  },
+  {
+    "id": "stanestane-design-red-team-audit",
+    "title": "Design Red Team Audit",
+    "description": "Adversarial design audit that stress-tests a game feature, system, pitch, roadmap item, or product idea by assuming failure and identifying the most credible reasons it would fail. Use when pressure-testing a concept before production, performing a pre-mortem, challenging a feature that sounds good on paper, exposing blind spots in design thinking, or getting a hostile-but-constructive critique with concrete failure mechanisms and de-risking moves.",
+    "directory": "skills/vendor/game-design/design-red-team-audit",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/design-red-team-audit",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/examples.md",
+      "references/workflow.md"
+    ]
+  },
+  {
+    "id": "stanestane-emotional-canvas-moodboard",
+    "title": "Emotional Canvas Moodboard",
+    "description": "Turn a game-design emotional canvas into a curated visual moodboard by deriving image-search queries, gathering a candidate pool from the internet, saving the files locally, rejecting weak references, and rendering both an HTML board and a flattened JPG board. Use when a user wants a moodboard from an emotional canvas, wants visual references for a game concept, or wants a reusable workflow that turns emotional direction into search terms, downloaded image files, and a tastefully curated presentation-ready board.",
+    "directory": "skills/vendor/game-design/emotional-canvas-moodboard",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/emotional-canvas-moodboard",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/sample-emotional-canvas.md",
+      "references/search-patterns.md",
+      "scripts/download_urls.py",
+      "scripts/render_moodboard.py"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-attribution-audit",
+    "title": "Game Design Attribution Audit",
+    "description": "Audit a game, feature, combat scenario, progression step, failure state, onboarding beat, or reward outcome through the lens of attribution theory: how players explain success and failure. Use when evaluating whether players will blame themselves, the system, luck, or hidden rules; diagnosing perceived unfairness, learned helplessness, rage, or churn after losses; or identifying where clarity, control, and feedback are too weak for healthy learning.",
+    "directory": "skills/vendor/game-design/game-design-attribution-audit",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-attribution-audit",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/family-conventions.md",
+      "references/output-patterns.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-bartle-archetype-audit",
+    "title": "Game Design Bartle Archetype Audit",
+    "description": "Audit a game, feature, event, progression system, social system, live-ops loop, or onboarding flow through the lens of Bartle player archetypes: Achievers, Explorers, Socializers, and Killers. Use when evaluating who a design motivates, who it neglects, whether a feature over-serves one archetype at the expense of others, how a system will be perceived by different motivational player types, or why engagement is uneven across different player motivations.",
+    "directory": "skills/vendor/game-design/game-design-bartle-archetype-audit",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-bartle-archetype-audit",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/bartle-notes.md",
+      "references/failure-patterns.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-big-five-personality-audit",
+    "title": "Game Design Big Five Personality Audit",
+    "description": "Audit a game, feature, progression system, social system, live-ops loop, onboarding flow, monetization surface, or multiplayer space through the lens of the Big Five personality traits (OCEAN): Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism. Use when evaluating which personality-style preferences a design feels comfortable for, which kinds of players it energizes or exhausts, how much structure, novelty, social intensity, conflict, or emotional pressure it creates, or when you need a personality-fit lens that is different from archetype or motivation-segment frameworks.",
+    "directory": "skills/vendor/game-design/game-design-big-five-personality-audit",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-big-five-personality-audit",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/big-five-notes.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-brainstorm-methods",
+    "title": "Game Design Brainstorm Methods",
+    "description": "Apply established brainstorming and ideation methodologies to game design problems, features, systems, UX flows, live-ops ideas, content concepts, and stuck team discussions. Use when the user wants a specific brainstorming method rather than generic ideation, or when you should choose and run a method such as SCAMPER, How Might We, Crazy 8s, Six Thinking Hats, Brainwriting 6-3-5, Worst Possible Idea, forced connections, Lotus Blossom, or a morphological matrix.",
+    "directory": "skills/vendor/game-design/game-design-brainstorm-methods",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-brainstorm-methods",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/method-patterns.md",
+      "references/method-selection.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-core-loop-extractor",
+    "title": "Game Design Core Loop Extractor",
+    "description": "Extract the actual core loop from a game, feature set, or pitch based on repeated player actions, feedback, rewards, and renewed motivation. Use when a team can list mechanics but cannot clearly articulate the repeatable loop that drives engagement, when a pitch sounds like disconnected features, when a design document lacks loop clarity, or when you need to test whether the claimed loop is coherent, rewarding, and structurally complete.",
+    "directory": "skills/vendor/game-design/game-design-core-loop-extractor",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-core-loop-extractor",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/family-conventions.md",
+      "references/output-patterns.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-craft-critique",
+    "title": "Craft Critique (Koster Method)",
+    "description": "Critically analyze an existing, shipped, third-party or competitor game for craft lessons, using a layered method (adapted from Raph Koster's \"How I Analyze a Game\") that separates a game's systems from its surface experience, guesses the intent behind each layer, and checks whether those intents actually line up. Use this whenever the user wants to study a released game, competitor title, or reference game in depth -- not just describe it, but understand why it's built the way it is and what to steal from it. Trigger on requests like \"analyze [game]\", \"break down how [game] works\", \"what can we learn from [game]\", \"why does [game] feel so good/bad\", or \"study this competitor game.\" This is a game-study tool aimed at OTHER people's games, distinct from the feature-pitch and own-design audits elsewhere in this bundle -- though it also works as a systems-vs-experience alignment gut check on your own game once both layers exist enough to compare.",
+    "directory": "skills/vendor/game-design/game-design-craft-critique",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-craft-critique",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-creative-unblocker",
+    "title": "Game Design Creative Unblocker",
+    "description": "Break game design creative block with oblique prompts, sideways reframing, and deliberately non-linear workflow moves. Use when a feature, mechanic, live-ops idea, UX flow, FTUE, economy layer, or prototype feels stale, overthought, equally uninspired in every direction, or trapped in circular discussion. Best when the team needs jolts, detours, provocations, and weird-but-useful next directions rather than another sensible framework.",
+    "directory": "skills/vendor/game-design/game-design-creative-unblocker",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-creative-unblocker",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/oblique-prompts.md",
+      "references/usage-notes.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-design-pillars-extractor",
+    "title": "Game Design Design Pillars Extractor",
+    "description": "Extract 3 to 5 actionable design pillars from a game, feature, loop, or system based on what the design actually rewards and prioritizes. Use when a team can describe mechanics but cannot clearly articulate the principles those mechanics serve, when pillars are vague, generic, or contradictory, or when you need a sharper set of tradeoff-driven pillars that can guide decisions and cut features.",
+    "directory": "skills/vendor/game-design/game-design-design-pillars-extractor",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-design-pillars-extractor",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/family-conventions.md",
+      "references/output-patterns.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-emotional-canvas",
+    "title": "Game Design Emotional Canvas",
+    "description": "Define, refine, and evaluate the emotional identity, feeling, atmosphere, and vibe of a game, feature, event, region, or content theme. Use when shaping a game's emotional core, building a moodboard brief, clarifying the intended player feeling, checking whether a concept feels emotionally hollow, aligning art/audio/narrative around one emotional promise, or reviewing whether new content reinforces or dilutes the intended mood.",
+    "directory": "skills/vendor/game-design/game-design-emotional-canvas",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-emotional-canvas",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/examples.md",
+      "references/prompts.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-failure-loop-audit",
+    "title": "Game Design Failure Loop Audit",
+    "description": "Audit a game, feature, encounter structure, roguelite run, puzzle sequence, onboarding path, or progression gate through the lens of its failure loop: what happens after the player fails, what they learn, what they lose, and why they would or would not try again. Use when diagnosing whether failure teaches, motivates, stalls, humiliates, exhausts, or ejects the player, or when tuning punishment, retry structure, and post-failure recovery.",
+    "directory": "skills/vendor/game-design/game-design-failure-loop-audit",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-failure-loop-audit",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/family-conventions.md",
+      "references/output-patterns.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-fairness-frustration-audit",
+    "title": "Game Design Fairness and Frustration Audit",
+    "description": "Audit a game, feature, failure loop, combat encounter, reward system, progression wall, or high-variance mechanic for perceived fairness and frustration. Use when diagnosing whether players feel cheated, whether difficulty feels deserved, whether randomness, feedback, and challenge interact badly, or why a design remains technically functional yet still produces anger, blame, or refusal to retry.",
+    "directory": "skills/vendor/game-design/game-design-fairness-frustration-audit",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-fairness-frustration-audit",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/family-conventions.md",
+      "references/output-patterns.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-fantasy-extractor",
+    "title": "Game Design Fantasy Extractor",
+    "description": "Extract the core player fantasy from a game, feature, loop, or pitch based on what the design actually lets the player do, feel, and become. Use when a team can describe mechanics but cannot clearly articulate the fantasy those mechanics are supposed to deliver, when a concept feels emotionally vague, when a pitch names features instead of a player promise, or when you need to test whether the claimed fantasy is real, weak, conflicted, or absent.",
+    "directory": "skills/vendor/game-design/game-design-fantasy-extractor",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-fantasy-extractor",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/family-conventions.md",
+      "references/output-patterns.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-feature-prioritization",
+    "title": "Game Design Feature Prioritization",
+    "description": "Prioritize game design feature options by comparing expected impact, implementation cost, strategic fit, and roadmap context. Use when choosing between competing feature ideas, deciding what to do now versus later, ranking solution paths after ideation, or identifying which option is best immediately and which is better long-term.",
+    "directory": "skills/vendor/game-design/game-design-feature-prioritization",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-feature-prioritization",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/family-conventions.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-five-options",
+    "title": "Game Design Five Options",
+    "description": "Generate and compare at least five game design solution options for a feature, system, UX issue, live-ops problem, or design challenge. Use when several ideas already exist, when a team needs broader comparison before choosing, or when one favorite answer is dominating too early and better alternatives may be getting ignored.",
+    "directory": "skills/vendor/game-design/game-design-five-options",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-five-options",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/family-conventions.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-flow-audit",
+    "title": "Game Design Flow Audit",
+    "description": "Audit a game, feature, level sequence, combat loop, progression curve, onboarding path, event structure, or return-player journey through the lens of Flow theory. Use when evaluating whether challenge and skill stay aligned over time, diagnosing boredom, anxiety, frustration spikes, difficulty cliffs, dead zones, or pacing drift, or identifying where a design stops feeling absorbing and starts feeling exhausting or empty.",
+    "directory": "skills/vendor/game-design/game-design-flow-audit",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-flow-audit",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/family-conventions.md",
+      "references/output-patterns.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-fogg-behavior-audit",
+    "title": "Game Design Fogg Behavior Audit",
+    "description": "Audit a game feature, flow, event, onboarding step, progression action, monetization surface, retention mechanic, or social prompt using the Fogg Behavior Model: Motivation, Ability, Prompt. Use when evaluating whether a design actually causes the intended player behavior, diagnosing weak feature adoption, identifying friction or mistimed prompts, or understanding why a feature that seems valuable is not being used.",
+    "directory": "skills/vendor/game-design/game-design-fogg-behavior-audit",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-fogg-behavior-audit",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/fogg-notes.md",
+      "references/game-examples.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-friction-journey-audit",
+    "title": "Game Design Friction Journey Audit",
+    "description": "Audit a game, feature flow, economy path, onboarding journey, progression chain, or live-ops loop for friction quality and friction accumulation. Use when diagnosing where players stall, disengage, churn, or feel overloaded; when distinguishing productive challenge from harmful friction; or when evaluating whether constraints, waiting, confusion, resource pressure, or multi-step dependencies are creating strategy, tension, frustration, or deadlock.",
+    "directory": "skills/vendor/game-design/game-design-friction-journey-audit",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-friction-journey-audit",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-ftue-hero-journey-audit",
+    "title": "Game Design FTUE Hero's Journey Audit",
+    "description": "Audit a game's FTUE (First Time User Experience) through the lens of the Hero's Journey / monomyth. Use when reviewing onboarding, tutorial flow, first-session retention, first 30 seconds, early-session emotional hooks, mentor/tutorial character usage, first meaningful action, or whether an FTUE makes the player feel like the hero of the experience rather than a passive victim of UX chores.",
+    "directory": "skills/vendor/game-design/game-design-ftue-hero-journey-audit",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-ftue-hero-journey-audit",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/failure-patterns.md",
+      "references/hero-journey-ftue-notes.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-goal-density-and-immediacy-audit",
+    "title": "Game Design Goal Density and Immediacy Audit",
+    "description": "Audit a game, feature, progression loop, return-player experience, metagame layer, or session structure for density of goals, immediacy of goals, safe stopping points, and return triggers. Use when evaluating whether players can quickly find something meaningful to do, whether the game offers enough short-term, mid-term, and long-term goals, whether session lengths are flexible enough for real player schedules, or why a game feels aimless, overwhelming, or unable to fit into fragmented playtime.",
+    "directory": "skills/vendor/game-design/game-design-goal-density-and-immediacy-audit",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-goal-density-and-immediacy-audit",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/failure-patterns.md",
+      "references/goal-density-notes.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-goal-framing",
+    "title": "Game Design Goal Framing",
+    "description": "Turn a vague feature idea or design direction into a clear game design goal with purpose, scope, fit, success criteria, and constraints. Use when a feature sounds promising but fuzzy, when a team cannot explain why something should exist, when success is unclear, or when a concept needs a stronger goal before ideation, evaluation, or prototyping.",
+    "directory": "skills/vendor/game-design/game-design-goal-framing",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-goal-framing",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/family-conventions.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-granular-player-motivation-audit",
+    "title": "Game Design Granular Player Motivation Audit",
+    "description": "Audit a game, feature, progression system, social system, live-ops loop, monetization surface, or onboarding flow through a granular player motivation taxonomy. Use when evaluating which player motivation archetypes a design strongly serves, neglects, or actively repels; when comparing a concept against segments such as Steady Advancers, Curious Solvers, Competitive Achievers, Imaginative Creators, Strategic Leaders, Immersed Storywriters, Reward Seekers, Passionate Belongers, and Category Enthusiasts; when translating player research into practical design recommendations; or when you need a more nuanced alternative to a simple Bartle-style motivation read.",
+    "directory": "skills/vendor/game-design/game-design-granular-player-motivation-audit",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-granular-player-motivation-audit",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/granular-taxonomy-notes.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-grow-design",
+    "title": "Game Design GROW Design",
+    "description": "Evaluate game features, feature pitches, live-ops ideas, UX changes, economy changes, roadmap choices, retention initiatives, monetization initiatives, and ambiguous design problems using the GROW model: Goal, Reality, Options, Will. Use when a team needs structure, clearer decision-making, better option generation, explicit tradeoff analysis, or a concrete recommendation and next-step plan instead of circular discussion.",
+    "directory": "skills/vendor/game-design/game-design-grow-design",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-grow-design",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-ideal-outcome-backcasting",
+    "title": "Game Design Ideal Outcome Backcasting",
+    "description": "Start from the ideal player-facing result and work backward to the design steps, systems, and decisions required to reach it. Use when a team knows the kind of experience it wants but not how to structure the path there, when redesigning a feature around a stronger destination, or when clarifying what must be true for a concept to feel successful.",
+    "directory": "skills/vendor/game-design/game-design-ideal-outcome-backcasting",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-ideal-outcome-backcasting",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/family-conventions.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-kpi-coverage-audit",
+    "title": "Game Design KPI Coverage Audit",
+    "description": "Audit a game feature, roadmap candidate, UX improvement, support system, connective-tissue feature, or quality-of-life change for KPI coverage bias and measurement blind spots. Use when a team is overvaluing only directly attributable metrics, neglecting foundational work that is hard to measure, or struggling to justify features whose value is real but not cleanly tied to one headline KPI.",
+    "directory": "skills/vendor/game-design/game-design-kpi-coverage-audit",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-kpi-coverage-audit",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/blind-spot-patterns.md",
+      "references/recommendation-patterns.md",
+      "references/value-types.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-leaderboard-audit",
+    "title": "Game Design Leaderboard Audit",
+    "description": "Audit an existing leaderboard or competitive ranking system in a game for stagnation risk, scale problems, goal density, motivation quality, reward bracket design, group composition fairness, and top-of-ladder sustainability. Use when evaluating a leaderboard that feels flat, unfair, or disengaging; when reviewing a competitive feature before launch; or when diagnosing why a leaderboard isn't driving expected engagement or retention.",
+    "directory": "skills/vendor/game-design/game-design-leaderboard-audit",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-leaderboard-audit",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-leaderboard-builder",
+    "title": "Game Design Leaderboard Builder",
+    "description": "Design a complete leaderboard system from scratch for a game, feature, or competitive mode. Covers group structure, league ladder, round cadence, reward brackets, score design, group composition, and top-of-ladder sustainability. Use when starting a new competitive feature, when a basic leaderboard needs a full redesign, or when a team needs a concrete leaderboard specification to build from. Always asks intake questions before designing \u2014 and offers sensible defaults if the designer doesn't have answers yet.",
+    "directory": "skills/vendor/game-design/game-design-leaderboard-builder",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-leaderboard-builder",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-molyneux-lens",
+    "title": "Game Design Molyneux Lens",
+    "description": "Stress-test a game concept, feature, system, or pitch through a deliberately provocative, ambition-seeking design lens inspired by Peter Molyneux-style overstatement. Use when a concept feels too safe, too polite, under-fantasized, mechanically competent but emotionally weak, or in need of sharp provocations that push fantasy, reactivity, and memorable moments before being grounded back into reality.",
+    "directory": "skills/vendor/game-design/game-design-molyneux-lens",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-molyneux-lens",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/family-conventions.md",
+      "references/output-patterns.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-multiplayer-feature-audit",
+    "title": "Game Design Multiplayer Feature Audit",
+    "description": "Audit a game, feature, live-ops layer, social system, or multiplayer concept for the quality and fit of its social design. Use when evaluating collaboration, competition, collaborate-to-compete structures, matchmaking, guilds/clubs, synchronous versus asynchronous play, realtime constraints, depth of social interaction, community formation, vanity/status systems, or how to add social play to a mostly single-player game.",
+    "directory": "skills/vendor/game-design/game-design-multiplayer-feature-audit",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-multiplayer-feature-audit",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/social-design-dimensions.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-novelty-spectrum-audit",
+    "title": "Game Design Novelty Spectrum Audit",
+    "description": "Evaluate a game design, feature proposal, system concept, pitch, or prototype on the novelty spectrum between too familiar and too novel. Use when assessing whether a concept has enough differentiation, whether it violates player expectations too strongly, how it balances familiarity and innovation, or whether its innovation pattern is best understood as incremental innovation, recombination, simplification, or a more radical break from established mental models.",
+    "directory": "skills/vendor/game-design/game-design-novelty-spectrum-audit",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-novelty-spectrum-audit",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/innovation-patterns.md",
+      "references/mental-model-layers.md",
+      "references/verdict-scale.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-one-page-design-doc",
+    "title": "Game Design One-Page Design Doc",
+    "description": "Create a concise one-page game design document and export it as both markdown and PDF. Use when a user wants a one-page design doc, one-pager, pitchable design summary, or compact game concept sheet that captures identity, pillars, summary, features, interface, aesthetic direction, sound, audience, platform, and milestone plan on a single page.",
+    "directory": "skills/vendor/game-design/game-design-one-page-design-doc",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-one-page-design-doc",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/example-input.json",
+      "references/family-conventions.md",
+      "references/source-notes.md",
+      "scripts/render_one_page_gdd.py"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-one-thing-to-remove",
+    "title": "Game Design One Thing To Remove",
+    "description": "Identify the single highest-leverage thing to remove from a game design, feature, system, UX flow, pitch, roadmap item, or prototype in order to improve it significantly. Use when a design feels bloated, muddy, overengineered, overly tutorialized, friction-heavy, or diluted by low-value mechanics, and you want a subtractive critique with rationale, tradeoffs, and a cleaner alternative.",
+    "directory": "skills/vendor/game-design/game-design-one-thing-to-remove",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-one-thing-to-remove",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/evaluation-patterns.md",
+      "references/removal-lenses.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-option-generation",
+    "title": "Game Design Option Generation",
+    "description": "Generate multiple game design solution paths before committing to one direction. Use when a feature, live-ops idea, UX problem, economy issue, or design challenge feels too quickly narrowed, when a team is looping around one favorite answer, or when you need several credible options with tradeoffs instead of a single premature recommendation.",
+    "directory": "skills/vendor/game-design/game-design-option-generation",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-option-generation",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/family-conventions.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-peak-end-audit",
+    "title": "Game Design Peak-End Audit",
+    "description": "Audit a game, feature, session, level, event, onboarding flow, reward sequence, or return-player experience through the lens of the peak-end rule. Use when evaluating which moments players are most likely to remember, whether the emotional high points are strong enough, whether endings, exits, and completions leave the right aftertaste, or why an experience with decent average quality is still remembered as flat, frustrating, or unexpectedly great.",
+    "directory": "skills/vendor/game-design/game-design-peak-end-audit",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-peak-end-audit",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/family-conventions.md",
+      "references/output-patterns.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-perceived-randomness-audit",
+    "title": "Game Design Perceived Randomness Audit",
+    "description": "Audit a game feature, combat system, loot table, reward loop, procedural system, chance mechanic, or uncertainty-driven design by how players are likely to perceive its randomness. Use when you need to evaluate whether a system will feel fair, streaky, rigged, sabotaging, manipulable, or skill-undermining; when players may misread independent events as patterned; or when randomness may sit too close to player action and create frustration. Analyze expectation gaps, gambler's-fallacy-style reactions, hidden pattern-seeking, input-versus-output randomness, perceived fairness, exploit risk, and ways to reshape presentation or mechanics.",
+    "directory": "skills/vendor/game-design/game-design-perceived-randomness-audit",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-perceived-randomness-audit",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/audit-checklist.md",
+      "references/perception-patterns.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-pitch-deck-audit",
+    "title": "Game Design Pitch Deck Audit",
+    "description": "Audit a video game pitch deck, publisher deck, funding deck, or investor-facing game presentation for clarity, structure, persuasiveness, visual readability, business-case completeness, and publisher-fit. Use when reviewing a pitch deck before sending to publishers, polishing a deck for meetings, checking whether the deck answers the essential questions about who, what, why, when, budget, and opportunity, or evaluating whether a deck sells both the game and the collaboration case rather than just dumping information.",
+    "directory": "skills/vendor/game-design/game-design-pitch-deck-audit",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-pitch-deck-audit",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/pitch-deck-notes.md",
+      "references/raw-fury-notes.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-player-motivation-audit",
+    "title": "Game Design Player Motivation Audit",
+    "description": "Audit a game, feature, live-ops system, progression loop, social feature, or monetization surface using a Self-Determination Theory-inspired motivation framework. Use when evaluating what kind of motivation a design creates, comparing alternative motivational profiles, diagnosing why a system feels sticky, hollow, exhausting, or dead, checking overreliance on rewards and grind, or assessing whether a feature supports short-term activation, medium-term habit, or long-term player identity.",
+    "directory": "skills/vendor/game-design/game-design-player-motivation-audit",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-player-motivation-audit",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-player-need-satisfaction-audit",
+    "title": "Game Design Player Need Satisfaction Audit",
+    "description": "Audit a game, feature, live-ops system, onboarding flow, progression loop, social feature, monetization flow, or return loop for player need satisfaction using Self-Determination Theory and the PENS lens. Use when evaluating whether a design is actually fun beyond surface KPIs, diagnosing weak retention or shallow engagement, comparing variants, identifying where a system denies autonomy, competence, or relatedness, or understanding whether a game feels emotionally nourishing or quietly depleting.",
+    "directory": "skills/vendor/game-design/game-design-player-need-satisfaction-audit",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-player-need-satisfaction-audit",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-player-persona-extractor",
+    "title": "Game Design Player Persona Extractor",
+    "description": "Extract the ideal player persona and anti-persona for a game, feature, loop, or progression structure based on the design itself. Use when a team can describe mechanics but cannot clearly articulate who the design is truly for, which player motivations and tolerances it suits, which players it will alienate, or how audience fit should shape design decisions. Focus on behavioral and motivational personas first, and optionally add demographic or market-fit hypotheses when the user explicitly asks for that layer.",
+    "directory": "skills/vendor/game-design/game-design-player-persona-extractor",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-player-persona-extractor",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/demographic-research-notes.md",
+      "references/family-conventions.md",
+      "references/output-patterns.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-player-perspective-reframe",
+    "title": "Game Design Player Perspective Reframe",
+    "description": "Reframe a player's current situation to reveal new meaning, goals, roles, or playstyles without changing the underlying mechanics. Use when diagnosing stagnation, boredom, or mid/late-game disengagement; when designing re-engagement prompts, adaptive guidance, or dynamic missions; or when a player is technically able to continue but no longer sees the current state as interesting, valuable, or purposeful.",
+    "directory": "skills/vendor/game-design/game-design-player-perspective-reframe",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-player-perspective-reframe",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-player-segment-perception-audit",
+    "title": "Game Design Player Segment Perception Audit",
+    "description": "Audit a game feature, live update, roadmap item, event, or content drop by how different player segments are likely to perceive it. Use when a feature is aimed at one cohort but visible to others, when update messaging may create excitement for players who cannot meaningfully access the feature, or when you need to understand how new, mid, and elder players will read the same feature differently.",
+    "directory": "skills/vendor/game-design/game-design-player-segment-perception-audit",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-player-segment-perception-audit",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/perception-failures.md",
+      "references/recommendation-patterns.md",
+      "references/segment-layers.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-player-values-mapper",
+    "title": "Game Design Player Values Mapper",
+    "description": "Infer a player's underlying values and motivational priorities from behavior, then translate those into design implications. Use when designing personalization, segmentation, dynamic guidance, live-ops targeting, adaptive missions, re-engagement strategies, or feature prioritization; when behavior suggests that what players actually care about differs from what the design assumes; or when a team needs a behavior-first player profile rather than a demographic or archetype-only model.",
+    "directory": "skills/vendor/game-design/game-design-player-values-mapper",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-player-values-mapper",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-premium-pass-audit",
+    "title": "Game Design Premium Pass Audit",
+    "description": "Audit an existing or proposed premium pass (battle pass, season pass) for value proposition integrity, progression health, free track balance, reward pacing, engagement loop quality, and economy impact. Use when evaluating a pass before launch, diagnosing why a pass is underperforming, reviewing a competitor's pass design, or stress-testing a proposed structure before committing to production.",
+    "directory": "skills/vendor/game-design/game-design-premium-pass-audit",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-premium-pass-audit",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-prosocial-session-chapters",
+    "title": "Game Design Prosocial Session Chapters",
+    "description": "Design or audit prosocial experiences in session-based multiplayer games using a three-phase chapter model built around Setup, Little Loops, and Long Tail. Use when evaluating co-op games, team shooters, MOBAs, mission-based multiplayer, or other repeat-session formats; when planning how to prime trust before play, reinforce repeatable prosocial actions during play, and carry positive social momentum across sessions; or when a multiplayer game feels socially flat, hostile, forgettable, or unable to turn one good match into another.",
+    "directory": "skills/vendor/game-design/game-design-prosocial-session-chapters",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-prosocial-session-chapters",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-prototype-intent-audit",
+    "title": "Game Design Prototype Intent Audit",
+    "description": "Audit a game feature, system concept, prototype plan, or preproduction proposal to determine whether the prototype is meant to sell the idea or reveal unknowns, and whether the prototype scope matches that intent. Use when teams are unclear about why they are prototyping, when a prototype risks becoming a demo in disguise, or when precious prototype time may be spent proving known strengths instead of testing real uncertainties.",
+    "directory": "skills/vendor/game-design/game-design-prototype-intent-audit",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-prototype-intent-audit",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/failure-patterns.md",
+      "references/prototype-modes.md",
+      "references/unknowns-checklist.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-prototyping-companion",
+    "title": "Game Design Prototyping Companion",
+    "description": "Track game design prototype ideas, branching outcomes, dead ends, baselines, and next experiments, and optionally generate a simple SVG visualization of prototype evolution. Use when a prototype leads to several possible follow-up paths, when the team needs to backtrack without losing learned branches, when exploring unknowns through multiple iterations, or when you want both a written prototype log and a branch map of how the concept evolved over time.",
+    "directory": "skills/vendor/game-design/game-design-prototyping-companion",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-prototyping-companion",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/branch-map-format.md",
+      "references/example-branch-map.json",
+      "references/state-labels.md",
+      "scripts/branch_map_svg.py"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-roadblock-reframing",
+    "title": "Game Design Roadblock Reframing",
+    "description": "Reframe a game design problem by isolating the main blocker, imagining it removed, and using that perspective to discover workaround paths. Use when a team is stuck on one obstacle, when discussion keeps collapsing into 'we can't because', or when a feature, system, or plan feels trapped by a single technical, UX, content, or production roadblock.",
+    "directory": "skills/vendor/game-design/game-design-roadblock-reframing",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-roadblock-reframing",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/family-conventions.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-smart-goal-audit",
+    "title": "Game Design SMART Goal Audit",
+    "description": "Audit game design goals, feature objectives, OKRs, initiative aims, or any stated design intent against the SMART criteria adapted for game design. Use when a user shares a design goal, player experience target, retention goal, or feature aim and wants it evaluated or rewritten. Trigger on phrases like \"audit my design goals\", \"is this a good design objective\", \"my feature goal is...\", \"we want players to feel...\", \"our aim for this feature is...\", or whenever someone states what a design should achieve and it feels vague or unmeasurable. Also trigger when a design document contains aims or success criteria that need stress-testing. Even soft goals like \"players should feel powerful\" are valid \u2014 apply the framework and return both the audit and a rewritten version.",
+    "directory": "skills/vendor/game-design/game-design-smart-goal-audit",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-smart-goal-audit",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-social-satisfaction-matrix",
+    "title": "Game Design Social Satisfaction Matrix",
+    "description": "Evaluate a game's social features and multiplayer elements by their potential to create social satisfaction versus social dissatisfaction. Use when auditing chat, voice, friend systems, gifting, lobbies, social hubs, guilds, reporting tools, cooperative mechanics, profile surfaces, or other social elements; when comparing which features are basic, critical, booster, or secondary; or when deciding where to reduce social risk, increase social stickiness, and prioritize improvements to multiplayer or community-facing systems.",
+    "directory": "skills/vendor/game-design/game-design-social-satisfaction-matrix",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-social-satisfaction-matrix",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-systematizing-empathizing-audit",
+    "title": "Game Design Systematizing Empathizing Audit",
+    "description": "Evaluate a game, feature, system, UX flow, progression loop, live-ops mechanic, monetization surface, or design concept on two axes: systematizing and empathizing. Use when you want to understand whether a design is structurally logic-driven or emotionally player-attuned, what kind of player personas it is likely to attract or repel, and what practical consequences follow from that positioning without assuming one quadrant is universally best.",
+    "directory": "skills/vendor/game-design/game-design-systematizing-empathizing-audit",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-systematizing-empathizing-audit",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/axis-definitions.md",
+      "references/persona-tendencies.md",
+      "references/quadrant-reads.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-thinking-fast-and-slow-audit",
+    "title": "Game Design Thinking Fast and Slow Audit",
+    "description": "Audit a game, feature, combat system, economy loop, onboarding flow, puzzle, UI, or design proposal through the lens of fast versus slow thinking inspired by Thinking, Fast and Slow. Use when evaluating whether a design relies on rapid intuitive judgment or deliberate analytical reasoning, whether the intended mode matches the actual demand, where cognitive overload or under-stimulation appears, or how badly the design handles shifts between instinctive and reflective play.",
+    "directory": "skills/vendor/game-design/game-design-thinking-fast-and-slow-audit",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-thinking-fast-and-slow-audit",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/family-conventions.md",
+      "references/output-patterns.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-transformative-reuse",
+    "title": "Game Design Transformative Reuse",
+    "description": "Solve game design problems by adapting, extending, recombining, or retuning what already exists instead of inventing from scratch. Use when building on live systems, reusing content pipelines, stretching feature value, reducing production cost, or finding a lower-risk way to achieve a new purpose with existing mechanics, UX, progression structures, or content.",
+    "directory": "skills/vendor/game-design/game-design-transformative-reuse",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-transformative-reuse",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/family-conventions.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-unknown-unknowns-prototyping",
+    "title": "Game Design Unknown Unknowns Prototyping",
+    "description": "Detect unknown unknowns in game design and decide what to prototype before committing to production. Use when a feature concept feels promising but underdefined, when the team disagrees about the real design problem, when a mechanic seems interesting but the source of interest is unclear, when a concept risks premature production commitment, or when the team needs to determine what should be prototyped, in what order, and why.",
+    "directory": "skills/vendor/game-design/game-design-unknown-unknowns-prototyping",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-unknown-unknowns-prototyping",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/anti-patterns.md",
+      "references/prototype-question-patterns.md",
+      "references/prototype-types.md",
+      "references/quadrants-and-hiding-places.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-design-zeigarnik-effect-audit",
+    "title": "Game Design Zeigarnik Effect Audit",
+    "description": "Audit a game, feature, task system, quest flow, event track, puzzle chain, progression layer, or return loop through the lens of the Zeigarnik effect: the tension created by incomplete, interrupted, or unresolved tasks. Use when evaluating whether a design creates healthy return motivation through open loops, whether it leaves players with productive unfinished business, or whether it turns incompletion into anxiety, clutter, guilt, or manipulative pressure.",
+    "directory": "skills/vendor/game-design/game-design-zeigarnik-effect-audit",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-design-zeigarnik-effect-audit",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/family-conventions.md",
+      "references/output-patterns.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-dev-budget-estimator",
+    "title": "Game Dev Budget Estimator",
+    "description": "Help a beginner or early-stage game team estimate the likely budget for a game concept based on scope, target milestone, current team, skill coverage, work model, and geography. Use when someone asks how much a game might cost, what budget range they should expect, whether their current team meaningfully reduces cost, what missing roles would add to budget, or how to estimate cost for a prototype, vertical slice, release, or live F2P project. Ask for missing information when concept, team, scope, or cost assumptions are unclear, then provide a rough budget range, main cost drivers, hidden cost buckets, and ways to reduce spend.",
+    "directory": "skills/vendor/game-design/game-dev-budget-estimator",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-dev-budget-estimator",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/cost-drivers.md",
+      "references/estimation-modes.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-dev-first-steps",
+    "title": "Game Dev First Steps",
+    "description": "Help a beginner or early-stage indie team turn a game idea into a practical starting plan. Use when someone asks how to start making a game, what to build first, how to approach development order, how to scope a concept for a solo dev, duo, or small team, or how to turn a rough game idea into a sensible first prototype or pitchable vertical slice. Ask a few core questions about the concept, team size, skill mix, platform, scope, release intent, and constraints, then recommend a simple development strategy with build order, risks, what to postpone, and concrete next steps.",
+    "directory": "skills/vendor/game-design/game-dev-first-steps",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-dev-first-steps",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/development-order.md",
+      "references/team-size-guidance.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-dev-team-gap",
+    "title": "Game Dev Team Gap",
+    "description": "Help a beginner or early-stage game team figure out which roles, skills, or disciplines they are missing for a given game concept and target scope. Use when someone asks who they are missing, whether their current team can realistically build the project, what roles they still need, what the riskiest team gaps are, or what the minimum viable team would be if no team is described yet. Ask about the game concept, target platform, intended milestone or scope, team composition, and actual skillset, then identify likely gaps, role overlaps, risky weak spots, and the smallest workable team shape.",
+    "directory": "skills/vendor/game-design/game-dev-team-gap",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-dev-team-gap",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/minimum-team-shapes.md",
+      "references/role-patterns.md"
+    ]
+  },
+  {
+    "id": "stanestane-game-dev-time-estimator",
+    "title": "Game Dev Time Estimator",
+    "description": "Help a beginner or early-stage game team estimate the likely development time for a game concept based on scope, target milestone, current team, skill coverage, work model, and production constraints. Use when someone asks how long a game might take, whether their current team can hit a target date, what timeline range they should expect for a prototype, vertical slice, release, or live F2P project, or how missing roles and part-time availability change development time. Ask for missing information when concept, team, scope, or staffing assumptions are unclear, then provide a rough timeline range, main schedule drivers, hidden time sinks, and ways to shorten the path.",
+    "directory": "skills/vendor/game-design/game-dev-time-estimator",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/game-dev-time-estimator",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/estimation-modes.md",
+      "references/time-drivers.md"
+    ]
+  },
+  {
+    "id": "stanestane-moodboard-generator",
+    "title": "Moodboard Generator",
+    "description": "Build a themed visual moodboard \u2014 sources candidate images from the web, curates them for color harmony, composition, and mood fit, and composes a properly designed board (not a plain photo grid) as an HTML artifact and a flattened PNG. Use this any time the user asks for a moodboard, mood board, visual reference board, inspiration board, style board, or aesthetic/color-palette collage for a theme, brand, room, character, game, event, or creative project \u2014 even if they just describe a vibe or aesthetic (\"something coastal and mid-century\", \"cyberpunk night market energy\") without using the word \"moodboard\" explicitly. Also use when asked to research visual references for a look, pull a color palette from a theme, or build a reference sheet for design/art direction.",
+    "directory": "skills/vendor/game-design/moodboard-generator",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/moodboard-generator",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/composition-principles.md",
+      "scripts/build_html_moodboard.py",
+      "scripts/render_png.py"
+    ]
+  },
+  {
+    "id": "stanestane-open-rpg-system-designer",
+    "title": "Open RPG System Designer",
+    "description": "Design original tabletop or digital RPG systems using optional SRD 5.1 or 5.2.1 mechanics as documented design references, not as a replacement rulebook.",
+    "directory": "skills/vendor/game-design/open-rpg-system-designer",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/open-rpg-system-designer",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "assets/full-system-template.md",
+      "assets/one-page-system-template.md",
+      "assets/provenance-ledger-template.md",
+      "references/srd-design-map.md"
+    ]
+  },
+  {
+    "id": "stanestane-software-team-conflict-patterns",
+    "title": "Software Team Conflict Patterns",
+    "description": "Help analyze recurring conflict patterns on software or game projects by identifying likely collaboration archetypes, behavior patterns, project risks, and practical response strategies. Use when someone describes a teammate, lead, founder, stakeholder, client, producer, or collaborator whose recurring behavior is creating friction, slowing decisions, damaging trust, or disrupting execution. Focus on observable behavior and project consequences, not clinical diagnosis, then suggest safer and more effective next moves.",
+    "directory": "skills/vendor/game-design/software-team-conflict-patterns",
+    "creatorId": "stanestane",
+    "version": "1868c5635d19",
+    "sourceKind": "upstream",
+    "sourceUrl": "https://github.com/Stanestane/game-design-skills-bundle/tree/1868c5635d1937f599ebc918904533e69a194039/software-team-conflict-patterns",
+    "files": [
+      "COMMERCIAL-LICENSE.md",
+      "LICENSE",
+      "SKILL.md",
+      "references/neil-on-software-archetypes.md",
+      "references/pattern-notes.md",
+      "references/response-strategies.md"
+    ]
+  },
+  {
+    "id": "unity-creator-setup",
+    "title": "Unity AI CLI \u2014 Getting started",
+    "description": "Install Unity and connect agents through the official CLI and Pipeline. Includes account and module setup, a connection trial, troubleshooting, and remixable Ootle Lobby handoff.",
+    "directory": ".agents/skills/unity-creator-setup",
+    "creatorId": "tari",
+    "version": "1.0.0",
+    "sourceUrl": "https://github.com/marguerite347/ootle-lobby/tree/main/.agents/skills/unity-creator-setup",
+    "sourceKind": "repository",
+    "files": [
+      "SKILL.md"
+    ]
+  },
+  {
+    "id": "unity-cli",
+    "title": "Unity CLI \u2014 Official agent skill",
+    "description": "Official Unity CLI guidance for Editor control, scenes, assets, builds, tests and project management. Pinned upstream skill; check installed CLI compatibility.",
+    "directory": "skills/vendor/unity/unity-cli",
+    "creatorId": "unity-technologies",
+    "version": "ba1be1802afd",
+    "sourceUrl": "https://github.com/Unity-Technologies/unity-agent-plugin/tree/ba1be1802afdfc2931e4d6cd054c919b650e47a3/skills/unity-cli",
+    "sourceKind": "upstream",
+    "files": [
+      "CHANGELOG.md",
+      "LICENSE.md",
+      "SECURITY.md",
+      "SKILL.md",
+      "references/auth-license-cloud.md",
+      "references/build-run-test.md",
+      "references/collaboration.md",
+      "references/config-hub.md",
+      "references/diagnostics-maintenance.md",
+      "references/editors-install.md",
+      "references/integration-advanced.md",
+      "references/projects-templates.md",
+      "references/version-control.md",
+      "upstream.json"
+    ]
+  },
+  {
+    "id": "unreal-ai-blueprints",
+    "title": "Unreal AI \u2014 Blueprint creator setup",
+    "description": "Install and connect Unreal AI assistants, build reviewable Blueprint graphs, compile and playtest a small mechanic, then hand off a remixable Hub project. Includes Aura, Ludus and other tool choices.",
+    "directory": ".agents/skills/unreal-ai-blueprints",
+    "creatorId": "tari",
+    "version": "1.0.0",
+    "sourceKind": "repository",
+    "sourceUrl": "https://github.com/marguerite347/ootle-lobby/tree/main/.agents/skills/unreal-ai-blueprints",
+    "files": [
+      "SKILL.md",
+      "references/tools.md"
+    ]
+  },
+  {
+    "id": "uefn-creator-setup",
+    "title": "UEFN \u2014 Fortnite devices and Verse",
+    "description": "Set up a Fortnite island workflow, understand Blueprint limitations, use devices and Verse, playtest in Fortnite and preserve project ownership and source.",
+    "directory": ".agents/skills/uefn-creator-setup",
+    "creatorId": "tari",
+    "version": "1.0.0",
+    "sourceKind": "repository",
+    "sourceUrl": "https://github.com/marguerite347/ootle-lobby/tree/main/.agents/skills/uefn-creator-setup",
+    "files": [
+      "SKILL.md"
+    ]
+  },
+  {
+    "id": "gacha-reward-experience",
+    "title": "Gacha Reward Experience",
+    "description": "Game design for mobile reward reveals, daily trivia spinners, collectible progression, game feel, audio feedback and truthful reward state. Includes the user-supplied gacha research with verification boundaries.",
+    "directory": ".agents/skills/gacha-reward-experience",
+    "creatorId": "tari",
+    "version": "1.0.0",
+    "sourceUrl": "https://github.com/marguerite347/ootle-lobby/tree/main/.agents/skills/gacha-reward-experience",
+    "files": [
+      "SKILL.md",
+      "references/mobile-gacha-research.md"
+    ],
+    "tags": [
+      "game-design",
+      "game-feel",
+      "mobile",
+      "reward-ui",
+      "audio",
+      "animation"
+    ]
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "buildCommand": "npm run build:site",
+  "outputDirectory": "public",
+  "functions": {"api/index.mjs": {"includeFiles": "server-content/**"}},
+  "routes": [
+    {"src": "/api/(.*)", "dest": "/api/index.mjs"},
+    {"handle": "filesystem"},
+    {"src": "/(.*)", "dest": "/api/index.mjs"}
+  ]
+}

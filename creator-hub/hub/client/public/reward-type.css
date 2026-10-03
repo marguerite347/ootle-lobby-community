@@ -1,0 +1,77 @@
+/* Same display face and dimensional treatment as the trivia's first win. */
+@font-face{font-family:OotleReward;src:url('/wheel-lab/poppins-800.woff2') format('woff2');font-weight:800;font-display:swap}
+.reward-type,.unlock-payoff h2,.unlock-amount,#reward.reward-type{
+ font-family:OotleReward,Poppins,Arial,sans-serif;font-weight:800;letter-spacing:-.045em;
+ text-shadow:0 var(--reward-depth,3px) 0 #813bf5,0 calc(var(--reward-depth,3px)*1.8) 0 #100b21;
+}
+.unlock-payoff h2{--reward-depth:5px}
+.reward-type{animation:reward-type-arrive .4s cubic-bezier(.17,.89,.3,1.3) both}
+#reward.reward-type{--reward-depth:2px;animation:reward-type-arrive .4s cubic-bezier(.17,.89,.3,1.3) both}
+@keyframes reward-type-arrive{from{opacity:.2;transform:translateY(6px) scale(.94)}to{opacity:1;transform:translateY(0) scale(1)}}
+body.effects-off .reward-type,body.reduced .reward-type,:root[data-hub-effects=off] .reward-type{animation:none!important}
+@media(prefers-reduced-motion:reduce){.reward-type{animation:none!important}}
+
+/* One readable reward hierarchy: headline, hero total, unit. */
+.reward-rays{position:absolute;left:0;top:0;width:100%;height:580px;z-index:0;pointer-events:none;border-radius:inherit;overflow:hidden}
+.reward-rays:before{content:'';position:absolute;left:calc(50% - 480px);top:calc(220px - 480px);width:960px;height:960px;background:repeating-conic-gradient(from 12deg,transparent 0deg 16deg,var(--win-ray,#813bf538) 17deg 24deg);mask-image:radial-gradient(circle,black,transparent 62%);animation:win-rays-arrive 4.4s ease-out both}
+@keyframes win-rays-arrive{from{opacity:0;transform:rotate(-15deg) scale(.75)}25%{opacity:1}to{opacity:.65;transform:rotate(20deg) scale(1)}}
+.experience{position:relative;isolation:isolate}
+.experience>.reward-rays{display:none}
+.won .experience>.reward-rays{display:block}
+.super-active{--win-ray:#ff49bd40;--win-ink:#f3a9ff}
+body.embedded.won .result{height:auto;min-height:160px}
+body.embedded.won .experience{grid-template-rows:408px minmax(160px,auto) 0 0 0}
+body.embedded.won .actions,body.embedded.won #super-offer,body.embedded.won #super-odds{visibility:hidden}
+.won #phase{font:800 clamp(25px,4.6vw,38px)/1.12 OotleReward,Poppins,sans-serif;letter-spacing:-.045em;color:#f4f0ff;text-shadow:0 4px 0 #813bf5,0 7px 0 #100b21}
+body.embedded.won #reward,#reward.reward-type{--reward-depth:5px}
+body.embedded.won #reward{font-size:clamp(64px,12vw,100px);line-height:1.12;color:var(--win-ink,#c9eb00);font-variant-numeric:tabular-nums}
+#win-unit{font-size:20px;font-weight:700}
+body.embedded #phase{font-size:16px}
+body.embedded.won #phase{font-size:clamp(25px,4.6vw,38px)}
+body.embedded #detail,body.embedded #super-offer{font-size:18px}
+body.embedded #super-odds li{font-size:16px}
+body.embedded #super-odds b{font-size:22px}
+body.embedded .experience{grid-template-rows:408px 100px 76px 30px 64px}
+body.embedded .result{height:100px}
+body.embedded #super-offer:empty,body.embedded #detail:empty{display:none}
+.spark-finished[data-win]{position:relative;isolation:isolate;--win-ray:#ff49bd40}
+.spark-finished[data-win]>*:not(.reward-rays){position:relative;z-index:1}
+.spark-finished[data-win] h2{font-size:clamp(30px,5vw,48px);line-height:1.15;--reward-depth:5px}
+.spark-finished[data-win] strong.reward-type{display:block;font-size:clamp(64px,12vw,100px);line-height:1.15;color:#f3a9ff;--reward-depth:5px}
+.spark-finished p{font-size:20px}
+.spark-unlock.spark-unlock-inline .unlock-payoff h2{font-size:clamp(30px,5vw,48px)}
+.spark-unlock.spark-unlock-inline .unlock-amount{font-size:clamp(76px,12vw,100px)}
+.spark-unlock.spark-unlock-inline .unlock-payoff p,.spark-unlock.spark-unlock-inline .unlock-next p{font-size:20px}
+@media(max-width:600px){
+ body.embedded .experience{grid-template-rows:336px 100px 76px 44px 64px}
+ body.embedded.won .experience{grid-template-rows:336px minmax(160px,auto) 0 0 0}
+}
+body.reduced .reward-rays:before,body.effects-off .reward-rays:before,:root[data-hub-effects=off] .reward-rays:before{animation:none}
+@media(prefers-reduced-motion:reduce){.reward-rays:before{animation:none}}
+#daily-spark .spark-finished[data-win] p{font-size:20px;line-height:1.45}
+#daily-spark .spark-reset,#daily-spark .spark-carry,#daily-spark .reward-playtest-bar,#daily-spark .spark-build-notes>summary{font-size:16px;line-height:1.5}
+#daily-spark .spark-reset{flex-wrap:wrap}
+
+/* Super offer is a power-up tier, with an entrance that settles before reading. */
+body.embedded.super-ready .result{height:140px;gap:8px}
+body.embedded.super-ready .experience{grid-template-rows:408px 140px 76px 30px 64px}
+body.embedded.super-ready #phase{color:#f3a9ff;font-weight:800;font-size:16px;letter-spacing:.12em}
+body.embedded.super-ready #reward{font-size:clamp(44px,9vw,68px);line-height:1.06;color:#f3a9ff;letter-spacing:-.055em;text-shadow:0 3px 0 #813bf5,0 6px 0 #100b21,0 0 24px #ff49bd80;animation:super-title-charge .65s cubic-bezier(.17,.89,.3,1.15) both}
+body.embedded.super-ready #reward::after{content:'✦';display:inline-block;color:#c9eb00;font-size:.58em;margin-left:.16em;vertical-align:middle;text-shadow:0 0 18px #c9eb0090}
+body.embedded.super-ready #detail{font-size:clamp(18px,3.4vw,22px);font-weight:700;color:#f4f0ff;max-width:440px;margin:0 auto;line-height:1.4}
+@keyframes super-title-charge{0%{opacity:0;transform:scale(.8) translateY(8px)}60%{opacity:1;transform:scale(1.06) translateY(-2px)}100%{opacity:1;transform:none}}
+@media(max-width:600px){body.embedded.super-ready .experience{grid-template-rows:336px 140px 76px 44px 64px}}
+body.embedded.super-ready.reduced #reward,body.embedded.super-ready.effects-off #reward{animation:none}
+@media(prefers-reduced-motion:reduce){body.embedded.super-ready #reward{animation:none}}
+
+/* Fixed art geometry uses scene width, not the enclosing page/iframe viewport. */
+.spark-unlock,.experience,.spark-finished{container-type:inline-size;container-name:reward-scene}
+.spark-unlock .reward-rays{--win-ray:#c6a3ff38}
+.spark-unlock .unlock-stage{z-index:1}
+@container reward-scene (max-width:600px){
+ .reward-rays{height:540px}
+ .reward-rays:before{left:calc(50% - 360px);top:calc(180px - 360px);width:720px;height:720px}
+}
+.spark-unlock[data-still] .reward-rays:before{animation:none}
+
+.spark-unlock[data-loading] .reward-rays:before{animation-play-state:paused!important}

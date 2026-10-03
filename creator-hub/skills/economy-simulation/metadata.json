@@ -1,0 +1,39 @@
+{
+  "id": "economy-simulation",
+  "title": "Economy design and simulation",
+  "description": "Model game resource flows and test purchases before mapping economic actions onto Ootle.",
+  "version": "0.1.0",
+  "lifecycle": "verified",
+  "networks": [
+    "offline-simulation"
+  ],
+  "tools": {
+    "tari_template_lib": "0.32.0",
+    "tari_template_test_tooling": "0.41.0"
+  },
+  "sourceCheckedAt": "2026-09-19",
+  "technicalValidatedAt": "2026-09-19",
+  "validation": {
+    "scope": "Offline integer-ledger simulation and four conservation/input tests; no on-chain settlement or economic forecast.",
+    "evidence": [
+      "evidence/validation.json"
+    ]
+  },
+  "sources": [
+    {
+      "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/crates/template_lib/src/resource/builder/mod.rs",
+      "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+      "path": "crates/template_lib/src/resource/builder/mod.rs"
+    },
+    {
+      "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/docs/developer-docs/src/content/docs/guides/resources.mdx",
+      "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+      "path": "docs/developer-docs/src/content/docs/guides/resources.mdx"
+    }
+  ],
+  "related": [],
+  "issue": "https://github.com/marguerite347/tari-growth/issues/73",
+  "remaining": [
+    "Real player behavior and on-chain resource integration are not validated."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "_source": "URLs from the Ootle Community Apps Directory (community.tari.com/t/281) and https://wiki.tari.com/resources:app_directory:start, read 2026-09-21. Listing is not an endorsement; all are community testnet apps. Capturing a page is not a security review.",
+  "apps": [
+    { "name": "SOOON FUN", "url": "https://sooon.fun/", "category": "Markets & DeFi", "status": "Testnet" },
+    { "name": "Tari Market", "url": "https://tari-market.johnnytsunami14.chatgpt.site/", "category": "Markets & DeFi", "status": "Testnet" },
+    { "name": "LabyrinthOS", "url": "https://labyrinthos.markets/", "category": "Markets & DeFi", "status": "Testnet" },
+    { "name": "Sapient", "url": "https://sapient.tari.mw/", "category": "Wallets & Payments", "status": "Testnet" },
+    { "name": "Tari Universe Web", "url": "https://universe.tari.mw/", "category": "Wallets & Payments", "status": "Testnet" },
+    { "name": "TariOrg", "url": "https://tariorg.pages.dev/", "category": "Governance & Community", "status": "Testnet" },
+    { "name": "Caravel", "url": "https://caravellabs.net/", "category": "Governance & Community", "status": "Testnet" },
+    { "name": "Tari Ootle Playground", "url": "https://feeltherevolt-xehqj-studio.wp.build/", "category": "Developer Tools", "status": "Testnet" },
+    { "name": "ShadowTix", "url": "https://shadowtix.shop", "category": "Games & Entertainment", "status": "Testnet" }
+  ]
+}

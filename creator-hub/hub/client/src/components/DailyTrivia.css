@@ -1,0 +1,1119 @@
+.spark-balance{display:inline-flex;align-items:center;gap:9px;padding:8px 14px;border:1px solid #d5f54455;border-radius:99px;background:#202317;color:#e6ff86;white-space:nowrap}.spark-balance>span:first-child{font-size:25px;text-shadow:0 0 14px #e5ff77}.spark-balance strong{font-size:20px;animation:spark-bank .5s ease-out}.spark-balance small{display:block;font-size:9px;color:#c7b9de}.spark-balance>span:last-child{font-size:11px;line-height:1.3}.header-editorial{flex-wrap:wrap;gap:12px}
+.daily-spark{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,75px);margin:0 0 42px;padding:clamp(24px,2.5vw,36px);border:1px solid #ad89ff66;border-radius:32px;background:radial-gradient(ellipse at 75% 35%,#55338b66,transparent 60%),linear-gradient(125deg,#171125,#100f1b 70%);scroll-margin-top:160px}
+.spark-intro,.spark-game{position:relative;z-index:1}.spark-kicker{display:flex;align-items:center;gap:9px;flex-wrap:wrap;font-size:11px;letter-spacing:.15em;font-weight:700;color:#d4befa}.spark-kicker>span:last-child{border:1px solid #b69bcc55;padding:5px 8px;border-radius:6px;font-size:9px;letter-spacing:.08em}.spark-live-dot{width:7px;height:7px;background:#d5f544;border-radius:50%;box-shadow:0 0 16px #d5f544}
+.spark-intro h1{font-size:clamp(38px,4.9vw,74px);line-height:1.04;letter-spacing:-.055em;margin:32px 0 24px}.spark-intro h1 em{font-style:normal;color:#ddfa64}.spark-intro>p{max-width:410px;color:#c5bbd5;font-size:17px;line-height:1.7}.spark-loop{display:flex;flex-direction:column;gap:16px;margin:32px 0;color:#e5daff;font-size:14px}.spark-loop b{display:inline-grid;place-items:center;border:1px solid #b99aff50;border-radius:9px;width:29px;height:29px;margin-right:10px;color:#dcfa53;font-size:10px}.spark-reset{display:flex;flex-direction:column;gap:7px;font-size:11px;color:#a89bb9}.spark-reset span:first-child{color:#dfcdff;font-weight:700}
+.spark-rules{font-size:11px;color:#aa9fbc;max-width:440px;margin-top:22px}.spark-rules summary{cursor:pointer;color:#c9b7df}.spark-rules p{font-size:11px;line-height:1.65}
+.spark-game{align-self:center;min-width:0;padding:22px;border:1px solid #d4b7ff40;border-radius:24px;background:#0d0b16a8;box-shadow:0 25px 60px #0004,inset 0 1px #fff1;min-height:440px}.spark-game-top{display:flex;justify-content:space-between;gap:12px;align-items:center;color:#ab99c0;font-size:9px;letter-spacing:.14em}.spark-sound{background:none;border:1px solid #b99aff40;color:#cbbbdf;border-radius:20px;padding:7px 10px;font-size:10px;cursor:pointer}.spark-ready{text-align:center}.spark-ready h2{font-size:24px;letter-spacing:-.035em;margin:18px 0 8px}.spark-ready p,.spark-bonus p,.spark-finished p{font-size:13px;color:#b9accb;line-height:1.65}.spark-play{width:100%;display:flex;justify-content:space-between;margin-top:20px;min-height:50px;align-items:center}.spark-prize{font-size:11px;letter-spacing:.12em;color:#d7c49a}.spark-prize strong{font-size:34px;letter-spacing:-.04em;color:#edff99;padding:0 5px}
+.spark-treasure{position:relative;width:180px;height:135px;margin:12px auto 2px;display:grid;place-items:center}.spark-treasure>b{position:relative;font-size:68px;color:#f8ffc3;text-shadow:0 0 35px #cefa4688;transform:rotate(-10deg);width:94px;height:110px;display:grid;place-items:center;border:2px solid #d7f562;border-radius:23px;background:linear-gradient(135deg,#717e37,#252b16);box-shadow:8px 10px 0 #74852833,0 0 40px #b4e63825;animation:spark-float 4s ease-in-out infinite}.spark-treasure>span{position:absolute;right:0;top:15px;font-size:34px;color:#c2a0ff}.spark-treasure>i{position:absolute;left:0;bottom:10px;font-size:42px;color:#e4c78e}.spark-treasure-orbit{position:absolute;inset:10px -12px;border:1px solid #c5a1ff40;border-radius:50%;transform:rotate(-25deg)}
+.spark-atmosphere{position:absolute;inset:0;z-index:0;pointer-events:none}.spark-atmosphere i{position:absolute;width:500px;height:500px;right:-80px;top:-100px;border:1px solid #a787eb15;border-radius:50%}.spark-atmosphere i:nth-child(2){inset:auto auto -280px -180px;width:600px;height:600px}.spark-atmosphere i:nth-child(3){right:-200px;top:-210px;width:740px;height:740px}.spark-atmosphere>span{position:absolute;left:43%;top:38%;font-size:120px;color:#b98aff0b;animation:spark-float 6s ease-in-out infinite}
+.spark-timer{display:flex;justify-content:space-between;align-items:center;margin-top:25px;font-size:10px;color:#cfbde8;letter-spacing:.1em}.spark-timer strong{font-size:40px;line-height:1;color:#e0fa70}.spark-timer small{font-size:17px}.spark-time-track{height:4px;background:#ffffff15;border-radius:8px;margin:12px 0 24px;overflow:hidden}.spark-time-track i{display:block;background:#d5f544;height:100%;transition:width .25s linear}.spark-question h2{font-size:clamp(21px,2vw,27px);line-height:1.35;margin:0 0 20px;letter-spacing:-.025em}.spark-answers{display:grid;gap:9px}.spark-answers button{display:flex;align-items:center;gap:12px;text-align:left;padding:13px;border:1px solid #b99aff44;border-radius:12px;background:#251b38;color:#eee7fb;font:inherit;font-size:12px;min-height:48px;cursor:pointer}.spark-answers button>span{font-size:10px;color:#baa1e0}.spark-answers button b{margin-left:auto;color:#d5f544}.spark-answers button:hover:not(:disabled){background:#473357;border-color:#d5f544;transform:translateX(3px)}.spark-hint{text-align:center;font-size:10px;color:#ad9bc0;margin:17px 0 0}
+.spark-bonus{text-align:center}.spark-bonus-copy{margin-top:20px}.spark-bonus-copy>span{font-size:9px;letter-spacing:.14em;color:#d8ef87}.spark-bonus h2{font-size:26px;letter-spacing:-.04em;margin:7px 0 10px}.spark-wheel-wrap{position:relative;width:min(220px,100%);aspect-ratio:1;margin:18px auto 12px}.spark-wheel{position:absolute;inset:0;border:7px solid #040723;border-radius:50%;background:conic-gradient(#3d1f7a 0deg 216deg,#5a2fb8 216deg 306deg,#241433 306deg 349.2deg,#813BF5 349.2deg 360deg);box-shadow:0 0 0 3px #eceeff44,0 0 28px #813BF533;transition:transform 3.3s cubic-bezier(.14,.8,.12,1)}.spark-wheel>span{position:absolute;left:calc(50% - 22px);top:calc(50% - 14px);width:44px;height:28px;color:#fff;font-size:22px;font-weight:800;text-shadow:0 2px 5px #000b;transform:rotate(var(--sector)) translateY(-72px) rotate(calc(-1 * var(--sector)))}.spark-wheel-pointer{position:absolute;left:calc(50% - 13px);top:-17px;z-index:3;font-size:27px;color:#C9EB00;filter:drop-shadow(0 0 8px #C9EB00)}.spark-wheel-hub{position:absolute;left:50%;top:50%;width:34%;height:34%;margin:0;transform:translate(-50%,-50%);border-radius:50%;display:grid;place-items:center;background:#040723;border:1px solid #ECEEFF;color:#C9EB00;font-size:0;box-shadow:0 3px 12px #0008;overflow:hidden}.spark-explanation{font-size:11px!important;margin:15px 0 0}.spark-finished{text-align:center;padding:30px 5px}.spark-result-icon{font-size:85px;color:#be9df1}.spark-finished h2{font-size:29px}.spark-finished>strong{color:#e3f69e}.spark-finished>a{display:block;margin-top:28px;font-size:13px;color:#d8c6ff}.spark-error{border:1px solid #efad7e60;border-radius:12px;padding:14px;color:#ffcfaa;font-size:12px;margin-top:14px}
+.spark-jackpot{position:absolute;z-index:5;inset:0;pointer-events:none;display:flex;align-items:center;justify-content:center;flex-direction:column;background:radial-gradient(ellipse,#49342fed,#171025ee 55%,#171025aa);animation:spark-reveal 3s both;color:#efff9a;text-align:center}.spark-jackpot>span{font-size:12px;letter-spacing:.3em}.spark-jackpot>strong{font-size:clamp(85px,14vw,180px);letter-spacing:-.08em;line-height:1.35;text-shadow:0 0 60px #d5f54499}.spark-jackpot>b{font-size:16px;letter-spacing:.2em}.spark-coin-rain{position:absolute;inset:0;overflow:hidden}.spark-coin-rain i{position:absolute;left:calc(var(--coin)*5.8%);top:-60px;width:32px;height:32px;border:2px solid #e7e288;border-radius:50%;background:linear-gradient(135deg,#fcf6af,#a89939);color:#594724;display:grid;place-items:center;font-style:normal;box-shadow:0 0 20px #efe66555;animation:spark-rain 1.8s calc(var(--coin)*.05s) ease-in infinite}
+@keyframes spark-rain{to{transform:translateY(750px) rotateY(700deg) rotateZ(80deg)}}@keyframes spark-reveal{0%{opacity:0;transform:scale(.9)}12%,78%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.04)}}@keyframes spark-bank{40%{transform:scale(1.25);color:#fff}}@keyframes spark-float{50%{transform:translateY(-8px) rotate(-5deg)}}
+@media(max-width:760px){.daily-spark{grid-template-columns:1fr;padding:24px;gap:26px;border-radius:24px}.spark-intro h1{margin:22px 0 15px;font-size:46px}.spark-intro>p{font-size:14px}.spark-loop{flex-direction:row;flex-wrap:wrap;gap:12px;margin:22px 0;font-size:10px}.spark-loop b{width:22px;height:22px;margin-right:5px}.spark-game{min-height:440px;padding:18px}.spark-reset{font-size:10px}.spark-balance{padding:6px 10px}}
+@media(prefers-reduced-motion:reduce){.daily-spark *,.spark-balance strong{animation:none!important;transition:none!important}.spark-coin-rain{display:none}}
+:root[data-hub-effects=off] .daily-spark *,:root[data-hub-effects=off] .spark-balance strong{animation:none!important;transition:none!important}:root[data-hub-effects=off] .spark-coin-rain{display:none}
+/* Spark reactor: a repeatable, source-editable visual identity for the daily loop. */
+.spark-showcase{background:radial-gradient(ellipse at 78% 46%,#50312955,transparent 45%),linear-gradient(125deg,#100d1c,#21132c 55%,#0a101b);border-color:#a978de66;isolation:isolate}.spark-showcase .spark-intro h1{font-size:clamp(46px,5.6vw,88px);line-height:1.02;letter-spacing:-.055em}.spark-showcase .spark-intro h1 em{color:#ecff8e;text-shadow:0 0 48px #d3f35a25}.spark-showcase .spark-game{background:radial-gradient(ellipse at 50% 40%,#41205377,transparent 62%),#0c0a17cc;border-color:#bba0ed40;box-shadow:inset 0 1px #ffffff0c,0 22px 80px #0004;overflow:hidden;position:relative}.spark-showcase .spark-game-top{position:relative;z-index:2}.spark-showcase .spark-play{background:linear-gradient(115deg,#f3ffad,#d5f544 60%,#a3e6af);color:#14151a;box-shadow:0 8px 28px #d5f54420;border-color:#edffb0;transition:transform .2s,box-shadow .2s}.spark-showcase .spark-play:hover{transform:translateY(-3px);box-shadow:0 12px 40px #d5f54445}.spark-showcase .spark-play:active{transform:scale(.97)}
+.spark-reactor{height:255px;width:min(100%,340px);margin:0 auto;position:relative;display:grid;place-items:center;perspective:700px}.reactor-crystal{width:112px;height:150px;z-index:2;filter:drop-shadow(0 0 10px #e0ff79aa) drop-shadow(0 0 32px #ae75ef77);animation:reactor-breathe 4s ease-in-out infinite}.reactor-halo{position:absolute;width:170px;height:170px;border-radius:50%;background:radial-gradient(circle,#f0ff982e,#bb7eff18 45%,transparent 70%);box-shadow:0 0 95px #b960ff30;animation:reactor-breathe 5s ease-in-out infinite}.reactor-orbit{position:absolute;width:235px;height:235px;border:1px solid #d7b1ff60;border-radius:50%;transform:rotateX(66deg) rotateZ(-28deg);box-shadow:0 0 16px #9e5bea25,inset 0 0 16px #9e5bea25}.orbit-b{width:200px;height:200px;border:2px dashed #d8f57c77;transform:rotateY(64deg) rotateZ(30deg);animation:reactor-ring 16s linear infinite}.reactor-orbit:after{content:'';position:absolute;width:7px;height:7px;background:#f5ffb4;box-shadow:0 0 15px #edff84;border-radius:50%;left:12%;top:12%}.reactor-floor{position:absolute;bottom:31px;width:155px;height:25px;border:1px solid #e2c6ff55;border-radius:50%;box-shadow:0 0 30px #b180ff50;background:radial-gradient(ellipse,#b588ff44,transparent 70%)}.reactor-caption{position:absolute;bottom:3px;font-size:8px;letter-spacing:.29em;color:#e5cfac}.reactor-ember{position:absolute;width:3px;height:7px;bottom:38px;left:calc(15% + var(--ember)*5%);background:#edc982;box-shadow:0 0 8px #e8ad4b;border-radius:50%;opacity:0;animation:reactor-ember 3.4s calc(var(--ember)*-.29s) ease-out infinite;pointer-events:none}.charged .reactor-crystal{width:130px;height:165px;filter:drop-shadow(0 0 13px #f8de81) drop-shadow(0 0 36px #d3f57788)}.charged .reactor-halo{box-shadow:0 0 85px #e6b15033}.spark-victory .spark-reactor{height:240px}.spark-victory-stats{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid #c9eb0033;background:#c9eb0008;border-radius:14px;padding:15px 5px;gap:7px}.spark-victory-stats span{font-size:8px;color:#bfadc8;letter-spacing:.13em}.spark-victory-stats b{display:block;font-size:25px;color:#f4e9bb;letter-spacing:-.04em;margin-bottom:4px}.spark-victory-stats span+span{border-left:1px solid #dcc08c22}.spark-replay{border:0;background:transparent;color:#dbc3ff;padding:14px 8px;cursor:pointer;font:inherit;font-size:12px}.spark-replay small{display:block;font-size:9px;color:#9d8eac;margin-top:5px}.spark-replay:hover{color:#efffaf}.spark-lesson{font-size:11px;line-height:1.6;color:#bfaecf;text-align:left;margin-top:16px}.spark-lesson summary{cursor:pointer}.spark-lesson p{font-size:12px!important}.spark-build-notes{grid-column:1/-1;border-top:1px solid #b798dc25;padding-top:16px;font-size:12px;color:#bcaacf;z-index:1}.spark-build-notes summary{cursor:pointer;color:#cfb9ed}.spark-build-notes p{max-width:760px;line-height:1.7}.spark-build-notes div{display:flex;gap:24px;flex-wrap:wrap}.spark-build-notes a{color:#e6f4b0}.spark-wheel-wrap{isolation:isolate}.wheel-energy{position:absolute;inset:-16px;border:1px dashed #c9eb0055;border-radius:50%;box-shadow:0 0 28px #813BF533;animation:reactor-ring 20s linear infinite;z-index:-1}.spark-showcase .spark-wheel{border:8px solid #040723;box-shadow:0 0 0 2px #ECEEFF66,inset 0 0 24px #0009}.is-spinning .wheel-energy{box-shadow:0 0 28px #C9EB0055;animation-duration:3s}.is-winning .spark-game{animation:reactor-impact .45s ease-out}.is-urgent .spark-time-track i{background:#ffb273;box-shadow:0 0 12px #fa8b63}.is-urgent .spark-timer strong{color:#ffd09e}.spark-answers button{transition:transform .18s,background .18s,border-color .18s}.spark-answers button:hover:not(:disabled){transform:translateX(4px);background:#b588ff24;border-color:#d8b7ff}.spark-answers button:active:not(:disabled){transform:scale(.98)}.spark-jackpot{background:radial-gradient(ellipse,#6d4327f0,#21122bef 60%,#0c0b17e8)}.spark-jackpot:before{content:'';position:absolute;width:240px;height:240px;border:2px solid #fbe7a277;border-radius:50%;box-shadow:0 0 80px #e8bb6444;animation:reactor-shock 1s ease-out both}.spark-jackpot>strong{text-shadow:0 0 35px #f0db8a66,0 5px 0 #715024}
+@keyframes reactor-breathe{50%{transform:translateY(-9px) rotate(3deg)}}@keyframes reactor-ring{to{transform:rotateY(64deg) rotateZ(390deg)}}@keyframes reactor-ember{15%{opacity:.7}85%{opacity:.15}100%{transform:translateY(-170px) translateX(16px) scale(.2);opacity:0}}@keyframes reactor-impact{20%{transform:translateY(-3px)}50%{transform:translateY(2px)}100%{transform:none}}@keyframes reactor-shock{from{transform:scale(.3);opacity:1}to{transform:scale(3.5);opacity:0}}
+@media(max-width:760px){.spark-showcase .spark-intro h1{font-size:52px}.spark-showcase .spark-game{padding:20px}.spark-showcase .spark-reactor{height:220px}.spark-showcase .spark-loop{font-size:11px}.spark-victory-stats b{font-size:23px}}
+@media(prefers-reduced-motion:reduce){.spark-showcase *,.spark-showcase *:before{animation:none!important;transition:none!important}.reactor-ember,.spark-jackpot:before{display:none}}
+:root[data-hub-effects=off] .spark-showcase *,:root[data-hub-effects=off] .spark-showcase *:before{animation:none!important;transition:none!important}:root[data-hub-effects=off] .reactor-ember,:root[data-hub-effects=off] .spark-jackpot:before{display:none}
+.spark-game .spark-jackpot{border-radius:inherit}.spark-game .spark-jackpot>strong{font-size:clamp(72px,9vw,140px)}.spark-game .spark-jackpot>b{font-size:12px}.spark-game .spark-jackpot>span{font-size:9px}
+
+@media(max-width:760px){.spark-game .spark-jackpot{justify-content:flex-end;padding-bottom:140px}}
+
+/* Vault ignition: the reveal returns to a settled ledger.
+   The game card must not use overflow:hidden, or the grid row collapses
+   and clips the wheel, the answer, and the spin control. */
+.spark-showcase .spark-game {
+  overflow: visible;
+  height: auto;
+  align-self: start;
+}
+.spark-game .spark-jackpot {
+  background: #110e18f7;
+  border-radius: 24px;
+  overflow: hidden;
+  padding: 24px 12px;
+  box-sizing: border-box;
+}
+.spark-game .spark-jackpot > strong {
+  font-size: clamp(52px, 7vw, 96px);
+  line-height: 0.95;
+}
+.daily-spark {
+  padding-left: max(24px, env(safe-area-inset-left));
+  padding-right: max(24px, env(safe-area-inset-right));
+}
+.spark-sound:focus-visible,
+.spark-play:focus-visible,
+.spark-answers button:focus-visible,
+.spark-replay:focus-visible,
+.spark-finished .btn:focus-visible,
+.spark-error .btn:focus-visible {
+  outline: 2px solid #dcfa53;
+  outline-offset: 3px;
+}
+.spark-answers button.is-chosen {
+  border-color: #dcfa53;
+  background: #31401c;
+  transform: scale(0.98);
+}
+.spark-question h2,
+.spark-finished h2,
+.spark-bonus h2 {
+  overflow-wrap: anywhere;
+}
+.spark-odds {
+  margin: 0 auto 8px;
+  max-width: 280px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #d9c7a2;
+}
+.spark-bonus .spark-reactor {
+  height: 168px;
+}
+.spark-bonus .reactor-crystal {
+  width: 86px;
+  height: 116px;
+}
+.mood-settled .reactor-crystal,
+.mood-ignited .reactor-crystal {
+  filter: drop-shadow(0 0 14px #C9EB00aa) drop-shadow(0 0 28px #dcfa5366);
+}
+.mood-ignited .reactor-core {
+  filter: drop-shadow(0 0 8px #f4ffb0);
+}
+.mood-dimmed .reactor-crystal {
+  filter: grayscale(1) brightness(0.42);
+}
+.mood-dimmed .reactor-halo,
+.mood-dimmed .reactor-orbit,
+.mood-dimmed .reactor-ember {
+  opacity: 0.2;
+}
+.spark-showcase .spark-wheel {
+  transition: transform 3.4s cubic-bezier(.12, .85, .18, 1.05);
+}
+.spark-coin-rain i {
+  animation: spark-rain 1.6s calc(var(--coin) * 0.05s) ease-in both;
+}
+.spark-jackpot > strong {
+  animation: vault-pop 0.45s cubic-bezier(.2, 1.4, .36, 1) both;
+}
+.is-impact .spark-game {
+  animation: vault-impact 0.42s ease-out;
+}
+.daily-spark.is-away .reactor-crystal,
+.daily-spark.is-away .reactor-halo,
+.daily-spark.is-away .reactor-orbit,
+.daily-spark.is-away .reactor-ember,
+.daily-spark.is-away .spark-atmosphere > span,
+.daily-spark.is-away .wheel-energy,
+.daily-spark.is-away .spark-coin-rain i {
+  animation-play-state: paused;
+}
+@keyframes vault-pop {
+  0% { transform: scale(0.72); }
+  70% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+@keyframes vault-impact {
+  0% { transform: translate3d(0, 0, 0); }
+  25% { transform: translate3d(-3px, 1px, 0); }
+  50% { transform: translate3d(2px, -1px, 0); }
+  75% { transform: translate3d(-1px, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+.spark-sound {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 10px 14px;
+}
+.spark-showcase .spark-play {
+  min-height: 50px;
+}
+.spark-prize-note {
+  margin: 8px auto 0;
+  max-width: 360px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #b9accb;
+}
+.spark-wheel.is-snapped {
+  transition: none;
+}
+.spark-wheel-wrap.is-super {
+  width: min(304px, 100%);
+  container-type: size;
+}
+.spark-wheel-wrap.is-super .spark-wheel {
+  inset: 9%;
+}
+.spark-wheel-wrap.is-super .vault-label {
+  left: 50%;
+  top: 50%;
+  width: 44px;
+  height: auto;
+  margin: -12px 0 0 -22px;
+  transform: rotate(var(--a)) translateY(-38cqmin) rotate(calc(-1 * var(--a) - var(--spin, 0deg)));
+}
+.spark-wheel-wrap.is-super.has-pack-pointer .spark-wheel-pointer {
+  visibility: hidden;
+}
+.spark-wheel-wrap.is-super.has-pack-rim .vault-rim {
+  background: transparent;
+  box-shadow: none;
+}
+.spark-wheel-wrap.is-super .spark-wheel-hub {
+  color: #C9EB00;
+  background: #040723;
+  border-color: #ECEEFF;
+}
+.spark-wheel.is-super {
+  border-color: #c8c4e8;
+  box-shadow: 0 0 0 4px #040723, 0 0 28px #813BF544;
+}
+.spark-wheel.is-super > span {
+  font-size: 14px;
+}
+.spark-super-panel {
+  margin: 4px auto 8px;
+  max-width: 280px;
+}
+.spark-super-odds {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+.spark-super-odds li {
+  display: grid;
+  grid-template-columns: 48px 1fr 36px;
+  gap: 8px;
+  align-items: center;
+  min-height: 28px;
+  font-size: 12px;
+  color: #f3ead2;
+}
+.spark-super-odds i {
+  display: block;
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #6d4ca8, #dcfa53);
+}
+.spark-super-odds span {
+  text-align: right;
+}
+
+/* Brand fold: quiet base-kept · heightened motion only for real bonus/top */
+.spark-jackpot[data-reveal="quiet"] {
+  background: #110e18f2;
+}
+.spark-jackpot[data-reveal="quiet"]:before,
+.spark-jackpot[data-reveal="quiet"] .spark-coin-rain {
+  display: none;
+}
+.spark-jackpot[data-reveal="quiet"] > strong {
+  font-size: clamp(40px, 6vw, 72px);
+  text-shadow: 0 0 18px #813bf566;
+  animation: vault-pop 0.28s ease-out both;
+}
+.spark-jackpot[data-reveal="quiet"] > span,
+.spark-jackpot[data-reveal="quiet"] > b {
+  letter-spacing: 0.14em;
+  color: #c9b7df;
+}
+
+.spark-jackpot[data-reveal="mid"]:before {
+  border-color: #813bf588;
+  box-shadow: 0 0 48px #813bf544;
+}
+.spark-jackpot[data-reveal="mid"] .spark-coin-rain {
+  display: none; /* mid = spark only, no coin shower */
+}
+
+.spark-jackpot[data-reveal="top"] {
+  background: radial-gradient(ellipse, #503129f0, #21122bef 55%, #040723e8);
+}
+.spark-jackpot[data-reveal="top"]:before {
+  border-color: #c9eb00aa;
+  box-shadow: 0 0 90px #c9eb0044;
+}
+.spark-jackpot[data-reveal="top"] > strong {
+  text-shadow: 0 0 40px #c9eb0099, 0 4px 0 #3a4810;
+}
+
+/* Top settle: stronger authored crystal (no new file) */
+.spark-victory[data-reveal="top"] .reactor-crystal {
+  filter: drop-shadow(0 0 18px #c9eb00) drop-shadow(0 0 36px #813bf5aa);
+}
+.spark-victory[data-reveal="quiet"] .reactor-ember {
+  display: none;
+}
+.spark-victory-stats[data-count="4"] {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.spark-victory-stats[data-count="4"] b {
+  font-size: 22px;
+  white-space: nowrap;
+}
+@media (max-width: 760px) {
+  .spark-victory-stats[data-count="4"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .spark-victory-stats[data-count="4"] > span:nth-child(odd) {
+    border-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spark-jackpot[data-reveal] > strong { animation: none !important; }
+}
+@media (max-width: 760px) {
+  .spark-game { order: 1; }
+  .spark-intro { order: 2; }
+  .spark-build-notes { order: 3; }
+  .spark-game .spark-jackpot {
+    justify-content: center;
+    padding: 12px 8px 20px;
+  }
+  .spark-game .spark-jackpot > strong {
+    font-size: clamp(56px, 18vw, 92px);
+  }
+  .spark-wheel-wrap {
+    width: min(180px, 100%);
+  }
+  .spark-bonus .spark-reactor {
+    height: 140px;
+  }
+}
+@media (max-height: 800px) and (min-width: 900px) {
+  .spark-showcase .spark-intro h1 {
+    font-size: 42px;
+    margin: 10px 0 12px;
+  }
+  .spark-intro > p,
+  .spark-loop,
+  .spark-reset {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+  .spark-showcase .spark-game,
+  .spark-game {
+    min-height: 0;
+    padding: 16px;
+  }
+  .spark-reactor,
+  .spark-ready .spark-reactor {
+    height: 150px;
+  }
+  .spark-wheel-wrap {
+    width: min(168px, 100%);
+    margin: 8px auto;
+  }
+  .spark-bonus h2 {
+    margin: 4px 0;
+  }
+}
+
+/* WON pre-spin: the answered game is the hero. The brochure stays a disclosure. */
+.daily-spark.is-answered {
+  grid-template-columns: minmax(0, 760px);
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background: #07080f;
+}
+.daily-spark.is-answered .spark-intro > :not(.spark-rules):not(h1) {
+  display: none;
+}
+.daily-spark.is-answered .spark-intro h1 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+.daily-spark.is-answered .spark-rules {
+  max-width: none;
+  margin: 12px 0 0;
+  text-align: center;
+}
+.daily-spark.is-answered .spark-intro { order: 2; }
+.daily-spark.is-answered .spark-game {
+  order: 1;
+  min-height: 0;
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+.daily-spark.is-answered .spark-build-notes {
+  order: 3;
+  margin-top: 0;
+  padding-top: 12px;
+}
+.daily-spark.is-answered .spark-game-top {
+  position: absolute;
+  right: 8px;
+  top: 0;
+}
+.daily-spark.is-answered .spark-game-top > span:first-child { display: none; }
+.spark-ready h2 {
+  max-width: 16em;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: clamp(20px, 2.4vw, 26px);
+  line-height: 1.25;
+}
+.spark-ready-support {
+  margin-top: 4px;
+}
+.vault-copy {
+  text-align: center;
+}
+.vault-bank {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 4px auto 12px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid #c9eb0066;
+  background: #14180c;
+}
+.vault-bank strong {
+  color: #d6f25a;
+  font-size: 22px;
+}
+.vault-bank span,
+.vault-copy p {
+  color: #c9c3b4;
+  font-size: 13px;
+}
+.vault-copy > span {
+  letter-spacing: 0.16em;
+  font-size: 11px;
+  color: #d6f25a;
+}
+.vault-copy h2 {
+  margin: 8px 0 6px;
+  font-size: clamp(28px, 4vw, 40px);
+  letter-spacing: -0.04em;
+}
+.vault-stage {
+  position: relative;
+  width: min(520px, 100%);
+  margin: 4px auto 0;
+}
+.vault-disc {
+  position: relative;
+  container-type: size;
+  width: min(304px, 100%);
+  aspect-ratio: 1;
+  margin: 8px auto 8px;
+}
+.vault-disc.is-press {
+  transform: scale(0.985);
+}
+.vault-disc.is-wind {
+  animation: vault-wind 0.2s ease-in-out;
+}
+.vault-glow {
+  position: absolute;
+  inset: -22px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #c9eb0033, transparent 68%);
+  opacity: 0;
+}
+.vault-disc.is-land-5x .vault-glow {
+  opacity: 1;
+}
+.vault-pointer {
+  position: absolute;
+  left: 50%;
+  top: -2px;
+  z-index: 4;
+  width: 0;
+  height: 0;
+  margin-left: -11px;
+  border-left: 11px solid transparent;
+  border-right: 11px solid transparent;
+  border-top: 18px solid #C9EB00;
+  filter: drop-shadow(0 0 8px #C9EB00);
+}
+.vault-rim {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, transparent 68%, #040723 69% 78%, #c8c4e8 79% 81%, #040723 82%);
+  box-shadow: inset 0 0 0 2px #040723, inset 0 0 0 3px #ECEEFF55, 0 14px 28px #0008;
+}
+.vault-disc.is-land-5x .vault-rim {
+  box-shadow: 0 0 0 3px #c9eb00, 0 0 36px #c9eb0088, 0 18px 40px #0008;
+}
+.vault-spin {
+  position: absolute;
+  inset: 0;
+  transition: transform 3.4s cubic-bezier(0.12, 0.72, 0.08, 1);
+}
+.vault-spin.is-snapped {
+  transition: none;
+}
+.vault-face,
+.vault-lift,
+.vault-seams,
+.vault-foil {
+  position: absolute;
+  inset: 16px;
+  border-radius: 50%;
+}
+.vault-face {
+  background:
+    radial-gradient(circle at 32% 28%, #eceeff22, transparent 42%),
+    conic-gradient(
+      #813BF5 0deg 60deg,
+      #3d1f7a 60deg 120deg,
+      #5a2fb8 120deg 180deg,
+      #241433 180deg 240deg,
+      #3d1f7a 240deg 300deg,
+      #140c28 300deg 360deg
+    );
+  box-shadow: inset 0 0 0 1px #eceeff33, inset 0 0 28px #040723aa;
+}
+.vault-lift {
+  background: conic-gradient(transparent 0deg 300deg, #c9eb002e 300deg 360deg);
+}
+.vault-disc.is-land-5x .vault-lift {
+  background: conic-gradient(transparent 0deg 300deg, #c9eb00 300deg 360deg);
+}
+.vault-seams {
+  background: repeating-conic-gradient(from 0deg, transparent 0deg 58.6deg, #07060ccc 58.6deg 60deg);
+}
+.vault-foil {
+  background: repeating-conic-gradient(from 0deg, #eceeff33 0deg 8deg, transparent 14deg 60deg);
+  -webkit-mask: radial-gradient(circle, transparent 58%, #000 76%);
+  mask: radial-gradient(circle, transparent 58%, #000 76%);
+}
+.vault-seal {
+  --a: 330deg;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  width: 108px;
+  margin: -8px 0 0 -54px;
+  padding: 0;
+  background: none;
+  color: #C9EB00;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-shadow: 0 1px 2px #040723, 0 0 8px #040723;
+  transform: rotate(var(--a)) translateY(calc(-1 * 47cqmin)) rotate(calc(-1 * var(--a) - var(--spin, 0deg)));
+}
+.vault-label.is-gateway {
+  color: #dcfa53;
+}
+.vault-label {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 40px;
+  margin: -12px 0 0 -20px;
+  font-size: 16px;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 1px 2px #000a;
+  transform: rotate(var(--a)) translateY(-104px) rotate(calc(-1 * var(--a) - var(--spin, 0deg)));
+}
+.vault-hub {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 3;
+  width: 34%;
+  height: 34%;
+  margin: 0;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #040723;
+  border: 1px solid #ECEEFF;
+  box-shadow: 0 8px 16px #000a, inset 0 0 0 1px #c8c4e8;
+  overflow: hidden;
+}
+.vault-hub img,
+.spark-wheel-hub img {
+  position: absolute;
+  width: 250%;
+  height: 250%;
+  max-width: none;
+  left: 50%;
+  top: 46%;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+}
+.vault-preview {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  width: min(304px, 100%);
+  margin: 8px auto;
+  padding: 12px;
+  border-radius: 16px;
+  background: #12141c;
+  border: 1px solid #ffffff14;
+}
+.vault-preview span {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: #9a93a8;
+}
+.vault-preview b {
+  font-size: 18px;
+  letter-spacing: 0;
+  color: #f4f1ea;
+}
+.vault-preview .is-rare b {
+  color: #d6f25a;
+}
+.spark-showcase .spark-play:disabled {
+  filter: saturate(0.35);
+  opacity: 0.7;
+  transform: none;
+}
+@keyframes vault-wind {
+  50% { transform: rotate(-7deg); }
+}
+@media (max-width: 760px) {
+  .vault-stage { display: flex; flex-direction: column; align-items: center; }
+  .vault-disc { width: min(280px, 100%); }
+  .vault-preview b { font-size: 15px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vault-disc.is-wind { animation: none; }
+}
+
+/* Settled reward: decoration stays in its box. Title, caption, ledger, and the next action do not share that box. */
+.spark-victory {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.spark-decor {
+  width: 180px;
+  height: 148px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  pointer-events: none;
+}
+.spark-victory .spark-reactor {
+  width: 180px;
+  height: 148px;
+  overflow: hidden;
+}
+.spark-victory .reactor-orbit,
+.spark-victory .reactor-floor,
+.spark-victory .reactor-ember {
+  display: none;
+}
+.spark-victory .reactor-halo {
+  width: 96px;
+  height: 96px;
+  left: 50%;
+  top: 6px;
+  margin-left: -48px;
+}
+.spark-victory .reactor-crystal {
+  width: 68px;
+  height: 90px;
+}
+.spark-victory .reactor-caption {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+  background: #110e18;
+  padding: 4px 0 0;
+}
+.spark-victory[data-reveal="quiet"] .reactor-halo {
+  display: none;
+}
+.spark-victory[data-reveal="quiet"] .reactor-crystal {
+  filter: drop-shadow(0 0 6px #d5f54499);
+}
+.spark-safe {
+  position: relative;
+  z-index: 2;
+}
+.spark-victory-stats > span.is-banked b {
+  font-size: 32px;
+  color: #C9EB00;
+}
+.spark-victory-stats[data-count="4"] > span.is-banked b {
+  font-size: 28px;
+}
+.spark-victory-stats > span.is-banked {
+  color: #C9EB00;
+}
+/* The victory column centers the crystal. The ledger must still use the card width, or the four labels collapse to their text. */
+.spark-victory-stats {
+  align-self: stretch;
+  width: 100%;
+}
+
+/* Authored Lobby Vault Charge. Lime core only; the gold bolt shadow stays off this plate. */
+/* A definite grid row lets the hero's percentage height resolve against the reactor, so it cannot spill onto the rules copy. */
+.spark-reactor[data-art="authored-lobby-vault-charge"] {
+  grid-template-rows: 100%;
+}
+.spark-reactor[data-art="authored-lobby-vault-charge"] .vault-charge-hero {
+  width: auto;
+  height: 92%;
+  max-width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 14px #C9EB00aa) drop-shadow(0 0 28px #dcfa5366);
+}
+.spark-bonus .spark-reactor[data-art="authored-lobby-vault-charge"] .vault-charge-hero,
+.spark-victory .spark-reactor[data-art="authored-lobby-vault-charge"] .vault-charge-hero {
+  width: auto;
+  height: 92%;
+}
+.spark-reactor[data-art="authored-lobby-vault-charge"].mood-dimmed .vault-charge-hero {
+  filter: grayscale(1) brightness(0.42);
+}
+/* G2 settled chrome — lime Continue-family (#202) */
+.spark-vault-caption {
+  margin: 4px 0 8px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #C9EB00;
+}
+.spark-sparks-note {
+  margin: 0;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: #aa9fbc;
+}
+.spark-showcase .spark-bonus .spark-play,
+:root[data-hub-effects=on] .spark-showcase .spark-bonus .btn.spark-play {
+  width: min(304px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  background-image: none;
+  background-color: #C9EB00;
+  color: #040723;
+  border: 1px solid #C9EB00;
+  box-shadow: none;
+}
+.spark-showcase .spark-bonus .spark-play:hover {
+  background: #dcfa53;
+  color: #040723;
+  transform: none;
+  box-shadow: none;
+}
+.spark-game:has(.vault-disc) {
+  min-height: 0;
+}
+.spark-claimed-clock {
+  margin: 10px 0 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #aa9fbc;
+}
+.spark-showcase .spark-bonus .spark-settle-action .spark-play,
+.spark-showcase .spark-bonus .spark-settle-action .spark-play:hover,
+:root[data-hub-effects=on] .spark-showcase .spark-bonus .spark-settle-action .btn.spark-play,
+:root[data-hub-effects=on] .spark-showcase .spark-bonus .spark-settle-action .btn.spark-play:hover {
+  width: min(304px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  background-image: none;
+  background-color: #C9EB00;
+  color: #040723;
+  border: 1px solid #C9EB00;
+  box-shadow: none;
+  transform: none;
+}
+.spark-showcase .spark-play.is-outline,
+.spark-showcase .spark-bonus .spark-settle-action .spark-play.is-outline,
+.spark-showcase .spark-bonus .spark-settle-action .spark-play.is-outline:hover,
+:root[data-hub-effects=on] .spark-showcase .spark-bonus .spark-settle-action .btn.spark-play.is-outline {
+  background-image: none;
+  background-color: transparent;
+  color: #C9EB00;
+  border: 1px solid #C9EB00;
+  box-shadow: none;
+}
+.spark-showcase .spark-play.is-outline:hover {
+  background-image: none;
+  background-color: transparent;
+  color: #dcfa53;
+  border-color: #dcfa53;
+}
+.vault-plate {
+  position: absolute;
+  pointer-events: none;
+  object-fit: contain;
+}
+.vault-plate-rim {
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+.vault-plate-face {
+  inset: 9%;
+  z-index: 1;
+  width: 82%;
+  height: 82%;
+}
+.vault-plate-pointer {
+  left: 50%;
+  top: -4px;
+  z-index: 5;
+  width: 28px;
+  height: 24px;
+  margin-left: -14px;
+}
+.vault-plate-badge {
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  width: 96px;
+  height: 28px;
+  margin: -14px 0 0 -48px;
+  transform: rotate(330deg) translateY(calc(-1 * 46cqmin)) rotate(-330deg);
+}
+.vault-disc.has-pack-face .vault-face,
+.vault-disc.has-pack-face .vault-label,
+.vault-disc.has-pack-face .vault-lift,
+.vault-disc.has-pack-face .vault-seams,
+.vault-disc.has-pack-face .vault-foil {
+  visibility: hidden;
+}
+.vault-disc.has-pack-badge .vault-seal,
+.vault-disc.has-pack-rim .vault-seal,
+.vault-disc.has-pack-rim .vault-plate-badge {
+  visibility: hidden;
+}
+.vault-disc.has-pack-pointer .vault-pointer {
+  visibility: hidden;
+}
+.vault-disc.has-pack-rim .vault-rim {
+  background: transparent;
+  box-shadow: none;
+}
+.spark-wheel-wrap[data-art="authored-lobby-vault-disc"] .spark-wheel-pointer {
+  width: 0;
+  height: 0;
+  margin-left: -10px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 16px solid #C9EB00;
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+  background: none;
+  filter: drop-shadow(0 0 8px #C9EB00);
+}
+
+/* Retained keying styles for the Y6HUAQT derivative. The Daily Spark hero is authored-lobby-vault-charge. mix-blend-mode cannot key this video: .daily-spark isolates, so screen never reaches the page and the black field stays a rectangle. The canvas stores real alpha instead. */
+.spark-reactor[data-art="y6huaqt-licensed"] {
+  overflow: hidden;
+  background: transparent;
+}
+.spark-reactor[data-art="y6huaqt-licensed"] .crystal-poster,
+.spark-reactor[data-art="y6huaqt-licensed"] .crystal-source {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  pointer-events: none;
+}
+.spark-reactor[data-art="y6huaqt-licensed"] .crystal-plate {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  pointer-events: none;
+}
+.spark-charge {
+  width: 128px;
+  height: 128px;
+  margin: 0 auto 8px;
+  overflow: hidden;
+}
+.spark-charge .spark-reactor {
+  width: 100%;
+  height: 100%;
+}
+@media (prefers-reduced-motion: reduce) {
+  .spark-reactor[data-art="y6huaqt-licensed"] video {
+    display: none;
+  }
+}
+
+
+/* Game-feel pass (see creator-hub/daily-spark/ART_DIRECTION.md): the wheel decides on screen before the payout covers it. */
+.spark-showcase .spark-bonus .spark-play.is-spinning,
+.spark-showcase .spark-bonus .spark-play.is-spinning:disabled {
+  opacity: 1;
+  cursor: progress;
+  color: #040723;
+  background-color: #C9EB00;
+  background-image: repeating-linear-gradient(115deg, #ffffff00 0 14px, #ffffff38 14px 26px);
+  background-size: 200% 100%;
+  animation: vault-spin-stripes 0.9s linear infinite;
+}
+@keyframes vault-spin-stripes {
+  to { background-position: -60px 0; }
+}
+.vault-disc.is-landing .vault-plate-pointer,
+.vault-disc.is-landing .vault-pointer {
+  animation: vault-pointer-hit 0.42s cubic-bezier(0.2, 1.6, 0.4, 1);
+}
+@keyframes vault-pointer-hit {
+  0% { transform: translateY(0); }
+  30% { transform: translateY(7px) scaleY(0.86); }
+  100% { transform: translateY(0); }
+}
+.vault-disc.is-landing-pop {
+  animation: vault-land-pop 0.42s cubic-bezier(0.2, 1.4, 0.4, 1);
+}
+@keyframes vault-land-pop {
+  35% { transform: scale(1.045); }
+  100% { transform: scale(1); }
+}
+.vault-disc.is-landing-pop .vault-glow {
+  opacity: 1;
+  background: radial-gradient(circle at 50% 8%, #c9b6ffaa, transparent 38%), radial-gradient(circle, #813bf533, transparent 68%);
+  animation: vault-land-flash 0.52s ease-out both;
+}
+@keyframes vault-land-flash {
+  0% { opacity: 0; }
+  25% { opacity: 1; }
+  100% { opacity: 0.35; }
+}
+.spark-victory-stats .is-banked.is-counting b {
+  transform: scale(1.08);
+  text-shadow: 0 0 18px #c9eb0066;
+}
+.spark-victory-stats .is-banked b {
+  transition: transform 0.25s cubic-bezier(0.2, 1.4, 0.4, 1), text-shadow 0.4s ease-out;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Answer impact: one bounded press, persistent selection, then confirmed reward. */
+.spark-answers button { position: relative; isolation: isolate; }
+.spark-answers.is-locked button:not(.is-chosen) { opacity: .38; }
+.spark-answers button.is-chosen {
+  opacity: 1; background: var(--accent); color: var(--bg);
+  border: 2px solid var(--text);
+  box-shadow: 0 0 0 5px var(--accent-dim), 0 0 36px var(--accent-strong);
+  font-weight: 800; transform: scale(1.025);
+  animation: answer-impact .48s cubic-bezier(.16,1,.3,1) both;
+}
+.spark-answers button.is-chosen > span,
+.spark-answers button.is-chosen > b { color: var(--bg); }
+.spark-answers button.is-chosen > b { font-size: 25px; }
+.spark-answers button.is-chosen::after {
+  content: ''; position: absolute; inset: -3px; border: 3px solid var(--accent);
+  border-radius: inherit; pointer-events: none;
+  animation: answer-ring .65s ease-out both;
+}
+.spark-lock-status { color: var(--accent); font-weight: 800; letter-spacing: .06em; }
+.spark-jackpot[data-answer] { background: radial-gradient(circle, var(--accent-dim), var(--bg) 75%); }
+.spark-jackpot[data-answer] > strong { color: var(--accent); font-size: clamp(48px,8vw,96px); }
+.spark-answer-award { font-size: clamp(21px,3vw,34px); color: var(--text); font-style: normal; font-weight: 800; margin-top: 18px; }
+@keyframes answer-impact { 0% { transform: scale(.95); } 45% { transform: scale(1.055); } 100% { transform: scale(1.025); } }
+@keyframes answer-ring { from { opacity: .9; transform: scale(1); } to { opacity: 0; transform: scale(1.12,1.5); } }
+@media (prefers-reduced-motion: reduce) {
+  .spark-answers button.is-chosen { animation: none; transform: none; }
+  .spark-answers button.is-chosen::after { display: none; }
+}
+html[data-hub-effects="off"] .spark-answers button.is-chosen { animation: none; transform: none; }
+html[data-hub-effects="off"] .spark-answers button.is-chosen::after { display: none; }
+
+/* A single sparkle shower for the confirmed answer, behind the readable reward. */
+.spark-answer-rain {
+  position: absolute; inset: 0; overflow: hidden; border-radius: inherit;
+  pointer-events: none; z-index: 0;
+  mask-image: linear-gradient(to bottom, black 25%, #0005 42%, #0005 65%, black 80%);
+}
+.spark-answer-rain i {
+  position: absolute; top: -8%; left: var(--spark-x);
+  color: var(--accent); font-size: var(--spark-size); font-style: normal;
+  text-shadow: 0 0 10px currentColor, 0 0 24px currentColor;
+  animation: answer-sparkle-fall 1.8s var(--spark-delay) ease-in both;
+}
+.spark-answer-rain i:nth-child(3n) { color: var(--text); }
+.spark-answer-rain i:nth-child(3n + 1) { color: var(--warn); }
+.spark-jackpot[data-answer] > strong,
+.spark-jackpot[data-answer] > b,
+.spark-jackpot[data-answer] > em { position: relative; z-index: 1; }
+@keyframes answer-sparkle-fall {
+  0% { top: -8%; opacity: 0; transform: translateX(0) rotate(0deg) scale(.4); }
+  12% { opacity: 1; }
+  75% { opacity: .9; }
+  100% { top: 108%; opacity: 0; transform: translateX(var(--spark-drift)) rotate(150deg) scale(.7); }
+}
+@media (prefers-reduced-motion: reduce) { .spark-answer-rain { display: none; } }
+html[data-hub-effects="off"] .spark-answer-rain { display: none; }
+
+/* Win impact: a single shock ring and oversized stars, then readable settlement. */
+.spark-jackpot[data-answer] {
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 45%, var(--accent-dim) 5%, var(--bg) 78%);
+}
+.spark-jackpot[data-answer] > strong {
+  text-transform: uppercase; line-height: 1.03;
+  text-shadow: 0 4px 0 var(--accent-dim), 0 0 36px var(--accent-strong);
+  animation: answer-win-punch .5s cubic-bezier(.16,1,.3,1) both;
+}
+.spark-jackpot[data-answer] .spark-answer-award {
+  padding: 12px 20px; border-radius: var(--radius); color: var(--bg);
+  background: var(--accent); box-shadow: 0 0 40px var(--accent-dim);
+  animation: answer-award-punch .5s .12s cubic-bezier(.16,1,.3,1) both;
+}
+.spark-answer-impact { position: absolute; inset: 0; pointer-events: none; }
+.spark-answer-impact span {
+  position: absolute; width: 260px; height: 260px; border: 8px solid var(--accent);
+  border-radius: 50%; left: calc(50% - 130px); top: calc(45% - 130px);
+  box-shadow: 0 0 45px var(--accent-strong), inset 0 0 35px var(--accent-strong);
+  animation: answer-win-ring .7s ease-out both;
+}
+.spark-answer-impact i {
+  position: absolute; color: var(--warn); font-style: normal;
+  font-size: clamp(70px,12vw,150px); text-shadow: 0 0 28px currentColor;
+  animation: answer-hero-star 1.05s ease-out both;
+}
+.spark-answer-impact i:nth-of-type(1) { left: 5%; top: 12%; transform: rotate(-18deg); }
+.spark-answer-impact i:nth-of-type(2) { right: 4%; top: 20%; animation-delay: .1s; color: var(--text); }
+.spark-answer-impact i:nth-of-type(3) { left: 9%; bottom: 14%; animation-delay: .18s; color: var(--accent); }
+.spark-answer-impact i:nth-of-type(4) { right: 7%; bottom: 9%; animation-delay: .25s; }
+@keyframes answer-win-punch { 0% { transform: scale(.72); opacity: 0; } 55% { transform: scale(1.08); opacity: 1; } 100% { transform: scale(1); } }
+@keyframes answer-award-punch { 0% { transform: translateY(18px) scale(.8); opacity: 0; } 65% { transform: translateY(0) scale(1.05); opacity: 1; } 100% { transform: scale(1); } }
+@keyframes answer-win-ring { from { opacity: .8; transform: scale(.35); } to { opacity: 0; transform: scale(3.5); } }
+@keyframes answer-hero-star { 0% { opacity: 0; scale: .15; } 25% { opacity: 1; scale: 1.25; } 55% { opacity: 1; scale: 1; } 100% { opacity: 0; scale: .6; } }
+@media (max-width: 760px) {
+  .spark-jackpot[data-answer] > strong { font-size: clamp(32px,9vw,56px); }
+  .spark-jackpot[data-answer] .spark-answer-award { padding: 12px; font-size: 20px; }
+}
+@media (prefers-reduced-motion: reduce) { .spark-answer-impact { display: none; } }
+html[data-hub-effects="off"] .spark-answer-impact { display: none; }
+
+/* Readable landing result follows the server result, never a decorative guess. */
+.vault-landed-value{position:relative;z-index:5;margin:0 auto 16px;text-align:center;color:var(--tari-green,#c9eb00);font-size:56px;font-weight:800;line-height:1.1;font-variant-numeric:tabular-nums;text-shadow:0 4px #040723}
+.vault-landed-value span{display:block;font-size:15px;color:var(--text);letter-spacing:.04em;margin-top:8px}
+
+.spark-reactor[data-art="accepted-spark-crystal-v9"] iframe{width:100%;height:100%;border:0;pointer-events:none;background:transparent}
+.spark-reactor[data-art="accepted-spark-crystal-v9"].mood-dimmed{filter:grayscale(1) brightness(.5)}
+
+.reward-playtest-bar{order:4;grid-column:1/-1;display:flex;justify-content:flex-end;padding:0;background:none;border:0;margin-top:8px}
+.spark-test-again{min-height:36px;padding:6px 11px;border:1px solid #b69bcc40;border-radius:999px;background:#ffffff05;color:#c8badb;font:inherit;font-size:12px;line-height:1.2;cursor:pointer;white-space:nowrap}
+.spark-test-again:hover{background:#b69bcc18;color:#f5eaff;border-color:#b69bcc88}
+.spark-test-again:focus-visible{outline:2px solid #c9eb00;outline-offset:3px}
+@media(pointer:coarse){.spark-test-again{min-height:44px}}
+.playtest-wheel{width:100%;min-width:0}.playtest-wheel iframe{border:0;width:100%;height:750px;background:#08071c;border-radius:20px}
+@media(max-width:600px){.reward-playtest-bar{flex-wrap:wrap}.playtest-wheel iframe{height:710px}}
+
+/* Keep the persistent wallet geometry stable through reward count-ups. */
+.spark-balance strong{min-width:5ch;text-align:center;font-variant-numeric:tabular-nums}
+
+@media(max-width:600px){.spark-balance{gap:4px;padding:6px}.spark-balance strong{font-size:14px}.spark-balance>span:first-child{font-size:18px}.spark-balance>span:last-child{font-size:9px}.spark-balance small{font-size:8px}}
+
+/* Earned energy persists between awards. Anticipation never changes the balance. */
+.spark-balance{position:relative;isolation:isolate;transition:box-shadow 1.2s ease,background 1.2s ease}
+.spark-balance::before{content:'';position:absolute;inset:-2px;border-radius:inherit;padding:2px;pointer-events:none;background:conic-gradient(from var(--wallet-angle,0deg),#c9eb00,#59f5ff,#ff3cba,#f3a9ff,#c9eb00);mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;opacity:0;transition:opacity 1s}
+@property --wallet-angle{syntax:'<angle>';initial-value:0deg;inherits:false}
+.spark-balance[data-energy="1"]{box-shadow:0 0 12px #c9eb0035;background:#293219}
+.spark-balance[data-energy="1"]::before{opacity:.5}
+.spark-balance[data-energy="2"]{box-shadow:0 0 20px #ff3cba65,inset 0 0 14px #c9eb0028;background:#31351a}
+.spark-balance[data-energy="2"]::before{opacity:.85;animation:wallet-current 3s linear infinite}
+.spark-balance[data-energy="3"]{box-shadow:0 0 32px #ff3cba95,0 0 12px #59f5ff70,inset 0 0 18px #c9eb0040;background:#3b3b1c}
+.spark-balance[data-energy="3"]::before{opacity:1;animation:wallet-current 1.5s linear infinite}
+.spark-balance[data-energy="1"]>span:first-child{filter:drop-shadow(0 0 5px #c9eb00)}
+.spark-balance[data-energy="2"]>span:first-child{filter:drop-shadow(0 0 8px #59f5ff);color:#edffa2}
+.spark-balance[data-energy="3"]>span:first-child{filter:drop-shadow(0 0 10px #ff3cba);color:#f3a9ff}
+.spark-balance.is-charging::before{opacity:.8;animation:wallet-current 1s linear infinite}
+@keyframes wallet-current{to{--wallet-angle:360deg}}
+:root[data-hub-effects=off] .spark-balance::before{animation:none!important}
+@media(prefers-reduced-motion:reduce){.spark-balance,.spark-balance::before{animation:none!important;transition:none!important}}
+
+.spark-product-title{justify-content:center;gap:14px;letter-spacing:0;text-align:center}
+.spark-product-name{font-family:OotleReward,Poppins,sans-serif;font-size:clamp(26px,4vw,38px);font-weight:800;line-height:1.12;color:#f2eaff;text-shadow:0 3px 0 #813bf5,0 5px 0 #100b21}
+.spark-product-name small{display:block;font:800 clamp(16px,2.5vw,22px)/1.3 OotleReward,Poppins,sans-serif;color:#e7ff86;margin-top:8px;letter-spacing:-.02em}
+.spark-product-title>span:last-child{font-size:12px;padding:7px 10px}
+
+.spark-product-name,.spark-product-name small{text-transform:none}
+
+/* One entrance per page mount. Transform only the lettering, never the layout. */
+.spark-loot-drop > span,
+.spark-loot-drop > em {
+  display: inline-block;
+  position: relative;
+  transform-origin: center bottom;
+  animation: spark-headline-land 850ms 2s both;
+}
+.spark-loot-drop > em { animation-delay: 2.22s; }
+.spark-loot-drop > em::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  bottom: -.08em;
+  left: 5%;
+  width: 90%;
+  height: .07em;
+  border-radius: 50%;
+  background: #ddfa64;
+  box-shadow: 0 0 18px 5px #c9eb0066;
+  opacity: 0;
+  animation: spark-headline-impact 500ms 2.59s both;
+}
+@keyframes spark-headline-land {
+  0% { opacity: 0; transform: translateY(-65px) scale(.96, 1.06); animation-timing-function: cubic-bezier(.55,0,1,.45); }
+  43% { opacity: 1; transform: translateY(0) scale(1.035,.88); animation-timing-function: ease-out; }
+  64% { opacity: 1; transform: translateY(-12px) scale(.99,1.03); animation-timing-function: ease-in; }
+  82% { opacity: 1; transform: translateY(0) scale(1.01,.97); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes spark-headline-impact {
+  0% { opacity: 0; transform: scaleX(.25); }
+  15% { opacity: .8; }
+  100% { opacity: 0; transform: scaleX(1.08); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .spark-loot-drop > span, .spark-loot-drop > em { animation: none; }
+  .spark-loot-drop > em::after { display: none; }
+}
+[data-hub-effects="off"] .spark-loot-drop > span,
+[data-hub-effects="off"] .spark-loot-drop > em { animation: none; }
+[data-hub-effects="off"] .spark-loot-drop > em::after { display: none; }
+
+.spark-creator-takeaway {max-width:680px;margin:24px auto;padding:20px 24px;border-left:3px solid #c9eb00;background:#21173088;border-radius:0 14px 14px 0;text-align:left;}
+.spark-creator-takeaway strong {color:#e5ff8a;font-size:18px;}
+.spark-creator-takeaway p {margin:8px 0 0;font-size:18px;line-height:1.55;color:#e3daee;}

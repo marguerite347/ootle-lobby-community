@@ -1,0 +1,153 @@
+[
+  {
+    "slug": "modding-tree",
+    "title": "The Modding Tree",
+    "repoUrl": "https://github.com/Acamaeda/The-Modding-Tree",
+    "type": "starter",
+    "category": "Idle / incremental",
+    "tags": [
+      "idle",
+      "incremental",
+      "framework"
+    ],
+    "summary": "Build a prestige-based incremental game by changing layers, upgrades and progression.",
+    "prerequisites": [
+      "Browser JavaScript; read the getting-started guide."
+    ],
+    "setupHint": "Fork or download the repository, follow docs/tutorials/getting-started.md, then customize layers and upgrades.",
+    "license": null,
+    "demoUrl": null,
+    "sourceUpdatedAt": "2024-10-28T13:29:39Z",
+    "docsUrl": "https://github.com/Acamaeda/The-Modding-Tree/blob/master/docs/tutorials/getting-started.md"
+  },
+  {
+    "slug": "dark-forest",
+    "title": "A Dark Forest",
+    "repoUrl": "https://github.com/TinyTakinTeller/GodotProjectZero",
+    "type": "starter",
+    "category": "Idle / incremental",
+    "tags": [
+      "idle",
+      "incremental",
+      "godot",
+      "complete-game"
+    ],
+    "summary": "A minimal incremental game inspired by A Dark Room. Study and remix its resource and discovery loops.",
+    "prerequisites": [
+      "Godot; match the version in the upstream project."
+    ],
+    "setupHint": "Open the downloaded project in the matching Godot editor. Follow the upstream setup and asset attribution notes.",
+    "license": null,
+    "demoUrl": "https://tinytakinteller.itch.io/the-best-game-ever",
+    "sourceUpdatedAt": "2026-05-02T19:36:33Z"
+  },
+  {
+    "slug": "deckbuilder-framework",
+    "title": "Deckbuilder Framework",
+    "repoUrl": "https://github.com/insideout-andrew/deckbuilder-framework",
+    "type": "starter",
+    "category": "Cards / deckbuilders",
+    "tags": [
+      "cards",
+      "deckbuilder",
+      "balatro-style",
+      "godot",
+      "framework"
+    ],
+    "summary": "Card drawing, shuffling and deck interactions for your own deckbuilder. A foundation for Balatro-style experiments, not a complete Balatro game.",
+    "prerequisites": [
+      "Godot; a card-game design of your own."
+    ],
+    "setupHint": "Follow the README installation steps; explore the simple, fancy and solitaire examples. Customize CardData and card scenes.",
+    "license": "MIT",
+    "demoUrl": null,
+    "sourceUpdatedAt": "2024-12-16T19:58:14Z"
+  },
+  {
+    "slug": "balatro-godot-reference",
+    "title": "Balatro-style Godot prototype",
+    "repoUrl": "https://github.com/r2d2meuleu/balatro",
+    "type": "learn",
+    "category": "Cards / deckbuilders",
+    "tags": [
+      "cards",
+      "deckbuilder",
+      "balatro",
+      "reference"
+    ],
+    "summary": "An upstream Balatro clone described as Godot 4.4. Reference candidate only: no license was found, and execution and asset rights have not been verified.",
+    "prerequisites": [
+      "Godot 4.4; source and asset review before reuse."
+    ],
+    "setupHint": "Inspect the source. Resolve reuse permission and replace any proprietary assets before treating this as a reusable starter.",
+    "license": null,
+    "demoUrl": null,
+    "sourceUpdatedAt": "2025-03-30T15:32:30Z"
+  },
+  {
+    "slug": "steamodded",
+    "title": "Steamodded / SMODS",
+    "repoUrl": "https://github.com/Steamodded/smods",
+    "type": "component",
+    "category": "Cards / deckbuilders",
+    "tags": [
+      "cards",
+      "balatro",
+      "mod"
+    ],
+    "summary": "Extend Balatro with community-made cards and effects. This is a modding framework, not a standalone game engine.",
+    "prerequisites": [
+      "A legitimate Balatro installation and the upstream mod dependencies."
+    ],
+    "setupHint": "Follow the SMODS installation and mod-development guides; this path produces a Balatro mod.",
+    "license": "GPL-3.0",
+    "demoUrl": null,
+    "sourceUpdatedAt": "2026-09-20T20:33:46Z",
+    "docsUrl": "https://docs.smods.dev/"
+  },
+  {
+    "slug": "godot-demos",
+    "title": "Godot demo projects",
+    "repoUrl": "https://github.com/godotengine/godot-demo-projects",
+    "type": "starter",
+    "category": "Multiple genres",
+    "tags": [
+      "platformer",
+      "racing",
+      "puzzle",
+      "3d",
+      "framework"
+    ],
+    "summary": "Official demo projects for platforming, vehicles, UI and other game systems. Choose an individual demo as your base.",
+    "prerequisites": [
+      "Godot version matching the chosen demo branch."
+    ],
+    "setupHint": "Choose a demo subdirectory, download the repository, then import that demo project.godot in the matching editor.",
+    "license": "MIT",
+    "demoUrl": "https://godotengine.github.io/godot-demo-projects/",
+    "sourceUpdatedAt": "2026-09-08T19:40:35Z"
+  },
+  {
+    "slug": "not-balatro",
+    "title": "Not-Balatro poker foundation",
+    "repoUrl": "https://github.com/Kartones/not-balatro",
+    "type": "starter",
+    "category": "Cards / deckbuilders",
+    "tags": [
+      "cards",
+      "poker",
+      "deckbuilder",
+      "javascript"
+    ],
+    "summary": "Hackable browser poker-hand engine. Upstream is an engine demo; it does not include a complete campaign or shop.",
+    "prerequisites": [
+      "Browser JavaScript"
+    ],
+    "setupHint": "Serve the upstream folder over HTTP.",
+    "license": "Unlicense",
+    "upstreamRevision": "de706d49d7aa2710dab83a3ce23d9fd4cfd882f7",
+    "demoUrl": "https://kartones.net/demos/030/",
+    "docsUrl": "https://github.com/Kartones/not-balatro/blob/main/README.md",
+    "sourceUpdatedAt": null
+  }
+]

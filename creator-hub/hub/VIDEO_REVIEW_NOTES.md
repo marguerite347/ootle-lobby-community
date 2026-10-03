@@ -1,0 +1,5 @@
+Review fixes: stricter URL and list validation keeps hub exports compatible with the renderer; brand-only previews cannot claim recorded gameplay. AI drafts accept only validated copy fields, have a 30-second timeout, redact provider error bodies, support both token variable names, and require explicit HF_DRAFT_ENABLED=1. Client draft responses cannot overwrite navigation or newer edits, and malformed model values cannot crash list controls. Corrected prototype wording and documented missing project/clip association and rendering.
+
+Validation: 80 backend tests, 11 client tests, 9 renderer tests, production TypeScript/Vite build and renderer TypeScript check passed. Provider calls were mocked; no paid inference or deployment performed. Existing dependency audit warnings remain outside this feature; do not expose the local unauthenticated prototype as a hosted paid drafting service.
+
+Remaining: project-context clip storage, in-app preview/render worker, upload/captions/export package and publishing. CH-026/CH-028 are partial increments, not fully completed tickets.

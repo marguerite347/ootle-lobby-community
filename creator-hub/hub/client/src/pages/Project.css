@@ -1,0 +1,87 @@
+.project-workspace {
+  align-items: start;
+}
+.project-workspace > section {
+  min-width: 0;
+}
+.project-workspace > aside {
+  min-width: 0;
+}
+.version-compare {
+  margin: 20px 0;
+  border-color: #766091;
+}
+.version-diff {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+.version-diff > div {
+  padding: 16px;
+  background: #ffffff04;
+  border-radius: 10px;
+}
+.version-diff ul {
+  padding-left: 16px;
+  font-size: 13px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+.version-diff > p {
+  grid-column: 1/-1;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 13px;
+}
+.fork-form {
+  margin: 24px 0;
+  max-width: 760px;
+  border-color: #c4ff3880;
+}
+.fork-form h2 {
+  margin: 12px 0;
+}
+.fork-form p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+.project-error {
+  border: 1px solid var(--danger);
+  border-radius: 12px;
+  padding: 18px;
+  color: var(--danger);
+}
+.resource-attach {
+  display: flex;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  color: var(--text);
+  text-align: left;
+  padding: 12px;
+}
+@media (max-width: 600px) {
+  .version-diff {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Keep long revision messages from pushing the fork action into the workspace. */
+.project-workspace .commit {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+}
+.project-workspace .commit > div {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.project-workspace .commit > button {
+  grid-column: 2;
+  grid-row: 1;
+  white-space: nowrap;
+}

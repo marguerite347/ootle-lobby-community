@@ -1,0 +1,27 @@
+{
+  "format": "9:16",
+  "componentName": "Example counter recipe",
+  "whatItDoes": "Illustrative workflow; validate composition before use.",
+  "steps": [
+    "Choose a verified template",
+    "Read prerequisites",
+    "Test the implementation",
+    "Share a tested revision"
+  ],
+  "remixLabel": "Remix this template",
+  "accent": "#813BF5",
+  "durationInSeconds": 12,
+  "background": {
+    "type": "brand",
+    "kind": "demo",
+    "scrim": 0.45
+  },
+  "meta": {
+    "projectId": "proj_counter_token",
+    "templateId": "TemplateWalkthrough",
+    "campaignId": "sprint2-framework",
+    "clipId": "clip_ctr_001",
+    "revision": "1",
+    "destinationUrl": "https://ootle.tari.com/guides/template-overview/"
+  }
+}

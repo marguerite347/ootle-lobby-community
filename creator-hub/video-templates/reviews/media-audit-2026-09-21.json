@@ -1,0 +1,1101 @@
+[
+  {
+    "id": "tari-ootle:starter:wasm-templates-airdrop",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.389,
+    "maxAdjacentDelta": 0.368
+  },
+  {
+    "id": "tari-ootle:learn:building-a-guessing-game-template",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.119,
+    "maxAdjacentDelta": 0.166
+  },
+  {
+    "id": "tari-ootle:app:caravel-labs",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.118,
+    "maxAdjacentDelta": 0.109
+  },
+  {
+    "id": "tari-ootle:starter:wasm-templates-counter",
+    "frames": 96,
+    "distinctFrames": 95,
+    "loopSeamMeanPixelDelta": 0.114,
+    "maxAdjacentDelta": 1.054
+  },
+  {
+    "id": "tari-ootle:starter:wasm-templates-empty",
+    "frames": 96,
+    "distinctFrames": 94,
+    "loopSeamMeanPixelDelta": 0.033,
+    "maxAdjacentDelta": 0.019
+  },
+  {
+    "id": "tari-ootle:starter:wasm-templates-fungible",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.273,
+    "maxAdjacentDelta": 0.264
+  },
+  {
+    "id": "tari-ootle:starter:examples-guessing-game-template",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.335,
+    "maxAdjacentDelta": 0.352
+  },
+  {
+    "id": "tari-ootle:starter:wasm-templates-ico",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.265,
+    "maxAdjacentDelta": 0.245
+  },
+  {
+    "id": "tari-ootle:app:labyrinthos",
+    "frames": 96,
+    "distinctFrames": 67,
+    "loopSeamMeanPixelDelta": 0.014,
+    "maxAdjacentDelta": 0.009
+  },
+  {
+    "id": "tari-ootle:starter:wasm-templates-meme-coin",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.175,
+    "maxAdjacentDelta": 0.138
+  },
+  {
+    "id": "tari-ootle:starter:wasm-templates-nft",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.19,
+    "maxAdjacentDelta": 0.207
+  },
+  {
+    "id": "tari-ootle:starter:wasm-templates-no-std",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.154,
+    "maxAdjacentDelta": 0.13
+  },
+  {
+    "id": "tari-ootle:app:private-ballot",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.15,
+    "maxAdjacentDelta": 0.131
+  },
+  {
+    "id": "tari-ootle:learn:publishing-templates-to-testnet",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.396,
+    "maxAdjacentDelta": 0.374
+  },
+  {
+    "id": "tari-ootle:app:sapient",
+    "frames": 96,
+    "distinctFrames": 94,
+    "loopSeamMeanPixelDelta": 0.029,
+    "maxAdjacentDelta": 0.022
+  },
+  {
+    "id": "tari-ootle:app:shadowtix",
+    "frames": 96,
+    "distinctFrames": 95,
+    "loopSeamMeanPixelDelta": 0.468,
+    "maxAdjacentDelta": 0.435
+  },
+  {
+    "id": "tari-ootle:app:sooon-fun",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.298,
+    "maxAdjacentDelta": 0.234
+  },
+  {
+    "id": "tari-ootle:starter:wasm-templates-stable-coin",
+    "frames": 96,
+    "distinctFrames": 92,
+    "loopSeamMeanPixelDelta": 0.055,
+    "maxAdjacentDelta": 0.061
+  },
+  {
+    "id": "tari-ootle:starter:wasm-templates-swap",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.523,
+    "maxAdjacentDelta": 0.51
+  },
+  {
+    "id": "tari-ootle:app:tari-agent-pay",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.319,
+    "maxAdjacentDelta": 0.308
+  },
+  {
+    "id": "tari-ootle:app:tari-market-0-21-a-tari-concept",
+    "frames": 96,
+    "distinctFrames": 94,
+    "loopSeamMeanPixelDelta": 0.104,
+    "maxAdjacentDelta": 0.097
+  },
+  {
+    "id": "tari-ootle:app:tari-ootle-playground",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.184,
+    "maxAdjacentDelta": 0.175
+  },
+  {
+    "id": "tari-ootle:app:tari-universe",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.096,
+    "maxAdjacentDelta": 0.087
+  },
+  {
+    "id": "tari-ootle:app:tariorg",
+    "frames": 96,
+    "distinctFrames": 93,
+    "loopSeamMeanPixelDelta": 0.076,
+    "maxAdjacentDelta": 0.072
+  },
+  {
+    "id": "tari-ootle:learn:using-the-tari-ootle-cli",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.116,
+    "maxAdjacentDelta": 0.084
+  },
+  {
+    "id": "tari-ootle:learn:what-is-the-tari-ootle-playground",
+    "frames": 96,
+    "distinctFrames": 91,
+    "loopSeamMeanPixelDelta": 0.047,
+    "maxAdjacentDelta": 0.039
+  },
+  {
+    "id": "creative:starter:dark-forest",
+    "frames": 96,
+    "distinctFrames": 95,
+    "loopSeamMeanPixelDelta": 0.067,
+    "maxAdjacentDelta": 0.043
+  },
+  {
+    "id": "polyhaven:asset:aarfontein-dawn-2",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.166,
+    "maxAdjacentDelta": 0.113
+  },
+  {
+    "id": "polyhaven:asset:aarfontein-pan",
+    "frames": 96,
+    "distinctFrames": 83,
+    "loopSeamMeanPixelDelta": 0.19,
+    "maxAdjacentDelta": 0.165
+  },
+  {
+    "id": "polyhaven:asset:aarfontein-sunrise",
+    "frames": 96,
+    "distinctFrames": 95,
+    "loopSeamMeanPixelDelta": 0.122,
+    "maxAdjacentDelta": 0.091
+  },
+  {
+    "id": "creative:asset:ambientcg",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.087,
+    "maxAdjacentDelta": 0.074
+  },
+  {
+    "id": "creative:learn:uhub-awesome-css",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.138,
+    "maxAdjacentDelta": 0.109
+  },
+  {
+    "id": "creative:learn:roobyx-awesome-game-design",
+    "frames": 96,
+    "distinctFrames": 95,
+    "loopSeamMeanPixelDelta": 0.035,
+    "maxAdjacentDelta": 0.029
+  },
+  {
+    "id": "creative:learn:stevinz-awesome-game-engine-dev",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.201,
+    "maxAdjacentDelta": 0.195
+  },
+  {
+    "id": "creative:learn:mongkoneiadon-awesome-game-networking",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.253,
+    "maxAdjacentDelta": 0.244
+  },
+  {
+    "id": "creative:learn:vhladiienko-awesome-game-production",
+    "frames": 96,
+    "distinctFrames": 95,
+    "loopSeamMeanPixelDelta": 0.044,
+    "maxAdjacentDelta": 0.033
+  },
+  {
+    "id": "creative:learn:calinou-awesome-gamedev",
+    "frames": 96,
+    "distinctFrames": 95,
+    "loopSeamMeanPixelDelta": 0.041,
+    "maxAdjacentDelta": 0.021
+  },
+  {
+    "id": "creative:learn:bytecauldron-awesome-gamemaker",
+    "frames": 96,
+    "distinctFrames": 94,
+    "loopSeamMeanPixelDelta": 0.092,
+    "maxAdjacentDelta": 0.079
+  },
+  {
+    "id": "creative:learn:calinou-awesome-godot",
+    "frames": 96,
+    "distinctFrames": 91,
+    "loopSeamMeanPixelDelta": 0.049,
+    "maxAdjacentDelta": 0.048
+  },
+  {
+    "id": "creative:learn:axiomecg-awesome-threejs",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.651,
+    "maxAdjacentDelta": 0.653
+  },
+  {
+    "id": "creative:learn:twofactor-awesome-web-games",
+    "frames": 96,
+    "distinctFrames": 89,
+    "loopSeamMeanPixelDelta": 0.054,
+    "maxAdjacentDelta": 0.044
+  },
+  {
+    "id": "creative:learn:balatro-godot-reference",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.043,
+    "maxAdjacentDelta": 0.036
+  },
+  {
+    "id": "creative:learn:bevyengine-bevy-assets",
+    "frames": 96,
+    "distinctFrames": 94,
+    "loopSeamMeanPixelDelta": 0.119,
+    "maxAdjacentDelta": 0.118
+  },
+  {
+    "id": "creative:asset:blendkit",
+    "frames": 96,
+    "distinctFrames": 93,
+    "loopSeamMeanPixelDelta": 0.021,
+    "maxAdjacentDelta": 0.019
+  },
+  {
+    "id": "asset-workflow:video",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.163,
+    "maxAdjacentDelta": 0.147
+  },
+  {
+    "id": "polyhaven:asset:brick-pavement-04",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.041,
+    "maxAdjacentDelta": 0.029
+  },
+  {
+    "id": "asset-workflow:comfyui",
+    "frames": 96,
+    "distinctFrames": 95,
+    "loopSeamMeanPixelDelta": 0.06,
+    "maxAdjacentDelta": 0.055
+  },
+  {
+    "id": "polyhaven:asset:damp-beach-sand",
+    "frames": 96,
+    "distinctFrames": 95,
+    "loopSeamMeanPixelDelta": 0.069,
+    "maxAdjacentDelta": 0.05
+  },
+  {
+    "id": "polyhaven:asset:damp-beach-sand-02",
+    "frames": 96,
+    "distinctFrames": 94,
+    "loopSeamMeanPixelDelta": 0.04,
+    "maxAdjacentDelta": 0.032
+  },
+  {
+    "id": "polyhaven:asset:dark-paneled-wood",
+    "frames": 96,
+    "distinctFrames": 93,
+    "loopSeamMeanPixelDelta": 0.112,
+    "maxAdjacentDelta": 0.101
+  },
+  {
+    "id": "creative:starter:deckbuilder-framework",
+    "frames": 96,
+    "distinctFrames": 93,
+    "loopSeamMeanPixelDelta": 0.1,
+    "maxAdjacentDelta": 0.11
+  },
+  {
+    "id": "creative:learn:bradtraversy-design-resources-for-developers",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.187,
+    "maxAdjacentDelta": 0.175
+  },
+  {
+    "id": "polyhaven:asset:eucalyptus-bark",
+    "frames": 96,
+    "distinctFrames": 94,
+    "loopSeamMeanPixelDelta": 0.063,
+    "maxAdjacentDelta": 0.055
+  },
+  {
+    "id": "polyhaven:asset:farm-soil",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.083,
+    "maxAdjacentDelta": 0.058
+  },
+  {
+    "id": "creative:starter:godot-demos",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.236,
+    "maxAdjacentDelta": 0.218
+  },
+  {
+    "id": "polyhaven:asset:grass-ground",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.077,
+    "maxAdjacentDelta": 0.08
+  },
+  {
+    "id": "polyhaven:asset:highway-bridge-sunset",
+    "frames": 96,
+    "distinctFrames": 93,
+    "loopSeamMeanPixelDelta": 0.057,
+    "maxAdjacentDelta": 0.046
+  },
+  {
+    "id": "polyhaven:asset:hinoki-planks",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.084,
+    "maxAdjacentDelta": 0.077
+  },
+  {
+    "id": "creative:asset:kenney",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.105,
+    "maxAdjacentDelta": 0.095
+  },
+  {
+    "id": "polyhaven:asset:nowhere-road",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.079,
+    "maxAdjacentDelta": 0.069
+  },
+  {
+    "id": "polyhaven:asset:nqweba-dawn",
+    "frames": 96,
+    "distinctFrames": 73,
+    "loopSeamMeanPixelDelta": 0.129,
+    "maxAdjacentDelta": 0.119
+  },
+  {
+    "id": "creative:learn:bobeff-open-source-games",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.082,
+    "maxAdjacentDelta": 0.06
+  },
+  {
+    "id": "creative:asset:poly-haven",
+    "frames": 96,
+    "distinctFrames": 91,
+    "loopSeamMeanPixelDelta": 0.035,
+    "maxAdjacentDelta": 0.046
+  },
+  {
+    "id": "creative:learn:kchapelier-procedural-generation",
+    "frames": 96,
+    "distinctFrames": 95,
+    "loopSeamMeanPixelDelta": 0.078,
+    "maxAdjacentDelta": 0.073
+  },
+  {
+    "id": "polyhaven:asset:rock-wall-17",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.054,
+    "maxAdjacentDelta": 0.046
+  },
+  {
+    "id": "polyhaven:asset:stacked-brick-wall",
+    "frames": 96,
+    "distinctFrames": 95,
+    "loopSeamMeanPixelDelta": 0.118,
+    "maxAdjacentDelta": 0.095
+  },
+  {
+    "id": "creative:component:steamodded",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.221,
+    "maxAdjacentDelta": 0.233
+  },
+  {
+    "id": "creative:starter:modding-tree",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.071,
+    "maxAdjacentDelta": 0.048
+  },
+  {
+    "id": "polyhaven:asset:toposcope-sunset",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.097,
+    "maxAdjacentDelta": 0.057
+  },
+  {
+    "id": "polyhaven:asset:waterkloof-farm",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.218,
+    "maxAdjacentDelta": 0.2
+  },
+  {
+    "id": "gdevelop:starter:360-platformer",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.406,
+    "maxAdjacentDelta": 0.397
+  },
+  {
+    "id": "gdevelop:starter:3d-bomber-bunny",
+    "frames": 96,
+    "distinctFrames": 94,
+    "loopSeamMeanPixelDelta": 0.142,
+    "maxAdjacentDelta": 0.119
+  },
+  {
+    "id": "gdevelop:starter:3d-car-coin-hunt",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.059,
+    "maxAdjacentDelta": 0.056
+  },
+  {
+    "id": "gdevelop:starter:3d-endless-terrain",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.058,
+    "maxAdjacentDelta": 0.034
+  },
+  {
+    "id": "gdevelop:starter:3d-first-person",
+    "frames": 96,
+    "distinctFrames": 95,
+    "loopSeamMeanPixelDelta": 0.051,
+    "maxAdjacentDelta": 0.039
+  },
+  {
+    "id": "gdevelop:starter:3d-lane-runner",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.068,
+    "maxAdjacentDelta": 0.064
+  },
+  {
+    "id": "gdevelop:starter:3d-light-playground",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.061,
+    "maxAdjacentDelta": 0.044
+  },
+  {
+    "id": "gdevelop:starter:3d-platformer",
+    "frames": 96,
+    "distinctFrames": 94,
+    "loopSeamMeanPixelDelta": 0.135,
+    "maxAdjacentDelta": 0.121
+  },
+  {
+    "id": "gdevelop:starter:3d-racing-game",
+    "frames": 96,
+    "distinctFrames": 94,
+    "loopSeamMeanPixelDelta": 0.085,
+    "maxAdjacentDelta": 0.058
+  },
+  {
+    "id": "gdevelop:starter:3d-road-crosser",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.302,
+    "maxAdjacentDelta": 0.302
+  },
+  {
+    "id": "gdevelop:starter:3d-shark-frenzy",
+    "frames": 96,
+    "distinctFrames": 95,
+    "loopSeamMeanPixelDelta": 0.236,
+    "maxAdjacentDelta": 0.213
+  },
+  {
+    "id": "gdevelop:starter:3d-shooting-gallery",
+    "frames": 96,
+    "distinctFrames": 95,
+    "loopSeamMeanPixelDelta": 0.106,
+    "maxAdjacentDelta": 0.133
+  },
+  {
+    "id": "gdevelop:starter:3d-sokoban",
+    "frames": 96,
+    "distinctFrames": 95,
+    "loopSeamMeanPixelDelta": 0.114,
+    "maxAdjacentDelta": 0.106
+  },
+  {
+    "id": "gdevelop:starter:3d-tile-based-city-builder",
+    "frames": 96,
+    "distinctFrames": 93,
+    "loopSeamMeanPixelDelta": 0.047,
+    "maxAdjacentDelta": 0.035
+  },
+  {
+    "id": "gdevelop:starter:3d-wall-sliding",
+    "frames": 96,
+    "distinctFrames": 95,
+    "loopSeamMeanPixelDelta": 0.116,
+    "maxAdjacentDelta": 0.114
+  },
+  {
+    "id": "gdevelop:starter:absorbus",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.345,
+    "maxAdjacentDelta": 0.312
+  },
+  {
+    "id": "gdevelop:starter:achievement-system",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.136,
+    "maxAdjacentDelta": 0.095
+  },
+  {
+    "id": "gdevelop:starter:admob",
+    "frames": 96,
+    "distinctFrames": 93,
+    "loopSeamMeanPixelDelta": 0.134,
+    "maxAdjacentDelta": 0.117
+  },
+  {
+    "id": "gdevelop:starter:advanced-projectile",
+    "frames": 96,
+    "distinctFrames": 95,
+    "loopSeamMeanPixelDelta": 0.124,
+    "maxAdjacentDelta": 0.115
+  },
+  {
+    "id": "gdevelop:starter:advanced-shape-based-painter",
+    "frames": 96,
+    "distinctFrames": 95,
+    "loopSeamMeanPixelDelta": 0.084,
+    "maxAdjacentDelta": 0.077
+  },
+  {
+    "id": "gdevelop:starter:animation-speed-scale",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.135,
+    "maxAdjacentDelta": 0.126
+  },
+  {
+    "id": "gdevelop:starter:asteroids",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.029,
+    "maxAdjacentDelta": 0.02
+  },
+  {
+    "id": "gdevelop:starter:babyfoot-3d",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.18,
+    "maxAdjacentDelta": 0.105
+  },
+  {
+    "id": "gdevelop:starter:backpack-inventory",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.048,
+    "maxAdjacentDelta": 0.033
+  },
+  {
+    "id": "luanti:mod:stu-3d-armor",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.036,
+    "maxAdjacentDelta": 0.025
+  },
+  {
+    "id": "luanti:game:sumianvoice-pmb-core",
+    "frames": 96,
+    "distinctFrames": 94,
+    "loopSeamMeanPixelDelta": 0.099,
+    "maxAdjacentDelta": 0.101
+  },
+  {
+    "id": "luanti:game:yaman-alter",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.103,
+    "maxAdjacentDelta": 0.092
+  },
+  {
+    "id": "luanti:mod:elceejo-animalia",
+    "frames": 96,
+    "distinctFrames": 92,
+    "loopSeamMeanPixelDelta": 0.167,
+    "maxAdjacentDelta": 0.15
+  },
+  {
+    "id": "luanti:game:emptystar-asuna",
+    "frames": 96,
+    "distinctFrames": 92,
+    "loopSeamMeanPixelDelta": 0.034,
+    "maxAdjacentDelta": 0.021
+  },
+  {
+    "id": "luanti:mod:apercy-automobiles-pck",
+    "frames": 96,
+    "distinctFrames": 89,
+    "loopSeamMeanPixelDelta": 0.108,
+    "maxAdjacentDelta": 0.094
+  },
+  {
+    "id": "luanti:game:sumianvoice-backroomtest",
+    "frames": 96,
+    "distinctFrames": 10,
+    "loopSeamMeanPixelDelta": 0.013,
+    "maxAdjacentDelta": 0.287
+  },
+  {
+    "id": "luanti:game:splizard-buildacity",
+    "frames": 96,
+    "distinctFrames": 93,
+    "loopSeamMeanPixelDelta": 0.037,
+    "maxAdjacentDelta": 0.035
+  },
+  {
+    "id": "luanti:game:wuzzy-cow",
+    "frames": 96,
+    "distinctFrames": 93,
+    "loopSeamMeanPixelDelta": 0.056,
+    "maxAdjacentDelta": 0.039
+  },
+  {
+    "id": "luanti:game:irevol-citadel",
+    "frames": 96,
+    "distinctFrames": 95,
+    "loopSeamMeanPixelDelta": 0.073,
+    "maxAdjacentDelta": 0.057
+  },
+  {
+    "id": "luanti:mod:elceejo-draconis",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.221,
+    "maxAdjacentDelta": 0.225
+  },
+  {
+    "id": "luanti:mod:mr-rar-edit-skin",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.102,
+    "maxAdjacentDelta": 0.087
+  },
+  {
+    "id": "luanti:mod:tenplus1-ethereal",
+    "frames": 96,
+    "distinctFrames": 91,
+    "loopSeamMeanPixelDelta": 0.037,
+    "maxAdjacentDelta": 0.03
+  },
+  {
+    "id": "luanti:mod:sakel-everness",
+    "frames": 96,
+    "distinctFrames": 85,
+    "loopSeamMeanPixelDelta": 0.013,
+    "maxAdjacentDelta": 0.009
+  },
+  {
+    "id": "luanti:game:mantar-exile",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.02,
+    "maxAdjacentDelta": 0.015
+  },
+  {
+    "id": "luanti:game:sumianvoice-extra-ordinance",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.066,
+    "maxAdjacentDelta": 0.046
+  },
+  {
+    "id": "luanti:mod:tenplus1-farming",
+    "frames": 96,
+    "distinctFrames": 85,
+    "loopSeamMeanPixelDelta": 0.025,
+    "maxAdjacentDelta": 0.018
+  },
+  {
+    "id": "luanti:game:wuzzy-glitch",
+    "frames": 96,
+    "distinctFrames": 94,
+    "loopSeamMeanPixelDelta": 0.047,
+    "maxAdjacentDelta": 0.043
+  },
+  {
+    "id": "luanti:game:wuzzy-hades-revisited",
+    "frames": 96,
+    "distinctFrames": 91,
+    "loopSeamMeanPixelDelta": 0.037,
+    "maxAdjacentDelta": 0.026
+  },
+  {
+    "id": "luanti:mod:mt-mods-hangglider",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.309,
+    "maxAdjacentDelta": 0.289
+  },
+  {
+    "id": "luanti:mod:surv-i-have-hands",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.072,
+    "maxAdjacentDelta": 0.077
+  },
+  {
+    "id": "luanti:mod:mt-mods-i3",
+    "frames": 96,
+    "distinctFrames": 92,
+    "loopSeamMeanPixelDelta": 0.105,
+    "maxAdjacentDelta": 0.093
+  },
+  {
+    "id": "luanti:game:warr1024-klots",
+    "frames": 96,
+    "distinctFrames": 95,
+    "loopSeamMeanPixelDelta": 0.085,
+    "maxAdjacentDelta": 0.093
+  },
+  {
+    "id": "luanti:game:just-visiting-littlelady",
+    "frames": 96,
+    "distinctFrames": 95,
+    "loopSeamMeanPixelDelta": 0.058,
+    "maxAdjacentDelta": 0.048
+  },
+  {
+    "id": "luanti:mod:jeija-mesecons",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.084,
+    "maxAdjacentDelta": 0.126
+  },
+  {
+    "id": "luanti:game:ryvnf-mineclonia",
+    "frames": 96,
+    "distinctFrames": 79,
+    "loopSeamMeanPixelDelta": 0.026,
+    "maxAdjacentDelta": 0.015
+  },
+  {
+    "id": "luanti:game:jordan4ibanez-mineos",
+    "frames": 96,
+    "distinctFrames": 94,
+    "loopSeamMeanPixelDelta": 0.055,
+    "maxAdjacentDelta": 0.057
+  },
+  {
+    "id": "luanti:game:luanti-minetest-game",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.136,
+    "maxAdjacentDelta": 0.096
+  },
+  {
+    "id": "luanti:mod:tenplus1-mobs-animal",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.126,
+    "maxAdjacentDelta": 0.084
+  },
+  {
+    "id": "luanti:mod:tenplus1-mobs-monster",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.118,
+    "maxAdjacentDelta": 0.126
+  },
+  {
+    "id": "luanti:mod:tenplus1-mobs",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.177,
+    "maxAdjacentDelta": 0.158
+  },
+  {
+    "id": "luanti:game:warr1024-nodecore",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.057,
+    "maxAdjacentDelta": 0.091
+  },
+  {
+    "id": "luanti:mod:wuzzy-pride-flags",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.323,
+    "maxAdjacentDelta": 0.251
+  },
+  {
+    "id": "luanti:mod:lars-rangedweapons",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.058,
+    "maxAdjacentDelta": 0.053
+  },
+  {
+    "id": "luanti:game:wuzzy-repixture",
+    "frames": 96,
+    "distinctFrames": 95,
+    "loopSeamMeanPixelDelta": 0.026,
+    "maxAdjacentDelta": 0.013
+  },
+  {
+    "id": "luanti:game:zanderdev-skyblock-zero",
+    "frames": 96,
+    "distinctFrames": 87,
+    "loopSeamMeanPixelDelta": 0.082,
+    "maxAdjacentDelta": 0.083
+  },
+  {
+    "id": "luanti:mod:apercy-steampunk-blimp",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.407,
+    "maxAdjacentDelta": 0.382
+  },
+  {
+    "id": "luanti:mod:lnj-drawers",
+    "frames": 96,
+    "distinctFrames": 91,
+    "loopSeamMeanPixelDelta": 0.099,
+    "maxAdjacentDelta": 0.083
+  },
+  {
+    "id": "luanti:game:afcm-subway-miner",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.06,
+    "maxAdjacentDelta": 0.06
+  },
+  {
+    "id": "luanti:game:buckaroobanzay-super-sam",
+    "frames": 96,
+    "distinctFrames": 93,
+    "loopSeamMeanPixelDelta": 0.075,
+    "maxAdjacentDelta": 0.068
+  },
+  {
+    "id": "luanti:mod:joe7575-techage-modpack",
+    "frames": 96,
+    "distinctFrames": 95,
+    "loopSeamMeanPixelDelta": 0.059,
+    "maxAdjacentDelta": 0.049
+  },
+  {
+    "id": "luanti:game:regulus-regulus-mtgj2024",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.074,
+    "maxAdjacentDelta": 0.057
+  },
+  {
+    "id": "luanti:game:wuzzy-tutorial",
+    "frames": 96,
+    "distinctFrames": 91,
+    "loopSeamMeanPixelDelta": 0.089,
+    "maxAdjacentDelta": 0.097
+  },
+  {
+    "id": "luanti:mod:realbadangel-unified-inventory",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.076,
+    "maxAdjacentDelta": 0.062
+  },
+  {
+    "id": "luanti:game:linuxdirk-void",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.167,
+    "maxAdjacentDelta": 0.15
+  },
+  {
+    "id": "luanti:game:wuzzy-mineclone2",
+    "frames": 96,
+    "distinctFrames": 88,
+    "loopSeamMeanPixelDelta": 0.054,
+    "maxAdjacentDelta": 0.052
+  },
+  {
+    "id": "luanti:mod:bell07-wielded-light",
+    "frames": 96,
+    "distinctFrames": 90,
+    "loopSeamMeanPixelDelta": 0.143,
+    "maxAdjacentDelta": 0.122
+  },
+  {
+    "id": "luanti:mod:sfan5-worldedit",
+    "frames": 96,
+    "distinctFrames": 95,
+    "loopSeamMeanPixelDelta": 0.106,
+    "maxAdjacentDelta": 0.088
+  },
+  {
+    "id": "luanti:mod:wuzzy-xdecor",
+    "frames": 96,
+    "distinctFrames": 95,
+    "loopSeamMeanPixelDelta": 0.059,
+    "maxAdjacentDelta": 0.043
+  },
+  {
+    "id": "playcanvas:learn:animation",
+    "frames": 96,
+    "distinctFrames": 94,
+    "loopSeamMeanPixelDelta": 0.175,
+    "maxAdjacentDelta": 0.153
+  },
+  {
+    "id": "playcanvas:learn:cameras",
+    "frames": 96,
+    "distinctFrames": 93,
+    "loopSeamMeanPixelDelta": 0.062,
+    "maxAdjacentDelta": 0.07
+  },
+  {
+    "id": "playcanvas:learn:debugging-playcanvas-apps",
+    "frames": 96,
+    "distinctFrames": 95,
+    "loopSeamMeanPixelDelta": 0.206,
+    "maxAdjacentDelta": 0.196
+  },
+  {
+    "id": "playcanvas:learn:game-ui-user-interface",
+    "frames": 96,
+    "distinctFrames": 95,
+    "loopSeamMeanPixelDelta": 0.097,
+    "maxAdjacentDelta": 0.063
+  },
+  {
+    "id": "playcanvas:learn:input-controls",
+    "frames": 96,
+    "distinctFrames": 90,
+    "loopSeamMeanPixelDelta": 0.052,
+    "maxAdjacentDelta": 0.106
+  },
+  {
+    "id": "playcanvas:learn:physics",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.22,
+    "maxAdjacentDelta": 0.199
+  },
+  {
+    "id": "playcanvas:learn:playcanvas-getting-started",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.071,
+    "maxAdjacentDelta": 0.072
+  },
+  {
+    "id": "playcanvas:learn:playcanvas-agent-skills-external",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.111,
+    "maxAdjacentDelta": 0.093
+  },
+  {
+    "id": "playcanvas:learn:playcanvas-engine-open-source",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.337,
+    "maxAdjacentDelta": 0.297
+  },
+  {
+    "id": "playcanvas:learn:playcanvas-engine-api-reference",
+    "frames": 96,
+    "distinctFrames": 92,
+    "loopSeamMeanPixelDelta": 0.059,
+    "maxAdjacentDelta": 0.056
+  },
+  {
+    "id": "playcanvas:learn:playcanvas-examples",
+    "frames": 96,
+    "distinctFrames": 92,
+    "loopSeamMeanPixelDelta": 0.064,
+    "maxAdjacentDelta": 0.048
+  },
+  {
+    "id": "playcanvas:learn:playcanvas-tutorials",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.095,
+    "maxAdjacentDelta": 0.073
+  },
+  {
+    "id": "playcanvas:learn:publishing-a-web-game",
+    "frames": 96,
+    "distinctFrames": 94,
+    "loopSeamMeanPixelDelta": 0.079,
+    "maxAdjacentDelta": 0.084
+  },
+  {
+    "id": "playcanvas:learn:sound-audio",
+    "frames": 96,
+    "distinctFrames": 96,
+    "loopSeamMeanPixelDelta": 0.197,
+    "maxAdjacentDelta": 0.182
+  }
+]

@@ -1,0 +1,54 @@
+/* Reuse the Daily Ritual's holographic palette and motion on both invitations. */
+.quest-option .quest-card {
+  --contest-hologram: linear-gradient(115deg,rgba(169,108,255,.18),rgba(108,234,219,.13) 28%,rgba(218,246,109,.16) 49%,rgba(223,151,255,.20) 72%,rgba(123,151,255,.14));
+  background:var(--contest-hologram),#10132f;
+  background-size:240% 100%;
+  animation:ritual-hologram 9s ease-in-out infinite alternate;
+  isolation:isolate;
+}
+.quest-card.quest-security { animation-delay:-4.5s; }
+.quest-card::after,.quest-card .quest-link::after {
+  content:""; position:absolute; inset:-100% -45%; z-index:-1; pointer-events:none;
+  background:linear-gradient(110deg,transparent 40%,rgba(205,171,255,.05) 44%,rgba(187,255,236,.22) 49%,rgba(248,220,255,.10) 52%,transparent 58%);
+  transform:translateX(-35%); animation:ritual-sheen 7s ease-in-out infinite; opacity:.8;
+}
+.quest-card.quest-security::after { animation-delay:-3.5s; }
+.quest-card .quest-link {
+  position:relative; isolation:isolate; overflow:hidden;
+  border:1px solid #d4d0f34d; border-radius:10px; padding:14px 16px;
+  background:var(--contest-hologram),#212439; background-size:240% 100%;
+  animation:ritual-hologram 6s ease-in-out infinite alternate;
+  color:#eff8d4; box-shadow:inset 0 1px #ffffff1a;
+}
+.quest-card:hover .quest-link,.quest-card:focus-visible .quest-link { border-color:#d7f581; filter:brightness(1.15); }
+@media(prefers-reduced-motion:reduce) {
+  .quest-card,.quest-card::after,.quest-card .quest-link,.quest-card .quest-link::after { animation:none; }
+  .quest-card,.quest-card .quest-link { background-position:50% 50%; }
+  .quest-card::after,.quest-card .quest-link::after { transform:none; opacity:.2; }
+}
+:root[data-hub-effects=off] .quest-card,:root[data-hub-effects=off] .quest-card .quest-link { animation:none; }
+:root[data-hub-effects=off] .quest-card::after,:root[data-hub-effects=off] .quest-card .quest-link::after { display:none; }
+
+.quest-option { display:flex; flex-direction:column; min-width:0; container-type:inline-size; }
+.quest-option > .quest-number {
+  display:flex; align-items:center; gap:12px;
+  margin:0 0 16px; padding:0;
+  font-size:clamp(14px,3cqi,16px); font-weight:800;
+  letter-spacing:.09em; text-transform:uppercase; color:var(--season-cloud);
+}
+.quest-number > span {
+  display:grid; place-items:center; flex:none;
+  width:34px; height:34px; border-radius:8px;
+  background:var(--season-lime); color:var(--season-ink);
+  font-size:13px; letter-spacing:0;
+}
+.quest-option .quest-card h3 {
+  font-size:clamp(38px,12cqi,68px);
+  font-weight:800; line-height:.98; letter-spacing:-.055em;
+  text-transform:uppercase; color:var(--season-cloud);
+  text-shadow:0 3px 0 var(--season-ink);
+}
+.quest-option .quest-card h3 > span,
+.quest-option .quest-card h3 > em { display:block; }
+.quest-option .quest-card h3 > em { color:var(--season-lime); }
+.quest-option > .quest-card { flex:1; }

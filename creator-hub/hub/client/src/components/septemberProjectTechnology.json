@@ -1,0 +1,142 @@
+{
+  "tari-ootle:app:tariorg": [
+    {
+      "label": "Organization template",
+      "sourceUrl": "https://github.com/n0izn0iz/tariorg/blob/74fc320a2861de98e3abcd3821f18c0c2eb6f1b9/tariorg/src/lib.rs"
+    },
+    {
+      "label": "Treasury vaults",
+      "sourceUrl": "https://github.com/n0izn0iz/tariorg/blob/74fc320a2861de98e3abcd3821f18c0c2eb6f1b9/tariorg/src/lib.rs"
+    }
+  ],
+  "tari-ootle:app:private-ballot": [
+    {
+      "label": "Triptych proofs",
+      "sourceUrl": "https://github.com/GSXRspartan/private-ballot/blob/47f77606070a65845a5116a69c4525423af4d46e/README.md"
+    },
+    {
+      "label": "Optional Ootle anchor",
+      "sourceUrl": "https://github.com/GSXRspartan/private-ballot/blob/47f77606070a65845a5116a69c4525423af4d46e/templates/ootle-anchor-event-template-v2/src/lib.rs"
+    }
+  ],
+  "tari-ootle:app:signal-vault": [
+    {
+      "label": "SignalVault template",
+      "sourceUrl": "https://github.com/Lrifton92/signal-vault/blob/b3727b6b0e1108d3de4342fb3cea1f26f7a9a100/src/lib.rs"
+    },
+    {
+      "label": "NFT access badges",
+      "sourceUrl": "https://github.com/Lrifton92/signal-vault/blob/b3727b6b0e1108d3de4342fb3cea1f26f7a9a100/src/lib.rs"
+    }
+  ],
+  "tari-ootle:app:ootle-pay": [
+    {
+      "label": "MerchantRegistry",
+      "sourceUrl": "https://github.com/imphila/ootle-pay/blob/2b22eb8d5007019087983d39dd451203835be6cd/contracts/merchant_registry/src/lib.rs"
+    },
+    {
+      "label": "Storefront",
+      "sourceUrl": "https://github.com/imphila/ootle-pay/blob/2b22eb8d5007019087983d39dd451203835be6cd/contracts/storefront/src/lib.rs"
+    },
+    {
+      "label": "SubscriptionManager",
+      "sourceUrl": "https://github.com/imphila/ootle-pay/blob/2b22eb8d5007019087983d39dd451203835be6cd/contracts/subscription/src/lib.rs"
+    }
+  ],
+  "tari-ootle:app:shadowtix": [
+    {
+      "label": "TicketingPlatform",
+      "sourceUrl": "https://github.com/zvovanz-a1/tari-ticket-public/blob/0757a6266b90ff9109d949567c4745a6ba6a089a/README.md"
+    },
+    {
+      "label": "EventTicketing",
+      "sourceUrl": "https://github.com/zvovanz-a1/tari-ticket-public/blob/0757a6266b90ff9109d949567c4745a6ba6a089a/README.md"
+    }
+  ],
+  "tari-ootle:app:legacy-vault": [
+    {
+      "label": "LegacyVault template",
+      "sourceUrl": "https://github.com/huzhazha/legacy-vault-ootle/blob/911da552fa8248570e6f554c70289be8e9682399/src/lib.rs"
+    },
+    {
+      "label": "Vault + access rules",
+      "sourceUrl": "https://github.com/huzhazha/legacy-vault-ootle/blob/911da552fa8248570e6f554c70289be8e9682399/src/lib.rs"
+    }
+  ],
+  "tari-ootle:app:sapient": [
+    {
+      "label": "Ootle SDK",
+      "sourceUrl": "https://github.com/chironbuilds/tari-wallet/blob/f2f48bf1ef9a938afc0eb5e92a04255eab7784a5/package.json"
+    },
+    {
+      "label": "CipherSeed",
+      "sourceUrl": "https://github.com/chironbuilds/tari-wallet/blob/f2f48bf1ef9a938afc0eb5e92a04255eab7784a5/README.md"
+    }
+  ],
+  "tari-ootle:app:ootle-surveys": [
+    {
+      "label": "PrivateRewards template",
+      "sourceUrl": "https://github.com/JustAResearcher/ootle-surveys/blob/d263bfbd630f1f80b20a55c6a4bbd903d9670ec4/contract/src/lib.rs"
+    },
+    {
+      "label": "Stealth payouts",
+      "sourceUrl": "https://github.com/JustAResearcher/ootle-surveys/blob/d263bfbd630f1f80b20a55c6a4bbd903d9670ec4/contract/src/lib.rs"
+    }
+  ],
+  "tari-ootle:app:tari-l1-web-wallet": [
+    {
+      "label": "Tari L1 WASM",
+      "sourceUrl": "https://github.com/chironbuilds/tari-l1-wallet-ui/blob/935ffe4696f366cd63ee805e410a5c623c7f2e50/README.md"
+    },
+    {
+      "label": "Ootle SDK",
+      "sourceUrl": "https://github.com/chironbuilds/tari-l1-wallet-ui/blob/935ffe4696f366cd63ee805e410a5c623c7f2e50/README.md"
+    }
+  ],
+  "tari-ootle:app:threshold": [
+    {
+      "label": "Threshold template",
+      "sourceUrl": "https://github.com/Seal-Clubber/Threshold/blob/4ccfd91688a3124c634436282f3aa25b873d9fe3/crates/threshold-template/src/lib.rs"
+    },
+    {
+      "label": "Stealth escrow",
+      "sourceUrl": "https://github.com/Seal-Clubber/Threshold/blob/4ccfd91688a3124c634436282f3aa25b873d9fe3/crates/threshold-template/src/lib.rs"
+    }
+  ],
+  "tari-ootle:app:outruna": [
+    {
+      "label": "Tari L1 WASM",
+      "sourceUrl": "https://github.com/solvetony/outruna/blob/bf5726e083b9011801b22214233b788f57d30bd0/package.json"
+    }
+  ],
+  "tari-ootle:app:caravel": [
+    {
+      "label": "Ootle SDK",
+      "sourceUrl": "https://github.com/okansaglam016161-pixel/caravel/blob/5763c824eb5711d96efe081127e7329e8f9e4a93/package.json"
+    },
+    {
+      "label": "Ootle Name Service",
+      "sourceUrl": "https://github.com/okansaglam016161-pixel/caravel/blob/5763c824eb5711d96efe081127e7329e8f9e4a93/vendor/README.md"
+    }
+  ],
+  "tari-ootle:app:threshold-bounties": [
+    {
+      "label": "BountyEscrow template",
+      "sourceUrl": "https://github.com/Seal-Clubber/Threshold/blob/4ccfd91688a3124c634436282f3aa25b873d9fe3/crates/threshold-bounty-template/src/lib.rs"
+    },
+    {
+      "label": "Stealth escrow",
+      "sourceUrl": "https://github.com/Seal-Clubber/Threshold/blob/4ccfd91688a3124c634436282f3aa25b873d9fe3/crates/threshold-bounty-template/src/lib.rs"
+    }
+  ],
+  "tari-ootle:app:wunschswap": [
+    {
+      "label": "Custom escrow template",
+      "sourceUrl": "https://git.disroot.org/comiama/wunschswap/src/commit/f645576297feea11afed4314995b569f6f5a305c/README.md"
+    },
+    {
+      "label": "Ootle WASM",
+      "sourceUrl": "https://git.disroot.org/comiama/wunschswap/src/commit/f645576297feea11afed4314995b569f6f5a305c/README.md"
+    }
+  ]
+}

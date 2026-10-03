@@ -1,0 +1,32 @@
+{
+  "name": "tari-video-templates",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Deterministic, brand-controlled Remotion compositions for Ootle Lobby short-form marketing clips.",
+  "type": "module",
+  "scripts": {
+    "preview": "remotion studio src/index.ts",
+    "test": "node --test test/*.test.mjs",
+    "typecheck": "tsc --noEmit",
+    "render:spotlight": "node scripts/render.mjs AppSpotlight props/app-spotlight.json out/app-spotlight.mp4",
+    "render:walkthrough": "node scripts/render.mjs TemplateWalkthrough props/template-walkthrough.json out/template-walkthrough.mp4",
+    "render:community": "node scripts/render.mjs CommunityUpdate props/community-update.json out/community-update.mp4"
+  },
+  "dependencies": {
+    "@remotion/bundler": "4.0.290",
+    "@remotion/cli": "4.0.290",
+    "@remotion/google-fonts": "4.0.290",
+    "@remotion/renderer": "4.0.290",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "remotion": "4.0.290",
+    "zod": "3.22.3"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.0",
+    "typescript": "5.6.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

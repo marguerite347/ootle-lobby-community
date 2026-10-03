@@ -1,0 +1,40 @@
+{
+  "date": "2026-09-19",
+  "status": "passed-local",
+  "host": "aarch64-apple-darwin",
+  "rustc": "rustc 1.95.0 (59807616e 2026-04-14)",
+  "cargo": "cargo 1.95.0 (f2d3ce0bd 2026-03-21)",
+  "packages": {
+    "tari_template_lib": "0.32.0",
+    "tari_template_test_tooling": "0.41.0"
+  },
+  "cargoLockSha256": "781c62eaca26ece7cd61709e9cfcd44f0cb1f56e1387678b0a2e01623e979974",
+  "wasmSha256": "b1530ae697bbf11e7abbb70098ccdf167200a8809546a7a8fc247e2026be357a",
+  "wasmBytes": 107739,
+  "checks": [
+    {
+      "command": "cargo test --locked --manifest-path creator-hub/skills/examples/counter/Cargo.toml",
+      "result": "2 engine-backed WASM tests passed: owner update, unrelated signer public read, explicit access denial, unchanged state after denial, later-instruction rollback"
+    },
+    {
+      "command": "cargo build --locked --release --target wasm32-unknown-unknown --manifest-path creator-hub/skills/examples/counter/Cargo.toml",
+      "result": "passed"
+    },
+    {
+      "command": "node --test creator-hub/skills/examples/transaction-state.test.mjs",
+      "result": "3 offline fixture tests passed; no wallet contacted"
+    },
+    {
+      "command": "python3 -m unittest discover -s creator-hub/skills/examples -p 'test_*.py'",
+      "result": "4 deterministic economy tests passed"
+    }
+  ],
+  "networkValidation": "not run; no funded wallet, transaction, template address or deployment is claimed",
+  "files": {
+    "examples/counter/src/lib.rs": "814046e1d1a4e1259d53cbfce888fc2c98e39eb4727a60dfb137fe87f2ccd04a",
+    "examples/counter/tests/counter.rs": "9b98d79cb8b150ad095685ec8db3c9cd54604cf878cb321bebdd373ecfac3fde",
+    "examples/counter/Cargo.toml": "72de57dd959cd8e3d0bffd53a2de425ba6ba20aba3f9dc8303864b265c160323",
+    "examples/transaction-state.mjs": "39b3ff5d7e12e17c3dc5d9dac85d2c4ee4f9cd88e466000005198d88c59d1821",
+    "examples/economy.py": "6807fdb2f4d75f31ca2d12ec9fd3bae4c8bc3f32aa8aa685f074823d922630e4"
+  }
+}

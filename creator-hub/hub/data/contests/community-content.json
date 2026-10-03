@@ -1,0 +1,217 @@
+{
+  "schemaVersion": 1,
+  "revision": "92e901e8274573d589470deb352f65e706f73221",
+  "publishedAt": "2026-10-03T21:26:59.888Z",
+  "projects": [
+    {
+      "id": "tari-ootle:app:caravel",
+      "title": "Caravel",
+      "summary": "Ootle wallet, encrypted Nostr chat and on-chain names in one browser app.",
+      "technologies": [
+        {
+          "label": "Ootle SDK",
+          "sourceUrl": "https://github.com/okansaglam016161-pixel/caravel/blob/5763c824eb5711d96efe081127e7329e8f9e4a93/package.json"
+        },
+        {
+          "label": "Ootle Name Service",
+          "sourceUrl": "https://github.com/okansaglam016161-pixel/caravel/blob/5763c824eb5711d96efe081127e7329e8f9e4a93/vendor/README.md"
+        }
+      ]
+    },
+    {
+      "id": "tari-ootle:app:legacy-vault",
+      "title": "Legacy Vault",
+      "summary": "Guardian-approved recovery with heartbeat, waiting period and beneficiary controls.",
+      "technologies": [
+        {
+          "label": "LegacyVault template",
+          "sourceUrl": "https://github.com/huzhazha/legacy-vault-ootle/blob/911da552fa8248570e6f554c70289be8e9682399/src/lib.rs"
+        },
+        {
+          "label": "Vault + access rules",
+          "sourceUrl": "https://github.com/huzhazha/legacy-vault-ootle/blob/911da552fa8248570e6f554c70289be8e9682399/src/lib.rs"
+        }
+      ]
+    },
+    {
+      "id": "tari-ootle:app:ootle-pay",
+      "title": "Ootle Pay",
+      "summary": "Stake-gated merchant registration, storefronts, subscriptions and refund workflows.",
+      "technologies": [
+        {
+          "label": "MerchantRegistry",
+          "sourceUrl": "https://github.com/imphila/ootle-pay/blob/2b22eb8d5007019087983d39dd451203835be6cd/contracts/merchant_registry/src/lib.rs"
+        },
+        {
+          "label": "Storefront",
+          "sourceUrl": "https://github.com/imphila/ootle-pay/blob/2b22eb8d5007019087983d39dd451203835be6cd/contracts/storefront/src/lib.rs"
+        },
+        {
+          "label": "SubscriptionManager",
+          "sourceUrl": "https://github.com/imphila/ootle-pay/blob/2b22eb8d5007019087983d39dd451203835be6cd/contracts/subscription/src/lib.rs"
+        }
+      ]
+    },
+    {
+      "id": "tari-ootle:app:ootle-surveys",
+      "title": "Ootle Surveys",
+      "summary": "Self-hosted encrypted questionnaires with organizer-approved testnet participation rewards.",
+      "technologies": [
+        {
+          "label": "PrivateRewards template",
+          "sourceUrl": "https://github.com/JustAResearcher/ootle-surveys/blob/d263bfbd630f1f80b20a55c6a4bbd903d9670ec4/contract/src/lib.rs"
+        },
+        {
+          "label": "Stealth payouts",
+          "sourceUrl": "https://github.com/JustAResearcher/ootle-surveys/blob/d263bfbd630f1f80b20a55c6a4bbd903d9670ec4/contract/src/lib.rs"
+        }
+      ]
+    },
+    {
+      "id": "tari-ootle:app:outruna",
+      "title": "Outruna",
+      "summary": "Multi-network wallet with Tari Mainnet support and locally held Tari keys.",
+      "technologies": [
+        {
+          "label": "Tari L1 WASM",
+          "sourceUrl": "https://github.com/solvetony/outruna/blob/bf5726e083b9011801b22214233b788f57d30bd0/package.json"
+        }
+      ]
+    },
+    {
+      "id": "tari-ootle:app:private-ballot",
+      "title": "Private Ballot",
+      "summary": "Independent open-source privacy-preserving desktop voting app (Tor transport, Tari Triptych eligibility proofs, independently verifiable offline archives) with OPTIONAL Tari Ootle anchoring. Alpha for non-binding governance pilots on the Esmeralda testnet — indexed for education, community-app discovery and game-balancing workflows.",
+      "technologies": [
+        {
+          "label": "Triptych proofs",
+          "sourceUrl": "https://github.com/GSXRspartan/private-ballot/blob/47f77606070a65845a5116a69c4525423af4d46e/README.md"
+        },
+        {
+          "label": "Optional Ootle anchor",
+          "sourceUrl": "https://github.com/GSXRspartan/private-ballot/blob/47f77606070a65845a5116a69c4525423af4d46e/templates/ootle-anchor-event-template-v2/src/lib.rs"
+        }
+      ]
+    },
+    {
+      "id": "tari-ootle:app:sapient",
+      "title": "Sapient",
+      "summary": "A self-custody browser wallet for Tari Ootle.",
+      "technologies": [
+        {
+          "label": "Ootle SDK",
+          "sourceUrl": "https://github.com/chironbuilds/tari-wallet/blob/f2f48bf1ef9a938afc0eb5e92a04255eab7784a5/package.json"
+        },
+        {
+          "label": "CipherSeed",
+          "sourceUrl": "https://github.com/chironbuilds/tari-wallet/blob/f2f48bf1ef9a938afc0eb5e92a04255eab7784a5/README.md"
+        }
+      ]
+    },
+    {
+      "id": "tari-ootle:app:shadowtix",
+      "title": "ShadowTix",
+      "summary": "An event ticketing platform built on Tari Ootle. ShadowTix provides a public event catalogue, on-chain ticket purchases, QR-based door check-in, refunds, and a capped resale market. Independent community-built project — not production-ready",
+      "technologies": [
+        {
+          "label": "TicketingPlatform",
+          "sourceUrl": "https://github.com/zvovanz-a1/tari-ticket-public/blob/0757a6266b90ff9109d949567c4745a6ba6a089a/README.md"
+        },
+        {
+          "label": "EventTicketing",
+          "sourceUrl": "https://github.com/zvovanz-a1/tari-ticket-public/blob/0757a6266b90ff9109d949567c4745a6ba6a089a/README.md"
+        }
+      ]
+    },
+    {
+      "id": "tari-ootle:app:signal-vault",
+      "title": "Signal Vault",
+      "summary": "Commit and reveal trading signals with an Ootle purchase and badge flow.",
+      "technologies": [
+        {
+          "label": "SignalVault template",
+          "sourceUrl": "https://github.com/Lrifton92/signal-vault/blob/b3727b6b0e1108d3de4342fb3cea1f26f7a9a100/src/lib.rs"
+        },
+        {
+          "label": "NFT access badges",
+          "sourceUrl": "https://github.com/Lrifton92/signal-vault/blob/b3727b6b0e1108d3de4342fb3cea1f26f7a9a100/src/lib.rs"
+        }
+      ]
+    },
+    {
+      "id": "tari-ootle:app:tari-l1-web-wallet",
+      "title": "Tari L1 Web Wallet",
+      "summary": "Browser-based Tari L1 wallet with Ootle accounts and a burn-and-claim workflow.",
+      "technologies": [
+        {
+          "label": "Tari L1 WASM",
+          "sourceUrl": "https://github.com/chironbuilds/tari-l1-wallet-ui/blob/935ffe4696f366cd63ee805e410a5c623c7f2e50/README.md"
+        },
+        {
+          "label": "Ootle SDK",
+          "sourceUrl": "https://github.com/chironbuilds/tari-l1-wallet-ui/blob/935ffe4696f366cd63ee805e410a5c623c7f2e50/README.md"
+        }
+      ]
+    },
+    {
+      "id": "tari-ootle:app:tariorg",
+      "title": "TariOrg",
+      "summary": "A community-built organization and treasury application on Tari Ootle. TariOrg enables on-chain organization management with member governance, proposals, and a treasury for managing and spending funds. Experimental / Exploration — not production-ready",
+      "technologies": [
+        {
+          "label": "Organization template",
+          "sourceUrl": "https://github.com/n0izn0iz/tariorg/blob/74fc320a2861de98e3abcd3821f18c0c2eb6f1b9/tariorg/src/lib.rs"
+        },
+        {
+          "label": "Treasury vaults",
+          "sourceUrl": "https://github.com/n0izn0iz/tariorg/blob/74fc320a2861de98e3abcd3821f18c0c2eb6f1b9/tariorg/src/lib.rs"
+        }
+      ]
+    },
+    {
+      "id": "tari-ootle:app:threshold-bounties",
+      "title": "Bounties powered by Threshold",
+      "summary": "Reviewer-approved GitHub bounty escrow with a historical Ootle testnet proof archive.",
+      "technologies": [
+        {
+          "label": "BountyEscrow template",
+          "sourceUrl": "https://github.com/Seal-Clubber/Threshold/blob/4ccfd91688a3124c634436282f3aa25b873d9fe3/crates/threshold-bounty-template/src/lib.rs"
+        },
+        {
+          "label": "Stealth escrow",
+          "sourceUrl": "https://github.com/Seal-Clubber/Threshold/blob/4ccfd91688a3124c634436282f3aa25b873d9fe3/crates/threshold-bounty-template/src/lib.rs"
+        }
+      ]
+    },
+    {
+      "id": "tari-ootle:app:threshold",
+      "title": "Threshold",
+      "summary": "Configurable community funding with sponsor matching, milestones and reviewer approvals.",
+      "technologies": [
+        {
+          "label": "Threshold template",
+          "sourceUrl": "https://github.com/Seal-Clubber/Threshold/blob/4ccfd91688a3124c634436282f3aa25b873d9fe3/crates/threshold-template/src/lib.rs"
+        },
+        {
+          "label": "Stealth escrow",
+          "sourceUrl": "https://github.com/Seal-Clubber/Threshold/blob/4ccfd91688a3124c634436282f3aa25b873d9fe3/crates/threshold-template/src/lib.rs"
+        }
+      ]
+    },
+    {
+      "id": "tari-ootle:app:wunschswap",
+      "title": "WunschSwap",
+      "summary": "Peer-to-peer voucher swaps using private redemption proofs and Ootle settlement.",
+      "technologies": [
+        {
+          "label": "Custom escrow template",
+          "sourceUrl": "https://git.disroot.org/comiama/wunschswap/src/commit/f645576297feea11afed4314995b569f6f5a305c/README.md"
+        },
+        {
+          "label": "Ootle WASM",
+          "sourceUrl": "https://git.disroot.org/comiama/wunschswap/src/commit/f645576297feea11afed4314995b569f6f5a305c/README.md"
+        }
+      ]
+    }
+  ]
+}

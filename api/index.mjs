@@ -1,0 +1,12 @@
+import express from 'express';
+import {join} from 'node:path';
+import {tmpdir} from 'node:os';
+process.env.CREATOR_HUB_DATA_DIR = join(tmpdir(), 'ootle-lobby-preview');
+const catalog = await import('../server-content/creator-hub/hub/server/catalog.mjs');
+const {createInspirationLobby} = await import('../server-content/creator-hub/hub/server/inspirationLobby.mjs');
+catalog.load();
+const app = express();
+app.use((req,res,next)=>{res.set('X-Robots-Tag','noindex, nofollow');next();});
+app.get('/robots.txt',(req,res)=>res.type('text/plain').send('User-agent: *\nDisallow: /\n'));
+app.use(createInspirationLobby());
+export default app;

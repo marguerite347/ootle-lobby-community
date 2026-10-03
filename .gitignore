@@ -2,3 +2,14 @@ node_modules/
 dist/
 .env*
 .DS_Store
+.vercel/
+/public/
+/server-content/
+/work/
+creator-hub/hub/data/*
+!creator-hub/hub/data/seed/
+!creator-hub/hub/data/contests/
+!creator-hub/hub/data/genre-reference-games.json
+*.log
+*.tsbuildinfo
+**/node_modules

@@ -1,0 +1,7 @@
+{
+  "repository": "https://github.com/m4r1m0/skillz",
+  "revision": "d9a01e65e345c2917900f94fdcd31d8bf466d1b7",
+  "path": "readable-code",
+  "sha256": "c00a1dd7ff55ea3e6fbbd64c83b34e285be43b02b10dedeba1cff9af9bc6e3ce",
+  "note": "Upstream is a standalone Markdown file; packaged unchanged as SKILL.md. No scripts executed."
+}

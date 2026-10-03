@@ -1,0 +1,43 @@
+{
+  "id": "security-readiness",
+  "title": "Security and readiness",
+  "description": "Review Ootle templates and integrations against native authorization, fee and privacy boundaries.",
+  "version": "0.1.0",
+  "lifecycle": "draft",
+  "networks": [
+    "local-engine",
+    "Esmeralda (not live-validated)"
+  ],
+  "tools": {
+    "tari_template_lib": "0.32.0",
+    "tari_template_test_tooling": "0.41.0"
+  },
+  "sourceCheckedAt": "2026-09-19",
+  "technicalValidatedAt": null,
+  "validation": {
+    "scope": "Source-reviewed; runtime scope pending validation evidence",
+    "evidence": []
+  },
+  "sources": [
+    {
+      "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/docs/developer-docs/src/content/docs/guides/authorization-and-access.mdx",
+      "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+      "path": "docs/developer-docs/src/content/docs/guides/authorization-and-access.mdx"
+    },
+    {
+      "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/crates/engine_types/src/commit_result.rs",
+      "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+      "path": "crates/engine_types/src/commit_result.rs"
+    },
+    {
+      "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/crates/engine/tests/templates/access_rules/src/lib.rs",
+      "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+      "path": "crates/engine/tests/templates/access_rules/src/lib.rs"
+    }
+  ],
+  "related": [],
+  "issue": "https://github.com/marguerite347/tari-growth/issues/72",
+  "remaining": [
+    "See body for runtime and network validation boundaries."
+  ]
+}

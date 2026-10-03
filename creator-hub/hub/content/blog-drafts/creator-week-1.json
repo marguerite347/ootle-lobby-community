@@ -1,0 +1,191 @@
+{
+  "slug": "creator-week-1-one-good-loop",
+  "status": "draft",
+  "generatedAt": "2026-09-23T15:00:00.000Z",
+  "sourceDigest": "341711354db99c52cfa55d137e35a9c9e9895d7ddb3ab7e48259b16762d7f6d0",
+  "title": "This week in Ootle Lobby: One good loop",
+  "description": "Explore the One good loop challenge, upcoming creator prompts and resources for a small build.",
+  "category": "Weekly dispatch",
+  "art": "loop",
+  "calendar": [
+    {
+      "id": "creator-week-1",
+      "number": 1,
+      "theme": "one-good-loop",
+      "title": "One good loop",
+      "brief": "Make one satisfying action lead to a clear result. Ship a tiny playable game or useful app, with a short demo.",
+      "metric": "Builder activation",
+      "evidence": "A published project version, a working demo and a clear success condition.",
+      "startDate": "2026-09-21",
+      "endDateExclusive": "2026-09-28",
+      "timezone": "America/New_York",
+      "phase": "open",
+      "target": 5,
+      "rewardStatus": "Not funded",
+      "rewardAmount": null
+    },
+    {
+      "id": "creator-week-2",
+      "number": 2,
+      "theme": "make-it-yours",
+      "title": "Make it yours",
+      "brief": "Riff an existing creation into something recognizably your own. Credit its creator and explain your changes.",
+      "metric": "Meaningful remixing",
+      "evidence": "Source project and version, your published version, and a before/after demonstration.",
+      "startDate": "2026-09-28",
+      "endDateExclusive": "2026-10-05",
+      "timezone": "America/New_York",
+      "phase": "upcoming",
+      "target": 5,
+      "rewardStatus": "Not funded",
+      "rewardAmount": null
+    },
+    {
+      "id": "creator-week-3",
+      "number": 3,
+      "theme": "better-together",
+      "title": "Better together",
+      "brief": "Combine two useful parts, or collaborate with another creator to make something neither part could do alone.",
+      "metric": "Useful composition",
+      "evidence": "Component credits, setup instructions and a demo of the parts working together.",
+      "startDate": "2026-10-05",
+      "endDateExclusive": "2026-10-12",
+      "timezone": "America/New_York",
+      "phase": "upcoming",
+      "target": 5,
+      "rewardStatus": "Not funded",
+      "rewardAmount": null
+    },
+    {
+      "id": "creator-week-4",
+      "number": 4,
+      "theme": "listen-and-improve",
+      "title": "Listen, then improve",
+      "brief": "Let someone try your project. Pick one friction point and release an improvement based on their feedback.",
+      "metric": "Player experience",
+      "evidence": "Consented feedback, before/after versions and evidence the core task became easier.",
+      "startDate": "2026-10-12",
+      "endDateExclusive": "2026-10-19",
+      "timezone": "America/New_York",
+      "phase": "upcoming",
+      "target": 5,
+      "rewardStatus": "Not funded",
+      "rewardAmount": null
+    }
+  ],
+  "resources": [
+    {
+      "id": "tari-ootle:starter:wasm-templates-empty",
+      "title": "Empty Ootle template",
+      "type": "starter",
+      "url": "/resource/tari-ootle%3Astarter%3Awasm-templates-empty"
+    },
+    {
+      "id": "tari-ootle:starter:examples-guessing-game-template",
+      "title": "Guessing game template",
+      "type": "starter",
+      "url": "/resource/tari-ootle%3Astarter%3Aexamples-guessing-game-template"
+    },
+    {
+      "id": "tari-ootle:starter:wasm-templates-airdrop",
+      "title": "Airdrop Template",
+      "type": "starter",
+      "url": "/resource/tari-ootle%3Astarter%3Awasm-templates-airdrop"
+    },
+    {
+      "id": "tari-ootle:starter:wasm-templates-counter",
+      "title": "Counter Template",
+      "type": "starter",
+      "url": "/resource/tari-ootle%3Astarter%3Awasm-templates-counter"
+    },
+    {
+      "id": "tari-ootle:starter:wasm-templates-fungible",
+      "title": "Fungible Template",
+      "type": "starter",
+      "url": "/resource/tari-ootle%3Astarter%3Awasm-templates-fungible"
+    },
+    {
+      "id": "tari-ootle:starter:wasm-templates-ico",
+      "title": "Ico Template",
+      "type": "starter",
+      "url": "/resource/tari-ootle%3Astarter%3Awasm-templates-ico"
+    },
+    {
+      "id": "tari-ootle:starter:wasm-templates-meme-coin",
+      "title": "Meme Coin Template",
+      "type": "starter",
+      "url": "/resource/tari-ootle%3Astarter%3Awasm-templates-meme-coin"
+    },
+    {
+      "id": "tari-ootle:starter:wasm-templates-nft",
+      "title": "Nft Template",
+      "type": "starter",
+      "url": "/resource/tari-ootle%3Astarter%3Awasm-templates-nft"
+    }
+  ],
+  "sourceSnapshotAt": "2026-09-23T13:58:58.706Z",
+  "editorialChecklist": [
+    "Check current calendar dates and source freshness.",
+    "Select relevant resources; inspect each resource and its setup requirements.",
+    "Write original explanatory copy and a clear creator next step.",
+    "Verify claims, credit contributors and attach a distinct cover.",
+    "Review metadata, internal links, accessibility and mobile layout.",
+    "Set reviewedAt, publishedAt and status only after editorial review; put the completed article in content/blog."
+  ],
+  "sections": [
+    [
+      "Your brief",
+      "Make one satisfying action lead to a clear result. Ship a tiny playable game or useful app, with a short demo."
+    ],
+    [
+      "Show your work",
+      "A published project version, a working demo and a clear success condition."
+    ],
+    [
+      "Coming next",
+      "2026-09-28: Make it yours. Riff an existing creation into something recognizably your own. Credit its creator and explain your changes.\n2026-10-05: Better together. Combine two useful parts, or collaborate with another creator to make something neither part could do alone.\n2026-10-12: Listen, then improve. Let someone try your project. Pick one friction point and release an improvement based on their feedback."
+    ],
+    [
+      "Resource shortlist",
+      "Editorial research candidates only; do not imply these were recently released or tested."
+    ]
+  ],
+  "sources": [
+    {
+      "label": "Challenge calendar",
+      "url": "/challenges#calendar"
+    },
+    {
+      "label": "Empty Ootle template",
+      "url": "/resource/tari-ootle%3Astarter%3Awasm-templates-empty"
+    },
+    {
+      "label": "Guessing game template",
+      "url": "/resource/tari-ootle%3Astarter%3Aexamples-guessing-game-template"
+    },
+    {
+      "label": "Airdrop Template",
+      "url": "/resource/tari-ootle%3Astarter%3Awasm-templates-airdrop"
+    },
+    {
+      "label": "Counter Template",
+      "url": "/resource/tari-ootle%3Astarter%3Awasm-templates-counter"
+    },
+    {
+      "label": "Fungible Template",
+      "url": "/resource/tari-ootle%3Astarter%3Awasm-templates-fungible"
+    },
+    {
+      "label": "Ico Template",
+      "url": "/resource/tari-ootle%3Astarter%3Awasm-templates-ico"
+    },
+    {
+      "label": "Meme Coin Template",
+      "url": "/resource/tari-ootle%3Astarter%3Awasm-templates-meme-coin"
+    },
+    {
+      "label": "Nft Template",
+      "url": "/resource/tari-ootle%3Astarter%3Awasm-templates-nft"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "format": "9:16",
+  "appName": "Example app spotlight",
+  "tagline": "A reusable layout for your verified app footage.",
+  "benefits": [
+    "Explain the use case",
+    "Show the working feature",
+    "Link to the project"
+  ],
+  "ctaLabel": "Try it in the Hub",
+  "accent": "#C9EB00",
+  "durationInSeconds": 6,
+  "background": {
+    "type": "image",
+    "src": "placeholder-bg.png",
+    "kind": "concept",
+    "scrim": 0.5
+  },
+  "meta": {
+    "projectId": "example-project",
+    "templateId": "AppSpotlight",
+    "campaignId": "sprint1-testnet",
+    "clipId": "clip_pb_bg_001",
+    "revision": "1",
+    "destinationUrl": "https://community.tari.com/t/ootle-testnet-community-apps-directory/281"
+  }
+}

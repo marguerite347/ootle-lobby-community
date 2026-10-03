@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/calesthio/generative-media-skills",
+  "revision": "8c85352d5d75d4dcbe58480bd138e37b9742bab1",
+  "path": "skills/providers/text-to-speech/qwen3-tts",
+  "license": "MIT",
+  "importedAt": "2026-09-22",
+  "executionStatus": "Instructions imported; provider access and output quality require task-specific verification."
+}

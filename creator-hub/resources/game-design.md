@@ -1,0 +1,29 @@
+# Game design, documentation and programming
+
+Repository identities/descriptions checked with GitHub on 2026-09-19. These are external learning references, not native Tari templates. Public source availability does not grant one blanket license over every linked resource.
+
+| Resource | What it is for / how to use it | Verification and reuse notes |
+| --- | --- | --- |
+| [Game Programming Patterns](https://github.com/munificent/game-programming-patterns) | Robert Nystrom's book source; architectural patterns and reusable conceptual systems | README says the author is not actively maintaining the book or responding to issues/PRs. Useful established reference, not an active update feed. Inspect actual licenses for text and code separately; GitHub reports a nonstandard license. |
+| [Awesome Game Design](https://github.com/Roobyx/awesome-game-design) | Discover design learning materials, examples and tools | Repository available; GitHub identifies CC0 for the repository. Linked resources have their own terms and require separate verification. |
+| [Awesome Gamedev](https://github.com/Calinou/awesome-gamedev) | Broad discovery of engines, tools, art/audio, programming and learning references | Repository describes itself as a mirror; identify canonical upstream before automated ingestion. Repository list is CC BY-SA 4.0; do not apply that license to everything it links. |
+| [GDD Resources](https://github.com/mikewesthad/Game-Design-Document-Resources) | Compare game design document examples, outlines and templates | GitHub reports MIT for the repository; third-party linked documents need their own permission check. |
+| [Beginner GDD template](https://github.com/kosinaz/game-design-document-template-for-beginners) | Starting outline for articulating a game concept and design | Repository description and MIT metadata verified. Inspect the actual template before claiming a specific field set or adapting it. |
+| [Unity game programming patterns demos](https://github.com/Unity-Technologies/game-programming-patterns-demo) | Small Unity implementations accompanying a programming-patterns ebook | Unity-specific, not Godot. GitHub returned no detected license; inspect repository terms and Unity prerequisites before copying. Examples not executed. |
+| [Habrador Unity Programming Patterns](https://github.com/Habrador/Unity-Programming-Patterns) | C# implementations and examples of when to use patterns in Unity | Repository metadata identifies MIT. Check Unity version and per-example dependencies; not executed or ported to Ootle. |
+| [GitHub game-design topic](https://github.com/topics/game-design) | Discovery lead for additional resources | User-supplied discovery URL, not a curated or verified collection. Evaluate individual repositories before listing or mirroring. |
+
+Keep conceptual GDDs, architecture education and executable engine examples distinct in the marketplace resource-type filter. A GDD is not a runnable game template; an architectural pattern is not automatically safe native protocol code. For complete Godot projects see [Godot examples](godot.md).
+
+
+## Additional creator references, reviewed September 22, 2026
+
+- [Forbidden Solitaire: design and launch study](https://store.steampowered.com/app/3414580/Forbidden_Solitaire/): Horror solitaire reference for genre mixing, presentation and expansion marketing. Study the game and DLC campaign. This is inspiration, not a reusable game framework. The June 2025 wishlist post is a historical creator report, not a current metric. Sources: [reference 1](https://x.com/greyalien/status/2102375436353474560), [reference 2](https://bigbossbattle.com/forbidden-solitaire-the-discarded-dlc-coming-soon/), [reference 3](https://x.com/greyalien/status/1931016617107804443).
+- [Blightrole: dice RPG design study](https://store.steampowered.com/app/4596980/Blightrole/): Nautilus Games horror RPG built around dice, roles, items and risky choices. Study atmosphere and interactions between dice and passive abilities; no source code or assets are offered by this listing. Sources: [reference 1](https://x.com/horrorvisuals/status/2102373068047782204).
+- [Deadhand Theater: card combat and effects study](https://bagtrackgames.com/): Bag Track Games poker-based roguelike deckbuilder with a theatrical visual identity. Study card combat feedback and distinctive practical-style effects. Reference game, not a forkable starter. Sources: [reference 1](https://x.com/80level/status/2092613943944421876), [reference 2](https://80.lv/articles/poker-deckbuilder-with-practical-effects-instead-of-generic-vfx).
+- [Balatro Feel: Mix and Jam Unity example](https://github.com/mixandjam/Balatro-Feel): Unity example studying Balatro-inspired card movement and shader effects. Study or adapt card presentation; requires Unity 2022.3+ and DOTween. This is a game-feel example, not the complete Balatro game. Sources: [reference 1](https://x.com/80level/status/1785888857751183814), [reference 2](https://80.lv/articles/balatro-s-card-movements-shaders-recreated-in-unity/), [reference 3](https://dotween.demigiant.com/).
+- [Labyrinth procedural generation demo](https://dev-rygy.itch.io/labyrinth-procedural-generator): dev_rygy procedural labyrinth demonstration distributed as a Windows download. Study generated layouts. The linked download is a demo executable, not verified reusable source code.
+
+## Mobile rewards and gacha presentation
+
+[Gacha Reward Experience](../../.agents/skills/gacha-reward-experience/SKILL.md) is the repository workflow for daily trivia, spinner reveals and collectible reward UX. Its [research note](../../.agents/skills/gacha-reward-experience/references/mobile-gacha-research.md) records the user-supplied Google AI Mode reference and distinguishes applicable presentation lessons from unverified numerical/monetization claims. Available in the Hub Skills library; no paid economy is introduced by this guidance.

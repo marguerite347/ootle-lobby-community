@@ -1,0 +1,754 @@
+{
+  "schemaVersion": 1,
+  "skills": [
+    {
+      "id": "contribute",
+      "title": "Contribute and maintain",
+      "description": "Add or update TariSkills with reproducible evidence, pinned sources and honest lifecycle labels.",
+      "version": "0.1.0",
+      "lifecycle": "draft",
+      "networks": [
+        "local-engine",
+        "Esmeralda (not live-validated)"
+      ],
+      "tools": {
+        "tari_template_lib": "0.32.0",
+        "tari_template_test_tooling": "0.41.0"
+      },
+      "sourceCheckedAt": "2026-09-19",
+      "technicalValidatedAt": null,
+      "validation": {
+        "scope": "Source-reviewed; runtime scope pending validation evidence",
+        "evidence": []
+      },
+      "sources": [
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/docs/skills/README.md",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "docs/skills/README.md"
+        }
+      ],
+      "related": [],
+      "issue": "https://github.com/marguerite347/tari-growth/issues/74",
+      "remaining": [
+        "See body for runtime and network validation boundaries."
+      ],
+      "markdown": "contribute/SKILL.md",
+      "sha256": "0192cb4e8e5a539298293ac9998cc3a0b913880ddfdc2ecb75fd203916ccb805"
+    },
+    {
+      "id": "data-indexing",
+      "title": "Data and indexing",
+      "description": "Read Ootle receipts, substates and events with explicit freshness and idempotent projections.",
+      "version": "0.1.0",
+      "lifecycle": "draft",
+      "networks": [
+        "local-engine",
+        "Esmeralda (not live-validated)"
+      ],
+      "tools": {
+        "tari_template_lib": "0.32.0",
+        "tari_template_test_tooling": "0.41.0"
+      },
+      "sourceCheckedAt": "2026-09-19",
+      "technicalValidatedAt": null,
+      "validation": {
+        "scope": "Source-reviewed; runtime scope pending validation evidence",
+        "evidence": []
+      },
+      "sources": [
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/applications/tari_indexer/src/rest_api/handlers/transactions.rs",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "applications/tari_indexer/src/rest_api/handlers/transactions.rs"
+        },
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/applications/tari_indexer/src/rest_api/handlers/transaction_events.rs",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "applications/tari_indexer/src/rest_api/handlers/transaction_events.rs"
+        },
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/clients/wallet_daemon_client/src/types.rs",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "clients/wallet_daemon_client/src/types.rs"
+        }
+      ],
+      "related": [],
+      "issue": "https://github.com/marguerite347/tari-growth/issues/70",
+      "remaining": [
+        "See body for runtime and network validation boundaries."
+      ],
+      "markdown": "data-indexing/SKILL.md",
+      "sha256": "03e46e81871d5f0c4e07e26dd586aa8823053dcafa480cfefa940635b3140165"
+    },
+    {
+      "id": "deploy-verify",
+      "title": "Deploy and verify",
+      "description": "Publish a tested Ootle WASM artifact and verify its template, component and transaction evidence.",
+      "version": "0.1.0",
+      "lifecycle": "draft",
+      "networks": [
+        "local-engine",
+        "Esmeralda (not live-validated)"
+      ],
+      "tools": {
+        "tari_template_lib": "0.32.0",
+        "tari_template_test_tooling": "0.41.0"
+      },
+      "sourceCheckedAt": "2026-09-19",
+      "technicalValidatedAt": null,
+      "validation": {
+        "scope": "Source-reviewed; runtime scope pending validation evidence",
+        "evidence": []
+      },
+      "sources": [
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/docs/developer-docs/src/content/docs/guides/publishing-templates.mdx",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "docs/developer-docs/src/content/docs/guides/publishing-templates.mdx"
+        },
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/clients/wallet_daemon_client/src/types.rs",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "clients/wallet_daemon_client/src/types.rs"
+        }
+      ],
+      "related": [],
+      "issue": "https://github.com/marguerite347/tari-growth/issues/68",
+      "remaining": [
+        "See body for runtime and network validation boundaries."
+      ],
+      "markdown": "deploy-verify/SKILL.md",
+      "sha256": "f9ee8baf96d310f028c4a258b51defe5b7cc75d2225d5d3e432ed77c399fd217"
+    },
+    {
+      "id": "developer-setup",
+      "title": "Developer setup",
+      "description": "Build the pinned Tari template example and diagnose native toolchain mismatches.",
+      "version": "0.1.0",
+      "lifecycle": "verified",
+      "networks": [
+        "local-engine"
+      ],
+      "tools": {
+        "tari_template_lib": "0.32.0",
+        "tari_template_test_tooling": "0.41.0"
+      },
+      "sourceCheckedAt": "2026-09-19",
+      "technicalValidatedAt": "2026-09-19",
+      "validation": {
+        "scope": "Locked local Rust/WASM setup on the recorded macOS host; no wallet setup validated.",
+        "evidence": [
+          "evidence/validation.json"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/crates/template_lib/Cargo.toml",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "crates/template_lib/Cargo.toml"
+        },
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/crates/template_test_tooling/Cargo.toml",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "crates/template_test_tooling/Cargo.toml"
+        },
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/docs/developer-docs/src/content/docs/guides/cli.mdx",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "docs/developer-docs/src/content/docs/guides/cli.mdx"
+        }
+      ],
+      "related": [],
+      "issue": "https://github.com/marguerite347/tari-growth/issues/64",
+      "remaining": [
+        "Live-network behavior is not validated."
+      ],
+      "markdown": "developer-setup/SKILL.md",
+      "sha256": "5522b159e4fe44f459563a95d6f8b2316e755bfb66ee99ba2fe97b8cfcbd81cf"
+    },
+    {
+      "id": "economy-simulation",
+      "title": "Economy design and simulation",
+      "description": "Model game resource flows and test purchases before mapping economic actions onto Ootle.",
+      "version": "0.1.0",
+      "lifecycle": "verified",
+      "networks": [
+        "offline-simulation"
+      ],
+      "tools": {
+        "tari_template_lib": "0.32.0",
+        "tari_template_test_tooling": "0.41.0"
+      },
+      "sourceCheckedAt": "2026-09-19",
+      "technicalValidatedAt": "2026-09-19",
+      "validation": {
+        "scope": "Offline integer-ledger simulation and four conservation/input tests; no on-chain settlement or economic forecast.",
+        "evidence": [
+          "evidence/validation.json"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/crates/template_lib/src/resource/builder/mod.rs",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "crates/template_lib/src/resource/builder/mod.rs"
+        },
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/docs/developer-docs/src/content/docs/guides/resources.mdx",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "docs/developer-docs/src/content/docs/guides/resources.mdx"
+        }
+      ],
+      "related": [],
+      "issue": "https://github.com/marguerite347/tari-growth/issues/73",
+      "remaining": [
+        "Real player behavior and on-chain resource integration are not validated."
+      ],
+      "markdown": "economy-simulation/SKILL.md",
+      "sha256": "ef1a6665a35a95fda43d92b0d157df53238252487e742e08e766bc1d070d2220"
+    },
+    {
+      "id": "frontend-integration",
+      "title": "Frontend integration",
+      "description": "Connect a game UI to native Ootle wallet and transaction states without exposing daemon credentials.",
+      "version": "0.1.0",
+      "lifecycle": "draft",
+      "networks": [
+        "local-engine",
+        "Esmeralda (not live-validated)"
+      ],
+      "tools": {
+        "tari_template_lib": "0.32.0",
+        "tari_template_test_tooling": "0.41.0"
+      },
+      "sourceCheckedAt": "2026-09-19",
+      "technicalValidatedAt": null,
+      "validation": {
+        "scope": "Source-reviewed; runtime scope pending validation evidence",
+        "evidence": []
+      },
+      "sources": [
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/clients/wallet_daemon_client/src/types.rs",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "clients/wallet_daemon_client/src/types.rs"
+        },
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/crates/wallet/sdk/src/models/wallet_transaction.rs",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "crates/wallet/sdk/src/models/wallet_transaction.rs"
+        }
+      ],
+      "related": [],
+      "issue": "https://github.com/marguerite347/tari-growth/issues/69",
+      "remaining": [
+        "See body for runtime and network validation boundaries."
+      ],
+      "markdown": "frontend-integration/SKILL.md",
+      "sha256": "68fab6f6321e07d877e0d11845fabaf7e051b4d783c3e05c3a71e77f56171f0f"
+    },
+    {
+      "id": "native-fees",
+      "title": "Native fees and costs",
+      "description": "Explain Ootle fee intent, main intent and fee-only acceptance without EVM gas assumptions.",
+      "version": "0.1.0",
+      "lifecycle": "draft",
+      "networks": [
+        "local-engine",
+        "Esmeralda (not live-validated)"
+      ],
+      "tools": {
+        "tari_template_lib": "0.32.0",
+        "tari_template_test_tooling": "0.41.0"
+      },
+      "sourceCheckedAt": "2026-09-19",
+      "technicalValidatedAt": null,
+      "validation": {
+        "scope": "Source-reviewed; runtime scope pending validation evidence",
+        "evidence": []
+      },
+      "sources": [
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/docs/developer-docs/src/content/docs/reference/fees.mdx",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "docs/developer-docs/src/content/docs/reference/fees.mdx"
+        },
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/crates/engine_types/src/commit_result.rs",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "crates/engine_types/src/commit_result.rs"
+        }
+      ],
+      "related": [],
+      "issue": "https://github.com/marguerite347/tari-growth/issues/66",
+      "remaining": [
+        "See body for runtime and network validation boundaries."
+      ],
+      "markdown": "native-fees/SKILL.md",
+      "sha256": "7b07c7daad607ae9ab7f1dca97c99eaae6f167c5ff24f5e01712001698eb9300"
+    },
+    {
+      "id": "network-reference",
+      "title": "Network reference",
+      "description": "Resolve Ootle versions and network-scoped identifiers without borrowing tutorial addresses.",
+      "version": "0.1.0",
+      "lifecycle": "draft",
+      "networks": [
+        "local-engine",
+        "Esmeralda (not live-validated)"
+      ],
+      "tools": {
+        "tari_template_lib": "0.32.0",
+        "tari_template_test_tooling": "0.41.0"
+      },
+      "sourceCheckedAt": "2026-09-19",
+      "technicalValidatedAt": null,
+      "validation": {
+        "scope": "Source-reviewed; runtime scope pending validation evidence",
+        "evidence": []
+      },
+      "sources": [
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/clients/wallet_daemon_client/src/types.rs",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "clients/wallet_daemon_client/src/types.rs"
+        },
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/crates/common_types/src/substate_address.rs",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "crates/common_types/src/substate_address.rs"
+        },
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/docs/developer-docs/src/content/docs/guides/setup-a-wallet.mdx",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "docs/developer-docs/src/content/docs/guides/setup-a-wallet.mdx"
+        }
+      ],
+      "related": [],
+      "issue": "https://github.com/marguerite347/tari-growth/issues/63",
+      "remaining": [
+        "See body for runtime and network validation boundaries."
+      ],
+      "markdown": "network-reference/SKILL.md",
+      "sha256": "b491223f33acddc024bcbfc22bbacc8aa864d5c6e8859b7d2b7170876f494ce4"
+    },
+    {
+      "id": "playground",
+      "title": "Playground",
+      "description": "Find official Ootle examples and map each guide to its actual source and version.",
+      "version": "0.1.0",
+      "lifecycle": "draft",
+      "networks": [
+        "local-engine",
+        "Esmeralda (not live-validated)"
+      ],
+      "tools": {
+        "tari_template_lib": "0.32.0",
+        "tari_template_test_tooling": "0.41.0"
+      },
+      "sourceCheckedAt": "2026-09-19",
+      "technicalValidatedAt": null,
+      "validation": {
+        "scope": "Source-reviewed; runtime scope pending validation evidence",
+        "evidence": []
+      },
+      "sources": [
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/docs/developer-docs/src/content/docs/guides/template-overview.mdx",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "docs/developer-docs/src/content/docs/guides/template-overview.mdx"
+        },
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/docs/developer-docs/src/content/docs/guides/build-a-guessing-game.mdx",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "docs/developer-docs/src/content/docs/guides/build-a-guessing-game.mdx"
+        }
+      ],
+      "related": [],
+      "issue": "https://github.com/marguerite347/tari-growth/issues/64",
+      "remaining": [
+        "See body for runtime and network validation boundaries."
+      ],
+      "markdown": "playground/SKILL.md",
+      "sha256": "385ac7283c90d877d93e1c9005260e0752b471a84d77989030476e976c38b5ed"
+    },
+    {
+      "id": "privacy",
+      "title": "Privacy boundaries",
+      "description": "Assess which Tari/Ootle application data remains visible and which native privacy mechanism applies.",
+      "version": "0.1.0",
+      "lifecycle": "draft",
+      "networks": [
+        "local-engine",
+        "Esmeralda (not live-validated)"
+      ],
+      "tools": {
+        "tari_template_lib": "0.32.0",
+        "tari_template_test_tooling": "0.41.0"
+      },
+      "sourceCheckedAt": "2026-09-19",
+      "technicalValidatedAt": null,
+      "validation": {
+        "scope": "Source-reviewed; runtime scope pending validation evidence",
+        "evidence": []
+      },
+      "sources": [
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/docs/developer-docs/src/content/docs/concepts/privacy.mdx",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "docs/developer-docs/src/content/docs/concepts/privacy.mdx"
+        },
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/docs/developer-docs/src/content/docs/concepts/privacy-in-applications.mdx",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "docs/developer-docs/src/content/docs/concepts/privacy-in-applications.mdx"
+        },
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/crates/wallet/crypto/src/kdfs.rs",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "crates/wallet/crypto/src/kdfs.rs"
+        }
+      ],
+      "related": [],
+      "issue": "https://github.com/marguerite347/tari-growth/issues/67",
+      "remaining": [
+        "See body for runtime and network validation boundaries."
+      ],
+      "markdown": "privacy/SKILL.md",
+      "sha256": "55fd81fc2629c3c7ae553c3312a89af7d79819ab09d37c42abaf5f90fd6a2095"
+    },
+    {
+      "id": "resources-state",
+      "title": "Resources and application state",
+      "description": "Design Ootle assets, vaults, buckets and authorization as separate native concerns.",
+      "version": "0.1.0",
+      "lifecycle": "draft",
+      "networks": [
+        "local-engine",
+        "Esmeralda (not live-validated)"
+      ],
+      "tools": {
+        "tari_template_lib": "0.32.0",
+        "tari_template_test_tooling": "0.41.0"
+      },
+      "sourceCheckedAt": "2026-09-19",
+      "technicalValidatedAt": null,
+      "validation": {
+        "scope": "Source-reviewed; runtime scope pending validation evidence",
+        "evidence": []
+      },
+      "sources": [
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/crates/template_lib/src/resource/builder/mod.rs",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "crates/template_lib/src/resource/builder/mod.rs"
+        },
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/docs/developer-docs/src/content/docs/guides/resources.mdx",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "docs/developer-docs/src/content/docs/guides/resources.mdx"
+        },
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/docs/developer-docs/src/content/docs/guides/authorization-and-access.mdx",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "docs/developer-docs/src/content/docs/guides/authorization-and-access.mdx"
+        }
+      ],
+      "related": [],
+      "issue": "https://github.com/marguerite347/tari-growth/issues/65",
+      "remaining": [
+        "See body for runtime and network validation boundaries."
+      ],
+      "markdown": "resources-state/SKILL.md",
+      "sha256": "0946b527decc4fe3ea71e90628f9db44aeb55e1e436db95ae9f6557bb1766ba6"
+    },
+    {
+      "id": "security-readiness",
+      "title": "Security and readiness",
+      "description": "Review Ootle templates and integrations against native authorization, fee and privacy boundaries.",
+      "version": "0.1.0",
+      "lifecycle": "draft",
+      "networks": [
+        "local-engine",
+        "Esmeralda (not live-validated)"
+      ],
+      "tools": {
+        "tari_template_lib": "0.32.0",
+        "tari_template_test_tooling": "0.41.0"
+      },
+      "sourceCheckedAt": "2026-09-19",
+      "technicalValidatedAt": null,
+      "validation": {
+        "scope": "Source-reviewed; runtime scope pending validation evidence",
+        "evidence": []
+      },
+      "sources": [
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/docs/developer-docs/src/content/docs/guides/authorization-and-access.mdx",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "docs/developer-docs/src/content/docs/guides/authorization-and-access.mdx"
+        },
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/crates/engine_types/src/commit_result.rs",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "crates/engine_types/src/commit_result.rs"
+        },
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/crates/engine/tests/templates/access_rules/src/lib.rs",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "crates/engine/tests/templates/access_rules/src/lib.rs"
+        }
+      ],
+      "related": [],
+      "issue": "https://github.com/marguerite347/tari-growth/issues/72",
+      "remaining": [
+        "See body for runtime and network validation boundaries."
+      ],
+      "markdown": "security-readiness/SKILL.md",
+      "sha256": "d0a8490b886ed23fbd73fbf727cb00fa7eb12d407b2d9215946847c7547c13c2"
+    },
+    {
+      "id": "start-here",
+      "title": "Start here",
+      "description": "Choose a minimal Tari/Ootle learning path and distinguish local execution from network deployment.",
+      "version": "0.1.0",
+      "lifecycle": "draft",
+      "networks": [
+        "local-engine",
+        "Esmeralda (not live-validated)"
+      ],
+      "tools": {
+        "tari_template_lib": "0.32.0",
+        "tari_template_test_tooling": "0.41.0"
+      },
+      "sourceCheckedAt": "2026-09-19",
+      "technicalValidatedAt": null,
+      "validation": {
+        "scope": "Source-reviewed; runtime scope pending validation evidence",
+        "evidence": []
+      },
+      "sources": [
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/docs/skills/README.md",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "docs/skills/README.md"
+        }
+      ],
+      "related": [],
+      "issue": "https://github.com/marguerite347/tari-growth/issues/62",
+      "remaining": [
+        "See body for runtime and network validation boundaries."
+      ],
+      "markdown": "start-here/SKILL.md",
+      "sha256": "3c5293532f1be47c052025a18402b3ede3cef49036ee5f7fb2f37a35cccbc185"
+    },
+    {
+      "id": "tari-and-ootle",
+      "title": "Tari and Ootle",
+      "description": "Explain native Tari layer roles and choose a suitable application boundary.",
+      "version": "0.1.0",
+      "lifecycle": "draft",
+      "networks": [
+        "local-engine",
+        "Esmeralda (not live-validated)"
+      ],
+      "tools": {
+        "tari_template_lib": "0.32.0",
+        "tari_template_test_tooling": "0.41.0"
+      },
+      "sourceCheckedAt": "2026-09-19",
+      "technicalValidatedAt": null,
+      "validation": {
+        "scope": "Source-reviewed; runtime scope pending validation evidence",
+        "evidence": []
+      },
+      "sources": [
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/docs/developer-docs/src/content/docs/concepts/architecture.mdx",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "docs/developer-docs/src/content/docs/concepts/architecture.mdx"
+        },
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/docs/developer-docs/src/content/docs/concepts/state-and-execution.mdx",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "docs/developer-docs/src/content/docs/concepts/state-and-execution.mdx"
+        }
+      ],
+      "related": [],
+      "issue": "https://github.com/marguerite347/tari-growth/issues/63",
+      "remaining": [
+        "See body for runtime and network validation boundaries."
+      ],
+      "markdown": "tari-and-ootle/SKILL.md",
+      "sha256": "4afb8b8da39dd8cb4f3c0fe08b522a30e9a1d93312b2bb04af6b8879d4e5af65"
+    },
+    {
+      "id": "templates-composability",
+      "title": "Templates and composability",
+      "description": "Author native Rust/WASM templates and connect component calls using verified interfaces.",
+      "version": "0.1.0",
+      "lifecycle": "verified",
+      "networks": [
+        "local-engine"
+      ],
+      "tools": {
+        "tari_template_lib": "0.32.0",
+        "tari_template_test_tooling": "0.41.0"
+      },
+      "sourceCheckedAt": "2026-09-19",
+      "technicalValidatedAt": "2026-09-19",
+      "validation": {
+        "scope": "Counter component construction, owner write/public read, unrelated-signer rejection and rollback in the local engine. Cross-component/resource workflows remain untested.",
+        "evidence": [
+          "evidence/validation.json"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/crates/template_lib/src/component/manager.rs",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "crates/template_lib/src/component/manager.rs"
+        },
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/docs/developer-docs/src/content/docs/guides/template-overview.mdx",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "docs/developer-docs/src/content/docs/guides/template-overview.mdx"
+        },
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/crates/template_test_tooling/src/template_test.rs",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "crates/template_test_tooling/src/template_test.rs"
+        }
+      ],
+      "related": [],
+      "issue": "https://github.com/marguerite347/tari-growth/issues/65",
+      "remaining": [
+        "Live-network behavior is not validated."
+      ],
+      "markdown": "templates-composability/SKILL.md",
+      "sha256": "8c6c06a2ea4e56979efbf02505bfb535eb3fe9b99a6fd26605016b19a034c2e1"
+    },
+    {
+      "id": "testing-debugging",
+      "title": "Testing and debugging",
+      "description": "Run real Ootle template-engine tests and test authorization without injected privileges.",
+      "version": "0.1.0",
+      "lifecycle": "verified",
+      "networks": [
+        "local-engine"
+      ],
+      "tools": {
+        "tari_template_lib": "0.32.0",
+        "tari_template_test_tooling": "0.41.0"
+      },
+      "sourceCheckedAt": "2026-09-19",
+      "technicalValidatedAt": "2026-09-19",
+      "validation": {
+        "scope": "Two real WASM engine tests on pinned 0.32.0/0.41.0 dependencies; no live-network claims.",
+        "evidence": [
+          "evidence/validation.json"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/crates/template_test_tooling/src/template_test.rs",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "crates/template_test_tooling/src/template_test.rs"
+        },
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/docs/developer-docs/src/content/docs/guides/testing-templates.mdx",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "docs/developer-docs/src/content/docs/guides/testing-templates.mdx"
+        }
+      ],
+      "related": [],
+      "issue": "https://github.com/marguerite347/tari-growth/issues/68",
+      "remaining": [
+        "Live-network behavior is not validated."
+      ],
+      "markdown": "testing-debugging/SKILL.md",
+      "sha256": "1b34362e104d7206d3cba857098516ea5548a3f3d79b800f8a069d139b7f86ab"
+    },
+    {
+      "id": "wallets-transactions",
+      "title": "Wallets and transactions",
+      "description": "Integrate the Ootle wallet lifecycle, scoped credentials and terminal transaction outcomes.",
+      "version": "0.1.0",
+      "lifecycle": "draft",
+      "networks": [
+        "local-engine",
+        "Esmeralda (not live-validated)"
+      ],
+      "tools": {
+        "tari_template_lib": "0.32.0",
+        "tari_template_test_tooling": "0.41.0"
+      },
+      "sourceCheckedAt": "2026-09-19",
+      "technicalValidatedAt": null,
+      "validation": {
+        "scope": "Source-reviewed; runtime scope pending validation evidence",
+        "evidence": []
+      },
+      "sources": [
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/clients/wallet_daemon_client/src/types.rs",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "clients/wallet_daemon_client/src/types.rs"
+        },
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/crates/wallet/sdk/src/models/wallet_transaction.rs",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "crates/wallet/sdk/src/models/wallet_transaction.rs"
+        },
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/docs/developer-docs/src/content/docs/guides/agent-api-keys.mdx",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "docs/developer-docs/src/content/docs/guides/agent-api-keys.mdx"
+        }
+      ],
+      "related": [],
+      "issue": "https://github.com/marguerite347/tari-growth/issues/66",
+      "remaining": [
+        "See body for runtime and network validation boundaries."
+      ],
+      "markdown": "wallets-transactions/SKILL.md",
+      "sha256": "059f925ebb357b171bd8edbda372d3696c77e657bdc065cd15b3fc912dd2da57"
+    },
+    {
+      "id": "wxtm-ethereum",
+      "title": "wXTM on Ethereum",
+      "description": "Scope wrapped Tari integrations to verified Ethereum contracts and keep Ootle identifiers separate.",
+      "version": "0.1.0",
+      "lifecycle": "draft",
+      "networks": [
+        "local-engine",
+        "Esmeralda (not live-validated)"
+      ],
+      "tools": {
+        "tari_template_lib": "0.32.0",
+        "tari_template_test_tooling": "0.41.0"
+      },
+      "sourceCheckedAt": "2026-09-19",
+      "technicalValidatedAt": null,
+      "validation": {
+        "scope": "Source-reviewed; runtime scope pending validation evidence",
+        "evidence": []
+      },
+      "sources": [
+        {
+          "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/docs/developer-docs/src/content/docs/concepts/architecture.mdx",
+          "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+          "path": "docs/developer-docs/src/content/docs/concepts/architecture.mdx"
+        }
+      ],
+      "related": [],
+      "issue": "https://github.com/marguerite347/tari-growth/issues/71",
+      "remaining": [
+        "See body for runtime and network validation boundaries."
+      ],
+      "markdown": "wxtm-ethereum/SKILL.md",
+      "sha256": "a784646c43a43b8a32090c4cdf83fd3a93a89c51bd7ee66338a8878c6dc47957"
+    }
+  ]
+}

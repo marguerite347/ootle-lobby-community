@@ -1,0 +1,20 @@
+{
+  "comment": "Pin these before relying on the workflow. Large weights live OUTSIDE Git (object storage / local models dir), never committed. Verify licenses for your operator and use.",
+  "comfyui": {
+    "repo": "https://github.com/comfyanonymous/ComfyUI",
+    "pinnedCommit": null,
+    "note": "No tested ComfyUI runtime has been recorded. Select a commit, execute this graph and record evidence before claiming a validated pin.",
+    "validation": "not-run"
+  },
+  "customNodes": [],
+  "models": [
+    {
+      "role": "checkpoint",
+      "file": "sd_xl_base_1.0.safetensors",
+      "huggingfaceRepo": "stabilityai/stable-diffusion-xl-base-1.0",
+      "revision": "462165984030d82259a11f4367a4eed129e94a7b",
+      "license": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/blob/main/LICENSE.md",
+      "installPath": "ComfyUI/models/checkpoints/"
+    }
+  ]
+}

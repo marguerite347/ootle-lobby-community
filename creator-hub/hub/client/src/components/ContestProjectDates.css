@@ -1,0 +1,11 @@
+.contest-project-dates {
+  display: grid;
+  gap: 5px;
+  margin: 10px 0 14px;
+  font-size: 11px;
+  line-height: 1.6;
+}
+.contest-project-dates a { color: var(--season-muted, #a7aac3); text-decoration: none; }
+.contest-project-dates span { margin-right: 5px; }
+.contest-project-dates time { color: var(--season-cloud, #eceeff); font-variant-numeric: tabular-nums; }
+.contest-project-dates a:hover time { color: var(--season-lime, #c9eb00); text-decoration: underline; }

@@ -1,0 +1,8 @@
+.contest-community-links { display:flex; flex-wrap:wrap; gap:12px 20px; align-items:center; }
+.contest-community-links a { font-size:12px; }
+.contest-project-actions { display:flex; flex-wrap:wrap; align-items:center; gap:10px 20px; margin-top:auto; }
+.contest-project-actions .suggest-project-edit {
+  display:inline-flex; align-items:center; gap:6px;
+  min-height:36px; color:var(--season-lavender); font-size:11px;
+}
+.suggest-project-edit svg { width:13px; height:13px; fill:none; stroke:currentColor; stroke-width:1.8; }

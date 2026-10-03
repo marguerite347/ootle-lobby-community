@@ -1,0 +1,1149 @@
+{
+  "records": [
+    {
+      "id": "genre-reference:portal-2",
+      "title": "Portal 2",
+      "sourceUrl": "https://store.steampowered.com/app/620/",
+      "summary": "Spatial reasoning; teach one rule, then combine it. Economy study: Knowledge and execution replace currency; preserve solved understanding.",
+      "genres": [
+        "puzzle"
+      ],
+      "studyFocus": [
+        "Spatial reasoning; teach one rule, then combine it.",
+        "Knowledge and execution replace currency; preserve solved understanding."
+      ],
+      "creator": {
+        "name": "Valve"
+      },
+      "lastVerifiedAt": "2026-09-25",
+      "license": "Proprietary; design reference only. No code, art or audio reuse rights granted.",
+      "access": "Commercial reference; check current platform availability and purchase requirements.",
+      "tags": [
+        "genre-reference",
+        "economy-study",
+        "puzzle"
+      ],
+      "evidenceUrls": [
+        "https://store.steampowered.com/app/620/",
+        "https://store.steampowered.com/appreviews/620?json=1&language=all&purchase_type=all&num_per_page=0"
+      ],
+      "successEvidence": {
+        "kind": "Steam player reception snapshot, not sales evidence",
+        "rating": "Overwhelmingly Positive",
+        "positive": 461118,
+        "total": 467170,
+        "checkedAt": "2026-09-25"
+      },
+      "editorialNote": "Study recommendations and economy interpretations are editorial; not claims of a fresh playtest."
+    },
+    {
+      "id": "genre-reference:celeste",
+      "title": "Celeste",
+      "sourceUrl": "https://store.steampowered.com/app/504230/",
+      "summary": "Readable movement, short checkpoints and rapid retry. Economy study: Stamina and safe ground constrain routes; failure costs little time.",
+      "genres": [
+        "platformer"
+      ],
+      "studyFocus": [
+        "Readable movement, short checkpoints and rapid retry.",
+        "Stamina and safe ground constrain routes; failure costs little time."
+      ],
+      "creator": {
+        "name": "Maddy Makes Games Inc., Extremely OK Games, Ltd."
+      },
+      "lastVerifiedAt": "2026-09-25",
+      "license": "Proprietary; design reference only. No code, art or audio reuse rights granted.",
+      "access": "Commercial reference; check current platform availability and purchase requirements.",
+      "tags": [
+        "genre-reference",
+        "economy-study",
+        "platformer"
+      ],
+      "evidenceUrls": [
+        "https://store.steampowered.com/app/504230/",
+        "https://store.steampowered.com/appreviews/504230?json=1&language=all&purchase_type=all&num_per_page=0"
+      ],
+      "successEvidence": {
+        "kind": "Steam player reception snapshot, not sales evidence",
+        "rating": "Overwhelmingly Positive",
+        "positive": 143907,
+        "total": 147744,
+        "checkedAt": "2026-09-25"
+      },
+      "editorialNote": "Study recommendations and economy interpretations are editorial; not claims of a fresh playtest."
+    },
+    {
+      "id": "genre-reference:hades",
+      "title": "Hades",
+      "sourceUrl": "https://store.steampowered.com/app/1145360/",
+      "summary": "Combat builds and narrative that advances after defeat. Economy study: Run gold and boons reset; selected permanent resources survive.",
+      "genres": [
+        "action",
+        "roguelike"
+      ],
+      "studyFocus": [
+        "Combat builds and narrative that advances after defeat.",
+        "Run gold and boons reset; selected permanent resources survive."
+      ],
+      "creator": {
+        "name": "Supergiant Games"
+      },
+      "lastVerifiedAt": "2026-09-25",
+      "license": "Proprietary; design reference only. No code, art or audio reuse rights granted.",
+      "access": "Commercial reference; check current platform availability and purchase requirements.",
+      "tags": [
+        "genre-reference",
+        "economy-study",
+        "action",
+        "roguelike"
+      ],
+      "evidenceUrls": [
+        "https://store.steampowered.com/app/1145360/",
+        "https://store.steampowered.com/appreviews/1145360?json=1&language=all&purchase_type=all&num_per_page=0"
+      ],
+      "successEvidence": {
+        "kind": "Steam player reception snapshot, not sales evidence",
+        "rating": "Overwhelmingly Positive",
+        "positive": 302561,
+        "total": 308723,
+        "checkedAt": "2026-09-25"
+      },
+      "editorialNote": "Study recommendations and economy interpretations are editorial; not claims of a fresh playtest."
+    },
+    {
+      "id": "genre-reference:doom-eternal",
+      "title": "DOOM Eternal",
+      "sourceUrl": "https://store.steampowered.com/app/782330/",
+      "summary": "Movement and enemy pressure make resource recovery active. Economy study: Health, armor and ammunition form distinct replenishment loops.",
+      "genres": [
+        "shooter"
+      ],
+      "studyFocus": [
+        "Movement and enemy pressure make resource recovery active.",
+        "Health, armor and ammunition form distinct replenishment loops."
+      ],
+      "creator": {
+        "name": "id Software"
+      },
+      "lastVerifiedAt": "2026-09-25",
+      "license": "Proprietary; design reference only. No code, art or audio reuse rights granted.",
+      "access": "Commercial reference; check current platform availability and purchase requirements.",
+      "tags": [
+        "genre-reference",
+        "economy-study",
+        "shooter"
+      ],
+      "evidenceUrls": [
+        "https://store.steampowered.com/app/782330/",
+        "https://store.steampowered.com/appreviews/782330?json=1&language=all&purchase_type=all&num_per_page=0"
+      ],
+      "successEvidence": {
+        "kind": "Steam player reception snapshot, not sales evidence",
+        "rating": "Very Positive",
+        "positive": 198805,
+        "total": 217544,
+        "checkedAt": "2026-09-25"
+      },
+      "editorialNote": "Study recommendations and economy interpretations are editorial; not claims of a fresh playtest."
+    },
+    {
+      "id": "genre-reference:slay-the-spire",
+      "title": "Slay the Spire",
+      "sourceUrl": "https://store.steampowered.com/app/646570/",
+      "summary": "Drafting, path risk and deck dilution. Economy study: Energy resets each turn; health, gold and deck quality persist through a run.",
+      "genres": [
+        "deckbuilder",
+        "roguelike"
+      ],
+      "studyFocus": [
+        "Drafting, path risk and deck dilution.",
+        "Energy resets each turn; health, gold and deck quality persist through a run."
+      ],
+      "creator": {
+        "name": "Mega Crit"
+      },
+      "lastVerifiedAt": "2026-09-25",
+      "license": "Proprietary; design reference only. No code, art or audio reuse rights granted.",
+      "access": "Commercial reference; check current platform availability and purchase requirements.",
+      "tags": [
+        "genre-reference",
+        "economy-study",
+        "deckbuilder",
+        "roguelike"
+      ],
+      "evidenceUrls": [
+        "https://store.steampowered.com/app/646570/",
+        "https://store.steampowered.com/appreviews/646570?json=1&language=all&purchase_type=all&num_per_page=0"
+      ],
+      "successEvidence": {
+        "kind": "Steam player reception snapshot, not sales evidence",
+        "rating": "Overwhelmingly Positive",
+        "positive": 213256,
+        "total": 218814,
+        "checkedAt": "2026-09-25"
+      },
+      "editorialNote": "Study recommendations and economy interpretations are editorial; not claims of a fresh playtest."
+    },
+    {
+      "id": "genre-reference:baldurs-gate-3",
+      "title": "Baldur's Gate 3",
+      "sourceUrl": "https://store.steampowered.com/app/1086940/",
+      "summary": "Character identity expressed through decisions and encounters. Economy study: Actions, spell slots, supplies and equipment constrain encounter and journey choices.",
+      "genres": [
+        "rpg"
+      ],
+      "studyFocus": [
+        "Character identity expressed through decisions and encounters.",
+        "Actions, spell slots, supplies and equipment constrain encounter and journey choices."
+      ],
+      "creator": {
+        "name": "Larian Studios"
+      },
+      "lastVerifiedAt": "2026-09-25",
+      "license": "Proprietary; design reference only. No code, art or audio reuse rights granted.",
+      "access": "Commercial reference; check current platform availability and purchase requirements.",
+      "tags": [
+        "genre-reference",
+        "economy-study",
+        "rpg"
+      ],
+      "evidenceUrls": [
+        "https://store.steampowered.com/app/1086940/",
+        "https://store.steampowered.com/appreviews/1086940?json=1&language=all&purchase_type=all&num_per_page=0"
+      ],
+      "successEvidence": {
+        "kind": "Steam player reception snapshot, not sales evidence",
+        "rating": "Overwhelmingly Positive",
+        "positive": 831481,
+        "total": 859099,
+        "checkedAt": "2026-09-25"
+      },
+      "editorialNote": "Study recommendations and economy interpretations are editorial; not claims of a fresh playtest."
+    },
+    {
+      "id": "genre-reference:into-the-breach",
+      "title": "Into the Breach",
+      "sourceUrl": "https://store.steampowered.com/app/590380/",
+      "summary": "Telegraphed threats turn damage into positional decisions. Economy study: Turns, grid health, reactor power and reputation trade immediate safety for upgrades.",
+      "genres": [
+        "tactics"
+      ],
+      "studyFocus": [
+        "Telegraphed threats turn damage into positional decisions.",
+        "Turns, grid health, reactor power and reputation trade immediate safety for upgrades."
+      ],
+      "creator": {
+        "name": "Subset Games"
+      },
+      "lastVerifiedAt": "2026-09-25",
+      "license": "Proprietary; design reference only. No code, art or audio reuse rights granted.",
+      "access": "Commercial reference; check current platform availability and purchase requirements.",
+      "tags": [
+        "genre-reference",
+        "economy-study",
+        "tactics"
+      ],
+      "evidenceUrls": [
+        "https://store.steampowered.com/app/590380/",
+        "https://store.steampowered.com/appreviews/590380?json=1&language=all&purchase_type=all&num_per_page=0"
+      ],
+      "successEvidence": {
+        "kind": "Steam player reception snapshot, not sales evidence",
+        "rating": "Very Positive",
+        "positive": 21117,
+        "total": 22422,
+        "checkedAt": "2026-09-25"
+      },
+      "editorialNote": "Study recommendations and economy interpretations are editorial; not claims of a fresh playtest."
+    },
+    {
+      "id": "genre-reference:age-of-empires-2",
+      "title": "Age of Empires II: Definitive Edition",
+      "sourceUrl": "https://store.steampowered.com/app/813780/",
+      "summary": "Scouting, production and timing windows. Economy study: Food, wood, gold, stone and population compete for worker time.",
+      "genres": [
+        "rts"
+      ],
+      "studyFocus": [
+        "Scouting, production and timing windows.",
+        "Food, wood, gold, stone and population compete for worker time."
+      ],
+      "creator": {
+        "name": "World's Edge, Forgotten Empires, CaptureAge, Tantalus Media, Wicked Witch, Feral Interactive"
+      },
+      "lastVerifiedAt": "2026-09-25",
+      "license": "Proprietary; design reference only. No code, art or audio reuse rights granted.",
+      "access": "Commercial reference; check current platform availability and purchase requirements.",
+      "tags": [
+        "genre-reference",
+        "economy-study",
+        "rts"
+      ],
+      "evidenceUrls": [
+        "https://store.steampowered.com/app/813780/",
+        "https://store.steampowered.com/appreviews/813780?json=1&language=all&purchase_type=all&num_per_page=0"
+      ],
+      "successEvidence": {
+        "kind": "Steam player reception snapshot, not sales evidence",
+        "rating": "Very Positive",
+        "positive": 173415,
+        "total": 182707,
+        "checkedAt": "2026-09-25"
+      },
+      "editorialNote": "Study recommendations and economy interpretations are editorial; not claims of a fresh playtest."
+    },
+    {
+      "id": "genre-reference:civilization-6",
+      "title": "Sid Meier\u2019s Civilization\u00ae VI",
+      "sourceUrl": "https://store.steampowered.com/app/289070/",
+      "summary": "Long-term specialization and interacting victory paths. Economy study: Food, production, science, culture and gold compete with territory and turns.",
+      "genres": [
+        "4x",
+        "strategy"
+      ],
+      "studyFocus": [
+        "Long-term specialization and interacting victory paths.",
+        "Food, production, science, culture and gold compete with territory and turns."
+      ],
+      "creator": {
+        "name": "Firaxis Games, Aspyr (Mac), Aspyr (Linux)"
+      },
+      "lastVerifiedAt": "2026-09-25",
+      "license": "Proprietary; design reference only. No code, art or audio reuse rights granted.",
+      "access": "Commercial reference; check current platform availability and purchase requirements.",
+      "tags": [
+        "genre-reference",
+        "economy-study",
+        "4x",
+        "strategy"
+      ],
+      "evidenceUrls": [
+        "https://store.steampowered.com/app/289070/",
+        "https://store.steampowered.com/appreviews/289070?json=1&language=all&purchase_type=all&num_per_page=0"
+      ],
+      "successEvidence": {
+        "kind": "Steam player reception snapshot, not sales evidence",
+        "rating": "Very Positive",
+        "positive": 326952,
+        "total": 379482,
+        "checkedAt": "2026-09-25"
+      },
+      "editorialNote": "Study recommendations and economy interpretations are editorial; not claims of a fresh playtest."
+    },
+    {
+      "id": "genre-reference:bloons-td-6",
+      "title": "Bloons TD 6",
+      "sourceUrl": "https://store.steampowered.com/app/960090/",
+      "summary": "Tower combinations, placement and escalating waves. Economy study: Round cash buys defense; lives absorb mistakes; upgrades create opportunity costs.",
+      "genres": [
+        "tower-defense"
+      ],
+      "studyFocus": [
+        "Tower combinations, placement and escalating waves.",
+        "Round cash buys defense; lives absorb mistakes; upgrades create opportunity costs."
+      ],
+      "creator": {
+        "name": "Ninja Kiwi"
+      },
+      "lastVerifiedAt": "2026-09-25",
+      "license": "Proprietary; design reference only. No code, art or audio reuse rights granted.",
+      "access": "Commercial reference; check current platform availability and purchase requirements.",
+      "tags": [
+        "genre-reference",
+        "economy-study",
+        "tower-defense"
+      ],
+      "evidenceUrls": [
+        "https://store.steampowered.com/app/960090/",
+        "https://store.steampowered.com/appreviews/960090?json=1&language=all&purchase_type=all&num_per_page=0"
+      ],
+      "successEvidence": {
+        "kind": "Steam player reception snapshot, not sales evidence",
+        "rating": "Overwhelmingly Positive",
+        "positive": 384353,
+        "total": 395497,
+        "checkedAt": "2026-09-25"
+      },
+      "editorialNote": "Study recommendations and economy interpretations are editorial; not claims of a fresh playtest."
+    },
+    {
+      "id": "genre-reference:stardew-valley",
+      "title": "Stardew Valley",
+      "sourceUrl": "https://store.steampowered.com/app/413150/",
+      "summary": "Interlocking daily routines and self-directed goals. Economy study: Daylight, energy, crop cycles and gold compete; relationships reward repeated attention.",
+      "genres": [
+        "life-sim",
+        "farming"
+      ],
+      "studyFocus": [
+        "Interlocking daily routines and self-directed goals.",
+        "Daylight, energy, crop cycles and gold compete; relationships reward repeated attention."
+      ],
+      "creator": {
+        "name": "ConcernedApe"
+      },
+      "lastVerifiedAt": "2026-09-25",
+      "license": "Proprietary; design reference only. No code, art or audio reuse rights granted.",
+      "access": "Commercial reference; check current platform availability and purchase requirements.",
+      "tags": [
+        "genre-reference",
+        "economy-study",
+        "life-sim",
+        "farming"
+      ],
+      "evidenceUrls": [
+        "https://store.steampowered.com/app/413150/",
+        "https://store.steampowered.com/appreviews/413150?json=1&language=all&purchase_type=all&num_per_page=0"
+      ],
+      "successEvidence": {
+        "kind": "Steam player reception snapshot, not sales evidence",
+        "rating": "Overwhelmingly Positive",
+        "positive": 1024442,
+        "total": 1040260,
+        "checkedAt": "2026-09-25"
+      },
+      "editorialNote": "Study recommendations and economy interpretations are editorial; not claims of a fresh playtest."
+    },
+    {
+      "id": "genre-reference:factorio",
+      "title": "Factorio",
+      "sourceUrl": "https://store.steampowered.com/app/427520/",
+      "summary": "Bottlenecks turn expansion into readable engineering puzzles. Economy study: Raw inputs, throughput, power and space limit compound production.",
+      "genres": [
+        "automation",
+        "management"
+      ],
+      "studyFocus": [
+        "Bottlenecks turn expansion into readable engineering puzzles.",
+        "Raw inputs, throughput, power and space limit compound production."
+      ],
+      "creator": {
+        "name": "Wube Software LTD."
+      },
+      "lastVerifiedAt": "2026-09-25",
+      "license": "Proprietary; design reference only. No code, art or audio reuse rights granted.",
+      "access": "Commercial reference; check current platform availability and purchase requirements.",
+      "tags": [
+        "genre-reference",
+        "economy-study",
+        "automation",
+        "management"
+      ],
+      "evidenceUrls": [
+        "https://store.steampowered.com/app/427520/",
+        "https://store.steampowered.com/appreviews/427520?json=1&language=all&purchase_type=all&num_per_page=0"
+      ],
+      "successEvidence": {
+        "kind": "Steam player reception snapshot, not sales evidence",
+        "rating": "Overwhelmingly Positive",
+        "positive": 229205,
+        "total": 235037,
+        "checkedAt": "2026-09-25"
+      },
+      "editorialNote": "Study recommendations and economy interpretations are editorial; not claims of a fresh playtest."
+    },
+    {
+      "id": "genre-reference:terraria",
+      "title": "Terraria",
+      "sourceUrl": "https://store.steampowered.com/app/105600/",
+      "summary": "Exploration feeds crafting that unlocks new exploration. Economy study: Materials, equipment and access gates matter more than a single coin balance.",
+      "genres": [
+        "survival",
+        "sandbox"
+      ],
+      "studyFocus": [
+        "Exploration feeds crafting that unlocks new exploration.",
+        "Materials, equipment and access gates matter more than a single coin balance."
+      ],
+      "creator": {
+        "name": "Re-Logic"
+      },
+      "lastVerifiedAt": "2026-09-25",
+      "license": "Proprietary; design reference only. No code, art or audio reuse rights granted.",
+      "access": "Commercial reference; check current platform availability and purchase requirements.",
+      "tags": [
+        "genre-reference",
+        "economy-study",
+        "survival",
+        "sandbox"
+      ],
+      "evidenceUrls": [
+        "https://store.steampowered.com/app/105600/",
+        "https://store.steampowered.com/appreviews/105600?json=1&language=all&purchase_type=all&num_per_page=0"
+      ],
+      "successEvidence": {
+        "kind": "Steam player reception snapshot, not sales evidence",
+        "rating": "Overwhelmingly Positive",
+        "positive": 1516508,
+        "total": 1557416,
+        "checkedAt": "2026-09-25"
+      },
+      "editorialNote": "Study recommendations and economy interpretations are editorial; not claims of a fresh playtest."
+    },
+    {
+      "id": "genre-reference:hollow-knight",
+      "title": "Hollow Knight",
+      "sourceUrl": "https://store.steampowered.com/app/367520/",
+      "summary": "Ability gates make a connected world readable on return. Economy study: Health, healing energy and recoverable currency create exploration risk.",
+      "genres": [
+        "metroidvania"
+      ],
+      "studyFocus": [
+        "Ability gates make a connected world readable on return.",
+        "Health, healing energy and recoverable currency create exploration risk."
+      ],
+      "creator": {
+        "name": "Team Cherry"
+      },
+      "lastVerifiedAt": "2026-09-25",
+      "license": "Proprietary; design reference only. No code, art or audio reuse rights granted.",
+      "access": "Commercial reference; check current platform availability and purchase requirements.",
+      "tags": [
+        "genre-reference",
+        "economy-study",
+        "metroidvania"
+      ],
+      "evidenceUrls": [
+        "https://store.steampowered.com/app/367520/",
+        "https://store.steampowered.com/appreviews/367520?json=1&language=all&purchase_type=all&num_per_page=0"
+      ],
+      "successEvidence": {
+        "kind": "Steam player reception snapshot, not sales evidence",
+        "rating": "Overwhelmingly Positive",
+        "positive": 545187,
+        "total": 562536,
+        "checkedAt": "2026-09-25"
+      },
+      "editorialNote": "Study recommendations and economy interpretations are editorial; not claims of a fresh playtest."
+    },
+    {
+      "id": "genre-reference:vampire-survivors",
+      "title": "Vampire Survivors",
+      "sourceUrl": "https://store.steampowered.com/app/1794680/",
+      "summary": "Positioning and upgrade drafts compound into crowd-clearing power. Economy study: Experience and health govern the run; gold supports longer-term unlocks.",
+      "genres": [
+        "survivor",
+        "arcade"
+      ],
+      "studyFocus": [
+        "Positioning and upgrade drafts compound into crowd-clearing power.",
+        "Experience and health govern the run; gold supports longer-term unlocks."
+      ],
+      "creator": {
+        "name": "poncle"
+      },
+      "lastVerifiedAt": "2026-09-25",
+      "license": "Proprietary; design reference only. No code, art or audio reuse rights granted.",
+      "access": "Commercial reference; check current platform availability and purchase requirements.",
+      "tags": [
+        "genre-reference",
+        "economy-study",
+        "survivor",
+        "arcade"
+      ],
+      "evidenceUrls": [
+        "https://store.steampowered.com/app/1794680/",
+        "https://store.steampowered.com/appreviews/1794680?json=1&language=all&purchase_type=all&num_per_page=0"
+      ],
+      "successEvidence": {
+        "kind": "Steam player reception snapshot, not sales evidence",
+        "rating": "Overwhelmingly Positive",
+        "positive": 261489,
+        "total": 265981,
+        "checkedAt": "2026-09-25"
+      },
+      "editorialNote": "Study recommendations and economy interpretations are editorial; not claims of a fresh playtest."
+    },
+    {
+      "id": "genre-reference:beat-saber",
+      "title": "Beat Saber",
+      "sourceUrl": "https://store.steampowered.com/app/620980/",
+      "summary": "Timing feedback and readable patterns support mastery. Economy study: Accuracy, combo and health are performance resources; a shop or progression layer can be explored as a separate design choice.",
+      "genres": [
+        "rhythm"
+      ],
+      "studyFocus": [
+        "Timing feedback and readable patterns support mastery.",
+        "Accuracy, combo and health are performance resources; a shop or progression layer can be explored as a separate design choice."
+      ],
+      "creator": {
+        "name": "Beat Games"
+      },
+      "lastVerifiedAt": "2026-09-25",
+      "license": "Proprietary; design reference only. No code, art or audio reuse rights granted.",
+      "access": "Commercial reference; check current platform availability and purchase requirements.",
+      "tags": [
+        "genre-reference",
+        "economy-study",
+        "rhythm"
+      ],
+      "evidenceUrls": [
+        "https://store.steampowered.com/app/620980/",
+        "https://store.steampowered.com/appreviews/620980?json=1&language=all&purchase_type=all&num_per_page=0"
+      ],
+      "successEvidence": {
+        "kind": "Steam player reception snapshot, not sales evidence",
+        "rating": "Overwhelmingly Positive",
+        "positive": 72877,
+        "total": 76324,
+        "checkedAt": "2026-09-25"
+      },
+      "editorialNote": "Study recommendations and economy interpretations are editorial; not claims of a fresh playtest."
+    },
+    {
+      "id": "genre-reference:forza-horizon-5",
+      "title": "Forza Horizon 5",
+      "sourceUrl": "https://store.steampowered.com/app/1551360/",
+      "summary": "Accessible handling and varied short driving goals. Economy study: Credits, cars and upgrades sit above moment-to-moment speed and traction.",
+      "genres": [
+        "racing"
+      ],
+      "studyFocus": [
+        "Accessible handling and varied short driving goals.",
+        "Credits, cars and upgrades sit above moment-to-moment speed and traction."
+      ],
+      "creator": {
+        "name": "Playground Games"
+      },
+      "lastVerifiedAt": "2026-09-25",
+      "license": "Proprietary; design reference only. No code, art or audio reuse rights granted.",
+      "access": "Commercial reference; check current platform availability and purchase requirements.",
+      "tags": [
+        "genre-reference",
+        "economy-study",
+        "racing"
+      ],
+      "evidenceUrls": [
+        "https://store.steampowered.com/app/1551360/",
+        "https://store.steampowered.com/appreviews/1551360?json=1&language=all&purchase_type=all&num_per_page=0"
+      ],
+      "successEvidence": {
+        "kind": "Steam player reception snapshot, not sales evidence",
+        "rating": "Very Positive",
+        "positive": 251401,
+        "total": 281875,
+        "checkedAt": "2026-09-25"
+      },
+      "editorialNote": "Study recommendations and economy interpretations are editorial; not claims of a fresh playtest."
+    },
+    {
+      "id": "genre-reference:rocket-league",
+      "title": "Rocket League\u00ae",
+      "sourceUrl": "https://store.steampowered.com/app/252950/",
+      "summary": "One clear goal creates deep movement and team decisions. Economy study: Boost, positioning and remaining match time form the match economy.",
+      "genres": [
+        "sports"
+      ],
+      "studyFocus": [
+        "One clear goal creates deep movement and team decisions.",
+        "Boost, positioning and remaining match time form the match economy."
+      ],
+      "creator": {
+        "name": "Psyonix LLC"
+      },
+      "lastVerifiedAt": "2026-09-25",
+      "license": "Proprietary; design reference only. No code, art or audio reuse rights granted.",
+      "access": "Free-to-play through current supported platforms; Steam store listing is a historical reference, not a new Steam purchase path.",
+      "tags": [
+        "genre-reference",
+        "economy-study",
+        "sports"
+      ],
+      "evidenceUrls": [
+        "https://store.steampowered.com/app/252950/",
+        "https://store.steampowered.com/appreviews/252950?json=1&language=all&purchase_type=all&num_per_page=0"
+      ],
+      "successEvidence": {
+        "kind": "Steam player reception snapshot, not sales evidence",
+        "rating": "Very Positive",
+        "positive": 508443,
+        "total": 580242,
+        "checkedAt": "2026-09-25"
+      },
+      "editorialNote": "Study recommendations and economy interpretations are editorial; not claims of a fresh playtest."
+    },
+    {
+      "id": "genre-reference:disco-elysium",
+      "title": "Disco Elysium - The Final Cut",
+      "sourceUrl": "https://store.steampowered.com/app/632470/",
+      "summary": "Character capabilities reshape dialogue and investigation. Economy study: Time, money, health and morale constrain choices; knowledge opens options.",
+      "genres": [
+        "narrative"
+      ],
+      "studyFocus": [
+        "Character capabilities reshape dialogue and investigation.",
+        "Time, money, health and morale constrain choices; knowledge opens options."
+      ],
+      "creator": {
+        "name": "ZA/UM"
+      },
+      "lastVerifiedAt": "2026-09-25",
+      "license": "Proprietary; design reference only. No code, art or audio reuse rights granted.",
+      "access": "Commercial reference; check current platform availability and purchase requirements.",
+      "tags": [
+        "genre-reference",
+        "economy-study",
+        "narrative"
+      ],
+      "evidenceUrls": [
+        "https://store.steampowered.com/app/632470/",
+        "https://store.steampowered.com/appreviews/632470?json=1&language=all&purchase_type=all&num_per_page=0"
+      ],
+      "successEvidence": {
+        "kind": "Steam player reception snapshot, not sales evidence",
+        "rating": "Very Positive",
+        "positive": 121623,
+        "total": 131408,
+        "checkedAt": "2026-09-25"
+      },
+      "editorialNote": "Study recommendations and economy interpretations are editorial; not claims of a fresh playtest."
+    },
+    {
+      "id": "genre-reference:overcooked-2",
+      "title": "Overcooked! 2",
+      "sourceUrl": "https://store.steampowered.com/app/728880/",
+      "summary": "Shared workspaces force communication and prioritization. Economy study: Time, counter space, ingredients and orders create a throughput puzzle.",
+      "genres": [
+        "party",
+        "co-op"
+      ],
+      "studyFocus": [
+        "Shared workspaces force communication and prioritization.",
+        "Time, counter space, ingredients and orders create a throughput puzzle."
+      ],
+      "creator": {
+        "name": "Ghost Town Games Ltd., Team17"
+      },
+      "lastVerifiedAt": "2026-09-25",
+      "license": "Proprietary; design reference only. No code, art or audio reuse rights granted.",
+      "access": "Commercial reference; check current platform availability and purchase requirements.",
+      "tags": [
+        "genre-reference",
+        "economy-study",
+        "party",
+        "co-op"
+      ],
+      "evidenceUrls": [
+        "https://store.steampowered.com/app/728880/",
+        "https://store.steampowered.com/appreviews/728880?json=1&language=all&purchase_type=all&num_per_page=0"
+      ],
+      "successEvidence": {
+        "kind": "Steam player reception snapshot, not sales evidence",
+        "rating": "Very Positive",
+        "positive": 76387,
+        "total": 84495,
+        "checkedAt": "2026-09-25"
+      },
+      "editorialNote": "Study recommendations and economy interpretations are editorial; not claims of a fresh playtest."
+    },
+    {
+      "id": "genre-reference:cookie-clicker",
+      "title": "Cookie Clicker",
+      "sourceUrl": "https://store.steampowered.com/app/1454400/",
+      "summary": "Production curves and prestige reset planning. Economy study: Cookies buy compounding production; prestige trades current progress for future speed.",
+      "genres": [
+        "idle"
+      ],
+      "studyFocus": [
+        "Production curves and prestige reset planning.",
+        "Cookies buy compounding production; prestige trades current progress for future speed."
+      ],
+      "creator": {
+        "name": "Orteil, DashNet"
+      },
+      "lastVerifiedAt": "2026-09-25",
+      "license": "Proprietary; design reference only. No code, art or audio reuse rights granted.",
+      "access": "Commercial reference; check current platform availability and purchase requirements.",
+      "tags": [
+        "genre-reference",
+        "economy-study",
+        "idle"
+      ],
+      "evidenceUrls": [
+        "https://store.steampowered.com/app/1454400/",
+        "https://store.steampowered.com/appreviews/1454400?json=1&language=all&purchase_type=all&num_per_page=0"
+      ],
+      "successEvidence": {
+        "kind": "Steam player reception snapshot, not sales evidence",
+        "rating": "Overwhelmingly Positive",
+        "positive": 90073,
+        "total": 93420,
+        "checkedAt": "2026-09-25"
+      },
+      "editorialNote": "Study recommendations and economy interpretations are editorial; not claims of a fresh playtest."
+    },
+    {
+      "id": "genre-reference:balatro",
+      "title": "Balatro",
+      "sourceUrl": "https://store.steampowered.com/app/2379780/",
+      "summary": "Scoring rules make modifier combinations legible and surprising. Economy study: Hands, discards, cash and joker slots constrain a scoring build.",
+      "genres": [
+        "card",
+        "roguelike"
+      ],
+      "studyFocus": [
+        "Scoring rules make modifier combinations legible and surprising.",
+        "Hands, discards, cash and joker slots constrain a scoring build."
+      ],
+      "creator": {
+        "name": "LocalThunk"
+      },
+      "lastVerifiedAt": "2026-09-25",
+      "license": "Proprietary; design reference only. No code, art or audio reuse rights granted.",
+      "access": "Commercial reference; check current platform availability and purchase requirements.",
+      "tags": [
+        "genre-reference",
+        "economy-study",
+        "card",
+        "roguelike"
+      ],
+      "evidenceUrls": [
+        "https://store.steampowered.com/app/2379780/",
+        "https://store.steampowered.com/appreviews/2379780?json=1&language=all&purchase_type=all&num_per_page=0"
+      ],
+      "successEvidence": {
+        "kind": "Steam player reception snapshot, not sales evidence",
+        "rating": "Overwhelmingly Positive",
+        "positive": 194695,
+        "total": 199004,
+        "checkedAt": "2026-09-25"
+      },
+      "editorialNote": "Study recommendations and economy interpretations are editorial; not claims of a fresh playtest."
+    },
+    {
+      "id": "genre-reference:inscryption",
+      "title": "Inscryption",
+      "sourceUrl": "https://store.steampowered.com/app/1092790/",
+      "summary": "Familiar card decisions support mystery and escalating stakes. Economy study: Sacrifices, bones and deck composition interact; atmosphere should not hide essential rules.",
+      "genres": [
+        "horror",
+        "deckbuilder"
+      ],
+      "studyFocus": [
+        "Familiar card decisions support mystery and escalating stakes.",
+        "Sacrifices, bones and deck composition interact; atmosphere should not hide essential rules."
+      ],
+      "creator": {
+        "name": "Daniel Mullins Games"
+      },
+      "lastVerifiedAt": "2026-09-25",
+      "license": "Proprietary; design reference only. No code, art or audio reuse rights granted.",
+      "access": "Commercial reference; check current platform availability and purchase requirements.",
+      "tags": [
+        "genre-reference",
+        "economy-study",
+        "horror",
+        "deckbuilder"
+      ],
+      "evidenceUrls": [
+        "https://store.steampowered.com/app/1092790/",
+        "https://store.steampowered.com/appreviews/1092790?json=1&language=all&purchase_type=all&num_per_page=0"
+      ],
+      "successEvidence": {
+        "kind": "Steam player reception snapshot, not sales evidence",
+        "rating": "Overwhelmingly Positive",
+        "positive": 144022,
+        "total": 148749,
+        "checkedAt": "2026-09-25"
+      },
+      "editorialNote": "Study recommendations and economy interpretations are editorial; not claims of a fresh playtest."
+    },
+    {
+      "id": "genre-reference:street-fighter-6",
+      "title": "Street Fighter\u2122 6",
+      "sourceUrl": "https://store.steampowered.com/app/1364780/",
+      "summary": "Spacing, readable commitment and layered counterplay. Economy study: Health, drive and super gauges create risk windows; neutral positioning is a resource.",
+      "genres": [
+        "fighting"
+      ],
+      "studyFocus": [
+        "Spacing, readable commitment and layered counterplay.",
+        "Health, drive and super gauges create risk windows; neutral positioning is a resource."
+      ],
+      "creator": {
+        "name": "CAPCOM Co., Ltd."
+      },
+      "lastVerifiedAt": "2026-09-25",
+      "license": "Proprietary; design reference only. No code, art or audio reuse rights granted.",
+      "access": "Commercial reference; check current platform availability and purchase requirements.",
+      "tags": [
+        "genre-reference",
+        "economy-study",
+        "fighting"
+      ],
+      "evidenceUrls": [
+        "https://store.steampowered.com/app/1364780/",
+        "https://store.steampowered.com/appreviews/1364780?json=1&language=all&purchase_type=all&num_per_page=0"
+      ],
+      "successEvidence": {
+        "kind": "Steam player reception snapshot, not sales evidence",
+        "rating": "Very Positive",
+        "positive": 65577,
+        "total": 79974,
+        "checkedAt": "2026-09-25"
+      },
+      "editorialNote": "Study recommendations and economy interpretations are editorial; not claims of a fresh playtest."
+    },
+    {
+      "id": "genre-reference:spelunky-2",
+      "title": "Spelunky 2",
+      "sourceUrl": "https://store.steampowered.com/app/418530/",
+      "summary": "System interactions and consistent hazards create replayable stories. Economy study: Health, bombs, ropes and time pressure make detours consequential.",
+      "genres": [
+        "roguelike",
+        "platformer"
+      ],
+      "studyFocus": [
+        "System interactions and consistent hazards create replayable stories.",
+        "Health, bombs, ropes and time pressure make detours consequential."
+      ],
+      "creator": {
+        "name": "Mossmouth, BlitWorks"
+      },
+      "lastVerifiedAt": "2026-09-25",
+      "license": "Proprietary; design reference only. No code, art or audio reuse rights granted.",
+      "access": "Commercial reference; check current platform availability and purchase requirements.",
+      "tags": [
+        "genre-reference",
+        "economy-study",
+        "roguelike",
+        "platformer"
+      ],
+      "evidenceUrls": [
+        "https://store.steampowered.com/app/418530/",
+        "https://store.steampowered.com/appreviews/418530?json=1&language=all&purchase_type=all&num_per_page=0"
+      ],
+      "successEvidence": {
+        "kind": "Steam player reception snapshot, not sales evidence",
+        "rating": "Very Positive",
+        "positive": 20406,
+        "total": 21987,
+        "checkedAt": "2026-09-25"
+      },
+      "editorialNote": "Study recommendations and economy interpretations are editorial; not claims of a fresh playtest."
+    },
+    {
+      "id": "genre-reference:dave-the-diver",
+      "title": "DAVE THE DIVER",
+      "sourceUrl": "https://store.steampowered.com/app/1868140/",
+      "summary": "Two contrasting activities form one supply-and-demand loop. Economy study: Oxygen and carrying capacity limit dives; catch feeds restaurant income and upgrades.",
+      "genres": [
+        "management",
+        "adventure"
+      ],
+      "studyFocus": [
+        "Two contrasting activities form one supply-and-demand loop.",
+        "Oxygen and carrying capacity limit dives; catch feeds restaurant income and upgrades."
+      ],
+      "creator": {
+        "name": "MINTROCKET"
+      },
+      "lastVerifiedAt": "2026-09-25",
+      "license": "Proprietary; design reference only. No code, art or audio reuse rights granted.",
+      "access": "Commercial reference; check current platform availability and purchase requirements.",
+      "tags": [
+        "genre-reference",
+        "economy-study",
+        "management",
+        "adventure"
+      ],
+      "evidenceUrls": [
+        "https://store.steampowered.com/app/1868140/",
+        "https://store.steampowered.com/appreviews/1868140?json=1&language=all&purchase_type=all&num_per_page=0"
+      ],
+      "successEvidence": {
+        "kind": "Steam player reception snapshot, not sales evidence",
+        "rating": "Overwhelmingly Positive",
+        "positive": 157037,
+        "total": 162764,
+        "checkedAt": "2026-09-25"
+      },
+      "editorialNote": "Study recommendations and economy interpretations are editorial; not claims of a fresh playtest."
+    },
+    {
+      "id": "genre-reference:crypt-of-the-necrodancer",
+      "title": "Crypt of the NecroDancer",
+      "sourceUrl": "https://store.steampowered.com/app/247080/",
+      "summary": "Beat timing changes navigation and combat choices. Economy study: Health, gold and tempo interact; the rhythm constraint must remain readable.",
+      "genres": [
+        "rhythm",
+        "roguelike"
+      ],
+      "studyFocus": [
+        "Beat timing changes navigation and combat choices.",
+        "Health, gold and tempo interact; the rhythm constraint must remain readable."
+      ],
+      "creator": {
+        "name": "Brace Yourself Games"
+      },
+      "lastVerifiedAt": "2026-09-25",
+      "license": "Proprietary; design reference only. No code, art or audio reuse rights granted.",
+      "access": "Commercial reference; check current platform availability and purchase requirements.",
+      "tags": [
+        "genre-reference",
+        "economy-study",
+        "rhythm",
+        "roguelike"
+      ],
+      "evidenceUrls": [
+        "https://store.steampowered.com/app/247080/",
+        "https://store.steampowered.com/appreviews/247080?json=1&language=all&purchase_type=all&num_per_page=0"
+      ],
+      "successEvidence": {
+        "kind": "Steam player reception snapshot, not sales evidence",
+        "rating": "Overwhelmingly Positive",
+        "positive": 25323,
+        "total": 26522,
+        "checkedAt": "2026-09-25"
+      },
+      "editorialNote": "Study recommendations and economy interpretations are editorial; not claims of a fresh playtest."
+    },
+    {
+      "id": "genre-reference:mark-of-the-ninja",
+      "title": "Mark of the Ninja: Remastered",
+      "sourceUrl": "https://store.steampowered.com/app/860950/",
+      "summary": "Visibility, noise and route planning make avoidance a meaningful action. Economy study: Information, hiding spaces and consumable tools create controlled risk.",
+      "genres": [
+        "stealth"
+      ],
+      "studyFocus": [
+        "Visibility, noise and route planning make avoidance a meaningful action.",
+        "Information, hiding spaces and consumable tools create controlled risk."
+      ],
+      "creator": {
+        "name": "Klei Entertainment"
+      },
+      "lastVerifiedAt": "2026-09-25",
+      "license": "Proprietary; design reference only. No code, art or audio reuse rights granted.",
+      "access": "Commercial reference; check current platform availability and purchase requirements.",
+      "tags": [
+        "genre-reference",
+        "economy-study",
+        "stealth"
+      ],
+      "evidenceUrls": [
+        "https://store.steampowered.com/app/860950/",
+        "https://store.steampowered.com/appreviews/860950?json=1&language=all&purchase_type=all&num_per_page=0"
+      ],
+      "successEvidence": {
+        "kind": "Steam player reception snapshot, not sales evidence",
+        "rating": "Overwhelmingly Positive",
+        "positive": 6673,
+        "total": 6946,
+        "checkedAt": "2026-09-25"
+      },
+      "editorialNote": "Study recommendations and economy interpretations are editorial; not claims of a fresh playtest."
+    },
+    {
+      "id": "genre-reference:dota-2",
+      "title": "Dota 2",
+      "sourceUrl": "https://store.steampowered.com/app/570/",
+      "summary": "Team roles and map objectives connect individual skill to shared strategy. Economy study: Match gold, experience, cooldowns and vision reset between matches.",
+      "genres": [
+        "moba"
+      ],
+      "studyFocus": [
+        "Team roles and map objectives connect individual skill to shared strategy.",
+        "Match gold, experience, cooldowns and vision reset between matches."
+      ],
+      "creator": {
+        "name": "Valve"
+      },
+      "lastVerifiedAt": "2026-09-25",
+      "license": "Proprietary; design reference only. No code, art or audio reuse rights granted.",
+      "access": "Free-to-play entry; optional purchases or expansions may exist. Verify current official access. Reference only.",
+      "tags": [
+        "genre-reference",
+        "economy-study",
+        "moba"
+      ],
+      "evidenceUrls": [
+        "https://store.steampowered.com/app/570/",
+        "https://store.steampowered.com/appreviews/570?json=1&language=all&purchase_type=all&num_per_page=0"
+      ],
+      "successEvidence": {
+        "kind": "Steam player reception snapshot, not sales evidence",
+        "rating": "Very Positive",
+        "positive": 2241572,
+        "total": 2785566,
+        "checkedAt": "2026-09-25"
+      },
+      "editorialNote": "Study recommendations and economy interpretations are editorial; not claims of a fresh playtest."
+    },
+    {
+      "id": "genre-reference:pubg",
+      "title": "PUBG: BATTLEGROUNDS",
+      "sourceUrl": "https://store.steampowered.com/app/578080/",
+      "summary": "A shrinking safe area forces changing positioning and risk. Economy study: Loot, ammunition, healing and safe terrain are scarce within each match.",
+      "genres": [
+        "battle-royale"
+      ],
+      "studyFocus": [
+        "A shrinking safe area forces changing positioning and risk.",
+        "Loot, ammunition, healing and safe terrain are scarce within each match."
+      ],
+      "creator": {
+        "name": "PUBG Corporation"
+      },
+      "lastVerifiedAt": "2026-09-25",
+      "license": "Proprietary; design reference only. No code, art or audio reuse rights granted.",
+      "access": "Free-to-play entry; optional purchases or expansions may exist. Verify current official access. Reference only.",
+      "tags": [
+        "genre-reference",
+        "economy-study",
+        "battle-royale"
+      ],
+      "evidenceUrls": [
+        "https://store.steampowered.com/app/578080/",
+        "https://store.steampowered.com/appreviews/578080?json=1&language=all&purchase_type=all&num_per_page=0",
+        "https://www.krafton.com/wp-content/uploads/2021/09/KRAFTON_2Q21_IR_DECK_CLSA-Conference_ENG_vSend-1.pdf"
+      ],
+      "successEvidence": {
+        "kind": "Steam player reception snapshot, not sales evidence",
+        "rating": "Mixed",
+        "positive": 1667299,
+        "total": 2780594,
+        "checkedAt": "2026-09-25",
+        "commercialEvidence": "KRAFTON Q2 2021 investor deck reports 75+ million PC/console copies as of March 2021; historical sales, not current players.",
+        "commercialEvidenceUrl": "https://www.krafton.com/wp-content/uploads/2021/09/KRAFTON_2Q21_IR_DECK_CLSA-Conference_ENG_vSend-1.pdf"
+      },
+      "editorialNote": "Study recommendations and economy interpretations are editorial; not claims of a fresh playtest."
+    },
+    {
+      "id": "genre-reference:guild-wars-2",
+      "title": "Guild Wars 2\u00ae",
+      "sourceUrl": "https://store.steampowered.com/app/1284210/",
+      "summary": "Shared events and specialized builds support long-term cooperative goals. Economy study: Account currencies, crafting materials and equipment persist; trading requires live operations and abuse controls.",
+      "genres": [
+        "mmo"
+      ],
+      "studyFocus": [
+        "Shared events and specialized builds support long-term cooperative goals.",
+        "Account currencies, crafting materials and equipment persist; trading requires live operations and abuse controls."
+      ],
+      "creator": {
+        "name": "ArenaNet\u00ae"
+      },
+      "lastVerifiedAt": "2026-09-25",
+      "license": "Proprietary; design reference only. No code, art or audio reuse rights granted.",
+      "access": "Free-to-play entry; optional purchases or expansions may exist. Verify current official access. Reference only.",
+      "tags": [
+        "genre-reference",
+        "economy-study",
+        "mmo"
+      ],
+      "evidenceUrls": [
+        "https://store.steampowered.com/app/1284210/",
+        "https://store.steampowered.com/appreviews/1284210?json=1&language=all&purchase_type=all&num_per_page=0"
+      ],
+      "successEvidence": {
+        "kind": "Steam player reception snapshot, not sales evidence",
+        "rating": "Very Positive",
+        "positive": 26258,
+        "total": 29758,
+        "checkedAt": "2026-09-25"
+      },
+      "editorialNote": "Study recommendations and economy interpretations are editorial; not claims of a fresh playtest."
+    }
+  ]
+}

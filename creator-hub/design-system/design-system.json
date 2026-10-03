@@ -1,0 +1,87 @@
+{
+  "v": 3,
+  "layout": "files",
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-09-24T16:55:00Z"
+  },
+  "title": "Ootle Lobby Design System",
+  "namespace": "OotleLobby",
+  "libraries": [],
+  "sections": {},
+  "groups": [
+    "Logos",
+    "Daily Spark"
+  ],
+  "assetGroups": {
+    "Logos": {
+      "name": "Logos",
+      "tile": "m",
+      "order": [
+        "ootle-jam-mark.svg"
+      ],
+      "files": {
+        "ootle-jam-mark.svg": {
+          "name": "ootle-jam-mark.svg",
+          "blob": "6883e7d53cf164fbede3f23730917f3a",
+          "size": 337,
+          "type": "image/svg+xml"
+        }
+      }
+    },
+    "Daily Spark": {
+      "name": "Daily Spark",
+      "tile": "l",
+      "order": [
+        "vault-charge-hero.svg",
+        "vault-disc-face.svg",
+        "vault-disc-rim.svg",
+        "vault-pointer-lime.svg",
+        "vault-gateway-badge.svg"
+      ],
+      "files": {
+        "vault-disc-face.svg": {
+          "name": "vault-disc-face.svg",
+          "blob": "e79656b528c8784e7630527cd33bf770",
+          "size": 28020,
+          "type": "image/svg+xml"
+        },
+        "vault-disc-rim.svg": {
+          "name": "vault-disc-rim.svg",
+          "blob": "12e2183e88eea31b1ae679aaaa226cfb",
+          "size": 18430,
+          "type": "image/svg+xml"
+        },
+        "vault-pointer-lime.svg": {
+          "name": "vault-pointer-lime.svg",
+          "blob": "4887ba8c683e20d9cd0c16ec77bdc4bc",
+          "size": 1319,
+          "type": "image/svg+xml"
+        },
+        "vault-gateway-badge.svg": {
+          "name": "vault-gateway-badge.svg",
+          "blob": "b5f3308062800fb65207b0df45c2316b",
+          "size": 10236,
+          "type": "image/svg+xml"
+        },
+        "vault-charge-hero.svg": {
+          "name": "vault-charge-hero.svg",
+          "blob": "0b753cf5b74610778c766c308fe0d027",
+          "size": 6938,
+          "type": "image/svg+xml"
+        }
+      }
+    }
+  },
+  "blobs": {},
+  "docs": {
+    "readme": "project/README.md",
+    "sections": []
+  },
+  "lastChange": {
+    "by": "Claude",
+    "at": "2026-09-24T18:56:35Z",
+    "via": "Claude Code",
+    "note": "MediaCard: the animated shader is the fallback cover, preferred over the loot ticket"
+  }
+}

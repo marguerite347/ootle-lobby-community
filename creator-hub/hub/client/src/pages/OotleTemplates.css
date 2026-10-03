@@ -1,0 +1,25 @@
+.ootle-library {padding:28px 0 56px;}
+.ootle-library header {padding:36px 0 28px;max-width:850px;}
+.ootle-library-kicker {font-size:12px;letter-spacing:.14em;color:var(--accent);font-weight:700;}
+.ootle-library h1 {font-size:clamp(36px,5vw,64px);margin:12px 0;}
+.ootle-library header p {font-size:18px;line-height:1.65;color:var(--muted);max-width:700px;}
+.ootle-library-actions,.ootle-library-tabs {display:flex;gap:12px;flex-wrap:wrap;}
+.ootle-library-tabs {padding:16px 0;border-block:1px solid var(--border);}
+.ootle-library-tabs a {padding:10px 16px;border-radius:10px;background:var(--accent-dim);font-weight:600;}
+.ootle-library-search {display:grid;gap:10px;margin:28px 0 16px;font-size:15px;}
+.ootle-library-search input {width:100%;min-height:48px;}
+.ootle-library-note {color:var(--muted);font-size:14px;line-height:1.6;}
+.ootle-library-section {margin-top:36px;scroll-margin-top:210px;}
+.ootle-library-heading {display:flex;align-items:center;gap:14px;margin-bottom:18px;}
+.ootle-library-heading h2 {margin:0;font-size:28px;}
+.ootle-library-heading>span {color:var(--accent);background:var(--accent-dim);border-radius:30px;padding:4px 12px;}
+.ootle-library-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px;}
+.ootle-library-card {display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:24px;border:1px solid var(--border);border-radius:18px;background:linear-gradient(140deg,#231a35,#13111c);color:var(--text);}
+.ootle-library-card:hover {border-color:var(--accent);}
+.ootle-library-card:focus-visible {outline:2px solid var(--accent);outline-offset:3px;}
+.ootle-library-card h3 {font-size:21px;margin:0;}
+.ootle-library-card p {font-size:15px;line-height:1.6;color:var(--muted);margin:0 0 8px;overflow-wrap:anywhere;}
+.ootle-library-card strong {margin-top:auto;color:var(--accent);font-size:14px;}
+.ootle-library-search input {background:#191523;color:var(--text);border:1px solid var(--border-strong);border-radius:12px;padding:14px 16px;font:inherit;}
+.ootle-library-search input:focus-visible {outline:2px solid var(--accent);outline-offset:2px;}
+.ootle-library-search input::placeholder {color:var(--muted);}

@@ -1,0 +1,11 @@
+.contest-counts { display:flex; gap:4px; }
+.contest-count {
+  display:inline-flex; align-items:center; gap:4px;
+  min-height:28px; padding:4px 7px; border:1px solid #ffffff26;
+  border-radius:7px; background:#161322ee; color:#ece5fa;
+  font-size:11px; font-weight:600; font-variant-numeric:tabular-nums;
+  text-decoration:none;
+}
+.contest-count svg { width:13px; height:13px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linejoin:round; }
+.contest-counts a:hover { color:#d7f581; border-color:#d7f581; }
+.contest-counts a:focus-visible { outline:2px solid #d7f581; outline-offset:2px; }

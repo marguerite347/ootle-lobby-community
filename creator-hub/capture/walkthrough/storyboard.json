@@ -1,0 +1,317 @@
+[
+  {
+    "id": "welcome",
+    "title": "Welcome to Ootle Lobby",
+    "path": "/",
+    "narration": "Welcome to Ootle Lobby: a place to discover what people are making, learn how it works, and create something of your own. In this tour, we will explore the whole creator journey, including the features tucked inside expandable panels. Then we will fork a saved project and work with its recipe and history. You are seeing the current development build, with a separate demonstration workspace.",
+    "steps": [
+      [0, "focus", "h1"],
+      [0.3, "scroll", 420],
+      [0.65, "focus", "text:Newly published projects"]
+    ]
+  },
+  {
+    "id": "navigation",
+    "title": "Navigate and search from anywhere",
+    "path": "/",
+    "narration": "The main navigation follows your journey: Discover, Learn, Skills, Create, and Projects. There is also a quick-search panel available from the search button, or Command K on a Mac. Search by a game, template, tool, or skill. The shortcuts underneath take you straight to common destinations. Escape closes this panel, so you can get back to the page without losing your place.",
+    "steps": [
+      [0, "focus", "nav"],
+      [0.2, "click", "button:Search the hub"],
+      [0.4, "fill", "placeholder:Games, templates, tools, skills…", "wallet"],
+      [0.75, "key", "Escape"]
+    ]
+  },
+  {
+    "id": "discover",
+    "title": "Discover: find the right building blocks",
+    "path": "/explore",
+    "narration": "Discover brings published projects and the resource collection together. Use the category buttons to switch between apps, starters, components, assets, and learning material. Then narrow the list by ecosystem or readiness. Here, we are looking for an app. Each card brings its description, creator, and source information together. A recorded webpage, a gameplay capture, and an animated illustration are different kinds of previews, and the labels tell you which you are watching.",
+    "steps": [
+      [0, "scroll", 650],
+      [0.18, "click", "button:Apps"],
+      [
+        0.37,
+        "fill",
+        "placeholder:Try a game mechanic, app, template or creator…",
+        "ShadowTix"
+      ],
+      [0.5, "click", "button:Search"],
+      [0.7, "scroll", 420]
+    ]
+  },
+  {
+    "id": "details",
+    "title": "Open a resource and inspect the details",
+    "path": "/resource/tari-ootle%3Aapp%3Ashadowtix",
+    "narration": "Open a resource to understand what it actually does. Shadow Tix is a community ticketing project. Its profile connects the overview with the live site, documentation, and source. Scroll down for compatibility, attribution, source freshness, and contest information where available. These details help you decide whether to try an app, study its design, or reuse a component. Follow the original source when you need the latest technical instructions.",
+    "steps": [
+      [0, "focus", "h1"],
+      [0.25, "scroll", 550],
+      [0.55, "click", "summary:Sources & freshness"],
+      [0.8, "scroll", 250]
+    ]
+  },
+  {
+    "id": "learn",
+    "title": "Learn: choose a goal and filter the library",
+    "path": "/learn",
+    "narration": "Learn organizes education around what you want to do. Start with understanding Ootle, using templates, combining mechanics, or building a frontend. You can also filter by ecosystem, experience level, and format. Here, choosing PlayCanvas reveals relevant web-game development resources. The cards lead back to their original sources. Use the library to answer a specific question, then return to your project with the next step clear.",
+    "steps": [
+      [0, "focus", "h1"],
+      [0.2, "scroll", 550],
+      [0.4, "select", "label:Ecosystem", "playcanvas"],
+      [0.65, "scroll", 380]
+    ]
+  },
+  {
+    "id": "share-learning",
+    "title": "Share a learning resource",
+    "path": "/learn",
+    "narration": "The library is also a place to contribute. Share a resource opens a standard submission form. Add the original URL, a useful title, and a description that explains what someone will learn or make. The supporting fields help place it in the right category. This is how community recommendations become discoverable learning material. For this tour, we are opening the form without submitting a duplicate resource.",
+    "steps": [
+      [0, "click", "button:Share a resource ↗"],
+      [0.25, "scroll", 330],
+      [0.55, "scroll", 350]
+    ]
+  },
+  {
+    "id": "skills",
+    "title": "Skills: give your agent reusable instructions",
+    "path": "/skills",
+    "narration": "Skills are reusable instructions for people and agents. Search for a capability, or switch between individual skills and complete workflows. Let's open Readable Code. Its detail panel explains how to use the resource, links to its source, and provides setup guidance. Download the bundle, preserve its supporting files, and have your agent read it. The setup prompt is a starting point; downloading a skill does not silently install or execute anything.",
+    "steps": [
+      [0, "focus", "h1"],
+      [0.2, "fill", "label:Search skills", "Readable Code"],
+      [0.38, "click", "button:Explore template →"],
+      [0.65, "scroll", 350],
+      [0.82, "click", "button:Download bundle"]
+    ]
+  },
+  {
+    "id": "profiles",
+    "title": "Creator profiles and publishing standards",
+    "path": "/skills",
+    "narration": "Creators have profiles with their work and attribution. During setup, you choose whether to show your projects and your activity. Both are visible by default. Here we are creating a clearly labeled walkthrough profile. Publishing a skill or workflow then opens a structured form covering purpose, requirements, setup, instructions, verification, and recovery. Free bundles can be downloaded. Paid listings are currently previews while checkout and delivery are still being connected.",
+    "steps": [
+      [0, "click", "button:Set up your creator profile"],
+      [0.15, "profile"],
+      [0.52, "click", "button:Publish a skill or workflow ↗"],
+      [0.72, "scroll", 500]
+    ]
+  },
+  {
+    "id": "native-skills",
+    "title": "Native TariSkills and validation scope",
+    "path": "/skills/native",
+    "narration": "The native TariSkills reference goes deeper into protocol-specific development. Topics carry lifecycle and validation information, so a draft is distinguishable from a locally verified example. Open a guide to read the steps, copy the content, or inspect its source history. Pay attention to the scope: a passing local template test is useful evidence, but it is not the same as a successful deployment or transaction on a live network.",
+    "steps": [
+      [0, "focus", "h1"],
+      [0.28, "goto", "/skills/templates-composability"],
+      [0.52, "scroll", 450],
+      [0.78, "scroll", 400]
+    ]
+  },
+  {
+    "id": "create",
+    "title": "Create: three ways to begin",
+    "path": "/create",
+    "narration": "Create gives you three starting paths. Remix a game when you want an existing foundation. Follow a guided setup when you need a sequence of steps. Compose with Tari when you want to inspect native building blocks. The game library can be filtered by genre and engine, including incremental games and card-based foundations. Assets and video preparation stay close to this workflow, so you can find the pieces and prepare to share them.",
+    "steps": [
+      [0, "focus", "h1"],
+      [0.2, "scroll", 430],
+      [0.4, "click", "button:Follow a guided setup"],
+      [0.65, "click", "button:Compose with Tari"]
+    ]
+  },
+  {
+    "id": "starter-library",
+    "title": "Browse game genres and guided setup",
+    "path": "/create",
+    "narration": "The starter library helps you choose the kind of game you want to make. Switch to cards and deckbuilders to compare available foundations. Open a source to check how it runs and what you can customize. A mod loader, a complete game, and an engine are different starting points. If you prefer step-by-step guidance, the setup paths explain tools, resources, and the work still needed to connect a game to Tari.",
+    "steps": [
+      [0, "scroll", 750],
+      [0.23, "click", "button:Cards & deckbuilders"],
+      [0.5, "scroll", 350],
+      [0.72, "goto", "/create/goal/nocode-2d-game"]
+    ]
+  },
+  {
+    "id": "recipe",
+    "title": "Configure a Tari composition",
+    "path": "/create/recipe/token-rewarded-counter",
+    "narration": "A recipe makes a composition understandable. This counter-game example combines game state with a fungible reward resource. Inspect the components, change the exposed parameters, and read the implementation steps. The status here matters: this is a proposed composition with an adapter still to implement. Saving a configuration records a design; it does not deploy contracts. That distinction lets you explore an idea without mistaking a diagram for a completed integration.",
+    "steps": [
+      [0, "focus", "h1"],
+      [0.3, "click", "button:Show advanced settings"],
+      [0.6, "click", "button:Export build instructions"],
+      [0.8, "scroll", 450]
+    ]
+  },
+  {
+    "id": "assets",
+    "title": "Assets: browse packs, individual files and tools",
+    "path": "/create/assets",
+    "narration": "The asset store includes packs, individual assets, and creation tools. Filter by source to browse collections such as Kenney, Poly Haven, or ambient C G. Search for a particular material or game element. Many entries link to files hosted by the original provider. When you enter this page from a project, you can attach an asset reference to that project's recipe. Attaching a reference does not automatically import it into the game engine.",
+    "steps": [
+      [0, "focus", "h1"],
+      [0.23, "select", "label:Source", "kenney-packs"],
+      [0.48, "scroll", 530],
+      [0.75, "scroll", 350]
+    ]
+  },
+  {
+    "id": "asset-upload",
+    "title": "Upload your own asset and design its listing",
+    "path": "/create/assets",
+    "narration": "You can also share an original file. Open the upload panel, add its title, purpose, creator, and category, then select a supported file. We'll upload a small demonstration sound. The listing can be a free download or a proposed fixed-price offer. These are distinct from a live purchase: the current flow prepares the listing, while payment and delivery integration come later. Attribution and reuse notes stay with the asset.",
+    "steps": [
+      [0, "click", "button:Start an upload"],
+      [0.15, "upload-form"],
+      [0.65, "focus", "label:Offer this asset as"]
+    ]
+  },
+  {
+    "id": "nft",
+    "title": "Expand the NFT and in-game attribute options",
+    "narration": "The NFT toggle reveals a second layer of configuration. Choose an in-game use case, define the collection and supply, and decide who could mint or update it. Attributes describe things such as rarity or progression. Transfer and consumption options support different game designs. We will save this as a free asset with an achievement design. Saving creates a draft and an exportable Ootle plan. It does not mint an NFT or move funds.",
+    "steps": [
+      [0, "check", "label:Prepare an NFT version of this asset"],
+      [0.18, "nft-form"],
+      [0.52, "scroll", 430],
+      [0.78, "click", "button:Upload & save draft"]
+    ]
+  },
+  {
+    "id": "project-start",
+    "title": "Fork a saved project",
+    "path": "/project/$TOUR_PROJECT",
+    "narration": "Now let's start from an existing project. Open it to see its details and saved history. Each saved state has a revision. Choose Fork here on the version you want to build from. We will call our Riff Aurora Garden. The new workspace preserves where it came from, so the original creator and starting revision remain visible. Forking copies the saved configuration; it does not build a playable game.",
+    "steps": [
+      [0, "focus", "h1"],
+      [0.2, "click", "button:Fork here"],
+      [0.36, "fork-form"],
+      [0.76, "click", "button:Create my Riff"]
+    ]
+  },
+  {
+    "id": "workflow",
+    "title": "Edit the component recipe and workflow",
+    "narration": "Inside the project, the creation workflow shows the parts and their roles. Select a node to inspect its purpose, or add a new one for a tool, asset, framework, or Tari component. Here we are adding a note for our sound design. Nodes and connections make the recipe easier to understand and hand off to an agent. They describe the composition; editing this diagram alone does not implement a new engine integration.",
+    "steps": [
+      [0, "project-url"],
+      [0.12, "focus", "text:Creation workflow"],
+      [0.3, "click", "button:Add node"],
+      [0.5, "edit-node"],
+      [0.8, "click", "button:Save state"]
+    ]
+  },
+  {
+    "id": "comfy",
+    "title": "Reveal ComfyUI and agent workflow exports",
+    "narration": "Expand Comfy U I and agent J SON to see the workflow interchange tools. The included S D X L example adds model, prompt, sampling, and output nodes to the diagram. You can export the Comfy workflow or the complete project diagram, and the agent guide explains how to maintain it. Models and rendering are not running inside this editor. Use the exported workflow in your own configured Comfy U I installation.",
+    "steps": [
+      [0, "click", "summary:ComfyUI and agent JSON"],
+      [0.2, "click", "button:Add SDXL example"],
+      [0.48, "focus", "text:Creation workflow"],
+      [0.68, "focus", "summary:ComfyUI and agent JSON"],
+      [0.78, "click", "button:Export ComfyUI API"],
+      [0.9, "click", "button:Save state"]
+    ]
+  },
+  {
+    "id": "history",
+    "title": "Save, compare and preserve your work",
+    "narration": "Saving records the current configuration and workflow in project history. Use Compare saved recipes to choose an earlier version and see what changed. This makes experimentation recoverable and gives collaborators a clear trail. The supporting-resource search can attach references, while notes explain your decisions. When sharing a project, someone else can choose a specific saved revision to remix instead of guessing which version you meant.",
+    "steps": [
+      [0, "history"],
+      [0.4, "focus", "text:Compare saved recipes"],
+      [0.72, "focus", "text:Version history"]
+    ]
+  },
+  {
+    "id": "publish-discover",
+    "title": "Find your release and invite feedback",
+    "path": "/projects?view=published",
+    "narration": "Published games appear in Projects and can be featured in the newly published area on the homepage; until the first games are published, these areas show an empty state. Open a project to play it, inspect its recipe, compare versions, or start another remix. Trending is a discovery signal, not a claim of commercial success. A fresh remix also needs its own genuine gameplay recording. Sharing the local project link works for people who can reach this Hub; public hosting is a separate step.",
+    "steps": [
+      [0, "focus", "h1"],
+      [0.3, "scroll", 420],
+      [0.55, "goto", "/"],
+      [0.78, "focus", "text:Newly published projects"]
+    ]
+  },
+  {
+    "id": "video",
+    "title": "Prepare a branded promotion video",
+    "path": "/create/video/AppSpotlight",
+    "narration": "Capture and promote helps prepare a video around your project. Choose a template, edit its headline and supporting copy, and review the configuration. Show advanced reveals additional options, including campaign and tracking fields where supported. Export build instructions produces the props and render command for the video package. This interface configures the video; it does not record gameplay or post to social platforms. Use actual footage when presenting the game in action.",
+    "steps": [
+      [0, "focus", "h1"],
+      [0.2, "video-form"],
+      [0.4, "click", "button:Show advanced"],
+      [0.62, "scroll", 460],
+      [0.82, "click", "button:Export build instructions"]
+    ]
+  },
+  {
+    "id": "effects",
+    "title": "Try reusable game-feel effects",
+    "path": "/create/ui-kit",
+    "narration": "The game U I kit provides interactive examples you can reuse. Try a success burst, an achievement reveal, or upgrade feedback. These small reactions help a creator or player understand that something happened. Sound is optional, and reduced-motion preferences are supported. Scroll down for progress, standings, and setup instructions. The examples are presentation components: a confetti burst does not itself issue a reward or change a game's economy.",
+    "steps": [
+      [0.1, "click", "button:Try this effect"],
+      [0.32, "click", "button:Upgrade feedback"],
+      [0.48, "click", "button:Try this effect"],
+      [0.7, "scroll", 650]
+    ]
+  },
+  {
+    "id": "challenges",
+    "title": "Join weekly community challenges",
+    "path": "/challenges",
+    "narration": "The challenge board gives creators a shared weekly direction. This edition asks for one satisfying, demonstrable loop. Publish a project, explain what changed, and provide evidence of the contribution. The calendar also shows upcoming themes. Community goals count verified contributions rather than raw clicks. This is a pilot with no funded reward pool or connected payouts, so submitting work is not a promise of payment.",
+    "steps": [
+      [0, "focus", "h1"],
+      [0.28, "focus", "text:Show what you made"],
+      [0.58, "focus", "text:Useful work unlocks shared opportunity."],
+      [0.8, "focus", "text:Coming up"]
+    ]
+  },
+  {
+    "id": "contest",
+    "title": "Expand monthly contest rules and prepare an entry",
+    "path": "/",
+    "narration": "The Council's monthly contest is separate from the weekly challenge. The homepage shows the edition and announced prizes. Expand the details for eligibility, deadlines, and what an entry needs. The preparation panel helps organize your project and social announcement. The official submission happens on the linked community forum. Explore submitted projects to see existing entries and their creators. Always check the linked rules for the current edition before entering.",
+    "steps": [
+      [0, "focus", "text:COUNCIL MONTHLY CONTEST"],
+      [0.2, "click", "summary:Contest details & entry requirements"],
+      [0.5, "click", "summary:Prepare your entry + social announcement ↗"],
+      [0.76, "scroll", 400]
+    ]
+  },
+  {
+    "id": "analytics",
+    "title": "Use insights without confusing signals with outcomes",
+    "path": "/insights",
+    "narration": "Creator Insights currently reports an opt-in learning pilot: tutorial starts, completions, resource opens, and project opens. The page explains how events are collected and what the numbers mean. These are not yet gameplay retention or revenue reports. Discovery scores and creator download standings answer different questions, and their methods are linked. Use the evidence available today, then add per-release gameplay and revenue measurement as those integrations are built.",
+    "steps": [
+      [0, "focus", "h1"],
+      [0.25, "scroll", 350],
+      [0.6, "goto", "/popularity"],
+      [0.8, "scroll", 340]
+    ]
+  },
+  {
+    "id": "sources-finish",
+    "title": "Check freshness, then keep the loop going",
+    "path": "/sources",
+    "narration": "Finally, Sources and freshness shows where the collection comes from and when each source was checked. A curated snapshot is different from a live refresh, and an old record should send you back to its original source. That completes the journey: discover something useful, learn what it needs, compose a project, customize and test it, publish a real release, and share what you learned. Start small, make the loop work, and make it unmistakably yours.",
+    "steps": [
+      [0, "focus", "text:Sources & freshness"],
+      [0.25, "scroll", 430],
+      [0.6, "goto", "/"],
+      [0.8, "focus", "h1"]
+    ]
+  }
+]

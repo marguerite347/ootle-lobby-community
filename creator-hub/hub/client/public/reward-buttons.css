@@ -1,0 +1,83 @@
+/* Shared reward-button foil. CSS compositing, not an additional WebGL renderer. */
+:is(.daily-spark .spark-question-cta,.daily-spark .spark-answers button,.daily-spark .btn,#spin,#continue-super,#decline-super){
+ position:relative;isolation:isolate;overflow:hidden;
+ transition:box-shadow .2s ease,filter .2s ease;
+}
+:is(.daily-spark .spark-question-cta,.daily-spark .spark-answers button,.daily-spark .btn,#spin,#continue-super,#decline-super)::after{
+ content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:3;
+ background:linear-gradient(115deg,transparent 15%,#fff9 26%,transparent 38%),
+ repeating-linear-gradient(125deg,#813bf544 0%,#f3a9ff77 12%,#59f5ff66 24%,#c9eb0044 36%,#ff754255 48%,#813bf544 60%);
+ background-size:280% 100%,260% 240%;background-position:130% 50%,0% 50%;
+ mix-blend-mode:soft-light;opacity:.48;animation:reward-foil-arrive 1800ms ease-out both;
+}
+:is(.daily-spark .spark-question-cta,.daily-spark .spark-answers button,.daily-spark .btn,#spin,#continue-super,#decline-super):is(:hover,:focus-visible):not(:disabled)::after{
+ opacity:.8;animation:reward-foil-hover 1500ms ease-out both;
+}
+:is(.daily-spark .spark-question-cta,.daily-spark .spark-answers button,.daily-spark .btn,#spin):active:not(:disabled){
+ filter:brightness(1.12);box-shadow:inset 0 2px 9px #160b3044,0 0 22px #c9eb0055;
+}
+:is(.daily-spark .spark-question-cta,.daily-spark .spark-answers button,.daily-spark .btn,#spin,#continue-super,#decline-super):disabled::after{display:none}
+@keyframes reward-foil-arrive{from{background-position:130% 50%,0% 50%;opacity:.1}to{background-position:-30% 50%,75% 50%;opacity:.48}}
+@keyframes reward-foil-hover{from{background-position:130% 50%,0% 50%}to{background-position:-30% 50%,100% 50%}}
+@media(prefers-reduced-motion:reduce){
+ :is(.daily-spark button,.embedded button)::after{animation:none!important;opacity:.2}
+}
+:root[data-hub-effects=off] .daily-spark button::after,body.reduced button::after{display:none!important}
+
+/* Primary actions stay discoverable before hover. Answer options stay calmer. */
+:is(.daily-spark .spark-question-cta,.daily-spark .btn,#spin):not(:disabled)::after{
+ opacity:.65;animation:reward-foil-idle 5s ease-in-out infinite alternate;
+}
+:is(.daily-spark .spark-question-cta,.daily-spark .btn,#spin):is(:hover,:focus-visible):not(:disabled)::after{
+ opacity:.9;animation:reward-foil-idle 2s ease-in-out infinite alternate;
+}
+@keyframes reward-foil-idle{
+ 0%{background-position:125% 50%,0% 25%}
+ 50%{background-position:50% 50%,50% 75%}
+ 100%{background-position:-25% 50%,100% 25%}
+}
+@media(prefers-reduced-motion:reduce){
+ :is(.daily-spark .spark-question-cta,.daily-spark .btn,#spin)::after{animation:none!important}
+}
+
+/* Match labelCanvas() in wheel-lab/native.js and the initial reward proof. */
+@font-face{font-family:OotleGameDisplay;src:url('/wheel-lab/poppins-800.woff2') format('woff2');font-style:normal;font-weight:800;font-display:swap}
+.daily-spark.spark-showcase button,.daily-spark.spark-showcase .spark-answers button,body .actions button{
+ font-family:OotleGameDisplay,Poppins,Arial,sans-serif;font-weight:800;
+}
+.daily-spark .spark-answers button{letter-spacing:-.015em}
+
+/* The invitation borrows the crystal core's charged lime/cyan edge energy. */
+@property --spark-edge-angle{syntax:'<angle>';initial-value:0deg;inherits:false}
+.daily-spark.spark-showcase .spark-ready .spark-question-cta{
+ overflow:visible;
+ box-shadow:0 0 7px #c9eb00aa,0 0 24px #c9eb0055,0 0 42px #59f5ff33,inset 0 1px 0 #fff9;
+}
+:is(.daily-spark.spark-showcase .spark-question-cta,#spin)::before{
+ content:'';position:absolute;inset:-3px;border-radius:19px;padding:3px;pointer-events:none;
+ background:conic-gradient(from var(--spark-edge-angle),#c9eb00 0deg,#a6ffd2 60deg,#59f5ff 120deg,#ff3cba 180deg,#f3a9ff 240deg,#f5ffd8 300deg,#c9eb00 360deg);
+ -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+ -webkit-mask-composite:xor;mask-composite:exclude;
+ filter:drop-shadow(0 0 5px #c9eb00);animation:spark-electric-edge 4s linear infinite;
+}
+:is(.daily-spark.spark-showcase .spark-question-cta,#spin):is(:hover,:focus-visible):not(:disabled)::before{filter:drop-shadow(0 0 7px #59f5ffaa)}
+.daily-spark.spark-showcase .spark-question-cta .question-sheen{inset:0;border-radius:inherit;transform:none;background-size:250% 100%}
+.daily-spark.spark-showcase .spark-question-cta .question-sheen[data-animate=true]{animation:reward-foil-idle 2s ease-out both}
+:is(.daily-spark.spark-showcase .spark-question-cta,#spin):disabled::before{display:none}
+.daily-spark.spark-showcase .spark-ready .spark-question-cta:disabled{box-shadow:none}
+@keyframes spark-electric-edge{to{--spark-edge-angle:360deg}}
+@media(prefers-reduced-motion:reduce){:is(.daily-spark.spark-showcase .spark-question-cta,#spin)::before,.daily-spark.spark-showcase .spark-question-cta .question-sheen[data-animate=true]{animation:none!important}}
+:root[data-hub-effects=off] :is(.daily-spark.spark-showcase .spark-question-cta,#spin)::before{display:none}
+:root[data-hub-effects=off] .daily-spark.spark-showcase .spark-ready .spark-question-cta{box-shadow:inset 0 1px 0 #fff9}
+:root[data-hub-effects] .daily-spark.spark-showcase.is-ready-invitation .spark-ready .btn.spark-question-cta{overflow:visible;box-shadow:0 0 7px #c9eb00aa,0 0 24px #c9eb0055,0 0 42px #59f5ff33,inset 0 1px 0 #fff9}
+:root[data-hub-effects=off] .daily-spark.spark-showcase.is-ready-invitation .spark-ready .btn.spark-question-cta,
+:root[data-hub-effects] .daily-spark.spark-showcase.is-ready-invitation .spark-ready .btn.spark-question-cta:disabled{box-shadow:inset 0 1px 0 #fff9}
+/* Keep the electric stroke inside the clip; the box shadow carries light outside. */
+:is(.daily-spark.spark-showcase .spark-question-cta,#spin)::before{inset:0;border-radius:inherit;z-index:4}
+
+/* Both wheel stages reuse #spin, including the large target and raised base. */
+#spin:not(:disabled){box-shadow:0 5px 0 #7c9010,0 0 7px #c9eb00aa,0 0 24px #ff3cba44,0 0 42px #59f5ff33,inset 0 1px 0 #fff9}
+body.reduced #spin::before{display:none}
+body.reduced #spin:not(:disabled){box-shadow:0 5px 0 #7c9010}
+
+body.effects-off :is(#spin,#continue-super,#decline-super)::before,body.effects-off :is(#spin,#continue-super,#decline-super)::after{display:none!important}

@@ -1,0 +1,32 @@
+.guessing-editor { padding: 2rem 0 4rem; }
+.guessing-editor-header { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; justify-content: space-between; }
+.guessing-editor-header > div:first-child { max-width: 42rem; }
+.guessing-editor-header .season-eyebrow { margin-top: 1.5rem; }
+.guessing-editor-header h1 { font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.1; margin: .6rem 0 1rem; }
+.guessing-editor-header h1 em { font-style: normal; color: var(--season-lime); }
+.guessing-editor-header p { color: #c8c3d9; }
+.guessing-editor-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; }
+.guessing-editor-actions .season-button { cursor: pointer; }
+.guessing-save-status { min-height: 2.5rem; padding: 1rem 0; font-size: .875rem; color: #c5b9e5; }
+.guessing-error { padding: 1rem; border: 1px solid #d8a0af; border-radius: .75rem; }
+.guessing-workspace { display: grid; gap: 1.5rem; margin-top: 1rem; align-items: start; }
+.guessing-controls, .guessing-preview { min-width: 0; background: #10122b; border: 1px solid #514566; border-radius: 1rem; overflow: hidden; }
+.guessing-tabs { display: flex; border-bottom: 1px solid #514566; }
+.guessing-tabs button { min-height: 3.25rem; flex: 1; border: 0; color: #c9bfdc; background: transparent; font: inherit; cursor: pointer; }
+.guessing-tabs button[aria-selected=true] { background: #29233e; color: var(--season-lime); box-shadow: inset 0 -2px var(--season-lime); }
+.guessing-controls [role=tabpanel] { padding: 1.25rem; }
+.guessing-controls fieldset { padding: 0; margin: 0; border: 0; }
+.guessing-controls label { display: grid; gap: .5rem; margin-bottom: 1.1rem; font-size: .875rem; font-weight: 600; }
+.guessing-controls input, .guessing-controls textarea, .guessing-controls select { min-width: 0; width: 100%; background: #090c20; border: 1px solid #655276; border-radius: .6rem; padding: .7rem; color: #f5f0ff; font: inherit; font-size: 1rem; }
+.guessing-controls textarea { resize: vertical; }
+.guessing-controls .guessing-color { grid-template-columns: 1fr 4rem; align-items: center; }
+.guessing-controls input[type=color] { height: 2.75rem; padding: .25rem; cursor: pointer; }
+.guessing-controls .guessing-source { min-height: 27rem; white-space: pre; overflow: auto; font: .8rem/1.6 ui-monospace, monospace; tab-size: 4; }
+.guessing-note { color: #b7adc9; font-size: .875rem; line-height: 1.6; margin: 1rem 0 0; }
+.guessing-preview-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.25rem; }
+.guessing-preview-header h2 { font-size: 1.5rem; margin: .35rem 0 0; }
+.guessing-preview iframe { display: block; border: 0; width: 100%; height: 39rem; background: #090c23; }
+.guessing-preview > .guessing-note { padding: 0 1.25rem 1.25rem; }
+.guessing-editor :is(button, input, textarea, select, a):focus-visible { outline: 2px solid var(--season-lime); outline-offset: 3px; }
+.guessing-editor button:disabled { opacity: .55; cursor: default; }
+@media (min-width: 900px) { .guessing-workspace { grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); } }

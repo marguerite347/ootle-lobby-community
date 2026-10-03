@@ -1,0 +1,44 @@
+{
+  "id": "developer-setup",
+  "title": "Developer setup",
+  "description": "Build the pinned Tari template example and diagnose native toolchain mismatches.",
+  "version": "0.1.0",
+  "lifecycle": "verified",
+  "networks": [
+    "local-engine"
+  ],
+  "tools": {
+    "tari_template_lib": "0.32.0",
+    "tari_template_test_tooling": "0.41.0"
+  },
+  "sourceCheckedAt": "2026-09-19",
+  "technicalValidatedAt": "2026-09-19",
+  "validation": {
+    "scope": "Locked local Rust/WASM setup on the recorded macOS host; no wallet setup validated.",
+    "evidence": [
+      "evidence/validation.json"
+    ]
+  },
+  "sources": [
+    {
+      "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/crates/template_lib/Cargo.toml",
+      "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+      "path": "crates/template_lib/Cargo.toml"
+    },
+    {
+      "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/crates/template_test_tooling/Cargo.toml",
+      "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+      "path": "crates/template_test_tooling/Cargo.toml"
+    },
+    {
+      "url": "https://github.com/tari-project/tari-ootle/blob/ebca9f42a1570261a6434ee79ea4cd52f3d61fcc/docs/developer-docs/src/content/docs/guides/cli.mdx",
+      "revision": "ebca9f42a1570261a6434ee79ea4cd52f3d61fcc",
+      "path": "docs/developer-docs/src/content/docs/guides/cli.mdx"
+    }
+  ],
+  "related": [],
+  "issue": "https://github.com/marguerite347/tari-growth/issues/64",
+  "remaining": [
+    "Live-network behavior is not validated."
+  ]
+}

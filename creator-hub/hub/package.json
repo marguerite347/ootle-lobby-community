@@ -1,0 +1,32 @@
+{
+  "name": "tari-creator-hub",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Ootle Lobby: a community-led discovery and composable game-making layer over Ootle and open-source game/creative ecosystems.",
+  "workspaces": [
+    "client"
+  ],
+  "scripts": {
+    "ingest": "node server/ingest.mjs",
+    "previews": "node scripts/build-previews.mjs",
+    "prebuild": "node scripts/restore-wheel-runtime.mjs --if-missing",
+    "build": "npm --workspace client run build",
+    "start": "node server/index.mjs",
+    "dev:server": "node --watch server/index.mjs",
+    "dev:client": "npm --workspace client run dev",
+    "test": "node --test \"server/test/*.test.mjs\" && npm --workspace client run test",
+    "contract:examples": "node scripts/contract-examples.mjs",
+    "media:import": "node scripts/import-preview-library.mjs",
+    "media:check": "node scripts/check-media.mjs",
+    "start:persistent": "node scripts/start-persistent.mjs",
+    "setup:check": "node scripts/check-setup.mjs",
+    "restore:wheel": "node scripts/restore-wheel-runtime.mjs"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
