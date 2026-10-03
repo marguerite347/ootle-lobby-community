@@ -186,14 +186,15 @@ export function dailyTriviaRouter(root,options) {
    req.triviaPlayer=id;req.triviaState=state;next();
   }catch(error){next(error);}
  });
- const send=(req,res,state)=>res.json({...state,canReset:isLocalRequest(req)});
+ const canReset=req=>options?.allowReset===true || isLocalRequest(req);
+ const send=(req,res,state)=>res.json({...state,canReset:canReset(req)});
  router.get('/',(req,res)=>send(req,res,req.triviaState));
  for(const action of ['start','answer','spin','super','decline'])router.post('/'+action,async (req,res,next)=>{
   try{send(req,res,await game.mutate(req.triviaPlayer,action,req.body||{}));}catch(error){next(error);}
  });
  router.post('/reset',async (req,res,next)=>{
   try{
-   if(!isLocalRequest(req))return res.status(403).json({error:'Reset is only available on the machine running this Hub.'});
+   if(!canReset(req))return res.status(403).json({error:'Reset is only available on the machine running this Hub.'});
    send(req,res,await game.reset(req.triviaPlayer));
   }catch(error){next(error);}
  });

@@ -82,7 +82,10 @@ export function createApp() {
   }));
   const triviaGame=process.env.TRIVIA_STORAGE==='blob'
     ? createBlobDailyTrivia({token:process.env.BLOB_READ_WRITE_TOKEN}) : undefined;
-  api.use('/daily-trivia',dailyTriviaRouter(runtimeDir,{publicOrigin:process.env.PUBLIC_SITE_URL,game:triviaGame}));
+  api.use('/daily-trivia',dailyTriviaRouter(runtimeDir,{
+    publicOrigin:process.env.PUBLIC_SITE_URL,game:triviaGame,
+    allowReset:process.env.TRIVIA_ALLOW_RESET==='1',
+  }));
   api.use('/growth', createGrowthRouter());
   api.get('/journal', (req,res)=>res.json({articles:publishedArticles(),origin:publicOrigin,calendar:journalEditions().filter(item=>item.phase!=='archive').slice(0,2)}));
   api.get('/launch', (req,res)=>res.json(launch));

@@ -54,6 +54,13 @@ an error instead of falling back to temporary files or pretending to save.
 Keep the store connected across deployments; never commit its token or player
 records. Clearing the browser's identity cookie still creates a new player.
 
+During shared testing the adapter sets `TRIVIA_ALLOW_RESET=1`. This exposes
+**Reset trivia ↻** after a round starts and permits the existing reset endpoint
+for that browser's identity. Reset clears today's round and deducts only its
+awarded Sparks, preserving earlier days and other players. Origin and required
+header checks still apply. Remove the adapter flag when daily attempts go live;
+without it, reset remains restricted to local development.
+
 Selection receipt: the live post-deployment reload exposed Vercel instance-local
 file loss after the origin fix. Reuse the existing trivia state machine with a
 storage adapter, plus the hosting provider's private Blob store, consistent

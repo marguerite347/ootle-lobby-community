@@ -69,6 +69,40 @@ test('storage failure does not return an award or replace the durable round',asy
  assert.equal((await game.get(id)).phase,'playing');
 });
 
+test('cloud reset removes only today’s winnings, survives reload and allows another round',async()=>{
+ const session=fixture(),game=session.instance(),id=await game.register();
+ const yesterday=await game.mutate(id,'start');session.advance(1500);
+ await game.mutate(id,'answer',session.answer(yesterday.round));
+ session.advance(86400000);
+ const today=await game.mutate(id,'start');session.advance(1500);
+ await game.mutate(id,'answer',session.answer(today.round));
+ assert.equal((await game.mutate(id,'spin',{roundId:today.round.id})).balance,900);
+ const reset=await session.instance().reset(id);
+ assert.equal(reset.balance,150);assert.equal(reset.phase,'ready');assert.equal(reset.round,null);
+ assert.deepEqual(await session.instance().get(id),reset);
+ assert.equal((await game.reset(id)).balance,150);
+ assert.notEqual((await game.mutate(id,'start')).round.id,today.round.id);
+});
+
+test('shared testing reset is opt-in and still rejects foreign origins and missing trivia headers',async t=>{
+ for(const allowReset of [false,true]) {
+  const session=fixture(),app=express();app.use(express.json());
+  app.use('/api/daily-trivia',dailyTriviaRouter('',{publicOrigin:'https://lobby.example',game:session.instance(),allowReset}));
+  const server=app.listen(0,'127.0.0.1');await new Promise(resolve=>server.once('listening',resolve));t.after(()=>server.close());
+  const url=`http://127.0.0.1:${server.address().port}/api/daily-trivia`;
+  const initial=await fetch(url,{headers:{host:'lobby.example','x-forwarded-for':'203.0.113.9'}});
+  const cookie=initial.headers.get('set-cookie').split(';')[0];
+  assert.equal((await initial.json()).canReset,allowReset);
+  const post=(action,headers={})=>fetch(url+'/'+action,{method:'POST',headers:{host:'lobby.example','x-forwarded-for':'203.0.113.9',cookie,origin:'https://lobby.example','x-hub-trivia':'1','content-type':'application/json',...headers},body:'{}'});
+  assert.equal((await post('start')).status,200);
+  assert.equal((await post('reset',{origin:'https://unrelated.example'})).status,403);
+  assert.equal((await post('reset',{'x-hub-trivia':''})).status,403);
+  const reset=await post('reset');
+  assert.equal(reset.status,allowReset?200:403);
+  if(allowReset){assert.equal((await reset.json()).phase,'ready');assert.equal((await post('start')).status,200);}
+ }
+});
+
 test('a pending conditional write conflict retries against the latest record',async()=>{
  const session=fixture(),game=session.instance(),id=await game.register();
  let attempts=0;

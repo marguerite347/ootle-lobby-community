@@ -613,7 +613,7 @@ export default function DailyTrivia({presentation, onRestart, sectionId = 'daily
     {(game?.phase === 'ready' || playtestEnding === 'rest') && <SparkJourney />}
     {!presentation && <div className="spark-build-notes"><Link className="spark-riff-link" to="/create/trivia" state={{triviaSeed: riffFromGame(game)}}>Riff this Game</Link></div>}
     {cinematic && <div className="reward-playtest-bar"><button type="button" className="spark-test-again" title="Playtest: simulated AI Sparks. No daily attempt used." aria-description="Restarts the playtest with simulated AI Sparks; no daily attempt is used." onClick={onRestart || (() => window.location.reload())}>{presentation ? 'Play again ↻' : 'Test again ↻'}</button></div>}
-    {!cinematic && game?.canReset && game.phase !== 'ready' && <div className="reward-playtest-bar"><button type="button" className="spark-test-again" disabled={busy} title="Testing: clears today’s round and removes its AI Sparks. Only shown on this machine." onClick={resetRound}>Reset trivia ↻</button></div>}
+    {!cinematic && game?.canReset && game.phase !== 'ready' && <div className="reward-playtest-bar"><button type="button" className="spark-test-again" disabled={busy} title="Testing: clears your current round and removes the AI Sparks it earned so you can play again." onClick={resetRound}>Reset trivia ↻</button></div>}
   </section>;
 }
 
