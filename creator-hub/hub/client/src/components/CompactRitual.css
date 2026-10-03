@@ -1,0 +1,58 @@
+/* Compact the current ritual, preserving the crystal and native 3D wheel. */
+.daily-spark.spark-showcase.compact-ritual {
+  gap: 6px;
+  padding: 14px 20px;
+  margin-bottom: 16px;
+}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-product-name {font-size: 24px; line-height: 1.2}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-product-name small {font-size: 14px; margin-top: 3px}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-product-title > span:last-child {font-size: 10px; padding: 5px 8px}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-intro h1 {font-size: clamp(28px, 3vw, 38px); margin: 0; max-width: none}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual.is-active-round .spark-product-name small {display: none}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual.is-active-round .spark-loot-drop {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-game {max-width: 560px}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual.is-wheel-round .spark-game {max-width: 920px}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-question,
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .playtest-wheel {padding-top: 0}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .playtest-wheel iframe {display: block; width: 100%}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-timer {margin-top: 6px}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-timer strong {font-size: 30px}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-time-track {margin: 6px 0 12px}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-question h2 {font-size: clamp(19px, 2.4vw, 24px); margin-bottom: 12px}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-answers {gap: 7px}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-answers button {min-height: 48px; padding: 10px 12px}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-hint {margin: 10px 0 0}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-ready .spark-play {min-height: 52px}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-journey {margin: 0; padding: 6px 0}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-journey li {padding: 6px}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-drop-timer {margin: 0; padding: 3px 8px; align-self: center}
+#daily-spark.compact-ritual .spark-reset {font-size: 12px}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-drop-timer strong {font-size: 16px}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-rules > summary {padding: 6px; font-size: 12px}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-footer {margin-top: 0; padding-top: 6px; gap: 8px}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-finished {padding: 8px 0}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-finished .spark-reactor {height: 160px}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-unlock-inline,
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-unlock-inline .unlock-stage {min-height: 0}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-unlock-inline .unlock-stage {padding: 12px}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-unlock-inline .unlock-object {height: 180px}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-unlock-inline .unlock-payoff h2 {font-size: 30px}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-unlock-inline .unlock-amount {font-size: 68px}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-unlock-inline .unlock-next {margin-top: 10px}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-unlock-inline .unlock-payoff p,
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-unlock-inline .unlock-next p {font-size: 16px}
+@media (max-width: 600px) {
+  .daily-spark.spark-showcase.compact-ritual {padding: 10px 12px; gap: 5px}
+  .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-product-name {font-size: 21px}
+  .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-intro h1 {font-size: 28px}
+  .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-product-title {gap: 8px}
+  .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-ready .spark-reactor {height: 130px}
+}
+
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-footer {align-items: center; justify-content: center}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-footer .spark-rules {order: 0; width: auto; margin: 0}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-footer .spark-drop-timer {order: 0}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-footer .spark-rules[open] {flex-basis: 100%; max-width: 600px}

@@ -15,7 +15,7 @@ export default function PlaytestWheel({game, play, onSettled, onCue, warming = f
   current.current = {game, play, onSettled, onCue};
   const [error, setError] = useState('');
   const [ready, setReady] = useState(false);
-  const [height, setHeight] = useState(780);
+  const [height, setHeight] = useState(460);
   useEffect(() => {
     const media = window.matchMedia('(prefers-reduced-motion: reduce)');
     const sendMotion = () => frame.current?.contentWindow?.postMessage({type: 'ootle-wheel-motion', reduced: media.matches || document.documentElement.dataset.hubEffects === 'off'}, location.origin);
@@ -28,7 +28,7 @@ export default function PlaytestWheel({game, play, onSettled, onCue, warming = f
     const readyTimeout = setTimeout(() => setError('The wheel could not load. Use Test again to retry.'), 20000);
     const receive = async (event: MessageEvent) => {
       if (event.origin !== location.origin || event.source !== frame.current?.contentWindow) return;
-      if (event.data?.type === 'ootle-wheel-size' && Number.isFinite(event.data.height)) {setHeight(Math.max(500, Math.min(1400, event.data.height))); return;}
+      if (event.data?.type === 'ootle-wheel-size' && Number.isFinite(event.data.height)) {setHeight(Math.max(320, Math.min(1400, event.data.height))); return;}
       if (event.data?.type === 'ootle-wheel-ready') {clearTimeout(readyTimeout); setReady(true); setError(''); sendMotion(); return;}
       if (event.data?.type === 'ootle-wheel-unavailable') {clearTimeout(readyTimeout); setError('The wheel could not load. Use Test again to retry.'); return;}
       if (event.data?.type === 'ootle-wheel-audio' && ['clack', 'unlock', 'spin', 'superSpin', 'bank'].includes(event.data.cue)) {current.current.onCue(event.data.cue); return;}
