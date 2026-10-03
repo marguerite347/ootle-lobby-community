@@ -35,6 +35,14 @@ Open http://localhost:4180. Node.js 22 is the deployment version. Runtime writes
 
 ### Deployment status
 
+Daily Ritual POST requests validate the browser Origin against `PUBLIC_SITE_URL`
+when configured, falling back to the direct request origin for local development.
+The Vercel adapter pins this to `https://ootle-lobby-preview.vercel.app` because
+TLS terminates upstream of Express. Keep it aligned with the public URL when
+moving the deployment. Forwarded headers do not authorize a different origin,
+and the `X-Hub-Trivia` header remains required. The website check includes the
+proxy regression test through start, answer, spin, settlement and reload.
+
 The full source was built and deployed to the live Vercel site on October 3, 2026. Content edits merged to `main` publish automatically through GitHub Pages and are consumed by the live site. Website code changes currently require a maintainer Vercel deployment. Automatic Git deployments are pending the Vercel account owner connecting GitHub under **Account Settings → Authentication → Login Connections**; the CLI reported that this login connection is required. After connecting the account, link this repository to the existing `ootle-lobby-preview` Vercel project with production branch `main`.
 
 ## Suggest an edit

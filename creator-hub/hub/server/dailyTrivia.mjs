@@ -159,6 +159,8 @@ export function isLocalRequest(req) {
 
 export function dailyTriviaRouter(root,options) {
  const router=express.Router(),game=createDailyTrivia(root,options),requests=new Map();
+ // TLS can terminate before Express. Use deployment configuration, never untrusted forwarded headers.
+ const publicOrigin=options?.publicOrigin ? new URL(options.publicOrigin).origin : null;
  router.use((req,res,next)=>{
   res.set('Cache-Control','no-store');
   const time=Date.now(),ip=req.ip;
@@ -166,7 +168,8 @@ export function dailyTriviaRouter(root,options) {
   if(!requests.has(ip) && requests.size>=4096)return res.status(503).json({error:'Please try again shortly.'});
   const bucket=requests.get(ip)||{start:time,count:0};bucket.count++;requests.set(ip,bucket);
   if(bucket.count>90)return res.status(429).json({error:'Too many requests. Try again in a minute.'});
-  if(req.method==='POST' && (req.get('X-Hub-Trivia')!=='1' || (req.get('Origin') && req.get('Origin')!==`${req.protocol}://${req.get('host')}`)))return res.status(403).json({error:'Use the daily challenge on this Hub.'});
+  const expectedOrigin=publicOrigin || `${req.protocol}://${req.get('host')}`;
+  if(req.method==='POST' && (req.get('X-Hub-Trivia')!=='1' || (req.get('Origin') && req.get('Origin')!==expectedOrigin)))return res.status(403).json({error:'Use the daily challenge on this Hub.'});
   next();
  });
  router.use((req,res,next)=>{

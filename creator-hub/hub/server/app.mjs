@@ -79,7 +79,7 @@ export function createApp() {
     if (!localCalendarRequest(req)) return res.status(403).json({error: 'Marketing calendar requires local access.'});
     res.json(await marketingCalendar());
   }));
-  api.use('/daily-trivia',dailyTriviaRouter(runtimeDir));
+  api.use('/daily-trivia',dailyTriviaRouter(runtimeDir,{publicOrigin:process.env.PUBLIC_SITE_URL}));
   api.use('/growth', createGrowthRouter());
   api.get('/journal', (req,res)=>res.json({articles:publishedArticles(),origin:publicOrigin,calendar:journalEditions().filter(item=>item.phase!=='archive').slice(0,2)}));
   api.get('/launch', (req,res)=>res.json(launch));

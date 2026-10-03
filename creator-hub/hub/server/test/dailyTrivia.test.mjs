@@ -70,12 +70,52 @@ test('HTTP sessions reject cross-origin writes and duplicate parallel answers cr
  assert.match(session.headers.get('set-cookie'),/HttpOnly/);assert.equal(session.headers.get('cache-control'),'no-store');
  const post=(action,body={},headers={})=>fetch(url+'/'+action,{method:'POST',headers:{cookie,'content-type':'application/json','x-hub-trivia':'1',...headers},body:JSON.stringify(body)});
  assert.equal((await post('start',{}, {origin:'https://unrelated.example'})).status,403);
+ assert.equal((await post('start',{}, {origin:'https://unrelated.example','x-forwarded-host':'unrelated.example','x-forwarded-proto':'https'})).status,403);
  const start=await (await post('start')).json();f.advance(1000);
  const results=await Promise.all([post('answer',f.answer(start.round)),post('answer',f.answer(start.round))]);
  for(const response of results)assert.equal((await response.json()).balance,150);
  const spins=await Promise.all([post('spin',{roundId:start.round.id}),post('spin',{roundId:start.round.id})]);
  for(const response of spins)assert.equal((await response.json()).balance,750);
 });
+test('configured HTTPS origin supports a full round behind an HTTP proxy without trusting forwarded origins',async t=>{
+ const session=fixture(t),app=express();
+ const publicOrigin='https://ootle-lobby-preview.vercel.app';
+ app.use(express.json());
+ app.use('/api/daily-trivia',dailyTriviaRouter(session.root,{...session.options,publicOrigin}));
+ const server=app.listen(0,'127.0.0.1');
+ await new Promise(resolve=>server.once('listening',resolve));
+ t.after(()=>server.close());
+ const url=`http://127.0.0.1:${server.address().port}/api/daily-trivia`;
+ const initial=await fetch(url);
+ const cookie=initial.headers.get('set-cookie').split(';')[0];
+ const post=(action,body={},headers={})=>fetch(url+'/'+action,{
+  method:'POST',headers:{cookie,'content-type':'application/json','x-hub-trivia':'1',origin:publicOrigin,...headers},
+  body:JSON.stringify(body),
+ });
+ for(const origin of ['https://unrelated.example','null','http://ootle-lobby-preview.vercel.app','https://ootle-lobby-preview.vercel.app.evil.example']){
+  assert.equal((await post('start',{}, {origin,'x-forwarded-host':'unrelated.example','x-forwarded-proto':'https'})).status,403);
+ }
+ assert.equal((await post('start',{}, {'x-hub-trivia':''})).status,403);
+ const started=await post('start');
+ assert.equal(started.status,200);
+ const round=(await started.json()).round;
+ session.advance(1500);
+ const won=await post('answer',session.answer(round));
+ assert.equal(won.status,200);
+ assert.equal((await won.json()).balance,150);
+ const spun=await post('spin',{roundId:round.id});
+ assert.equal(spun.status,200);
+ assert.equal((await spun.json()).balance,750);
+ const completed=await post('decline',{roundId:round.id});
+ assert.equal(completed.status,200);
+ assert.equal((await completed.json()).phase,'complete');
+ const restored=await fetch(url,{headers:{cookie}});
+ const state=await restored.json();
+ assert.equal(state.phase,'complete');
+ assert.equal(state.balance,750);
+ assert.equal((await (await post('spin',{roundId:round.id})).json()).balance,750);
+});
+
 test('reset clears today and takes back only today’s winnings',t=>{
  const f=fixture(t),first=f.start();f.advance(1000);f.game.mutate(f.id,'answer',f.answer(first.round));
  f.advance(86400000);const second=f.start();f.advance(1000);f.game.mutate(f.id,'answer',f.answer(second.round));
