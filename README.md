@@ -33,6 +33,10 @@ Open http://localhost:4180. Node.js 22 is the deployment version. Runtime writes
 
 `npm run build:site` produces the static site in `public/` and the serverless dependency package in `server-content/`. Both are generated and ignored. The cloud deployment builds from these sources; no connection to a contributor’s computer is needed.
 
+### Deployment status
+
+The full source was built and deployed to the live Vercel site on October 3, 2026. Content edits merged to `main` publish automatically through GitHub Pages and are consumed by the live site. Website code changes currently require a maintainer Vercel deployment. Automatic Git deployments are pending the Vercel account owner connecting GitHub under **Account Settings → Authentication → Login Connections**; the CLI reported that this login connection is required. After connecting the account, link this repository to the existing `ootle-lobby-preview` Vercel project with production branch `main`.
+
 ## Suggest an edit
 
 1. Sign into GitHub and choose a project below, or use **Suggest an edit** on its live card.
