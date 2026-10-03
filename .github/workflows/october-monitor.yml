@@ -2,7 +2,7 @@ name: Monitor October submissions
 on:
   workflow_dispatch:
   schedule:
-    - cron: '17 */6 * * *'
+    - cron: '17 9 * * *' # Once daily at 09:17 UTC
 permissions:
   contents: read
 concurrency:
