@@ -3,7 +3,7 @@ body.embedded main {max-width: 800px; padding: 0 4px 6px}
 body.embedded .experience,
 body.embedded.super-ready .experience,
 body.embedded.won .experience {
-  grid-template-rows: 320px minmax(90px, auto) auto auto auto;
+  grid-template-rows: 320px minmax(90px, auto) auto;
   row-gap: 4px;
 }
 body.embedded .experience > .reward-rays {height: 100%}
@@ -15,34 +15,30 @@ body.embedded.won .result {height: auto; min-height: 0; gap: 4px}
 body.embedded #phase,
 body.embedded.super-ready #phase {font-size: 12px}
 body.embedded #detail,
-body.embedded.super-ready #detail,
-body.embedded #super-offer {font-size: 14px; line-height: 1.35}
+body.embedded.super-ready #detail {font-size: 14px; line-height: 1.35}
 body.embedded.super-ready #reward {font-size: clamp(32px, 7vw, 44px)}
 body.embedded.won #phase {font-size: 26px}
 body.embedded.won #reward {font-size: 64px}
 body.embedded #win-unit {font-size: 16px}
 body.embedded .actions {min-height: 62px}
 body.embedded #spin {min-height: 54px; padding: 12px 18px; font-size: 19px}
-body.embedded #super-odds li {font-size: 12px; padding: 4px 2px}
-body.embedded #super-odds b {font-size: 18px}
+/* Keep the spin stage focused on its result and primary action. */
+body.embedded #super-offer,
 body.embedded.awaiting-first-spin #super-offer,
-body.embedded.won .actions,
-body.embedded.won #super-offer,
-body.embedded.won #super-odds {display: none}
+body.embedded #super-odds,
+body.embedded.won .actions {display: none}
 @media (min-width: 700px) {
   body.embedded .experience,
   body.embedded.super-ready .experience,
   body.embedded.won .experience {
     grid-template-columns: minmax(330px, 1fr) minmax(280px, 1fr);
-    grid-template-rows: 1fr minmax(100px, auto) 58px auto 1fr;
+    grid-template-rows: 1fr minmax(100px, auto) 58px 1fr;
     column-gap: 8px;
     height: 360px;
   }
-  body.embedded #stage {grid-column: 1; grid-row: 1 / 6; height: 360px; --wheel-radius: 123px}
+  body.embedded #stage {grid-column: 1; grid-row: 1 / 5; height: 360px; --wheel-radius: 123px}
   body.embedded #reward-coins {mask-image: radial-gradient(circle 123px at 50% 50%, transparent 99%, black 100%)}
   body.embedded .result {grid-column: 2; grid-row: 2}
   body.embedded .actions {grid-column: 2; grid-row: 3}
-  body.embedded #super-offer {grid-column: 2; grid-row: 4}
-  body.embedded #super-odds {grid-column: 2; grid-row: 5; align-self: start}
-  body.embedded.won .result {grid-row: 1 / 6; align-self: center}
+  body.embedded.won .result {grid-row: 1 / 5; align-self: center}
 }
