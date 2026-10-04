@@ -26,5 +26,5 @@ export default function ExternalCommunityProjects({items}:{items:ExternalProject
 export function OfficialProjects(){
  const {items,failed}=useExternalCommunityProjects(true);
  const official=items.filter(p=>p.section==='official');
- return <section className="section" id="official-projects" aria-labelledby="official-projects-title"><div className="section-head"><div><h2 id="official-projects-title">Official Tari Projects</h2><p>Apps and developer tools published by official Tari accounts.</p></div></div>{official.length>0?<ExternalCommunityProjects items={official}/>:failed?<p role="status">Official projects couldn’t load. Refresh to retry.</p>:null}</section>;
+ return <section className="section" id="official-projects" aria-labelledby="official-projects-title"><div className="section-head project-section-heading"><div><h2 id="official-projects-title">Official Tari Projects</h2><p>Apps and developer tools published by official Tari accounts.</p></div></div>{official.length>0?<ExternalCommunityProjects items={official}/>:failed?<p role="status">Official projects couldn’t load. Refresh to retry.</p>:null}</section>;
 }
