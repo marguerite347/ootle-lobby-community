@@ -1,3 +1,4 @@
+// INTEGRATION_GAP[LOBBY-CHAT] (build-required): see docs/DEVELOPMENT_GAPS.md#lobby-chat.
 // Community chat: one public text room for players and creators.
 // Persistence mirrors collectiveChat.mjs (atomic JSON write under runtimeDir).
 // Rules, limits and moderation flow: creator-hub/agents/chat/community-chat-rules.md

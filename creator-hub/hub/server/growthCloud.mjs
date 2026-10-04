@@ -1,3 +1,4 @@
+// INTEGRATION_GAP[CFG-DATA] (configuration-required): see docs/DEVELOPMENT_GAPS.md#cfg-data.
 // Credentials never leave the server. Local previews opt in explicitly.
 const CLOUD_URL = 'https://api.github.com/repos/marguerite347/tari-growth/contents/metrics/cloud.json?ref=growth-data';
 const CACHE_MS = 5 * 60 * 1000;

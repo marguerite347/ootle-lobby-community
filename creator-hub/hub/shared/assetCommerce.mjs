@@ -1,3 +1,4 @@
+// INTEGRATION_GAP[LOBBY-WALLET] (design-only): see docs/DEVELOPMENT_GAPS.md#lobby-wallet.
 // Authoring schema only. Never serialize this as a signed Ootle transaction.
 export const MARKET_TEMPLATE = {id:'tari-market',name:'Tari Market P2P marketplace',repository:'https://github.com/johnnysessa/Tari-Market',revision:'30a989d5c68d0dc30da8078ef0ae6e35946388dd',path:'contracts/xtm_market/src/lib.rs',methods:['create_listing','buy','cancel_listing'],adaptation:'Replace physical shipping/receipt settlement with digital delivery and entitlement recovery.'};
 export const NFT_TEMPLATE = {id:'ootle-basic-nft',name:'Ootle native NFT resource example',repository:'https://github.com/tari-project/tari-ootle',revision:'8034f10b412ade1703cb830b8f08dee494c6b0c1',path:'crates/engine/tests/templates/nft/basic_nft/src/lib.rs',adaptation:'Replace permissive test access rules with the selected mint and game-data authorities before deployment.'};

@@ -1,3 +1,4 @@
+// INTEGRATION_GAP[LOBBY-RECIPE-ADAPTER] (design-only): see docs/DEVELOPMENT_GAPS.md#lobby-recipe-adapter.
 // CH-025 — versioned composable recipes.
 //
 // A recipe joins real Tari template components (pinned to exact source revisions) with

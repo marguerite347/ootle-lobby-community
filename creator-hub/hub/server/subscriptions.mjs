@@ -1,3 +1,4 @@
+// INTEGRATION_GAP[CFG-SUBSCRIPTIONS] (configuration-required): see docs/DEVELOPMENT_GAPS.md#cfg-subscriptions.
 import {createHash} from 'node:crypto';
 const topics = ['launch','events','journal'];
 export function subscriptionConfiguration(env=process.env) {

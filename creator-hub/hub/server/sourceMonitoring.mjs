@@ -1,3 +1,4 @@
+// INTEGRATION_GAP[CFG-DATA] (configuration-required): see docs/DEVELOPMENT_GAPS.md#cfg-data.
 import {listDefinitions} from './connectors/gameResourceLists.mjs';
 import {readFileSync,mkdirSync,writeFileSync,renameSync} from 'node:fs';
 import path from 'node:path';

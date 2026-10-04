@@ -1,3 +1,4 @@
+// INTEGRATION_GAP[LOBBY-REWARDS] (local-only): see docs/DEVELOPMENT_GAPS.md#lobby-rewards.
 import type {Game} from './DailyTrivia';
 
 const questions = [

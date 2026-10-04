@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// INTEGRATION_GAP[OPS-OCTOBER-CHANNEL] (build-required): see docs/DEVELOPMENT_GAPS.md#ops-october-channel.
 import {mkdirSync,writeFileSync,renameSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {resolve,dirname} from 'node:path';

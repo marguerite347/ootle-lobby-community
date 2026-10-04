@@ -1,3 +1,4 @@
+// INTEGRATION_GAP[LOBBY-VIDEO] (design-only): see docs/DEVELOPMENT_GAPS.md#lobby-video.
 import {setupPlanForExport, type SetupPlanV1} from '../../shared/setupPlan.mjs';
 import type {Workflow} from '../../shared/workflow.mjs';
 import {setupHandoff, type SetupStatus} from './components/toolkitSetup';

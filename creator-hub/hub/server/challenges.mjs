@@ -1,3 +1,4 @@
+// INTEGRATION_GAP[RETIRED-HOSTING] (retired): see docs/DEVELOPMENT_GAPS.md#retired-hosting.
 import {readFileSync,writeFileSync,mkdirSync,renameSync} from 'node:fs';
 import path from 'node:path';
 import {runtimeDir} from './paths.mjs';

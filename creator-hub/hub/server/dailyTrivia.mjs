@@ -1,3 +1,4 @@
+// INTEGRATION_GAP[LOBBY-REWARDS] (local-only): see docs/DEVELOPMENT_GAPS.md#lobby-rewards.
 import {CREATOR_QUESTIONS} from './creatorQuestions.mjs';
 import {randomInt,randomUUID} from 'node:crypto';
 import {existsSync,mkdirSync,readFileSync,renameSync,writeFileSync} from 'node:fs';

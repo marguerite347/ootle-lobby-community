@@ -1,3 +1,5 @@
+// INTEGRATION_GAP[LOBBY-CHECKOUT] (build-required): see docs/DEVELOPMENT_GAPS.md#lobby-checkout.
+// INTEGRATION_GAP[LOBBY-COMMUNITY-WRITES] (build-required): see docs/DEVELOPMENT_GAPS.md#lobby-community-writes.
 import {learningCategories,categoriesFor} from './learningCategories.mjs';
 import {createLearningLoop} from './learningLoop.mjs';
 import {contestCreators} from './contestEntries.mjs';

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// INTEGRATION_GAP[LOBBY-VIDEO] (design-only): see docs/DEVELOPMENT_GAPS.md#lobby-video.
 // Capture short clips of live community app webpages for Ootle Lobby previews.
 //
 // Drives an installed Chrome via playwright-core (no bundled browser download),

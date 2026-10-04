@@ -11,7 +11,7 @@ The public home for this work is [ootle-lobby-community](https://github.com/marg
 - Built-with elements are evidence-backed `technologies` labels linking to source files, ideally pinned commits. Do not imply that every template in a project's dependency tree was authored by its creator.
 - A Lobby card links to the creator's project; it does not copy or relicense their entire application. Their repository remains the source of truth.
 
-In-app project creation/Riff saves are a separate preview runtime, not an automatic contribution to this public GitHub repository or the contest gallery. Those endpoints are not a durable GitHub publication workflow and should not be treated as a private vault. Share your project from your own public repository, submit on the official forum, and propose a listing here.
+Workbench files/drafts are browser-local and exported Riffs are not automatic contributions to this public repository. Legacy hosted project-write endpoints are retired. The new Workbench publication API requires a backend; see [Workbench](WORKBENCH.md) and [development gaps](DEVELOPMENT_GAPS.md). Until connected, share from your own public repository, submit on the official forum, and propose a listing here.
 
 ## Monitor October
 
@@ -26,6 +26,8 @@ npm run monitor:october -- --output work/october-monitor.json
 This is read-only. It fetches every post in the topic stream, including additional batches, ignores the announcement and moderator actions, and emits candidate post links, creator handles, timestamps and content hashes. It classifies posts as new, updated or already listed. It does not copy raw post text/payment addresses, run submitted code, capture arbitrary submitted URLs, judge eligibility or publish cards. An incomplete/error response fails without replacing a previous report.
 
 The **Monitor October submissions** GitHub Actions workflow runs once daily at **09:17 UTC** and can be started manually from Actions **after this workflow is merged to the default branch**. Each successful run creates a 30-day `october-submission-report` artifact and a run summary. Failed runs remain visible in Actions. It has read-only repository permission; it does not send messages, create issues or merge changes. The scheduled workflow is not active merely because this file exists in a PR.
+
+Dedicated-channel delivery is not implemented by this workflow; it is tracked as [OPS-OCTOBER-CHANNEL](DEVELOPMENT_GAPS.md#ops-october-channel).
 
 An editor reviews the report, opens each new/edited public post and checks the project's source. A candidate is not automatically a valid contest submission. Follow official rules; Council decisions are separate. Security Bug Hunt reports use the official private reporting channels and must not be copied into this public registry.
 

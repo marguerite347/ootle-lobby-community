@@ -1,0 +1,14 @@
+import {describe,it,expect} from 'vitest';
+import {filePathError,newWorkspace,parseStore,validateFiles,publicationError,publishedEntries,type PublicationDraft} from './model';
+const draft:PublicationDraft={title:'My project',summary:'A native Tari community experiment.',creator:'Builder',repoUrl:'https://github.com/example/project',demoUrl:'',destination:'community',forumUrl:''};
+describe('workspace boundaries',()=>{
+ it('keeps independent template copies and preserves edited files on restore',()=>{const a=newWorkspace(),b=newWorkspace();a.files['src/lib.rs']='// my edit';expect(b.files['src/lib.rs']).toContain('#[template]');const store=parseStore(JSON.stringify({version:1,activeId:a.id,workspaces:[a,b]}));expect(store.workspaces[0].files['src/lib.rs']).toBe('// my edit');expect(store.workspaces[0].files['Cargo.lock']).toContain('tari_template_lib');});
+ it('rejects path traversal, credential and generated paths',()=>{for(const path of ['../escape','/absolute','src/../../escape','.env','target/debug/app','node_modules/pkg/a','__proto__','keys/private.pem'])expect(filePathError(path)).not.toBe('');expect(filePathError('src/my_template.rs')).toBe('');});
+ it('rejects binary and over-limit workspaces',()=>{expect(validateFiles({'image.png':'\0binary'})).toContain('text');expect(validateFiles({'huge.rs':'a'.repeat(300001)})).toContain('large');expect(()=>parseStore('{"version":1,"activeId":"a","workspaces":[{"id":"a","name":"oops","files":null}]}')).toThrow();});
+});
+describe('publication separation',()=>{
+ it('accepts community work independently of a contest window',()=>expect(publicationError(draft,Date.parse('2027-01-01'))).toBe(''));
+ it('requires an official entry post and open window for October',()=>{const october={...draft,destination:'october-2026' as const};const now=Date.parse('2026-10-04');expect(publicationError(october,now)).toContain('official');expect(publicationError({...october,forumUrl:'https://community.tari.com/t/396/7'},now)).toBe('');expect(publicationError({...october,forumUrl:'https://example.com/t/396/7'},now)).toContain('official');expect(publicationError({...october,forumUrl:'https://community.tari.com/t/396/7'},Date.parse('2026-11-01'))).toContain('closed');});
+ it('never shows drafts, pending review or cross-destination records in a gallery',()=>{const item={...draft,id:'p',status:'published',publishedAt:'2026-10-04T12:00:00Z'};expect(publishedEntries([item,{...item,id:'draft',status:'draft'},{...item,id:'pending',status:'pending-review'},{...item,id:'oct',destination:'october-2026'},item],'community')).toEqual([item]);});
+ it('discards unsafe URLs and malformed backend records without throwing',()=>{const item={...draft,id:'p',status:'published',publishedAt:'2026-10-04T12:00:00Z'};expect(publishedEntries([null,{}, {...item,repoUrl:'javascript:alert(1)'},{...item,repoUrl:undefined},{...item,demoUrl:'data:text/html,x'}],'community')).toEqual([]);});
+});

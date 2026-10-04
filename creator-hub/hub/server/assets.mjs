@@ -1,3 +1,4 @@
+// INTEGRATION_GAP[RETIRED-HOSTING] (retired): see docs/DEVELOPMENT_GAPS.md#retired-hosting.
 import {validateCommerceDraft,newCommerceDraft,MARKET_TEMPLATE,NFT_TEMPLATE} from '../shared/assetCommerce.mjs';
 // Community uploads are runtime data. Never extract or execute submitted files.
 import {mkdirSync,writeFileSync,readFileSync,readdirSync,existsSync,renameSync,rmSync} from 'node:fs';

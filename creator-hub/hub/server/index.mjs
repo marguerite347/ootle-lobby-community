@@ -1,3 +1,4 @@
+// INTEGRATION_GAP[WB-AUTH] (build-required): see docs/DEVELOPMENT_GAPS.md#wb-auth.
 import {startSourceMonitoring} from './sourceMonitoring.mjs';
 import { startSourceRefresh } from './sourceRefresh.mjs';
 import {createInspirationLobby} from './inspirationLobby.mjs';
