@@ -1,3 +1,4 @@
+import PublicationGallery from '../workbench/PublicationGallery';
 import {useEffect} from 'react';
 import {useLocation} from 'react-router-dom';
 import ConcoctionArt from '../components/ConcoctionArt';
@@ -24,6 +25,7 @@ export default function Home() {
     <CreatorResources/>
     <OctoberSubmissions/>
     <div id="community-entries"><ContestProjects/></div>
+    <PublicationGallery destination="community" section/>
     <section className="season-community" id="creator-community">
       <div className="season-community-copy">
         <h2>Brew something<br/>brilliant.</h2>

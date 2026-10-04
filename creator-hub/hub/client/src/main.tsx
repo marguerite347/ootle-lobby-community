@@ -10,6 +10,7 @@ const Challenges = lazy(() => import('./pages/Challenges'));
 const WeeklyChallenges = lazy(() => import('./pages/WeeklyChallenges'));
 const Insights = lazy(() => import('./pages/Insights'));
 const Growth = lazy(() => import('./pages/Growth'));
+const Workbench = lazy(() => import('./pages/Workbench'));
 const GameKit = lazy(() => import('./pages/GameKit'));
 const SkillMarket = lazy(() => import('./pages/SkillMarket'));
 const Assets = lazy(() => import('./pages/Assets'));
@@ -45,6 +46,7 @@ const VideoPicker = lazy(() => import('./pages/MakeVideo').then(module => ({defa
 function LegacyRoute(){const l=useLocation();return <Navigate replace to={legacyDestination(l.pathname,l.search)}/>;}
 
 const router = createBrowserRouter([
+  {path: '/workbench', element: <Suspense fallback={<p>Opening Workbench…</p>}><Workbench /></Suspense>},
   {path: '/play/trivia-riff', element: <Suspense fallback={<p>Opening your Riff…</p>}><TriviaRiffPlayer /></Suspense>},
   {
     path: '/',
@@ -57,7 +59,6 @@ const router = createBrowserRouter([
       { path: 'challenges/weekly', element: <WeeklyChallenges /> },
       { path: 'challenges/:contest', element: <Challenges /> },
       { path: 'huggingface', element: <HuggingFace /> },
-      { path: 'workbench', element: <Navigate to="/" replace/> },
       { path: 'ootle-templates', element: <OotleTemplates /> },
       { path: 'explore', element: <Catalog mode="explore" /> },
       { path: 'build', element: <LegacyRoute /> },

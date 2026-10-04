@@ -1,3 +1,4 @@
+// INTEGRATION_GAP[LOBBY-WALLET] (design-only): see docs/DEVELOPMENT_GAPS.md#lobby-wallet.
 import {useState} from 'react';
 import './WalletPreview.css';
 

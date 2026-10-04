@@ -1,3 +1,4 @@
+// INTEGRATION_GAP[LOBBY-REWARDS] (local-only): see docs/DEVELOPMENT_GAPS.md#lobby-rewards.
 import {createContext, useContext, useEffect, useLayoutEffect, useRef, useState, type ReactNode, type RefObject} from 'react';
 import {queueWalletAward} from './walletAward';
 import {chargeWallet} from './chargeWallet';

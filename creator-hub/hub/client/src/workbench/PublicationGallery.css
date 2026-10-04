@@ -1,0 +1,13 @@
+.community-projects {scroll-margin-top:240px;}
+.community-project-empty {display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px;border:1px solid var(--season-line);border-radius:14px;background:#ffffff04;}
+.community-project-empty p {margin:4px 0 0;color:var(--season-muted);font-size:13px;}
+.community-project-empty .season-button {flex-shrink:0;padding:12px 16px;font-size:12px;}
+.published-project-grid {display:grid;grid-template-columns:1fr;gap:16px;margin:16px 0;}
+.published-project-card {padding:20px;border:1px solid var(--season-line);border-radius:14px;background:#ffffff05;min-width:0;overflow-wrap:anywhere;}
+.published-project-card>span {font-size:10px;color:var(--season-lime);letter-spacing:.1em;}
+.published-project-card h3 {margin:10px 0;font-size:20px;}
+.published-project-card p {color:var(--season-muted);font-size:14px;}
+.published-project-card>div {display:flex;gap:16px;margin-top:16px;}
+.published-project-card a {color:var(--season-lavender);font-size:13px;}
+@media(min-width:700px) {.published-project-grid {grid-template-columns:repeat(3,minmax(0,1fr));}}
+@media(max-width:599px) {.community-project-empty {align-items:flex-start;flex-direction:column;}}

@@ -1,3 +1,4 @@
+// INTEGRATION_GAP[LOBBY-COMMUNITY-WRITES] (build-required): see docs/DEVELOPMENT_GAPS.md#lobby-community-writes.
 import {readFileSync, writeFileSync, mkdirSync, renameSync} from 'node:fs';
 import path from 'node:path';
 import {randomUUID, createHash} from 'node:crypto';

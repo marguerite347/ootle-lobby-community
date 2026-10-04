@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "node --test test/*.test.mjs",
-    "validate": "node scripts/build.mjs --check",
+    "validate": "node scripts/build.mjs --check && node scripts/check-development-gaps.mjs",
     "build": "node scripts/build.mjs",
     "setup:site": "npm --prefix creator-hub/hub ci",
     "build:site": "npm --prefix creator-hub/hub ci && npm --prefix creator-hub/hub run build && node scripts/prepare-site.mjs",

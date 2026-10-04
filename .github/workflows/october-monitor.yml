@@ -1,3 +1,4 @@
+# INTEGRATION_GAP[OPS-OCTOBER-CHANNEL] (build-required): see docs/DEVELOPMENT_GAPS.md#ops-october-channel.
 name: Monitor October submissions
 on:
   workflow_dispatch:

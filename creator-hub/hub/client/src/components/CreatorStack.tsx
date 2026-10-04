@@ -4,7 +4,7 @@ import QuickSearch from './QuickSearch';
 
 const groups = [
   {title: 'Create', links: [
-    {to: '/#creator-toolkit', label: 'Start building', hint: 'Choose a template or guide'},
+    {to: '/workbench', label: 'Workbench', hint: 'Build with Tari templates'},
     {to: '/#creator-community', label: 'Connect & share', hint: 'Meet builders and post your work'},
     {to: '/challenges', label: 'Challenges', hint: 'Join the next challenge'},
   ]},

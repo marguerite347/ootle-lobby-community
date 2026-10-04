@@ -1,3 +1,4 @@
+// INTEGRATION_GAP[CFG-DATA] (configuration-required): see docs/DEVELOPMENT_GAPS.md#cfg-data.
 import { fileURLToPath } from 'node:url';
 import {createContestMetrics} from './contestMetrics.mjs';
 import {createCommunityContent} from './communityContent.mjs';

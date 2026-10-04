@@ -1,3 +1,4 @@
+// INTEGRATION_GAP[LOBBY-REWARDS] (local-only): see docs/DEVELOPMENT_GAPS.md#lobby-rewards.
 import {get, put, BlobError, BlobPreconditionFailedError} from '@vercel/blob';
 import {setTimeout as pause} from 'node:timers/promises';
 import {createDailyTrivia} from './dailyTrivia.mjs';

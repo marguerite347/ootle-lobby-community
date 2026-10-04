@@ -1,3 +1,4 @@
+// INTEGRATION_GAP[RETIRED-HOSTING] (retired): see docs/DEVELOPMENT_GAPS.md#retired-hosting.
 import {issueManagementKey,authorizeManagement,forgetManagementKey,rewriteHistory} from './projectManagement.mjs';
 import {reconcileReview, validateReview} from '../shared/productionReview.mjs';
 import { validateWorkflow, seedWorkflow } from '../shared/workflow.mjs';

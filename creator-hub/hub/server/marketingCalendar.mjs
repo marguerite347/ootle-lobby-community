@@ -1,3 +1,4 @@
+// INTEGRATION_GAP[CFG-DATA] (configuration-required): see docs/DEVELOPMENT_GAPS.md#cfg-data.
 import {readSnapshot} from './trelloSnapshot.mjs';
 const BOARD_ID = 'LrJpBwNN';
 const BOARD_URL = `https://trello.com/b/${BOARD_ID}/tari-l2-launch-marketing-calendar`;

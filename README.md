@@ -10,7 +10,13 @@ This repository contains the public website source and the community content sho
 
 [Contributor workflow](docs/COMMUNITY_WORKFLOW.md) · [Shared video library](docs/MEDIA_LIBRARY.md) · [October listings](content/submissions/october-2026/) · [Capture tool](creator-hub/capture/README.md) · [Editable video templates](creator-hub/video-templates/README.md)
 
-The October gallery reads reviewed entries from the shared content feed. Add one JSON file per new project; accepted listings are shared with every visitor. The read-only monitor detects new and edited official forum posts. Its scheduled GitHub workflow begins after merge to `main`; it never publishes entries automatically. In-app Riff/project saves are separate preview runtime state, not public GitHub submissions.
+The October gallery reads reviewed entries from the shared content feed. Add one JSON file per new project; accepted listings are shared with every visitor. The read-only monitor detects new and edited official forum posts. Its scheduled GitHub workflow begins after merge to `main`; it never publishes entries automatically. Browser-local Workbench drafts and exported Riffs are not public GitHub submissions. Legacy hosted project writes are retired.
+
+## Developer integration handoff
+
+[Development gaps for Lobby and Workbench](docs/DEVELOPMENT_GAPS.md) · [Workbench API contract](docs/WORKBENCH.md)
+
+Missing services, configuration requirements, browser-only features and retired routes are explicitly flagged in source with `INTEGRATION_GAP[ID]`. The register includes implementation requirements and completion checks; validation catches stale markers. The Workbench editor/import/export are usable locally; compile, test, deploy, AI and public publishing need backend services before they are enabled.
 
 ## Website source
 

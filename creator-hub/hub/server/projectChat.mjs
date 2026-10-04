@@ -1,3 +1,4 @@
+// INTEGRATION_GAP[LOBBY-CHAT] (build-required): see docs/DEVELOPMENT_GAPS.md#lobby-chat.
 import path from 'node:path';
 import {runtimeDir} from './paths.mjs';
 import {createCommunityChat, cleanName, cleanBody} from './communityChat.mjs';

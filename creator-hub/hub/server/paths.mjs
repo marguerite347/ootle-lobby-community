@@ -1,3 +1,4 @@
+// INTEGRATION_GAP[LOBBY-CHAT] (build-required): see docs/DEVELOPMENT_GAPS.md#lobby-chat.
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 

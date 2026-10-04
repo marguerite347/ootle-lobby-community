@@ -1,3 +1,4 @@
+// INTEGRATION_GAP[LOBBY-AGENT-BRIDGE] (build-required): see docs/DEVELOPMENT_GAPS.md#lobby-agent-bridge.
 /** In-product copy from Moderator rules §9 — Slice 1 honesty. */
 export const ROOM_ID = 'lobby-collective' as const;
 

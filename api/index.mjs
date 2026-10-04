@@ -1,3 +1,5 @@
+// INTEGRATION_GAP[OPS-DEPLOY] (configuration-required): see docs/DEVELOPMENT_GAPS.md#ops-deploy.
+// INTEGRATION_GAP[WB-AUTH] (build-required): see docs/DEVELOPMENT_GAPS.md#wb-auth.
 import express from 'express';
 import {join} from 'node:path';
 import {tmpdir} from 'node:os';

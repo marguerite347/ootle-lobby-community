@@ -1,3 +1,5 @@
+// INTEGRATION_GAP[LOBBY-AGENT-BRIDGE] (build-required): see docs/DEVELOPMENT_GAPS.md#lobby-agent-bridge.
+// INTEGRATION_GAP[LOBBY-CHAT] (build-required): see docs/DEVELOPMENT_GAPS.md#lobby-chat.
 // Collective chat Slice 1: one shared project room with persisted work updates.
 // Mirrors engagement.mjs atomic JSON persistence under runtimeDir.
 

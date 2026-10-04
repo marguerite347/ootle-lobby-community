@@ -1,0 +1,271 @@
+{
+  "reviewedAt": "2026-10-04",
+  "scope": "Public Lobby and Workbench source; configuration state is not proof of a live service.",
+  "items": [
+    {
+      "id": "WB-RUNNER",
+      "status": "build-required",
+      "surface": "POST /api/workbench/runs; GET /api/workbench/runs/:id",
+      "current": "No compiler or test runner is supplied; requests return 501.",
+      "required": "Implement isolated Rust/WASM compile and test jobs, pinned toolchains, logs, durable job/artifact storage, timeouts and cancellation. Bind jobs/artifacts to authenticated owners.",
+      "verify": "Compile the bundled Counter, run its tests, reject invalid code, deny another owner access, survive restart and enforce execution limits.",
+      "files": [
+        "creator-hub/hub/server/workbench.mjs",
+        "creator-hub/hub/client/src/workbench/api.ts"
+      ]
+    },
+    {
+      "id": "WB-DEPLOY",
+      "status": "build-required",
+      "surface": "POST /api/workbench/deployments",
+      "current": "No wallet or testnet transaction service is supplied.",
+      "required": "Connect Tari wallet approval and testnet submission/confirmation. Verify artifact ownership and source digest; never accept a client claim of compilation or collect private keys.",
+      "verify": "Approve, reject and fail a testnet deployment; verify a real confirmed template independently.",
+      "files": [
+        "creator-hub/hub/server/workbench.mjs",
+        "creator-hub/hub/client/src/workbench/api.ts"
+      ]
+    },
+    {
+      "id": "WB-AI",
+      "status": "build-required",
+      "surface": "POST /api/workbench/assistant",
+      "current": "No AI provider is supplied; Send stays disabled.",
+      "required": "Provide authenticated, rate-limited model service, provider disclosure, source-sharing controls, request limits and cancellation.",
+      "verify": "Explicit Send reaches the configured provider; failure does not fabricate a reply; source is not uploaded on page load.",
+      "files": [
+        "creator-hub/hub/server/workbench.mjs",
+        "creator-hub/hub/client/src/workbench/api.ts"
+      ]
+    },
+    {
+      "id": "WB-PUBLISH",
+      "status": "build-required",
+      "surface": "POST /api/workbench/publications",
+      "current": "Form, local draft and ZIP export work; publishing returns 501.",
+      "required": "Build authenticated ownership, server validation, durable submissions, idempotency and moderation. Validate October official entries/window; community items must have no contest membership. Add review/update/withdrawal policy.",
+      "verify": "Retry creates one submission; pending review is not public; rejected input and unauthorized changes fail; approved destination remains exclusive.",
+      "files": [
+        "creator-hub/hub/server/workbench.mjs",
+        "creator-hub/hub/client/src/workbench/PublishPanel.tsx",
+        "creator-hub/hub/client/src/workbench/model.ts"
+      ]
+    },
+    {
+      "id": "WB-FEED",
+      "status": "build-required",
+      "surface": "GET /api/workbench/publications; Community Projects and October galleries",
+      "current": "Disconnected feed returns an empty list. Existing reviewed October content still works.",
+      "required": "Provide approved durable public records, public-safe projection, stable IDs and pagination when needed. Wire approved publication writes to this same source.",
+      "verify": "A published item appears for a second visitor after restart in exactly its selected gallery; drafts/private files never appear.",
+      "files": [
+        "creator-hub/hub/server/workbench.mjs",
+        "creator-hub/hub/client/src/workbench/PublicationGallery.tsx",
+        "creator-hub/hub/client/src/components/OctoberSubmissions.tsx"
+      ]
+    },
+    {
+      "id": "WB-AUTH",
+      "status": "build-required",
+      "surface": "Workbench service injection and capabilities",
+      "current": "Both production and local entry points construct the Lobby without Workbench services. No Workbench account/session backend exists.",
+      "required": "Implement session/auth, ownership, origin/CSRF checks, quotas and rate limits; inject services in both entry points. Advertise only integrations that are usable, including job polling.",
+      "verify": "Disconnected mode stays fail-closed; configured services pass owner/CSRF/limit tests through the actual public entry point.",
+      "files": [
+        "creator-hub/hub/server/inspirationLobby.mjs",
+        "creator-hub/hub/server/workbench.mjs",
+        "creator-hub/hub/server/index.mjs",
+        "api/index.mjs"
+      ]
+    },
+    {
+      "id": "WB-SYNC",
+      "status": "local-only",
+      "surface": "Workbench browser workspace storage",
+      "current": "Edits and publication metadata persist only in this browser. ZIP import/export is working.",
+      "required": "If cross-device/account workspaces are required, build an authenticated durable workspace/version API and conflict/recovery behavior. This is separate from public listings.",
+      "verify": "Reload retains local edits now; future sync must round-trip across two devices and reject unauthorized access.",
+      "files": [
+        "creator-hub/hub/client/src/pages/Workbench.tsx",
+        "creator-hub/hub/client/src/workbench/model.ts"
+      ]
+    },
+    {
+      "id": "LOBBY-CHAT",
+      "status": "build-required",
+      "surface": "/api/community-chat/*; /api/project-chat/*; /api/collective-chat/*",
+      "current": "JSON files under runtimeDir plus process-local rate limits; Vercel runtimeDir is temporary. Client IDs and some author roles are self-declared.",
+      "required": "Use shared durable chat/report storage and atomic operations; server-verified identities/roles, shared abuse limits, retention and moderator authorization. Configure existing COMMUNITY_CHAT_MODERATOR_TOKEN while retaining current moderation behavior.",
+      "verify": "Messages/reports persist across deployments/instances; role spoofing and duplicate abuse are rejected; moderation is authorized.",
+      "files": [
+        "creator-hub/hub/server/communityChat.mjs",
+        "creator-hub/hub/server/projectChat.mjs",
+        "creator-hub/hub/server/collectiveChat.mjs",
+        "creator-hub/hub/server/paths.mjs"
+      ]
+    },
+    {
+      "id": "LOBBY-AGENT-BRIDGE",
+      "status": "build-required",
+      "surface": "Collective chat agent coordination",
+      "current": "The UI explicitly says the live Hub-to-agent bridge is not connected. Chat messages do not execute agent work.",
+      "required": "Define and implement authenticated job dispatch/status and approval boundaries if live agent coordination is enabled.",
+      "verify": "A verified agent job can be traced to its approved request and outcome; posting a chat message alone cannot execute code.",
+      "files": [
+        "creator-hub/hub/client/src/chat/copy.ts",
+        "creator-hub/hub/server/collectiveChat.mjs"
+      ]
+    },
+    {
+      "id": "LOBBY-COMMUNITY-WRITES",
+      "status": "build-required",
+      "surface": "/api/engagement/*; /api/creator-profiles/*; /api/skill-market*; /api/learn/resources; /api/learning/lessons*; /api/build-budgets*; /api/creator-analytics*",
+      "current": "Handlers exist, but runtime JSON files and local/in-memory state are not durable multi-instance services. Ownership ranges from anonymous IDs to locally stored bearer secrets.",
+      "required": "Migrate enabled writes to shared transactional storage; audit per-action authentication/authorization, privacy, moderation, quotas and retention. Preserve public-safe projections and keep private lesson evidence out of public feeds.",
+      "verify": "Concurrent writes survive restart; unauthorized edits and role claims fail; analytics deletion/retention works; lesson evidence is never exposed.",
+      "files": [
+        "creator-hub/hub/server/engagement.mjs",
+        "creator-hub/hub/server/skillMarket.mjs",
+        "creator-hub/hub/server/communityLearning.mjs",
+        "creator-hub/hub/server/learningLoop.mjs",
+        "creator-hub/hub/server/buildBudgets.mjs",
+        "creator-hub/hub/server/creatorAnalytics.mjs"
+      ]
+    },
+    {
+      "id": "LOBBY-CHECKOUT",
+      "status": "build-required",
+      "surface": "POST /api/skill-market/:id/download for priced listings",
+      "current": "Free downloads exist; paid checkout explicitly returns 409 as not connected.",
+      "required": "Implement a chosen payment service, verified receipts/entitlements, idempotent settlement and refund/revocation policy before enabling paid downloads.",
+      "verify": "Free flow still works; payment failure does not grant access; only verified settlement grants the correct entitlement.",
+      "files": [
+        "creator-hub/hub/server/skillMarket.mjs"
+      ]
+    },
+    {
+      "id": "LOBBY-REWARDS",
+      "status": "local-only",
+      "surface": "Daily Ritual, AI Sparks balance and rewardPlaytest",
+      "current": "Current public UI always uses the replayable simulator. Retained /api/daily-trivia handlers and private Blob records are separate and are not used to award these displayed Sparks.",
+      "required": "Real spendable rewards would need server-authoritative identity, settlement, abuse controls, redemption/ledger and wallet integration. Preserve the current single 3D flow and reset during testing; do not restore a retired UI/API selector.",
+      "verify": "Current reset/playtest regression passes; any future real awards prove exactly-once settlement and cannot be minted by browser edits.",
+      "files": [
+        "creator-hub/hub/client/src/components/rewardPlaytest.ts",
+        "creator-hub/hub/client/src/components/DailyTrivia.tsx",
+        "creator-hub/hub/server/dailyTrivia.mjs",
+        "creator-hub/hub/server/dailyTriviaBlob.mjs"
+      ]
+    },
+    {
+      "id": "LOBBY-WALLET",
+      "status": "design-only",
+      "surface": "WalletPreview and asset-commerce plans",
+      "current": "WalletPreview is a presentation flip with a sample stake. Commerce manifests describe plans; they do not deploy or settle token transactions.",
+      "required": "Before exposing real balances/staking/commerce, connect verified wallet/network reads, transaction approval and confirmed on-chain state. Remove sample amounts from any real-account mode.",
+      "verify": "Displayed funds and entitlements match verified network data; reject/cancel/error states remain accurate.",
+      "files": [
+        "creator-hub/hub/client/src/components/WalletPreview.tsx",
+        "creator-hub/hub/shared/assetCommerce.mjs"
+      ]
+    },
+    {
+      "id": "LOBBY-VIDEO",
+      "status": "design-only",
+      "surface": "/api/video/templates/*; capture CLI; /api/studio/recipes",
+      "current": "Validation, props/command export and local capture/render tools exist. These routes do not run a hosted renderer or remote browser capture service.",
+      "required": "If hosted rendering is wanted, add isolated queued workers, job status, durable artifacts, resource limits and operator review of capture targets/media. Reuse existing CLI/templates.",
+      "verify": "A representative rendered recording plays correctly; job failures are visible; outputs retain provenance and cannot expose internal URLs.",
+      "files": [
+        "creator-hub/hub/server/videoTemplates.mjs",
+        "creator-hub/hub/client/src/studioExport.ts",
+        "creator-hub/capture/capture-apps.mjs"
+      ]
+    },
+    {
+      "id": "LOBBY-RECIPE-ADAPTER",
+      "status": "design-only",
+      "surface": "Recipe composition adapters",
+      "current": "Some recipe descriptions explicitly mark proposed Counter/token composition adapters as not implemented. Exporting a plan is not a verified composition.",
+      "required": "Implement and test each proposed adapter against pinned Tari template interfaces before describing it as deployable.",
+      "verify": "Pinned integration tests prove access control, resource behavior and composition; update readiness only with evidence.",
+      "files": [
+        "creator-hub/hub/server/recipes.mjs"
+      ]
+    },
+    {
+      "id": "CFG-SUBSCRIPTIONS",
+      "status": "configuration-required",
+      "surface": "GET /api/subscriptions/config; POST /api/subscriptions",
+      "current": "A webhook adapter exists; missing configuration returns 503. Actual provider configuration/delivery was not checked in this audit.",
+      "required": "Provide HTTPS SUBSCRIPTION_WEBHOOK_URL, server-side SUBSCRIPTION_WEBHOOK_TOKEN and SUBSCRIPTION_PRIVACY_URL; receiver must implement the documented pending_confirmation/double-opt-in contract.",
+      "verify": "Real confirmation email arrives for an approved test address; repeat delivery is idempotent; failure stays unconfirmed.",
+      "files": [
+        "creator-hub/hub/server/subscriptions.mjs"
+      ]
+    },
+    {
+      "id": "CFG-AI-DRAFT",
+      "status": "configuration-required",
+      "surface": "POST /api/video/templates/:id/draft",
+      "current": "Hugging Face drafting adapter exists, gated by HF_DRAFT_ENABLED=1 and a server token. Production provider delivery not verified here.",
+      "required": "Configure HF_TOKEN or HUGGINGFACE_TOKEN and HF_DRAFT_MODEL; add authenticated quotas/rate limits before offering unrestricted paid inference publicly.",
+      "verify": "Opt-in provider trial returns validated fields; missing token, provider failure and budget limits fail honestly.",
+      "files": [
+        "creator-hub/hub/server/videoTemplates.mjs"
+      ]
+    },
+    {
+      "id": "CFG-DATA",
+      "status": "configuration-required",
+      "surface": "/api/growth/summary; /api/marketing-calendar; /blog/feed.xml; /blog/sitemap.xml; source refresh",
+      "current": "Adapters exist: growth cloud needs GROWTH_GITHUB_TOKEN, calendar needs a snapshot or authorized Trello configuration and is deliberately local-only, blog needs PUBLIC_SITE_URL. Public origin is set in the Vercel adapter.",
+      "required": "Verify owner-managed configuration, source permissions, freshness and last-good fallbacks. Do not remove the local-only calendar restriction or copy private source data into the public repo. No new endpoint is implied.",
+      "verify": "Configured adapter returns current authorized data; missing/stale/error state is explicit; restricted routes stay restricted.",
+      "files": [
+        "creator-hub/hub/server/growthCloud.mjs",
+        "creator-hub/hub/server/marketingCalendar.mjs",
+        "creator-hub/hub/server/app.mjs",
+        "creator-hub/hub/server/sourceMonitoring.mjs",
+        "creator-hub/hub/server/sourceRefresh.mjs"
+      ]
+    },
+    {
+      "id": "OPS-OCTOBER-CHANNEL",
+      "status": "build-required",
+      "surface": "Once-daily October monitor notification delivery",
+      "current": "Repository workflow checks at 09:17 UTC and saves Actions summary/artifact. It has no dedicated-channel delivery adapter. External automations are outside this source audit.",
+      "required": "Connect the existing daily workflow to the approved dedicated channel using a server-side secret, deduplicated notifications and retry/failure reporting. Keep one scheduled daily check; no auto-publication.",
+      "verify": "One daily run delivers to the intended channel; retries do not duplicate; errors are visible and candidates remain review-only.",
+      "files": [
+        ".github/workflows/october-monitor.yml",
+        "scripts/monitor-contest.mjs"
+      ]
+    },
+    {
+      "id": "OPS-DEPLOY",
+      "status": "configuration-required",
+      "surface": "GitHub main to Vercel deployment",
+      "current": "Maintainer CLI deployment is documented; automatic Vercel Git integration previously required the owner GitHub login connection. Current account setup was not audited.",
+      "required": "Confirm/link the repository to the existing Vercel project and production branch main if automatic website deployment is desired. Keep passing checks and source SHA traceability.",
+      "verify": "A reviewed main commit produces a ready deployment of that exact SHA; content-only GitHub Pages workflow stays separate.",
+      "files": [
+        "api/index.mjs"
+      ]
+    },
+    {
+      "id": "RETIRED-HOSTING",
+      "status": "retired",
+      "surface": "Writes to /api/projects*, /api/assets*, /api/recipes/:id/projects, /api/challenges/submissions",
+      "current": "Public entry point returns 410 PROJECT_HOSTING_RETIRED. Old implementations/read paths remain for legacy compatibility/tests.",
+      "required": "Do not revive these paths to implement Workbench. Build the separate Workbench services and publication contract; preserve the guard.",
+      "verify": "Public app returns 410 for each retired write even when Workbench services are injected.",
+      "files": [
+        "creator-hub/hub/server/inspirationLobby.mjs",
+        "creator-hub/hub/server/projects.mjs",
+        "creator-hub/hub/server/assets.mjs",
+        "creator-hub/hub/server/challenges.mjs"
+      ]
+    }
+  ]
+}

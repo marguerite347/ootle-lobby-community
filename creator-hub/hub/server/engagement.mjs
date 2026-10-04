@@ -1,3 +1,4 @@
+// INTEGRATION_GAP[LOBBY-COMMUNITY-WRITES] (build-required): see docs/DEVELOPMENT_GAPS.md#lobby-community-writes.
 // Engagement store: front-end likes/stars and comments for resources and projects.
 // Persisted as JSON under the runtime data dir (redirectable via CREATOR_HUB_DATA_DIR).
 // There is no account system yet, so a star is keyed by a client-generated anonymous

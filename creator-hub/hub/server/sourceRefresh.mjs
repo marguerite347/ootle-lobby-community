@@ -1,3 +1,4 @@
+// INTEGRATION_GAP[CFG-DATA] (configuration-required): see docs/DEVELOPMENT_GAPS.md#cfg-data.
 import {gameResourceConnectors} from './connectors/gameResourceLists.mjs';
 import { ingest, writeSnapshot } from './ingest.mjs';
 

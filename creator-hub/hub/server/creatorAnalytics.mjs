@@ -1,3 +1,4 @@
+// INTEGRATION_GAP[LOBBY-COMMUNITY-WRITES] (build-required): see docs/DEVELOPMENT_GAPS.md#lobby-community-writes.
 import {
   existsSync,
   mkdirSync,

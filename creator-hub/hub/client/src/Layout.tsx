@@ -25,7 +25,7 @@ export default function Layout() {
       <header className="site-header season-header">
         <div className="container season-header-inner">
           <Link to="/" className="season-brand" aria-label="Ootle Lobby home"><img src="/ootle-jam-mark.svg" alt="" width="40" height="40"/><span>ootle<span className="season-brand-light">lobby</span><small>BUILT ON TARI</small></span></Link>
-          <CreatorStack/><a className="season-header-create" href="https://github.com/tari-project/wasm-template/tree/main/wasm_templates" target="_blank" rel="noreferrer">Start building </a>
+          <CreatorStack/><Link className="season-header-create" to="/workbench">Workbench</Link>
         </div>
         <div className="container season-utility"><LaunchTicket/><CommunityLinks/><SparkBalance/></div>
         {location.pathname === '/' && <div className="container season-ritual-nav"><DailyRitualDock/></div>}

@@ -1,3 +1,5 @@
+// INTEGRATION_GAP[CFG-AI-DRAFT] (configuration-required): see docs/DEVELOPMENT_GAPS.md#cfg-ai-draft.
+// INTEGRATION_GAP[LOBBY-VIDEO] (design-only): see docs/DEVELOPMENT_GAPS.md#lobby-video.
 // CH-026 — "Make a video" configurator for the Creator Hub.
 //
 // Thin, self-contained descriptors for the three reusable Remotion templates in

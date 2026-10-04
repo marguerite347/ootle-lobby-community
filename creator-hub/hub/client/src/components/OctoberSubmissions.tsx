@@ -1,3 +1,5 @@
+// INTEGRATION_GAP[WB-FEED] (build-required): see docs/DEVELOPMENT_GAPS.md#wb-feed.
+import PublicationGallery from '../workbench/PublicationGallery';
 import {useEffect,useState} from 'react';
 import {COMMUNITY_REPOSITORY} from './CommunityContent';
 import ProjectTechnology from './ProjectTechnology';
@@ -24,10 +26,10 @@ function OctoberMysteries(){
     <p className="mystery-invitation">The first reveals are still to come. <a href={THREAD} target="_blank" rel="noreferrer">Bring your secret to life <span aria-hidden="true">↗</span></a></p>
   </div>;
 }
-export function OctoberGallery({contest}:{contest:OctoberContest}){
+export function OctoberGallery({contest,hasWorkbenchEntries=false}:{contest:OctoberContest;hasWorkbenchEntries?:boolean}){
   const entries=[...contest.entries].sort((a,b)=>Date.parse(b.publishedAt)-Date.parse(a.publishedAt)||a.slug.localeCompare(b.slug));
   return <>
-    {!entries.length ? <OctoberMysteries/> : <div className="grid">{entries.map(entry=><article className="card contest-project-card" key={entry.slug}>
+    {!entries.length ? (hasWorkbenchEntries?null:<OctoberMysteries/>) : <div className="grid">{entries.map(entry=><article className="card contest-project-card" key={entry.slug}>
       {entry.recording && <figure className="submission-recording"><video controls playsInline preload="none" poster={entry.recording.posterUrl} aria-label={`${entry.title} ${entry.recording.kind} recording`} src={entry.recording.url}/><figcaption>{entry.recording.kind.replaceAll('-',' ')} · Recorded {date(entry.recording.capturedAt)} · {entry.recording.credit}</figcaption></figure>}
       <h3><a href={entry.sourceUrl} target="_blank" rel="noreferrer">{entry.title}</a></h3>
       <div className="contest-project-dates"><a href={entry.sourceUrl} target="_blank" rel="noreferrer">Submitted <time dateTime={entry.publishedAt}>{date(entry.publishedAt)}</time></a></div>
@@ -39,10 +41,12 @@ export function OctoberGallery({contest}:{contest:OctoberContest}){
   </>;
 }
 export default function OctoberSubmissions(){
+  const [workbenchCount,setWorkbenchCount]=useState(0);
   const [contest,setContest]=useState<OctoberContest|null>(null),[failed,setFailed]=useState(false);
   useEffect(()=>{const controller=new AbortController();fetch('/api/community-content',{signal:controller.signal}).then(response=>{if(!response.ok)throw new Error('Unavailable');return response.json();}).then(feed=>{const result=feed.contests?.find((item:OctoberContest)=>item.id==='october-2026');if(!result)throw new Error('Missing registry');setContest(result);}).catch(error=>{if(error.name!=='AbortError')setFailed(true);});return()=>controller.abort();},[]);
   return <section className="section october-submissions" id="october-submissions" aria-labelledby="october-submissions-title">
     <div className="section-head"><div><h2 id="october-submissions-title">October Submissions</h2><p>Spooky Secrets · New builds from the community.</p></div><div className="contest-community-links"><a className="more" href={THREAD} target="_blank" rel="noreferrer">Submit your build</a><a href={`${COMMUNITY_REPOSITORY}/issues/new?template=correction.yml&title=October%20project`} target="_blank" rel="noreferrer">Suggest a listing</a></div></div>
-    {contest?<OctoberGallery contest={contest}/>:failed?<p role="status">The submission list could not load. <a href={THREAD} target="_blank" rel="noreferrer">View entries on the forum.</a></p>:<p role="status">Loading October submissions…</p>}
+    <PublicationGallery destination="october-2026" excludeRepoUrls={contest?.entries.map(entry=>entry.repoUrl)} onCount={setWorkbenchCount}/>
+    {contest?<OctoberGallery contest={contest} hasWorkbenchEntries={workbenchCount>0}/>:failed?<p role="status">The submission list could not load. <a href={THREAD} target="_blank" rel="noreferrer">View entries on the forum.</a></p>:<p role="status">Loading October submissions…</p>}
   </section>;
 }
