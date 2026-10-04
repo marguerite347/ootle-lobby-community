@@ -56,3 +56,15 @@
 .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-footer .spark-rules {order: 0; width: auto; margin: 0}
 .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-footer .spark-drop-timer {order: 0}
 .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-footer .spark-rules[open] {flex-basis: 100%; max-width: 600px}
+@media (max-width: 600px) {
+  .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-footer {
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 4px 6px;
+  }
+  .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-footer > * {min-width: 0; justify-self: center}
+  .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-drop-timer {gap: 5px; padding: 3px 5px}
+  .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-drop-label {font-size: 8px; letter-spacing: .04em}
+  .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-drop-timer strong {font-size: 14px; gap: 3px}
+  .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-rules > summary {font-size: 11px; padding: 10px 0}
+  .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-test-again {min-height: 44px}
+  .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-footer .spark-rules[open] {grid-column: 1 / -1; width: 100%}
+}

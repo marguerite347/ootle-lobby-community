@@ -6,6 +6,7 @@ body.embedded.won .experience {
   grid-template-rows: 320px minmax(90px, auto) auto auto auto;
   row-gap: 6px;
 }
+body.embedded .experience > .reward-rays {height: 100%}
 body.embedded #stage {height: 360px; --wheel-radius: 123px}
 body.embedded #reward-coins {mask-image: radial-gradient(circle 123px at 50% 50%, transparent 99%, black 100%)}
 body.embedded .result,
