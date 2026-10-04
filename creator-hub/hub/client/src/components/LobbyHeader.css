@@ -10,6 +10,10 @@
 .lobby-nav-grid > .season-brand small {font-size:.375rem;letter-spacing:.12em;margin-top:.3rem;}
 .lobby-nav-grid > .community-logo-links {grid-area:2/1;margin:0;gap:0;}
 .lobby-nav-grid > .community-logo-links a {width:2.75rem;height:2.75rem;flex:none;}
+@media(max-width:759px) {
+  .lobby-nav-grid > .community-logo-links {min-width:0;}
+  .lobby-nav-grid > .community-logo-links a {width:25%;flex:1 1 0;min-width:0;}
+}
 .lobby-nav-grid > .spark-balance {grid-area:1/2;justify-content:center;gap:.25rem;padding:.25rem;min-height:2.75rem;min-width:0;margin:0;}
 .lobby-nav-grid > .spark-balance strong {min-width:0;max-width:100%;overflow:hidden;text-overflow:ellipsis;font-size:.8125rem;}
 .lobby-nav-grid > .spark-balance > span:first-child {font-size:1rem;}
