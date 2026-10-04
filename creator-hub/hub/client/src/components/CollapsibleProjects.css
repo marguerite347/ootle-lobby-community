@@ -1,0 +1,10 @@
+.project-collapse {overflow-anchor:none;}
+.project-collapse-viewport {overflow:clip;transition:height .28s ease;}
+.project-collapse-content {position:relative;display:flow-root;}
+.project-collapse-controls {display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:.625rem;border-top:1px solid #c9b6ff24;padding-top:.375rem;}
+.project-collapse-controls span {color:var(--season-muted,#aaa4b9);font-size:.75rem;}
+.project-collapse-controls button {min-height:2.75rem;padding:.375rem .875rem;border:1px solid #c9b6ff50;border-radius:999px;background:transparent;color:var(--season-cloud,#efecff);font:inherit;font-size:.8125rem;font-weight:600;cursor:pointer;transition:background .16s,border-color .16s;}
+.project-collapse-controls button:hover {background:#c9b6ff12;border-color:var(--season-lavender,#c9b6ff);}
+.project-collapse-controls button:focus-visible {outline:2px solid var(--season-lime,#d5f544);outline-offset:3px;}
+@media(prefers-reduced-motion:reduce) {.project-collapse-viewport,.project-collapse-controls button {transition:none;}}
+:root[data-hub-effects='off'] .project-collapse-viewport {transition:none;}

@@ -4,6 +4,7 @@ import {useEffect,useState} from 'react';
 import {COMMUNITY_REPOSITORY} from './CommunityContent';
 import ProjectCard from './ProjectCard';
 import {useContestMetrics} from './ContestProjectMetrics';
+import CollapsibleProjects from './CollapsibleProjects';
 import './CommunityContent.css';
 
 type Entry={slug:string;title:string;summary:string;creator:string;sourceUrl:string;repoUrl:string;demoUrl?:string;publishedAt:string;updatedAt:string;technologies:{label:string;sourceUrl:string}[];recording?:{url:string;posterUrl?:string;capturedAt:string;sourceRevision:string;kind:string;credit:string}};
@@ -45,7 +46,8 @@ export default function OctoberSubmissions(){
   useEffect(()=>{const controller=new AbortController();fetch('/api/community-content',{signal:controller.signal}).then(response=>{if(!response.ok)throw new Error('Unavailable');return response.json();}).then(feed=>{const result=feed.contests?.find((item:OctoberContest)=>item.id==='october-2026');if(!result)throw new Error('Missing registry');setContest(result);}).catch(error=>{if(error.name!=='AbortError')setFailed(true);});return()=>controller.abort();},[]);
   return <section className="section october-submissions" id="october-submissions" aria-labelledby="october-submissions-title">
     <div className="section-head project-section-heading"><div><h2 id="october-submissions-title">October <em>Submissions</em></h2><p>Spooky Secrets · New builds from the community.</p></div><div className="contest-community-links"><a className="more" href={THREAD} target="_blank" rel="noreferrer">Submit your build</a><a href={`${COMMUNITY_REPOSITORY}/issues/new?template=correction.yml&title=October%20project`} target="_blank" rel="noreferrer">Suggest a listing</a></div></div>
-    <PublicationGallery destination="october-2026" excludeRepoUrls={contest?.entries.map(entry=>entry.repoUrl)} onCount={setWorkbenchCount}/>
+    <CollapsibleProjects label="October Submissions"><PublicationGallery destination="october-2026" excludeRepoUrls={contest?.entries.map(entry=>entry.repoUrl)} onCount={setWorkbenchCount}/>
     {contest?<OctoberGallery contest={contest} hasWorkbenchEntries={workbenchCount>0}/>:failed?<p role="status">The submission list could not load. <a href={THREAD} target="_blank" rel="noreferrer">View entries on the forum.</a></p>:<p role="status">Loading October submissions…</p>}
+    </CollapsibleProjects>
   </section>;
 }

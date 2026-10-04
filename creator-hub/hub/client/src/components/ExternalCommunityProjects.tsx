@@ -2,6 +2,7 @@ import {useEffect,useState} from 'react';
 import ProjectCard from './ProjectCard';
 import {useContestMetrics} from './ContestProjectMetrics';
 import {COMMUNITY_REPOSITORY} from './CommunityContent';
+import CollapsibleProjects from './CollapsibleProjects';
 import './ContestProjectDates.css';
 import './CommunityContent.css';
 export type ExternalProject={slug:string;section?:'community'|'official';resourceIds?:string[];demoUrl?:string;title:string;summary:string;creator:string;sourceUrl:string;sourceLabel:string;repoUrl:string|null;publishedAt:string;publicationBasis:string;publicationLabel:string;publicationUrl:string;ecosystem:string;forum:{url:string}|null;technologies:{label:string;sourceUrl:string}[];media:{image:string;video:string;label:string;sourceUrl:string}|null};
@@ -26,5 +27,5 @@ export default function ExternalCommunityProjects({items}:{items:ExternalProject
 export function OfficialProjects(){
  const {items,failed}=useExternalCommunityProjects(true);
  const official=items.filter(p=>p.section==='official');
- return <section className="section" id="official-projects" aria-labelledby="official-projects-title"><div className="section-head project-section-heading"><div><h2 id="official-projects-title">Official Tari <em>Projects</em></h2><p>Apps and developer tools published by official Tari accounts.</p></div></div>{official.length>0?<ExternalCommunityProjects items={official}/>:failed?<p role="status">Official projects couldn’t load. Refresh to retry.</p>:null}</section>;
+ return <section className="section" id="official-projects" aria-labelledby="official-projects-title"><div className="section-head project-section-heading"><div><h2 id="official-projects-title">Official Tari <em>Projects</em></h2><p>Apps and developer tools published by official Tari accounts.</p></div></div>{official.length>0?<CollapsibleProjects label="Official Tari Projects"><ExternalCommunityProjects items={official}/></CollapsibleProjects>:failed?<p role="status">Official projects couldn’t load. Refresh to retry.</p>:null}</section>;
 }
