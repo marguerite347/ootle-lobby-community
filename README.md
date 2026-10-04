@@ -14,7 +14,7 @@ The October gallery reads reviewed entries from the shared content feed. Add one
 
 ## Developer integration handoff
 
-[Development gaps for Lobby and Workbench](docs/DEVELOPMENT_GAPS.md) · [Workbench API contract](docs/WORKBENCH.md)
+[End-to-end developer delivery plan](docs/DEVELOPER_HANDOFF.md) · [Development gaps for Lobby and Workbench](docs/DEVELOPMENT_GAPS.md) · [Workbench API contract](docs/WORKBENCH.md)
 
 Missing services, configuration requirements, browser-only features and retired routes are explicitly flagged in source with `INTEGRATION_GAP[ID]`. The register includes implementation requirements and completion checks; validation catches stale markers. The Workbench editor/import/export are usable locally; compile, test, deploy, AI and public publishing need backend services before they are enabled.
 
@@ -41,11 +41,13 @@ npm run build:site
 npm run start:site
 ```
 
-Open http://localhost:4180. Node.js 22 is the deployment version. Local runtime writes go into ignored `work/runtime`; do not commit personal data. The Vercel adapter stores Daily Ritual rounds and balances in private cloud storage. Chat retains temporary preview storage. Public editable content is durable in Git history.
+Open http://localhost:4180. Node.js 22 is the deployment version. Local runtime writes go into ignored `work/runtime`; do not commit personal data. The current Daily Ritual UI is a resettable local simulator. A separate retained trivia API can store rounds and balances in private Blob storage; it does not award the displayed simulator Sparks. Chat retains temporary preview storage. Public editable content is durable in Git history.
 
 `npm run build:site` produces the static site in `public/` and the serverless dependency package in `server-content/`. Both are generated and ignored. The cloud deployment builds from these sources; no connection to a contributor’s computer is needed.
 
 ### Deployment status
+
+**Current UI:** Daily Ritual uses the single replayable simulator, with reset retained for testing. The API/Blob details below describe the separate retained backend, not the source of the displayed AI Sparks. Do not reconnect it by restoring an old trivia flow. See `LOBBY-REWARDS` in the development register before implementing real awards.
 
 Daily Ritual POST requests validate the browser Origin against `PUBLIC_SITE_URL`
 when configured, falling back to the direct request origin for local development.
@@ -66,8 +68,7 @@ an error instead of falling back to temporary files or pretending to save.
 Keep the store connected across deployments; never commit its token or player
 records. Clearing the browser's identity cookie still creates a new player.
 
-During shared testing the adapter sets `TRIVIA_ALLOW_RESET=1`. This exposes
-**Reset trivia ↻** after a round starts and permits the existing reset endpoint
+For the retained API, the adapter sets `TRIVIA_ALLOW_RESET=1`. This permits the existing reset endpoint
 for that browser's identity. Reset clears today's round and deducts only its
 awarded Sparks, preserving earlier days and other players. Origin and required
 header checks still apply. Remove the adapter flag when daily attempts go live;

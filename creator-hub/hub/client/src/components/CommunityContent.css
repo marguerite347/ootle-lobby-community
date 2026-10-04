@@ -80,3 +80,5 @@
 .season-home .project-section-heading p {margin:.375rem 0 0;font-size:.8125rem;line-height:1.55;color:var(--season-muted);}
 .season-home .project-section-heading .contest-community-links {gap:.25rem 1.125rem;}
 .season-home .project-section-heading .contest-community-links a {display:inline-flex;align-items:center;min-height:2.75rem;}
+
+.season-home .project-section-heading h2 em {font-style:normal;color:var(--season-lime);}

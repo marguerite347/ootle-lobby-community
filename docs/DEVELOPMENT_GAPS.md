@@ -45,7 +45,7 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 
 **build-required** — POST /api/workbench/runs; GET /api/workbench/runs/:id
 
-**Current:** No compiler or test runner is supplied; requests return 501.
+**Current:** No compiler or test runner is supplied; requests return 501. Browser abort stops polling only; no server cancellation endpoint is defined.
 
 **Remaining:** Implement isolated Rust/WASM compile and test jobs, pinned toolchains, logs, durable job/artifact storage, timeouts and cancellation. Bind jobs/artifacts to authenticated owners.
 
@@ -93,7 +93,7 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 
 **build-required** — GET /api/workbench/publications; Community Projects and October galleries
 
-**Current:** Disconnected feed returns an empty list. Existing reviewed October content still works. Reviewed external Community Projects load independently from the public content feed; Workbench publishing remains disconnected. September, October, Community, Official and future Workbench publications share ProjectCard presentation.
+**Current:** Disconnected feed returns an empty list. Existing reviewed October content still works. Reviewed external Community Projects load independently from the public content feed; Workbench publishing remains disconnected. September, October, Community, Official and future Workbench publications share ProjectCard presentation. The current Workbench Publication schema/adapter has no cover or technology fields and passes preview:null and empty technologies; extend it before promising full card metadata.
 
 **Remaining:** Provide approved durable public records, public-safe projection, stable IDs and pagination when needed. Wire approved publication writes to this same source. Supply reviewed poster/video provenance, evidenced technology labels and project-specific metrics with each approved publication; disconnected Workbench records have no fabricated covers or counts.
 
@@ -117,7 +117,7 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 
 **local-only** — Workbench browser workspace storage
 
-**Current:** Edits and publication metadata persist only in this browser. ZIP import/export is working.
+**Current:** Edits and publication metadata persist only in this browser. Text-file/folder import and ZIP export are working; ZIP archive import is not implemented.
 
 **Remaining:** If cross-device/account workspaces are required, build an authenticated durable workspace/version API and conflict/recovery behavior. This is separate from public listings.
 
