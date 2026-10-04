@@ -1,48 +1,44 @@
-import {useEffect, useLayoutEffect, useRef, useState} from 'react';
-import {useLocation} from 'react-router-dom';
-import DailyTrivia, {SparkBalance} from './DailyTrivia';
-import CommunityLinks from './CommunityLinks';
-import {LaunchTicket} from './OotleLaunch';
+import {useLayoutEffect, useRef, useState} from 'react';
+import DailyTrivia from './DailyTrivia';
 import './DailyRitualDock.css';
 
 export default function DailyRitualDock() {
-  const dock = useRef<HTMLDivElement>(null);
-  const location = useLocation();
-  const [open, setOpen] = useState(false);
-  const [hasOpened, setHasOpened] = useState(false);
+  const dock = useRef<HTMLDetailsElement>(null);
   const closeRitual = () => {
-    setOpen(false);
-    dock.current?.querySelector<HTMLButtonElement>('.spark-balance')?.focus({preventScroll: true});
+    if (!dock.current) return;
+    dock.current.open = false;
+    dock.current.querySelector('summary')?.focus({preventScroll: true});
   };
-  useEffect(() => {
-    const requested = location.hash === '#daily-spark';
-    setOpen(requested);
-    if (requested) setHasOpened(true);
-  }, [location.key, location.hash]);
+  const [hasOpened, setHasOpened] = useState(false);
   useLayoutEffect(() => {
     const element = dock.current;
-    const header = element?.closest('.site-header');
+    const header = document.querySelector('.site-header');
     if (!element || !header) return;
-    const measure = () => element.style.setProperty('--ritual-header-height', `${header.getBoundingClientRect().height}px`);
+    const measure = () => {
+      element.style.setProperty('--ritual-header-height', `${header.getBoundingClientRect().height}px`);
+    };
     const observer = new ResizeObserver(measure);
     observer.observe(header);
     measure();
     return () => observer.disconnect();
   }, []);
 
-  return <div ref={dock} className="container ritual-dock" id="daily-spark" data-open={open} onKeyDown={event => {
-    if (event.key === 'Escape' && open) {
+  return <details ref={dock} className="ritual-disclosure ritual-dock" id="daily-spark" onKeyDown={event => {
+    if (event.key === 'Escape' && dock.current?.open) {
       event.preventDefault();
       event.stopPropagation();
       closeRitual();
     }
+  }} onToggle={event => {
+    if (event.currentTarget.open) setHasOpened(true);
   }}>
-    <div className="season-utility">
-      <LaunchTicket/><CommunityLinks/>
-      <SparkBalance open={open} onToggle={() => {setOpen(!open); setHasOpened(true);}}/>
-    </div>
-    <div id="daily-ritual-panel" className="ritual-dock-content" hidden={!open}>
-      {hasOpened && <DailyTrivia sectionId="daily-ritual-game"/>}
-    </div>
-  </div>;
+    <summary className="ritual-summary">
+      <img src="/seasonal/october-2026/ritual-cauldron-v2.png" alt="" width="72" height="72"/>
+      <span className="ritual-summary-copy"><strong>Daily Ritual</strong><span>One question. A little magic.</span></span>
+      <span className="ritual-summary-action"><span className="ritual-open-label">Play today’s ritual</span><span className="ritual-close-label">Close ritual <span aria-hidden="true">×</span></span></span>
+    </summary>
+    {hasOpened && <div className="ritual-dock-content">
+      <DailyTrivia sectionId="daily-ritual-game"/>
+    </div>}
+  </details>;
 }

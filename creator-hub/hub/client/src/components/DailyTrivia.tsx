@@ -143,12 +143,12 @@ function useTrivia() {
   return context;
 }
 
-export function SparkBalance({open, onToggle}: {open: boolean; onToggle: () => void}) {
+export function SparkBalance() {
   const {pathname} = useLocation();
   const {displayBalance, rewardAward, game} = useTrivia();
   const [energy, setEnergy] = useState(0);
   const energyRef = useRef(0);
-  const wallet = useRef<HTMLButtonElement>(null);
+  const wallet = useRef<HTMLAnchorElement>(null);
   const [shown, setShown] = useState<number | null>(null);
   const lastAward = useRef<typeof rewardAward>(null);
   useEffect(() => {
@@ -169,11 +169,11 @@ export function SparkBalance({open, onToggle}: {open: boolean; onToggle: () => v
   }, [game?.phase, rewardAward]);
   const anticipating = displayBalance !== null && game && game.balance > displayBalance && ['super','complete'].includes(game.phase);
   const label = shown !== null ? shown.toLocaleString() : '—';
-  return <button ref={wallet} type="button" onClick={onToggle} aria-expanded={open} aria-controls="daily-ritual-panel" className={`spark-balance${anticipating ? ' is-charging' : ''}`} data-energy={energy} title="Free Hub points · no cash value · preview browser identity">
+  return <Link ref={wallet} to="/#daily-spark" className={`spark-balance${anticipating ? ' is-charging' : ''}`} data-energy={energy} title="Free Hub points · no cash value · preview browser identity">
     <span aria-hidden="true">✦</span>
     <strong>{label}</strong>
-    <span>AI Sparks<small>{open ? 'Close ritual ×' : 'Daily Ritual ⌄'}</small></span>
-  </button>;
+    <span>AI Sparks<small>Daily Ritual</small></span>
+  </Link>;
 }
 
 export default function DailyTrivia({presentation, onRestart, sectionId = 'daily-spark'}: {presentation?: TriviaPresentation; onRestart?: () => void; sectionId?: string} = {}) {
