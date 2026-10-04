@@ -1,0 +1,37 @@
+{
+  "slug": "official-universe",
+  "title": "Tari Universe",
+  "creator": "Tari project",
+  "summary": "The official desktop mining application for Tari, with a visual mining interface and companion wallet. Published by the Tari project.",
+  "sourceUrl": "https://tari.com/downloads",
+  "sourceLabel": "Project source",
+  "repoUrl": "https://github.com/tari-project/universe",
+  "publishedAt": "2024-07-25T07:04:43Z",
+  "publicationLabel": "Repository created",
+  "publicationBasis": "GitHub repository creation date; this is not a claim about the first release date.",
+  "publicationUrl": "https://github.com/tari-project/universe",
+  "ecosystem": "tari",
+  "technologies": [
+    {
+      "label": "Tari L1",
+      "sourceUrl": "https://github.com/tari-project/universe"
+    },
+    {
+      "label": "Tari mining",
+      "sourceUrl": "https://tari.com/downloads"
+    }
+  ],
+  "forum": null,
+  "resourceIds": [],
+  "section": "official",
+  "media": {
+    "image": "/previews/community/official-universe.jpg",
+    "video": "/previews/community/official-universe.mp4",
+    "label": "Public source walkthrough",
+    "sourceUrl": "https://tari.com/downloads",
+    "capturedAt": "2026-10-04T16:02:52.616125Z",
+    "reviewedAt": "2026-10-04T16:02:52.616125Z",
+    "sha256": "436f2bf2c586f97a21caf9ebced6a566daec362e1c48c6c7a84adf41acb7990c"
+  },
+  "officialSource": "https://tari.com/downloads"
+}

@@ -51,3 +51,13 @@
 .october-submissions .section-head { flex-wrap:wrap; }
 .october-submissions .section-head > div:first-child { flex:1 1 280px; }
 .october-submissions .contest-community-links a { display:inline-flex; align-items:center; min-height:44px; }
+
+.project-card { position:relative; isolation:isolate; }
+.project-card .project-card-primary::after { content:''; position:absolute; inset:0; z-index:2; border-radius:inherit; }
+.project-card a:not(.project-card-primary), .project-card button, .project-card video[controls] { position:relative; z-index:3; }
+.project-card:has(.project-card-primary:focus-visible) { outline:2px solid var(--season-lime); outline-offset:4px; }
+.project-card .project-card-primary:focus-visible { outline:none; }
+.project-card:has(.project-card-primary:hover) h3 { color:var(--season-lime); }
+
+.project-card .project-technology { z-index:3; }
+.project-card .media-pop { z-index:3; }

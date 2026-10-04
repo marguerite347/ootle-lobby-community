@@ -21,6 +21,7 @@ export const RESOURCE_TYPES = [
 // Ecosystems are recorded independently of type. Native Ootle stays visibly
 // distinct from external engines (CREATOR_HUB.md content requirements).
 export const ECOSYSTEMS = {
+  'tari': {label:'Tari L1',native:true,environment:'Tari L1'},
   'huggingface': {label: 'Hugging Face', native: false, environment: 'External AI ecosystem'},
   'tari-ootle': { label: 'Tari Ootle', native: true, environment: 'Ootle L2 (testnet)' },
   'gdevelop': { label: 'GDevelop', native: false, environment: 'GDevelop engine' },

@@ -93,9 +93,9 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 
 **build-required** — GET /api/workbench/publications; Community Projects and October galleries
 
-**Current:** Disconnected feed returns an empty list. Existing reviewed October content still works. Reviewed external Community Projects load independently from the public content feed; Workbench publishing remains disconnected.
+**Current:** Disconnected feed returns an empty list. Existing reviewed October content still works. Reviewed external Community Projects load independently from the public content feed; Workbench publishing remains disconnected. September, October, Community, Official and future Workbench publications share ProjectCard presentation.
 
-**Remaining:** Provide approved durable public records, public-safe projection, stable IDs and pagination when needed. Wire approved publication writes to this same source.
+**Remaining:** Provide approved durable public records, public-safe projection, stable IDs and pagination when needed. Wire approved publication writes to this same source. Supply reviewed poster/video provenance, evidenced technology labels and project-specific metrics with each approved publication; disconnected Workbench records have no fabricated covers or counts.
 
 **Completion check:** A published item appears for a second visitor after restart in exactly its selected gallery; drafts/private files never appear.
 
@@ -297,7 +297,7 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 
 **build-required** — GET /api/community-projects/metrics
 
-**Current:** Public GitHub stars/push dates and complete project-specific Discourse reply counts work for reviewed records. Daily caching is per warm server instance; bundled counts survive upstream outages.
+**Current:** Public GitHub stars/push dates and complete project-specific Discourse reply counts work for reviewed Community, Official Tari and October records. Daily caching is per warm server instance; bundled counts survive upstream outages. Shared directory posts covering several projects have unknown per-project counts.
 
 **Remaining:** For globally once-daily refresh across serverless cold starts, persist and coordinate the daily cache. Optionally configure a GitHub read token for higher rate limits.
 

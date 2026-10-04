@@ -10,6 +10,6 @@ describe('October shared gallery',()=>{
  });
  it('renders a new community entry, recording credit and source evidence',()=>{
   const html=renderToStaticMarkup(<OctoberGallery contest={{...contest,observedSubmissionPosts:1,entries:[{slug:'test-game',title:'Test game',summary:'A confidential puzzle.',creator:'Creator',sourceUrl:`${contest.threadUrl}/5`,repoUrl:'https://github.com/example/game',publishedAt:contest.checkedAt,updatedAt:contest.checkedAt,technologies:[{label:'Puzzle template',sourceUrl:'https://github.com/example/game/blob/main/template.rs'}],recording:{url:'https://example.com/demo.mp4',capturedAt:contest.checkedAt,sourceRevision:'abc123',kind:'walkthrough',credit:'Contributor'}}]}}/>);
-  expect(html).toContain('Test game');expect(html).toContain('Contributor');expect(html).toContain('controls=""');expect(html).toContain('template.rs');expect(html).toContain('/test-game.json');expect(html).not.toContain('autoplay');expect(html).not.toContain('mystery-card');
+  expect(html).toContain('Test game');expect(html).toContain('Contributor');expect(html).toContain('project-card-primary');expect(html).toContain('media-video');expect(html).toContain('contest-counts');expect(html).toContain('GitHub activity');expect(html).toContain('href="https://github.com/example/game"');expect(html).toContain('template.rs');expect(html).toContain('/test-game.json');expect(html).not.toContain('autoplay');expect(html).not.toContain('mystery-card');
  });
 });

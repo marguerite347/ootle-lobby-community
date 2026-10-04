@@ -7,8 +7,12 @@ export function validateCommunityProjects(items) {
   const url = v => {text(v);const u=new URL(v);if(u.protocol!=='https:'||u.username||u.password)throw new Error('Public HTTPS URL required.');};
   const date = v => {if(typeof v!=='string'||!/^\d{4}-\d{2}-\d{2}T/.test(v)||!Number.isFinite(Date.parse(v)))throw new Error('Invalid source date.');};
   for(const p of items) {
-    keys(p,['slug','title','summary','creator','sourceUrl','sourceLabel','publishedAt','publicationBasis','publicationLabel','publicationUrl','repoUrl','forum','ecosystem','technologies','media']);
+    keys(p,['section','officialSource','resourceIds','demoUrl','slug','title','summary','creator','sourceUrl','sourceLabel','publishedAt','publicationBasis','publicationLabel','publicationUrl','repoUrl','forum','ecosystem','technologies','media']);
     if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(p.slug)||ids.has(p.slug))throw new Error('Invalid or duplicate community slug.');ids.add(p.slug);
+    if(p.section!==undefined&&!['community','official'].includes(p.section))throw new Error('Invalid showcase section.');
+    if(p.section==='official'){url(p.officialSource);if(!/^https:\/\/(?:www\.)?(?:tari\.com|ootle\.tari\.com)\//.test(p.officialSource)||!/^https:\/\/github\.com\/tari-project\//.test(p.repoUrl))throw new Error('Official projects require official site and repository evidence.');}
+    if(p.demoUrl)url(p.demoUrl);
+    if(p.resourceIds!==undefined&&(!Array.isArray(p.resourceIds)||p.resourceIds.length>20||p.resourceIds.some(id=>typeof id!=='string'||!/^tari(?:-ootle)?:[a-z-]+:[a-z0-9-]+$/.test(id))))throw new Error('Invalid catalog IDs.');
     text(p.title,100);text(p.summary);text(p.creator,80);text(p.sourceLabel,80);text(p.publicationBasis,300);text(p.publicationLabel,60);url(p.sourceUrl);url(p.publicationUrl);date(p.publishedAt);
     if(!['tari','tari-ootle'].includes(p.ecosystem))throw new Error('Invalid ecosystem.');
     if(p.repoUrl!==null){url(p.repoUrl);if(!/^https:\/\/github\.com\/[\w.-]+\/[\w.-]+$/.test(p.repoUrl)||repos.has(p.repoUrl.toLowerCase()))throw new Error('Invalid or duplicate repository.');repos.add(p.repoUrl.toLowerCase());}

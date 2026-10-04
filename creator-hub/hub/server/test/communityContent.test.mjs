@@ -40,5 +40,5 @@ test('older September feeds keep the bundled October section available',async()=
 
 test('older content feeds retain the bundled external community registry',async()=>{
  const read=createCommunityContent({initial:seed,read:async()=>seed,now:()=>1});
- assert.equal((await read()).communityProjects.length,2);
+ const items=(await read()).communityProjects;assert.ok(items.some(p=>p.slug==='liquidity'));assert.ok(items.some(p=>p.section==='official'));
 });

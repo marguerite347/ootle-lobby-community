@@ -1,0 +1,44 @@
+{
+  "slug": "community-playground",
+  "title": "Tari Ootle Playground",
+  "creator": "luci666",
+  "summary": "Community-built guides for wallet setup, template development, publishing, transactions and CLI tools. An independent developer resource, separate from the official Tari documentation.",
+  "sourceUrl": "https://community.tari.com/t/ootle-testnet-community-apps-directory/281/5",
+  "sourceLabel": "Project source",
+  "repoUrl": null,
+  "publishedAt": "2026-09-05T16:02:58.285Z",
+  "publicationLabel": "Listed on forum",
+  "publicationBasis": "Date this community resource was posted to the directory.",
+  "publicationUrl": "https://community.tari.com/t/ootle-testnet-community-apps-directory/281/5",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Ootle templates",
+      "sourceUrl": "https://community.tari.com/t/ootle-testnet-community-apps-directory/281/5"
+    },
+    {
+      "label": "Tari CLI",
+      "sourceUrl": "https://community.tari.com/t/ootle-testnet-community-apps-directory/281/5"
+    }
+  ],
+  "forum": {
+    "url": "https://community.tari.com/t/ootle-testnet-community-apps-directory/281/5",
+    "topicId": 281,
+    "postNumber": 5,
+    "scope": "replies"
+  },
+  "resourceIds": [
+    "tari-ootle:app:tari-ootle-playground"
+  ],
+  "section": "community",
+  "media": {
+    "image": "/previews/community/community-playground.jpg",
+    "video": "/previews/community/community-playground.mp4",
+    "label": "Public source walkthrough",
+    "sourceUrl": "https://community.tari.com/t/ootle-testnet-community-apps-directory/281/5",
+    "capturedAt": "2026-10-04T16:02:52.616125Z",
+    "reviewedAt": "2026-10-04T16:02:52.616125Z",
+    "sha256": "523cd58aa8b14ddd183bc719e1dc3070d6ca6c9364c65c870d5162ba68e34876"
+  },
+  "demoUrl": "https://feeltherevolt-xehqj-studio.wp.build/"
+}

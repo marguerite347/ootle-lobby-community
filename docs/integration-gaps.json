@@ -55,8 +55,8 @@
       "id": "WB-FEED",
       "status": "build-required",
       "surface": "GET /api/workbench/publications; Community Projects and October galleries",
-      "current": "Disconnected feed returns an empty list. Existing reviewed October content still works. Reviewed external Community Projects load independently from the public content feed; Workbench publishing remains disconnected.",
-      "required": "Provide approved durable public records, public-safe projection, stable IDs and pagination when needed. Wire approved publication writes to this same source.",
+      "current": "Disconnected feed returns an empty list. Existing reviewed October content still works. Reviewed external Community Projects load independently from the public content feed; Workbench publishing remains disconnected. September, October, Community, Official and future Workbench publications share ProjectCard presentation.",
+      "required": "Provide approved durable public records, public-safe projection, stable IDs and pagination when needed. Wire approved publication writes to this same source. Supply reviewed poster/video provenance, evidenced technology labels and project-specific metrics with each approved publication; disconnected Workbench records have no fabricated covers or counts.",
       "verify": "A published item appears for a second visitor after restart in exactly its selected gallery; drafts/private files never appear.",
       "files": [
         "creator-hub/hub/server/workbench.mjs",
@@ -271,7 +271,7 @@
       "id": "COMMUNITY-METRICS",
       "status": "build-required",
       "surface": "GET /api/community-projects/metrics",
-      "current": "Public GitHub stars/push dates and complete project-specific Discourse reply counts work for reviewed records. Daily caching is per warm server instance; bundled counts survive upstream outages.",
+      "current": "Public GitHub stars/push dates and complete project-specific Discourse reply counts work for reviewed Community, Official Tari and October records. Daily caching is per warm server instance; bundled counts survive upstream outages. Shared directory posts covering several projects have unknown per-project counts.",
       "required": "For globally once-daily refresh across serverless cold starts, persist and coordinate the daily cache. Optionally configure a GitHub read token for higher rate limits.",
       "verify": "Across cold starts and upstream failures, retain counts and checkedAt; show unknown when never verified. Confirm no more than one global upstream refresh per project per day.",
       "files": [

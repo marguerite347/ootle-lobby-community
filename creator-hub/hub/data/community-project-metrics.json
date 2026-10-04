@@ -1,13 +1,29 @@
 {
-  "checkedAt": "2026-10-04T15:32:57.764526Z",
+  "checkedAt": "2026-10-04T16:06:27.932Z",
   "items": {
+    "community-playground": {
+      "github": null,
+      "forum": {
+        "count": 0,
+        "url": "https://community.tari.com/t/ootle-testnet-community-apps-directory/281/5",
+        "checkedAt": "2026-10-04T16:06:27.932Z"
+      }
+    },
+    "labyrinthos": {
+      "github": null,
+      "forum": {
+        "count": null,
+        "url": "",
+        "checkedAt": null
+      }
+    },
     "liquidity": {
       "github": {
         "count": 1,
-        "url": "https://github.com/GSXRspartan/tari-ootle-liquidity-protocol/stargazers",
         "pushedAt": "2026-10-03T08:39:05Z",
+        "url": "https://github.com/GSXRspartan/tari-ootle-liquidity-protocol/stargazers",
         "activityUrl": "https://github.com/GSXRspartan/tari-ootle-liquidity-protocol/activity",
-        "checkedAt": "2026-10-04T15:32:57.764526Z"
+        "checkedAt": "2026-10-04T16:06:27.932Z"
       },
       "forum": {
         "count": null,
@@ -18,15 +34,73 @@
     "miner": {
       "github": {
         "count": 0,
-        "url": "https://github.com/JustAResearcher/TARI.Miner/stargazers",
         "pushedAt": "2026-07-31T12:43:38Z",
+        "url": "https://github.com/JustAResearcher/TARI.Miner/stargazers",
         "activityUrl": "https://github.com/JustAResearcher/TARI.Miner/activity",
-        "checkedAt": "2026-10-04T15:32:57.764526Z"
+        "checkedAt": "2026-10-04T16:06:27.932Z"
       },
       "forum": {
         "count": 0,
         "url": "https://community.tari.com/t/open-source-c29-gpu-miner-for-tari-universe/210",
-        "checkedAt": "2026-10-04T15:32:57.764526Z"
+        "checkedAt": "2026-10-04T16:06:27.932Z"
+      }
+    },
+    "official-templates": {
+      "github": {
+        "count": 3,
+        "pushedAt": "2026-10-01T11:17:10Z",
+        "url": "https://github.com/tari-project/wasm-template/stargazers",
+        "activityUrl": "https://github.com/tari-project/wasm-template/activity",
+        "checkedAt": "2026-10-04T16:06:27.932Z"
+      },
+      "forum": {
+        "count": null,
+        "url": "",
+        "checkedAt": null
+      }
+    },
+    "official-universe": {
+      "github": {
+        "count": 45,
+        "pushedAt": "2026-10-01T21:22:58Z",
+        "url": "https://github.com/tari-project/universe/stargazers",
+        "activityUrl": "https://github.com/tari-project/universe/activity",
+        "checkedAt": "2026-10-04T16:06:27.932Z"
+      },
+      "forum": {
+        "count": null,
+        "url": "",
+        "checkedAt": null
+      }
+    },
+    "sooon-fun": {
+      "github": null,
+      "forum": {
+        "count": null,
+        "url": "",
+        "checkedAt": null
+      }
+    },
+    "tari-agent-pay": {
+      "github": {
+        "count": 0,
+        "pushedAt": "2026-09-11T21:01:04Z",
+        "url": "https://github.com/zvovanz-a1/tari-agent-pay/stargazers",
+        "activityUrl": "https://github.com/zvovanz-a1/tari-agent-pay/activity",
+        "checkedAt": "2026-10-04T16:06:27.932Z"
+      },
+      "forum": {
+        "count": 0,
+        "url": "https://community.tari.com/t/ootle-testnet-community-apps-directory/281/9",
+        "checkedAt": "2026-10-04T16:06:27.932Z"
+      }
+    },
+    "tari-market": {
+      "github": null,
+      "forum": {
+        "count": null,
+        "url": "",
+        "checkedAt": null
       }
     }
   }

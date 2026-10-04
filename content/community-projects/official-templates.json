@@ -1,0 +1,37 @@
+{
+  "slug": "official-templates",
+  "title": "Ootle WASM Templates",
+  "creator": "Tari project",
+  "summary": "Official Rust/WASM starting points for Ootle apps: guessing games, tokens, NFTs, swaps, counters and more. The repository supplies templates used by the Tari CLI.",
+  "sourceUrl": "https://ootle.tari.com/guides/build-a-guessing-game/",
+  "sourceLabel": "Project source",
+  "repoUrl": "https://github.com/tari-project/wasm-template",
+  "publishedAt": "2022-08-10T14:42:24Z",
+  "publicationLabel": "Repository created",
+  "publicationBasis": "GitHub repository creation date; this is not a claim about the first release date.",
+  "publicationUrl": "https://github.com/tari-project/wasm-template",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Tari Template Library",
+      "sourceUrl": "https://github.com/tari-project/wasm-template"
+    },
+    {
+      "label": "Tari CLI",
+      "sourceUrl": "https://github.com/tari-project/tari-cli"
+    }
+  ],
+  "forum": null,
+  "resourceIds": [],
+  "section": "official",
+  "media": {
+    "image": "/previews/community/official-templates.jpg",
+    "video": "/previews/community/official-templates.mp4",
+    "label": "Official guide walkthrough \u00b7 guessing-game example",
+    "sourceUrl": "https://ootle.tari.com/guides/build-a-guessing-game/",
+    "capturedAt": "2026-10-04T16:02:52.616125Z",
+    "reviewedAt": "2026-10-04T16:02:52.616125Z",
+    "sha256": "a220335f5c7c1969fcd325b8247b39151e96f16803d1f4895534a6f70ba75e57"
+  },
+  "officialSource": "https://ootle.tari.com/guides/build-a-guessing-game/"
+}

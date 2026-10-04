@@ -1,0 +1,35 @@
+{
+  "slug": "tari-market",
+  "title": "Tari Market",
+  "creator": "AllGasNoBrakes",
+  "summary": "A community marketplace concept with testnet escrow and seller ratings. The published site currently requires sign-in and its previously listed GitHub repository is unavailable. The cover documents the public directory listing.",
+  "sourceUrl": "https://wiki.tari.com/resources:app_directory:tari_market",
+  "sourceLabel": "Project source",
+  "repoUrl": null,
+  "publishedAt": "2026-09-20T01:30:00Z",
+  "publicationLabel": "Directory updated",
+  "publicationBasis": "Last modification reported by the public wiki; original publication date is not available.",
+  "publicationUrl": "https://wiki.tari.com/resources:app_directory:tari_market",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Ootle testnet escrow",
+      "sourceUrl": "https://wiki.tari.com/resources:app_directory:tari_market"
+    }
+  ],
+  "forum": null,
+  "resourceIds": [
+    "tari-ootle:app:tari-market-0-21-a-tari-concept"
+  ],
+  "section": "community",
+  "media": {
+    "image": "/previews/community/tari-market.jpg",
+    "video": "/previews/community/tari-market.mp4",
+    "label": "Public source walkthrough",
+    "sourceUrl": "https://wiki.tari.com/resources:app_directory:tari_market",
+    "capturedAt": "2026-10-04T16:02:52.616125Z",
+    "reviewedAt": "2026-10-04T16:02:52.616125Z",
+    "sha256": "c169022b4cf24ef35b9f87d9560ec020c6785e85cd73222216c3436dbb20558e"
+  },
+  "demoUrl": "https://tari-market.johnnytsunami14.chatgpt.site/"
+}

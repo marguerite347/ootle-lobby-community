@@ -37,9 +37,11 @@ function CountBadge({metric, kind, unavailable}: {metric?: Count | null; kind: '
     : <span className="contest-count" aria-label={label} title={title}>{content}</span>;
 }
 
-export default function ContestProjectMetrics({value}: {value?: ProjectMetrics}) {
+export default function ContestProjectMetrics({value,repoUrl}: {value?: ProjectMetrics;repoUrl?:string|null}) {
+  const repository = ((repoUrl===undefined?value?.github?.url:repoUrl) || '').match(/^https:\/\/github\.com\/[^/]+\/[^/?#]+/)?.[0];
+  const github = repository ? {...value?.github,count:value?.github?.count??null,checkedAt:value?.github?.checkedAt??null,url:repository} : null;
   return <div className="contest-counts">
-    <CountBadge metric={value?.github} kind="github" unavailable={value?.github === null ? 'No GitHub repository for this project' : 'GitHub star count unavailable'}/>
+    <CountBadge metric={github} kind="github" unavailable={value?.github === null ? 'No GitHub repository for this project' : 'GitHub star count unavailable'}/>
     <CountBadge metric={value?.forum} kind="forum" unavailable="Tari forum comment count unavailable"/>
   </div>;
 }

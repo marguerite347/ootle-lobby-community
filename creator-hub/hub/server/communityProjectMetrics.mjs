@@ -23,11 +23,20 @@ export async function refreshCommunityMetrics(projects, previous={items:{}}, rea
  }));
  return {checkedAt,items:Object.fromEntries(results)};
 }
+
+function metricProjects(feed) {
+ const october=(feed.contests||[]).filter(contest=>contest.id==='october-2026').flatMap(contest=>contest.entries.map(p=>({
+  ...p, slug:`october:${p.slug}`,
+  repoUrl:/^https:\/\/github\.com\/[\w.-]+\/[\w.-]+$/.test(p.repoUrl)?p.repoUrl:null,
+  forum:{url:p.sourceUrl,topicId:396,postNumber:Number(p.sourceUrl.split('/').at(-1)),scope:'replies'},
+ })));
+ return [...(feed.communityProjects||[]),...october];
+}
 export function createCommunityProjectMetrics({content,read=getJson,now=Date.now,initial=seed}={}) {
  let snapshot=initial,nextRefresh=0,pending;
  return async()=>{
   if(now()<nextRefresh)return snapshot;
-  if(!pending)pending=content().then(feed=>refreshCommunityMetrics(feed.communityProjects||[],snapshot,read,now())).then(result=>(snapshot=result)).catch(()=>snapshot).finally(()=>{nextRefresh=now()+86400000;pending=undefined;});
+  if(!pending)pending=content().then(feed=>refreshCommunityMetrics(metricProjects(feed),snapshot,read,now())).then(result=>(snapshot=result)).catch(()=>snapshot).finally(()=>{nextRefresh=now()+86400000;pending=undefined;});
   return pending;
  };
 }
