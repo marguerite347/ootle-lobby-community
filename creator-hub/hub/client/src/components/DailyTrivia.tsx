@@ -10,6 +10,7 @@ import SparkUnlock from './SparkUnlock';
 import PlaytestWheel from './PlaytestWheel';
 import SparkJourney, {useRewardEntrance} from './SparkJourney';
 import {playtestRequest} from './rewardPlaytest';
+import './CompactRitual.css';
 import {IDLE_READY_CHROME} from './vaultChargeArt';
 import {createSparkAudio} from './sparkAudio';
 import {
@@ -301,6 +302,9 @@ export default function DailyTrivia({presentation, onRestart, sectionId = 'daily
     'daily-spark',
     'spark-showcase',
     'is-ready-invitation',
+    'compact-ritual',
+    game?.phase !== 'ready' && playtestEnding !== 'rest' ? 'is-active-round' : '',
+    game && ['won', 'super', 'complete'].includes(game.phase) && !celebration && ['playing', 'settling'].includes(playtestEnding) ? 'is-wheel-round' : '',
     answered ? 'is-answered' : '',
     revealing ? 'is-winning' : '',
     tier === 'top' && motionAllowed() ? 'is-impact' : '',
@@ -310,7 +314,7 @@ export default function DailyTrivia({presentation, onRestart, sectionId = 'daily
 
   return <section className={sectionClass} id={sectionId} data-reveal={tier ?? undefined} aria-labelledby="daily-spark-title">
     <div className="spark-atmosphere" aria-hidden="true"><i /><i /><i /><span>✦</span></div>
-    <SparkIntro hours={hours} minutes={minutes} game={game} presentation={presentation} />
+    <SparkIntro presentation={presentation} />
     <div className="spark-game">
       <div className="spark-game-top">
         <span>YOUR DAILY PLAY</span>
@@ -338,22 +342,28 @@ export default function DailyTrivia({presentation, onRestart, sectionId = 'daily
     {playtestEnding === 'rest' && game?.round?.explanation && <div className="spark-creator-takeaway"><strong>Creator takeaway</strong><p>{game.round.explanation}</p></div>}
     {(game?.phase === 'ready' || playtestEnding === 'rest') && <SparkJourney />}
     <div className="spark-footer">
+    <SparkDetails hours={hours} minutes={minutes} game={game} presentation={presentation} />
     {!presentation && <div className="spark-build-notes"><Link className="spark-riff-link" to="/create/trivia" state={{triviaSeed: riffFromGame(game)}}>Riff this Game</Link></div>}
     <div className="reward-playtest-bar"><button type="button" className="spark-test-again" title="Playtest: simulated AI Sparks. No daily attempt used." aria-description="Restarts the playtest with simulated AI Sparks; no daily attempt is used." onClick={onRestart || (() => window.location.reload())}>{presentation ? 'Play again ↻' : 'Test again ↻'}</button></div>
     </div>
   </section>;
 }
 
-function SparkIntro({hours, minutes, game, presentation}: {hours: number; minutes: number; game: Game | null; presentation?: TriviaPresentation}) {
+function SparkIntro({presentation}: {presentation?: TriviaPresentation}) {
+  return <div className="spark-intro">
+    <div className="spark-kicker spark-product-title"><span className="spark-live-dot" /><span className="spark-product-name">{presentation?.title || 'The Daily Ritual'} <small>{presentation?.subtitle || 'One question. A little magic.'}</small></span><span>FREE TO PLAY</span></div>
+    <h1 id="daily-spark-title" className="spark-loot-drop"><span>{IDLE_READY_CHROME.heading}</span><br />{' '}<em>{IDLE_READY_CHROME.emphasis}</em></h1>
+
+  </div>;
+}
+
+function SparkDetails({hours, minutes, game, presentation}: {hours: number; minutes: number; game: Game | null; presentation?: TriviaPresentation}) {
   const superOdds = game?.superSpins?.length ? game.superSpins : [
     {effective: 5, percent: 60}, {effective: 10, percent: 25},
     {effective: 25, percent: 12}, {effective: 50, percent: 3},
   ];
   const maxPath = formatPathPercent(game?.maxPathPercent ?? 0.5);
-  return <div className="spark-intro">
-    <div className="spark-kicker spark-product-title"><span className="spark-live-dot" /><span className="spark-product-name">{presentation?.title || 'The Daily Ritual'} <small>{presentation?.subtitle || 'One question. A little magic.'}</small></span><span>FREE TO PLAY</span></div>
-    <h1 id="daily-spark-title" className="spark-loot-drop"><span>{IDLE_READY_CHROME.heading}</span><br />{' '}<em>{IDLE_READY_CHROME.emphasis}</em></h1>
-
+  return <>
     {!presentation && <div className="spark-reset spark-drop-timer" aria-label={`Next drop in ${hours} hours and ${minutes} minutes`} title="Resets at 00:00 UTC"><span className="spark-drop-label">Next Drop</span><strong><span>{String(hours).padStart(2, '0')}<small>h</small></span><i aria-hidden="true">:</i><span>{String(minutes).padStart(2, '0')}<small>m</small></span></strong></div>}
     <details className="spark-rules">
       <summary>How to play & rewards</summary>
@@ -373,7 +383,7 @@ function SparkIntro({hours, minutes, game, presentation}: {hours: number; minute
         <p className="spark-rules-note">Practice rounds are replayable. AI Sparks are in-app credits, not TARI or cash. This playtest uses simulated rewards.</p>
       </div>
     </details>
-  </div>;
+  </>;
 }
 
 function SparkReady({busy, game, onStart, locked = false, presentation}: {busy: boolean; game: Game; onStart: () => void; locked?: boolean; presentation?: TriviaPresentation}) {
