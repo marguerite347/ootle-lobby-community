@@ -55,7 +55,7 @@ export default function SparkUnlock({amount, headline, onContinue, onReveal, inl
       <div className="unlock-object unlock-object-live" aria-hidden="true">{!reduced && crystalState !== 'unavailable' && <CrystalCanvas query={`reward=1&wheel=1${crystalCapturePalette()}`} onReady={() => setCrystalState('ready')} onError={() => setCrystalState('unavailable')} />}</div>
 
       <div className="unlock-payoff"><h2>{headline}</h2><div className="unlock-amount" aria-hidden="true">+{count.toLocaleString()}</div><p>AI Sparks banked</p></div>
-      <div className="unlock-next">{inline ? <p role="status">Next up: spin.</p> : <button ref={button} className="btn" onClick={onContinue}>Spin for the multiplier <span>→</span></button>}</div>
+      {!inline && <div className="unlock-next"><button ref={button} className="btn" onClick={onContinue}>Spin for the multiplier <span>→</span></button></div>}
     </div>
   </div>;
   return inline ? content : createPortal(content, document.body);

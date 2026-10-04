@@ -53,6 +53,11 @@ export default function PlaytestWheel({game, play, onSettled, onCue, warming = f
     window.addEventListener('message', receive);
     return () => {clearTimeout(readyTimeout); stopCelebration(); active = false; observer.disconnect(); media.removeEventListener('change', sendMotion); window.removeEventListener('message', receive);};
   }, []);
+  useEffect(() => {
+    if (!ready) return;
+    // Preload during the reward reveal, but only play once the wheel is visible.
+    frame.current?.contentWindow?.postMessage({type: 'ootle-wheel-active', active: !warming}, location.origin);
+  }, [ready, warming]);
   return <div className="playtest-wheel" aria-hidden={warming || undefined} style={warming ? {position: 'absolute', width: '100%', visibility: 'hidden', pointerEvents: 'none'} : undefined}>
     {!warming && !ready && !error && <p role="status">Charging your wheel…</p>}
     <iframe ref={frame} aria-hidden={warming || !ready || undefined} style={{height, visibility: ready && !warming ? 'visible' : 'hidden'}} title="AI Sparks multiplier wheels" src={`/wheel-lab/native.html?super&embed${crystalCapturePalette()}&base=${game.round?.base || 100}`} />
