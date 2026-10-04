@@ -3,22 +3,20 @@ import {NavLink, useLocation} from 'react-router-dom';
 import QuickSearch from './QuickSearch';
 
 const groups = [
-  {title: 'Create', links: [
-    {to: '/#creator-toolkit', label: 'Start building', hint: 'Choose a template or guide'},
-    {to: '/#creator-community', label: 'Connect & share', hint: 'Meet builders and post your work'},
-    {to: '/challenges', label: 'Challenges', hint: 'Join the next challenge'},
+  {title: 'Discover', links: [
+    {to: '/#community-entries', label: 'Community projects', hint: 'See what people are building'},
+    {to: '/explore', label: 'Resource library', hint: 'Find your next building block'},
+    {to: '/learn', label: 'Learn & guides', hint: 'Get started with Ootle'},
   ]},
-  {title: 'Resources', links: [
-    {to: '/explore', label: 'Discover', hint: 'Find your next resource'},
-    {to: '/learn', label: 'Learn', hint: 'Guides to get you going'},
-    {to: '/ootle-templates', label: 'Ootle Templates', hint: 'Templates, guides & skills'},
-    {to: '/skills', label: 'Skills', hint: 'Equip your agent'},
-    {to: '/agent-start', label: 'Build with your agent', hint: 'Guidance for your own tools'},
+  {title: 'Community', links: [
+    {to: '/challenges', label: 'Challenges', hint: 'Join the next challenge'},
+    {to: '/#creator-community', label: 'Connect & share', hint: 'Meet builders and post your work'},
+    {to: 'https://github.com/marguerite347/ootle-lobby-community', label: 'Contribute on GitHub', hint: 'Help shape the lobby'},
   ]},
   {title: 'Updates', links: [
-    {to: '/calendar', label: 'Marketing calendar', hint: 'See what’s coming up'},
     {to: '/blog', label: 'Creator Journal', hint: 'Ideas and stories'},
-    {to: '/growth', label: 'Growth Dashboard', hint: 'Track Ootle growth'},
+    {to: '/calendar', label: 'Marketing calendar', hint: 'See what’s coming up'},
+    {to: '/growth', label: 'Growth dashboard', hint: 'Track Ootle growth'},
   ]},
 ];
 
@@ -61,22 +59,21 @@ export default function CreatorStack() {
   }}>
     <button id="creator-stack-trigger" ref={trigger} className={`creator-stack-trigger${active ? ' is-active' : ''}`}
       aria-expanded={open} aria-controls="creator-stack-panel" onClick={() => setOpen(!open)}>
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-        <path d="m12 3 9 5-9 5-9-5 9-5Zm-9 9 9 5 9-5M3 16l9 5 9-5" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-      <span className="stack-label">Creator<small>Stack</small></span> <span className="stack-chevron" aria-hidden="true">⌄</span>
+      <span className="stack-label">Explore</span><span className="stack-chevron" aria-hidden="true">⌄</span>
     </button>
     <div id="creator-stack-panel" className="creator-stack-panel" hidden={!open}>
-      <div className="stack-heading"><span>Your next move starts here.</span><QuickSearch/></div>
-      <nav className="stack-groups" aria-label="Creator Stack">
+      <div className="stack-heading"><span>Explore the lobby.</span><QuickSearch/></div>
+      <nav className="stack-groups" aria-label="Explore">
         {groups.map(group => <section key={group.title} aria-label={group.title}>
           <h2>{group.title}</h2>
-          {group.links.map(link => <NavLink key={link.to} to={link.to}>
+          {group.links.map(link => link.to.startsWith('https:') ? <a key={link.to} href={link.to} target="_blank" rel="noreferrer">
+            <strong>{link.label}</strong><small>{link.hint}</small>
+          </a> : <NavLink key={link.to} to={link.to}>
             <strong>{link.label}</strong><small>{link.hint}</small>
           </NavLink>)}
         </section>)}
       </nav>
-      <div className="stack-settings"><span>Make yourself at home.</span><div className="header-effects" data-effects-slot /></div>
+      <div className="stack-settings"><NavLink to="/build-feedback">Feedback</NavLink><div className="header-effects" data-effects-slot /></div>
     </div>
   </div>;
 }

@@ -10,6 +10,7 @@ const Challenges = lazy(() => import('./pages/Challenges'));
 const WeeklyChallenges = lazy(() => import('./pages/WeeklyChallenges'));
 const Insights = lazy(() => import('./pages/Insights'));
 const Growth = lazy(() => import('./pages/Growth'));
+const Workbench = lazy(() => import('./pages/Workbench'));
 const GameKit = lazy(() => import('./pages/GameKit'));
 const SkillMarket = lazy(() => import('./pages/SkillMarket'));
 const Assets = lazy(() => import('./pages/Assets'));
@@ -57,6 +58,7 @@ const router = createBrowserRouter([
       { path: 'challenges/weekly', element: <WeeklyChallenges /> },
       { path: 'challenges/:contest', element: <Challenges /> },
       { path: 'huggingface', element: <HuggingFace /> },
+      { path: 'workbench', element: <Workbench /> },
       { path: 'ootle-templates', element: <OotleTemplates /> },
       { path: 'explore', element: <Catalog mode="explore" /> },
       { path: 'build', element: <LegacyRoute /> },
