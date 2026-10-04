@@ -1,4 +1,4 @@
-import {readFileSync, writeFileSync} from 'node:fs';
+import {existsSync, readFileSync, writeFileSync} from 'node:fs';
 import {execFileSync} from 'node:child_process';
 
 const registry = JSON.parse(readFileSync('docs/integration-gaps.json', 'utf8'));
@@ -15,6 +15,7 @@ for (const item of registry.items) {
 }
 const tracked = execFileSync('git', ['ls-files', '-z'], {encoding:'utf8'}).split('\0').filter(file => /\.(?:mjs|ts|tsx|yml|yaml)$/.test(file));
 for (const file of tracked) {
+  if (!existsSync(file)) continue; // Ignore unstaged deletions; registered gap files are checked above.
   const source = readFileSync(file, 'utf8');
   for (const match of source.matchAll(/INTEGRATION_GAP\[([A-Z][A-Z0-9-]+)\]/g)) {
     const item = registry.items.find(item => item.id === match[1]);

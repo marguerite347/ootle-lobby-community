@@ -1,6 +1,6 @@
 # Tari Workbench: front end and integration contract
 
-The lobby’s Workbench button opens `/workbench`. Its composition follows the supplied Remix IDE reference: activity rail, contextual/file sidebar, tabbed CodeMirror editor and Home, bottom output, and an optional Tari Assistant. The Creator menu and rest of the restored lobby navigation remain unchanged. No Remix branding or Ethereum/Solidity behavior is copied.
+The lobby’s Workbench button opens `/workbench`. Its composition follows the supplied Remix IDE reference: activity rail, contextual/file sidebar, tabbed CodeMirror editor and Home, bottom output, and an optional Tari Assistant. The Lobby has a 🛠️ Workbench entry instead of a Creator dropdown. Former Creator links and resource search live under Workbench’s Learn tool; the effects toggle remains in the Lobby footer. The Workbench brand link visibly says Back to Lobby. No Remix branding or Ethereum/Solidity behavior is copied.
 
 ## Working now
 
