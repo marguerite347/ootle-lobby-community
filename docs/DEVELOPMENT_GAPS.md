@@ -40,6 +40,7 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 | [OPS-DEPLOY](#ops-deploy) | configuration-required | GitHub main to Vercel deployment |
 | [RETIRED-HOSTING](#retired-hosting) | retired | Writes to /api/projects*, /api/assets*, /api/recipes/:id/projects, /api/challenges/submissions |
 | [COMMUNITY-METRICS](#community-metrics) | build-required | GET /api/community-projects/metrics |
+| [WB-FORK](#wb-fork) | configuration-required | /workbench and Workbench navigation links |
 
 ## WB-RUNNER
 
@@ -304,3 +305,15 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 **Completion check:** Across cold starts and upstream failures, retain counts and checkedAt; show unknown when never verified. Confirm no more than one global upstream refresh per project per day.
 
 **Source:** [creator-hub/hub/server/communityProjectMetrics.mjs](../creator-hub/hub/server/communityProjectMetrics.mjs)
+
+## WB-FORK
+
+**configuration-required** — /workbench and Workbench navigation links
+
+**Current:** The earlier custom editor entry is replaced by a redirect to the actual Remix fork at https://ootle-workbench.vercel.app/. Browser-local workspaces remain untouched; /workbench-backup exports them for import in the fork. Tari integration work now lives in marguerite347/ootle-workbench.
+
+**Remaining:** Maintain the fork deployment and document the split ownership. Complete the fork developer handoff items for hosted compilation, wallet transactions, AI and shared Lobby publishing. The legacy /api/workbench stubs remain unconnected and are not used by the fork.
+
+**Completion check:** Follow both a Lobby client-side navigation and a direct /workbench request into the actual fork. Download an old browser workspace and import its files into Remix. Do not claim network deployment or a published submission without a real receipt.
+
+**Source:** [creator-hub/hub/client/src/pages/WorkbenchEntry.tsx](../creator-hub/hub/client/src/pages/WorkbenchEntry.tsx)
