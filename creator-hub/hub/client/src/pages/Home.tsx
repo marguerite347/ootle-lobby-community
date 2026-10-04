@@ -1,7 +1,7 @@
 import {OfficialProjects} from '../components/ExternalCommunityProjects';
 import PublicationGallery from '../workbench/PublicationGallery';
 import {useEffect} from 'react';
-import {useLocation} from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 import ConcoctionArt from '../components/ConcoctionArt';
 import ContestProjects from '../components/ContestProjects';
 import OctoberSubmissions from '../components/OctoberSubmissions';
@@ -30,8 +30,14 @@ export default function Home() {
     <section className="season-community" id="creator-community">
       <div className="season-community-copy">
         <h2>Brew something<br/>brilliant.</h2>
-        <p>Trade ideas on Discord. Share your build in the contest thread.</p>
-        <div className="season-community-actions"><a className="season-button" href="https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396" target="_blank" rel="noreferrer">See you in the contest thread </a><a className="season-text-link" href="https://discord.com/invite/dj34vQSe6d" target="_blank" rel="noreferrer">Join Tari on Discord</a></div>
+        <p>Build in Ootle Workbench. Trade ideas on Discord. Share your creation with the community.</p>
+        <div className="season-community-actions">
+          <Link className="season-button" to="/workbench">Open Ootle Workbench</Link>
+          <div className="season-community-actions">
+            <a className="season-text-link" href="https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396" target="_blank" rel="noreferrer">Contest thread</a>
+            <a className="season-text-link" href="https://discord.com/invite/dj34vQSe6d" target="_blank" rel="noreferrer">Join Tari on Discord</a>
+          </div>
+        </div>
       </div>
       <img className="season-community-ghost" src="/seasonal/october-2026/creator-ghost.png" alt="A friendly ghost waving and carrying a glowing code block" width="1254" height="1254" loading="lazy"/>
     </section>
