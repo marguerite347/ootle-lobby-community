@@ -93,3 +93,25 @@
   .lobby-nav-grid .launch-ticket-join br {display:none;}
   .lobby-nav-grid .launch-ticket-join b {display:none;}
 }
+
+/* Workbench is a branded destination; lime remains the ritual action color. */
+.lobby-nav-grid > .workbench-brand-link {
+  background:#11122b;color:var(--season-cloud);border:1px solid #c9b6ff45;
+  border-radius:.5rem;gap:.3125rem;padding:.375rem;
+  box-shadow:none;text-decoration:none;transition:background .15s,border-color .15s;
+}
+.workbench-brand-link > img {width:1.25rem;height:1.25rem;flex:none;}
+.workbench-wordmark {display:flex;flex-direction:column;align-items:flex-start;line-height:1.05;letter-spacing:-.04em;}
+.workbench-wordmark strong {font-weight:800;font-size:.875rem;}
+.workbench-wordmark > span {font-weight:400;font-size:.6875rem;}
+.lobby-nav-grid > .workbench-brand-link:hover {background:#1d1a38;border-color:var(--season-lavender);}
+@media(min-width:760px) {
+  .lobby-nav-grid > .workbench-brand-link {padding:.5rem .625rem;gap:.4375rem;}
+  .workbench-brand-link > img {width:1.625rem;height:1.625rem;}
+  .workbench-wordmark {flex-direction:row;align-items:baseline;line-height:1;}
+  .workbench-wordmark strong,.workbench-wordmark > span {font-size:1rem;}
+}
+@media(min-width:1024px) {
+  .workbench-wordmark strong,.workbench-wordmark > span {font-size:1.125rem;}
+}
+@media(prefers-reduced-motion:reduce) {.lobby-nav-grid > .workbench-brand-link {transition:none;}}
