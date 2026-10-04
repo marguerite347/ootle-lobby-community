@@ -16,15 +16,15 @@ export function githubRepository(url) {
 }
 
 // Follow the complete Discourse stream, as the existing apps connector does.
-export async function fetchContestPosts(read = getJson) {
-  const topic = await read(`${FORUM}/t/${contestRegistry.topicId}.json`, {timeoutMs: 10000});
+export async function fetchContestPosts(read = getJson, topicId = contestRegistry.topicId) {
+  const topic = await read(`${FORUM}/t/${topicId}.json`, {timeoutMs: 10000});
   const stream = topic?.post_stream;
   if (!Array.isArray(stream?.posts) || !Array.isArray(stream?.stream)) throw new Error('Incomplete forum stream');
   const posts = new Map(stream.posts.map(post => [post.id, post]));
   const missing = stream.stream.filter(id => !posts.has(id));
   for (let offset = 0; offset < missing.length; offset += 20) {
     const query = missing.slice(offset, offset + 20).map(id => `post_ids[]=${encodeURIComponent(id)}`).join('&');
-    const batch = await read(`${FORUM}/t/${contestRegistry.topicId}/posts.json?${query}`, {timeoutMs: 10000});
+    const batch = await read(`${FORUM}/t/${topicId}/posts.json?${query}`, {timeoutMs: 10000});
     for (const post of batch?.post_stream?.posts || []) posts.set(post.id, post);
   }
   if (stream.stream.some(id => !posts.has(id))) throw new Error('Forum omitted requested posts');

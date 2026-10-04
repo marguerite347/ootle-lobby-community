@@ -110,3 +110,7 @@ Allowed kinds are `public-page`, `walkthrough` and `gameplay`; `posterUrl` is op
 - [Brand and typography in the video templates](../creator-hub/video-templates/README.md#brand--typography)
 
 Public availability is not blanket permission to relicense third-party code, fonts, trademarks or artwork. Preserve the provided notices and project credits.
+
+## Projects shared outside contests
+
+Use the separate [Community Projects review and capture workflow](COMMUNITY_PROJECTS.md). It supports public creator posts/repositories, publication provenance, GitHub activity and stars, project-specific forum comments, reviewed video covers, descriptions and component evidence. Workbench's eventual publishing service remains a separate integration gap.

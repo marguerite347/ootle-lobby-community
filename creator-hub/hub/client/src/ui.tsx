@@ -58,7 +58,7 @@ export function StarButton({ kind, id, initialStars, onChange }: { kind: 'resour
   );
 }
 
-export function EcosystemBadge({ r }: { r: Resource }) {
+export function EcosystemBadge({ r }: { r: Pick<Resource,'ecosystem'|'native'> }) {
   const label = ecoLabel(r.ecosystem);
   return <span className={`badge dot ${r.native ? 'native' : 'ext'}`}>{label}</span>;
 }
@@ -66,6 +66,7 @@ export function EcosystemBadge({ r }: { r: Resource }) {
 export function ecoLabel(eco: string) {
   return ({
     'tari-ootle': 'Tari Ootle',
+    tari: 'Tari L1',
     gdevelop: 'GDevelop',
     luanti: 'Luanti',
     creative: 'Creative',
@@ -106,7 +107,8 @@ function hueOf(id: string) { let h = 0; for (let i = 0; i < id.length; i++) h = 
 // Lightweight media thumbnail for grid cards: real source image/poster, an actual
 // muted looping clip while visible when one exists (e.g. a live app-webpage capture), or
 // a styled animated placeholder. Never a fabricated screenshot.
-export function ResourceCardMedia({ r, className, metrics }: { r: Resource; className?: string; metrics?: ReactNode }) {
+export type CardMediaResource = Pick<Resource,'id'|'ecosystem'|'native'|'title'|'preview'> & {popularity?:Resource['popularity']};
+export function ResourceCardMedia({ r, className, metrics }: { r: CardMediaResource; className?: string; metrics?: ReactNode }) {
   const [failed, setFailed] = useState(false);
   const [hover, setHover] = useState(false);
   const [visible, setVisible] = useState(false);
@@ -152,7 +154,7 @@ export function ResourceCardMedia({ r, className, metrics }: { r: Resource; clas
       )}
       {video && <video ref={vref} className={`media-video ${playing ? 'on' : ''}`} src={video} muted loop playsInline preload="metadata" onPlaying={() => setPlaying(true)} onPause={() => setPlaying(false)} onError={() => setPlaying(false)} />}
       <div className="media-badges"><EcosystemBadge r={r} /></div>
-      <div className="media-pop">{metrics ?? <PopularityChip p={r.popularity} compact />}</div>
+      <div className="media-pop">{metrics ?? (r.popularity ? <PopularityChip p={r.popularity} compact /> : null)}</div>
     </div>
   );
 }

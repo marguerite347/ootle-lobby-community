@@ -39,6 +39,7 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 | [OPS-OCTOBER-CHANNEL](#ops-october-channel) | build-required | Once-daily October monitor notification delivery |
 | [OPS-DEPLOY](#ops-deploy) | configuration-required | GitHub main to Vercel deployment |
 | [RETIRED-HOSTING](#retired-hosting) | retired | Writes to /api/projects*, /api/assets*, /api/recipes/:id/projects, /api/challenges/submissions |
+| [COMMUNITY-METRICS](#community-metrics) | build-required | GET /api/community-projects/metrics |
 
 ## WB-RUNNER
 
@@ -92,7 +93,7 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 
 **build-required** — GET /api/workbench/publications; Community Projects and October galleries
 
-**Current:** Disconnected feed returns an empty list. Existing reviewed October content still works.
+**Current:** Disconnected feed returns an empty list. Existing reviewed October content still works. Reviewed external Community Projects load independently from the public content feed; Workbench publishing remains disconnected.
 
 **Remaining:** Provide approved durable public records, public-safe projection, stable IDs and pagination when needed. Wire approved publication writes to this same source.
 
@@ -291,3 +292,15 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 **Completion check:** Public app returns 410 for each retired write even when Workbench services are injected.
 
 **Source:** [creator-hub/hub/server/inspirationLobby.mjs](../creator-hub/hub/server/inspirationLobby.mjs), [creator-hub/hub/server/projects.mjs](../creator-hub/hub/server/projects.mjs), [creator-hub/hub/server/assets.mjs](../creator-hub/hub/server/assets.mjs), [creator-hub/hub/server/challenges.mjs](../creator-hub/hub/server/challenges.mjs)
+
+## COMMUNITY-METRICS
+
+**build-required** — GET /api/community-projects/metrics
+
+**Current:** Public GitHub stars/push dates and complete project-specific Discourse reply counts work for reviewed records. Daily caching is per warm server instance; bundled counts survive upstream outages.
+
+**Remaining:** For globally once-daily refresh across serverless cold starts, persist and coordinate the daily cache. Optionally configure a GitHub read token for higher rate limits.
+
+**Completion check:** Across cold starts and upstream failures, retain counts and checkedAt; show unknown when never verified. Confirm no more than one global upstream refresh per project per day.
+
+**Source:** [creator-hub/hub/server/communityProjectMetrics.mjs](../creator-hub/hub/server/communityProjectMetrics.mjs)

@@ -1,3 +1,4 @@
+import {createCommunityProjectMetrics} from './communityProjectMetrics.mjs';
 // INTEGRATION_GAP[CFG-DATA] (configuration-required): see docs/DEVELOPMENT_GAPS.md#cfg-data.
 import { fileURLToPath } from 'node:url';
 import {createContestMetrics} from './contestMetrics.mjs';
@@ -70,6 +71,10 @@ export function createApp() {
   const communityContent = createCommunityContent();
   api.get('/community-content', wrap(async (req, res) => {
     res.set('Cache-Control', 'public, max-age=60').json(await communityContent());
+  }));
+  const communityMetrics = createCommunityProjectMetrics({content:communityContent});
+  api.get('/community-projects/metrics', wrap(async (req, res) => {
+    res.set('Cache-Control', 'public, max-age=300').json(await communityMetrics());
   }));
   const contestMetrics = createContestMetrics();
   api.get('/contests/september-2026/metrics', wrap(async (req, res) => {
