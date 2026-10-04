@@ -5,11 +5,11 @@ type Count = {count: number | null; url: string; checkedAt: string | null};
 export type ProjectMetrics = {github: (Count & {pushedAt?: string | null; activityUrl?: string}) | null; forum: Count & {publishedAt?: string | null; updatedAt?: string | null; updateUrl?: string}};
 type Metrics = Record<string, ProjectMetrics>;
 
-export function useContestMetrics() {
+export function useContestMetrics(endpoint = '/api/contests/september-2026/metrics') {
   const [metrics, setMetrics] = useState<Metrics>({});
   useEffect(() => {
     const controller = new AbortController();
-    fetch('/api/contests/september-2026/metrics', {signal: controller.signal})
+    fetch(endpoint, {signal: controller.signal})
       .then(response => {
         if (!response.ok) throw new Error('Metrics unavailable');
         return response.json();
@@ -17,7 +17,7 @@ export function useContestMetrics() {
       .then(result => setMetrics(result.items))
       .catch(() => { /* An unavailable count stays unknown, never zero. */ });
     return () => controller.abort();
-  }, []);
+  }, [endpoint]);
   return metrics;
 }
 
@@ -25,7 +25,7 @@ function CountBadge({metric, kind, unavailable}: {metric?: Count | null; kind: '
   const count = metric?.count;
   const description = kind === 'github'
     ? `GitHub ${count === 1 ? 'star' : 'stars'}`
-    : `${count === 1 ? 'comment' : 'comments'} in this September submission’s reply thread on the Tari forum`;
+    : `${count === 1 ? 'comment' : 'comments'} in this project’s discussion on the Tari forum`;
   const label = count == null ? unavailable : `${count.toLocaleString()} ${description}`;
   const title = metric?.checkedAt ? `${label} · Checked ${new Date(metric.checkedAt).toLocaleString()}` : label;
   const icon = kind === 'github'

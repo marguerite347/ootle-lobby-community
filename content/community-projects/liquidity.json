@@ -1,0 +1,42 @@
+{
+  "slug": "liquidity",
+  "title": "Tari/Ootle Liquidity Protocol",
+  "summary": "Experimental AMM pools, liquidity-provider markets and NFT trading for Tari Ootle. Includes a browser trading interface and Rust templates. Testnet development: the creator reports no live protocol deployment yet.",
+  "creator": "GSXRspartan",
+  "sourceUrl": "https://github.com/GSXRspartan/tari-ootle-liquidity-protocol#readme",
+  "sourceLabel": "Creator’s repository",
+  "publishedAt": "2026-09-24T18:39:40Z",
+  "publicationBasis": "Repository creation date reported by GitHub; not a verified first release or forum announcement date.",
+  "repoUrl": "https://github.com/GSXRspartan/tari-ootle-liquidity-protocol",
+  "forum": null,
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Fungible Pool",
+      "sourceUrl": "https://github.com/GSXRspartan/tari-ootle-liquidity-protocol/blob/5118e9550c9a461c47b6b1db4da1922f3501784b/templates/fungible_pool/src/lib.rs"
+    },
+    {
+      "label": "NFT Marketplace",
+      "sourceUrl": "https://github.com/GSXRspartan/tari-ootle-liquidity-protocol/blob/5118e9550c9a461c47b6b1db4da1922f3501784b/templates/nft_marketplace/src/lib.rs"
+    },
+    {
+      "label": "Tari Template Library",
+      "sourceUrl": "https://github.com/GSXRspartan/tari-ootle-liquidity-protocol/blob/5118e9550c9a461c47b6b1db4da1922f3501784b/templates/fungible_pool/Cargo.toml"
+    },
+    {
+      "label": "Tari wallet provider",
+      "sourceUrl": "https://github.com/GSXRspartan/tari-ootle-liquidity-protocol/blob/5118e9550c9a461c47b6b1db4da1922f3501784b/apps/web/src/services/tariWindow.ts"
+    }
+  ],
+  "media": {
+    "image": "/previews/community/liquidity.jpg",
+    "video": "/previews/community/liquidity.mp4",
+    "label": "Repository walkthrough · testnet interface screenshots",
+    "sourceUrl": "https://github.com/GSXRspartan/tari-ootle-liquidity-protocol#readme",
+    "capturedAt": "2026-10-04T15:32:57.764526Z",
+    "reviewedAt": "2026-10-04T15:32:57.764526Z",
+    "sha256": "3dc0541e9d500f049abd5ff4177bb0b64edb95af43c411f06b213c1bf40625e5"
+  },
+  "publicationLabel": "Repository created",
+  "publicationUrl": "https://github.com/GSXRspartan/tari-ootle-liquidity-protocol#readme"
+}

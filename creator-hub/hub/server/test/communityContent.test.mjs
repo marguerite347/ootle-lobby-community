@@ -37,3 +37,8 @@ test('older September feeds keep the bundled October section available',async()=
  const read=createCommunityContent({initial:seed,read:async()=>seed,now:()=>1});
  assert.equal((await read()).contests[0].id,'october-2026');
 });
+
+test('older content feeds retain the bundled external community registry',async()=>{
+ const read=createCommunityContent({initial:seed,read:async()=>seed,now:()=>1});
+ assert.equal((await read()).communityProjects.length,2);
+});

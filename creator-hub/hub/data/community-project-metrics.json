@@ -1,0 +1,33 @@
+{
+  "checkedAt": "2026-10-04T15:32:57.764526Z",
+  "items": {
+    "liquidity": {
+      "github": {
+        "count": 1,
+        "url": "https://github.com/GSXRspartan/tari-ootle-liquidity-protocol/stargazers",
+        "pushedAt": "2026-10-03T08:39:05Z",
+        "activityUrl": "https://github.com/GSXRspartan/tari-ootle-liquidity-protocol/activity",
+        "checkedAt": "2026-10-04T15:32:57.764526Z"
+      },
+      "forum": {
+        "count": null,
+        "url": "",
+        "checkedAt": null
+      }
+    },
+    "miner": {
+      "github": {
+        "count": 0,
+        "url": "https://github.com/JustAResearcher/TARI.Miner/stargazers",
+        "pushedAt": "2026-07-31T12:43:38Z",
+        "activityUrl": "https://github.com/JustAResearcher/TARI.Miner/activity",
+        "checkedAt": "2026-10-04T15:32:57.764526Z"
+      },
+      "forum": {
+        "count": 0,
+        "url": "https://community.tari.com/t/open-source-c29-gpu-miner-for-tari-universe/210",
+        "checkedAt": "2026-10-04T15:32:57.764526Z"
+      }
+    }
+  }
+}

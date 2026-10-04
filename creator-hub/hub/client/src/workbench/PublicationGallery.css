@@ -11,3 +11,6 @@
 .published-project-card a {color:var(--season-lavender);font-size:13px;}
 @media(min-width:700px) {.published-project-grid {grid-template-columns:repeat(3,minmax(0,1fr));}}
 @media(max-width:599px) {.community-project-empty {align-items:flex-start;flex-direction:column;}}
+
+.community-media-caption {display:inline-block;color:var(--season-muted);font-size:11px;margin:0 0 10px;}
+.community-projects .contest-project-actions {flex-wrap:wrap;gap:10px 16px;}

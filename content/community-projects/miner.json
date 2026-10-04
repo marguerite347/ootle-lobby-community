@@ -1,0 +1,39 @@
+{
+  "slug": "miner",
+  "title": "TARI.Miner",
+  "summary": "An open-source NVIDIA CUDA miner for Tari’s Cuckaroo29 proof of work, with Windows, Linux and HiveOS releases. Connects to LuckyPool. A Tari L1 tool, rather than an Ootle smart-contract app.",
+  "creator": "Meowmancer / JustAResearcher",
+  "sourceUrl": "https://github.com/JustAResearcher/TARI.Miner#readme",
+  "sourceLabel": "Creator’s repository",
+  "publishedAt": "2026-07-20T19:53:18.673Z",
+  "publicationBasis": "Public forum announcement by kinkajou on July 20; the creator’s repository was created July 19.",
+  "repoUrl": "https://github.com/JustAResearcher/TARI.Miner",
+  "forum": {
+    "url": "https://community.tari.com/t/open-source-c29-gpu-miner-for-tari-universe/210",
+    "topicId": 210,
+    "postNumber": 1,
+    "scope": "topic"
+  },
+  "ecosystem": "tari",
+  "technologies": [
+    {
+      "label": "Tari Cuckaroo29",
+      "sourceUrl": "https://github.com/JustAResearcher/TARI.Miner/blob/ae4446853edd191b01221be12b26f46854ba979c/tari_c29_pool_miner.cu"
+    },
+    {
+      "label": "CUDA C29 solver",
+      "sourceUrl": "https://github.com/JustAResearcher/TARI.Miner/blob/ae4446853edd191b01221be12b26f46854ba979c/mean_c29.cu"
+    }
+  ],
+  "media": {
+    "image": "/previews/community/miner.jpg",
+    "video": "/previews/community/miner.mp4",
+    "label": "Repository walkthrough · project overview",
+    "sourceUrl": "https://github.com/JustAResearcher/TARI.Miner#readme",
+    "capturedAt": "2026-10-04T15:32:57.764526Z",
+    "reviewedAt": "2026-10-04T15:32:57.764526Z",
+    "sha256": "0fd2bc9aefaee48dbbe46123643c9fca88460ce0a884de9e2a443e6997f78bae"
+  },
+  "publicationLabel": "Published on forum",
+  "publicationUrl": "https://community.tari.com/t/open-source-c29-gpu-miner-for-tari-universe/210"
+}

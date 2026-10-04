@@ -1,3 +1,4 @@
+import {readCommunityProjects} from '../shared/readCommunityProjects.mjs';
 import {readContestContent} from '../shared/readContestContent.mjs';
 import {readFileSync} from 'node:fs';
 import {validateFeed} from '../shared/communityContentValidation.mjs';
@@ -8,6 +9,7 @@ export const CONTENT_REPOSITORY = 'https://github.com/marguerite347/ootle-lobby-
 export const CONTENT_FEED = 'https://marguerite347.github.io/ootle-lobby-community/content.json';
 const seed = JSON.parse(readFileSync(new URL('../data/contests/community-content.json', import.meta.url), 'utf8'));
 const bundledContests = readContestContent(new URL('../../../', import.meta.url));
+const bundledCommunity = readCommunityProjects(new URL('../../../', import.meta.url));
 const expectedIds = new Set(contestRegistry.entries.map(entry => entry.id));
 export function acceptedContent(feed) {
   validateFeed(feed);
@@ -31,6 +33,6 @@ export function createCommunityContent({initial = seed, read = getJson, now = Da
         .finally(() => { nextRefresh = now() + 60000; pending = undefined; });
     }
     if (pending) await pending;
-    return {...snapshot, contests:snapshot.contests || bundledContests, repositoryUrl: CONTENT_REPOSITORY, checkedAt, cached};
+    return {...snapshot, contests:snapshot.contests || bundledContests, communityProjects:snapshot.communityProjects ?? bundledCommunity, repositoryUrl: CONTENT_REPOSITORY, checkedAt, cached};
   };
 }

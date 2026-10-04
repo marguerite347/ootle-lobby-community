@@ -20,3 +20,7 @@ These are the curated recordings and posters already included in the public repo
 | Caravel | [MP4](../creator-hub/hub/data/seed/previews/media-b72d50c07a451f4c3d27b57acf8f24b6c376237806601640cef84bca97112f5e.mp4) | [Poster](../creator-hub/hub/data/seed/previews/media-90f39b5af76a89065fdfccbd7540230a347163433539a9a690cb080962bf056e.poster.png) | [Recorded source](https://caravellabs.net) | 2026-10-03 |
 
 New captures: follow [the contributor workflow](COMMUNITY_WORKFLOW.md). Preserve the source URL, capture date, build revision, recording scope, hashes, rights and contributor credit. Review playback before adding a new clip. Historical raw walkthroughs and intermediate renders are not all bundled; do not treat references to local paths in old receipts as downloadable public footage.
+
+## Non-contest community covers
+
+Reviewed repository walkthroughs for Tari/Ootle Liquidity Protocol and TARI.Miner live in `creator-hub/hub/data/seed/previews/community/`. Their content records store source, capture/review dates and video hashes. See [COMMUNITY_PROJECTS.md](COMMUNITY_PROJECTS.md) for provenance, scope and replacement instructions. These are repository overviews, not verified live application demos.
