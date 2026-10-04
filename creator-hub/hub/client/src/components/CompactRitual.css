@@ -60,7 +60,7 @@
   .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-footer {
     display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 4px 6px;
   }
-  .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-footer > * {min-width: 0; justify-self: center}
+  .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-footer > * {min-width: 0; justify-self: center; grid-column: auto}
   .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-drop-timer {gap: 5px; padding: 3px 5px}
   .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-drop-label {font-size: 8px; letter-spacing: .04em}
   .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-drop-timer strong {font-size: 14px; gap: 3px}
