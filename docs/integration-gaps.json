@@ -6,7 +6,7 @@
       "id": "WB-RUNNER",
       "status": "build-required",
       "surface": "POST /api/workbench/runs; GET /api/workbench/runs/:id",
-      "current": "No compiler or test runner is supplied; requests return 501.",
+      "current": "No compiler or test runner is supplied; requests return 501. Browser abort stops polling only; no server cancellation endpoint is defined.",
       "required": "Implement isolated Rust/WASM compile and test jobs, pinned toolchains, logs, durable job/artifact storage, timeouts and cancellation. Bind jobs/artifacts to authenticated owners.",
       "verify": "Compile the bundled Counter, run its tests, reject invalid code, deny another owner access, survive restart and enforce execution limits.",
       "files": [
@@ -55,7 +55,7 @@
       "id": "WB-FEED",
       "status": "build-required",
       "surface": "GET /api/workbench/publications; Community Projects and October galleries",
-      "current": "Disconnected feed returns an empty list. Existing reviewed October content still works. Reviewed external Community Projects load independently from the public content feed; Workbench publishing remains disconnected. September, October, Community, Official and future Workbench publications share ProjectCard presentation.",
+      "current": "Disconnected feed returns an empty list. Existing reviewed October content still works. Reviewed external Community Projects load independently from the public content feed; Workbench publishing remains disconnected. September, October, Community, Official and future Workbench publications share ProjectCard presentation. The current Workbench Publication schema/adapter has no cover or technology fields and passes preview:null and empty technologies; extend it before promising full card metadata.",
       "required": "Provide approved durable public records, public-safe projection, stable IDs and pagination when needed. Wire approved publication writes to this same source. Supply reviewed poster/video provenance, evidenced technology labels and project-specific metrics with each approved publication; disconnected Workbench records have no fabricated covers or counts.",
       "verify": "A published item appears for a second visitor after restart in exactly its selected gallery; drafts/private files never appear.",
       "files": [
@@ -82,7 +82,7 @@
       "id": "WB-SYNC",
       "status": "local-only",
       "surface": "Workbench browser workspace storage",
-      "current": "Edits and publication metadata persist only in this browser. ZIP import/export is working.",
+      "current": "Edits and publication metadata persist only in this browser. Text-file/folder import and ZIP export are working; ZIP archive import is not implemented.",
       "required": "If cross-device/account workspaces are required, build an authenticated durable workspace/version API and conflict/recovery behavior. This is separate from public listings.",
       "verify": "Reload retains local edits now; future sync must round-trip across two devices and reject unauthorized access.",
       "files": [

@@ -1,3 +1,7 @@
 .workbench-wordmark {display:inline-flex;align-items:baseline;white-space:nowrap;line-height:1;letter-spacing:-.04em;}
 .workbench-wordmark > strong {font-weight:800;}
 .workbench-wordmark > span {font-weight:400;}
+
+.season-button.workbench-cta {gap:.5rem;}
+.workbench-cta > img {width:1.75rem;height:1.75rem;flex:none;}
+.workbench-cta .workbench-wordmark {font-size:1.125rem;}

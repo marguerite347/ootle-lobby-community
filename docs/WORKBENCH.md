@@ -1,6 +1,6 @@
 # Tari Workbench: front end and integration contract
 
-The lobby’s Workbench button opens `/workbench`. Its composition follows the supplied Remix IDE reference: activity rail, contextual/file sidebar, tabbed CodeMirror editor and Home, bottom output, and an optional Tari Assistant. The Lobby has a 🛠️ Workbench entry instead of a Creator dropdown. Former Creator links and resource search live under Workbench’s Learn tool; the effects toggle remains in the Lobby footer. The Workbench brand link visibly says Back to Lobby. No Remix branding or Ethereum/Solidity behavior is copied.
+The lobby’s Workbench button opens `/workbench`. Its composition follows the supplied Remix IDE reference: activity rail, contextual/file sidebar, tabbed CodeMirror editor and Home, bottom output, and an optional Tari Assistant. The Lobby has a branded **ootleworkbench** entry instead of a Creator dropdown. Former Creator links and resource search live under Workbench’s Learn tool; the effects toggle remains in the Lobby footer. The Workbench brand link visibly says Back to Lobby. No Remix branding or Ethereum/Solidity behavior is copied.
 
 ## Working now
 
@@ -11,7 +11,7 @@ The lobby’s Workbench button opens `/workbench`. Its composition follows the s
 - Publish form with separate `community` and `october-2026` destinations; browser-local metadata, preview, URL validation, and explicit pending-review versus published results.
 - Home has **Community Projects** for published non-contest work. October Submissions consumes only `october-2026` publications. Neither gallery reads local drafts; records must come from the publication service with `status: published`. October records already in the forum feed are deduplicated by exact source repository URL.
 
-See [the repository-wide development register](DEVELOPMENT_GAPS.md) for all Lobby and Workbench integration flags.
+Start with [the end-to-end developer delivery plan](DEVELOPER_HANDOFF.md). See [the repository-wide development register](DEVELOPMENT_GAPS.md) for all Lobby and Workbench integration flags.
 
 ## Backend connection point
 
@@ -29,7 +29,7 @@ Every service receives the Express request and returns JSON. Implement authentic
 | POST `/publications` | `publish` | `{workspace,...publicationDraft,requestId}` | `{status:'pending-review'|'published',submissionId,publication:Publication|null}` |
 | GET `/publications` | `listPublications` | none | `{items:Publication[]}`; public, approved records only |
 
-A Workspace is `{id:string,name:string,files:Record<relativePath,text>,activeFile:string,publication?:PublicationDraft}`. Treat all client values as untrusted. A Run is `{id,status:'queued'|'running'|'succeeded'|'failed',logs:string[],artifact?:{id,templateHash?}}`. Only a successful compile may return a deployable artifact. The UI polls queued/running jobs once per second for up to 90 seconds and cancels on leaving Workbench. Store artifact ownership, source digest and run status server-side; never trust the UI’s source comparison as authorization. Return appropriate HTTP error codes with `{error:string,code?:string}`.
+A Workspace is `{id:string,name:string,files:Record<relativePath,text>,activeFile:string,publication?:PublicationDraft}`. Treat all client values as untrusted. A Run is `{id,status:'queued'|'running'|'succeeded'|'failed',logs:string[],artifact?:{id,templateHash?}}`. Only a successful compile may return a deployable artifact. The UI polls queued/running jobs once per second for up to 90 seconds and stops browser polling on leaving Workbench. This does not cancel a server job; a server cancellation contract and matching UI still need implementation. Store artifact ownership, source digest and run status server-side; never trust the UI’s source comparison as authorization. Return appropriate HTTP error codes with `{error:string,code?:string}`.
 
 Deployment is testnet-only in this UI. The service must bind the artifact to an authenticated owner, obtain the user's wallet approval in its integration, and distinguish transaction submission from confirmation. A submitted transaction is not claimed as a confirmed template. No keys are collected or stored by the current front end.
 
