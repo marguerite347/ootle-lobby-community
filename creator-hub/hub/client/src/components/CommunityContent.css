@@ -61,3 +61,6 @@
 
 .project-card .project-technology { z-index:3; }
 .project-card .media-pop { z-index:3; }
+/* Empty/unknown badges and gaps still belong to the whole-card link. */
+.project-card .media-pop { pointer-events:none; }
+.project-card .media-pop a { pointer-events:auto; }
