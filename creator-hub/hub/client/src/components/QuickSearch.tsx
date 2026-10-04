@@ -5,6 +5,7 @@ import { api, type Resource } from "../api";
 
 export default function QuickSearch() {
   const dialog = useRef<HTMLDialogElement>(null);
+  const trigger = useRef<HTMLButtonElement>(null);
   const input = useRef<HTMLInputElement>(null);
   const [query, setQuery] = useState("");
   const [items, setItems] = useState<Resource[]>([]);
@@ -63,6 +64,7 @@ export default function QuickSearch() {
   return (
     <>
       <button
+        ref={trigger}
         className="shell-search"
         onClick={open}
         aria-label="Search the hub"
@@ -77,7 +79,7 @@ export default function QuickSearch() {
         onClose={() => {
           const previous = returnFocus.current;
           if (previous?.isConnected && previous.getClientRects().length) previous.focus();
-          else document.getElementById('creator-stack-trigger')?.focus();
+          else trigger.current?.focus();
         }}
         onClick={(event) => {
           if (event.target === dialog.current) dialog.current.close();

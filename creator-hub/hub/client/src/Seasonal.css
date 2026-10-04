@@ -80,27 +80,24 @@
   color:var(--season-lime);
   font-size:9px
 }
-.season-shell .creator-stack  {
-  margin-left:0;
-  order:0
-}
-.season-shell .creator-stack-trigger  {
-  min-width:0;
+.season-header-create {
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:10px;
+  font-size:12px;
+  font-weight:600;
+  white-space:nowrap;
+  color:var(--season-ink);
+  background:var(--season-lime);
+  border-radius:6px;
   min-height:44px;
-  padding:9px;
-  border:1px solid var(--season-line);
-  box-shadow:none;
-  background:transparent;
-  border-radius:9px
 }
-.season-header .stack-label  {
-  font-size:12px
-}
-.season-header .stack-label small,.season-header .creator-stack-trigger svg  {
-  display:none
-}
-.season-header-create  {
-  display:none
+@media(max-width:599px) {
+  .season-header-inner {gap:8px;flex-wrap:nowrap;}
+  .season-brand {gap:8px;}
+  .season-brand>span {font-size:clamp(18px,5.4vw,24px);}
+  .season-brand img {width:34px;height:34px;}
 }
 .season-utility  {
   display:flex;
@@ -638,7 +635,7 @@
   .season-header-create  {
     display:flex;
     align-items:center;
-    gap:24px;
+    gap:6px;
     padding:12px 16px;
     font-size:12px;
     color:var(--season-ink);
