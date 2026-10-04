@@ -1,10 +1,29 @@
 {
   "buildCommand": "npm run build:site",
   "outputDirectory": "public",
-  "functions": {"api/index.mjs": {"includeFiles": "server-content/**"}},
+  "functions": {
+    "api/index.mjs": {
+      "includeFiles": "server-content/**"
+    }
+  },
   "routes": [
-    {"src": "/api/(.*)", "dest": "/api/index.mjs"},
-    {"handle": "filesystem"},
-    {"src": "/(.*)", "dest": "/api/index.mjs"}
+    {
+      "src": "/workbench/?",
+      "status": 307,
+      "headers": {
+        "Location": "https://ootle-workbench.vercel.app/"
+      }
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/index.mjs"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.mjs"
+    }
   ]
 }

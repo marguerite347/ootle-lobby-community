@@ -1,3 +1,5 @@
+> **Workbench moved:** The live `/workbench` entry now opens the actual [Remix fork](https://github.com/marguerite347/ootle-workbench). Its [integration handoff](https://github.com/marguerite347/ootle-workbench/blob/ootle/docs/ootle/DEVELOPER_HANDOFF.md) owns future IDE work. Earlier browser-local files can be exported at `/workbench-backup`. The API gaps below still apply to the Lobby; legacy Workbench endpoints remain stubs.
+
 # Ootle Lobby and Workbench: delivery plan
 
 Reviewed October 4, 2026. This is the implementation order and acceptance plan for the public repository. The detailed source register is [DEVELOPMENT_GAPS.md](DEVELOPMENT_GAPS.md), maintained in [integration-gaps.json](integration-gaps.json). The API contract is [WORKBENCH.md](WORKBENCH.md). This plan does not claim that the missing services have been built.

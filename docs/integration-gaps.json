@@ -277,6 +277,17 @@
       "files": [
         "creator-hub/hub/server/communityProjectMetrics.mjs"
       ]
+    },
+    {
+      "id": "WB-FORK",
+      "status": "configuration-required",
+      "surface": "/workbench and Workbench navigation links",
+      "current": "The earlier custom editor entry is replaced by a redirect to the actual Remix fork at https://ootle-workbench.vercel.app/. Browser-local workspaces remain untouched; /workbench-backup exports them for import in the fork. Tari integration work now lives in marguerite347/ootle-workbench.",
+      "required": "Maintain the fork deployment and document the split ownership. Complete the fork developer handoff items for hosted compilation, wallet transactions, AI and shared Lobby publishing. The legacy /api/workbench stubs remain unconnected and are not used by the fork.",
+      "verify": "Follow both a Lobby client-side navigation and a direct /workbench request into the actual fork. Download an old browser workspace and import its files into Remix. Do not claim network deployment or a published submission without a real receipt.",
+      "files": [
+        "creator-hub/hub/client/src/pages/WorkbenchEntry.tsx"
+      ]
     }
   ]
 }

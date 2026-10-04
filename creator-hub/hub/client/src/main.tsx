@@ -10,7 +10,7 @@ const Challenges = lazy(() => import('./pages/Challenges'));
 const WeeklyChallenges = lazy(() => import('./pages/WeeklyChallenges'));
 const Insights = lazy(() => import('./pages/Insights'));
 const Growth = lazy(() => import('./pages/Growth'));
-const Workbench = lazy(() => import('./pages/Workbench'));
+import WorkbenchEntry, {WorkbenchBackup} from './pages/WorkbenchEntry';
 const GameKit = lazy(() => import('./pages/GameKit'));
 const SkillMarket = lazy(() => import('./pages/SkillMarket'));
 const Assets = lazy(() => import('./pages/Assets'));
@@ -46,7 +46,8 @@ const VideoPicker = lazy(() => import('./pages/MakeVideo').then(module => ({defa
 function LegacyRoute(){const l=useLocation();return <Navigate replace to={legacyDestination(l.pathname,l.search)}/>;}
 
 const router = createBrowserRouter([
-  {path: '/workbench', element: <Suspense fallback={<p>Opening Workbench…</p>}><Workbench /></Suspense>},
+  {path: '/workbench', element: <WorkbenchEntry />},
+  {path: '/workbench-backup', element: <WorkbenchBackup />},
   {path: '/play/trivia-riff', element: <Suspense fallback={<p>Opening your Riff…</p>}><TriviaRiffPlayer /></Suspense>},
   {
     path: '/',
