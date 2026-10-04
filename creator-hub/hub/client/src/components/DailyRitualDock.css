@@ -45,3 +45,15 @@
 
 /* Align the compact ritual with the full page container and its disclosure bar. */
 .ritual-dock-content {top: calc(100% + 6px)}
+
+/* Phones use document scrolling so browser chrome cannot crop the wheel/result.
+   Keep the one close control reachable while scrolling through the ritual. */
+@media (max-width:699px) {
+  .site-header:has(.ritual-dock[open]) {position:relative}
+  .ritual-dock-content {
+    position:relative; top:auto; margin-top:6px; max-height:none; overflow:visible;
+  }
+  .ritual-dock[open] .ritual-summary {
+    position:sticky; top:0; z-index:2; background:var(--season-ink);
+  }
+}

@@ -1,7 +1,10 @@
+import {selectAlphaVideoSource} from './alpha-video.mjs';
 // Shared wheel charge using the licensed Envato plasma master. See electric/PROVENANCE.md.
 export function createCharge(stage, {embedded = false} = {}) {
   const video = document.createElement('video');
-  video.src = './electric/plasma-loop.webm';
+  const source = selectAlphaVideoSource({userAgent:navigator.userAgent,canPlayType:type=>video.canPlayType(type)},
+    {webm:'./electric/plasma-loop.webm',hevc:'./electric/plasma-loop-alpha.mov'});
+  if (source) video.src = source;
   video.loop = true;
   video.muted = true; video.playsInline = true; video.preload = 'auto';
   video.playbackRate = 1.2;
@@ -44,7 +47,7 @@ export function createCharge(stage, {embedded = false} = {}) {
     if (document.hidden && gain) gain.gain.setTargetAtTime(0, audio.currentTime, 0.015);
   });
   function paint({now, elapsed, rotation, superActive, disabled}) {
-    const visible = !disabled && !document.hidden;
+    const visible = Boolean(source) && !disabled && !document.hidden;
     const active = elapsed !== null && visible;
     if (visible !== playing) {
       playing = visible;
