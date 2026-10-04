@@ -25,7 +25,7 @@
 .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-answers {gap: 7px}
 .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-answers button {min-height: 48px; padding: 10px 12px}
 .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-hint {margin: 10px 0 0}
-.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-ready .spark-play {min-height: 52px; margin-top: 12px}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-ready .spark-play {width: auto; max-width: 100%; min-height: 52px; margin-top: 12px; padding-inline: 24px; justify-content: center}
 .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-journey {margin: 0; padding: 6px 0}
 .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-journey li {padding: 6px}
 .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-drop-timer {margin: 0; padding: 3px 8px; align-self: center}
