@@ -1,5 +1,6 @@
 import {mountCrystal} from '../crystal-lab/CrystalScene.js';
 import {createCharge} from './charge.js';
+import {selectAlphaVideoSource} from './alpha-video.mjs';
 import {createWedgeFinish} from './wedge-finish.js';
 import {superWedges, superOutcomes, superLanding} from './super-disc.js';
 import {crystalPalettes} from '../crystal-lab/palettes.js';
@@ -122,9 +123,14 @@ function addSparks() {
   const layer=document.createElement('div');
   layer.className='grinder-layer'; layer.setAttribute('aria-hidden','true');
   $('#stage').append(layer);
+  const probe=document.createElement('video');
+  const source=selectAlphaVideoSource({userAgent:navigator.userAgent,canPlayType:type=>probe.canPlayType(type)},
+    {webm:'./grinder-sparks-alpha.webm',hevc:'./grinder-sparks-alpha.mov'});
+  // An unavailable decorative codec must never obscure or block the wheel.
+  if(!source) return;
   for(let index=0;index<(chargeTrial?6:4);index++) {
     const video=document.createElement('video');
-    video.className='grinder-trail'; video.src='./grinder-sparks-alpha.webm';
+    video.className='grinder-trail'; video.src=source;
     video.muted=true; video.playsInline=true; video.preload='auto'; video.hidden=true;
     layer.append(video);
     // The licensed clip is keyed to real alpha offline. Do not rely on

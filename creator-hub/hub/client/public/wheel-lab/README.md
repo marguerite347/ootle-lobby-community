@@ -140,3 +140,29 @@ Pink Reactor take remains historical. Both wheel stages omit the Envato swirl.
 ## Lobby playtest integration
 
 See repository path `creator-hub/handoff/reward-proof/PLAYTEST.md`. `embed` mode requests host outcomes before spinning; it never calls a reward API. Super radius now matches the first wheel (650-unit face); true-alpha grinder video overlays replace the former additive planes, which showed black rectangles in the transparent embedded stage. See PLAYTEST.md for the derivative command, warmup, current endings and random palette rules.
+
+## Transparent effects on Apple browsers
+
+The embedded wheel selects HEVC-with-alpha `.mov` derivatives on WebKit (including
+iOS browser shells), and VP9-alpha `.webm` on Chromium/Firefox. Plain VP9 playback
+support is not evidence that the browser preserves alpha. If the selected codec
+is unsupported, skip that decorative layer rather than paint an opaque rectangle.
+`alpha-video.mjs` owns this selection; wheel timing and results are unchanged.
+
+The new files reuse the existing licensed media, preserving its alpha, aspect
+ratio and timing. Rebuild on macOS with the installed FFmpeg VideoToolbox encoder:
+
+```sh
+ffmpeg -c:v libvpx-vp9 -i grinder-sparks-alpha.webm -vf format=bgra -c:v hevc_videotoolbox -alpha_quality 1 -allow_sw 1 -tag:v hvc1 -movflags +faststart -an grinder-sparks-alpha.mov
+ffmpeg -c:v libvpx-vp9 -i electric/plasma-loop.webm -vf format=bgra -c:v hevc_videotoolbox -b:v 1800k -alpha_quality 0.75 -allow_sw 1 -tag:v hvc1 -movflags +faststart -an electric/plasma-loop-alpha.mov
+```
+
+A representative short encode succeeded before the full conversions. Apple
+AVFoundation decoded both full outputs with visible and fully transparent pixels
+at 0.5 seconds (sparks: 31,649 visible / 421,951 transparent; plasma: 238,634 visible /
+682,966 transparent). Codec-selection tests cover Safari, iOS Chrome/Firefox,
+iPad desktop mode, desktop/Android Chromium, Firefox and unsupported codecs.
+This is decoder and responsive-browser evidence, not a physical-iPhone playtest.
+
+References: [Apple HEVC alpha](https://developer.apple.com/videos/play/wwdc2019/506/)
+and [WebKit VP9 alpha issue](https://bugs.webkit.org/show_bug.cgi?id=275908).
