@@ -5,8 +5,9 @@ import type {SparkCue} from './sparkPresentation';
 import type {Game} from './DailyTrivia';
 
 /** Presentation bridge. The host owns results; the scene only animates them. */
-export default function PlaytestWheel({game, play, onSettled, onCue, warming = false}: {
+export default function PlaytestWheel({game, play, onSettled, onCue, onRetry, warming = false}: {
   warming?: boolean;
+  onRetry: () => void;
   onCue: (cue: SparkCue) => void;
   game: Game; play: (action: string, input?: object) => Promise<Game | null>; onSettled: () => void;
 }) {
@@ -25,12 +26,12 @@ export default function PlaytestWheel({game, play, onSettled, onCue, warming = f
     let stopCelebration = () => {};
     let pending = false;
     let active = true;
-    const readyTimeout = setTimeout(() => setError('The wheel could not load. Use Test again to retry.'), 20000);
+    const readyTimeout = setTimeout(() => setError('The wheel could not load. Please try again.'), 20000);
     const receive = async (event: MessageEvent) => {
       if (event.origin !== location.origin || event.source !== frame.current?.contentWindow) return;
       if (event.data?.type === 'ootle-wheel-size' && Number.isFinite(event.data.height)) {setHeight(Math.max(320, Math.min(1400, event.data.height))); return;}
       if (event.data?.type === 'ootle-wheel-ready') {clearTimeout(readyTimeout); setReady(true); setError(''); sendMotion(); return;}
-      if (event.data?.type === 'ootle-wheel-unavailable') {clearTimeout(readyTimeout); setError('The wheel could not load. Use Test again to retry.'); return;}
+      if (event.data?.type === 'ootle-wheel-unavailable') {clearTimeout(readyTimeout); setError('The wheel could not load. Please try again.'); return;}
       if (event.data?.type === 'ootle-wheel-audio' && ['clack', 'unlock', 'spin', 'superSpin', 'bank'].includes(event.data.cue)) {current.current.onCue(event.data.cue); return;}
       if (event.data?.type === 'ootle-wheel-settled') { current.current.onSettled(); return; }
       if (event.data?.type === 'ootle-wheel-celebrate') {
@@ -47,7 +48,7 @@ export default function PlaytestWheel({game, play, onSettled, onCue, warming = f
       const next = await current.current.play(action, {roundId: current.current.game.round?.id});
       pending = false;
       if (!active) return;
-      if (!next) {setError('The wheel could not finish. Use Test again to restart.'); return;}
+      if (!next) {setError('The wheel could not finish. Please try again.'); return;}
       frame.current?.contentWindow?.postMessage({type: 'ootle-wheel-result', action, spinIndex: next.round?.spinIndex, superFactor: next.round?.superFactor}, location.origin);
     };
     window.addEventListener('message', receive);
@@ -61,6 +62,6 @@ export default function PlaytestWheel({game, play, onSettled, onCue, warming = f
   return <div className="playtest-wheel" aria-hidden={warming || undefined} style={warming ? {position: 'absolute', width: '100%', visibility: 'hidden', pointerEvents: 'none'} : undefined}>
     {!warming && !ready && !error && <p role="status">Charging your wheel…</p>}
     <iframe ref={frame} aria-hidden={warming || !ready || undefined} style={{height, visibility: ready && !warming ? 'visible' : 'hidden'}} title="AI Sparks multiplier wheels" src={`/wheel-lab/native.html?super&embed${crystalCapturePalette()}&base=${game.round?.base || 100}`} />
-    {error && <p role="alert">{error}</p>}
+    {error && <div role="alert"><p>{error}</p><button type="button" className="btn" onClick={onRetry}>Try again</button></div>}
   </div>;
 }
