@@ -1,5 +1,4 @@
 import {createContext, useContext, useEffect, useLayoutEffect, useRef, useState, type ReactNode, type RefObject} from 'react';
-import {riffFromGame} from '../triviaRiff/model';
 import {queueWalletAward} from './walletAward';
 import {chargeWallet} from './chargeWallet';
 import {Link, useLocation} from 'react-router-dom';
@@ -8,13 +7,13 @@ import {nextTriviaCopy, TRIVIA_COPY} from './triviaCopy';
 import SparkReactor from './SparkReactor';
 import SparkUnlock from './SparkUnlock';
 import PlaytestWheel from './PlaytestWheel';
-import SparkJourney, {useRewardEntrance} from './SparkJourney';
+import {useRewardEntrance} from './SparkJourney';
 import {playtestRequest} from './rewardPlaytest';
 import './CompactRitual.css';
 import {IDLE_READY_CHROME} from './vaultChargeArt';
 import {createSparkAudio} from './sparkAudio';
 import {
-  ANSWER_SELECTION_HOLD_MS, decorativeMotionAllowed, formatPathPercent,
+  ANSWER_SELECTION_HOLD_MS, decorativeMotionAllowed,
   reactorMood, revealTier, shouldPlayCue, type RevealTier, type SparkCue, type SuperSpinRow,
 } from './sparkPresentation';
 
@@ -230,9 +229,6 @@ export default function DailyTrivia({presentation, onRestart, sectionId = 'daily
   }, []);
 
   const remaining = Math.min(20, Math.max(0, Math.ceil(((game?.round?.deadline || 0) - now - clockOffset) / 1000)));
-  const reset = Math.max(0, Math.ceil(((game?.resetAt || 0) - now - clockOffset) / 1000));
-  const hours = Math.floor(reset / 3600);
-  const minutes = Math.floor((reset % 3600) / 60);
   const expired = game?.phase === 'playing' && remaining === 0 && chosenId === null;
   const refreshedExpiry = useRef<string | null>(null);
   useEffect(() => {
@@ -296,6 +292,7 @@ export default function DailyTrivia({presentation, onRestart, sectionId = 'daily
     }
   }
 
+  const restart = onRestart || (() => window.location.reload());
   const tier = celebration?.tier ?? null;
   const answered = game != null && game.phase !== 'ready' && game.phase !== 'playing';
   const sectionClass = [
@@ -320,7 +317,7 @@ export default function DailyTrivia({presentation, onRestart, sectionId = 'daily
         <span>YOUR DAILY PLAY</span>
       </div>
       {!game && !error && <p role="status">Opening today’s vault…</p>}
-      {(game?.phase === 'ready' || playtestEnding === 'rest') && game && <SparkReady presentation={presentation} locked={playtestEnding === 'rest'} busy={busy} game={game} onStart={start} />}
+      {(game?.phase === 'ready' || playtestEnding === 'rest') && game && <SparkReady presentation={presentation} locked={playtestEnding === 'rest'} busy={busy} game={game} onStart={playtestEnding === 'rest' ? restart : start} />}
       {game?.phase === 'playing' && !expired && <SparkQuestion
         game={game}
         remaining={remaining}
@@ -329,7 +326,7 @@ export default function DailyTrivia({presentation, onRestart, sectionId = 'daily
         headingRef={headingRef}
         onAnswer={answer}
       />}
-      {game && ['playing', 'settling'].includes(playtestEnding) && ['won', 'super', 'complete'].includes(game.phase) && <PlaytestWheel warming={celebration !== null} game={game} onCue={cue} play={(action, input) => {enableSound(); return play(action, input);}} onSettled={() => {revealBalance(); if (game.phase === 'complete') setPlaytestEnding('settling');}} />}
+      {game && ['playing', 'settling'].includes(playtestEnding) && ['won', 'super', 'complete'].includes(game.phase) && <PlaytestWheel onRetry={restart} warming={celebration !== null} game={game} onCue={cue} play={(action, input) => {enableSound(); return play(action, input);}} onSettled={() => {revealBalance(); if (game.phase === 'complete') setPlaytestEnding('settling');}} />}
       {playtestEnding === 'message' && game && <div className="spark-finished" data-win={game.phase !== 'lost' || undefined} role="status">
         {game.phase !== 'lost' && <div className="reward-rays" aria-hidden="true" />}
         <SparkReactor mood={mood} />
@@ -338,13 +335,6 @@ export default function DailyTrivia({presentation, onRestart, sectionId = 'daily
       </div>}
       {error && <div className="spark-error" role="alert"><p>{error}</p><button type="button" className="btn" disabled={busy} onClick={reload}>Check my round</button></div>}
       {celebration && game && <SparkUnlock inline amount={celebration.amount} balance={game.balance} headline={answerCopy} onReveal={() => {revealBalance(); cue('win');}} onContinue={() => setCelebration(null)} />}
-    </div>
-    {playtestEnding === 'rest' && game?.round?.explanation && <div className="spark-creator-takeaway"><strong>Creator takeaway</strong><p>{game.round.explanation}</p></div>}
-    {(game?.phase === 'ready' || playtestEnding === 'rest') && <SparkJourney />}
-    <div className="spark-footer">
-    <SparkDetails hours={hours} minutes={minutes} game={game} presentation={presentation} />
-    {!presentation && <div className="spark-build-notes"><Link className="spark-riff-link" to="/create/trivia" state={{triviaSeed: riffFromGame(game)}}>Riff this Game</Link></div>}
-    <div className="reward-playtest-bar"><button type="button" className="spark-test-again" title="Playtest: simulated AI Sparks. No daily attempt used." aria-description="Restarts the playtest with simulated AI Sparks; no daily attempt is used." onClick={onRestart || (() => window.location.reload())}>{presentation ? 'Play again ↻' : 'Test again ↻'}</button></div>
     </div>
   </section>;
 }
@@ -355,35 +345,6 @@ function SparkIntro({presentation}: {presentation?: TriviaPresentation}) {
     <h1 id="daily-spark-title" className="spark-loot-drop"><span>{IDLE_READY_CHROME.heading}</span><br />{' '}<em>{IDLE_READY_CHROME.emphasis}</em></h1>
 
   </div>;
-}
-
-function SparkDetails({hours, minutes, game, presentation}: {hours: number; minutes: number; game: Game | null; presentation?: TriviaPresentation}) {
-  const superOdds = game?.superSpins?.length ? game.superSpins : [
-    {effective: 5, percent: 60}, {effective: 10, percent: 25},
-    {effective: 25, percent: 12}, {effective: 50, percent: 3},
-  ];
-  const maxPath = formatPathPercent(game?.maxPathPercent ?? 0.5);
-  return <>
-    {!presentation && <div className="spark-reset spark-drop-timer" aria-label={`Next drop in ${hours} hours and ${minutes} minutes`} title="Resets at 00:00 UTC"><span className="spark-drop-label">Next Drop</span><strong><span>{String(hours).padStart(2, '0')}<small>h</small></span><i aria-hidden="true">:</i><span>{String(minutes).padStart(2, '0')}<small>m</small></span></strong></div>}
-    <details className="spark-rules">
-      <summary>How to play & rewards</summary>
-      <div className="spark-rules-content">
-        <ol>
-          <li><strong>Answer 1 Q.</strong> Get it right in 20 seconds for <b>100 AI Sparks</b>. Answer within 8 seconds for <b>150</b>.</li>
-          <li><strong>Spin for a boost.</strong> Multiply your answer reward by <b>1×–5×</b>. Land 5× to unlock Super Spin.</li>
-          <li><strong>Go Super.</strong> Multiply your banked winnings again. <b>1× keeps your haul.</b> Skipping keeps it too.</li>
-        </ol>
-        <details className="spark-odds">
-          <summary>See the odds</summary>
-          <p>First spin: 1× and 2× each have a 33.33% chance. 3× and 5× each have a 16.67% chance.</p>
-          <p>Super Spin multiplies your banked winnings:</p>
-          <ul>{superOdds.map(row => <li key={row.effective}><b>{row.effective / 5}×</b><span>{Number(row.percent.toFixed(2))}%</span></li>)}</ul>
-          <p>Top payout across both spins: about {maxPath} of correct-answer rounds. Percentages are rounded.</p>
-        </details>
-        <p className="spark-rules-note">Practice rounds are replayable. AI Sparks are in-app credits, not TARI or cash. This playtest uses simulated rewards.</p>
-      </div>
-    </details>
-  </>;
 }
 
 function SparkReady({busy, game, onStart, locked = false, presentation}: {busy: boolean; game: Game; onStart: () => void; locked?: boolean; presentation?: TriviaPresentation}) {
@@ -397,8 +358,8 @@ function SparkReady({busy, game, onStart, locked = false, presentation}: {busy: 
       <SparkReactor mood="idle" />
     </button>
     {game.balance > 0 && <p className="spark-carry">{locked ? `${game.balance.toLocaleString()} AI Sparks banked.` : `Your ${game.balance.toLocaleString()} AI Sparks carry over. Today adds to that same balance.`}</p>}
-    <button type="button" className="btn primary spark-play spark-question-cta" ref={entrance.ref} onMouseEnter={entrance.replay} onFocus={entrance.replay} disabled={busy || locked} onClick={onStart}>
-      <span>{locked ? 'Today’s ritual complete' : busy ? 'Opening…' : 'Begin today’s ritual'}</span>
+    <button type="button" className="btn primary spark-play spark-question-cta" ref={entrance.ref} onMouseEnter={entrance.replay} onFocus={entrance.replay} disabled={busy} onClick={onStart}>
+      <span>{locked ? 'Play again' : busy ? 'Opening…' : 'Begin today’s ritual'}</span>
       <span key={entrance.run} className="question-sheen" data-animate={entrance.run > 0} aria-hidden="true" />
     </button>
   </div>;
