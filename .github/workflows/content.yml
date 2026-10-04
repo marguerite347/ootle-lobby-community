@@ -32,7 +32,7 @@ jobs:
           node-version: '22'
       - run: npm ci
       - run: npm run build:site
-      - run: npm --prefix creator-hub/hub/client test -- src/components/rewardPlaytest.test.ts src/workbench/model.test.ts src/workbench/api.test.ts
+      - run: npm --prefix creator-hub/hub/client test -- src/components/rewardPlaytest.test.ts src/workbench/model.test.ts src/workbench/api.test.ts src/components/OctoberSubmissions.test.tsx src/components/ProjectCard.test.tsx
       - run: node --test creator-hub/hub/server/test/communityContent.test.mjs creator-hub/hub/server/test/contestMetrics.test.mjs creator-hub/hub/server/test/communityProjectMetrics.test.mjs creator-hub/hub/server/test/projectChat.test.mjs creator-hub/hub/server/test/dailyTrivia*.test.mjs creator-hub/hub/server/test/workbench.test.mjs
   publish:
     name: Publish accepted content

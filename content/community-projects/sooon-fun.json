@@ -1,0 +1,35 @@
+{
+  "slug": "sooon-fun",
+  "title": "SOOON FUN",
+  "creator": "TariRari",
+  "summary": "Prediction markets, token launching and on-chain games on Ootle testnet. The public directory documents the build; a wallet is needed to use the current app.",
+  "sourceUrl": "https://community.tari.com/t/ootle-testnet-community-apps-directory/281/1",
+  "sourceLabel": "Project source",
+  "repoUrl": null,
+  "publishedAt": "2026-08-17T12:41:11.394Z",
+  "publicationLabel": "Listed on forum",
+  "publicationBasis": "Date of the public community directory listing, not an independently verified launch date.",
+  "publicationUrl": "https://community.tari.com/t/ootle-testnet-community-apps-directory/281/1",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Tari Ootle testnet",
+      "sourceUrl": "https://community.tari.com/t/ootle-testnet-community-apps-directory/281/1"
+    }
+  ],
+  "forum": null,
+  "resourceIds": [
+    "tari-ootle:app:sooon-fun"
+  ],
+  "section": "community",
+  "media": {
+    "image": "/previews/community/sooon-fun.jpg",
+    "video": "/previews/community/sooon-fun.mp4",
+    "label": "Public source walkthrough",
+    "sourceUrl": "https://community.tari.com/t/ootle-testnet-community-apps-directory/281",
+    "capturedAt": "2026-10-04T16:02:52.616125Z",
+    "reviewedAt": "2026-10-04T16:02:52.616125Z",
+    "sha256": "164f026245e883057a9a05b333bd46457425a87420ebb688992153d90630c31f"
+  },
+  "demoUrl": "https://sooon.fun/"
+}

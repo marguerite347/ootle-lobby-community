@@ -1,0 +1,43 @@
+{
+  "slug": "tari-agent-pay",
+  "title": "Tari Agent Pay",
+  "creator": "Zvovanz",
+  "summary": "An open-source payment gateway for AI agents with spending policies, approval queues and a web console. Uses Ootle cosigned transfers and a TypeScript SDK. Runtime deployment has not been verified.",
+  "sourceUrl": "https://community.tari.com/t/ootle-testnet-community-apps-directory/281/9",
+  "sourceLabel": "See the creator\u2019s post",
+  "repoUrl": "https://github.com/zvovanz-a1/tari-agent-pay",
+  "publishedAt": "2026-09-12T20:59:28.168Z",
+  "publicationLabel": "Published on forum",
+  "publicationBasis": "Creator announcement in the public apps directory.",
+  "publicationUrl": "https://community.tari.com/t/ootle-testnet-community-apps-directory/281/9",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "ootle_sdk_core",
+      "sourceUrl": "https://github.com/zvovanz-a1/tari-agent-pay#features"
+    },
+    {
+      "label": "Ootle WASM",
+      "sourceUrl": "https://github.com/zvovanz-a1/tari-agent-pay#features"
+    }
+  ],
+  "forum": {
+    "url": "https://community.tari.com/t/ootle-testnet-community-apps-directory/281/9",
+    "topicId": 281,
+    "postNumber": 9,
+    "scope": "replies"
+  },
+  "resourceIds": [
+    "tari-ootle:app:tari-agent-pay"
+  ],
+  "section": "community",
+  "media": {
+    "image": "/previews/community/tari-agent-pay.jpg",
+    "video": "/previews/community/tari-agent-pay.mp4",
+    "label": "Public source walkthrough",
+    "sourceUrl": "https://github.com/zvovanz-a1/tari-agent-pay",
+    "capturedAt": "2026-10-04T16:02:52.616125Z",
+    "reviewedAt": "2026-10-04T16:02:52.616125Z",
+    "sha256": "0c36741d8be2c4c699a98bc382963056c0977b3105965824d4def046de2d48bf"
+  }
+}

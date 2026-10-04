@@ -24,3 +24,8 @@ test('deduplicates concurrent reads and refreshes at most daily per instance',as
  let clock=1,calls=0;const get=createCommunityProjectMetrics({initial:{items:{}},now:()=>clock,content:async()=>({communityProjects:[{...project,forum:null}]}),read:async()=>{calls++;return {stargazers_count:3};}});
  await Promise.all([get(),get()]);await get();assert.equal(calls,1);clock+=86400001;await get();assert.equal(calls,2);
 });
+
+test('October gets project-specific metrics without colliding with a community slug',async()=>{
+ const calls=[];const get=createCommunityProjectMetrics({initial:{items:{}},content:async()=>({communityProjects:[{slug:'example',repoUrl:null,forum:null}],contests:[{id:'october-2026',entries:[{slug:'example',repoUrl:'https://github.com/example/october',sourceUrl:'https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/5'}]}]}),read:async url=>{calls.push(url);return url.includes('api.github')?{stargazers_count:4}:{post_stream:{posts:[{id:5,post_number:5},{id:6,post_number:6,reply_to_post_number:5}],stream:[5,6]}};}});
+ const result=await get();assert.equal(result.items.example.github,null);assert.equal(result.items['october:example'].github.count,4);assert.equal(result.items['october:example'].forum.count,1);assert.ok(calls.some(url=>url.includes('/396.json')));
+});

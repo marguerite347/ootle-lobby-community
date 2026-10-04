@@ -1,0 +1,35 @@
+{
+  "slug": "labyrinthos",
+  "title": "LabyrinthOS",
+  "creator": "labyrinth",
+  "summary": "A private lending and payments experiment on Tari Ootle. The public project listing describes bearer-token positions and private-money tools; current app availability has not been verified.",
+  "sourceUrl": "https://community.tari.com/t/ootle-testnet-community-apps-directory/281/1",
+  "sourceLabel": "Project source",
+  "repoUrl": null,
+  "publishedAt": "2026-08-17T12:41:11.394Z",
+  "publicationLabel": "Listed on forum",
+  "publicationBasis": "Date of the public community directory listing, not an independently verified launch date.",
+  "publicationUrl": "https://community.tari.com/t/ootle-testnet-community-apps-directory/281/1",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Tari Ootle testnet",
+      "sourceUrl": "https://community.tari.com/t/ootle-testnet-community-apps-directory/281/1"
+    }
+  ],
+  "forum": null,
+  "resourceIds": [
+    "tari-ootle:app:labyrinthos"
+  ],
+  "section": "community",
+  "media": {
+    "image": "/previews/community/labyrinthos.jpg",
+    "video": "/previews/community/labyrinthos.mp4",
+    "label": "Public source walkthrough",
+    "sourceUrl": "https://community.tari.com/t/ootle-testnet-community-apps-directory/281",
+    "capturedAt": "2026-10-04T16:02:52.616125Z",
+    "reviewedAt": "2026-10-04T16:02:52.616125Z",
+    "sha256": "848f0d34228f08625ca4fac8219d2826e94e69ed20956867b1282457ba28e860"
+  },
+  "demoUrl": "https://labyrinthos.markets/"
+}

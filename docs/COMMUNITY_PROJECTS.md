@@ -32,3 +32,29 @@ Both clips are actual browser screencasts of the public repository README at 128
 | `miner.mp4` | 8.875 s | README overview, release/platform instructions | Opening/middle/closing decoded frames and browser playback |
 
 These are deliberately labeled repository walkthroughs. Creators can propose replacement app demos through the same reviewed content workflow.
+
+## Explore showcase audit — 2026-10-04
+
+One `ProjectCard` renders September, October, reviewed community/official records and future Workbench publications. The title anchor covers the card's empty space, cover and text; separate anchors/buttons retain their own targets and keyboard focus. GitHub star badges open the repository root, never `/stargazers`. All 13 GitHub-backed September entry URLs returned HTTP 200 during this audit (Threshold's two entries share a repository). WunschSwap uses Disroot and has no fabricated GitHub count.
+
+`section: "official"` requires an official Tari website citation plus a `tari-project` repository. Official Tari Projects appears below Community Projects. The official Universe miner is `tari-project/universe`; the similarly named community web wallet at `universe.tari.mw` remains the September Tari L1 Web Wallet, not an official miner entry.
+
+Reviewed additions:
+
+| Explore record | Lobby placement | Source / limitation |
+|---|---|---|
+| SOOON FUN | Community | Directory topic 281, post 1; shared listing is not a creator-authored announcement; no verified public repository or project-only reply count. |
+| LabyrinthOS | Community | Directory topic 281, post 1; current runtime availability unverified; no verified public repository or project-only reply count. |
+| Tari Agent Pay | Community | Creator announcement in topic 281, post 9; repository README documents `ootle_sdk_core` and Ootle WASM; runtime unverified. |
+| Tari Ootle Playground | Community | Community resource by luci666, topic 281 post 5; distinct from official Ootle documentation. |
+| Tari Market | Community | Public wiki last-modified date, not invented launch date. Old `johnnysessa/Tari-Market` repository returned 404; app requires ChatGPT sign-in. Keep GitHub count unknown and omit its broken link. |
+| Tari Universe desktop | Official | `tari.com/downloads` and `tari-project/universe`; not the community wallet. |
+| Ootle WASM Templates | Official | `tari-project/wasm-template` and official guessing-game guide. Shown as one official template collection; individual starter covers are not replaced with an unrelated example. |
+
+Existing Caravel/Caravel Labs, Sapient, community Universe wallet, TariOrg and ShadowTix listings already correspond to September cards; do not duplicate them in Community. Existing Liquidity Protocol and TARI.Miner remain. Learning guides remain in Learn rather than being passed off as additional apps.
+
+### Media selection receipt
+
+Reuse: existing ResourceCardMedia playback, ProjectTechnology labels, full Discourse-stream metrics and the tested Chrome CDP screencast → FFmpeg H.264 workflow. No new dependencies. The trial recorded the public SOOON directory entry; seven 8-second public-page/source walkthroughs were encoded and opening/middle/end frames decoded for review. Forum/GitHub account navigation is cropped out. No wallet was unlocked and no app transaction was performed. SOOON, LabyrinthOS, Playground and Market posters are crops of the project screenshots published in their source pages; clips remain honestly labelled public source walkthroughs. Wiki source material retains CC BY-SA 4.0 attribution via the linked source; all creator attribution is retained in records.
+
+Remaining gaps: Workbench's backend publication feed remains disconnected and must supply reviewed media/component provenance; global once-daily metric caching still needs durable coordination. Unknown counts stay unknown. October's existing three teaser cards remain until real reviewed submissions arrive; new entries automatically get the shared card without further layout work.
