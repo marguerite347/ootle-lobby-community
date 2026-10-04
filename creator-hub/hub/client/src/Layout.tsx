@@ -21,12 +21,14 @@ export default function Layout() {
       <div className="season-shell"><a className="skip-link" href="#main-content">Skip to content</a><HubMotion/>
       <ChatSidebar />
       <header className="site-header season-header">
-        <div className="container season-header-inner">
+        <div className={`container lobby-nav-grid${location.pathname === '/' ? ' has-ritual' : ''}`}>
           <Link to="/" className="season-brand" aria-label="Ootle Lobby home"><img src="/ootle-jam-mark.svg" alt="" width="40" height="40"/><span>ootle<span className="season-brand-light">lobby</span><small>BUILT ON TARI</small></span></Link>
+          <CommunityLinks/>
+          <SparkBalance/>
           <Link className="season-header-create" to="/workbench"><span aria-hidden="true">🛠️</span> Workbench</Link>
+          <LaunchTicket/>
+          {location.pathname === '/' && <DailyRitualDock/>}
         </div>
-        <div className="container season-utility"><LaunchTicket/><CommunityLinks/><SparkBalance/></div>
-        {location.pathname === '/' && <div className="container season-ritual-nav"><DailyRitualDock/></div>}
       </header>
       <main className="container" id="main-content" tabIndex={-1}>
         <Suspense fallback={<div className="route-loading" role="status"><span/>Opening your workspace…</div>}><Outlet /></Suspense>
