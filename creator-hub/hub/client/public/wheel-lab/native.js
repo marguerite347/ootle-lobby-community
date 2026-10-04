@@ -16,6 +16,14 @@ document.body.classList.toggle('charge-compare',chargeTrial && captureParams.has
 if(embedded) { document.body.classList.add('embedded','awaiting-first-spin'); document.querySelector('#spin').textContent='SPIN IT!'; }
 const superPreview=captureParams.has('super');
 let superActive=false, superDisc, superDeclined=false, superTransitioning=false;
+let autoActive=false, autoSpinTimer;
+function queueAutoSpin() {
+  clearTimeout(autoSpinTimer);
+  if(!embedded || !autoActive || document.documentElement.dataset.ready!=='true' || spin || superTransitioning || document.body.classList.contains('won')) return;
+  autoSpinTimer=setTimeout(()=>{
+    if(autoActive && !$('#spin').disabled && !$('#spin').hidden) $('#spin').click();
+  },900);
+}
 const nextRenderFrame=()=>new Promise(resolve=>requestAnimationFrame(resolve));
 const demoBase=captureParams.get('base')==='150'?150:100;
 if(captureParams.has('film')) document.body.classList.add('film');
@@ -246,7 +254,7 @@ $('#spin').addEventListener('click',()=>{
   const remainder=((current-target)%(2*Math.PI)+2*Math.PI)%(2*Math.PI);
   wheelCue('spin'); lastAudioWedge=null;
   spin={started:performance.now(),from:current,to:current-10*Math.PI-remainder};
-  document.body.classList.remove('won'); $('#spin').disabled=true; $('#skip').hidden=false;
+  document.body.classList.remove('won'); $('#spin').disabled=true; $('#spin').textContent='Spinning…'; $('#skip').hidden=false;
   copy('LOCKED IN','Charging up…',`${demoBase} AI Sparks on the wheel.`);
   if(reduced.checked) finish();
 });
@@ -283,6 +291,7 @@ async function showSuper() {
   superTransitioning=false;
   wheelCue('unlock');
   if(!embedded) $('#spin').focus();
+  queueAutoSpin();
 }
 function startSuper() {
   if(spin || superDeclined) return;
@@ -294,7 +303,7 @@ function startSuper() {
   wheelCue('superSpin'); lastAudioWedge=null;
   spin={started:performance.now(),from:current,to:current-20*Math.PI-remainder};
   document.body.classList.remove('won','super-jackpot');
-  $('#spin').disabled=true; $('#skip').hidden=false; $('#decline-super').hidden=true;
+  $('#spin').disabled=true; $('#spin').textContent='Spinning…'; $('#skip').hidden=false; $('#decline-super').hidden=true;
   copy('LOCKED IN','Charging up…',`${demoBase*5} is already banked. Scripted demo.`);
   if(reduced.checked) finish();
 }
@@ -386,9 +395,16 @@ if(embedded) {
     reduced.checked=Boolean(event.data.reduced);
     if(reduced.checked && spin) finish();
   });
+  window.addEventListener('message',event=>{
+    if(event.origin!==location.origin || event.source!==parent || event.data?.type!=='ootle-wheel-active') return;
+    autoActive=event.data.active===true;
+    queueAutoSpin();
+  });
+  addEventListener('pagehide',()=>clearTimeout(autoSpinTimer));
   let approvedClick=false, awaitingResult=false;
   for(const [id,action] of [['spin',null],['decline-super','decline']]) {
     $('#'+id).addEventListener('click',event=>{
+      clearTimeout(autoSpinTimer);
       if(approvedClick) return;
       event.stopImmediatePropagation();
       if(awaitingResult || spin) return;

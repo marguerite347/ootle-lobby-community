@@ -21,7 +21,7 @@ body.embedded.won #phase {font-size: 26px}
 body.embedded.won #reward {font-size: 64px}
 body.embedded #win-unit {font-size: 16px}
 body.embedded .actions {min-height: 62px}
-body.embedded #spin {min-height: 54px; padding: 12px 18px; font-size: 19px}
+body.embedded #spin {width: auto; max-width: 100%; min-height: 54px; padding: 12px 18px; font-size: 19px}
 /* Keep the spin stage focused on its result and primary action. */
 body.embedded #super-offer,
 body.embedded.awaiting-first-spin #super-offer,
