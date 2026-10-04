@@ -25,7 +25,7 @@
 .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-answers {gap: 7px}
 .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-answers button {min-height: 48px; padding: 10px 12px}
 .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-hint {margin: 10px 0 0}
-.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-ready .spark-play {min-height: 52px}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-ready .spark-play {min-height: 52px; margin-top: 12px}
 .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-journey {margin: 0; padding: 6px 0}
 .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-journey li {padding: 6px}
 .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-drop-timer {margin: 0; padding: 3px 8px; align-self: center}
@@ -82,3 +82,7 @@
 @media (max-width: 600px) {
   .ritual-dock .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-ready .spark-reactor {height: 120px}
 }
+
+/* A canvas has an intrinsic size: normal block flow keeps its 100% height
+   inside the compact reactor instead of expanding a grid's automatic row. */
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-ready .spark-reactor {display: block}
