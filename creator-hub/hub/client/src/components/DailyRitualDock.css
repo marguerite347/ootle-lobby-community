@@ -42,3 +42,6 @@
 .ritual-disclosure.ritual-dock[open] .ritual-summary-action { background:var(--season-lime); color:#08091f; }
 /* The dock owns scrolling; prevent focused controls from scrolling a second, hidden viewport. */
 .ritual-dock .daily-spark { margin-bottom:0; overflow:clip; }
+
+/* Fit the complete ritual, including both wheel stages, into one compact pop-out. */
+.ritual-dock-content {top: calc(100% + 6px); max-width: 900px; margin-inline: auto}

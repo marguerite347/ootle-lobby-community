@@ -14,7 +14,7 @@
   overflow: hidden; clip-path: inset(50%); white-space: nowrap;
 }
 .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-game {max-width: 560px}
-.daily-spark.spark-showcase.is-ready-invitation.compact-ritual.is-wheel-round .spark-game {max-width: 920px}
+.daily-spark.spark-showcase.is-ready-invitation.compact-ritual.is-wheel-round .spark-game {max-width: 800px}
 .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-question,
 .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .playtest-wheel {padding-top: 0}
 .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .playtest-wheel iframe {display: block; width: 100%}
@@ -67,4 +67,18 @@
   .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-rules > summary {font-size: 11px; padding: 10px 0}
   .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-test-again {min-height: 44px}
   .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-footer .spark-rules[open] {grid-column: 1 / -1; width: 100%}
+}
+
+/* The pop-out already has its own title and close control above the stage. */
+.ritual-dock .daily-spark.compact-ritual .spark-kicker {display: none}
+.ritual-dock .daily-spark.spark-showcase.compact-ritual {
+  border: 0; border-radius: 0; padding: 10px 14px; gap: 4px;
+}
+.ritual-dock .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-ready .spark-reactor {height: 140px}
+.ritual-dock .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-journey {padding: 2px 0}
+@media (min-width: 700px) {
+  .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-answers {grid-template-columns: repeat(2, minmax(0, 1fr))}
+}
+@media (max-width: 600px) {
+  .ritual-dock .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-ready .spark-reactor {height: 120px}
 }
