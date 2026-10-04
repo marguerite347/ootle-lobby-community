@@ -30,7 +30,7 @@ function fixture() {
   },
  };
  const instance=()=>createBlobDailyTrivia({token:'test-only',client,now:()=>time,random:max=>max-1});
- return {instance,client,advance(ms){time+=ms;},get conflicts(){return conflicts;},get writes(){return writes;},
+ return {instance,client,now:()=>time,advance(ms){time+=ms;},get conflicts(){return conflicts;},get writes(){return writes;},
   answer(round){return {roundId:round.id,optionId:round.options.find(option=>option.text===QUESTIONS[questionForDay(Math.floor(time/86400000))][1][0]).id};}};
 }
 
@@ -63,7 +63,7 @@ test('independent function instances share rounds, settle concurrent requests on
 test('storage failure does not return an award or replace the durable round',async()=>{
  const session=fixture(),game=session.instance(),id=await game.register();
  const started=await game.mutate(id,'start');session.advance(1500);
- const broken=createBlobDailyTrivia({token:'test-only',client:{...session.client,put:async()=>{throw new Error('storage unavailable');}}});
+ const broken=createBlobDailyTrivia({token:'test-only',now:session.now,client:{...session.client,put:async()=>{throw new Error('storage unavailable');}}});
  await assert.rejects(broken.mutate(id,'answer',session.answer(started.round)),/storage unavailable/);
  assert.equal((await game.get(id)).balance,0);
  assert.equal((await game.get(id)).phase,'playing');
@@ -106,7 +106,7 @@ test('shared testing reset is opt-in and still rejects foreign origins and missi
 test('a pending conditional write conflict retries against the latest record',async()=>{
  const session=fixture(),game=session.instance(),id=await game.register();
  let attempts=0;
- const racing=createBlobDailyTrivia({token:'test-only',client:{...session.client,put:async(...args)=>{
+ const racing=createBlobDailyTrivia({token:'test-only',now:session.now,client:{...session.client,put:async(...args)=>{
   if(attempts++===0)throw new BlobError('The conditional request cannot succeed due to a conflicting operation against this resource.');
   return session.client.put(...args);
  }}});
