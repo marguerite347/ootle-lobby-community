@@ -70,7 +70,7 @@
 }
 
 /* The pop-out already has its own title and close control above the stage. */
-.ritual-dock .daily-spark.compact-ritual .spark-kicker {display: none}
+.ritual-dock .daily-spark.spark-showcase.is-ready-invitation.compact-ritual .spark-kicker {display: none}
 .ritual-dock .daily-spark.spark-showcase.compact-ritual {
   border: 0; border-radius: 0; padding: 10px 14px; gap: 4px;
 }
