@@ -64,3 +64,19 @@
 /* Empty/unknown badges and gaps still belong to the whole-card link. */
 .project-card .media-pop { pointer-events:none; }
 .project-card .media-pop a { pointer-events:auto; }
+
+/* A consistent, compact section marker for every Lobby project gallery. */
+.season-home .project-section-heading {
+  display:flex;flex-wrap:wrap;align-items:center;gap:.25rem 1.125rem;
+  border-top:1px solid #c9b6ff55;border-left:3px solid var(--season-violet);
+  background:linear-gradient(90deg,#c9b6ff10,transparent 75%);
+  padding:.875rem 1rem;margin-bottom:1.125rem;
+}
+.season-home .project-section-heading > div:first-child {flex:1 1 20rem;min-width:0;}
+.season-home .project-section-heading h2 {
+  margin:0;font-size:clamp(1.75rem,3vw,2.5rem);font-weight:800;
+  line-height:1.12;letter-spacing:-.045em;color:var(--season-cloud);
+}
+.season-home .project-section-heading p {margin:.375rem 0 0;font-size:.8125rem;line-height:1.55;color:var(--season-muted);}
+.season-home .project-section-heading .contest-community-links {gap:.25rem 1.125rem;}
+.season-home .project-section-heading .contest-community-links a {display:inline-flex;align-items:center;min-height:2.75rem;}
