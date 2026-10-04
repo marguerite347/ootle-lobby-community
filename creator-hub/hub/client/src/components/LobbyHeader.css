@@ -1,11 +1,95 @@
-.season-utility { padding-block:8px; }
-.season-utility .launch-ticket { flex-shrink:0; }
-@media(max-width:759px) {
-  .season-utility { flex-wrap:wrap; gap:4px 12px; }
-  .season-utility .launch-ticket { margin-right:auto; }
-  .season-utility .community-logo-links { margin-left:0; }
+/* One compact navigation grid; the existing controls keep their own behavior. */
+.season-shell .season-header .lobby-nav-grid {
+  position:relative;display:grid;align-items:center;
+  grid-template-columns:8.25rem minmax(0,1fr) 6.625rem;
+  gap:.375rem; padding: .5rem clamp(.75rem,4vw,4rem);
 }
-@media(max-width:599px) {
-  .season-utility .launch-ticket { width:100%; justify-content:space-between; }
-  .season-utility .launch-ticket-digits { margin-left:auto; }
+.lobby-nav-grid > .season-brand {grid-area:1/1;margin:0;gap:.375rem;min-width:0;min-height:2.75rem;}
+.lobby-nav-grid > .season-brand img {width:1.875rem;height:1.875rem;}
+.lobby-nav-grid > .season-brand > span {font-size:1.0625rem;letter-spacing:-.045em;}
+.lobby-nav-grid > .season-brand small {font-size:.375rem;letter-spacing:.12em;margin-top:.3rem;}
+.lobby-nav-grid > .community-logo-links {grid-area:2/1;margin:0;gap:0;}
+.lobby-nav-grid > .community-logo-links a {width:2.75rem;height:2.75rem;flex:none;}
+.lobby-nav-grid > .spark-balance {grid-area:1/2;justify-content:center;gap:.25rem;padding:.25rem;min-height:2.75rem;min-width:0;margin:0;}
+.lobby-nav-grid > .spark-balance strong {min-width:0;max-width:100%;overflow:hidden;text-overflow:ellipsis;font-size:.8125rem;}
+.lobby-nav-grid > .spark-balance > span:first-child {font-size:1rem;}
+.lobby-nav-grid > .spark-balance > span:last-child {display:none;}
+.lobby-nav-grid > .season-header-create {grid-area:1/3;justify-content:center;padding:.5rem .375rem;min-height:2.75rem;font-size:.75rem;}
+.lobby-nav-grid > .launch-ticket {grid-area:2/2;flex-direction:column;justify-content:center;gap:.125rem;min-width:0;min-height:2.75rem;padding:.25rem 0;border:0;background:transparent;box-shadow:none;transform:none;overflow:visible;}
+.lobby-nav-grid .launch-ticket-label {display:none;}
+.lobby-nav-grid .launch-ticket-join {display:none;}
+.lobby-nav-grid .launch-ticket-digits {gap:.125rem;min-width:0;}
+.lobby-nav-grid .launch-digit {width:1.3125rem;gap:.125rem;}
+.lobby-nav-grid .launch-digit-window {height:1.125rem;border:0;background:transparent;box-shadow:none;}
+.lobby-nav-grid .launch-digit-window b {font-size:.875rem;animation:none;}
+.lobby-nav-grid .launch-digit small {font-size:.4375rem;letter-spacing:0;line-height:1;}
+.lobby-nav-grid .launch-digit-minutes,.lobby-nav-grid .launch-digit-seconds {display:none;}
+.lobby-nav-grid .launch-ticket-ended {font-size:.625rem;text-align:center;}
+.lobby-nav-grid .ritual-disclosure.ritual-dock {grid-area:2/3;min-width:0;border:0;}
+.lobby-nav-grid .ritual-dock .ritual-summary {min-height:2.75rem;padding:.375rem;gap:.25rem;justify-content:center;background:var(--season-lime);color:var(--season-ink);border:0;border-radius:.5rem;}
+.lobby-nav-grid .ritual-summary::before,.lobby-nav-grid .ritual-summary::after {display:none;}
+.lobby-nav-grid .ritual-summary > img {width:1.625rem;height:1.625rem;}
+.lobby-nav-grid .ritual-summary-copy strong {font-size:.75rem;}
+.lobby-nav-grid .ritual-summary-copy > span,.lobby-nav-grid .ritual-summary-action {display:none;}
+.lobby-nav-grid .ritual-dock[open] .ritual-summary-copy,.lobby-nav-grid .ritual-dock[open] .ritual-summary > img {display:none;}
+.lobby-nav-grid .ritual-dock[open] .ritual-summary-action {display:block;margin:0;padding:0;font-size:.75rem;max-width:none;}
+/* On phones the open ritual joins the page below both rows, at full width. */
+.lobby-nav-grid:has(.ritual-dock[open]) {grid-template-rows:2.75rem 2.75rem auto;}
+.lobby-nav-grid .ritual-dock[open] {grid-area:2/1/4/-1;display:block;background:transparent;pointer-events:none;}
+.lobby-nav-grid .ritual-dock[open] .ritual-summary {width:6.625rem;margin-left:auto;margin-bottom:.375rem;pointer-events:auto;position:sticky;top:0;z-index:2;}
+.lobby-nav-grid .ritual-dock-content {grid-column:1/-1;position:relative;top:auto;left:auto;right:auto;margin:0;max-height:none;overflow:visible;pointer-events:auto;}
+.season-shell .site-header.season-header:has(.ritual-dock[open]) {position:relative;}
+.lobby-nav-grid:not(.has-ritual) > .launch-ticket {grid-column:2/-1;flex-direction:row;gap:.75rem;}
+@media(min-width:360px) {
+  .lobby-nav-grid > .spark-balance {display:grid;grid-template-columns:auto minmax(0,auto);gap:0 .25rem;}
+  .lobby-nav-grid > .spark-balance > span:first-child {grid-area:1/1/3/2;}
+  .lobby-nav-grid > .spark-balance strong {grid-area:1/2;align-self:end;line-height:1.1;}
+  .lobby-nav-grid > .spark-balance > span:last-child {display:block;grid-area:2/2;font-size:.5625rem;align-self:start;}
+  .lobby-nav-grid > .spark-balance small {display:none;}
+  .lobby-nav-grid .launch-ticket-label {display:flex;gap:.25rem;line-height:1;}
+  .lobby-nav-grid .launch-ticket-label b {font-size:.5625rem;letter-spacing:.05em;}
+  .lobby-nav-grid .launch-ticket-label small,.lobby-nav-grid .launch-dot {display:none;}
+  .lobby-nav-grid .launch-digit-minutes {display:flex;}
+}
+@media(min-width:414px) {
+  .season-shell .season-header .lobby-nav-grid {grid-template-columns:minmax(8.25rem,1fr) 7rem 6.625rem;}
+  .lobby-nav-grid > .spark-balance > span:last-child {display:block;font-size:.5625rem;}
+  .lobby-nav-grid > .spark-balance small {display:none;}
+}
+@media(min-width:760px) {
+  .season-shell .season-header .lobby-nav-grid {grid-template-columns:minmax(12rem,1fr) auto auto auto;gap:.5rem .75rem;padding:.625rem clamp(.75rem,4vw,4rem);}
+  .lobby-nav-grid > .season-brand {grid-area:1/1;gap:.625rem;}
+  .lobby-nav-grid > .season-brand img {width:2.5rem;height:2.5rem;}
+  .lobby-nav-grid > .season-brand > span {font-size:1.5rem;}
+  .lobby-nav-grid > .season-brand small {font-size:.5rem;letter-spacing:.2em;}
+  .lobby-nav-grid > .community-logo-links {grid-area:1/2;}
+  .lobby-nav-grid > .spark-balance {grid-area:1/3;display:flex;padding:.375rem .625rem;gap:.375rem;}
+  .lobby-nav-grid > .spark-balance > span:last-child {display:block;font-size:.625rem;}
+  .lobby-nav-grid > .spark-balance small {display:none;}
+  .lobby-nav-grid > .season-header-create {grid-area:1/4;padding:.5rem .75rem;}
+  .lobby-nav-grid > .launch-ticket,.lobby-nav-grid:not(.has-ritual) > .launch-ticket {grid-area:2/1;flex-direction:row;justify-content:flex-start;gap:.625rem;}
+  .lobby-nav-grid .launch-ticket-label {display:grid;grid-template-columns:auto;gap:.25rem;}
+  .lobby-nav-grid .launch-ticket-label b {font-size:.6875rem;}
+  .lobby-nav-grid .launch-ticket-label small {display:block;font-size:.5rem;}
+  .lobby-nav-grid .launch-digit-seconds {display:flex;}
+  .lobby-nav-grid .launch-digit {width:1.5rem;}
+  .lobby-nav-grid .ritual-disclosure.ritual-dock {grid-area:2/2/3/-1;position:static;}
+  .lobby-nav-grid .ritual-dock .ritual-summary {justify-content:flex-start;background:linear-gradient(110deg,#302548,#1d303b);color:var(--season-cloud);padding:.375rem .625rem;gap:.5rem;}
+  .lobby-nav-grid .ritual-summary-copy strong {font-size:.875rem;}
+  .lobby-nav-grid .ritual-summary-action,.lobby-nav-grid .ritual-dock[open] .ritual-summary-action {display:block;margin-left:auto;padding:.375rem .625rem;font-size:.6875rem;max-width:none;}
+  .lobby-nav-grid .ritual-dock[open] .ritual-summary-copy,.lobby-nav-grid .ritual-dock[open] .ritual-summary > img {display:block;}
+  .lobby-nav-grid .ritual-dock[open] {display:block;pointer-events:auto;}
+  .lobby-nav-grid .ritual-dock[open] .ritual-summary {position:static;width:auto;margin:0;}
+  .lobby-nav-grid:has(.ritual-dock[open]) {grid-template-rows:auto auto;}
+  .lobby-nav-grid .ritual-dock-content {position:absolute;top:100%;left:0;right:0;max-height:calc(100dvh - var(--ritual-header-height, 120px) - 8px);overflow-y:auto;overscroll-behavior-y:contain;}
+  .season-shell .site-header.season-header:has(.ritual-dock[open]) {position:sticky;}
+}
+@media(min-width:760px) {
+  .lobby-nav-grid > .spark-balance > span:last-child {font-size:.75rem;}
+  .lobby-nav-grid > .spark-balance strong {font-size:1rem;align-self:center;}
+  .lobby-nav-grid > .spark-balance > span:last-child {align-self:center;}
+  .lobby-nav-grid > .season-header-create {padding:.5rem 1rem;}
+  .lobby-nav-grid .launch-ticket-join {display:block;margin-left:.375rem;font-size:.6875rem;}
+  .lobby-nav-grid .launch-ticket-join br {display:none;}
+  .lobby-nav-grid .launch-ticket-join b {display:none;}
 }

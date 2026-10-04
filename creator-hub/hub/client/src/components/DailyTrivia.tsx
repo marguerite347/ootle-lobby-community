@@ -170,7 +170,7 @@ export function SparkBalance() {
   }, [game?.phase, rewardAward]);
   const anticipating = displayBalance !== null && game && game.balance > displayBalance && ['super','complete'].includes(game.phase);
   const label = shown !== null ? shown.toLocaleString() : '—';
-  return <Link ref={wallet} to="/#daily-spark" className={`spark-balance${anticipating ? ' is-charging' : ''}`} data-energy={energy} title="Free Hub points · no cash value · preview browser identity">
+  return <Link ref={wallet} to="/#daily-spark" className={`spark-balance${anticipating ? ' is-charging' : ''}`} data-energy={energy} aria-label={`${label} AI Sparks · Daily Ritual`} title="Free Hub points · no cash value · preview browser identity">
     <span aria-hidden="true">✦</span>
     <strong>{label}</strong>
     <span>AI Sparks<small>Daily Ritual</small></span>
