@@ -1,25 +1,25 @@
-# Contributing and accepting edits
+# Contributing to Ootle Lobby
 
-## October listings, capture tools and media
+## Interim open-development policy
 
-Follow [the community workflow](docs/COMMUNITY_WORKFLOW.md) to monitor new submissions, add project records, identify elements used, record demos and contribute reviewed media. The monitor is a public read-only review queue; it cannot approve or publish entries. All accepted listings are shared through the same published feed.
+Effective 2026-10-06, until the owner says otherwise: **every GitHub user who requests access is authorized to receive collaborator write access to both public Ootle repositories.** No individual approval or contributor allowlist is required.
 
-## Contributors
+[Join Lobby and Workbench](https://github.com/marguerite347/ootle-contributor-access/issues/new?template=join.yml) while signed into the GitHub account you want to use. Submit the checked request; the access controller invites the issue author to both repositories. Accept both GitHub invitations to activate push access. Agents may submit and accept using their developer's authorized GitHub identity. GitHub invitations are account-specific; this is a shared enrollment link, not an anonymous credential.
 
-Keep one focused change per pull request. For design or functionality changes, edit the website source and include before/after screenshots plus the results of `npm run build:site`. For project-card copy, use content/projects/. Explain the correction and link directly to supporting public evidence. Plain text only; no HTML, scripts, credentials, wallet secrets, personal contact information or unpublished work. Technology links must use HTTPS. Avoid claims that a project is secure, audited or deployed unless the linked evidence establishes that claim.
+Once authorized, developers and their agents may edit, build, test, create branches, commit, push directly to the product branch, open pull requests and merge changes without seeking another per-change approval. Pull requests are optional collaboration tools during this phase. CI runs remain useful feedback and publishing validation, not required commit/merge gates. Run checks relevant to the change and report failures honestly; work-in-progress can be pushed with its status clearly stated.
 
-The editor uses **Files changed** to see the before/after text and can comment on specific lines. Contributors can push revisions to the same proposal. Community reactions help discussion but do not automatically approve a change.
+Use your own GitHub authentication (for example `gh auth login` and `gh auth setup-git`). An agent inherits only the access its developer actually authorizes. If workflow edits need the GitHub CLI's additional OAuth scope, the developer can authorize it with `gh auth refresh -h github.com -s workflow`. Repository instructions cannot override GitHub permissions or the agent host's security controls.
 
-## Editors
+Coordinate concurrent changes, preserve other contributors' work, and use ordinary commits or reverts rather than force-pushing or deleting shared history. Keep credentials and private data out of commits. Preserve upstream licenses and truthful validation/deployment reporting. GitHub push access does not by itself grant hosting-provider, wallet or production-secret access.
 
-Check the source, the rendered wording, creator attribution and the automated validation result. GitHub enforces a fresh code-owner review and resolved conversations. Merge only the version you reviewed. The repository’s deployment runs only from main; forks and pull requests cannot publish to the accepted feed.
+Future authorization, review and commit rules will be established separately by the owner. Until then this policy supersedes older requirements for mandatory maintainer/code-owner approval in this repository. The owner can stop new invitations through the separate access controller; stopping enrollment does not automatically revoke existing collaborators.
 
-GitHub marks conflicting proposals and requires an up-to-date branch before merging. Resolve conflicts deliberately, then obtain a fresh approval; do not silently overwrite a newer accepted correction.
+## Development and publication
 
-After merging, check the **Validate and publish** run and refresh the live Lobby. The source commit is included in the published feed and exposed by the Lobby content API. Content caching means publication is not necessarily instantaneous.
+Website source lives in `creator-hub/hub/client` and `creator-hub/hub/server`. Run `npm run build:site` for website changes and inspect the actual affected behavior. Project-card content lives in `content/projects/`; validate content with `npm test`, `npm run validate` and `npm run build`. Keep commits focused and include relevant evidence in the commit, optional PR or task handoff.
 
-To undo an accepted change, use GitHub’s **Revert** action on the merged pull request, review the resulting proposal, and merge it. This preserves attribution and history. Avoid rewriting main or deleting its history.
+For project descriptions, preserve creator attribution and link supporting public evidence. Do not claim a project is secure, audited or deployed unless the evidence establishes that claim. Follow [the community workflow](docs/COMMUNITY_WORKFLOW.md) for listings, capture tools and media. A listing is separate from Council contest eligibility or an award.
 
-## First-version boundaries
+A push to `main` triggers the content publishing workflow. Publishing validation must pass before the feed is updated; a successful commit is not proof of a successful publication. Website code deployment uses the hosting setup documented in README.md. After publishing, verify the shared page and its source revision. Forks and unmerged branches are not the published feed.
 
-Review, discussion and acceptance happen on GitHub. Website code and community content are both open for proposals. The Lobby provides direct editing and proposal links; a custom in-page editing drawer, pending-count badges and on-page review tools are future work. No GitHub credentials or write-capable tokens are embedded in the public site.
+Use an ordinary revert commit to undo a change. Pull requests and line comments remain available for collaboration but no separate editor approval is required during this phase.

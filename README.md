@@ -1,10 +1,12 @@
 # Ootle Lobby · community website
 
+**Open contributor access:** [Join Lobby and Workbench](https://github.com/marguerite347/ootle-contributor-access/issues/new?template=join.yml). Anyone who requests access is automatically invited to both repositories until the owner changes the policy. Accept both invitations, then developers and their agents can commit, push and merge without a mandatory review gate. See [CONTRIBUTING.md](CONTRIBUTING.md).
+
 **Help creators tell their story accurately.**
 
 [Visit the live Lobby](https://ootle-lobby-preview.vercel.app) · [Review proposed edits](https://github.com/marguerite347/ootle-lobby-community/pulls) · [Report a correction](https://github.com/marguerite347/ootle-lobby-community/issues/new/choose)
 
-This repository contains the public website source and the community content shown on the live Ootle Lobby. It includes the React frontend, Express server, styles, public artwork, runtime dependencies and a review workflow. Private repository history, credentials, unrelated business data and local user/chat state are excluded.
+This repository contains the public website source and the community content shown on the live Ootle Lobby. It includes the React frontend, Express server, styles, public artwork, runtime dependencies and a contribution workflow. Private repository history, credentials, unrelated business data and local user/chat state are excluded.
 
 ## Community submissions and recordings
 
@@ -31,7 +33,7 @@ Missing services, configuration requirements, browser-only features and retired 
 | Community project descriptions and labels | `content/projects/` |
 | Hosting configuration | `vercel.json`, `api/`, `scripts/prepare-site.mjs` |
 
-Website changes use the same public pull-request discussion and review process. The required **Validate website** check builds the actual site. See [CONTRIBUTING.md](CONTRIBUTING.md) for review details.
+Authorized contributors can push website changes directly to main or use a pull request for discussion. The **Validate website** workflow builds the actual site; it is not a required push or merge gate during open development. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ### Run the website
 
@@ -89,13 +91,15 @@ and [conditional writes](https://vercel.com/docs/vercel-blob#conditional-writes)
 
 The full source was built and deployed to the live Vercel site on October 3, 2026. Content edits merged to `main` publish automatically through GitHub Pages and are consumed by the live site. Website code changes currently require a maintainer Vercel deployment. Automatic Git deployments are pending the Vercel account owner connecting GitHub under **Account Settings → Authentication → Login Connections**; the CLI reported that this login connection is required. After connecting the account, link this repository to the existing `ootle-lobby-preview` Vercel project with production branch `main`.
 
-## Suggest an edit
+## Suggest an edit without direct access
+
+The fork-and-pull-request path remains available without joining. Authorized collaborators may instead commit and push directly under the interim policy.
 
 1. Sign into GitHub and choose a project below, or use **Suggest an edit** on its live card.
 2. Change the title, summary or technology labels. Keep the JSON structure and project id.
 3. Select **Propose changes** and open a pull request. Include a short reason and public source links.
 4. Discuss the visible before/after changes with the community. The editor can request improvements, accept, or close the proposal with an explanation.
-5. After approval and merge, the publishing workflow updates the content feed. The live Lobby picks up the accepted version on refresh, normally within a few minutes of a successful publish.
+5. After a change reaches main, the publishing workflow updates the content feed. The live Lobby picks up the accepted version on refresh, normally within a few minutes of a successful publish.
 
 You do not need to install anything. GitHub may first prompt you to fork the repository. Your proposal stays separate from the live version until it is accepted. The PR and commit history retain contributor credit.
 
@@ -125,9 +129,9 @@ For September cards, creator attribution, submission dates, cover artwork and co
 
 ## Review and publishing
 
-The default branch requires the **Validate content** and **Validate website** checks and an approving code-owner review. New commits dismiss older approvals; unresolved review conversations must be resolved. `@marguerite347` is the initial editor. Administrators can manage repository policy, but normal publishing goes through reviewed pull requests. Add another trusted editor to CODEOWNERS before expecting the initial editor’s own proposals to receive an independent approval.
+During the interim open-development phase, collaborators can push directly to main and merge without required status checks, code-owner approval or conversation-resolution gates. CODEOWNERS identifies contacts only. **Validate content** and **Validate website** continue running as feedback; deployment jobs still require their own validation to succeed. Future branch and review rules will be established separately by the owner.
 
-A pull request shows its exact diff and discussion publicly. Automated checks validate the complete content set. A failed check cannot publish. Only a push to `main` after merge deploys the accepted JSON feed through GitHub Pages. The application validates that feed again and retains its last good content if retrieval or validation fails. The feed records the source commit so an accepted edit can be traced back to its review.
+A pull request shows its exact diff and discussion publicly. Automated checks validate the complete content set. A failed check cannot publish. A push to `main`, directly or after merge, triggers publication of the JSON feed through GitHub Pages. The application validates that feed again and retains its last good content if retrieval or validation fails. The feed records the source commit so a published edit can be traced back to its commit.
 
 ## Run locally
 
