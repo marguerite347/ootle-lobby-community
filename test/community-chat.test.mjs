@@ -101,6 +101,23 @@ test("durable chat trial: identity, isolation, replies and retry-safe sends", as
       .rows[0].total,
     2,
   );
+  const unreported = await store.send("github-1", {
+    channelId: "lobby",
+    body: "Direct moderation must still be reversible.",
+    clientId: "direct-moderation-001",
+  });
+  await store.moderate("github-1", unreported.id, "hide");
+  assert.ok(
+    (await store.reports("github-1")).some(
+      (r) => r.message_id === unreported.id,
+    ),
+  );
+  await store.moderate("github-1", unreported.id, "restore");
+  assert.ok(
+    !(await store.reports("github-1")).some(
+      (r) => r.message_id === unreported.id,
+    ),
+  );
   const token = "a".repeat(64);
   await store.createSession("github-2", token);
   assert.equal((await store.session(token)).id, "github-2");

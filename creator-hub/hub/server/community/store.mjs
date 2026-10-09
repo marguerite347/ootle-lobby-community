@@ -280,7 +280,7 @@ export function createChatStore(db) {
         reject("Moderator access required.", 403);
       return (
         await db.query(
-          `SELECT r.id,r.reason,r.created_at,m.id AS message_id,m.body,m.author_name,m.hidden_at FROM community_chat.reports r JOIN community_chat.messages m ON m.id=r.message_id JOIN community_chat.channels c ON c.id=m.channel_id WHERE ${accessSql} ORDER BY r.created_at DESC LIMIT 100`,
+          `SELECT COALESCE(r.id,m.id) AS id,COALESCE(r.reason,'Hidden by a moderator') AS reason,COALESCE(r.created_at,m.hidden_at) AS created_at,m.id AS message_id,m.body,m.author_name,m.hidden_at FROM community_chat.messages m LEFT JOIN community_chat.reports r ON r.message_id=m.id JOIN community_chat.channels c ON c.id=m.channel_id WHERE (r.id IS NOT NULL OR m.hidden_at IS NOT NULL) AND ${accessSql} ORDER BY COALESCE(r.created_at,m.hidden_at) DESC LIMIT 100`,
           [userId],
         )
       ).rows;
