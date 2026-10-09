@@ -36,7 +36,7 @@ describe('guessing-game Riff', () => {
     const draft = newGuessingRiff();
     const source = guessingPreview({...draft.settings, title: '</script><script>alert(1)</script>'});
     expect(source.match(/<script>/g)).toHaveLength(1);
-    expect(source).toContain('\\u003c/script>');
+    expect(source).toContain('&lt;/script>');
     expect(source).toContain("connect-src 'none'");
     expect(source).toContain('.textContent=config.title');
   });

@@ -1,3 +1,4 @@
+import {safeHref} from '../../../shared/safeLinks.mjs';
 import ContestSubmission from '../components/ContestSubmission';
 import {recordCreatorEvent} from '../creatorAnalytics';
 import { useEffect, useState } from 'react';
@@ -49,10 +50,10 @@ export default function Detail() {
           <h1>{r.title}</h1>
           <p className="resource-summary">{r.summary || 'Explore the source for more about this resource.'}</p>
           {r.sharedBy && <p className="resource-byline">Shared by <Link to={r.sharedBy.url || '/learn'}>{r.sharedBy.name}</Link></p>}
-          {r.creator?.name && <p className="resource-byline">Created by {r.creator.url ? <ExternalLink href={r.creator.url}>{r.creator.name} ↗</ExternalLink> : r.creator.name}</p>}
+          {r.creator?.name && <p className="resource-byline">Created by {r.creator.url ? <ExternalLink href={safeHref(r.creator.url)}>{r.creator.name} ↗</ExternalLink> : r.creator.name}</p>}
           <div className="resource-actions">
             {r.type === 'starter' && <button className="btn primary" onClick={() => nav(`/create/project?template=${encodeURIComponent(r.id)}`)}>Use as a starting point →</button>}
-            {links.filter(([, href], i, all) => href && all.findIndex(([, url]) => url === href) === i).map(([label, href]) => <ExternalLink key={label} href={href!}><span className="btn">{label} ↗</span></ExternalLink>)}
+            {links.filter(([, href], i, all) => href && all.findIndex(([, url]) => url === href) === i).map(([label, href]) => <ExternalLink key={label} href={safeHref(href!)}><span className="btn">{label} ↗</span></ExternalLink>)}
           </div>
         </div>
         <div className="row"><StarButton kind="resource" id={r.id} initialStars={r.engagement?.stars ?? 0} /></div>
@@ -112,7 +113,7 @@ export default function Detail() {
               <dt>Network</dt><dd>{r.network || '—'}</dd>
               <dt>Readiness</dt><dd style={{ textTransform: 'capitalize' }}>{readinessLabel(r.readiness)}</dd>
               <dt>License</dt><dd>{r.license || 'Not specified. Check with the creator before reuse.'}</dd>
-              <dt>Creator</dt><dd>{r.creator?.url ? <ExternalLink href={r.creator.url}>{r.creator.name} ↗</ExternalLink> : (r.creator?.name || '—')}</dd>
+              <dt>Creator</dt><dd>{r.creator?.url ? <ExternalLink href={safeHref(r.creator.url)}>{r.creator.name} ↗</ExternalLink> : (r.creator?.name || '—')}</dd>
             </dl>
           </div>
 
@@ -158,7 +159,7 @@ function RelatedPanel({ r }: { r: Resource }) {
                 </Link>
                 <span className="row" style={{ gap: 6 }}>
                   <span className={`badge ${i.status === 'verified' ? 'native' : ''}`} style={i.status === 'needs-review' ? { color: 'var(--warn)', borderColor: '#4a3a1e', background: '#2a2113' } : undefined}>{i.status}</span>
-                  {i.evidence && <a className="faint" href={i.evidence} target="_blank" rel="noopener noreferrer" style={{ fontSize: 12 }}>evidence ↗</a>}
+                  {i.evidence && <a className="faint" href={safeHref(i.evidence)} target="_blank" rel="noopener noreferrer" style={{ fontSize: 12 }}>evidence ↗</a>}
                 </span>
               </div>
             ))}

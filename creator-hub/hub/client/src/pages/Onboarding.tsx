@@ -1,3 +1,4 @@
+import {safeHref} from '../../../shared/safeLinks.mjs';
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { api, type OnboardingSummary, type OnboardingPath } from '../api';
@@ -92,7 +93,7 @@ function PathView({ id }: { id: string }) {
             <div className="panel">
               <h4 style={{ fontSize: 13, color: 'var(--faint)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Guides</h4>
               <div className="mt8" style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-                {p.resources.map((r) => <ExternalLink key={r.url} href={r.url}><span className="btn small" style={{ width: '100%', textAlign: 'left' }}>{r.title} ↗</span></ExternalLink>)}
+                {p.resources.map((r) => <ExternalLink key={r.url} href={safeHref(r.url)}><span className="btn small" style={{ width: '100%', textAlign: 'left' }}>{r.title} ↗</span></ExternalLink>)}
               </div>
             </div>
           )}

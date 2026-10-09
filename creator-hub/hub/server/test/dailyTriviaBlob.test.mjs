@@ -84,22 +84,22 @@ test('cloud reset removes only today’s winnings, survives reload and allows an
  assert.notEqual((await game.mutate(id,'start')).round.id,today.round.id);
 });
 
-test('shared testing reset is opt-in and still rejects foreign origins and missing trivia headers',async t=>{
+test('public reset stays disabled even with legacy opt-in and still rejects foreign origins and missing trivia headers',async t=>{
  for(const allowReset of [false,true]) {
   const session=fixture(),app=express();app.use(express.json());
   app.use('/api/daily-trivia',dailyTriviaRouter('',{publicOrigin:'https://lobby.example',game:session.instance(),allowReset}));
   const server=app.listen(0,'127.0.0.1');await new Promise(resolve=>server.once('listening',resolve));t.after(()=>server.close());
   const url=`http://127.0.0.1:${server.address().port}/api/daily-trivia`;
-  const initial=await fetch(url,{headers:{host:'lobby.example','x-forwarded-for':'203.0.113.9'}});
+  const initial=await fetch(url+'/start',{method:'POST',headers:{host:'lobby.example','x-forwarded-for':'203.0.113.9',origin:'https://lobby.example','x-hub-trivia':'1'}});
   const cookie=initial.headers.get('set-cookie').split(';')[0];
-  assert.equal((await initial.json()).canReset,allowReset);
+  assert.equal((await initial.json()).canReset,false);
   const post=(action,headers={})=>fetch(url+'/'+action,{method:'POST',headers:{host:'lobby.example','x-forwarded-for':'203.0.113.9',cookie,origin:'https://lobby.example','x-hub-trivia':'1','content-type':'application/json',...headers},body:'{}'});
   assert.equal((await post('start')).status,200);
   assert.equal((await post('reset',{origin:'https://unrelated.example'})).status,403);
   assert.equal((await post('reset',{'x-hub-trivia':''})).status,403);
   const reset=await post('reset');
-  assert.equal(reset.status,allowReset?200:403);
-  if(allowReset){assert.equal((await reset.json()).phase,'ready');assert.equal((await post('start')).status,200);}
+  assert.equal(reset.status,403);
+
  }
 });
 
@@ -119,7 +119,7 @@ test('unconfigured cloud storage fails closed and asynchronous errors reach the 
  app.use('/api/daily-trivia',dailyTriviaRouter('',{game:createBlobDailyTrivia()}));
  const server=app.listen(0,'127.0.0.1');
  await new Promise(resolve=>server.once('listening',resolve));t.after(()=>server.close());
- const response=await fetch(`http://127.0.0.1:${server.address().port}/api/daily-trivia`);
+ const response=await fetch(`http://127.0.0.1:${server.address().port}/api/daily-trivia/start`,{method:'POST',headers:{'x-hub-trivia':'1'}});
  assert.equal(response.status,503);
  assert.equal(response.headers.get('set-cookie'),null);
 });
@@ -133,7 +133,7 @@ test('HTTP identity issued by one instance is usable by another with a Secure Ht
   const server=app.listen(0,'127.0.0.1');await new Promise(resolve=>server.once('listening',resolve));t.after(()=>server.close());
   urls.push(`http://127.0.0.1:${server.address().port}/api/daily-trivia`);
  }
- const initial=await fetch(urls[0]);
+ const initial=await fetch(urls[0]+'/start',{method:'POST',headers:{origin:'https://lobby.example','x-hub-trivia':'1'}});
  const header=initial.headers.get('set-cookie');
  assert.match(header,/HttpOnly/);assert.match(header,/Secure/);assert.match(header,/SameSite=Strict/);
  const cookie=header.split(';')[0];

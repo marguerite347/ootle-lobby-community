@@ -1,3 +1,4 @@
+import {safeHref} from '../../../shared/safeLinks.mjs';
 import {Link} from 'react-router-dom';
 import QuickSearch from '../components/QuickSearch';
 
@@ -28,7 +29,7 @@ export default function LearnResources() {
     <QuickSearch/>
     {groups.map(group=><section key={group.title} aria-label={group.title}>
       <h2>{group.title}</h2>
-      {group.links.map(link=>link.to==='/agent-start'?<a key={link.to} href={link.to}>{link.label}</a>:<Link key={link.to} to={link.to}>{link.label}</Link>)}
+      {group.links.map(link=>link.to==='/agent-start'?<a key={link.to} href={safeHref(link.to)}>{link.label}</a>:<Link key={link.to} to={link.to}>{link.label}</Link>)}
       {group.title==='Resources'&&<a href="https://ootle.tari.com/guides/getting-started/" target="_blank" rel="noreferrer">Ootle documentation</a>}
     </section>)}
   </div>;

@@ -1,3 +1,4 @@
+import {safeHref} from '../../../shared/safeLinks.mjs';
 import {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import {parseStore, STORAGE_KEY} from '../workbench/model';
@@ -7,7 +8,7 @@ export const WORKBENCH_URL='https://ootle-workbench.vercel.app/';
 // INTEGRATION_GAP[WB-FORK] (configuration-required): real Remix-based IDE lives in the public ootle-workbench fork.
 export default function WorkbenchEntry(){
  useEffect(()=>{window.location.replace(WORKBENCH_URL);},[]);
- return <main style={{padding:32}}><p>Opening Ootle Workbench…</p><a href={WORKBENCH_URL}>Open Workbench</a></main>;
+ return <main style={{padding:32}}><p>Opening Ootle Workbench…</p><a href={safeHref(WORKBENCH_URL)}>Open Workbench</a></main>;
 }
 
 export function WorkbenchBackup(){
@@ -28,6 +29,6 @@ export function WorkbenchBackup(){
   <p>Download files saved in this browser by the earlier editor, then import the backup into the new Remix-based Workbench. This runs in your browser and does not upload your files.</p>
   <button className="season-button" onClick={download}>Download workspace backup</button>
   {message&&<p role="status" style={{marginTop:20}}>{message}</p>}
-  <p style={{marginTop:24}}><a href={WORKBENCH_URL}>Open Ootle Workbench</a> · <Link to="/">Back to Lobby</Link></p>
+  <p style={{marginTop:24}}><a href={safeHref(WORKBENCH_URL)}>Open Ootle Workbench</a> · <Link to="/">Back to Lobby</Link></p>
  </main>;
 }

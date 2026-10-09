@@ -13,10 +13,10 @@ test('inspiration Lobby rejects every legacy creator-storage path before a handl
   const origin = `http://127.0.0.1:${server.address().port}`;
   for (const path of ['/api/projects', '/api/projects/example/publish', '/api/projects/example/fork', '/api/projects/example/manage-history', '/api/recipes/guessing/projects', '/api/assets', '/api/assets/example/commerce', '/api/challenges/submissions', '/API/PROJECTS/', '/api/%70rojects']) {
     const response = await fetch(origin + path, {method: 'POST'});
-    assert.equal(response.status, 410, path);
-    assert.equal((await response.json()).code, 'PROJECT_HOSTING_RETIRED');
+    assert.equal(response.status, path.includes('%')?400:410, path);
+    if(!path.includes('%'))assert.equal((await response.json()).code, 'PUBLIC_WRITES_DISABLED');
   }
-  for (const [method, path] of [['GET', '/api/projects'], ['GET', '/api/projects/example'], ['GET', '/api/resources'], ['POST', '/api/daily-trivia/reveal'], ['POST', '/api/recipes/guessing/export']]) {
+  for (const [method, path] of [['GET', '/api/projects'], ['GET', '/api/projects/example'], ['GET', '/api/resources'], ['POST', '/api/recipes/guessing/export']]) {
     const response = await fetch(origin + path, {method});
     assert.equal(response.status, 200, `${method} ${path}`);
     assert.equal((await response.json()).reachedHandler, true);

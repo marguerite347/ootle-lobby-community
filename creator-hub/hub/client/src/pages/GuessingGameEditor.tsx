@@ -1,3 +1,4 @@
+import {safeHref} from '../../../shared/safeLinks.mjs';
 import {useEffect, useMemo, useRef, useState} from 'react';
 import {Link} from 'react-router-dom';
 import {strToU8, zipSync} from 'fflate';
@@ -74,13 +75,13 @@ export default function GuessingGameEditor() {
           <label className="guessing-file">Template file<select value={file} onChange={event => setFile(event.target.value as SourceFile)}>{EDITABLE_FILES.map(path => <option key={path}>{path}</option>)}</select></label>
           <textarea className="guessing-source" aria-label={`Source code: ${file}`} spellCheck={false} maxLength={100000} value={draft.files[file]} onChange={event => {setDraft({...draft, files: {...draft.files, [file]: event.target.value}}); setStatus('');}}/>
           <p className="guessing-note">Rust edits are included in your download. Compile and test them before deploying.</p>
-          <a href={SOURCE_URL} target="_blank" rel="noreferrer">Official source · {SOURCE_REVISION.slice(0, 8)} ↗</a>
+          <a href={safeHref(SOURCE_URL)} target="_blank" rel="noreferrer">Official source · {SOURCE_REVISION.slice(0, 8)} ↗</a>
         </div>}
       </section>
       <section className="guessing-preview" aria-label="Playable game preview">
         <div className="guessing-preview-header"><div><h2>Play a round.</h2></div><button className="btn" onClick={() => setPreviewRun(run => run + 1)}>Restart ↻</button></div>
         <iframe ref={previewFrame} key={previewRun} style={{height: previewHeight}} srcDoc={preview} title="Guessing-game visual preview" sandbox="allow-scripts"/>
-        <p className="guessing-note">Browser preview · no wallet or real rewards. <a href={GUESSING_GUIDE} target="_blank" rel="noreferrer">Build and deploy with the Ootle guide ↗</a></p>
+        <p className="guessing-note">Browser preview · no wallet or real rewards. <a href={safeHref(GUESSING_GUIDE)} target="_blank" rel="noreferrer">Build and deploy with the Ootle guide ↗</a></p>
       </section>
     </div>
   </div>;

@@ -1,3 +1,4 @@
+import {createHash} from 'node:crypto';
 import {readCommunityProjects} from '../shared/readCommunityProjects.mjs';
 import {readContestContent} from '../shared/readContestContent.mjs';
 import {readFileSync} from 'node:fs';
@@ -17,15 +18,17 @@ export function acceptedContent(feed) {
   return feed;
 }
 
-export function createCommunityContent({initial = seed, read = getJson, now = Date.now} = {}) {
+export function createCommunityContent({initial = seed, read = getJson, now = Date.now, approvedRevision = process.env.COMMUNITY_CONTENT_REVISION, approvedSha256 = process.env.COMMUNITY_CONTENT_SHA256} = {}) {
+  const pinned=/^[a-f0-9]{40}$/.test(approvedRevision||'') && /^[a-f0-9]{64}$/.test(approvedSha256||'');
   let snapshot = acceptedContent(initial);
   let nextRefresh = 0;
   let pending;
   let checkedAt = null;
   let cached = true;
   return async () => {
-    if (now() >= nextRefresh && !pending) {
+    if (pinned && now() >= nextRefresh && !pending) {
       pending = read(CONTENT_FEED, {timeoutMs: 5000}).then(feed => {
+        if(feed.revision!==approvedRevision || createHash('sha256').update(JSON.stringify(feed)).digest('hex')!==approvedSha256)throw new Error('Unapproved content revision or digest.');
         snapshot = acceptedContent(feed);
         checkedAt = new Date(now()).toISOString();
         cached = false;

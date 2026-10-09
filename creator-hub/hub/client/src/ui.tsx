@@ -1,3 +1,4 @@
+import {safeHref} from '../../shared/safeLinks.mjs';
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import type { Resource, Popularity } from './api';
@@ -180,8 +181,9 @@ export function ResourceCard({ r, dimensionLabel }: { r: Resource; dimensionLabe
   );
 }
 
-export function ExternalLink({ href, children }: { href: string; children: React.ReactNode }) {
-  return <a href={href} target="_blank" rel="noopener noreferrer">{children}</a>;
+export function ExternalLink({ href, children }: { href?: string; children: React.ReactNode }) {
+  const safe=safeHref(href);
+  return safe?<a href={safe} target="_blank" rel="noopener noreferrer">{children} <small>({safe.startsWith('https:')?new URL(safe).hostname:'Lobby'})</small></a>:<span>{children}</span>;
 }
 
 const DIM_LABELS: Record<string, string> = { reach: 'Reach', adoption: 'Adoption', momentum: 'Momentum', engagement: 'Engagement' };

@@ -94,8 +94,8 @@
       "id": "LOBBY-CHAT",
       "status": "build-required",
       "surface": "/api/community-chat/*; /api/project-chat/*; /api/collective-chat/*",
-      "current": "JSON files under runtimeDir plus process-local rate limits; Vercel runtimeDir is temporary. Client IDs and some author roles are self-declared.",
-      "required": "Use shared durable chat/report storage and atomic operations; server-verified identities/roles, shared abuse limits, retention and moderator authorization. Configure existing COMMUNITY_CHAT_MODERATOR_TOKEN while retaining current moderation behavior.",
+      "current": "Public entry point blocks every chat, report, moderation and room write. The visible panel explains read-only mode and links to Discord. Legacy local JSON handlers are retained for tests, not enabled as public durable services.",
+      "required": "Before re-enabling: implement shared durable identity-bound messages/reports, server-verified roles, atomic shared rate limits, retention and authenticated moderator audit/restore.",
       "verify": "Messages/reports persist across deployments/instances; role spoofing and duplicate abuse are rejected; moderation is authorized.",
       "files": [
         "creator-hub/hub/server/communityChat.mjs",
@@ -120,8 +120,8 @@
       "id": "LOBBY-COMMUNITY-WRITES",
       "status": "build-required",
       "surface": "/api/engagement/*; /api/creator-profiles/*; /api/skill-market*; /api/learn/resources; /api/learning/lessons*; /api/build-budgets*; /api/creator-analytics*",
-      "current": "Handlers exist, but runtime JSON files and local/in-memory state are not durable multi-instance services. Ownership ranges from anonymous IDs to locally stored bearer secrets.",
-      "required": "Migrate enabled writes to shared transactional storage; audit per-action authentication/authorization, privacy, moderation, quotas and retention. Preserve public-safe projections and keep private lesson evidence out of public feeds.",
+      "current": "The public route allowlist denies all persistent profile, skill, learning, engagement and analytics writes before parsing input. Bundled skill downloads are stateless and checked against a committed file-digest manifest. Runtime-authored lessons and skills are excluded from public discovery.",
+      "required": "Before re-enabling: shared transactional ownership and storage, moderation, reserved official names, bounded queues, retention and shared quotas.",
       "verify": "Concurrent writes survive restart; unauthorized edits and role claims fail; analytics deletion/retention works; lesson evidence is never exposed.",
       "files": [
         "creator-hub/hub/server/engagement.mjs",
@@ -136,8 +136,8 @@
       "id": "LOBBY-CHECKOUT",
       "status": "build-required",
       "surface": "POST /api/skill-market/:id/download for priced listings",
-      "current": "Free downloads exist; paid checkout explicitly returns 409 as not connected.",
-      "required": "Implement a chosen payment service, verified receipts/entitlements, idempotent settlement and refund/revocation policy before enabling paid downloads.",
+      "current": "Only committed digest-pinned free bundles can be downloaded through the public service, without download-event writes. Incomplete bundled file sets are excluded. Anonymous publishing and paid checkout are unavailable.",
+      "required": "Authenticated entitlement and payment integration remains a separate implementation before paid downloads.",
       "verify": "Free flow still works; payment failure does not grant access; only verified settlement grants the correct entitlement.",
       "files": [
         "creator-hub/hub/server/skillMarket.mjs"
@@ -147,8 +147,8 @@
       "id": "LOBBY-REWARDS",
       "status": "local-only",
       "surface": "Daily Ritual, AI Sparks balance and rewardPlaytest",
-      "current": "Current public UI always uses the replayable simulator. Retained /api/daily-trivia handlers and private Blob records are separate and are not used to award these displayed Sparks.",
-      "required": "Real spendable rewards would need server-authoritative identity, settlement, abuse controls, redemption/ledger and wallet integration. Preserve the current single 3D flow and reset during testing; do not restore a retired UI/API selector.",
+      "current": "The public UI remains a replayable browser-only practice game. The unused public /api/daily-trivia endpoint is closed for every method, so it cannot create or mutate Blob records. Local retained router registers only on POST start; GET does not issue a session or persist state. Production reset is disabled.",
+      "required": "Do not enable retained Blob trivia publicly without a shared atomic player quota, retention sweep, shared abuse limits and authentication. Existing legacy Blob data was not deleted; retention/migration requires reviewed operator action. Real rewards require a server ledger and verified identity.",
       "verify": "Current reset/playtest regression passes; any future real awards prove exactly-once settlement and cannot be minted by browser edits.",
       "files": [
         "creator-hub/hub/client/src/components/rewardPlaytest.ts",
@@ -197,8 +197,8 @@
       "id": "CFG-SUBSCRIPTIONS",
       "status": "configuration-required",
       "surface": "GET /api/subscriptions/config; POST /api/subscriptions",
-      "current": "A webhook adapter exists; missing configuration returns 503. Actual provider configuration/delivery was not checked in this audit.",
-      "required": "Provide HTTPS SUBSCRIPTION_WEBHOOK_URL, server-side SUBSCRIPTION_WEBHOOK_TOKEN and SUBSCRIPTION_PRIVACY_URL; receiver must implement the documented pending_confirmation/double-opt-in contract.",
+      "current": "Public subscriptions are disabled by the write allowlist and config reports unavailable. The retained webhook adapter is not invoked publicly.",
+      "required": "Before re-enabling: configure provider, double opt-in contract, shared durable rate limiting and authenticated abuse controls.",
       "verify": "Real confirmation email arrives for an approved test address; repeat delivery is idempotent; failure stays unconfirmed.",
       "files": [
         "creator-hub/hub/server/subscriptions.mjs"
@@ -208,8 +208,8 @@
       "id": "CFG-AI-DRAFT",
       "status": "configuration-required",
       "surface": "POST /api/video/templates/:id/draft",
-      "current": "Hugging Face drafting adapter exists, gated by HF_DRAFT_ENABLED=1 and a server token. Production provider delivery not verified here.",
-      "required": "Configure HF_TOKEN or HUGGINGFACE_TOKEN and HF_DRAFT_MODEL; add authenticated quotas/rate limits before offering unrestricted paid inference publicly.",
+      "current": "Public provider-backed drafting and Hugging Face search are blocked before invoking their adapters. HF_DRAFT_MODEL is the documented model selector; HF_TOKEN/HUGGINGFACE_TOKEN stay server-side.",
+      "required": "Enable only after authenticated shared quotas, budgets and provider consent.",
       "verify": "Opt-in provider trial returns validated fields; missing token, provider failure and budget limits fail honestly.",
       "files": [
         "creator-hub/hub/server/videoTemplates.mjs"
@@ -219,8 +219,8 @@
       "id": "CFG-DATA",
       "status": "configuration-required",
       "surface": "/api/growth/summary; /api/marketing-calendar; /blog/feed.xml; /blog/sitemap.xml; source refresh",
-      "current": "Adapters exist: growth cloud needs GROWTH_GITHUB_TOKEN, calendar needs a snapshot or authorized Trello configuration and is deliberately local-only, blog needs PUBLIC_SITE_URL. Public origin is set in the Vercel adapter.",
-      "required": "Verify owner-managed configuration, source permissions, freshness and last-good fallbacks. Do not remove the local-only calendar restriction or copy private source data into the public repo. No new endpoint is implied.",
+      "current": "Public growth API and growth-export paths are disabled even if GROWTH_GITHUB_TOKEN is present. Calendar remains local-only. Monitoring reports enabled:false when no scheduler starts. Public content uses the deployment snapshot; remote refresh requires exact COMMUNITY_CONTENT_REVISION and COMMUNITY_CONTENT_SHA256.",
+      "required": "Any public private-repository metrics require an explicit reviewed public projection and authentication; never return raw private bundles.",
       "verify": "Configured adapter returns current authorized data; missing/stale/error state is explicit; restricted routes stay restricted.",
       "files": [
         "creator-hub/hub/server/growthCloud.mjs",
@@ -246,8 +246,8 @@
       "id": "OPS-DEPLOY",
       "status": "configuration-required",
       "surface": "GitHub main to Vercel deployment",
-      "current": "Maintainer CLI deployment is documented; automatic Vercel Git integration previously required the owner GitHub login connection. Current account setup was not audited.",
-      "required": "Confirm/link the repository to the existing Vercel project and production branch main if automatic website deployment is desired. Keep passing checks and source SHA traceability.",
+      "current": "Security build uses lifecycle-disabled installation and source SHA metadata. Git auto-deploy is not being connected as part of this work while the open-contributor policy decision is pending.",
+      "required": "Only connect Git deployment after owner resolves repository access/review policy and Production-only secrets are verified.",
       "verify": "A reviewed main commit produces a ready deployment of that exact SHA; content-only GitHub Pages workflow stays separate.",
       "files": [
         "api/index.mjs"

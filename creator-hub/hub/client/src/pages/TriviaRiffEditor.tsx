@@ -1,3 +1,4 @@
+import {safeHref} from '../../../shared/safeLinks.mjs';
 import {useEffect, useState} from 'react';
 import {Link, useLocation} from 'react-router-dom';
 import {newTriviaRiff, readTriviaRiff, RITUAL_ART, triviaRiffError, type TriviaQuestion, type TriviaRiff} from '../triviaRiff/model';
@@ -86,7 +87,7 @@ export default function TriviaRiffEditor() {
             </>}
             {tab === 'ootle' && <>
               <h2>Build it on Ootle.</h2><p className="trivia-editor-note">Start with the guessing-game template. Connecting trivia answers and rewards to Ootle requires additional code; this preview is not connected.</p>
-              <a href={SOURCE_URL} target="_blank" rel="noreferrer">Explore the official template ↗</a>
+              <a href={safeHref(SOURCE_URL)} target="_blank" rel="noreferrer">Explore the official template ↗</a>
               <p><Link to="/create/guessing-game">Try the guessing-game starter ↗</Link></p>
 
             </>}

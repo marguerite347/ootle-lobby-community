@@ -1,3 +1,4 @@
+import {safeHref} from '../../../shared/safeLinks.mjs';
 import BuildToolkit from './BuildToolkit';
 import {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
@@ -45,7 +46,7 @@ export default function CreatorIdeas() {
         <p className="creator-idea-goal">{idea.goalTitles.join(' · ')}</p>
         <h4>The small first build</h4><p>{idea.build}</p><h4>What success looks like</h4><p>{idea.success}</p>
         <div className="creator-idea-links">{idea.resources.map(resource => <Link key={resource.url} to={resource.url}>{resource.label} ↗</Link>)}</div>
-        <details><summary>Evidence & ready-to-edit challenge copy</summary><p>{idea.observation}</p><a href={idea.sourceUrl} target="_blank" rel="noreferrer">Read the New Lore question ↗</a><p>Reviewed {idea.reviewedAt}</p><pre>{idea.brief}</pre></details>
+        <details><summary>Evidence & ready-to-edit challenge copy</summary><p>{idea.observation}</p><a href={safeHref(idea.sourceUrl)} target="_blank" rel="noreferrer">Read the New Lore question ↗</a><p>Reviewed {idea.reviewedAt}</p><pre>{idea.brief}</pre></details>
         <BuildToolkit initialIdea={`${idea.title}. ${idea.build}`.slice(0,600)}/>
         <div className="creator-idea-actions"><button className="btn" onClick={() => copy(idea)}>Copy challenge brief</button><Link to={`/create/project?idea=${encodeURIComponent(idea.id)}`}>Start this idea →</Link></div>
       </article>)}</div>

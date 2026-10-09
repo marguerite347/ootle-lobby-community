@@ -18,10 +18,9 @@ export async function getJson(url, { timeoutMs = 15000, headers = {} } = {}) {
 }
 
 // Optional GitHub auth raises the unauthenticated rate limit when a token is present.
-// Accepts the conventional names plus `Github` (the secret name configured for this
-// environment), so a token added under any of them is used without renaming.
+// Only documented GitHub credential names are read.
 export function githubHeaders() {
-  const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || process.env.GITHUB_PAT || process.env.Github;
+  const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || process.env.GITHUB_PAT;
   const h = { Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' };
   if (token) h.Authorization = `Bearer ${token}`;
   return h;

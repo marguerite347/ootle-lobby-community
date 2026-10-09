@@ -1,3 +1,4 @@
+import {safeHref} from '../../../shared/safeLinks.mjs';
 import { FormEvent, useCallback, useEffect, useRef, useState } from 'react';
 import {
   AUTHOR_KIND_OPTIONS,
@@ -173,7 +174,7 @@ export default function CollectiveChatPanel({ isActive }: Props) {
             {m.artifactUrl ? (
               <a
                 className="collective-chat-msg-artifact"
-                href={m.artifactUrl.startsWith('http') ? m.artifactUrl : undefined}
+                href={safeHref(m.artifactUrl.startsWith('http') ? m.artifactUrl : undefined)}
                 target={m.artifactUrl.startsWith('http') ? '_blank' : undefined}
                 rel="noreferrer"
               >

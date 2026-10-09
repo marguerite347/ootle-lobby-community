@@ -1,3 +1,4 @@
+import {requireLinkHost} from './safeLinks.mjs';
 export const OCTOBER_THREAD = 'https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396';
 function plain(value, name, max = 1500) {
   if (typeof value !== 'string' || !value.trim() || value.length > max || /[<>\u0000-\u001f]/.test(value)) throw new Error(`Invalid ${name}.`);
@@ -5,7 +6,8 @@ function plain(value, name, max = 1500) {
 function fields(value, allowed) {
   if (!value || Array.isArray(value) || typeof value !== 'object' || Object.keys(value).some(k => !allowed.includes(k))) throw new Error('Unsupported contest content fields.');
 }
-function https(value) {
+function https(value,field='source') {
+  requireLinkHost(value,field);
   plain(value, 'URL');const url = new URL(value);
   if (url.protocol !== 'https:' || url.username || url.password) throw new Error('Expected public HTTPS URL without credentials.');
 }
@@ -22,19 +24,20 @@ export function validateContests(contests) {
   if (!Array.isArray(contest.entries) || contest.entries.length > 100) throw new Error('Expected up to 100 reviewed entries.');
   const slugs=new Set(),posts=new Set();
   for (const entry of contest.entries) {
-    fields(entry,['slug','title','summary','creator','sourceUrl','repoUrl','demoUrl','publishedAt','updatedAt','technologies','recording']);
+    fields(entry,['slug','title','summary','creator','sourceUrl','repoUrl','demoUrl','publishedAt','updatedAt','sourceContentSha256','technologies','recording']);
     if (typeof entry.slug !== 'string' || entry.slug.length > 100 || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(entry.slug) || slugs.has(entry.slug)) throw new Error('Invalid or duplicate submission slug.');
     slugs.add(entry.slug);plain(entry.title,'entry title',100);plain(entry.summary,'summary');plain(entry.creator,'creator',80);
     https(entry.sourceUrl);
     if (!entry.sourceUrl.startsWith(`${OCTOBER_THREAD}/`) || !/^[2-9]\d*$|^1\d+$/.test(entry.sourceUrl.slice(OCTOBER_THREAD.length+1)) || posts.has(entry.sourceUrl)) throw new Error('Expected a unique October submission post.');
-    posts.add(entry.sourceUrl);https(entry.repoUrl);if(entry.demoUrl)https(entry.demoUrl);
+    posts.add(entry.sourceUrl);https(entry.repoUrl,'repository');if(entry.demoUrl)https(entry.demoUrl,'demo');
     date(entry.publishedAt);date(entry.updatedAt);
+    if(entry.sourceContentSha256!==undefined&&!/^[a-f0-9]{64}$/.test(entry.sourceContentSha256))throw new Error('Invalid reviewed source digest.');
     if (Date.parse(entry.updatedAt)<Date.parse(entry.publishedAt)) throw new Error('Update precedes submission.');
     if(!Array.isArray(entry.technologies)||entry.technologies.length>6)throw new Error('Expected up to six evidenced technology labels.');
     for(const item of entry.technologies){fields(item,['label','sourceUrl']);plain(item.label,'technology',60);https(item.sourceUrl);}
     if(entry.recording){
       fields(entry.recording,['url','posterUrl','capturedAt','sourceRevision','kind','credit']);
-      https(entry.recording.url);if(entry.recording.posterUrl)https(entry.recording.posterUrl);date(entry.recording.capturedAt);
+      https(entry.recording.url,'recording');if(entry.recording.posterUrl)https(entry.recording.posterUrl,'recording');date(entry.recording.capturedAt);
       plain(entry.recording.sourceRevision,'source revision',120);plain(entry.recording.credit,'recording credit',200);
       if(!['public-page','walkthrough','gameplay'].includes(entry.recording.kind))throw new Error('Unknown recording kind.');
     }

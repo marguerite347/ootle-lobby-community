@@ -1,3 +1,4 @@
+import {createHash} from 'node:crypto';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
@@ -13,7 +14,7 @@ test('rejects unrecognized or partial content without replacing the accepted sna
 test('an accepted revision replaces the content, deduplicates reads, and retains it through an outage', async () => {
   let clock=1,calls=0;
   const changed=structuredClone(seed);changed.revision='b'.repeat(40);changed.projects[0].summary='A reviewed correction.';
-  const read=createCommunityContent({initial:seed,now:()=>clock,read:async()=>{calls++;if(calls>1)throw new Error('Unavailable');return changed;}});
+  const read=createCommunityContent({initial:seed,approvedRevision:changed.revision,approvedSha256:createHash('sha256').update(JSON.stringify(changed)).digest('hex'),now:()=>clock,read:async()=>{calls++;if(calls>1)throw new Error('Unavailable');return changed;}});
   const results=await Promise.all([read(),read()]);
   assert.equal(calls,1);assert.equal(results[0].revision,changed.revision);assert.equal(results[0].cached,false);
   clock=60002;assert.equal((await read()).revision,changed.revision);assert.equal((await read()).cached,true);
@@ -23,7 +24,7 @@ test('October additions are shared and bad media retains the last accepted feed'
  const feed=structuredClone(seed);
  feed.contests=[{id:'october-2026',title:'October submissions',threadUrl:'https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396',checkedAt:'2026-10-03T12:00:00Z',observedSubmissionPosts:1,entries:[{slug:'example',title:'Example',summary:'A submitted game.',creator:'Creator',sourceUrl:'https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/5',repoUrl:'https://github.com/example/game',publishedAt:'2026-10-03T12:00:00Z',updatedAt:'2026-10-03T12:00:00Z',technologies:[]}]}];
  let clock=1;
- const read=createCommunityContent({initial:seed,now:()=>clock,read:async()=>{
+ const read=createCommunityContent({initial:seed,approvedRevision:feed.revision,approvedSha256:createHash('sha256').update(JSON.stringify(feed)).digest('hex'),now:()=>clock,read:async()=>{
    const next=structuredClone(feed);
    if(clock>1)next.contests[0].entries[0].repoUrl='javascript:bad';
    return next;

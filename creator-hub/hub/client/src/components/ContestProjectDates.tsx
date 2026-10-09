@@ -1,3 +1,4 @@
+import {safeHref} from '../../../shared/safeLinks.mjs';
 import type {Resource} from '../api';
 import type {ProjectMetrics} from './ContestProjectMetrics';
 import './ContestProjectDates.css';
@@ -30,10 +31,10 @@ export default function ContestProjectDates({entry, metrics}: {entry: Resource; 
   const {publishedAt, latest} = projectDates(entry, metrics);
   if (!timestamp(publishedAt)) return null;
   return <div className="contest-project-dates">
-    <a href={entry.contest?.sourceUrl} target="_blank" rel="noreferrer" title={`Published to the September contest forum · ${publishedAt} (UTC)`}>
+    <a href={safeHref(entry.contest?.sourceUrl)} target="_blank" rel="noreferrer" title={`Published to the September contest forum · ${publishedAt} (UTC)`}>
       <span>Published</span> <time dateTime={publishedAt!}>{dateFormat.format(new Date(publishedAt!))}</time>
     </a>
-    {latest?.at && <a href={latest.url} target="_blank" rel="noreferrer" title={`${latest.description} ${latest.at} (UTC)`}>
+    {latest?.at && <a href={safeHref(latest.url)} target="_blank" rel="noreferrer" title={`${latest.description} ${latest.at} (UTC)`}>
       <span>{latest.label}</span> <time dateTime={latest.at}>{dateFormat.format(new Date(latest.at))}</time>
     </a>}
   </div>;

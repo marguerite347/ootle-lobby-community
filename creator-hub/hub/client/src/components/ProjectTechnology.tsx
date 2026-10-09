@@ -1,3 +1,4 @@
+import {safeHref} from '../../../shared/safeLinks.mjs';
 import technology from './septemberProjectTechnology.json';
 import './ProjectTechnology.css';
 
@@ -11,7 +12,7 @@ export default function ProjectTechnology({resourceId, labels = projectTechnolog
   return <div className="project-technology" aria-label="Templates and Tari components">
     <span className="project-technology-heading">Built with</span>
     <div className="project-technology-labels">{labels.map(({label, sourceUrl}) =>
-      <a key={label} href={sourceUrl} target="_blank" rel="noreferrer" title={`View source for ${label}`}>{label}</a>
+      <a key={label} href={safeHref(sourceUrl)} target="_blank" rel="noreferrer" title={`View source for ${label}`}>{label}</a>
     )}</div>
   </div>;
 }

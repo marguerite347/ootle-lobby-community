@@ -1,3 +1,4 @@
+import {safeHref} from '../../../shared/safeLinks.mjs';
 import {useEffect, useState} from 'react';
 import './ContestProjectMetrics.css';
 
@@ -33,7 +34,7 @@ function CountBadge({metric, kind, unavailable}: {metric?: Count | null; kind: '
     : <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-8 8H4l1.3-4A8 8 0 1 1 20 11.5Z"/></svg>;
   const content = <>{icon}<span>{count == null ? '—' : count.toLocaleString()}</span></>;
   return metric?.url
-    ? <a className="contest-count" href={metric.url} target="_blank" rel="noreferrer" aria-label={label} title={title}>{content}</a>
+    ? <a className="contest-count" href={safeHref(metric.url)} target="_blank" rel="noreferrer" aria-label={label} title={title}>{content}</a>
     : <span className="contest-count" aria-label={label} title={title}>{content}</span>;
 }
 

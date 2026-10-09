@@ -1,3 +1,4 @@
+import {safeHref} from '../../../shared/safeLinks.mjs';
 import {useId} from 'react';
 
 type Scene = 'vault' | 'bug' | 'builder';
@@ -15,7 +16,7 @@ export default function SeasonalIllustration({scene, className = ''}: {scene: Sc
   const id = useId().replace(/:/g, '');
   const art = ART[scene];
   const source = `/seasonal/october-2026/${art.file}`;
-  const picture = <image href={source} width={art.width} height={art.height}/>;
+  const picture = <image href={safeHref(source)} width={art.width} height={art.height}/>;
   return <svg className={`season-illustration ${className}`} viewBox={`0 0 ${art.width} ${art.height}`} role="img" aria-label={art.alt}>
     <defs>
       <radialGradient id={`${id}-light`}><stop stopColor="#f3ffac" stopOpacity=".9"/><stop offset="1" stopColor="#deff66" stopOpacity="0"/></radialGradient>

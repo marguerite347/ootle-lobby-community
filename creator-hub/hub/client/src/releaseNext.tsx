@@ -1,3 +1,4 @@
+import {safeHref} from '../../shared/safeLinks.mjs';
 import type {Project} from './api';
 import {ProjectCover} from './ProjectCover';
 import {playableRelease, playUrlWithProject} from './projectDiscovery';
@@ -15,8 +16,8 @@ export function ReleaseNext({project}: {project: Project}) {
     return <div className="panel mt16" data-shipping={localPlayable ? 'local-playable' : 'curated-play'}>
       <ProjectCover project={project}/>
       <div className="row mt16">
-        <a className="btn primary" href={playUrlWithProject(play.playUrl, project.id)}>Play {play.title} ↗</a>
-        {play.sourceUrl && <a className="btn" href={play.sourceUrl}>View the source ↗</a>}
+        <a className="btn primary" href={safeHref(playUrlWithProject(play.playUrl, project.id))}>Play {play.title} ↗</a>
+        {play.sourceUrl && <a className="btn" href={safeHref(play.sourceUrl)}>View the source ↗</a>}
       </div>
       <p className="muted mt16">{localPlayable ? 'This project has its own local playable.' : 'This is a shared release.'} {play.walletStatus}</p>
     </div>;

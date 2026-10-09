@@ -1,3 +1,4 @@
+import {safeHref} from '../../../shared/safeLinks.mjs';
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { api, type Project } from "../api";
@@ -99,7 +100,7 @@ function GameCard({ game }: { game: Project }) {
       </div>
       <div className="release-actions">
         {release && (
-          <a className="btn primary" href={playUrlWithProject(release.playUrl, game.id)}>
+          <a className="btn primary" href={safeHref(playUrlWithProject(release.playUrl, game.id))}>
             Play ↗
           </a>
         )}

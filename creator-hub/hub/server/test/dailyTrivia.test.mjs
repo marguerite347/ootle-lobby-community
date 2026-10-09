@@ -66,7 +66,7 @@ test('HTTP sessions reject cross-origin writes and duplicate parallel answers cr
  const f=fixture(t),app=express();app.use(express.json());app.use('/api/daily-trivia',dailyTriviaRouter(f.root,f.options));
  const server=app.listen(0,'127.0.0.1');await new Promise(resolve=>server.once('listening',resolve));t.after(()=>server.close());
  const url=`http://127.0.0.1:${server.address().port}/api/daily-trivia`;
- const session=await fetch(url);const cookie=session.headers.get('set-cookie').split(';')[0];
+ const session=await fetch(url+'/start',{method:'POST',headers:{'x-hub-trivia':'1'}});const cookie=session.headers.get('set-cookie').split(';')[0];
  assert.match(session.headers.get('set-cookie'),/HttpOnly/);assert.equal(session.headers.get('cache-control'),'no-store');
  const post=(action,body={},headers={})=>fetch(url+'/'+action,{method:'POST',headers:{cookie,'content-type':'application/json','x-hub-trivia':'1',...headers},body:JSON.stringify(body)});
  assert.equal((await post('start',{}, {origin:'https://unrelated.example'})).status,403);
@@ -86,7 +86,7 @@ test('configured HTTPS origin supports a full round behind an HTTP proxy without
  await new Promise(resolve=>server.once('listening',resolve));
  t.after(()=>server.close());
  const url=`http://127.0.0.1:${server.address().port}/api/daily-trivia`;
- const initial=await fetch(url);
+ const initial=await fetch(url+'/start',{method:'POST',headers:{'x-hub-trivia':'1',origin:publicOrigin}});
  const cookie=initial.headers.get('set-cookie').split(';')[0];
  const post=(action,body={},headers={})=>fetch(url+'/'+action,{
   method:'POST',headers:{cookie,'content-type':'application/json','x-hub-trivia':'1',origin:publicOrigin,...headers},
@@ -137,7 +137,7 @@ test('HTTP reset is offered and allowed only for requests from this machine',asy
  const f=fixture(t),app=express();app.use(express.json());app.use('/api/daily-trivia',dailyTriviaRouter(f.root,f.options));
  const server=app.listen(0,'127.0.0.1');await new Promise(resolve=>server.once('listening',resolve));t.after(()=>server.close());
  const url=`http://127.0.0.1:${server.address().port}/api/daily-trivia`;
- const session=await fetch(url);const cookie=session.headers.get('set-cookie').split(';')[0];
+ const session=await fetch(url+'/start',{method:'POST',headers:{'x-hub-trivia':'1'}});const cookie=session.headers.get('set-cookie').split(';')[0];
  assert.equal((await session.json()).canReset,true);
  const post=(action,headers={})=>fetch(url+'/'+action,{method:'POST',headers:{cookie,'content-type':'application/json','x-hub-trivia':'1',...headers},body:'{}'});
  const start=await (await post('start')).json();assert.equal(start.phase,'playing');
@@ -245,7 +245,7 @@ test('parallel Super posts credit the 50× outcome once',async t=>{
  const app=express();app.use(express.json());app.use('/api/daily-trivia',dailyTriviaRouter(session.root,session.options));
  const server=app.listen(0,'127.0.0.1');await new Promise(resolve=>server.once('listening',resolve));t.after(()=>server.close());
  const url=`http://127.0.0.1:${server.address().port}/api/daily-trivia`;
- const cookie=(await fetch(url)).headers.get('set-cookie').split(';')[0];
+ const cookie=(await fetch(url+'/start',{method:'POST',headers:{'x-hub-trivia':'1'}})).headers.get('set-cookie').split(';')[0];
  const post=(action,body)=>fetch(url+'/'+action,{method:'POST',headers:{cookie,'content-type':'application/json','x-hub-trivia':'1'},body:JSON.stringify(body)});
  const start=await (await post('start')).json();session.advance(2000);
  const won=await (await post('answer',session.answer(start.round))).json();

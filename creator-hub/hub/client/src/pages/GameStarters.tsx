@@ -1,3 +1,4 @@
+import {safeHref} from '../../../shared/safeLinks.mjs';
 import BuildToolkit from '../components/BuildToolkit';
 import { useEffect, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
@@ -44,8 +45,8 @@ export default function GameStarters() {
     <BuildToolkit initialIdea={`${r.title} ${r.engine} ${r.genres.join(" ")}`} resourceId={r.id}/>
     <div className="starter-actions">
      <Link className="btn small" to={`/resource/${encodeURIComponent(r.id)}`}>Details</Link>
-     {r.demoUrl && <a className="btn small" href={r.demoUrl} target="_blank" rel="noreferrer">Open demo / examples ↗</a>}
-     {r.repoUrl && <a className="btn small" href={r.repoUrl} target="_blank" rel="noreferrer">Source / fork ↗</a>}
+     {r.demoUrl && <a className="btn small" href={safeHref(r.demoUrl)} target="_blank" rel="noreferrer">Open demo / examples ↗</a>}
+     {r.repoUrl && <a className="btn small" href={safeHref(r.repoUrl)} target="_blank" rel="noreferrer">Source / fork ↗</a>}
      {r.type==='starter' && <Link className="btn primary small" to={`/create/project?template=${encodeURIComponent(r.id)}`}>Use as starting point →</Link>}
     </div>
    </div>

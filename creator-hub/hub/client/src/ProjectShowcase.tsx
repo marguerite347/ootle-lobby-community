@@ -1,3 +1,4 @@
+import {safeHref} from '../../shared/safeLinks.mjs';
 import RemixInvitation from './components/RemixInvitation';
 import {useEffect,useState} from 'react';
 import {Link} from 'react-router-dom';
@@ -6,11 +7,11 @@ import {ProjectCover} from './ProjectCover';
 export {ProjectCover} from './ProjectCover';
 import {MediaCard} from './media';
 import {playableRelease, playUrlWithProject} from './projectDiscovery';
-export function ReleaseFeature({project}:{project:Project}){const release=playableRelease(project);return <article className="release-feature"><ProjectCover project={project}/><div className="release-copy"><span className="release-label">Published creation</span><h2>{project.title}</h2><p>{project.description}</p><p className="faint">By {project.author}</p><div className="release-actions">{release&&<a className="btn primary" href={playUrlWithProject(release.playUrl, project.id)}>Play / open ↗</a>}<Link className="more" to={`/project/${project.id}`}>Explore & Riff →</Link></div>{release&&<small>{release.status}</small>}</div></article>}
+export function ReleaseFeature({project}:{project:Project}){const release=playableRelease(project);return <article className="release-feature"><ProjectCover project={project}/><div className="release-copy"><span className="release-label">Published creation</span><h2>{project.title}</h2><p>{project.description}</p><p className="faint">By {project.author}</p><div className="release-actions">{release&&<a className="btn primary" href={safeHref(playUrlWithProject(release.playUrl, project.id))}>Play / open ↗</a>}<Link className="more" to={`/project/${project.id}`}>Explore & Riff →</Link></div>{release&&<small>{release.status}</small>}</div></article>}
 export function ProjectCollectionActions({project}:{project:Project}){
   const release=playableRelease(project);
   return <div className="release-actions">
-    {release&&<a className="btn primary" href={playUrlWithProject(release.playUrl, project.id)}>Play / open ↗</a>}
+    {release&&<a className="btn primary" href={safeHref(playUrlWithProject(release.playUrl, project.id))}>Play / open ↗</a>}
     <Link className="more" to={`/project/${project.id}`}>Open project ↗</Link>
     <Link className="more" to={`/project/${project.id}#manage-project`}>Manage →</Link>
   </div>;

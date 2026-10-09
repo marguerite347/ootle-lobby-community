@@ -1,0 +1,1287 @@
+{
+  "tari-contribute": {
+    "SKILL.md": "0192cb4e8e5a539298293ac9998cc3a0b913880ddfdc2ecb75fd203916ccb805"
+  },
+  "tari-data-indexing": {
+    "SKILL.md": "03e46e81871d5f0c4e07e26dd586aa8823053dcafa480cfefa940635b3140165"
+  },
+  "tari-deploy-verify": {
+    "SKILL.md": "f9ee8baf96d310f028c4a258b51defe5b7cc75d2225d5d3e432ed77c399fd217"
+  },
+  "tari-developer-setup": {
+    "SKILL.md": "5522b159e4fe44f459563a95d6f8b2316e755bfb66ee99ba2fe97b8cfcbd81cf"
+  },
+  "tari-economy-simulation": {
+    "SKILL.md": "ef1a6665a35a95fda43d92b0d157df53238252487e742e08e766bc1d070d2220"
+  },
+  "tari-frontend-integration": {
+    "SKILL.md": "68fab6f6321e07d877e0d11845fabaf7e051b4d783c3e05c3a71e77f56171f0f"
+  },
+  "tari-native-fees": {
+    "SKILL.md": "7b07c7daad607ae9ab7f1dca97c99eaae6f167c5ff24f5e01712001698eb9300"
+  },
+  "tari-network-reference": {
+    "SKILL.md": "b491223f33acddc024bcbfc22bbacc8aa864d5c6e8859b7d2b7170876f494ce4"
+  },
+  "tari-playground": {
+    "SKILL.md": "385ac7283c90d877d93e1c9005260e0752b471a84d77989030476e976c38b5ed"
+  },
+  "tari-privacy": {
+    "SKILL.md": "55fd81fc2629c3c7ae553c3312a89af7d79819ab09d37c42abaf5f90fd6a2095"
+  },
+  "tari-resources-state": {
+    "SKILL.md": "0946b527decc4fe3ea71e90628f9db44aeb55e1e436db95ae9f6557bb1766ba6"
+  },
+  "tari-security-readiness": {
+    "SKILL.md": "d0a8490b886ed23fbd73fbf727cb00fa7eb12d407b2d9215946847c7547c13c2"
+  },
+  "tari-start-here": {
+    "SKILL.md": "3c5293532f1be47c052025a18402b3ede3cef49036ee5f7fb2f37a35cccbc185"
+  },
+  "tari-tari-and-ootle": {
+    "SKILL.md": "4afb8b8da39dd8cb4f3c0fe08b522a30e9a1d93312b2bb04af6b8879d4e5af65"
+  },
+  "tari-templates-composability": {
+    "SKILL.md": "8c6c06a2ea4e56979efbf02505bfb535eb3fe9b99a6fd26605016b19a034c2e1"
+  },
+  "tari-testing-debugging": {
+    "SKILL.md": "1b34362e104d7206d3cba857098516ea5548a3f3d79b800f8a069d139b7f86ab"
+  },
+  "tari-wallets-transactions": {
+    "SKILL.md": "059f925ebb357b171bd8edbda372d3696c77e657bdc065cd15b3fc912dd2da57"
+  },
+  "tari-wxtm-ethereum": {
+    "SKILL.md": "a784646c43a43b8a32090c4cdf83fd3a93a89c51bd7ee66338a8878c6dc47957"
+  },
+  "gamedev-router": {
+    "SKILL.md": "0a2f60cf0df90d3fcd94c1d5be4fcda69c35de3db6c05cc4074c6fdb5cf77c56",
+    "agents/openai.yaml": "1304cad1da9611f8cf73ffb122bf7628b0fd6f0cce5a9f9072cd3fbdbe9ce128",
+    "references/engine-detection.md": "bec78e9d9366f0d30ba4dae228da12d42e4e5cf09f8824ba3d572a6eb49dd448",
+    "references/routing-table.md": "a72448d96f004b8a19bf1468ef173c513eeb74ab8a7780644af587a603c80eca",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-ai-behavior-trees-utility-ai": {
+    "SKILL.md": "185960eddb169cb81490e0d01efb9240663b8a465ca34ec34e0f015a727f06e4",
+    "references/behavior-tree-core.md": "df96b3faf1b7107240ed9c5f3bed793733dd9bdd25c05577abb7a69edd95521b",
+    "references/best-practices-and-pitfalls.md": "8ff83984ad998bc949d7524bae38c4d5b1acec34ff24587fdc9a9e9952c23c53",
+    "references/practical-examples.md": "9be856be9e5375fa218e927125dfca3f4f1c7b2ecd9089e5fa8b86d76b07cf1e",
+    "references/utility-ai-system.md": "a414ecd074e467d598664cde01305be054387fd3dc3e0045525ea3673d33309b",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-audio-design": {
+    "SKILL.md": "4d8418660c0423164a0319d4429a196ee0ec86b4f05f764bae1a212f73e287e1",
+    "references/adaptive-music.md": "ca6fd287054294004acd85d9acd773d7b52c327911116c9c02344bab5e61df13",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-camera-systems": {
+    "SKILL.md": "cec5e9ef16aaf8d42a7b86e3b17678d57920ab7692bbbfe710a34ac0d09b32c7",
+    "references/follow-and-framing.md": "daf21e0079ed86580f670c3f503a4dd835511534dc0dcecda9750b6eda3ceeec",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-create-game-assets": {
+    "SKILL.md": "c178cde20316f7d326f2a853a76522b375b325346b5b8797ef52aa98740aff18",
+    "agents/openai.yaml": "b5ff9e75ab8a845324d28745aa97af0a3cd4fccc56067a6494947e12e40f1990",
+    "assets/art-direction-brief.md": "6d5dc4f9f5fcb24300bab9ce7dbd56d5c948ba41da3cca2d3b3d235fee5fb72c",
+    "assets/asset-manifest.json": "6cce05638c11b80eb5c8f776cf187f479a2579f1a1729b0970b1cc8e5fab4c8e",
+    "references/art-direction.md": "19b2ccb827eae0c6c4cd3648ab7febb82e44706bef8515f2e8912de23dec0a5c",
+    "references/provenance.md": "2c2b30c69dec5c006c91ecbf506fce2ae3f857b5cc82bda9a10ddb5b769c7586",
+    "references/raster-pipeline.md": "834ecaeb35e61fc50ed5fbd518942f767f0717d1ab641822234a1f9cbe5eeb6f",
+    "references/three-d-pipeline.md": "8278baa203b7cd560d9fc5688c33489a9c478275c1795def119b7e024b27d03e",
+    "scripts/asset_report.py": "93e364f095261b44f6fd0345f7132019af1af93e81ebd84d91fe2a5049918203",
+    "scripts/build_preview_sheet.py": "002a550a7b5fac6d8815078a72afc249dd828c40d975b2323223fc770118c64b",
+    "scripts/requirements.txt": "1954ca940740c612a12e7abf0a307b7394715964d66dc8037d503fdd5c1b6424",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-dialogue-systems": {
+    "SKILL.md": "58282d44a4eb9e33595c04ef5f016b865322d95da8efc1100ee81e80383b3f5f",
+    "references/ink-and-yarn.md": "1e17ffabcea0c9edd4c3a3304d66e616edf3d63473919c5617deaea02cd8ede2",
+    "references/runner.md": "e03929dcab2ab514f29ed97847334360edd795ea0387d6bf2597a3a6c502744d",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-game-ai": {
+    "SKILL.md": "ef23a6440743b3583d1072c92f6b0b45f3d11df33b3b77db53bce8b82c2f8940",
+    "references/behavior-trees.md": "2b69a6ae71a1034c049889fb4b0ccbc8697db9ad9f177f07c1053379cb0ef1fc",
+    "references/pathfinding.md": "3f1ce44462b4d1789245758b72d0b20e8053df458df1f743455dcd5d7319bba3",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-game-feel": {
+    "SKILL.md": "68fc818ad939151be2db9e358e4295a71830c19d61f3aff849f1599307f39f9d",
+    "references/feedback-recipes.md": "c1d0c4d9480bf4cd729ca99f2b36ebc1f3f264a873b408f2145898841e5d6685",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-game-ui-ux": {
+    "SKILL.md": "8a094c84a377503aa8f4c40df676d1c6b6fc07d36ff95554ce06467f1614397e",
+    "references/layout-and-flow.md": "000d944db77155ebf97fde035a3d4fbe69ef0ae348e9dbcaff48c5ea134d7d69",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-input-systems": {
+    "SKILL.md": "4cb79ad13d54b5b7412efc978d8c5bc3dab529182feb531f304d7d75879f2308",
+    "references/buffering-and-accessibility.md": "4ddc70151a9d72fdc7e0a310f242834ab55c2f7f1133f44e4a51ecda95b4f563",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-level-design": {
+    "SKILL.md": "f1656cb00b9af8dc625a9655448b410b37ce6f1e523048a5abf09fda25cbfd32",
+    "references/pacing-and-flow.md": "e8e3940f585e376f353aefea009befe8199a1871f99d34d7b2340cb35cb61872",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-performance-optimization": {
+    "SKILL.md": "ddfc68c927f9a482d78cc0e103edb2e2711bc876a5965ff53eabd9a7d308dfab",
+    "references/profiling-and-budgets.md": "fb161af3797b364c5a9032dc3836bc25f05762508f2831f6a19a6aa416811dd8",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-physics-tuning": {
+    "SKILL.md": "faa9a50d465c16d0060af8c8e20533efb829e07616ec01de4cbdb8d536a7d986",
+    "references/timestep-and-ccd.md": "8091f77b848fa2e9e0eaa267f7b3ad06c1af6e8af5965d6d9c1a66076f9380ef",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-procedural-gen": {
+    "SKILL.md": "709ccd2dd1e02177f45ccc903bb11d20d3c57365761fb2c9a784880e7b2c9270",
+    "references/dungeon-generation.md": "e743e7fa562b93eec3793acc76b40e276a385215844ca2783c0ca572225c9e51",
+    "references/noise.md": "067b4430cfc5121ac2f94e071492c910692fd10a295cedec0f25ae212fee769e",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-save-systems": {
+    "SKILL.md": "bf9184965b3eb4bc0b20be00681d08ef1af63fd85ca5b7afb7453ca09e80e490",
+    "references/versioning-and-migration.md": "a0127a2443049a801f01f950ec6f0581ca3d74f6b20e309af4e5095b162175ae",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-shader-programming": {
+    "SKILL.md": "e89558b15691c891e12cece81d4bafd4d61159bd4de2ae580ac109aecadca7ad",
+    "references/effects.md": "bf0665485e8b12d42d4bd6cfe5d1ebd93fbcef315b703e4657f0d40a23224975",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-card-game": {
+    "SKILL.md": "1d972929333201a552087505cb26386569c844f092a51fd0dfe073f69d0e8556",
+    "references/effect-resolution.md": "62185a36e4221b8fdc605b734d66b6464765bc2fdb13c53ca6dc3a8ca528d4f9",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-fps-shooter": {
+    "SKILL.md": "b4772d548c9f8645c099d32014ba4c5eda11b09495881a8c257b419149ed4bff",
+    "references/shooting-and-feel.md": "22e17ddc59995918de3134b5bd4159400f815f18f8a2eb8f67bc5cd72a2bf698",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-platformer": {
+    "SKILL.md": "ffa6800e26702c371543ebafc721593ba7d19eb9864b6e28dec3c3155b15f1a7",
+    "references/feel-tuning.md": "6235edcda24b8447d19269138e5e6406af490991dc96172d140166f2698bb061",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-puzzle": {
+    "SKILL.md": "a2f40c5c684b0d0f09d0b1db1cfcb04ca7e4e6e8bca946022f8318f5fbc44b4c",
+    "references/board-and-resolution.md": "111151fe725f98b2c679f708c7dff11f0eb4d08189a0c41b02782e9a7c37a3d7",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-roguelike": {
+    "SKILL.md": "05dc641b7360ade29331f87262aedf2e1d9449812c95cad24decee652450b6ca",
+    "references/generation-fov-loot.md": "795f66262d5260bf2222c62924b34cac810c05875b8cb0c7d65f5321e7597935",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-rpg": {
+    "SKILL.md": "f33ea8698049050be589c50c532e06adeab52fbeacff81eafb909f230a38745b",
+    "references/stats-combat-quests.md": "3b5b7504ffe2fe23fb73c12e225b7422faedb5e9a7abae69d2c98344f224d066",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-survival-crafting": {
+    "SKILL.md": "cbf1981c1a446ba7e3edbc18b3ff92e11d872386f889f9316bab0deb240df5bb",
+    "references/needs-and-crafting.md": "c944e77ed6c2f7ba2e2c3213228b5387ea15a672092f46d98c44666f0945bb3b",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-tower-defense": {
+    "SKILL.md": "27f35ea5defd81bbb81d61984b4394a11c2c6f7ce141ca8e70b7f55e97485e25",
+    "references/balancing.md": "75e775207bcc9bd90a5ca1d4e8253e25e9c57bb01eead960462a88ef08a46461",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-visual-novel": {
+    "SKILL.md": "081f25d30ca70219e54496a4b19f3d8568488e3e32d51af6b743ca4d67a6cf03",
+    "references/script-and-flow.md": "0b30fcf3f047363194cb95facf668ae3dd6f330124e2f1cd960d9f48605a5df1",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-godot-2d-movement": {
+    "SKILL.md": "e8089e2a10ef2e836d6a1c858a716697a23f1060b6243e50b526da27fc653fb4",
+    "references/controller-recipes.md": "d6418b2c84f45263e01df3410f65c57100249d9aef2ca47fc760fd24fff402da",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-godot-3d-essentials": {
+    "SKILL.md": "e2358689bf656964f3a388baf1c224dc3be2b8de460db8ac8bb1e5bf0b0a4fe8",
+    "references/scene-and-environment.md": "b4de6267588f540baa7e4fa149fd4653ace4324e1b17b7655d0f6551a735b428",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-godot-animation": {
+    "SKILL.md": "9d32ef721eaa227494180b6ffb0208624a76e93217a2e39c2286eb0b5701e8e5",
+    "references/animation-tree-and-tween.md": "455ef0e15357428f250035fd5b0c587500b9d565f3bbcc33f95f378a986380a6",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-godot-audio": {
+    "SKILL.md": "b75829c3c47539f4e1fa2b623ebfce6fa4f5eef2ddc950d00265c27cfae2e0db",
+    "references/buses-and-effects.md": "da6a33ae46b21f3526e74c5e383781e02f1f6ca0bd755475b21e14f124a52526",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-godot-csharp": {
+    "SKILL.md": "c6d30a274621c63ab20ce2153807fd173987d1eccd06acfbe6a8a9f26a28c819",
+    "references/csharp-setup-and-interop.md": "086f7bc8549d61ae96190643e9a574f666fd7ed3b04eb18ec10430f89984211d",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-godot-export": {
+    "SKILL.md": "e97f0a889b8e06934aced7fdcee667d5bb848e33bc44d500c92f580e60295305",
+    "references/presets-and-cli.md": "ddb73ed10a107d806e883a1d13c6a78377226223d57b536201dda9c97505ae62",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-godot-gdscript": {
+    "SKILL.md": "b2625f5651fc9373e057ea47b5e2372319c4ed027fffc958f8a91d25cdea5a39",
+    "references/annotations-and-typing.md": "f1cea898e0346be3fac816093b577b30ef0f112d83cc2c1472c44d4a936700b3",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-godot-multiplayer": {
+    "SKILL.md": "43b2f2725ab1f0565dfc132a203de75fc99f6e722f2a0dad78ca5026f0fdae44",
+    "references/replication-and-rpc.md": "51e58312b2532f5bbb8223e0bc1e1a5bdc145f6b3140c393a263cdbdc323b34c",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-godot-nodes-scenes": {
+    "SKILL.md": "27beea0d3994e6bc502f9dc3fb6089afcdc083e41790a4cf6a7d32314e079e3d",
+    "references/tree-and-instancing.md": "be3c86180bd18dd46bfdfd7a47317bdb50fc6942cfc3e3d7342b4d0f7834b7a4",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-godot-physics": {
+    "SKILL.md": "04babff5594de194f5ae92fb2e918c905fab89fa837fc83f309da72c7d471139",
+    "references/bodies-and-queries.md": "64f6bdd613b92607cfbf0d3be0b88172d2e6c5b9cfd353706740833fd1343160",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-godot-resources": {
+    "SKILL.md": "c44678e5ce98171d21fb6899f8e7e3983f5599a98e45b3c24bb80a19468e44ab",
+    "references/resource-patterns.md": "f0474f71c843c4c9cfd05609129984a4facf3444a764b2c71f24f066a51dbbb9",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-godot-shaders": {
+    "SKILL.md": "15bf46f7b0af586f026c1bb58beaeba2579009b70398f43859b7ab286a45e63e",
+    "references/shading-language.md": "582b146d8d47b61d80eb8def8e48923d87ef1c7964542f0a12e9e05645c517e9",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-godot-signals-groups": {
+    "SKILL.md": "bf1ff3e6b84b63da7ee1749d296722d416f9bb6436b6c2ee9418d33fbfc135c0",
+    "references/signal-patterns.md": "837c192a07fbd0239ed30a68570ef6a1782f6ad03fe7298c7cbe580b34fb3c17",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-godot-tilemap": {
+    "SKILL.md": "2b29349a728e0b708b5090d99372892597bfe37df6d071211ca8fb1cd15c46d5",
+    "references/tileset-and-terrains.md": "c2486c7bacdd3f099d981f50b1aa881a7647bb14112b343370f76e1753d12ed8",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-godot-ui-control": {
+    "SKILL.md": "9ac89920e74bbf8d939b4d565e350d53b07c9afbe0970345c97d4122f590cfd5",
+    "references/layout-and-theming.md": "2b5a7d64f00709640385adda215aa3f9a839c2d461c53c886ba9c320723a9f3d",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-bevy-ecs": {
+    "SKILL.md": "2dd313c81fb1f15d835d426d4b0213588b6db013438eda8cc0ac88dacbb76916",
+    "references/queries-and-scheduling.md": "8ca8761c0ac5b8638818ebf7269be2de06fa9bf02007462685c5d14bba4597e2",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-love2d-core": {
+    "SKILL.md": "874fed1fd611024df5c69aeb2ae4798d2923ea61d76c3e196029195cbcf10ee1",
+    "references/state-stack.md": "848e3d1957e3ab6e83bd403323aec21b4516ce761d552813f7ebce3c76d8fbd6",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-pygame-core": {
+    "SKILL.md": "97ab7a07ff5fe1f9b64e64a81258197461c1a674f07b49f8988184408588a352",
+    "references/sprites-and-collision.md": "3d3233ea2bfa6e646426b038b20288841b3f657c9961f587ca5a355b75a1152c",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-roblox-characters": {
+    "SKILL.md": "a23c010f2ba58224ecf07194fde3ca2b534f36922a35445e6fd12c390fbecb18",
+    "agents/openai.yaml": "d206f4538baeb195e01d29cc53ea712948e6820c3c6539f7f2e2cce6656b8885",
+    "references/lifecycle-and-animation.md": "ecee2fe0dc55245ef94861d68852bbdb5c7de09eb2cb2c60e5e37295c3cfbed0",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-roblox-datastores": {
+    "SKILL.md": "b64a11db8cee8b03c59a86ee197a152c4b0a368148db1fdf474bd10eb6890c52",
+    "references/sessions-and-limits.md": "9a5a30417f2ad57f2a5ff08b2865626732d27ee1180902def8df2ffff5b584db",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-roblox-luau": {
+    "SKILL.md": "9adbf1d8d626e877addab291a4496f68d67bdb8752357639b4bcb5ab91b19566",
+    "references/client-server.md": "cbb013ca65789073687cb2ded9fb4045b5dc4a92af9afd1d535dcb2a46327c05",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-roblox-networking": {
+    "SKILL.md": "4bf929dab25bde30851ddb1eb1831ee881c1491a871248c45351a513fa453849",
+    "agents/openai.yaml": "b3f530519ed19704b115584ded1842ca430fef1650fa873694c4d9cfc7e29401",
+    "references/validation-and-testing.md": "b76848087b7adf6b68da7feb01a522515f909bd062cf9247cf44aafaab93225b",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-roblox-physics": {
+    "SKILL.md": "b91d88793183b61eb80b60baa07f42c504fbbc21de344f372e85eb448e9f3044",
+    "agents/openai.yaml": "55b06a72b4e88c5ec5a4c9d7c3a9684849b6362545d97c8703e79a22120500bf",
+    "references/queries-and-ownership.md": "67eca1dd85cc27b3443f409c10458c7157e9bb9428378126f8a784e875b66408",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-roblox-studio-workflow": {
+    "SKILL.md": "e6b865515bb8891b09774cef36d05f170091330f124e4b30960efc95629934f8",
+    "agents/openai.yaml": "34f2fe7716ef36610d0a577e05bdcfb36cbaaa25da23a159ee9c02a2d248c7d3",
+    "references/studio-verification.md": "f30c99960d0c505684ae9aa81d3039aa6f1ae5c7442015343d1d6b6ca0fd1244",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-roblox-ui": {
+    "SKILL.md": "4b927aff5c48d48bfcefa5afffaa08bdfc4af6dc9ce6765c52a1cd361475c174",
+    "agents/openai.yaml": "4c67a26a3054126e21db6fb6f893135944a8ca0fac9d619506e867b989073ded",
+    "assets/inventory-quality-test.model.json": "8f503559cc63a6620cf0fcf3fcf8ab434a5cabde90367c85d7dc50ed748ee11c",
+    "assets/inventory-quality-test.project.json": "ab2388eefb502d3e9e165aadc55aba09841940c757ad6d06048e4a8fcdfa0348",
+    "references/input-navigation.md": "b2b5818ba4a1b048fb4d0c0bfa69311a14aa82541ca8633809ce74e2669a249e",
+    "references/responsive-layout.md": "d9b38d5ce44f11e5c944755a6d2417ee63ad70f821769e382680a44a244b8c59",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-unity-animation": {
+    "SKILL.md": "ba4d4d1c165f46fb06b609c432e21cda8ed8b8316d047863a694e1b6fd3420dd",
+    "references/blend-trees-and-ik.md": "8f4a1c88ef4d40efc32de5584a11f80d378c64de16920b7ca0ed6b91a15d87d6",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-unity-build-pipeline": {
+    "SKILL.md": "a73673eec1803a22b2776697566832c639330835b40b83507ba9ce46a28a2f07",
+    "references/ci-build-script.md": "f3e14d7d17a695c9a25a2ad3b162de195899f56dbd9291dcd9cc592c37e69c83",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-unity-csharp-scripting": {
+    "SKILL.md": "cb5b08995bc2df8152e3767aec375ebdd1bd3f625a9016958a5466edc942e56f",
+    "references/lifecycle-and-coroutines.md": "e3cf97c13031ab26b53c4cbec6f479a0d91725b22c397e30042591983c47af84",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-unity-input-system": {
+    "SKILL.md": "e24e667db00642b97e331193d43620df632d4461a7377f847678b1060267da9a",
+    "references/rebinding.md": "58670e9ec483f1f0b1dc7b0e77a8206950cc7fc58943123fa735b6ef584097ae",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-unity-navmesh": {
+    "SKILL.md": "81d8ccc768c091ab518fc30b96f99698080e5d00d751b7af8a8001823b74291a",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-unity-physics": {
+    "SKILL.md": "93b3578753e097231f9932b5bfab99547d319dfee923f82954fef27ceb1fbc6f",
+    "references/raycasting-and-joints.md": "29b79da86d8afe75dc8ea88655dc9e2b6f20fffeeeeb51f4786ffcb10c852b8c",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-unity-scriptableobjects": {
+    "SKILL.md": "b23bd2057d67955b03e5b810eb0e08e749ace2d835d6731b5dc4f372ada614db",
+    "references/event-channels.md": "2964fa8e29670196ce4caa64e33a521be9db82259af7ef69e6c10937155a7cb8",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-unity-tilemap-2d": {
+    "SKILL.md": "f83a172057a3a03a883387c9a9499382baf4eae64ecf7a9c9c8b1099ff95d287",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-unreal-behavior-trees": {
+    "SKILL.md": "0c8ca83b7edbe3c6485a04f65e2fdc246d7200141a45951ba0b6670af6185142",
+    "references/custom-bttask.md": "16373ab4c158239528905f24f3c1132d643ea34a31a0a97e7942dd346de2d1c8",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-unreal-blueprints": {
+    "SKILL.md": "27b764d0fff7dcd7f2e872dddc7a05767cce41b741012067eb6c7389dd15ac92",
+    "references/communication.md": "c8b17d129042a90c69a16c11d429b5df9be361d6f6f8cbc9c769c514a715a75f",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-unreal-cpp-gameplay": {
+    "SKILL.md": "3151aa85f2fd64f9d38d61b5e4b051f50ad536f686f451ec160af089af34e112",
+    "references/components-and-gc.md": "1151ac0b344c8ae9b7095071f55150fe05d24762c979ff447faef53ec39685d7",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-unreal-enhanced-input": {
+    "SKILL.md": "84d4f7982d812b131f71e2c40ec6f89594eef08ce8bde589bfb789606c9492b1",
+    "references/cpp-setup.md": "d0eeec41bf316c48a0a629e02eafb51a74e9ff7e2a24a68baad2ff044bb34b4e",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-unreal-niagara": {
+    "SKILL.md": "c2b2f88f2071365b406413a96907f83a3ff04a32e46ab75fd9ea93f2213b19c2",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-unreal-packaging": {
+    "SKILL.md": "c132c6ca6bab6fd186646c454fe1502fd2fb3ca62fa606c689a27a574f0f45aa",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-phaser-arcade-physics": {
+    "SKILL.md": "4b7186f03c236bbe83dfd8f24467cc4429ff47cb870e04ef939320165b6bcd04",
+    "references/bodies-and-collision.md": "3ea38f74ac01e0c9f872407acd219104e1a729cb5a14b95498cc5b1aaa145b05",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-phaser-core": {
+    "SKILL.md": "101c9382dd8a68f2573ef83d978bd19432f61512c5aa83e8c2a5cf7e7e3e38b4",
+    "references/scene-flow.md": "355c1553a116351d7088e4f15b2dd08976e2241f576dcef50a61f92d4540d143",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-pixijs-rendering": {
+    "SKILL.md": "15fe1d79780a94b8082e18245581cd0ea4e125bb5576b930d97f1ac4acdda7b9",
+    "references/assets-and-display.md": "bc54b64926b41f49a421f308e45fc4282ffee5b91b0e0ebb0176b733b3ec5f4c",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-threejs-gltf-loading": {
+    "SKILL.md": "53a581e2451843638eae5f511738fc008cdba213fd9192051284f9dbe3124b7a",
+    "references/loaders-and-animation.md": "05e7a3c177d3b05b635324d0e4012f67edf9a2e537066d489e4e1b2b5c6eb46c",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-threejs-materials-lighting": {
+    "SKILL.md": "39de0912bb8afda118e06f8ce5311327b03206df87161d43a7cde806bf06af2b",
+    "references/materials-lights-table.md": "9a04de2094d8a8d7f5c0632625c8622b53b77261130f7a6e7c0aef30211dd8b3",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-threejs-scene-setup": {
+    "SKILL.md": "1c931f9bffc7c14d87eb72ab4bc15ebde4ca6c36f498d549664287be7cc74a57",
+    "references/scene-graph.md": "9799dac6fb092c91bc3897336e8407063d6dc6bf7f21cf00c4e609ad223319c4",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-game-jam": {
+    "SKILL.md": "5d47346146fb777ac7a1541283e95cecd4b01d65e16505cfd01eb6a714a5bd31",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-itch-publish": {
+    "SKILL.md": "bcee8af7090e732b8168a5f3ac79493203d0688a038faafa509f9c468020dc3f",
+    "references/butler-ci.md": "4da37faa452595ef7915c9f99ff513fd16b900c6cdb28c19f7111290b4106e4f",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-prototype-fast": {
+    "SKILL.md": "02491395c621833d2252f7a33a96aa11f26eb48523fea167c68272fb3c785ba1",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-steam-publish": {
+    "SKILL.md": "d0d1237a5f79657693a2ab915644da5764a551bc04756c28247721ecf0377510",
+    "references/steampipe-build-scripts.md": "a0a5afed4deef5e478ea6ea25d32b51bd2fadcee60f0ddb67fca0cfc557568d2",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "tari-game-development": {
+    "SKILL.md": "9fb01193c4f9a8b4fd7e7d9f98a3fb2296a621060b79131f187d2164a319f980"
+  },
+  "creator-hub-demo-capture": {
+    "SKILL.md": "8aab189f64274331aff7befa0ab3de7db14e3d95dc249b99fa66aabf300eaa38",
+    "agents/openai.yaml": "1713576d6efe207ad0b90834ec7c5cff3a95b40208f89060911adbe57b755378",
+    "references/recorded-workflow.md": "f11bbd4ff420642f5e6a453334ad5b5a52b12257557d7cda951eb23ccc063edb",
+    "references/trailer-workflow.md": "2c2c4e7f4cdd8e06f360a718bf657b08532775c292d56060ba1299d367e16b27"
+  },
+  "creator-workflow-improvement": {
+    "SKILL.md": "329e149eb9e7e2f884ea81e4993d062090ebc204c444f04f3d0a2bea9ee7363e",
+    "references/open-air-patterns.md": "7eab2cab43d78d642bd2dc4f02efaf82c00921b79506ccc8ff3e53a73d9bd003"
+  },
+  "hf-hf-cli": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "SKILL.md": "1115064fff1a79e8b67f71828fe9c1b6cbbbf85d893bda832dabeeb917f8702e",
+    "UPSTREAM.json": "1ef56f637191c0103f32d392b97ffe5903ca72f2ad0a656e33106fb31b1d7103"
+  },
+  "hf-hf-cloud-aws-context-discovery": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "SKILL.md": "6b59128ea1834913b01ff6752d52e529d304ee6086e2edec5c7ce451f7a14dff",
+    "UPSTREAM.json": "ab5308c3ee42f4bb660c99a6d5d188903259d0ac2e7b6846c223a6a883b882fb"
+  },
+  "hf-hf-cloud-python-env-setup": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "SKILL.md": "c5d108b134dc5237ec63fbbb3200717853f2c5281ab33b7a2f1576b46a4d0fe8",
+    "UPSTREAM.json": "70fa46e18ee4cf5fb8dc44d1596d5d0ef81342eb7208e7bb51cd47ee83bf8e1b",
+    "requirements.txt": "61b04600d76456637412f3c6abf2f18250fed32399031d46985d17164e8ad617",
+    "scripts/check_versions.py": "60e5c0cdd8443d2be1e09adb2cd0b02bef19c68748535793e1e632ac7c53ca48",
+    "scripts/setup_env.py": "2656f04db77e1f755e5b14ee44f925606be5a42bc4bfe353c5eb7989b0d9f682"
+  },
+  "hf-hf-cloud-sagemaker-deployment-planner": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "SKILL.md": "2538e5f705466ef2912c07eb4311befc29940f026dfd17720242e4c976a8d8e9",
+    "UPSTREAM.json": "f92072bd18ffe08e5b0bc2f0af9d92ea56089a4d22253af21ea47dd99de9422e"
+  },
+  "hf-hf-cloud-sagemaker-iam-preflight": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "SKILL.md": "a4ff26c2af2c0ce82a4ab34c5cf5eadce5db4573ed2525745c4ee7b21f1773e4",
+    "UPSTREAM.json": "042f45a1d2ee1bcdb5fa81c2b78df2666cddcd9ef83ff854abd1e83ff7ca315d",
+    "references/minimum-permissions.json": "100c4dc345e69f5a7afc3104a17591d126ddff808a648cd3e84fd0a4054beb09",
+    "references/trust-policy.json": "bbc7c7b5775c8bb26d3e3d5eb4240d7e55f2d728a81c3b97ee42155f6a4746de",
+    "scripts/check_role.py": "567af89033ca686c8189302bc853b5c2ec0fc72d371ff86d0984a2de5541a962",
+    "scripts/create_role.py": "eb9e9b68f2f2020b9b87ec07fd862b5bb98b5e02bc2088f1194bffdc845a631a"
+  },
+  "hf-hf-cloud-sagemaker-production-defaults": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "SKILL.md": "6a8c1aff465e548ac4476d56831f864621af83b6a0f54544637601f3ecc44f9e",
+    "UPSTREAM.json": "59bf7d9b9a3d41d7aeacfb44af034a88a634e97007c592e24027d844bdae2fa9",
+    "references/deployment-template.md": "c5d65eb2c667f002d92b3a33f69958d1d734a96a7b13dcb1561e51f5c3bdbcbc",
+    "scripts/_common.py": "698f166212a005a5420b774ebdff1569e54244d14ee4d90bb8653ee8696d508d",
+    "scripts/deploy.py": "0299f3857409b8f7a7a57efd74602bf7e8364237c4252e5c09468831dfb81223",
+    "scripts/deploy_async.py": "37ef561fbb19db5f11eb7fe53ef1681d31b5c5ddc64f0009359d2b11b6eeb60e",
+    "scripts/deploy_ic.py": "eed165a57034937027c50622e9d0c7e356fd085abbd0a695f1a3ca7f82207fd0",
+    "scripts/invoke_endpoint.py": "559173501af510e257156f27990e27c23d2cc3bede1f1ecb1a767de4b5b960e9",
+    "scripts/teardown.py": "640c35eca572c492ab3dae016ed227d192f7db878dbb11e72dd2b550da8d220d"
+  },
+  "hf-hf-cloud-serving-image-selection": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "SKILL.md": "6af6adfe1cdcf7bcc061ee11e1e2cf88bae9fbb08bf79d16945ce748839c1d76",
+    "UPSTREAM.json": "ff4f7ee7fb115467a33b5827d710c54f0ec1dcc45f8190d54d3623b1cbabfd8c",
+    "references/model-to-image.md": "49ab6db136a53c6336ded2b92619d8057eb7ed85e6baa9bb1cde8eb2f592318d",
+    "scripts/mirror_image.py": "994fb2ed93243114baa2c33ba4805565e1a4fda15d3d6b800e28f018bcb411de"
+  },
+  "hf-hf-mem": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "SKILL.md": "ee99f9d97e084aa61a80eaec4e6de2265341e71256d918d48fb87a2ac01ce99f",
+    "UPSTREAM.json": "a022316b7aa9bc1bfedb0c116e9c37f61861ce51ac7c187246626f03630c9ef1"
+  },
+  "hf-huggingface-best": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "SKILL.md": "4566c02cb6da804dcc434b6b4d48a1895e937157cdaec4ec4c523a2f97cf16d0",
+    "UPSTREAM.json": "3f1c26d453de8defaa1eb4bc4176bbf167f40fe86f3c5cfa5f076285a3d5d38b"
+  },
+  "hf-huggingface-datasets": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "SKILL.md": "eeca50adf211ea64a288b852938f85a5183b045c720dc696b62db9aa2ea8deb2",
+    "UPSTREAM.json": "b58ebf56a6fd2ebc41ae04a82bd11d06a5d50a3e935161e85a92f61d038ccf9d"
+  },
+  "hf-huggingface-gradio": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "SKILL.md": "ce41c656e364a8027755a520372448036d90811f5a1d377f02bb9d549c0865a9",
+    "UPSTREAM.json": "fbc039d27d9c64a111a96370ef3bc849a02047145c10d949b2c9b44d79b55805",
+    "examples.md": "f9f229a4ec8d426a158c2f1bafab0f0beeda10153f7938fce3a2c40b0bb3bc62"
+  },
+  "hf-huggingface-llm-trainer": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "SKILL.md": "fb5c5e25103e38226e4d8ae28db84a01de42a11da4be1918fa72f833699f9d0d",
+    "UPSTREAM.json": "cc068b9028e3ab4572302e8b7dc2e6d8861db64a3cd1dd6286ec2dfb36939835",
+    "references/gguf_conversion.md": "d341b8720e91a64e715cc76095b28a44d31319eb7d63df5bd7f93340804f89e0",
+    "references/hardware_guide.md": "01b3ba873c5a45214746a25111131a5d27cd484722bc00cbe9f43dcaebc6a28c",
+    "references/hub_saving.md": "ca3aacd6bad68ab149c007089c00cf4c72fd39b5c150c4fb7d192fda94ac838f",
+    "references/local_training_macos.md": "864619b791239093d33e2627bc9e61428dcbb15cb3e947e3f9b278b73f0c871b",
+    "references/reliability_principles.md": "189b40920184a64124a834ab4a0e3e99756a850b124add3e6cc5049036cd824f",
+    "references/trackio_guide.md": "8ea2d3128dd2b927eca477c9349ead33da080add2edeb00f3089e22a5e4a916e",
+    "references/training_methods.md": "10849c3f258ef571c576d3ec4779e7d01b625aec62891ecbc66be5356a7bf69d",
+    "references/training_patterns.md": "cae8248d52454a5a93f20c0da6d64017f32d36e3b2cbbe298762affc083f3923",
+    "references/troubleshooting.md": "1149767feca1e301197fcd8b7a91b75ec7ac101edb01c766770e687d6d02f6d7",
+    "references/unsloth.md": "ff6255c21bde78a3120e40b5d620758a4f910ce7b5e1f9f05eb07214da83dff2",
+    "scripts/convert_to_gguf.py": "7e882d67f4bee9ef8593c622eb3387fffc42c69d68252d45e6fcfaaffa83fc24",
+    "scripts/dataset_inspector.py": "a75f9840e1925f50d6525faf97a502ed0810538746121cd666e691784be816eb",
+    "scripts/estimate_cost.py": "7f69e6cd34f35a462a5e6e3cb9121fc785abf2f9cb84ed6c473a0b167556e64b",
+    "scripts/hf_benchmarks.py": "70524bfe1e897d03a6d43ef6db254fe1bb02c26d9bf1471a35277bcabae64e86",
+    "scripts/train_dpo_example.py": "de24eb7ab1e61adcc2387256ab40c10a6ca0648ad6db703d7e348ffd37e1d361",
+    "scripts/train_grpo_example.py": "a25888208b0410e2982aa92c8a96dd43a9fe9fcce45037a48215885c755a608d",
+    "scripts/train_sft_example.py": "29d1e6aa09c7d548158849c4ffa0bdaccaf7d205a79909b4c872abb9a7961284",
+    "scripts/unsloth_sft_example.py": "40174038a0f1b03014fe0f0d3099aec2f44fa6954920d90c628c2b5ed21dc84a"
+  },
+  "hf-huggingface-local-models": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "SKILL.md": "814640db1d5f2f274aec09d66b3589ed5a0fdcfaf536afd508b1d757dcae1534",
+    "UPSTREAM.json": "cf61a664c5c6f211a6a575a65a5222bc5be7a1eed1735d56e633c120cb106765",
+    "references/hardware.md": "c708d7436bb654edf18b1f4cdc577d6c9c4edcf76896c97d510d35bbb7fb7f52",
+    "references/hub-discovery.md": "fb7d1d19dcf428d07b6fc8643d58396c180b2921eb0a9496955cfe9743da6b47",
+    "references/quantization.md": "8c388a37ba947023070c03b54b97d918166530d4cd0b26ede460b2435402fc55"
+  },
+  "hf-huggingface-lora-space-builder": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "SKILL.md": "7192d4a44172609eb073334e0410aff1d3b9134f82b94f1329435ca7fcfa0ad2",
+    "UPSTREAM.json": "cdf029091dcdb5d8ee170e2d45765e25d1180dd97d9752a60a833545c2a6a5be",
+    "references/adapting-to-the-lora.md": "57baf45d4551ca2ba454b1e3bb5230f58ebf43558d61da848213cb9bb4f44f2b",
+    "references/base-models/krea-2.md": "aa53bb8abbbd954dc30cc8855ed09d36a36f739d9b1383be85a6e331eadf1ae4",
+    "references/base-models/ltx.md": "d6098a1cd094a62d2fb7e30cb034c24e2efe480cf8524a8d041b3f162bec9a8d",
+    "references/base-models/qwen-image.md": "47191d568572ce9118b57b40f4d5086a2d51429bc231eabd12ca14413ecab0c2",
+    "references/creative-mode.md": "860384cadd377ec54ceb782931cbb43edae67567e8b8c3dc84035725cb4e1119",
+    "references/tasks.md": "536d92b873d4af78eb9e68af227d933e5e261468600df9767aae996abe49e529",
+    "references/zerogpu-and-publishing.md": "816d948fadcb0591f81714ae029198b5440633c00281240a2d7ef4ab0afc248d"
+  },
+  "hf-huggingface-paper-publisher": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "SKILL.md": "04b59406cf88054ab365f5bbbc57fe2e2fcb369e942dff2841c4f4297318c353",
+    "UPSTREAM.json": "e64b917c13cbc8542108918b77b2dc0791928b3ce02c63f97962b75d4ddf6450",
+    "examples/example_usage.md": "0cd5576c3f0f7d51c46d47398c7e3e62e4f2a249a008187cf9ef071f8cc26f4c",
+    "references/quick_reference.md": "efdde6fe96dcbb0909d1fc4f1cb8a2f520a5cf2bab707efc795a75bf9968436e",
+    "scripts/paper_manager.py": "94a4a662c0e9e13d5bb636527030ddfbd5489e9937e410d144d0276d326a9e05",
+    "templates/arxiv.md": "37bf032a324008fec59b3f1f10412ffb9de8933bdf9ed03668459a2035f7894b",
+    "templates/ml-report.md": "3c9d184cbafc5c66d4a8519502665ce300568762abb746d4ba14de03de99d872",
+    "templates/modern.md": "4fbe67f48898356bab2ccaae9f2a630aabdce75dde5faedd8203bba923397a2e",
+    "templates/standard.md": "a18e8d450b32d908aacfc626a19482920ea5d9ba470181d4352792d3600c0605"
+  },
+  "hf-huggingface-papers": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "SKILL.md": "985c2d5c7261aba2b157811cde0c2b30134663694a4ab701280de28f941eb3b2",
+    "UPSTREAM.json": "8553e72a040b3f4566b7a11d110657911b68743ad75cb70c409ce959ebdbcd46"
+  },
+  "hf-huggingface-spaces": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "README.md": "7d478e2dee162aadab87d57969b25f9fb16166324e727b73bf7c8e23f80bfb42",
+    "SKILL.md": "efa6506be823aaea03c31ef6cd06734485f7c451065aab43cfa5b5053c0df82b",
+    "UPSTREAM.json": "259dacb71b66b16d4a55fc6823272b02543e0605076753530299c9f97cfde57f",
+    "references/3d-cuda-extensions.md": "9024bd891770d34c38c215e322bae1003859832e4edfb94a4d8acdfada327476",
+    "references/3d-generation.md": "884fd62a915bcd654959bc3ca1301fb5155826ddc8d45be9fa97518028bb843e",
+    "references/3d-gsplat.md": "323eb8dd108fb0bc2189f760194fca990dd8d7025e05b41f8a33f81c18ac218b",
+    "references/3d-models.md": "f472d6cac304ec903730ac3edc0ed921f396419b1e23cb7f9ffb0a5c406bcbe9",
+    "references/3d-outputs.md": "37d26a20e91c512d3061295c5671a8a890f017a42b6d0694c9ae7c40f7ac5334",
+    "references/buckets.md": "45a4faa48d5e04fe2255792da4d9c8b1f460eed1065605c56a3389d0a62dfe90",
+    "references/debugging.md": "98befd8ca23b178fefe93212888c9e1c0cf0399745a43e742a6d01919b37d95b",
+    "references/gradio.md": "ec341392222a05e903cf5c8a1419a64558e16c877af76646cd67d9abc525afe6",
+    "references/grants.md": "f87c6b70c075088fa3821c31bd658ef6530c92816ff183c97b543077d064e400",
+    "references/inference-providers.md": "c11c02f2c2679c1dccec684b9d5803493e912d45e44f11164c6cb8623ed73051",
+    "references/known-errors.md": "638cb9ea501c36695de31973b92674b5c97e40d1c0c02ca9373bb05a7de6229c",
+    "references/requirements.md": "556b834b6d31ed37fa2249e0bef34344ada98b75fe77078281846acc4f7b2385",
+    "references/zerogpu.md": "9364442337690bbf0d6f51276e57bed99e9ff12d51e79e0efd632a1de0abeb09"
+  },
+  "hf-huggingface-tool-builder": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "SKILL.md": "2846b591259b134a5978073e4da477a06275d7a10893ce1383a0a3920c3ff1e1",
+    "UPSTREAM.json": "a900a01a0124044b2030df293204a5c94c788d7be0847396b7a1a38615ecce02",
+    "references/baseline_hf_api.py": "f1b999d1e655881c3e601e7050501130aee4a6af6b8f4206510a30f4e32fb079",
+    "references/baseline_hf_api.sh": "e907072abecb84fadbc08fc5f6f970aedf04a22a06e6a0892a1ff1f8fb17dd6b",
+    "references/baseline_hf_api.tsx": "d96f939f974e64f22a167c54aa4687f711a8c765d8320eef6d556767cd07ca30",
+    "references/find_models_by_paper.sh": "4723961e173aaa5ac1f4a7196b06f1637768b9b73e992163586f0dd2bbe5e2d2",
+    "references/hf_enrich_models.sh": "bd30e29cf0c868a19c960264c25723b3fd26a031fcb71a432d0691dc051333f3",
+    "references/hf_model_card_frontmatter.sh": "32e3d372a8dba24a8065f2b2d641b1f3fd69c00f6259aa49e713e80a6310f94d",
+    "references/hf_model_papers_auth.sh": "8dc349a00091fab9f32df1acbe81f6ad39b6676d3bbdefe06497a5f7da7148df"
+  },
+  "hf-huggingface-trackio": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "SKILL.md": "540f52974f4f77c2455a7b37ed983da0dbfb0f5af3d2c482e4736f14f1cc8724",
+    "UPSTREAM.json": "a743d7424db76011b4d4dfa11088102be4cd3f76745c84daa9a98976f72fccc3",
+    "references/alerts.md": "4065538fd2d090a145cdb66b7b84019d448becd3038740c87708b8fa1bdaef08",
+    "references/logging_metrics.md": "238849c975496dad8b6b7816d8d0ef1868c1a61456e0063c6a88db390ea89b29",
+    "references/retrieving_metrics.md": "fa1339a8f6a7f88d2d83b191324eb8412d80ee837e9779fbc70cda81408e5e90"
+  },
+  "hf-huggingface-vision-trainer": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "SKILL.md": "c7aba4de75fa6595ffdaf5c50136786e8346aba0c9ff0261eaee656af4a3b0d9",
+    "UPSTREAM.json": "a27457ad5f1d650602b04d1e4528ec7abe5543d3fc5d5d7a35d7f31d843f3fe7",
+    "references/finetune_sam2_trainer.md": "0d8f2efe145ccb00b41f2f433c1881ad6773cc8c0d37eaf16be0f973e13a6737",
+    "references/hub_saving.md": "b4fc7120ba3874d5118a28d81b6279daa169fb90846c20032784704a90535c03",
+    "references/image_classification_training_notebook.md": "df702e1c21f8ee160621ed370002b294f0b492a9db00a32dbd17c0b41ebf34db",
+    "references/object_detection_training_notebook.md": "ae88afa3af1cabcfd76a81d08c084b80c0ddb1d9f5481054970fea905753942c",
+    "references/reliability_principles.md": "9818dd7fa84003d4b088e11aea9887b8aa910ab4aeada0ac40b6b3a83817ab0d",
+    "references/timm_trainer.md": "e7bdc0985d28c46181f830d7c096939b3ef380192e724148d9d10ffb03d37fbb",
+    "scripts/dataset_inspector.py": "e46216b3818cb5e26febc2beccfedd17f501dec27d33293b0eea011dd9617594",
+    "scripts/estimate_cost.py": "ff865018557045576570040589efcf796e56f222c4784c8b2b86ed883cac4fa7",
+    "scripts/image_classification_training.py": "08db90dc053724a750c2a8bc282aa8f31d04d4193ce732fd0f49f389f70fe07f",
+    "scripts/object_detection_training.py": "e5ad30d2681fa8572c2f7aafdd21129a9fd00c60a37b0fcccbf49c272664dde8",
+    "scripts/sam_segmentation_training.py": "a9880d7b233dd2e3c9bbbcccb9d8b8f6615fc5002d23f7e37c5ebdff73a6e1a7"
+  },
+  "hf-huggingface-zerogpu": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "SKILL.md": "829659aec34224970fe7ed619729fdc7849fc5dd696e2000256c3ee0b517eff7",
+    "UPSTREAM.json": "aed2fd746797688259200df947c7248756dc319984a11f129b16c52451291124",
+    "references/concurrency.md": "b53d9ee64596730dc7879ffe7b1d37ce2759345092ad711b33ad921b67d27c22",
+    "references/cuda-and-deps.md": "8a0461e7d46dd5b89bb66e34c7785f4279ba65a6e5a8dddbaba7bf6beb4d51c7",
+    "references/how-quota-works.md": "0d87d16e65cb2246fc1b1ef77f313f08356ed41526db73d2aaf4df0bd7338591",
+    "references/how-zerogpu-works.md": "649e2bfa6752d794452e76dfe9ce5a0127f8413e98eda80e9f70519443d7a7d0"
+  },
+  "hf-train-sentence-transformers": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "SKILL.md": "9bd098d81049fc245032ee4f97cf5d9de906d726731ace4a6df0bad6d9dcd182",
+    "UPSTREAM.json": "1d4c4436b2d523801e96c5fff4876f46a21874086f2c9927a98fa37ad79c7f7f",
+    "references/base_model_selection.md": "9af8bd8aaadec62ce475471ba703d59adec22eaa2ec3400ec48cf00c5a3e2e84",
+    "references/dataset_formats.md": "60a7851e76821a6f61afa1c7ec08716aae815f0503df1f5b446101e27d93d61d",
+    "references/evaluators_cross_encoder.md": "ba4da9df01b3e72b409098de4299bbad22ab963ea5e96bbcb8a7b366f0d12136",
+    "references/evaluators_multi_vector_encoder.md": "1436ce7d22deb31cf25ae60afd5934d338db32a2f30db58156e71a9e9ca9656e",
+    "references/evaluators_sentence_transformer.md": "0658f345dfeef64deb6cf108b148b5a34a8b39f36e3f20b256bda16820c0de7a",
+    "references/evaluators_sparse_encoder.md": "0811d1a8c67ddb8d68cb1fa44b29467ea18099e0c26de15e18dc2997539b8ed0",
+    "references/hardware_guide.md": "4297c7b71fdc5ee1d2fb4d6a1020bb524787912cfa6cb4ecc0edfd47f1c39cee",
+    "references/hf_jobs_execution.md": "c223e1007aee3d97c8d17a15bb8a5e1d19bacac1420b138fb14f65a70975f86b",
+    "references/losses_cross_encoder.md": "533698605dc8c86d2e719474373dc33a7e57f43d165e066ff545a5efb6eb00da",
+    "references/losses_multi_vector_encoder.md": "111b96c3bb5abd48158c11bcac227da5a437bd4d874b6345c6dcd04abefa93b2",
+    "references/losses_sentence_transformer.md": "83c3d8a64245a49628d2474a05a85961fe9e59c748a1eb1f635e78eaf3f73d48",
+    "references/losses_sparse_encoder.md": "7ef324f71c1464b6fdb830d72ed6d17cfb8eae8eaa295807dcdbce98b0eb4650",
+    "references/model_architectures.md": "766d848d3da9a4d00060ab601ba802e99061667a6b39596037aefa21943733ea",
+    "references/prompts_and_instructions.md": "f1f01cc2bd560c252b283a1e13a31e867309a812494570f745a912fe13c2c2c0",
+    "references/training_args.md": "75b1f625ce4c671d5bfdc3fa163d2d1165a76310d52c9a9a3b2407e9b75fabbb",
+    "references/troubleshooting.md": "73ab8eeeadb1eab7a736ce8bc612eadb87ca52cfc3e6f5eeeb13307bc46328f4",
+    "scripts/mine_hard_negatives.py": "aba423d132f433782b1a0b33c719a967c1ec46cc3937bb06fa68ebbb4920060b",
+    "scripts/train_cross_encoder_distillation_example.py": "04de00df51a8abec89ecc367ccce73a29783316921799856f1a61b60ed6d8bb7",
+    "scripts/train_cross_encoder_example.py": "9cfaa176a9d57a28649963bf7882014edd0390aa52562239f50b129109e9dbf3",
+    "scripts/train_cross_encoder_listwise_example.py": "31aab6672626db5497e348fbdc4f96aff9cd76d26ebf3454671de88de4386849",
+    "scripts/train_multi_vector_encoder_example.py": "affff23b19036864113b2f2e742f6c03a85163c79308d6a1e686278cce70736c",
+    "scripts/train_sentence_transformer_distillation_example.py": "d715b92cb61aadd9f423eae8cffb69d6b1d58a591f3e19137a14df1051d43c89",
+    "scripts/train_sentence_transformer_example.py": "a9424a89baf0625818eb26e10e5bb685fd5f44580da2d7d39296478a6571a02e",
+    "scripts/train_sentence_transformer_make_multilingual_example.py": "9c96a3cc8d12e615fc32d0b991d61dd63cf0d040f72a2b0467082f8ac4d7ede0",
+    "scripts/train_sentence_transformer_matryoshka_example.py": "c2dd416df30af0ae8483460f5f071637b1fa544b9835ecf9e5bc6b1872b26808",
+    "scripts/train_sentence_transformer_multi_dataset_example.py": "76606529ca278050fd77555b8429be3324286e3d42914a1c89c28288a340b3a1",
+    "scripts/train_sentence_transformer_static_embedding_example.py": "9040e4c125bde15420c652879eeaa6417d51b71acba985fe85133f24a9425862",
+    "scripts/train_sentence_transformer_with_lora_example.py": "5ad2080a569d1b82aa8d94c92279621d5f84a44852139fb194b12b7da346df19",
+    "scripts/train_sparse_encoder_distillation_example.py": "4f73fdd60f44320ddf82ececfe7864dc8e6e2ffe7ac45e355d43daa691392226",
+    "scripts/train_sparse_encoder_example.py": "83f9590103746f24c8fcbef1f688b3e62c89a4452672de4067288f1fd1130a5d"
+  },
+  "hf-transformers-js": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "SKILL.md": "241ef15a39acbdf1d610acab683c0f76500d7c021c9c0303e6bb2c751ac3d395",
+    "UPSTREAM.json": "6c172f200011a9116c1d346365ba02bb21f5c958b72cce7226c37e959d2c5ca6",
+    "references/CACHE.md": "8f71ede1889bb16fcc3ef62aa803dc721a77a92fbfbdd5f1ab0c818db86f0c37",
+    "references/CONFIGURATION.md": "095273cf0d43faa3005eaa399411cdc04e48a1408888c026d43ce1f948bb6f6f",
+    "references/EXAMPLES.md": "3ba8931d4ef306f3942d338488153c928b426460efc5810f8c5bd8fbffe64d1c",
+    "references/MODEL_ARCHITECTURES.md": "5c2a5d83d9ba5826cc3a34ab99870692de215d7dfc9810e5af8188c8eab10c2b",
+    "references/MODEL_REGISTRY.md": "1baca18045eaeb09249e34a01abf0599f7e37e48cfcd877eeab12b22b93245b2",
+    "references/PIPELINE_OPTIONS.md": "808fcd24e24e29f0d5fb4abda5922ad0189ee7429c53fea2dff0a06e39007526",
+    "references/TEXT_GENERATION.md": "84382abc32a02ac96b8ceee989cef56b87ed8ab20328114e3de188de4cbf5c00"
+  },
+  "hf-trl-training": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "SKILL.md": "2ec080bb13621036aeec8b11e0b1111843c42a9e5e7b1319136cac3772f28a76",
+    "UPSTREAM.json": "5c9330e96b77f3ddd6cdb0290356566c077162caf436ffbefa101a7abcdc6abf"
+  },
+  "hf-hf-mcp": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "SKILL.md": "4cd99f2f6fabc5d87eac1b9e9bb2278d8348eca3621c2120599dede8d6b66eb4",
+    "UPSTREAM.json": "4bf73f9d8a23be1464194af5c2faea29001403cf7d51977fc115caf6400590a5"
+  },
+  "resource-first-workflow": {
+    "SKILL.md": "8931242f3725037496415fc935b79a95372114f4e85f175c270f65da6799def2",
+    "references/selection-record.md": "1bdb4c2af98e87c7867c17b88cfe482da8a6713e045bede43ac577f2cc31eae7",
+    "scripts/discover.py": "35c47d6d15448545dc2e9e2c1ee89390d9030fe0e79ad44c1064bdb413644f1d"
+  },
+  "qwen3-tts-production": {
+    "EVAL.md": "c1d5d0b6d3566dd02e01363e77330d0dbfbbf701b841a4533a365ffdc7e71b68",
+    "LICENSE": "27570f011a5a53e84412bcb6abcce17654c4e2b0e68c3522dca8885de7deaf93",
+    "SKILL.md": "e99b8ee47491b28bcee12ba7aefdcbc2d25859aa2f63f79b76cb8105d77e399a",
+    "UPSTREAM.json": "5337487334ab8086b0a7e2524f417ccb150ff57a0d8ded10862369b0b3795713"
+  },
+  "elevenlabs-text-to-speech": {
+    "LICENSE": "4ab5e9af2296f748eefa6c0696667f83aa9c0edda7b6972785966b60644b3da6",
+    "SKILL.md": "c35d9afb18fd0acd5e4b35bc76e172dcd06b6ec3e845d6b3dd3ebafbf17dbeb3",
+    "UPSTREAM.json": "3153a40e237a2a7a756a4a85b5b1e51e442c74c20ba0e9dd7e13c77dfea828c8",
+    "references/installation.md": "052ada238eb61412db885a38079dc508a8b77c5a96fc2f3e80236f74fe4a9350",
+    "references/streaming.md": "62340c36b14dd4788a31a07c76aab954e5a2da6b54b752e11041cb0d3f30708b",
+    "references/voice-settings.md": "06f006e0e890244b39e5fbc101073bc1362d0c075b6282edea1866567226b5b3"
+  },
+  "elevenlabs-sound-effects": {
+    "LICENSE": "4ab5e9af2296f748eefa6c0696667f83aa9c0edda7b6972785966b60644b3da6",
+    "SKILL.md": "e4b87f43220ef2992cc30a16b8f12500e2dbc613a0de814ca58dff946c25e966",
+    "UPSTREAM.json": "2f2c87efaaea42c0fbe267a99c1c00bc3c87253ecef7df327c123c87390ac5ef",
+    "references/installation.md": "58724eebca1477e889a13d8a5cb9956b95f6b0269b3ecb16e5a74b1a57034522"
+  },
+  "elevenlabs-music": {
+    "LICENSE": "4ab5e9af2296f748eefa6c0696667f83aa9c0edda7b6972785966b60644b3da6",
+    "SKILL.md": "647dcdcc634277763d06e3d7697263b0e49c256f51f26da7bf3f989d9723085c",
+    "UPSTREAM.json": "5210385cde6644ee538dcbcd27b8a4b447b5f1e48b9c5ad7ec26de5463261ae9",
+    "references/api_reference.md": "feafd13ff2e20a1831b056b3d08a42c11439c04b126f8400a3557ef130a06af3",
+    "references/installation.md": "2ef32cf83d7f14131335621d88fcd816fba9746ae90b8deccb5865743239d59b"
+  },
+  "marketing-copywriting": {
+    "LICENSE": "b70d71e24e40fce5da8f4b6f9cd862096a048e433db7f3c8cac5e348e6d34591",
+    "SKILL.md": "ce18137ae31ab37f261078501431649865ab6b403054d97490754e82acb002d8",
+    "UPSTREAM.json": "96c3697ed763a7d5720511176193c6694c26180df21eef51d327fa1577723653",
+    "evals/evals.json": "f062a21fea6ec6eff7157caf051142fa376fbfe6284c7d1d185371de6acedb9b",
+    "references/copy-frameworks.md": "d98818886525908bf17dd6412d0b72731b313d6eef3e1ab6b365828a3a342779",
+    "references/natural-transitions.md": "4ff23f8943af2f65b072f26f1c53ce55f19cc26d7be211c11cae8e34b43e859f"
+  },
+  "marketing-copy-editing": {
+    "LICENSE": "b70d71e24e40fce5da8f4b6f9cd862096a048e433db7f3c8cac5e348e6d34591",
+    "SKILL.md": "9b5a20be3dc5513c8f0b4f4c4960857e4d28ed83698a5b33c8dde9dc75a47bf6",
+    "UPSTREAM.json": "1dcbf6b81d2641ca65a8f4f1b93c061852ec992cd488125e7f0ffb0c52ae9a7d",
+    "evals/evals.json": "49881baea09fd93a03da69ab249a7d37a93b1fa015debce320b5861c606593ef",
+    "references/checklist.md": "db143b969b45b0933fe6eb772992890d1472d036a6c887fc98665e4fb48da43c",
+    "references/content-refresh.md": "8a3a2d301bb2b8b2a780f5bef43093ab42295041b2fea2a9caeca2421ef3c79b",
+    "references/plain-english-alternatives.md": "df4f820d4c63ae8a517c64a243c101658352cd07d002355bf3c97de0a00f3775"
+  },
+  "creator-learning-loop": {
+    "SKILL.md": "58b004185cd5126b54e8b18684c4c36d86a39198bb3e6c0c0f034237c2cf9621",
+    "references/api.md": "86cabdf78048b36289205187e7cd9a856d626e8325054349ba9d43a303975126"
+  },
+  "stanestane-design-red-team-audit": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "ecd8ac5353f9d4e24ae9374515a1b65893f2a0004efb2fcca78411e30d18ff4b",
+    "references/examples.md": "e451890b85352ea2f41c93d9e0df9899ffed6ee6433f3b8b5344c942d245b828",
+    "references/workflow.md": "3500fc4d7db70882de9ce7825d46891fcfea908f21763710539e80aef24de219"
+  },
+  "stanestane-emotional-canvas-moodboard": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "1e093a911a206a1a2f5336cf4397453ec254551a2cb13ab2f518f1e85bdf3553",
+    "references/sample-emotional-canvas.md": "cd328a5680eda57b0a8cdb3891c20d288b229dcd70098dc7877762dcafb3486f",
+    "references/search-patterns.md": "239f9643915db14a60ded4d98a866a92c2e1349e193fa7a14aa9b7244067b50d",
+    "scripts/download_urls.py": "66cb017eb0bae7729249a440c25c787a98b43c368e66c975b966de3a0a40052e",
+    "scripts/render_moodboard.py": "6f3ed6cfba824f79ad6d37c8bab3c027cf5745e7af8d552e32fc89b9cb74c216"
+  },
+  "stanestane-game-design-attribution-audit": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "0ff8cea896b7eca2072f5dd461e097fbb2332591c2b3a97a643c902b08c376b8",
+    "references/family-conventions.md": "392afe2479c6e7ac239d3fab5a0494c4a274e77895410b233eb7a6248bd2caf5",
+    "references/output-patterns.md": "7632fbf2bf0a9bc52efae08edb47578314ac3e893e97382b11012e76df6eecd3"
+  },
+  "stanestane-game-design-bartle-archetype-audit": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "5dd3592b3c5e499136c3e09d63bd441153b55c0e1d69508fd22d7db51adbc3ba",
+    "references/bartle-notes.md": "2c40bf30bdff4de472722f9f8557b09b58a6d44d20ad7002bf82937f1be64351",
+    "references/failure-patterns.md": "238628f028cd59053045e35455ed18eac89e1a7dcb4def97ddce7ed95d66734a"
+  },
+  "stanestane-game-design-big-five-personality-audit": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "c7ceacfafb8524784aafc23a2230f5c321bbbb9ee895a926803038115f93f3cd",
+    "references/big-five-notes.md": "965b1bd71417df81d0a13cae4ca0933562f6c994f0b2ca9fd61d9d5dced6bc77"
+  },
+  "stanestane-game-design-brainstorm-methods": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "4ddcf8d41375f43f4f0a91b15586b3af8709860f5f52f65942358efdba49ce91",
+    "references/method-patterns.md": "bafdd220817c5dd5db4d5c8e495e70168de3b83392449c8a0bf835ec41a6735b",
+    "references/method-selection.md": "810eb65f6f0a498fb27e36fc373b9a2b5969dcfb5afbc2c72b2b7339403f18dd"
+  },
+  "stanestane-game-design-core-loop-extractor": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "084816481d46c309865ecbe68e199864264d3f26adbb84e0f03257a3d857d5c7",
+    "references/family-conventions.md": "392afe2479c6e7ac239d3fab5a0494c4a274e77895410b233eb7a6248bd2caf5",
+    "references/output-patterns.md": "7632fbf2bf0a9bc52efae08edb47578314ac3e893e97382b11012e76df6eecd3"
+  },
+  "stanestane-game-design-craft-critique": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "8a784d32f877d2fca3f0e4a85de6fa6540f363cac19edc0444861e3981806944"
+  },
+  "stanestane-game-design-creative-unblocker": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "e70cd5bb722dcea8281091f8d117620739f44800d988d1203268f1afa8f1e459",
+    "references/oblique-prompts.md": "187ffc76e501d1b1f33532fec1118b7020ba1d07f754921e445104270a4ec3dd",
+    "references/usage-notes.md": "4adcf9f5806d211308014cd3cbf478eec4cdfad05c1a7751593c30421dc1130b"
+  },
+  "stanestane-game-design-design-pillars-extractor": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "e85726fe525d0ed7aca851320cc68ab99ded1abde89dcdc2a798ec15ddf06abe",
+    "references/family-conventions.md": "392afe2479c6e7ac239d3fab5a0494c4a274e77895410b233eb7a6248bd2caf5",
+    "references/output-patterns.md": "7632fbf2bf0a9bc52efae08edb47578314ac3e893e97382b11012e76df6eecd3"
+  },
+  "stanestane-game-design-emotional-canvas": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "b9a48b82bf1f3308239a56b84f8a32479d481cde2339691cc9f248e509e65288",
+    "references/examples.md": "b0d57007e6a8acfc106b25b4b506d28b5d9cd5a18c5e31bdf39cccc3f5109386",
+    "references/prompts.md": "20c49b547bbb4bc3d68e4daf1674ed1980c5fd187736a2a39b60351563a118f3"
+  },
+  "stanestane-game-design-failure-loop-audit": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "647151cc2934f34b108414f4ed02da398fdd00a7321589fbff30fe2cf6dec81b",
+    "references/family-conventions.md": "392afe2479c6e7ac239d3fab5a0494c4a274e77895410b233eb7a6248bd2caf5",
+    "references/output-patterns.md": "7632fbf2bf0a9bc52efae08edb47578314ac3e893e97382b11012e76df6eecd3"
+  },
+  "stanestane-game-design-fairness-frustration-audit": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "c2b76b10c17c14397a105a67fab0e849f50331a7979795be53c770db89008b17",
+    "references/family-conventions.md": "392afe2479c6e7ac239d3fab5a0494c4a274e77895410b233eb7a6248bd2caf5",
+    "references/output-patterns.md": "7632fbf2bf0a9bc52efae08edb47578314ac3e893e97382b11012e76df6eecd3"
+  },
+  "stanestane-game-design-fantasy-extractor": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "1de50c7353a57204b15a92733bd39746288f0f727eecd1f2758399395e708d03",
+    "references/family-conventions.md": "392afe2479c6e7ac239d3fab5a0494c4a274e77895410b233eb7a6248bd2caf5",
+    "references/output-patterns.md": "7632fbf2bf0a9bc52efae08edb47578314ac3e893e97382b11012e76df6eecd3"
+  },
+  "stanestane-game-design-feature-prioritization": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "570a48cf057bdf4af42aec92ca01d244ae0a9413b45db45613ea268dab4d5bff",
+    "references/family-conventions.md": "bd6fe4d6ef66579bac4e5ca1f51b9009cf10b80c3a4f90ad77c2117624773b42"
+  },
+  "stanestane-game-design-five-options": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "723868d089e735838dcd67922642d95db02bbcf5e2dfc6dd038b6f5126e9e8ad",
+    "references/family-conventions.md": "bd6fe4d6ef66579bac4e5ca1f51b9009cf10b80c3a4f90ad77c2117624773b42"
+  },
+  "stanestane-game-design-flow-audit": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "a84af41277536cca496d1f029d083b62f597487734b8b48737d4d75fb35c3b6a",
+    "references/family-conventions.md": "392afe2479c6e7ac239d3fab5a0494c4a274e77895410b233eb7a6248bd2caf5",
+    "references/output-patterns.md": "7632fbf2bf0a9bc52efae08edb47578314ac3e893e97382b11012e76df6eecd3"
+  },
+  "stanestane-game-design-fogg-behavior-audit": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "d68335b1ce4d36fa911cfea7c741cf892b19365163ff4820a713f9af2e65fe80",
+    "references/fogg-notes.md": "41046b4da318e7c00e6cbc6273f9f9b1142b55b8f307ad8eb07f7fee8589c796",
+    "references/game-examples.md": "1fbbd120a22853e398f804ea7fb72f028b2221ba410e44b78f1b7690462737c6"
+  },
+  "stanestane-game-design-friction-journey-audit": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "4ad35580efb609ce870aea3e05b1bc9a277a7e6a23eab1a85aea1d5b76196f41"
+  },
+  "stanestane-game-design-ftue-hero-journey-audit": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "8cc0b34878bbed7487d8c9e61534aee165aaafc78990b9c6cfeb0e36d43802d6",
+    "references/failure-patterns.md": "8ee178d0fecdb06109941745e71380389b458321c94d7249b98becee2b411c1a",
+    "references/hero-journey-ftue-notes.md": "b8429e5f64005c69ed342b20240436dc64f8e276a508ef9179e71d51b0c911d5"
+  },
+  "stanestane-game-design-goal-density-and-immediacy-audit": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "f0f186be67a1dc6fa0028f59a0974623c82aab2b534d7806ea331577c97c825b",
+    "references/failure-patterns.md": "ed79400ee8fd505de89cbd1617c33f5da7d327cc3eb8154ca67b1a17ffafdd01",
+    "references/goal-density-notes.md": "ddcc06abeaa22778460ff843c84333a5d3b50e3987d93d0441aecec255013547"
+  },
+  "stanestane-game-design-goal-framing": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "ae8e0af2bf9845a35661c27df1f08a0b1c4135fde1b3dc29580aaf88b9138e62",
+    "references/family-conventions.md": "bd6fe4d6ef66579bac4e5ca1f51b9009cf10b80c3a4f90ad77c2117624773b42"
+  },
+  "stanestane-game-design-granular-player-motivation-audit": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "26ba27041746f9f57a4e8d07640f8624805f9893f4f885b6da9c0b5c1dafc2d3",
+    "references/granular-taxonomy-notes.md": "f6797dd5a22fb971d44a64e40400afdd0fc1ccf13f25c5ba257b1f4f109f2858"
+  },
+  "stanestane-game-design-grow-design": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "4bc97f5fff25432dbfc8b519e5312ceada144d27a69504026bc2205059956df7"
+  },
+  "stanestane-game-design-ideal-outcome-backcasting": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "2c20ab98a737d6a6fd0d47e1b430529c12b03c941b84ea7ae85dc89309ddb216",
+    "references/family-conventions.md": "bd6fe4d6ef66579bac4e5ca1f51b9009cf10b80c3a4f90ad77c2117624773b42"
+  },
+  "stanestane-game-design-kpi-coverage-audit": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "9c3629b79eb7ce0c9bfde91c7496fdfa11a93562f4f29d4b786ccf36c21344d9",
+    "references/blind-spot-patterns.md": "32bd41457535242a491724f9371f929c6ec6ed20159835cafdeb93bd81c368d7",
+    "references/recommendation-patterns.md": "51181fafb136af90c5ae67c49cff8e4af04fb9f1b3ce2b5a279a7c67626f6239",
+    "references/value-types.md": "445ca5716ba2c1f9b6740208158d8066f4f9074b2af2ba2f30435bd750e4feba"
+  },
+  "stanestane-game-design-leaderboard-audit": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "59f32afcfe8680938d9c993c0184fdd3ce67fa403a67fbe464b39f3cf603da6a"
+  },
+  "stanestane-game-design-leaderboard-builder": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "facb67af2bef7d7fc45f120a9f71ee1209b406f3d52681eef520d69bd365d061"
+  },
+  "stanestane-game-design-molyneux-lens": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "8c28251424c6bf329a480b6f8a09b6bd67ef0c7e704454b4542c20a80d681107",
+    "references/family-conventions.md": "392afe2479c6e7ac239d3fab5a0494c4a274e77895410b233eb7a6248bd2caf5",
+    "references/output-patterns.md": "7632fbf2bf0a9bc52efae08edb47578314ac3e893e97382b11012e76df6eecd3"
+  },
+  "stanestane-game-design-multiplayer-feature-audit": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "45e65fdd92bbf241aa257fda0f07f956aadd78fa5b245d00eada001db6aed48f",
+    "references/social-design-dimensions.md": "45bb0815b854f2708c954d8c24a1e55f8db3d73c1870ea7cfb342697e3b99dbb"
+  },
+  "stanestane-game-design-novelty-spectrum-audit": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "ccb15c0812c43ad1073d872553434e9d08b52dafb51e8612f080faf20307647d",
+    "references/innovation-patterns.md": "9b4a10bd1cf18b151d3e60e7c06e8da0fc1d3f866f44383916231018505c4890",
+    "references/mental-model-layers.md": "3fe008bcc1726cee86f36748c7055b8365342cb84094e4522e36f299535fde93",
+    "references/verdict-scale.md": "e6000cd0a568525e899f0dca03c50542957b29735b410a952e76a4bd71d5d7e4"
+  },
+  "stanestane-game-design-one-page-design-doc": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "d46a799e13632b0c0b3d8ea87cbfeb9a20bce0c27701b17369903becf1cc1883",
+    "references/example-input.json": "9383b8b62dbbdc7dcde078f4731d56dbbe6710e095ac5908ee5e5e683ed03182",
+    "references/family-conventions.md": "392afe2479c6e7ac239d3fab5a0494c4a274e77895410b233eb7a6248bd2caf5",
+    "references/source-notes.md": "29820b04778b7c6282b27da9b6a7d185a67dd904b13491a524cceee1c0c8b470",
+    "scripts/render_one_page_gdd.py": "55ec56ede53a59061256c4643af76b8dcc3d69711c4cc81b6a083a10e98c75e6"
+  },
+  "stanestane-game-design-one-thing-to-remove": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "0ece53505d7360aea39ed5b0d0c5dc5997f17f8aecc701c97e8343b02de781ad",
+    "references/evaluation-patterns.md": "6c518ff8aa7b2d637a12461e2168871eb735f16c85f225f5a13d2735687b50de",
+    "references/removal-lenses.md": "e958921c8a70d72dc52424918be0de7545b2b4fe870d8d89a64ad4b0d537a79a"
+  },
+  "stanestane-game-design-option-generation": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "f7b69430c841914c3b544d9a63b5c1ade02abd6bfe470526a86e27cae60feb5a",
+    "references/family-conventions.md": "bd6fe4d6ef66579bac4e5ca1f51b9009cf10b80c3a4f90ad77c2117624773b42"
+  },
+  "stanestane-game-design-peak-end-audit": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "08ee9ee3ed85175852961b065d0370c339d1e465ea1135e70c106a4a8da8ba1a",
+    "references/family-conventions.md": "392afe2479c6e7ac239d3fab5a0494c4a274e77895410b233eb7a6248bd2caf5",
+    "references/output-patterns.md": "7632fbf2bf0a9bc52efae08edb47578314ac3e893e97382b11012e76df6eecd3"
+  },
+  "stanestane-game-design-perceived-randomness-audit": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "9ca2938498ca0580d622561ae71f8090e519bc81eaa3a57fb778ed5994dcd1cc",
+    "references/audit-checklist.md": "b210db68c4c8493617cc03e5939a1795237f63e7009b42ef89c4d615daf8d6b1",
+    "references/perception-patterns.md": "0205ff9b3502fd1ea5d239d82de051c865d53b9135d650918a61ed99033d5949"
+  },
+  "stanestane-game-design-pitch-deck-audit": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "6bfe02c055cd88c6448d14223c4e457bca1535012b1540a5193496e77b2e9b3b",
+    "references/pitch-deck-notes.md": "bcdb5b66330f36f548a3f75505b085b9709be29edb490ad4c50bb0c8a89b939d",
+    "references/raw-fury-notes.md": "2f50638061587728a3fa6e5bfde68ec65953cbbd03d2d5a611ef395990f482a0"
+  },
+  "stanestane-game-design-player-motivation-audit": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "6803b8ebc7ecedcdec3db17e63bbfbf352508aefb1e872f6b3a6401f81aaac5a"
+  },
+  "stanestane-game-design-player-need-satisfaction-audit": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "d6b81aac93161ad04421b6871354b501230f2143c57dc129845b92c974e2719b"
+  },
+  "stanestane-game-design-player-persona-extractor": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "55a2efe14c36765e436fe3d2ed1353097f1a9d54a8fc03c32733d38fbbd85fe5",
+    "references/demographic-research-notes.md": "5a8f5d513b1f2d11f36f31d6fadecdd6e5557edbe403ab28104ac783a3c82de2",
+    "references/family-conventions.md": "392afe2479c6e7ac239d3fab5a0494c4a274e77895410b233eb7a6248bd2caf5",
+    "references/output-patterns.md": "7632fbf2bf0a9bc52efae08edb47578314ac3e893e97382b11012e76df6eecd3"
+  },
+  "stanestane-game-design-player-perspective-reframe": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "9c2a7f0dea1da13843d303a8773b007d34e4b18175e639508dcbaa877dbb41a4"
+  },
+  "stanestane-game-design-player-segment-perception-audit": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "0556279774a85b60e900dd307df77378dc8e33d8506e747c7ec14418519f1348",
+    "references/perception-failures.md": "22f4f86f3e9cf09a722da0335afab4196433a6fe7d94ff90d06d3be783a487b9",
+    "references/recommendation-patterns.md": "866ac952608f6126512f59ddf26203cf19790e0c31199615671660d9f2bcc499",
+    "references/segment-layers.md": "15a043995f0ea1399e0ae7774702ba2244c8f44ff262850811fef96e45b8d208"
+  },
+  "stanestane-game-design-player-values-mapper": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "cbad592b4ba7b3ecf34770c03b9320b965942799239668b3539bf7c58f5a9605"
+  },
+  "stanestane-game-design-premium-pass-audit": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "9a17c9d86f0ada4642c0b879fb3b33835e154d7ccd5e3ceb4d5c4066ad7936fe"
+  },
+  "stanestane-game-design-prosocial-session-chapters": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "61aed956338c6d2163438f65c16ea6d5df2f29e7b78cc1ec4480afed0fecc120"
+  },
+  "stanestane-game-design-prototype-intent-audit": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "038cb946a25733c2204a8d49090813fa3fbfb54533bfed00450c701d07598993",
+    "references/failure-patterns.md": "500b4342287267e34cbb7613d4bdaa25025af10d1a68d5cb0a16bb92f51aeb92",
+    "references/prototype-modes.md": "9f8d56b2eab4d32ee57d3a894adb04419849792d800e31a79dd2fadf5fbb38b5",
+    "references/unknowns-checklist.md": "b2bf134e245688f2906c4dd73724901e9258f4983de03c4882522355dec13aaa"
+  },
+  "stanestane-game-design-prototyping-companion": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "b7f227093dc02a2c9774ebb1804e355104dea3564930aab9cc713a28a3d02c95",
+    "references/branch-map-format.md": "fcf47d03175524b36316b8c97130f075297e5dae7582843e0029986dbf0f0f96",
+    "references/example-branch-map.json": "07479817d03abbe4a84a41b8294437edacb0dba566e0189a453684be40fa1ad3",
+    "references/state-labels.md": "75ae4ecc94c955477c231733bde3a77202a5d246650fb42247a96bb9c11d6596",
+    "scripts/branch_map_svg.py": "033308e241fd8988ad46f20e6336532ce1b34a7afec9be0a05bc276e28b40c10"
+  },
+  "stanestane-game-design-roadblock-reframing": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "8630b1ec78eab87cbc8818b3ccbbe037b171a2cacabdc649e851bef67935a77d",
+    "references/family-conventions.md": "bd6fe4d6ef66579bac4e5ca1f51b9009cf10b80c3a4f90ad77c2117624773b42"
+  },
+  "stanestane-game-design-smart-goal-audit": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "5c7bbfabde1b8e23395ea75534006bf6a5dcc992fe4931329ffb1751fa38e5c1"
+  },
+  "stanestane-game-design-social-satisfaction-matrix": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "f6bae8ffe3b902820d24526278efb9874f17b252d15c8a5a2c71fade9d80c99b"
+  },
+  "stanestane-game-design-systematizing-empathizing-audit": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "ffbe3a7c826010d205e36984a9900fc9d71c45333a1832199f6d80d18a956d3d",
+    "references/axis-definitions.md": "2e3579f1eae9b09d7a39034fc5611a92a10fb9c30a73bd3c155f6b9a3199d8a1",
+    "references/persona-tendencies.md": "7b959b1b34f15da72f4e4842d5f2a251efa0153c3044b8e3dac03cfee3b87ba7",
+    "references/quadrant-reads.md": "9e6e711faa42a113de1aa057c61e539de4c812f15161cffe4f4f541263ccb022"
+  },
+  "stanestane-game-design-thinking-fast-and-slow-audit": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "bfb0471c0780b51a1d7295e61b495ec3b100f0981e12fb5bcdfe0df292db9578",
+    "references/family-conventions.md": "392afe2479c6e7ac239d3fab5a0494c4a274e77895410b233eb7a6248bd2caf5",
+    "references/output-patterns.md": "7632fbf2bf0a9bc52efae08edb47578314ac3e893e97382b11012e76df6eecd3"
+  },
+  "stanestane-game-design-transformative-reuse": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "a5dbd756593aefd9adf6bafcfb79155c41daf3b10d8279291ca46bb10dbe3610",
+    "references/family-conventions.md": "bd6fe4d6ef66579bac4e5ca1f51b9009cf10b80c3a4f90ad77c2117624773b42"
+  },
+  "stanestane-game-design-unknown-unknowns-prototyping": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "cea44fd7d03085d51a5d53a450bba18db7640424fdeca697403f086af29275d6",
+    "references/anti-patterns.md": "9b505fc95ffe3651679784eb3030b5fa751d0b2b9e3de0564c369b1a178de962",
+    "references/prototype-question-patterns.md": "9e2a8afca35938866a421ce478b026c02eb95041c032c26216690883419b342f",
+    "references/prototype-types.md": "3387410e5f3a2aacd1e44b0c92c496d0e193ead53f5378187558442474894f00",
+    "references/quadrants-and-hiding-places.md": "98ea48f09137eecfa573f287b533403ee74d9ccf22b9c512920aae1d297a7950"
+  },
+  "stanestane-game-design-zeigarnik-effect-audit": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "1244a867ee8264e03e0e4b28abb295bdbc3ae61a8794920e4cc4d60795e51f12",
+    "references/family-conventions.md": "392afe2479c6e7ac239d3fab5a0494c4a274e77895410b233eb7a6248bd2caf5",
+    "references/output-patterns.md": "7632fbf2bf0a9bc52efae08edb47578314ac3e893e97382b11012e76df6eecd3"
+  },
+  "stanestane-game-dev-budget-estimator": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "6774390995166fa58051712a0355aa2907d3b456ee86cdcdedfaabc01d3f1651",
+    "references/cost-drivers.md": "c8a27df7453eb415a3744bbb4610d4933e16b66c99c1c01e8c6fa8a7c37d4fea",
+    "references/estimation-modes.md": "07b16b087fa19c382841c5e71b4d3866e26bcdfe597d321555d6d9aabcc0f6a2"
+  },
+  "stanestane-game-dev-first-steps": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "e652c2e19497690ecacc7f8a361df6cf28974073960af923eedf7f17e2454104",
+    "references/development-order.md": "0e504fcfcd5539adcefcf6592ee1fb88e4d9659d117e0849685fad852b6c8a62",
+    "references/team-size-guidance.md": "48a69963d7ccd53533998d6283a2338345128abb8a7d205903d2f78fa1bc6fb6"
+  },
+  "stanestane-game-dev-team-gap": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "7aac6c76bbc3ddab952334bca744350132c8930291118ad1105d82d07fe65617",
+    "references/minimum-team-shapes.md": "7ddba2fc4144182ab9f9b111253b866b7832f672fec466c6df4cb64547ad663e",
+    "references/role-patterns.md": "13971d838971eaafcba20bf40cf89157a0834de604de44a2783f565be527dffa"
+  },
+  "stanestane-game-dev-time-estimator": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "5eec3c6aed881bd262c4c99922cb5189e1048c20073e56d3d254724266f59b72",
+    "references/estimation-modes.md": "c587ce7eb1ea71bdcadcc0bc76a249418b4a008df69ab7cfbeb5f5d9c5723c2f",
+    "references/time-drivers.md": "f49a93e791a512c9d56ff9b91ba6ce61866eacf28bcb727246e3caf56290e990"
+  },
+  "stanestane-moodboard-generator": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "285a04b5d9b5e77940526a49133f7636863847a2bff5b56c4437e7573764b413",
+    "references/composition-principles.md": "3dfab2510b35b8b61bbb5cc760a51fe83a9df1f424a8cfafecab0830a298eaba",
+    "scripts/build_html_moodboard.py": "20a530e621d560858190dadd4726231cceea63d01c458b8d806d63391d88b809",
+    "scripts/render_png.py": "164a3e6f51aa7b8a7cf0868e494d9ec9d55049792232830d767a918a8a76547a"
+  },
+  "stanestane-open-rpg-system-designer": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "cbb019382613d8b47b485c64a6dffc8e098576a128bddec34484490f1c3dd7a4",
+    "assets/full-system-template.md": "675aeaf492d9490834c8792eb89e4aa831c47809cea307671e852b14d561ee06",
+    "assets/one-page-system-template.md": "8b016d0eeb2574b83ef9642b83d56b46149ce31b80ec21c7ebfee8b104a7c415",
+    "assets/provenance-ledger-template.md": "36ba8d445b2c89f90f9cf0d3778c27d2df9a0996633f789d68395215d91d885d",
+    "references/srd-design-map.md": "5869647cc54fbe7d9c2b75548efb09411f47cdefb622fe3ef0983546336db410"
+  },
+  "stanestane-software-team-conflict-patterns": {
+    "COMMERCIAL-LICENSE.md": "ba420b90d440a074eaa83f59bc6c5eb4f15cfd6718f6a226f535cfad49186fdd",
+    "LICENSE": "50259d581954339a6af68d54f0e24b871800d1e898fa2152e6c38aca1a7afd26",
+    "SKILL.md": "23fcf287bd12105eaada97cebb0af00a678f4ae89d93527024c63961ef2f2b08",
+    "references/neil-on-software-archetypes.md": "278d0695bd83fbeec54394e3fadcf2cf811377ca66f573568f8c8dc8685a6671",
+    "references/pattern-notes.md": "dc20f203cae00c2d5f5713915e32e089ec1a1a313c5ad867ae04adb0a82ed515",
+    "references/response-strategies.md": "411dc87f37b6e78c6f2209b3e803e0685fb05c66921ec872ba3dea797b7ae138"
+  },
+  "unity-creator-setup": {
+    "SKILL.md": "7781717b0c97cdb4c178c6d8e3fab40656d3cad75755150ca4cbb1c4d9d73667"
+  },
+  "unity-cli": {
+    "CHANGELOG.md": "e6237cd199381fcb43e984762cad56813d269b2d9e495957eeb85b1a2b9500b8",
+    "LICENSE.md": "56bfdf1d51942eeebd29cd294b5a873e63bb9202c2e089d9b26caa623079e998",
+    "SECURITY.md": "0b25d7b72b531780feacb0af3c8ce8d310e33e767fceaaec29ac560a61edd43a",
+    "SKILL.md": "7097748040b131d509867ee383d791b99d077cef0c098b251eeb9844f6f1e499",
+    "references/auth-license-cloud.md": "e718e1e7586f0b48b8d0144e79baefa9efff6bf45237d3b46b7e0620364c3482",
+    "references/build-run-test.md": "c317a7039c84475d4f78efa26e0294f020c513941bffe68f784805634a9ac877",
+    "references/collaboration.md": "d7af0b1189d5b1ba66f6dc5802b878dee47a0d0b224e25ef9d2d5af982c8a149",
+    "references/config-hub.md": "a3c07bd7e3049dec00caf22e9386a8c571cd3a99579a720db9a3e7e4d92f1039",
+    "references/diagnostics-maintenance.md": "7643ded7d7e0fed234e703e7047fb700cbe31bebd02abc6314e2039b7dbe2bc7",
+    "references/editors-install.md": "0528fa886ad282bf0a21a22a865a9da7a44efb0b2827eb4d3e7e845ac9981e10",
+    "references/integration-advanced.md": "0ffde60b7de825744cec2377c4f1245fcf2b023da13ae49a0af434596bae897b",
+    "references/projects-templates.md": "0ff3f9eca43f77dd789867c13a0c6bdaff5bd4d9e4f01abc2186e91c38584df1",
+    "references/version-control.md": "6a2f16f3510b7ede8543109cec9b5991ca485459e6706c37ce59b0cf8859209f",
+    "upstream.json": "67bc0626f9de78cf8f3844d4277f314a61bfa13e96b4564d65024328c1e6434d"
+  },
+  "unreal-ai-blueprints": {
+    "SKILL.md": "c22bae44ecc68e230fd14f04935e0b0c44f72809f2fabda00cd2693606e84f68",
+    "references/tools.md": "0a9c1a626ff78a82dbd9163cee214fb05fa3674c000edeae8eb6cdc4f82f8a28"
+  },
+  "uefn-creator-setup": {
+    "SKILL.md": "da047eea300cc136c74bf11e265e123015c3c78d25deac36298f780ce13e5b47"
+  },
+  "gacha-reward-experience": {
+    "SKILL.md": "b5313e5243e447c2129ea6626f112af39323816c2ab9646a0aaeb173339052ac",
+    "references/mobile-gacha-research.md": "75680478c2d84db7cf6da7458ba6addc6858793b2c993238c0f4f24f2ab0c717"
+  },
+  "readable-code": {
+    "SKILL.md": "c00a1dd7ff55ea3e6fbbd64c83b34e285be43b02b10dedeba1cff9af9bc6e3ce"
+  }
+}

@@ -293,7 +293,7 @@ export const api = {
 export function userId(): string {
   const k = 'tari-hub-user';
   let v = localStorage.getItem(k);
-  if (!v) { v = 'u-' + Math.random().toString(36).slice(2, 10); localStorage.setItem(k, v); }
+  if (!v) { v = 'u-' + crypto.randomUUID(); localStorage.setItem(k, v); }
   return v;
 }
 export function userName(): string { return localStorage.getItem('tari-hub-name') || ''; }

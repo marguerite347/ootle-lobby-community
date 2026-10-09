@@ -1,3 +1,4 @@
+import {safeHref} from '../../../shared/safeLinks.mjs';
 export const AGENT_START_HREF = '/agent-start';
 export const AGENT_START_LABEL = 'Build with an agent';
 
@@ -8,7 +9,7 @@ Verify a complete playable loop, failure and restart, then deliver the game, edi
 Do not claim skills run automatically, invent publishing access, or expose management keys. Do not spend or deploy publicly without authorization.`;
 
 export function HomeAgentLink() {
-  return <a className="btn" href={AGENT_START_HREF}>{AGENT_START_LABEL}</a>;
+  return <a className="btn" href={safeHref(AGENT_START_HREF)}>{AGENT_START_LABEL}</a>;
 }
 
 export function HomeAgentCopy() {
