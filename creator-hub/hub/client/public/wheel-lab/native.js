@@ -5,6 +5,7 @@ import {createWedgeFinish} from './wedge-finish.js';
 import {superWedges, superOutcomes, superLanding} from './super-disc.js';
 import {crystalPalettes} from '../crystal-lab/palettes.js';
 import { Application } from './vendor/runtime.js';
+import {wheelRuntimeOptions} from './runtime-options.mjs';
 import * as THREE from 'three';
 import { RoomEnvironment } from '../crystal-lab/vendor/environments/RoomEnvironment.js';
 // Isolated visual fixture: no account, reward endpoint or settlement.
@@ -35,7 +36,7 @@ const canvas = document.createElement('canvas');
 $('#stage').append(canvas);
 canvas.style.pointerEvents = 'none';
 if(superPreview) canvas.style.visibility='hidden';
-const app = new Application(canvas, {renderMode:'continuous', htmlContentMode:'none', renderer:'webgpu'});
+const app = new Application(canvas, wheelRuntimeOptions(import.meta.url));
 let wheel, peg, spin, selected = 11;
 const panels=[], bevels=[], panelGroups=Array.from({length:12},()=>[]);
 const baseLabels=[],superLabels=[];

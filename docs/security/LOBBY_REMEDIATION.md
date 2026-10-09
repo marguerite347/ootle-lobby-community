@@ -65,3 +65,10 @@ The Blob credential was verified as Production-only. Builds record exact revisio
 - Production has not been changed in this delivery. Promotion is awaiting the owner's answer to the explicit production question; the deployment skill requires an explicit production request.
 - Rendered desktop/mobile and real-input checks remain blocked: Chrome's selected instance returns `failed to start codex app-server: No such file or directory (os error 2)`. No alternate browser/runtime was used. Preview runtime/API acceptance is not claimed from build readiness alone.
 - Open-contributor policy remains unchanged pending the earlier question. Until that decision is made, Critical 1 is still open even though mutable-feed and anonymous-runtime instruction paths are contained.
+
+
+## Wheel regression follow-up — 2026-10-09
+
+The user's screenshot exposed a real startup failure in the protected preview. The frozen Spline scene uses bevel/process geometry; the runtime defaults fetch those WASM modules from unpkg.com and cdn.spline.design, which `connect-src 'self'` rejects. Reproduced that rejection with the actual pinned geometry loader. Configure Application.wasmPath to the already-restored same-origin vendor directory; retain the CSP unchanged. Both actual geometry WASM modules initialize successfully with all external requests denied, and the website CI now repeats this check after restoring the verified runtime.
+
+Selection receipt: reuse the existing pinned Spline 2.0.57 files and its wasmPath option; no new dependency, CDN exception or replacement wheel. Browser rendering remains unverified because the authorized Chrome instance still cannot start its local app-server. Static asset responses confirm the original preview has the expected scene and CSP; they do not prove WebGPU rendering.
