@@ -1,6 +1,6 @@
 # Ootle Lobby · community website
 
-**Contributions:** automatic enrollment is closed. Contribute through a fork and pull request; individual collaborator access is owner-approved. Reviews and passing checks are required. See [CONTRIBUTING.md](CONTRIBUTING.md).
+**Contributions:** automatic enrollment is closed. Contribute through a fork and pull request; individual collaborator access is owner-approved. Reviews and passing checks are required for ordinary contributors; the owner and agents using the owner account are exempt. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 **Help creators tell their story accurately.**
 
@@ -99,7 +99,7 @@ For September cards, creator attribution, submission dates, cover artwork and co
 
 ## Review and publishing
 
-The product branch requires passing validation checks, an independent approving review, CODEOWNERS review for sensitive paths and resolved review conversations. These requirements also apply to administrators. Force pushes and branch deletion are blocked.
+The product branch requires passing validation checks, an independent approving review, CODEOWNERS review for sensitive paths and resolved review conversations. The owner and agents using the owner account have an explicit administrator exception. Force pushes and branch deletion are blocked.
 
 A pull request shows its exact diff and discussion publicly. Automated checks validate the complete content set. A failed check cannot publish. A push to `main`, directly or after merge, triggers publication of the JSON feed through GitHub Pages. The application validates that feed again and retains its last good content if retrieval or validation fails. The feed records the source commit so a published edit can be traced back to its commit.
 

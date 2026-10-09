@@ -83,3 +83,8 @@ Configuration sequence: disable enrollment and remove its stored credential firs
 Selection receipt: reuse the existing GitHub controller stop switch, existing successful Actions jobs, GitHub branch-protection API, CODEOWNERS and the existing Vercel project. No new invitation or deployment system. The controller's nine unit tests and closed entry-point trial pass without making permission changes.
 
 Chrome retry still fails with `failed to start codex app-server: No such file or directory (os error 2)`. Desktop/mobile visual layout, navigation clicks, project-link interaction, full Daily Spark spin flow and browser download interaction could not be exercised. The selected-tab text loads normally but is not proof of those interactions. Production release validation will check exact revision, HTTP security boundaries, packaged skill hashes and the same-origin wheel dependencies; visual acceptance remains an explicitly open limitation.
+
+
+### Subsequent owner-agent exception
+
+After the release, the owner requested that their agents be the exception to review/check gates. GitHub administrator enforcement is now disabled on both product branches; `marguerite347` is the only current administrator, so the owner and agents using that authorized identity can push/merge directly. Normal collaborators retain required reviews, status checks and sensitive-path CODEOWNERS. Enrollment remains closed. This supersedes the administrator-enforcement and owner-needs-independent-review notes above; it does not claim to distinguish a human from an agent sharing the same GitHub identity.
