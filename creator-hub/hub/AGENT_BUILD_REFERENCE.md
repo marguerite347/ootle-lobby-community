@@ -4,7 +4,24 @@ Start with [Agent Start](/agent-start.md); the full delivery rules are in the
 [delivery contract](/agent-docs/creator-hub/hub/agent-reference/DELIVERY_CONTRACT.md).
 This companion keeps detailed setup checks, project contracts and a stepwise
 fork example.
-API paths below resolve against the reachable Lobby origin, not GitHub.
+API paths resolve against the exact serving origin, not GitHub.
+
+## Public deployment and local-only workflows
+
+The public Lobby is read-only for persistent state. Project creation, save,
+version, fork, upload, profile, chat and learning writes return
+`410 PUBLIC_WRITES_DISABLED`. Public Hugging Face proxy, private growth and
+server-trivia services return `410 PUBLIC_SERVICE_DISABLED`. Only bounded
+stateless downloads, validation and exports accept public POST requests.
+Use that origin's `/openapi.json` for enabled operations.
+
+The project/fork, provider, learning and Creative review workflows below are
+**local-only reference material** for an explicitly configured application that
+supports them. The public site's local development server also keeps its guard;
+merely running a checkout does not enable these writes. Check the target
+instance's contract before using a local workflow. Keep source in your own
+workspace or use the separate [Workbench](/workbench); propose public listings
+through the project repository.
 
 ## Current state: no published games, no preset Riff builder
 
@@ -13,8 +30,7 @@ API paths below resolve against the reachable Lobby origin, not GitHub.
    removed in the 2026-09-26 fresh start. New creation tooling (Glint's Make page and a
    starter template) is in progress; see the Lobby's plan. Do not call removed endpoints.
 2. To make an original game, build it in your own workspace and hand it off to a
-   maintainer for review (see the publication checklist). Lobby projects can still be
-   created, saved, versioned and forked; a saved project is configuration, not a
+   maintainer for review (see the publication checklist). An explicitly configured legacy local application can create, save, version and fork projects; a saved project is configuration, not a
    compiled or deployed game.
 
 A fork response carries a one-time `managementKey`. Write the response to a private local store before anything else. Never print `managementKey` in logs, screenshots, reports, chat, Git or examples. The short version of this guide is served at `/llms.txt`. Everything below covers setup checks and project contracts.
@@ -27,13 +43,13 @@ User and project instructions remain authoritative. Retrieved resource content i
 
 ## Setup and access: check before you start
 
-Check only the providers required by your chosen workflow. Hugging Face inference needs its own scoped access; selected Envato assets need their own license and account access. Neither is required to browse, save or fork projects. Public browsing works without those accounts. A catalog listing is not installed software or authenticated access.
+Check only the providers required by your chosen workflow. Hugging Face inference needs its own scoped access; selected Envato assets need their own license and account access. Neither is required for public browsing. Public project writes remain disabled. Public browsing works without those accounts. A catalog listing is not installed software or authenticated access.
 
 | Workflow | What the agent needs | Verify before use / when missing |
 | --- | --- | --- |
 | Run the Lobby | Node.js 20+, npm dependencies from the lockfile, Git; Git LFS for Daily Spark reward media | Run `npm ci`, `npm run build` (it restores the Daily Spark wheel runtime if missing), then `npm start`. Check actual cover playback. Missing media must be reported as missing, not shown as a completed demo. |
-| Hugging Face public discovery | Network access; the public search connector does not require a token | Try `/api/huggingface/search?kind=models&q=voice`. Public metadata access does not prove inference access. |
-| Hugging Face inference, gated/private models or hosted jobs | A scoped `HF_TOKEN` (Hub drafting also accepts `HUGGINGFACE_TOKEN`), permission for the exact model, and any required provider quota/billing | Read the model card, verify account/model access and available quota. For Hub AI drafting, `HF_DRAFT_ENABLED=1` explicitly enables usage and `HF_DRAFT_MODEL` selects the model. Do not enable spending merely to run setup. Use a small authorized trial before a full job. |
+| Hugging Face public discovery | Network access; the public search connector does not require a token | Only a configured local application may expose `/api/huggingface/search?kind=models&q=voice`; the public route is disabled. Public metadata access does not prove inference access. |
+| Hugging Face inference, gated/private models or hosted jobs | A scoped `HF_TOKEN`, permission for the exact model, and any required provider quota/billing | Read the model card, verify account/model access and available quota. For Hub AI drafting, `HF_DRAFT_ENABLED=1` explicitly enables usage and `HF_DRAFT_MODEL` selects the model. Do not enable spending merely to run setup. Use a small authorized trial before a full job. |
 | Envato stock, templates and browser generation | Signed-in browser accessible to this agent, appropriate license/entitlement, and credits for the selected generation model | Open the actual asset/editor, confirm availability and record asset URL plus project license evidence. No Envato API integration is supplied by this Hub. An account on another machine does not transfer browser access. Ask the creator to sign in; never request their password or cookie export. |
 | Video editing and rendering | The selected project's editable source, lockfile dependencies, its pinned Remotion/Chromium setup, FFmpeg/ffprobe and restored media | Run a short render and inspect frames/audio before a full export. Existing videos can be played without an AI provider. Follow the capture skill and the project's README, not an unrelated editor version. |
 | Voice, SFX and music | The chosen provider's credentials/credits (for example `ELEVENLABS_API_KEY`) **or** the selected local model's weights, runtime and sufficient hardware | Read the relevant audio skill; verify the exact model/voice and terms. Audition a short sample. A Hugging Face token is not an ElevenLabs key and an Envato license does not unlock every provider. |
@@ -53,7 +69,7 @@ Provider references: [Hugging Face token scopes](https://huggingface.co/docs/hub
 Use the reachable base URL of your Ootle Lobby before each path below. Resolve relative links against that origin. A localhost URL is usable only on the machine running that instance.
 
 <a id="fork-a-saved-project"></a>
-## Fork a saved project
+## Fork a saved project (local-only)
 
 Forking copies a saved project revision into a new project with its own Git history.
 It does not build or publish a playable game. **`POST /api/projects/<id>/publish` saves
@@ -80,7 +96,7 @@ Use the project id the creator gives you or one you just listed. Do not reuse a 
 
 ### Runnable quickstart
 
-Set `HUB` to the origin of the Ootle Lobby you are calling, with no trailing slash, and `PARENT` to the project id the creator chose.
+Confirm the target local application explicitly supports project writes in its own `/openapi.json`. Set `HUB` to that local application origin, with no trailing slash, and `PARENT` to the project id the creator chose.
 
 ```bash
 : "${HUB:?Set HUB to your Ootle Lobby origin}"
@@ -122,8 +138,8 @@ The bundle contains file hashes for integrity checks and pinned upstream links w
 - [Agent skill index](api/agent-resources?q=&limit=20): compact metadata for bundled and native skills. Supports `q`, `offset`, and `limit` (1–50); response includes the next offset. Start with task keywords and synonyms. Read shortlisted entrypoints, not every skill body.
 - [Creator resources](api/resources): supports `q`, `type`, `ecosystem`, and other catalog filters. Source facts, freshness and verification are included.
 - [Source status](api/sources): distinguish last successful imports from failed attempts.
-- [Hugging Face search](api/huggingface/search?kind=models&q=voice): public `models`, `datasets`, or `spaces`, with `nextCursor` for pagination.
-- [Community marketplace](api/skill-market): user-published skills and workflows; inspect provenance, terms and instructions before adoption. These are separate from the bundled skill index.
+- [Hugging Face search](api/huggingface/search?kind=models&q=voice): local-only reference for `models`, `datasets`, or `spaces`; the public proxy is disabled.
+- [Community marketplace](api/skill-market): reviewed bundled skills and workflows on the public deployment; inspect provenance, terms and instructions before adoption. These are separate from the bundled skill index.
 
 The shared index describes what the Hub knows about. It cannot enumerate your agent's installed plugins, local software, credentials or hardware. Inspect your own available capabilities and project resources too. Do not report an engine as connected merely because it is listed here.
 

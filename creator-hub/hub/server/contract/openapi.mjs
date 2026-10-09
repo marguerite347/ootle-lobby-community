@@ -5,8 +5,10 @@
 //
 // Routes intentionally left out are listed, with reasons, in internalRoutes.mjs.
 // server/test/contract.test.mjs fails when the app and this file disagree.
+// INTEGRATION_GAP[RETIRED-HOSTING] (retired): see docs/DEVELOPMENT_GAPS.md#retired-hosting.
 
 import { readFileSync, existsSync } from 'node:fs';
+import {publicRestriction} from '../publicAccess.mjs';
 
 const examplesFile = new URL('./examples.json', import.meta.url);
 export const capturedExamples = existsSync(examplesFile) ? JSON.parse(readFileSync(examplesFile, 'utf8')).examples : {};
@@ -628,8 +630,9 @@ function exampleFor(operation) {
   };
 }
 
-function buildOperation(operation) {
-  const example = exampleFor(operation);
+function buildOperation(operation, {publicReadOnly = false} = {}) {
+  // Old document snapshots contain local write instructions; read the live guide instead.
+  const example = publicReadOnly && operation.tag === 'docs' ? null : exampleFor(operation);
   const status = String(operation.response.status || 200);
   const contentType = operation.response.contentType || JSON_TYPE;
   const captured = capturedExamples[operation.operationId];
@@ -665,28 +668,61 @@ function buildOperation(operation) {
   return out;
 }
 
-/** Build the OpenAPI document. The server URL is relative: the origin serving this file. */
-export function buildOpenApi() {
+export function operationsFor({publicReadOnly = false} = {}) {
+  if (!publicReadOnly) return OPERATIONS;
+  const descriptions = {
+    getOpenApi: 'Machine-readable contract for enabled agent operations on this origin. Disabled public writes and private/provider services are omitted, as are internal browser and operational routes. Cached for 5 minutes.',
+    getLearningLoopGuide: 'Local-only reference for the learning workflow. Learning writes and publication are disabled on this public deployment.',
+    getWorkflowAgentGuide: 'Local-only reference for project workflow structure. Public project creation and editing are disabled.',
+    getProject: 'The project, current head commit, versions and saved state. Public saving and editing are disabled.',
+    listProjectVersions: 'Saved versions, newest first. Read a hash with /state?ref=. Public forking is disabled.',
+    getLearningSubmissionStandard: 'Reference levels, formats and topics for learning resources. Public resource submissions are disabled.',
+    listLessons: 'Your own lessons, including private source excerpts, using an existing authorized creatorId query and Authorization: Bearer <editKey>. Missing or wrong keys return 403. Public profile creation and learning writes are disabled. Not cached.',
+  };
+  return OPERATIONS.filter(operation =>
+    !publicRestriction(operation.method, operation.path.replace(/\{[^}]+\}/g, 'example'))
+  ).map(operation => descriptions[operation.operationId]
+    ? {...operation, description: descriptions[operation.operationId]} : operation);
+}
+
+export function tagsFor({publicReadOnly = false} = {}) {
+  if (!publicReadOnly) return TAGS;
+  const descriptions = {
+    projects: 'Read project metadata and saved versions. Creating, saving and forking are disabled on this public deployment.',
+    assets: 'Browse existing assets. Uploads and listing mutations are disabled on this public deployment.',
+    community: 'Read community information. Posting, profiles, reports and other persistent writes are disabled.',
+    skills: 'Browse reviewed bundled skills and download their files. Public skill publication and profile writes are disabled.',
+  };
+  return TAGS.map(tag => ({...tag, description: descriptions[tag.name] || tag.description}));
+}
+
+/** Build the contract for the serving app, with relative URLs on that origin. */
+export function buildOpenApi({publicReadOnly = false} = {}) {
   const paths = {};
-  for (const operation of OPERATIONS) {
+  for (const operation of operationsFor({publicReadOnly})) {
     const item = (paths[operation.path] ||= {});
     if (operation.expressPath) item['x-express-path'] = operation.expressPath;
-    item[operation.method] = buildOperation(operation);
+    item[operation.method] = buildOperation(operation, {publicReadOnly});
   }
   return {
     openapi: '3.1.0',
     info: {
       title: 'Ootle Lobby API',
       version: '1.0.0',
-      summary: 'Make, play and share games with an AI designer named Glint.',
-      description: 'Public HTTP API of Ootle Lobby. Read docs, browse the catalogue and skills, and create, version and fork (Riff) git-backed projects. There are no published games yet and no preset Riff builder. Start with /llms.txt and /agent-start.md. Worked examples for every operation: /llms-full.txt. All paths are relative to the Lobby origin.',
+      summary: publicReadOnly ? 'Public read-only discovery and bounded stateless downloads/exports.' : 'Local application API for Ootle Lobby.',
+      description: publicReadOnly
+        ? 'This public deployment serves discovery reads and bounded stateless validation, exports and reviewed skill downloads. Persistent writes, including project creation, saving and forking, return HTTP 410 PUBLIC_WRITES_DISABLED. Private/provider services return HTTP 410 PUBLIC_SERVICE_DISABLED. Disabled operations are omitted from this contract. Local legacy implementations do not grant public access. Read /agent-start.md and /llms.txt; examples are at /llms-full.txt.'
+        : 'Local application contract of Ootle Lobby. Project and community write implementations are retained for local use and legacy tests; they are disabled on the public deployment. Read the contract from the exact origin you intend to use. Start with /llms.txt and /agent-start.md.',
     },
     servers: [{ url: '/', description: 'The Lobby origin serving this document.' }],
-    tags: TAGS,
+    tags: tagsFor({publicReadOnly}),
+    'x-public-read-only': publicReadOnly,
     paths,
     components: {
       schemas,
-      securitySchemes: {
+      securitySchemes: publicReadOnly ? {
+        creatorKey: {type: 'http', scheme: 'bearer', description: 'Existing authorized creator key for retained authenticated reads. Public creator-profile creation and updates are disabled.'},
+      } : {
         managementKey: { type: 'http', scheme: 'bearer', description: 'Project management key returned once by POST /api/projects or /fork. Only destructive history actions need it.' },
         creatorKey: { type: 'http', scheme: 'bearer', description: 'Creator profile editKey returned once by POST /api/creator-profiles. Send creatorId too.' },
       },

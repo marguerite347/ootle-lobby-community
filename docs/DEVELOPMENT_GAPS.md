@@ -286,13 +286,13 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 
 **retired** — Writes to /api/projects*, /api/assets*, /api/recipes/:id/projects, /api/challenges/submissions
 
-**Current:** Public entry point returns 410 PROJECT_HOSTING_RETIRED. Old implementations/read paths remain for legacy compatibility/tests.
+**Current:** Public persistent writes return 410 PUBLIC_WRITES_DISABLED; private/provider services return 410 PUBLIC_SERVICE_DISABLED. Served API guides filter operations using the same access policy. Old write implementations remain local-only reference and legacy test material.
 
 **Remaining:** Do not revive these paths to implement Workbench. Build the separate Workbench services and publication contract; preserve the guard.
 
-**Completion check:** Public app returns 410 for each retired write even when Workbench services are injected.
+**Completion check:** Public app returns 410 for each retired write even when Workbench services are injected; public OpenAPI and llms guides omit those operations while retaining stateless download/validation/export routes.
 
-**Source:** [creator-hub/hub/server/inspirationLobby.mjs](../creator-hub/hub/server/inspirationLobby.mjs), [creator-hub/hub/server/projects.mjs](../creator-hub/hub/server/projects.mjs), [creator-hub/hub/server/assets.mjs](../creator-hub/hub/server/assets.mjs), [creator-hub/hub/server/challenges.mjs](../creator-hub/hub/server/challenges.mjs)
+**Source:** [creator-hub/hub/server/inspirationLobby.mjs](../creator-hub/hub/server/inspirationLobby.mjs), [creator-hub/hub/server/publicAccess.mjs](../creator-hub/hub/server/publicAccess.mjs), [creator-hub/hub/server/contract/openapi.mjs](../creator-hub/hub/server/contract/openapi.mjs), [creator-hub/hub/server/projects.mjs](../creator-hub/hub/server/projects.mjs), [creator-hub/hub/server/assets.mjs](../creator-hub/hub/server/assets.mjs), [creator-hub/hub/server/challenges.mjs](../creator-hub/hub/server/challenges.mjs)
 
 ## COMMUNITY-METRICS
 

@@ -46,6 +46,7 @@ export const INTERNAL_ROUTES = [
   { method: 'GET', path: '/api/source-monitoring', category: 'operations', reason: 'Source monitor status; agents should read /api/sources instead.' },
 
   { method: 'GET', path: '/', category: 'web-client', reason: 'Fallback home page when the client is not built.' },
+  { method: 'GET', path: '/api/community-projects/metrics', category: 'web-client', reason: 'Community project card metrics consumed by the browser.' },
   { method: 'GET', path: 'regex:^(?!\\/(api|previews)).*', category: 'web-client', reason: 'SPA fallback: serves the web client for page routes.' },
   { method: 'GET', path: '/agent-start', category: 'web-client', reason: 'HTML rendering of /agent-start.md for people; agents read the Markdown.' },
   { method: 'GET', path: '/play', category: 'web-client', reason: 'Redirect to the /games page.' },

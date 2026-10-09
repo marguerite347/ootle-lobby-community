@@ -9,6 +9,7 @@ import {dailyTriviaRouter} from '../creator-hub/hub/server/dailyTrivia.mjs';
 import {createCommunityContent} from '../creator-hub/hub/server/communityContent.mjs';
 import {safeHref,requireLinkHost} from '../creator-hub/hub/shared/safeLinks.mjs';
 import {publicError,SECURITY_HEADERS} from '../creator-hub/hub/server/publicSecurity.mjs';
+import {buildOpenApi,OPERATIONS} from '../creator-hub/hub/server/contract/openapi.mjs';
 const seed=JSON.parse(readFileSync(new URL('../creator-hub/hub/data/contests/community-content.json',import.meta.url)));
 async function serve(t,app){const server=app.listen(0,'127.0.0.1');await new Promise(r=>server.once('listening',r));t.after(()=>{server.closeAllConnections();server.close();});return `http://127.0.0.1:${server.address().port}`;}
 test('public boundary blocks persistent writes and billable/private reads before parsing input',async t=>{
@@ -27,6 +28,46 @@ test('cookie-less trivia reads never register or write; registration happens onl
  for(let i=0;i<3;i++){const res=await fetch(base+'/trivia');assert.equal(res.status,200);assert.equal(res.headers.get('set-cookie'),null);assert.equal((await res.json()).canReset,false);}
  assert.equal(registrations,0);
  const start=await fetch(base+'/trivia/start',{method:'POST',headers:{Origin:'https://lobby.example','X-Hub-Trivia':'1'}});assert.equal(start.status,200);assert.equal(registrations,1);assert.match(start.headers.get('set-cookie'),/HttpOnly/);
+});
+test('served public agent contracts omit disabled operations and retain stateless exports',async t=>{
+ const base=await serve(t,createInspirationLobby());
+ const doc=await (await fetch(base+'/openapi.json')).json();
+ assert.equal(doc['x-public-read-only'],true);
+ const short=await (await fetch(base+'/llms.txt')).text();
+ const full=await (await fetch(base+'/llms-full.txt')).text();
+ for(const path of ['/agent-start','/agent-start.md']){
+  const guide=await (await fetch(base+path)).text();
+  assert.match(guide,/PUBLIC_WRITES_DISABLED/);assert.match(guide,/local/i);
+  assert.doesNotMatch(guide,/save and fork\s+projects through the API/);
+ }
+ assert.match(short,/public read-only/);assert.match(full,/public read-only/);
+ assert.doesNotMatch(full,/from POST \/api\/creator-profiles/);
+ assert.equal(doc.paths['/agent-start.md'].get.responses['200'].content['text/markdown'].examples,undefined);
+ for(const route of ['/learning-loop.md','/api/workflows/agent-guide']){
+  const reference=await (await fetch(base+route)).text();
+  assert.ok(reference.startsWith('# Local-only workflow reference\n'));
+  assert.match(reference,/PUBLIC_WRITES_DISABLED/);
+ }
+ const stateless=/^\/api\/(?:recipes\/\{id\}\/(?:validate|export)|video\/templates\/\{id\}\/(?:validate|export)|skill-market\/\{id\}\/download)$/;
+ for(const operation of OPERATIONS){
+  const {method,path:route}=operation;
+  const blocked=(method!=='get'&&!stateless.test(route))||route.startsWith('/api/huggingface/');
+  if(blocked){
+   assert.equal(doc.paths[route]?.[method],undefined,`${method} ${route}`);
+   assert.ok(!full.includes(`### ${method.toUpperCase()} ${route}\n`),route);
+   const response=await fetch(base+route.replace(/\{[^}]+\}/g,'contract-fixture'),{method:method.toUpperCase(),...(method!=='get'?{headers:{'content-type':'application/json'},body:'invalid-json'}:{})});
+   assert.equal(response.status,410,`${method} ${route}`);
+  }else{
+   assert.ok(doc.paths[route]?.[method],`${method} ${route}`);
+   assert.ok(full.includes(`### ${method.toUpperCase()} ${route}\n`),route);
+  }
+ }
+ assert.ok(doc.paths['/api/skill-market/{id}/download'].post);
+ assert.ok(buildOpenApi().paths['/api/projects'].post,'local contract retains legacy operations');
+ for(const item of Object.values(doc.paths))for(const operation of Object.values(item)){
+  if(typeof operation!=='object')continue;
+  for(const requirement of operation.security||[])for(const scheme of Object.keys(requirement))assert.ok(doc.components.securitySchemes[scheme],scheme);
+ }
 });
 test('unconfigured content never fetches; both approved revision and digest are enforced',async()=>{
  let reads=0;const changed={...seed,revision:'b'.repeat(40)};
