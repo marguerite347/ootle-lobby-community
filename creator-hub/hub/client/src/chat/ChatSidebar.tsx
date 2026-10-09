@@ -218,7 +218,7 @@ export default function ChatSidebar() {
         </div>
 
         <div className="chat-sidebar-panel">
-          <div className="panel"><h3>Chat is read-only</h3><p>Community posting is paused while durable accounts and moderation are connected.</p><a href="https://discord.com/invite/dj34vQSe6d" target="_blank" rel="noopener noreferrer">Join the Tari community on Discord ↗</a></div>
+          <div className="panel"><h3>A home for the conversation</h3><p>Open the community app for conversations, replies, and connected channels.</p><a className="btn primary" href="/chat">Open community chat ↗</a><p>External channels require their owners to connect them.</p></div>
         </div>
       </aside>
     </div>
