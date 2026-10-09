@@ -10,10 +10,10 @@ Selection receipt: reuse Express's existing public entry-point middleware, Node 
 - [x] L2 Feed integrity: use deployment-bundled approved content by default; any remote refresh must match configured revision and digest. Field-specific host allowlists and visible external destinations. Prove changed/unpinned content is rejected.
 - [x] L3 Public write boundary: allow only bounded stateless exports and reviewed bundled downloads; all persistent anonymous writes fail before body parsing. Cover chat, reports, rooms, skills/profiles, learning, engagement, analytics and unused Workbench/trivia routes through public HTTP tests.
 - [x] L4 State/abuse: public chat/community writes read-only until shared durable authenticated storage exists. Disable unused trivia server endpoint and production reset; preserve the actual browser practice game. No GET creates Blob records. No public outbound HF drafting/search or private growth data. Explain capabilities in UI.
-- [ ] L5 Links/headers: HTTPS external URLs, escaped blog slugs, CSP/HSTS/frame/referrer/nosniff headers, no Express banner. Verify server and static responses and real desktop/mobile app with CSP.
+- [x] L5 Links/headers: HTTPS external URLs, escaped blog slugs, CSP/HSTS/frame/referrer/nosniff headers, no Express banner. Verify server and static responses and real desktop/mobile app with CSP.
 - [x] L6 Dependencies/build: align root and server Express, update Vite/Vitest and Remotion, lifecycle-disabled installs, exact lockfile audits and tests. Report remaining advisories without suppressing them.
 - [x] L7 Smaller findings: generic errors, constant-time skill-key comparison, cryptographic client IDs, used contest content hashes, explicit credential variables, truthful monitoring state, safe Git ref and local Host validation.
-- [ ] L8 Delivery: final tests/build, exact revision/checksums, reviewed deployment and live browser/API acceptance. No Git auto-deploy connection before access policy is settled. Secret names/scopes only, never secret values in reports.
+- [x] L8 Delivery: final tests/build, exact revision/checksums, reviewed deployment and live browser/API acceptance. No Git auto-deploy connection before access policy is settled. Secret names/scopes only, never secret values in reports.
 
 Application remediation is merged; production delivery and visual acceptance are recorded separately below. Historical checkpoints retain their original status. Read-only public surfaces are containment, not a claim that legacy local storage gained identity, durable moderation or retention. Existing Blob data must not be deleted without a reviewed retention/migration decision.
 
@@ -34,9 +34,9 @@ Chrome verification is currently blocked by the extension's local service failin
 
 | Audit item | Implementation / remaining boundary |
 | --- | --- |
-| Critical 1, enrollment and review | Owner decision pending. No access controller or collaborator changes; no Vercel Git connection. Open GitHub write policy remains a material integrity risk. |
+| Critical 1, enrollment and review | Enrollment closed and invitation-service secret removed. Required checks/reviews apply to collaborators; the explicitly authorized owner/owner-agent administrator exception is recorded below. No Vercel Git connection. |
 | High 2, mutable feed | Deployment snapshot by default; optional revision plus digest pin; field-specific URL hosts; visible destinations. |
-| High 3, anonymous agent instructions | Persistent writes denied, runtime-authored listings excluded, complete bundled file sets verified by digest; official profile names reserved. Enrollment documentation remains unchanged pending the policy decision. |
+| High 3, anonymous agent instructions | Persistent writes denied, runtime-authored listings excluded, complete bundled file sets verified by digest; official profile names reserved. Enrollment is closed under the subsequent owner-approved policy below. |
 | Medium 4, limits | Trusted Vercel proxy configured. Public write/provider surfaces closed, so they do not rely on per-instance rate limits. Durable rate limiting remains a prerequisite to reopening them. |
 | Medium 5, Blob churn | Public trivia disabled; GET never registers; first POST/start registers only in retained local/test service. Global quota and TTL sweep are not implemented and are required before reopening. Existing records are untouched. |
 | Medium 6, Sybil moderation | Reports, room creation and moderation writes disabled publicly. Server identities, moderation queue/restore and actor audit records remain prerequisites to reopening chat. |
@@ -88,3 +88,19 @@ Chrome retry still fails with `failed to start codex app-server: No such file or
 ### Subsequent owner-agent exception
 
 After the release, the owner requested that their agents be the exception to review/check gates. GitHub administrator enforcement is now disabled on both product branches; `marguerite347` is the only current administrator, so the owner and agents using that authorized identity can push/merge directly. Normal collaborators retain required reviews, status checks and sensitive-path CODEOWNERS. Enrollment remains closed. This supersedes the administrator-enforcement and owner-needs-independent-review notes above; it does not claim to distinguish a human from an agent sharing the same GitHub identity.
+
+## Completed browser acceptance and final release — 2026-10-09
+
+This record supersedes the earlier browser-blocked checkpoints. Reused the existing Chrome control tool, CSP middleware, pinned Spline runtime, GitHub CI and Vercel project. Browser control was tested with real navigation and screenshots before continuing. No new browser or deployment pipeline was introduced.
+
+Real Chrome checks covered 1440×1000 desktop and 390×844 mobile rendering with no horizontal overflow, contest navigation, the Templates/Skills pages and search, a community project link opening its matching Tari forum post, and the Lobby/Workbench round trip. The skill download button returned the page's completed-download confirmation; the browser runner did not return a local saved-file path, so filesystem completion is not claimed. Independently, the live bundled download API returned content matching every reported file digest.
+
+Both normal Daily Ritual and `?rewardPlaytest=1` completed from real answer input through the 5× multiplier, 20× super wheel, 15,000 practice-point result and Play again. Desktop keyboard submission also worked. These are browser-only practice points, not financial awards.
+
+The browser checks found two CSP regressions: GLTF's ImageBitmapLoader fetches embedded textures through `blob:` URLs, and Spline fetches two fixed font assets as ArrayBuffers. [PR #35](https://github.com/marguerite347/ootle-lobby-community/pull/35) permits browser-local blobs and only those two exact Google Fonts paths in both static and Express policies. The corrected preview returned HTTP 200 for both fonts with no application CSP errors. The live production page needed a hard refresh to discard the previously cached policy; fresh document headers and successful blob/font responses confirmed the corrected policy in Chrome.
+
+Final application source: `1f978a2d2ffc447fb4790adc5822f59f9dd14571`, identical tree to validated PR source `65a8330012ce9b608d1f5ff99d28d374e1fb5c88`. [Final main CI](https://github.com/marguerite347/ootle-lobby-community/actions/runs/37997443104) passed content and website validation, client/server tests, dependency audits and real same-origin wheel WASM initialization. The existing nonblocking Vercel diagnostics about copied skill-example/video TSX remain as documented above; the actual application build passes.
+
+Production deployment `dpl_A5eMcV2pqiCbhjHm1CdU5DP3q7ks` is Ready at [Ootle Lobby](https://ootle-lobby-preview.vercel.app/). The public build.json reports the exact application revision above. Nineteen live HTTP checks passed, including matching static/API CSP, blocked public writes/private endpoints, reviewed content counts, skill-file digests, wheel assets and the deployment integrity manifest's server-policy hash. The follow-up documentation commit records this release without changing deployed application code.
+
+Public community writes remain intentionally read-only. Durable identity, moderation and retention are still prerequisites to reopening them. This completes Lobby release acceptance, not a claim that the separate Workbench dependency-advisory backlog is resolved.
