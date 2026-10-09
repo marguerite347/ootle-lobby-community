@@ -47,6 +47,9 @@ import { clientDist, clientPublic, previewsDir, seedPreviewsDir } from './paths.
 import { agentGuideFallbackHtml, agentGuideHtml, withAgentGuideLink } from './agentShell.mjs';
 
 export function createApp({publicReadOnly=false}={}) {
+  const localWorkflowReference = body => publicReadOnly
+    ? '# Local-only workflow reference\n\nThis public deployment disables persistent writes (HTTP 410 PUBLIC_WRITES_DISABLED). The workflow below requires an explicitly configured local application; it cannot create, save, fork or publish here. Use this origin\'s /openapi.json for enabled operations.\n\n' + body
+    : body;
   const app = express();
   app.disable('x-powered-by');
   // Point any client at the agent entry point and the machine-readable contract (RFC 8631).
@@ -129,9 +132,9 @@ export function createApp({publicReadOnly=false}={}) {
     if (!document) return res.status(404).type('text/plain').send('Public document not found');
     res.set('X-Content-Type-Options', 'nosniff').set('ETag', `"${document.sha256}"`).type(document.contentType).send(document.body);
   }));
-  app.get('/llms.txt', (req, res) => res.set('Cache-Control', 'public, max-age=300').type('text/plain').send(llmsText()));
-  app.get('/llms-full.txt', (req, res) => res.set('Cache-Control', 'public, max-age=300').type('text/plain').send(llmsFullText()));
-  const contract = JSON.stringify(buildOpenApi());
+  app.get('/llms.txt', (req, res) => res.set('Cache-Control', 'public, max-age=300').type('text/plain').send(llmsText({publicReadOnly})));
+  app.get('/llms-full.txt', (req, res) => res.set('Cache-Control', 'public, max-age=300').type('text/plain').send(llmsFullText({publicReadOnly})));
+  const contract = JSON.stringify(buildOpenApi({publicReadOnly}));
   app.get('/openapi.json', (req, res) => res.set('Cache-Control', 'public, max-age=300').type('application/json').send(contract));
   app.get('/play', (req, res) => res.redirect(301, '/games'));
   api.get('/build-toolkit/roll',wrap(async (req,res)=>res.set('Cache-Control','no-store').json(rollToolkit(catalog.all(),req.query,undefined,projects.list()))));
@@ -164,7 +167,7 @@ export function createApp({publicReadOnly=false}={}) {
   }));
 
   api.get('/workflows/comfy-example', wrap((req,res) => res.json(JSON.parse(readFileSync(new URL('../../video-templates/comfyui/tari-concept-broll.api.json',import.meta.url),'utf8')))));
-  api.get('/workflows/agent-guide', wrap((req,res) => res.type('text/markdown').send(readFileSync(new URL('../../WORKFLOW_AGENT_GUIDE.md',import.meta.url),'utf8'))));
+  api.get('/workflows/agent-guide', wrap((req,res) => res.type('text/markdown').send(localWorkflowReference(readFileSync(new URL('../../WORKFLOW_AGENT_GUIDE.md',import.meta.url),'utf8')))));
 
   api.get('/creator-ideas', wrap((req,res) => res.set('Cache-Control','no-store').json(weeklyIdeas())));
 
@@ -390,7 +393,7 @@ export function createApp({publicReadOnly=false}={}) {
     res.status(201).json(record);
   }));
   const lessons=createLearningLoop();
-  app.get('/learning-loop.md',wrap(async (req,res)=>res.type('text/markdown').send(readFileSync(new URL('../../../.agents/skills/creator-learning-loop/references/api.md',import.meta.url),'utf8'))));
+  app.get('/learning-loop.md',wrap(async (req,res)=>res.type('text/markdown').send(localWorkflowReference(readFileSync(new URL('../../../.agents/skills/creator-learning-loop/references/api.md',import.meta.url),'utf8')))));
   api.get('/learning/published',wrap(async (req,res)=>res.json({items:publicReadOnly?[]:lessons.publicListings()})));
   const lessonOwner=(req)=>market.authenticate(req.method==='GET'?req.query.creatorId:req.body?.creatorId,req.get('authorization')?.replace(/^Bearer /,''));
   api.get('/learning/lessons',wrap(async (req,res)=>{

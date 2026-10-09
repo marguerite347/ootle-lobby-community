@@ -2,17 +2,24 @@
 
 Your idea. A playable game. Let's cook.
 
-Ootle Lobby is a place to make, play and share games, built so AI agents can
-use every part of it. Creators will make games by chatting with **Glint**, our
-AI game designer, and any outside agent (Claude Code, Codex, your own) can
-read, build and hand off through the same docs and API.
+Ootle Lobby is a public discovery site for community builds, contests, templates
+and reviewed skills. Build in your own authorized workspace or open the separate
+[Ootle Workbench](/workbench).
 
-**Where things stand today:** no games are published yet, and there is no
-preset Riff builder. Glint's Make page and a starter template are in progress.
-You can read everything here, browse resources and skills, save and fork
-projects through the API, and build an original game in your own workspace.
+**Public deployment: read-only.** You can browse documentation, resources and
+listings, download reviewed skill bundles, and use bounded stateless validation
+and exports. Creating, saving or forking projects, uploading assets, posting chat,
+creating profiles and other persistent writes are disabled here. They return
+`410 PUBLIC_WRITES_DISABLED`. Private growth, Hugging Face proxy and server-trivia
+routes return `410 PUBLIC_SERVICE_DISABLED`.
 
-[Play Lobby Games](/games) · [Start a build](/create) · [Your projects](/projects)
+The local application retains some older write implementations for local use and
+legacy tests. A local workflow example is not an available public endpoint. Read
+`/openapi.json` from the exact origin you intend to use; its public version lists
+only enabled operations. The Daily Ritual is browser-only practice with no cash
+value. Custom game hosting and a game publication API are not available here.
+
+[Browse contests](/#contests) · [Explore templates](/ootle-templates) · [Open Workbench](/workbench)
 
 ## Read in this order
 
@@ -35,11 +42,11 @@ repository to use this Lobby.
 | You want to | Do this | Keep in mind |
 | --- | --- | --- |
 | Find tools, skills, engines, assets | `GET /api/agent-resources?q=…`, `GET /api/resources?q=…`, `/skills` | A listing isn't an install. Check your own environment. |
-| Save your game on the Lobby | `POST /api/projects`, then save each version with `POST /api/projects/<id>/publish` | Despite its name, this endpoint **saves a version** (a Git commit of project state). It doesn't make the game "published". See "Where your game goes". |
-| Riff someone's project | `POST /api/projects/<id>/fork` | Copies the saved project and its history. Lineage is kept. |
-| Build a playable original | Your own workspace and engine | Three.js (pinned) is the recommended default until the starter template ships. |
-| Put a game on the Lobby | Hand off to a maintainer ([publication](/agent-docs/creator-hub/GAME_PUBLICATION.md)) | A publish API for games is planned, not built. |
-| Not yet | Make page with Glint, game publish API, multiplayer rooms, live-room inspection | Don't guess endpoints for these. If it's not in `/openapi.json`, it doesn't exist. |
+| Preserve your game | Save source, versions and assets in your own authorized workspace or repository | Public project create/save APIs are disabled. |
+| Riff someone's project | Obtain its source and permission, then fork it in your own workspace | Public project fork APIs are disabled. Preserve attribution and lineage. |
+| Build a playable original | Your own workspace and chosen engine, or the separate Workbench | Verify the actual tool, template and delivery path for the task. |
+| Propose a community listing | Submit a reviewed change to the [project repository](https://github.com/marguerite347/ootle-lobby-community) | A listing links to your hosted build; it does not host or deploy your game. |
+| Validate or export a supported configuration | Use the enabled stateless operations in `/openapi.json` | An export does not create, save or publish a project. |
 
 ## The golden path
 
@@ -55,21 +62,19 @@ repository to use this Lobby.
 5. **Test the journey:** first-time entry, a full loop, failure, retry,
    restart, keyboard and touch, narrow and wide screens, console errors.
 6. **Hand off** with the [handoff template](/agent-docs/creator-hub/hub/agent-reference/HANDOFF_TEMPLATE.md),
-   and save the project on the Lobby if the creator wants it there.
+   and deliver source through the creator-authorized repository or storage.
 
 ## Where your game goes
 
-Until the starter template and a game publish API ship, keep the source in your
-own workspace and save a copy on the Lobby so the creator can find it:
+Keep editable source, dependencies, assets and tested restore instructions in your
+own authorized workspace or repository. Deliver the playable build through the
+creator-approved hosting or artifact destination. Propose a Lobby listing through
+the project repository after checking the actual destination and attribution.
 
-- Create a project, then save versions with the full source in the project
-  state under `state.game`:
-  `{ "engine": "…", "entry": "index.html", "files": { "index.html": "…" }, "notes": "…" }`.
-- Keep it small: a request body can be at most 256 kB, so this fits single-file
-  and small multi-file games. For bigger games, save `notes` and a link to the
-  source instead, and hand off the package.
-- Saving a version is **not** publishing. Nothing appears in Lobby Games until
-  a maintainer lists it.
+Creating, saving, versioning and forking through the public Lobby API are disabled.
+The [local build reference](/agent-docs/creator-hub/hub/AGENT_BUILD_REFERENCE.md)
+retains the old project-state contract for explicitly configured local instances.
+Even there, saving a version does not publish or deploy a game.
 
 ## The build loop
 
@@ -121,12 +126,11 @@ Starting points, not laws. Tune them from actual play.
    full intensity. An assisted-mode win proves only that mode.
 3. **Use the status words exactly:** proposed, built, played, published,
    deployed. Never claim a stronger one than what happened.
-4. **Don't guess endpoints.** Use `/openapi.json`. Removed or planned features
-   have no endpoint.
-5. **Never print `managementKey`.** Creating or forking a project returns a
+4. **Don't guess endpoints.** Use `/openapi.json`. Disabled public operations are omitted; legacy local endpoints do not grant public access.
+5. **Never print `managementKey`.** In a local instance that supports it, creating or forking a project returns a
    one-time key. Write the whole response to a private file (mode 600) before
    reading anything else. Never log, commit, screenshot or paste it.
-6. **Don't retry a successful POST.** Each call creates real state. Save with the
+6. **Don't retry a successful local write.** A local create/fork call creates real state. Save with the
    current `expectedHead`; on a 409, reload, review, and retry once.
 7. **Protect originals and progress.** Fork instead of overwriting. Never reset
    someone else's work to get a clean build.
@@ -141,8 +145,8 @@ Starting points, not laws. Tune them from actual play.
 
 ## Setup and access: check before you start
 
-Check only what your task needs. Browsing, reading and saving or forking
-projects need no accounts. Inspect your own runtime, browser, storage and
+Check only what your task needs. Public browsing and documentation need no account.
+Public project writes remain disabled, regardless of account or key. Inspect your own runtime, browser, storage and
 tools; a catalog listing doesn't mean you have them. Provider-specific checks
 (Hugging Face, Envato, audio providers, video rendering, native Tari tooling)
 are in the [build reference](/agent-docs/creator-hub/hub/AGENT_BUILD_REFERENCE.md).
@@ -151,10 +155,10 @@ Git, project fields or screenshots.
 
 ## Where to find your tools
 
-Creator Stack in the site header groups the workspace: Create (start a build,
-Projects, Challenges), Resources (Discover, Learn, Ootle Templates, Skills) and
-Updates. Cmd/Ctrl+K opens search. Lobby Games and AI Agents stay in the main
-navigation.
+The homepage links to contests, community builds and Ootle Workbench. Use
+[Ootle Templates](/ootle-templates), [Skills](/skills), [Discover](/explore) and
+[Learn](/learn) for reference material. Older local documentation may refer to
+Creator Stack or project-editing pages; those names do not enable public writes.
 
 ## Lessons from the old games
 

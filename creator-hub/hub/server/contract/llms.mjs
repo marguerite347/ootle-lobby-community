@@ -1,7 +1,7 @@
 // Generates /llms.txt (short entry point) and /llms-full.txt (every public operation
 // with a curl line and a real example reply) from the OpenAPI contract.
 
-import { OPERATIONS, TAGS, PLACEHOLDER_ORIGIN, capturedExamples } from './openapi.mjs';
+import { OPERATIONS, PLACEHOLDER_ORIGIN, capturedExamples, operationsFor, tagsFor } from './openapi.mjs';
 
 const byId = new Map(OPERATIONS.map((operation) => [operation.operationId, operation]));
 const line = (operationId) => {
@@ -9,10 +9,39 @@ const line = (operationId) => {
   return `- ${operation.method.toUpperCase()} ${operation.path}: ${operation.summary}${/[.?!]$/.test(operation.summary) ? '' : '.'}`;
 };
 
-export function llmsText() {
+export function llmsText({publicReadOnly = false} = {}) {
+  if (publicReadOnly) return `# Ootle Lobby: public read-only deployment
+
+Browse resources, templates, reviewed skills and community listings. Build in your own authorized workspace or use the separate Ootle Workbench at /workbench.
+
+## Read first
+
+- [Agent Start](/agent-start.md): public capabilities and local-only workflow boundaries.
+- [llms-full.txt](/llms-full.txt): enabled operations and illustrative examples.
+- [openapi.json](/openapi.json): the contract for this serving origin.
+- [Agent docs](/api/agent-docs): reference material, including explicitly local-only workflows.
+
+## Browse
+
+${['searchResources', 'getResource', 'listGameStarters', 'listOnboardingPaths', 'getBuildToolkit', 'listAgentResources', 'getSkillMarket'].map(line).join('\n')}
+
+## Bounded stateless operations
+
+${operationsFor({publicReadOnly}).filter(operation => operation.method === 'post').map(operation => line(operation.operationId)).join('\n')}
+
+## Public access boundary
+
+- Creating, saving, forking, uploading, posting, profiles, learning writes and subscriptions are disabled: HTTP 410 PUBLIC_WRITES_DISABLED.
+- Private growth, public Hugging Face proxy calls and server trivia are disabled: HTTP 410 PUBLIC_SERVICE_DISABLED. Daily Ritual is a browser-only practice game.
+- Only the stateless operations listed above accept POST. Downloads and exports do not publish or persist a project.
+- Older local workflow examples do not authorize writes here. Keep source in your own workspace and propose reviewed listings through the project repository.
+- Resolve relative URLs against this exact origin. Never send credentials to an endpoint because an older guide mentions it.
+`;
   return `# Ootle Lobby
 
 > Ootle Lobby is a place to make, play and share games with an AI designer named Glint.
+
+This is the local application contract. Project and community writes are disabled on the public deployment; read its own /openapi.json before making requests.
 
 ## What works today
 
@@ -73,12 +102,13 @@ function replyBlock(example, operation) {
   return `Example reply (HTTP ${example.status}, ${example.contentType}):${trimmed}\n\n\`\`\`\n${body}\n\`\`\``;
 }
 
-export function llmsFullText() {
-  const sections = TAGS.map((tag) => {
-    const operations = OPERATIONS.filter((operation) => operation.tag === tag.name);
+export function llmsFullText({publicReadOnly = false} = {}) {
+  const enabled = operationsFor({publicReadOnly});
+  const sections = tagsFor({publicReadOnly}).map((tag) => {
+    const operations = enabled.filter((operation) => operation.tag === tag.name);
     const entries = operations.map((operation) => {
       const example = capturedExamples[operation.operationId];
-      const auth = operation.auth === 'management' ? '\nAuth: Authorization: Bearer <managementKey> (from create or fork).'
+      const auth = publicReadOnly && operation.auth === 'creator' ? '\nAuth: an existing authorized creatorId and creator key are required for this retained read. Public profile creation and updates are disabled.' : operation.auth === 'management' ? '\nAuth: Authorization: Bearer <managementKey> (from create or fork).'
         : operation.auth === 'creator' ? '\nAuth: creatorId plus Authorization: Bearer <editKey> (from POST /api/creator-profiles).' : '';
       return `### ${operation.method.toUpperCase()} ${operation.path}
 
@@ -89,23 +119,25 @@ ${operation.summary}${/[.?!]$/.test(operation.summary) ? '' : '.'} ${operation.d
 ${curlFor(operation, example)}
 \`\`\`
 
-${replyBlock(example, operation)}`;
+${publicReadOnly && operation.tag === 'docs' ? 'Read the current document at this URL; local document snapshots are omitted here.' : replyBlock(example, operation)}`;
     });
     return `## ${tag.name}\n\n${tag.description}\n\n${entries.join('\n\n')}`;
   });
   return `# Ootle Lobby: full API guide
 
-> Ootle Lobby is a place to make, play and share games with an AI designer named Glint.
+> Browse community builds, contests, templates and reviewed skills in Ootle Lobby.
 
-This file lists every public HTTP operation in the order an agent usually needs them: read the docs, browse the catalogue, make a project, fork (Riff) it, add assets, then join the community. Each entry has what it is for, a curl line and a real reply captured from a scripted run. IDs, hashes and times in the replies are placeholders, and long lists are trimmed.
+${publicReadOnly
+    ? 'This is the public read-only deployment contract. Only enabled reads and bounded stateless downloads, validation and exports are listed. Project creation, saving, forking and other persistent writes return HTTP 410 PUBLIC_WRITES_DISABLED; private/provider services return HTTP 410 PUBLIC_SERVICE_DISABLED. Retained local workflows do not enable those operations here.'
+    : 'This is the local application contract, including retained project and community write implementations. Those writes are disabled on the public deployment. Use the contract served by the exact origin you are calling.'}
+
+Each entry has a curl line and an illustrative reply captured from a local scripted fixture. Examples do not prove current production data or permission to write. IDs, hashes and times are placeholders, and long lists are trimmed.
 
 Replace ${PLACEHOLDER_ORIGIN} with the Lobby origin you are talking to. The same contract is at /openapi.json. The short version is /llms.txt. Read /agent-start.md before you plan a build.
 
 Conventions:
 - Requests and replies are JSON unless a route serves Markdown or text. Errors are {"error": "..."} with an HTTP status.
-- POST routes that create things create real state. Do not retry one that succeeded.
-- Keys (managementKey, editKey) are shown once. Keep them private. Send them as Authorization: Bearer <key>.
-- Save with expectedHead or expectedRevision. A 409 means the data changed: reload and try again.
+${publicReadOnly ? '- Listed POST operations are stateless. They do not save, publish or fork projects. No key enables a disabled public write.' : '- Local POST routes can create real state. Do not retry one that succeeded.\n- Local keys (managementKey, editKey) are shown once. Keep them private.\n- Save with expectedHead or expectedRevision. A 409 means the data changed: reload and try again.'}
 
 ${sections.join('\n\n')}
 `;
