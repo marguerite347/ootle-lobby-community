@@ -1,3 +1,4 @@
+import {verifyReviewedFile} from './reviewedSkills.mjs';
 import { readdirSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
@@ -13,7 +14,8 @@ export function skillCatalog(root=skillsRoot) {
 }
 export function skillMarkdown(slug,root=skillsRoot) {
   if(!safeSlug.test(slug) || !skillCatalog(root).some(m=>m.id===slug))return null;
-  return readFileSync(path.join(root,slug,'SKILL.md'),'utf8');
+  const text=readFileSync(path.join(root,slug,'SKILL.md'),'utf8');
+  return root===skillsRoot?verifyReviewedFile(`tari-${slug}`,'SKILL.md',text):text;
 }
 export function verifiedRouter(root=skillsRoot) {
   const entries=skillCatalog(root).filter(m=>m.lifecycle==='verified' && m.technicalValidatedAt && m.validation?.evidence?.length);

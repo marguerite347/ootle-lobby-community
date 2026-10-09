@@ -1,3 +1,4 @@
+import {safeHref} from '../../../shared/safeLinks.mjs';
 import {useEffect, useId, useRef, useState} from 'react';
 import {CHAT_GREETING_EVENT} from '../chat/chatSidebarState';
 
@@ -45,9 +46,9 @@ export default function ConcoctionArt() {
           <stop offset="1" stopColor="#eeff9b" stopOpacity=".75"/>
         </radialGradient>
       </defs>
-      <image href={`${art}/confidential-potion.png`} width="1254" height="1254"/>
+      <image href={safeHref(`${art}/confidential-potion.png`)} width="1254" height="1254"/>
       <g className="potion-effect potion-liquid-glow" mask={`url(#${id}-liquid)`} aria-hidden="true">
-        <image href={`${art}/confidential-potion.png`} width="1254" height="1254"/>
+        <image href={safeHref(`${art}/confidential-potion.png`)} width="1254" height="1254"/>
       </g>
       <g aria-hidden="true">
         {[[490,707,23],[620,738,30],[806,729,21],[565,670,17],[761,701,26]].map(([x,y,r], index) => <g key={index} transform={`translate(${x} ${y})`}>

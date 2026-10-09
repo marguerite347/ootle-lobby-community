@@ -43,53 +43,23 @@ npm run build:site
 npm run start:site
 ```
 
-Open http://localhost:4180. Node.js 22 is the deployment version. Local runtime writes go into ignored `work/runtime`; do not commit personal data. The current Daily Ritual UI is a resettable local simulator. A separate retained trivia API can store rounds and balances in private Blob storage; it does not award the displayed simulator Sparks. Chat retains temporary preview storage. Public editable content is durable in Git history.
+Open http://localhost:4180. Node.js 22 is the deployment version. The public Lobby and local discovery entry point are read-only for community state. Project content changes are stored in Git. Daily Ritual remains a browser-only practice simulator, with no redeemable balance or prizes.
 
-`npm run build:site` produces the static site in `public/` and the serverless dependency package in `server-content/`. Both are generated and ignored. The cloud deployment builds from these sources; no connection to a contributor’s computer is needed.
+`npm run build:site` produces static assets in `public/` and the serverless dependency package in `server-content/`. Generated files are ignored. `public/build.json` records the source revision; `public/artifact-sha256.json` records package file hashes. Builds and installs disable dependency lifecycle scripts.
 
-### Deployment status
+### Security and deployment status
 
-**Current UI:** Daily Ritual uses the single replayable simulator, with reset retained for testing. The API/Blob details below describe the separate retained backend, not the source of the displayed AI Sparks. Do not reconnect it by restoring an old trivia flow. See `LOBBY-REWARDS` in the development register before implementing real awards.
+The remediated entry point rejects anonymous persistent writes before body parsing. Chat, reports, room creation, creator profiles, skill publishing, engagement, analytics and subscriptions require authenticated durable services before re-enablement. Public skill downloads include only committed file sets that match the recorded digest manifest. Existing local service implementations and tests are not evidence that those public capabilities are available.
 
-Daily Ritual POST requests validate the browser Origin against `PUBLIC_SITE_URL`
-when configured, falling back to the direct request origin for local development.
-The Vercel adapter pins this to `https://ootle-lobby-preview.vercel.app` because
-TLS terminates upstream of Express. Keep it aligned with the public URL when
-moving the deployment. Forwarded headers do not authorize a different origin,
-and the `X-Hub-Trivia` header remains required. The website check includes the
-proxy regression test through start, answer, spin, settlement and reload.
+The unused server trivia API, private growth data and outbound Hugging Face endpoints return 410 on the public Lobby. Cookie-less trivia reads no longer register players even in retained test/local implementations, and production reset is disabled. Existing Blob records are preserved. Before enabling server trivia, implement a durable global creation quota, retention sweep and authenticated award policy; hashing cookie-based storage keys does not migrate existing records or replace identity.
 
-The adapter selects `TRIVIA_STORAGE=blob`; Vercel supplies the connected private
-store's `BLOB_READ_WRITE_TOKEN` server-side. One private record per anonymous
-browser identity holds the round and balance. `@vercel/blob` is pinned to 2.8.0.
-Reads use `useCache: false`; writes use the preceding ETag via `ifMatch`. A
-conflict reloads the committed round before retrying, so parallel answers and
-spins cannot overwrite each other or credit twice. Successful responses are
-sent only after the write completes. A missing token/storage failure returns
-an error instead of falling back to temporary files or pretending to save.
-Keep the store connected across deployments; never commit its token or player
-records. Clearing the browser's identity cookie still creates a new player.
+The current hosting project has no Git auto-deploy connection. **Do not connect one while the open-contributor policy remains unresolved.** Keep runtime credentials scoped to Production; the existing Blob credential is already Production-only. Do not place secrets in builds, source or artifacts.
 
-For the retained API, the adapter sets `TRIVIA_ALLOW_RESET=1`. This permits the existing reset endpoint
-for that browser's identity. Reset clears today's round and deducts only its
-awarded Sparks, preserving earlier days and other players. Origin and required
-header checks still apply. Remove the adapter flag when daily attempts go live;
-without it, reset remains restricted to local development.
+Content is now bundled with each reviewed deployment. Publishing to GitHub Pages does not change the running Lobby. An optional remote feed requires both `COMMUNITY_CONTENT_REVISION` (full 40-character revision) and `COMMUNITY_CONTENT_SHA256` (SHA-256 of `JSON.stringify(feed)`); changed or unapproved feeds retain the bundled/last approved snapshot. New external destination hosts also require a committed allowlist update.
 
-Selection receipt: the live post-deployment reload exposed Vercel instance-local
-file loss after the origin fix. Reuse the existing trivia state machine with a
-storage adapter, plus the hosting provider's private Blob store, consistent
-reads and conditional writes. The account's existing Hobby plan has no paid
-overage. A small real-cloud trial verified latest reads, rejected stale writes
-and denied anonymous reads before implementation. Separate-instance and
-concurrent answer/spin tests passed against the real private store; regression
-tests cover restart/reload, UTC rollover, exactly-once rewards, Secure cookies
-and failed writes. This changes Daily Ritual storage only.
+Local provider tooling uses documented `GITHUB_TOKEN`, `GH_TOKEN` or `GITHUB_PAT`; the ambiguous `Github` alias was removed. Retained local video drafting uses `HF_DRAFT_ENABLED=1`, `HF_TOKEN` or `HUGGINGFACE_TOKEN`, and optional `HF_DRAFT_MODEL` (default `meta-llama/Llama-3.1-8B-Instruct`). This does not enable the public drafting route.
 
-Provider contracts: [consistent private reads](https://vercel.com/changelog/vercel-blob-now-supports-consistent-reads-on-private-storage)
-and [conditional writes](https://vercel.com/docs/vercel-blob#conditional-writes).
-
-The full source was built and deployed to the live Vercel site on October 3, 2026. Content edits merged to `main` publish automatically through GitHub Pages and are consumed by the live site. Website code changes currently require a maintainer Vercel deployment. Automatic Git deployments are pending the Vercel account owner connecting GitHub under **Account Settings → Authentication → Login Connections**; the CLI reported that this login connection is required. After connecting the account, link this repository to the existing `ootle-lobby-preview` Vercel project with production branch `main`.
+See [the remediation report](docs/security/LOBBY_REMEDIATION.md) for validation, delivery evidence and open policy decisions. Production/render verification must be recorded separately from a passing build.
 
 ## Suggest an edit without direct access
 
@@ -99,7 +69,7 @@ The fork-and-pull-request path remains available without joining. Authorized col
 2. Change the title, summary or technology labels. Keep the JSON structure and project id.
 3. Select **Propose changes** and open a pull request. Include a short reason and public source links.
 4. Discuss the visible before/after changes with the community. The editor can request improvements, accept, or close the proposal with an explanation.
-5. After a change reaches main, the publishing workflow updates the content feed. The live Lobby picks up the accepted version on refresh, normally within a few minutes of a successful publish.
+5. After a change reaches main, the publishing workflow updates the content feed. A reviewed Lobby deployment is required to include that content on the live site.
 
 You do not need to install anything. GitHub may first prompt you to fork the repository. Your proposal stays separate from the live version until it is accepted. The PR and commit history retain contributor credit.
 

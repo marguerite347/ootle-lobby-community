@@ -1,3 +1,4 @@
+import {safeHref} from '../../../shared/safeLinks.mjs';
 import {useState} from 'react';
 import {emptyReview,stages,stageTitles,renderBlockers,type ProductionReview as Review,type ReviewGate,type ReviewAttempt} from '../../../shared/productionReview.mjs';
 import './ProductionReview.css';
@@ -15,12 +16,12 @@ export default function ProductionReview({value,onChange,projectId,onSave,busy}:
   <span className="badge">CREATIVE CONTROL · SAVE STATE TO KEEP CHANGES</span><h2>Make the small decisions first.</h2><button className="btn primary" disabled={busy} onClick={onSave}>Save review and project state</button>
   <p>Review the exact artifact at each stage. Changing content or its version reopens downstream approvals. A decision does not spend credits or start generation.</p>
   <p className="review-status" role="status">{blockers.length?`Full render on hold: ${blockers.join(' · ')}`:'Ready for a full render. Final creative approval remains separate.'}</p>
-  <p className="muted">This board travels with project history and forks. Keep private logs, credentials and license certificates out. <a href={`/skills/learning-loop?project=${encodeURIComponent(projectId)}`}>Private lesson review ↗</a></p>
+  <p className="muted">This board travels with project history and forks. Keep private logs, credentials and license certificates out. <a href={safeHref(`/skills/learning-loop?project=${encodeURIComponent(projectId)}`)}>Private lesson review ↗</a></p>
   <div className="review-gates">{stages.map((id,index)=>{const gate=value.gates[id];return <article key={id}>
    <span className="badge">0{index+1} / {gate.status}</span><h3>{stageTitles[id]}</h3>
    <label>Brief / acceptance criteria<textarea value={gate.content} maxLength={12000} onChange={e=>editGate(id,{content:e.target.value})}/></label>
    <label>Exact artifact or version<input value={gate.artifact} maxLength={2000} placeholder="Storyboard v2, sample URL or content hash" onChange={e=>editGate(id,{artifact:e.target.value})}/></label>
-   {/^https?:\/\//i.test(gate.artifact)&&<a href={gate.artifact} target="_blank" rel="noreferrer">Open review artifact ↗</a>}
+   {/^https?:\/\//i.test(gate.artifact)&&<a href={safeHref(gate.artifact)} target="_blank" rel="noreferrer">Open review artifact ↗</a>}
    <label>Feedback / what needs to change<textarea value={gate.feedback} maxLength={4000} onChange={e=>editGate(id,{feedback:e.target.value})}/></label>
    <label>Reviewer<input value={gate.reviewer} maxLength={120} onChange={e=>editGate(id,{reviewer:e.target.value})}/></label>
    <div className="row"><button className="btn" onClick={()=>editGate(id,{status:'changes'})}>Needs changes</button><button className="btn primary" disabled={!gate.content.trim()||!gate.artifact.trim()||!gate.reviewer.trim()||!stages.slice(0,index).every(key=>value.gates[key].status==='approved')} onClick={()=>editGate(id,{status:'approved'})}>Approve this version</button></div>

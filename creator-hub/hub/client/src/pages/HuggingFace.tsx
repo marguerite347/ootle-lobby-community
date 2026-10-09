@@ -1,3 +1,4 @@
+import {safeHref} from '../../../shared/safeLinks.mjs';
 import {useEffect, useState} from 'react';
 import {Link, useSearchParams} from 'react-router-dom';
 import type {Resource} from '../api';
@@ -39,7 +40,7 @@ export default function HuggingFace() {
       {result?.stale && <p role="status">{result.warning}</p>}
       {error && <div role="alert"><p>{error}</p><button className="btn" onClick={() => setRetry(value => value + 1)}>Retry search</button></div>}
       {!busy && !error && result?.items.length === 0 && <p>No matches. Try a model name, creator, or shorter search.</p>}
-      <div className="hf-results">{result?.items.map(item => <article key={item.id}><div><span className="hf-kind">{item.category} · {item.creator?.name}</span><h2><a href={item.sourceUrl || '#'} target="_blank" rel="noreferrer">{item.title} ↗</a></h2><p>{item.summary}</p><div className="hf-tags">{item.tags.filter(tag => !tag.includes(':')).slice(0,4).map(tag => <span key={tag}>{tag}</span>)}</div></div><div className="hf-license"><span>License</span><strong>{item.license || 'Check source card'}</strong><a href={item.sourceUrl || '#'} target="_blank" rel="noreferrer">{kind === 'spaces' ? 'Open Space ↗' : 'View source card ↗'}</a></div></article>)}</div>
+      <div className="hf-results">{result?.items.map(item => <article key={item.id}><div><span className="hf-kind">{item.category} · {item.creator?.name}</span><h2><a href={safeHref(item.sourceUrl || '#')} target="_blank" rel="noreferrer">{item.title} ↗</a></h2><p>{item.summary}</p><div className="hf-tags">{item.tags.filter(tag => !tag.includes(':')).slice(0,4).map(tag => <span key={tag}>{tag}</span>)}</div></div><div className="hf-license"><span>License</span><strong>{item.license || 'Check source card'}</strong><a href={safeHref(item.sourceUrl || '#')} target="_blank" rel="noreferrer">{kind === 'spaces' ? 'Open Space ↗' : 'View source card ↗'}</a></div></article>)}</div>
       {result?.nextCursor && <button className="btn" disabled={busy} onClick={() => setCursor(result.nextCursor!)}>{busy ? 'Loading…' : 'Load more results'}</button>}
     </section>
     <footer className="hf-footer">Live public metadata from Hugging Face. Creator picks are also imported into Discover. Models and datasets are not downloaded by browsing; usage terms, hardware needs and access conditions vary by resource. <Link to="/sources">View source freshness →</Link></footer>

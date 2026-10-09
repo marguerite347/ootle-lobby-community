@@ -32,9 +32,10 @@ export async function monitorContest({read=getJSON,contest=readContestContent(ro
     if(!Number.isInteger(post.post_number)||!Number.isFinite(Date.parse(post.created_at))||!Number.isFinite(Date.parse(post.updated_at))||typeof post.cooked!=='string')throw new Error('Incomplete submission post.');
     const sourceUrl=`${contest.threadUrl}/${post.post_number}`;
     const entry=reviewed.get(sourceUrl);
+    const contentSha256=createHash('sha256').update(post.cooked).digest('hex');
     return {postId:post.id,postNumber:post.post_number,sourceUrl,creator:post.username,publishedAt:post.created_at,updatedAt:post.updated_at,
-      contentSha256:createHash('sha256').update(post.cooked).digest('hex'),
-      review:!entry?'new':Date.parse(post.updated_at)>Date.parse(entry.updatedAt)?'updated':'listed'};
+      contentSha256,
+      review:!entry?'new':entry.sourceContentSha256!==contentSha256?'updated':'listed'};
   });
   return {schemaVersion:1,contestId:contest.id,threadUrl:contest.threadUrl,checkedAt:now().toISOString(),complete:true,
     observedPostIds:stream,observedSubmissionPosts:normal.length,candidates};

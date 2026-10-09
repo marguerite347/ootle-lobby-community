@@ -15,9 +15,11 @@ describe('savedGame', () => {
 });
 
 describe('ProjectGame', () => {
-  it('plays the entry in a sandbox without same-origin access', () => {
+  it('keeps arbitrary saved code out of the public document', () => {
     const html = renderToStaticMarkup(<ProjectGame game={{ entry: 'index.html', files: { 'index.html': '<p>hi</p>', 'extra.js': '' } }} />);
-    expect(html).toContain('sandbox="allow-scripts allow-pointer-lock"');
+    expect(html).not.toContain('<iframe');
+    expect(html).not.toContain('<p>hi</p>');
+    expect(html).toContain('run it in your local development environment');
     expect(html).not.toContain('allow-same-origin');
     expect(html).toContain('1 other saved file');
   });

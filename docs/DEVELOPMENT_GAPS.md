@@ -130,9 +130,9 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 
 **build-required** — /api/community-chat/*; /api/project-chat/*; /api/collective-chat/*
 
-**Current:** JSON files under runtimeDir plus process-local rate limits; Vercel runtimeDir is temporary. Client IDs and some author roles are self-declared.
+**Current:** Public entry point blocks every chat, report, moderation and room write. The visible panel explains read-only mode and links to Discord. Legacy local JSON handlers are retained for tests, not enabled as public durable services.
 
-**Remaining:** Use shared durable chat/report storage and atomic operations; server-verified identities/roles, shared abuse limits, retention and moderator authorization. Configure existing COMMUNITY_CHAT_MODERATOR_TOKEN while retaining current moderation behavior.
+**Remaining:** Before re-enabling: implement shared durable identity-bound messages/reports, server-verified roles, atomic shared rate limits, retention and authenticated moderator audit/restore.
 
 **Completion check:** Messages/reports persist across deployments/instances; role spoofing and duplicate abuse are rejected; moderation is authorized.
 
@@ -154,9 +154,9 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 
 **build-required** — /api/engagement/*; /api/creator-profiles/*; /api/skill-market*; /api/learn/resources; /api/learning/lessons*; /api/build-budgets*; /api/creator-analytics*
 
-**Current:** Handlers exist, but runtime JSON files and local/in-memory state are not durable multi-instance services. Ownership ranges from anonymous IDs to locally stored bearer secrets.
+**Current:** The public route allowlist denies all persistent profile, skill, learning, engagement and analytics writes before parsing input. Bundled skill downloads are stateless and checked against a committed file-digest manifest. Runtime-authored lessons and skills are excluded from public discovery.
 
-**Remaining:** Migrate enabled writes to shared transactional storage; audit per-action authentication/authorization, privacy, moderation, quotas and retention. Preserve public-safe projections and keep private lesson evidence out of public feeds.
+**Remaining:** Before re-enabling: shared transactional ownership and storage, moderation, reserved official names, bounded queues, retention and shared quotas.
 
 **Completion check:** Concurrent writes survive restart; unauthorized edits and role claims fail; analytics deletion/retention works; lesson evidence is never exposed.
 
@@ -166,9 +166,9 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 
 **build-required** — POST /api/skill-market/:id/download for priced listings
 
-**Current:** Free downloads exist; paid checkout explicitly returns 409 as not connected.
+**Current:** Only committed digest-pinned free bundles can be downloaded through the public service, without download-event writes. Incomplete bundled file sets are excluded. Anonymous publishing and paid checkout are unavailable.
 
-**Remaining:** Implement a chosen payment service, verified receipts/entitlements, idempotent settlement and refund/revocation policy before enabling paid downloads.
+**Remaining:** Authenticated entitlement and payment integration remains a separate implementation before paid downloads.
 
 **Completion check:** Free flow still works; payment failure does not grant access; only verified settlement grants the correct entitlement.
 
@@ -178,9 +178,9 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 
 **local-only** — Daily Ritual, AI Sparks balance and rewardPlaytest
 
-**Current:** Current public UI always uses the replayable simulator. Retained /api/daily-trivia handlers and private Blob records are separate and are not used to award these displayed Sparks.
+**Current:** The public UI remains a replayable browser-only practice game. The unused public /api/daily-trivia endpoint is closed for every method, so it cannot create or mutate Blob records. Local retained router registers only on POST start; GET does not issue a session or persist state. Production reset is disabled.
 
-**Remaining:** Real spendable rewards would need server-authoritative identity, settlement, abuse controls, redemption/ledger and wallet integration. Preserve the current single 3D flow and reset during testing; do not restore a retired UI/API selector.
+**Remaining:** Do not enable retained Blob trivia publicly without a shared atomic player quota, retention sweep, shared abuse limits and authentication. Existing legacy Blob data was not deleted; retention/migration requires reviewed operator action. Real rewards require a server ledger and verified identity.
 
 **Completion check:** Current reset/playtest regression passes; any future real awards prove exactly-once settlement and cannot be minted by browser edits.
 
@@ -226,9 +226,9 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 
 **configuration-required** — GET /api/subscriptions/config; POST /api/subscriptions
 
-**Current:** A webhook adapter exists; missing configuration returns 503. Actual provider configuration/delivery was not checked in this audit.
+**Current:** Public subscriptions are disabled by the write allowlist and config reports unavailable. The retained webhook adapter is not invoked publicly.
 
-**Remaining:** Provide HTTPS SUBSCRIPTION_WEBHOOK_URL, server-side SUBSCRIPTION_WEBHOOK_TOKEN and SUBSCRIPTION_PRIVACY_URL; receiver must implement the documented pending_confirmation/double-opt-in contract.
+**Remaining:** Before re-enabling: configure provider, double opt-in contract, shared durable rate limiting and authenticated abuse controls.
 
 **Completion check:** Real confirmation email arrives for an approved test address; repeat delivery is idempotent; failure stays unconfirmed.
 
@@ -238,9 +238,9 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 
 **configuration-required** — POST /api/video/templates/:id/draft
 
-**Current:** Hugging Face drafting adapter exists, gated by HF_DRAFT_ENABLED=1 and a server token. Production provider delivery not verified here.
+**Current:** Public provider-backed drafting and Hugging Face search are blocked before invoking their adapters. HF_DRAFT_MODEL is the documented model selector; HF_TOKEN/HUGGINGFACE_TOKEN stay server-side.
 
-**Remaining:** Configure HF_TOKEN or HUGGINGFACE_TOKEN and HF_DRAFT_MODEL; add authenticated quotas/rate limits before offering unrestricted paid inference publicly.
+**Remaining:** Enable only after authenticated shared quotas, budgets and provider consent.
 
 **Completion check:** Opt-in provider trial returns validated fields; missing token, provider failure and budget limits fail honestly.
 
@@ -250,9 +250,9 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 
 **configuration-required** — /api/growth/summary; /api/marketing-calendar; /blog/feed.xml; /blog/sitemap.xml; source refresh
 
-**Current:** Adapters exist: growth cloud needs GROWTH_GITHUB_TOKEN, calendar needs a snapshot or authorized Trello configuration and is deliberately local-only, blog needs PUBLIC_SITE_URL. Public origin is set in the Vercel adapter.
+**Current:** Public growth API and growth-export paths are disabled even if GROWTH_GITHUB_TOKEN is present. Calendar remains local-only. Monitoring reports enabled:false when no scheduler starts. Public content uses the deployment snapshot; remote refresh requires exact COMMUNITY_CONTENT_REVISION and COMMUNITY_CONTENT_SHA256.
 
-**Remaining:** Verify owner-managed configuration, source permissions, freshness and last-good fallbacks. Do not remove the local-only calendar restriction or copy private source data into the public repo. No new endpoint is implied.
+**Remaining:** Any public private-repository metrics require an explicit reviewed public projection and authentication; never return raw private bundles.
 
 **Completion check:** Configured adapter returns current authorized data; missing/stale/error state is explicit; restricted routes stay restricted.
 
@@ -274,9 +274,9 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 
 **configuration-required** — GitHub main to Vercel deployment
 
-**Current:** Maintainer CLI deployment is documented; automatic Vercel Git integration previously required the owner GitHub login connection. Current account setup was not audited.
+**Current:** Security build uses lifecycle-disabled installation and source SHA metadata. Git auto-deploy is not being connected as part of this work while the open-contributor policy decision is pending.
 
-**Remaining:** Confirm/link the repository to the existing Vercel project and production branch main if automatic website deployment is desired. Keep passing checks and source SHA traceability.
+**Remaining:** Only connect Git deployment after owner resolves repository access/review policy and Production-only secrets are verified.
 
 **Completion check:** A reviewed main commit produces a ready deployment of that exact SHA; content-only GitHub Pages workflow stays separate.
 

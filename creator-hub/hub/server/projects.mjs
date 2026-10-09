@@ -236,6 +236,7 @@ export async function versions(id) {
 }
 
 export async function stateAt(id, ref) {
+  if(typeof ref!=='string'||! /^(?:HEAD|[a-f0-9]{7,40})$/.test(ref))throw Object.assign(new Error('Invalid project revision'),{status:400});
   const dir = repoPath(id);
   if (!readProject(id)) { const e = new Error('project not found'); e.status = 404; throw e; }
   try {

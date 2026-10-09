@@ -1,3 +1,4 @@
+import {publicError} from './publicSecurity.mjs';
 import {createCommunityProjectMetrics} from './communityProjectMetrics.mjs';
 // INTEGRATION_GAP[CFG-DATA] (configuration-required): see docs/DEVELOPMENT_GAPS.md#cfg-data.
 import { fileURLToPath } from 'node:url';
@@ -45,8 +46,9 @@ import { STANDARD } from './popularity.mjs';
 import { clientDist, clientPublic, previewsDir, seedPreviewsDir } from './paths.mjs';
 import { agentGuideFallbackHtml, agentGuideHtml, withAgentGuideLink } from './agentShell.mjs';
 
-export function createApp() {
+export function createApp({publicReadOnly=false}={}) {
   const app = express();
+  app.disable('x-powered-by');
   // Point any client at the agent entry point and the machine-readable contract (RFC 8631).
   app.use((req, res, next) => {
     res.set('Link', '</llms.txt>; rel="describedby"; type="text/plain", </openapi.json>; rel="service-desc"; type="application/json"');
@@ -60,8 +62,8 @@ export function createApp() {
   app.use('/growth-export', express.static(fileURLToPath(new URL('../../../metrics/', import.meta.url)), { dotfiles: 'deny', index: false }));
   app.get('/game-shared/assetCommerce.mjs',(req,res)=>res.type('application/javascript').send(readFileSync(new URL('../shared/assetCommerce.mjs',import.meta.url),'utf8')));
 
-  const wrap = (fn) => (req, res) => Promise.resolve(fn(req, res)).catch((e) => {
-    res.status(e.status || 500).json({ error: e.message || 'Server error' });
+  const wrap = (fn) => (req, res) => Promise.resolve().then(()=>fn(req, res)).catch((e) => {
+    const failure=publicError(e);res.status(failure.status).json(failure.body);
   });
 
   // The larger parser applies only to this bounded upload route.
@@ -95,7 +97,7 @@ export function createApp() {
   api.use('/growth', createGrowthRouter());
   api.get('/journal', (req,res)=>res.json({articles:publishedArticles(),origin:publicOrigin,calendar:journalEditions().filter(item=>item.phase!=='archive').slice(0,2)}));
   api.get('/launch', (req,res)=>res.json(launch));
-  api.get('/subscriptions/config', (req,res)=>res.set('Cache-Control','no-store').json(subscriptionConfiguration()));
+  api.get('/subscriptions/config', (req,res)=>res.set('Cache-Control','no-store').json(publicReadOnly?{available:false,privacyUrl:null}:subscriptionConfiguration()));
   api.post('/subscriptions', createSubscriptionHandler());
   const publicOrigin = process.env.PUBLIC_SITE_URL?.replace(/\/$/,'') || '';
   app.get('/blog/feed.xml', (req,res)=> {
@@ -134,14 +136,14 @@ export function createApp() {
   app.get('/play', (req, res) => res.redirect(301, '/games'));
   api.get('/build-toolkit/roll',wrap(async (req,res)=>res.set('Cache-Control','no-store').json(rollToolkit(catalog.all(),req.query,undefined,projects.list()))));
   api.get('/build-toolkit', wrap(async (req,res)=>res.json(buildToolkit(catalog.all(),req.query,{projects:projects.list()}))));
-  api.get('/agent-resources', wrap((req, res) => res.json(agentResourceIndex(req.query))));
+  api.get('/agent-resources', wrap((req, res) => res.json(agentResourceIndex(req.query,{publicReadOnly}))));
   app.get('/agent-skills/:id/bundle.json', wrap((req, res) => {
-    const bundle = agentSkillBundle(req.params.id);
+    const bundle = agentSkillBundle(req.params.id,{publicReadOnly});
     if (!bundle) return res.status(404).json({error: 'Bundled skill not found'});
     res.json(bundle);
   }));
   app.get('/agent-skills/:id/*', wrap((req, res) => {
-    const bundle = agentSkillBundle(req.params.id);
+    const bundle = agentSkillBundle(req.params.id,{publicReadOnly});
     const name = req.params[0];
     if (!bundle || !Object.hasOwn(bundle.files, name)) return res.status(404).type('text/plain').send('Skill file not found');
     res.set('X-Content-Type-Options', 'nosniff').type(name.endsWith('.md') ? 'text/markdown' : 'text/plain').send(bundle.files[name]);
@@ -345,7 +347,7 @@ export function createApp() {
       res.set('Cache-Control', 'no-store');
       await handler(req, res);
     } catch (error) {
-      res.status(error.status || 500).json({ error: error.message || 'Server error', code: error.code });
+      const failure=publicError(error);res.status(failure.status).json(failure.body);
     }
   };
   const projectChat = createProjectChat();
@@ -372,7 +374,7 @@ export function createApp() {
     res.json(communityChat.moderateMessage(req.params.messageId, req.body || {}, bearerToken(req)));
   }));
 
-  const market=createSkillMarket();
+  const market=createSkillMarket(undefined,{readOnly:publicReadOnly});
   const challenges=createChallenges();
   api.get('/challenges',wrap((req,res)=>res.json({editions:challenges.list(),mode:'local-pilot'})));
   api.get('/challenges/submissions',wrap((req,res)=>res.json({submissions:challenges.submissions()})));
@@ -389,7 +391,7 @@ export function createApp() {
   }));
   const lessons=createLearningLoop();
   app.get('/learning-loop.md',wrap(async (req,res)=>res.type('text/markdown').send(readFileSync(new URL('../../../.agents/skills/creator-learning-loop/references/api.md',import.meta.url),'utf8'))));
-  api.get('/learning/published',wrap(async (req,res)=>res.json({items:lessons.publicListings()})));
+  api.get('/learning/published',wrap(async (req,res)=>res.json({items:publicReadOnly?[]:lessons.publicListings()})));
   const lessonOwner=(req)=>market.authenticate(req.method==='GET'?req.query.creatorId:req.body?.creatorId,req.get('authorization')?.replace(/^Bearer /,''));
   api.get('/learning/lessons',wrap(async (req,res)=>{
     res.set('Cache-Control','no-store');
@@ -489,5 +491,6 @@ export function createApp() {
     });
   }
 
+  app.use((error,req,res,next)=>{const failure=publicError(error);res.status(failure.status).json(failure.body);});
   return app;
 }

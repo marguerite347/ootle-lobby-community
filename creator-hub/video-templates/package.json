@@ -13,13 +13,13 @@
     "render:community": "node scripts/render.mjs CommunityUpdate props/community-update.json out/community-update.mp4"
   },
   "dependencies": {
-    "@remotion/bundler": "4.0.290",
-    "@remotion/cli": "4.0.290",
-    "@remotion/google-fonts": "4.0.290",
-    "@remotion/renderer": "4.0.290",
+    "@remotion/bundler": "4.0.534",
+    "@remotion/cli": "4.0.534",
+    "@remotion/google-fonts": "4.0.534",
+    "@remotion/renderer": "4.0.534",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "remotion": "4.0.290",
+    "remotion": "4.0.534",
     "zod": "3.22.3"
   },
   "devDependencies": {

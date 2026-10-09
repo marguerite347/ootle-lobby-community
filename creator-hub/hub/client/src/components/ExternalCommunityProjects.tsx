@@ -1,3 +1,4 @@
+import {safeHref} from '../../../shared/safeLinks.mjs';
 import {useEffect,useState} from 'react';
 import ProjectCard from './ProjectCard';
 import {useContestMetrics} from './ContestProjectMetrics';
@@ -18,9 +19,9 @@ export default function ExternalCommunityProjects({items}:{items:ExternalProject
   const value=metrics[p.slug];
   return <ProjectCard key={p.slug} resource={{id:p.slug,title:p.title,ecosystem:p.ecosystem,native:true,preview:p.media}} sourceUrl={p.sourceUrl} creator={p.creator} summary={p.summary} repoUrl={p.repoUrl} metrics={value} technologies={p.technologies}
    dates={
-   <div className="contest-project-dates"><a href={p.publicationUrl} title={p.publicationBasis} target="_blank" rel="noreferrer"><span>{p.publicationLabel}</span><time dateTime={p.publishedAt}>{date(p.publishedAt)}</time></a>{p.repoUrl&&<a href={value?.github?.activityUrl||`${p.repoUrl}/activity`} target="_blank" rel="noreferrer" title="Latest repository push reported by GitHub"><span>GitHub activity</span>{value?.github?.pushedAt?<time dateTime={value.github.pushedAt}>{date(value.github.pushedAt)}</time>:'Unavailable'}</a>}</div>}
-   caption={p.media&&<a className="community-media-caption" href={p.media.video} target="_blank" rel="noreferrer">{p.media.label}</a>}
-   actions={<><a href={p.sourceUrl} target="_blank" rel="noreferrer">{p.sourceLabel}</a>{p.forum&&<a href={p.forum.url} target="_blank" rel="noreferrer">Forum discussion</a>}{p.demoUrl&&<a href={p.demoUrl} target="_blank" rel="noreferrer">Open project</a>}<a className="suggest-project-edit" href={`${COMMUNITY_REPOSITORY}/edit/main/content/community-projects/${p.slug}.json`} target="_blank" rel="noreferrer">Suggest an edit</a></>}/>;
+   <div className="contest-project-dates"><a href={safeHref(p.publicationUrl)} title={p.publicationBasis} target="_blank" rel="noreferrer"><span>{p.publicationLabel}</span><time dateTime={p.publishedAt}>{date(p.publishedAt)}</time></a>{p.repoUrl&&<a href={safeHref(value?.github?.activityUrl||`${p.repoUrl}/activity`)} target="_blank" rel="noreferrer" title="Latest repository push reported by GitHub"><span>GitHub activity</span>{value?.github?.pushedAt?<time dateTime={value.github.pushedAt}>{date(value.github.pushedAt)}</time>:'Unavailable'}</a>}</div>}
+   caption={p.media&&<a className="community-media-caption" href={safeHref(p.media.video)} target="_blank" rel="noreferrer">{p.media.label}</a>}
+   actions={<><a href={safeHref(p.sourceUrl)} target="_blank" rel="noreferrer">{p.sourceLabel}</a>{p.forum&&<a href={safeHref(p.forum.url)} target="_blank" rel="noreferrer">Forum discussion</a>}{p.demoUrl&&<a href={safeHref(p.demoUrl)} target="_blank" rel="noreferrer">Open project</a>}<a className="suggest-project-edit" href={safeHref(`${COMMUNITY_REPOSITORY}/edit/main/content/community-projects/${p.slug}.json`)} target="_blank" rel="noreferrer">Suggest an edit</a></>}/>;
  })}</div>;
 }
 

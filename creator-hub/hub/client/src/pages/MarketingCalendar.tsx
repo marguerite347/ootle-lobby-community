@@ -1,3 +1,4 @@
+import {safeHref} from '../../../shared/safeLinks.mjs';
 import {useEffect, useState} from 'react';
 import './MarketingCalendar.css';
 
@@ -47,13 +48,13 @@ export default function MarketingCalendar() {
   }
   function card(item:Item) {
     const date = (item.due || item.start)!;
-    return <a className="marketing-card" key={item.id} href={item.url} target="_blank" rel="noreferrer">
+    return <a className="marketing-card" key={item.id} href={safeHref(item.url)} target="_blank" rel="noreferrer">
       <time dateTime={date}>{new Intl.DateTimeFormat('en-US', {timeZone:'America/New_York',hour:'numeric',minute:'2-digit'}).format(new Date(date))} ET{item.due ? ' · Due' : ' · Starts'}</time>
       <span>{item.title}</span>{item.complete && <small>Complete</small>}
     </a>;
   }
   return <section className="marketing-calendar">
-    <header className="marketing-heading"><div><span className="eyebrow">Ootle marketing</span><h1>Make the next move.</h1><p>The launch calendar, straight from Trello. Update a card there and it appears here.</p></div><a className="btn primary" href={boardUrl} target="_blank" rel="noreferrer">Open Trello ↗</a></header>
+    <header className="marketing-heading"><div><span className="eyebrow">Ootle marketing</span><h1>Make the next move.</h1><p>The launch calendar, straight from Trello. Update a card there and it appears here.</p></div><a className="btn primary" href={safeHref(boardUrl)} target="_blank" rel="noreferrer">Open Trello ↗</a></header>
     <div className="marketing-sync" role="status">
       {error || calendar?.message || (calendar ? 'Connected to Trello. Checks for changes every minute while this page is open.' : 'Connecting to the calendar…')}
       {calendar?.lastSyncedAt && <small>Last successful sync: {dateLabel.format(new Date(calendar.lastSyncedAt))} ET</small>}
@@ -62,7 +63,7 @@ export default function MarketingCalendar() {
     <div className="marketing-toolbar">
       <div className="marketing-month-nav"><button aria-label="Previous month" onClick={()=>changeMonth(-1)}>←</button><h2 aria-live="polite">{monthLabel}</h2><button aria-label="Next month" onClick={()=>changeMonth(1)}>→</button><button onClick={()=>setMonth(today.slice(0,7))}>Today</button></div>
       <label>Board list<select value={list} onChange={event=>setList(event.target.value)}><option value="all">All scheduled cards</option>{lists.map(value=><option key={value}>{value}</option>)}</select></label>
-      <a className="btn" href={googleCalendarUrl} target="_blank" rel="noreferrer">Subscribe in Google Calendar ↗</a>
+      <a className="btn" href={safeHref(googleCalendarUrl)} target="_blank" rel="noreferrer">Subscribe in Google Calendar ↗</a>
     </div>
     <p className="marketing-date-note">Tari Google account or calendar access required. Google event syncing is awaiting connector access; use this Trello calendar for the current schedule.</p>
     <p className="marketing-date-note">Eastern Time · Only cards with a Trello due or start date appear. Open a card to update it in Trello.</p>

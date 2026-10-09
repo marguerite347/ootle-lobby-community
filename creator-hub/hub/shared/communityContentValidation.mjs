@@ -1,3 +1,4 @@
+import {requireLinkHost} from './safeLinks.mjs';
 import {validateCommunityProjects} from './communityProjects.mjs';
 import {validateContests} from './contestContentValidation.mjs';
 const FIELDS = ['id', 'title', 'summary', 'technologies'];
@@ -27,6 +28,7 @@ export function validateProjects(projects) {
       keys(technology, ['label', 'sourceUrl'], 'Technology');
       text(technology.label, 'Technology label', 60);
       text(technology.sourceUrl, 'Source URL', 1500);
+      requireLinkHost(technology.sourceUrl);
       const url = new URL(technology.sourceUrl);
       if (url.protocol !== 'https:' || url.username || url.password) throw new Error('Source links must use HTTPS without credentials.');
       if (labels.has(technology.label)) throw new Error('Duplicate technology label.');

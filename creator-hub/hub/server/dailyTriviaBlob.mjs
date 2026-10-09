@@ -1,5 +1,6 @@
 // INTEGRATION_GAP[LOBBY-REWARDS] (local-only): see docs/DEVELOPMENT_GAPS.md#lobby-rewards.
 import {get, put, BlobError, BlobPreconditionFailedError} from '@vercel/blob';
+import {createHash} from 'node:crypto';
 import {setTimeout as pause} from 'node:timers/promises';
 import {createDailyTrivia} from './dailyTrivia.mjs';
 
@@ -11,7 +12,7 @@ const writeConflict=error=>error instanceof BlobPreconditionFailedError || (
 
 /** Private per-player records; consistent reads and conditional writes prevent lost or duplicate awards. */
 export function createBlobDailyTrivia({token,client={get,put},now=Date.now,...gameOptions}={}) {
- const pathname=id=>`daily-ritual/players/${id}.json`;
+ const pathname=id=>`daily-ritual/players/${createHash('sha256').update(id).digest('hex')}.json`;
  const model=(store,time)=>createDailyTrivia('',{
   ...gameOptions,now:time===undefined?now:()=>time,
   storage:{load:()=>store,save:()=>{}},

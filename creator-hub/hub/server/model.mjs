@@ -1,3 +1,4 @@
+import {safeHref} from '../shared/safeLinks.mjs';
 // Canonical Creator Hub records.
 //
 // The field contract follows creator-hub/TEMPLATE_MARKETPLACE.md and CREATOR_HUB.md:
@@ -61,10 +62,10 @@ export function makeResource(input) {
     audience: input.audience || null,
 
     // Link out by default (CREATOR_HUB.md). Any of these may be null (unknown).
-    sourceUrl: input.sourceUrl || null,
-    repoUrl: input.repoUrl || null,
-    docsUrl: input.docsUrl || null,
-    demoUrl: input.demoUrl || null,
+    sourceUrl: safeHref(input.sourceUrl) || null,
+    repoUrl: safeHref(input.repoUrl) || null,
+    docsUrl: safeHref(input.docsUrl) || null,
+    demoUrl: safeHref(input.demoUrl) || null,
 
     network: input.network || null, // e.g. "Ootle testnet (Esmeralda)"; null if n/a
     readiness: READINESS.includes(input.readiness) ? input.readiness : 'conceptual',

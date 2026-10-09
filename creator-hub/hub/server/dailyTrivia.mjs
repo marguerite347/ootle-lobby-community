@@ -148,7 +148,7 @@ export function createDailyTrivia(root,{now=Date.now,random=randomInt,storage}={
   delete player.round;
   save(store);return view(player);
  }
- return {get,register,mutate,reset};
+ return {get,register,mutate,reset,preview:()=>view({balance:0})};
 }
 
 const LOOPBACK_ADDRESSES=new Set(['127.0.0.1','::1','::ffff:127.0.0.1']);
@@ -179,7 +179,8 @@ export function dailyTriviaRouter(root,options) {
    let id=req.headers.cookie?.split(';').map(part=>part.trim()).find(part=>part.startsWith('hub_trivia='))?.slice(11);
    let state=id && /^[a-f0-9-]{36}$/.test(id) ? await game.get(id) : null;
    if(!state) {
-    if(req.method!=='GET')return res.status(401).json({error:'Reload the daily challenge to begin.'});
+    if(req.method==='GET'){req.triviaState=createDailyTrivia('',{storage:{load:()=>({players:{}}),save:()=>{}}}).preview();return next();}
+    if(req.method!=='POST'||req.path!=='/start')return res.status(401).json({error:'Start the daily challenge to begin.'});
     id=await game.register();
     state=await game.get(id);
     res.cookie('hub_trivia',id,{httpOnly:true,sameSite:'strict',secure:req.secure || publicOrigin?.startsWith('https:'),maxAge:365*86400000,path:'/api/daily-trivia'});
@@ -187,7 +188,7 @@ export function dailyTriviaRouter(root,options) {
    req.triviaPlayer=id;req.triviaState=state;next();
   }catch(error){next(error);}
  });
- const canReset=req=>options?.allowReset===true || isLocalRequest(req);
+ const canReset=req=>!publicOrigin && isLocalRequest(req);
  const send=(req,res,state)=>res.json({...state,canReset:canReset(req)});
  router.get('/',(req,res)=>send(req,res,req.triviaState));
  for(const action of ['start','answer','spin','super','decline'])router.post('/'+action,async (req,res,next)=>{

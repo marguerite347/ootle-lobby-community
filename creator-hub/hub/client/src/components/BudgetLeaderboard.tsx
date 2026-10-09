@@ -1,3 +1,4 @@
+import {safeHref} from '../../../shared/safeLinks.mjs';
 import {useEffect,useState} from 'react';
 import {Link} from 'react-router-dom';
 import './BudgetLeaderboard.css';
@@ -35,7 +36,7 @@ export default function BudgetLeaderboard({onJoin}:{onJoin:()=>void}){
         <h3>{entry.title}</h3><Link to={`/creators/${entry.creatorId}`}>{entry.creatorName}</Link><p>{entry.description}</p>
         <div className="budget-facts"><span>Credits used: {entry.creditUsd===null?'Unknown':money(entry.creditUsd)}</span><span>Build time: {entry.hours===null?'Unknown':`${entry.hours}h`}</span></div>
         <small>Self-reported cash · {entry.recommendations} creator recommendation{entry.recommendations===1?'':'s'}</small>
-        <p><a href={entry.demoUrl} target="_blank" rel="noreferrer">Try the build ↗</a></p>
+        <p><a href={safeHref(entry.demoUrl)} target="_blank" rel="noreferrer">Try the build ↗</a></p>
         <details><summary>Cost breakdown & scope</summary><p>Version: {entry.version}</p><p>AI / compute: {money(entry.costs.ai)} · Assets: {money(entry.costs.assets)} · Other: {money(entry.costs.other)}</p><p>{entry.scope}</p></details>
         {me?.id===entry.creatorId?<div className="budget-actions"><button disabled={busy} onClick={()=>{setEditing(entry);setFormOpen(true);}}>Edit report</button><button disabled={busy} onClick={()=>void action(`/${entry.id}/withdraw`,{expectedRevision:entry.revision})}>Withdraw</button></div>:<form onSubmit={event=>{event.preventDefault();void action(`/${entry.id}/recommend`,{tested:true,expectedRevision:entry.revision});}}>
             <label className="budget-check"><input type="checkbox" required disabled={!me||busy}/> I tried this version and recommend it.</label><button disabled={!me||busy}>Recommend build</button>{!me&&<small>Create a creator profile to recommend.</small>}

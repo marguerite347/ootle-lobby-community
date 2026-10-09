@@ -11,7 +11,7 @@ import {
   useRef,
   useState,
 } from 'react';
-import ProjectChat from './ProjectChat';
+
 import { copy, sidebarCopy } from './copy';
 import {
   CHAT_GREETING_EVENT,
@@ -218,7 +218,7 @@ export default function ChatSidebar() {
         </div>
 
         <div className="chat-sidebar-panel">
-          <ProjectChat isActive={isOpen}/>
+          <div className="panel"><h3>Chat is read-only</h3><p>Community posting is paused while durable accounts and moderation are connected.</p><a href="https://discord.com/invite/dj34vQSe6d" target="_blank" rel="noopener noreferrer">Join the Tari community on Discord ↗</a></div>
         </div>
       </aside>
     </div>

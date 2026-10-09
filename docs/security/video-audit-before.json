@@ -1,0 +1,485 @@
+{
+  "auditReportVersion": 2,
+  "vulnerabilities": {
+    "@remotion/bundler": {
+      "name": "@remotion/bundler",
+      "severity": "critical",
+      "isDirect": true,
+      "via": [
+        "@remotion/studio",
+        "@remotion/studio-shared",
+        "remotion",
+        "webpack"
+      ],
+      "effects": [],
+      "range": "<=4.0.420 || >=4.1.0-alpha1",
+      "nodes": [
+        "node_modules/@remotion/bundler"
+      ],
+      "fixAvailable": {
+        "name": "@remotion/bundler",
+        "version": "4.0.534",
+        "isSemVerMajor": false
+      }
+    },
+    "@remotion/cli": {
+      "name": "@remotion/cli",
+      "severity": "critical",
+      "isDirect": true,
+      "via": [
+        "@remotion/bundler",
+        "@remotion/media-utils",
+        "@remotion/player",
+        "@remotion/renderer",
+        "@remotion/studio",
+        "@remotion/studio-server",
+        "@remotion/studio-shared",
+        "remotion"
+      ],
+      "effects": [],
+      "range": "<=4.0.462 || >=4.1.0-alpha1",
+      "nodes": [
+        "node_modules/@remotion/cli"
+      ],
+      "fixAvailable": {
+        "name": "@remotion/cli",
+        "version": "4.0.534",
+        "isSemVerMajor": false
+      }
+    },
+    "@remotion/google-fonts": {
+      "name": "@remotion/google-fonts",
+      "severity": "critical",
+      "isDirect": true,
+      "via": [
+        "remotion"
+      ],
+      "effects": [],
+      "range": "<=4.0.409",
+      "nodes": [
+        "node_modules/@remotion/google-fonts"
+      ],
+      "fixAvailable": {
+        "name": "@remotion/google-fonts",
+        "version": "4.0.534",
+        "isSemVerMajor": false
+      }
+    },
+    "@remotion/media-utils": {
+      "name": "@remotion/media-utils",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "remotion"
+      ],
+      "effects": [
+        "@remotion/cli"
+      ],
+      "range": "<=4.0.409",
+      "nodes": [
+        "node_modules/@remotion/media-utils"
+      ],
+      "fixAvailable": {
+        "name": "@remotion/cli",
+        "version": "4.0.534",
+        "isSemVerMajor": false
+      }
+    },
+    "@remotion/player": {
+      "name": "@remotion/player",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "remotion"
+      ],
+      "effects": [
+        "@remotion/cli"
+      ],
+      "range": "<=4.0.409",
+      "nodes": [
+        "node_modules/@remotion/player"
+      ],
+      "fixAvailable": {
+        "name": "@remotion/cli",
+        "version": "4.0.534",
+        "isSemVerMajor": false
+      }
+    },
+    "@remotion/renderer": {
+      "name": "@remotion/renderer",
+      "severity": "critical",
+      "isDirect": true,
+      "via": [
+        "extract-zip",
+        "remotion",
+        "ws"
+      ],
+      "effects": [
+        "@remotion/cli",
+        "@remotion/studio",
+        "@remotion/studio-server"
+      ],
+      "range": "<=4.0.463 || >=4.1.0-alpha1",
+      "nodes": [
+        "node_modules/@remotion/renderer"
+      ],
+      "fixAvailable": {
+        "name": "@remotion/cli",
+        "version": "4.0.534",
+        "isSemVerMajor": false
+      }
+    },
+    "@remotion/studio": {
+      "name": "@remotion/studio",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "@remotion/media-utils",
+        "@remotion/player",
+        "@remotion/renderer",
+        "@remotion/studio-shared",
+        "@remotion/zod-types",
+        "remotion"
+      ],
+      "effects": [
+        "@remotion/bundler",
+        "@remotion/cli"
+      ],
+      "range": "<=4.0.462",
+      "nodes": [
+        "node_modules/@remotion/studio"
+      ],
+      "fixAvailable": {
+        "name": "@remotion/cli",
+        "version": "4.0.534",
+        "isSemVerMajor": false
+      }
+    },
+    "@remotion/studio-server": {
+      "name": "@remotion/studio-server",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "@remotion/bundler",
+        "@remotion/renderer",
+        "@remotion/studio-shared",
+        "remotion"
+      ],
+      "effects": [
+        "@remotion/cli"
+      ],
+      "range": "<=4.0.462",
+      "nodes": [
+        "node_modules/@remotion/studio-server"
+      ],
+      "fixAvailable": {
+        "name": "@remotion/cli",
+        "version": "4.0.534",
+        "isSemVerMajor": false
+      }
+    },
+    "@remotion/studio-shared": {
+      "name": "@remotion/studio-shared",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "remotion"
+      ],
+      "effects": [
+        "@remotion/cli",
+        "@remotion/studio"
+      ],
+      "range": "<=4.0.409",
+      "nodes": [
+        "node_modules/@remotion/studio-shared"
+      ],
+      "fixAvailable": {
+        "name": "@remotion/cli",
+        "version": "4.0.534",
+        "isSemVerMajor": false
+      }
+    },
+    "@remotion/zod-types": {
+      "name": "@remotion/zod-types",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "remotion"
+      ],
+      "effects": [
+        "@remotion/studio"
+      ],
+      "range": "<=4.0.409",
+      "nodes": [
+        "node_modules/@remotion/zod-types"
+      ],
+      "fixAvailable": {
+        "name": "@remotion/cli",
+        "version": "4.0.534",
+        "isSemVerMajor": false
+      }
+    },
+    "extract-zip": {
+      "name": "extract-zip",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1139346,
+          "name": "extract-zip",
+          "dependency": "extract-zip",
+          "title": "extract-zip unvalidated symlink path traversal",
+          "url": "https://github.com/advisories/GHSA-jmr9-qjv8-65gv",
+          "severity": "high",
+          "cwe": [
+            "CWE-22"
+          ],
+          "cvss": {
+            "score": 8.1,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N"
+          },
+          "range": "<=2.0.1"
+        },
+        {
+          "source": 1193685,
+          "name": "extract-zip",
+          "dependency": "extract-zip",
+          "title": "extract-zip allows arbitrary file writes through symlink archive entries",
+          "url": "https://github.com/advisories/GHSA-7pqw-9j4j-h8q3",
+          "severity": "high",
+          "cwe": [
+            "CWE-22"
+          ],
+          "cvss": {
+            "score": 8.1,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:H"
+          },
+          "range": "<=2.0.1"
+        }
+      ],
+      "effects": [
+        "@remotion/renderer"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/extract-zip"
+      ],
+      "fixAvailable": {
+        "name": "@remotion/cli",
+        "version": "4.0.534",
+        "isSemVerMajor": false
+      }
+    },
+    "remotion": {
+      "name": "remotion",
+      "severity": "critical",
+      "isDirect": true,
+      "via": [
+        {
+          "source": 1121293,
+          "name": "remotion",
+          "dependency": "remotion",
+          "title": "Remotion: remote code execution (RCE) vulnerability",
+          "url": "https://github.com/advisories/GHSA-2jqp-f4gr-44fr",
+          "severity": "critical",
+          "cwe": [
+            "CWE-94"
+          ],
+          "cvss": {
+            "score": 9.8,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+          },
+          "range": "<4.0.410"
+        },
+        {
+          "source": 1121294,
+          "name": "remotion",
+          "dependency": "remotion",
+          "title": "Remotion: arbitrary file write vulnerability",
+          "url": "https://github.com/advisories/GHSA-g6pc-6676-c23j",
+          "severity": "critical",
+          "cwe": [
+            "CWE-123"
+          ],
+          "cvss": {
+            "score": 9.1,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H"
+          },
+          "range": "<4.0.410"
+        }
+      ],
+      "effects": [
+        "@remotion/bundler",
+        "@remotion/cli",
+        "@remotion/google-fonts",
+        "@remotion/media-utils",
+        "@remotion/player",
+        "@remotion/renderer",
+        "@remotion/studio",
+        "@remotion/studio-server",
+        "@remotion/studio-shared",
+        "@remotion/zod-types"
+      ],
+      "range": "<=4.0.409",
+      "nodes": [
+        "node_modules/remotion"
+      ],
+      "fixAvailable": {
+        "name": "@remotion/cli",
+        "version": "4.0.534",
+        "isSemVerMajor": false
+      }
+    },
+    "source-map-js": {
+      "name": "source-map-js",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1241209,
+          "name": "source-map-js",
+          "dependency": "source-map-js",
+          "title": "source-map-js allows event-loop denial of service through indexed source-map section offsets",
+          "url": "https://github.com/advisories/GHSA-68fv-2mgg-jv7q",
+          "severity": "high",
+          "cwe": [
+            "CWE-1284"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": ">=1.0.0 <1.2.2"
+        }
+      ],
+      "effects": [],
+      "range": "1.0.0 - 1.2.1",
+      "nodes": [
+        "node_modules/source-map-js"
+      ],
+      "fixAvailable": true
+    },
+    "webpack": {
+      "name": "webpack",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1113041,
+          "name": "webpack",
+          "dependency": "webpack",
+          "title": "webpack buildHttp: allowedUris allow-list bypass via URL userinfo (@) leading to build-time SSRF behavior",
+          "url": "https://github.com/advisories/GHSA-8fgc-7cc6-rx7x",
+          "severity": "low",
+          "cwe": [
+            "CWE-918"
+          ],
+          "cvss": {
+            "score": 3.7,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:L/I:L/A:N"
+          },
+          "range": ">=5.49.0 <=5.104.0"
+        },
+        {
+          "source": 1113042,
+          "name": "webpack",
+          "dependency": "webpack",
+          "title": "webpack buildHttp HttpUriPlugin allowedUris bypass via HTTP redirects → SSRF + cache persistence",
+          "url": "https://github.com/advisories/GHSA-38r7-794h-5758",
+          "severity": "low",
+          "cwe": [
+            "CWE-918"
+          ],
+          "cvss": {
+            "score": 3.7,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:L/I:L/A:N"
+          },
+          "range": ">=5.49.0 <5.104.0"
+        }
+      ],
+      "effects": [
+        "@remotion/bundler"
+      ],
+      "range": "5.49.0 - 5.104.0",
+      "nodes": [
+        "node_modules/webpack"
+      ],
+      "fixAvailable": {
+        "name": "@remotion/bundler",
+        "version": "4.0.534",
+        "isSemVerMajor": false
+      }
+    },
+    "ws": {
+      "name": "ws",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1119108,
+          "name": "ws",
+          "dependency": "ws",
+          "title": "ws: Uninitialized memory disclosure",
+          "url": "https://github.com/advisories/GHSA-58qx-3vcg-4xpx",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-908"
+          ],
+          "cvss": {
+            "score": 4.4,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:N"
+          },
+          "range": ">=8.0.0 <8.20.1"
+        },
+        {
+          "source": 1123259,
+          "name": "ws",
+          "dependency": "ws",
+          "title": "ws: Memory exhaustion DoS from tiny fragments and data chunks",
+          "url": "https://github.com/advisories/GHSA-96hv-2xvq-fx4p",
+          "severity": "high",
+          "cwe": [
+            "CWE-400",
+            "CWE-770",
+            "CWE-1050"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": ">=8.0.0 <8.21.0"
+        }
+      ],
+      "effects": [
+        "@remotion/renderer"
+      ],
+      "range": "8.0.0 - 8.20.1",
+      "nodes": [
+        "node_modules/ws"
+      ],
+      "fixAvailable": {
+        "name": "@remotion/cli",
+        "version": "4.0.534",
+        "isSemVerMajor": false
+      }
+    }
+  },
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 1,
+      "moderate": 0,
+      "high": 3,
+      "critical": 11,
+      "total": 15
+    },
+    "dependencies": {
+      "prod": 172,
+      "dev": 3,
+      "optional": 33,
+      "peer": 0,
+      "peerOptional": 0,
+      "total": 207
+    }
+  }
+}

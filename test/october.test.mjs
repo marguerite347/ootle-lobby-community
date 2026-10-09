@@ -1,3 +1,4 @@
+import {createHash} from 'node:crypto';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {validateContests} from '../creator-hub/hub/shared/contestContentValidation.mjs';
@@ -9,7 +10,7 @@ const entry={slug:'example',title:'Example',summary:'A new confidential game.',c
 const post={id:101,post_number:5,post_type:1,username:'creator',created_at:entry.publishedAt,updated_at:entry.updatedAt,cooked:'<p>Project with public address text.</p>'};
 test('accepts an empty month, then a new shared entry with a credited recording',()=>{
  assert.equal(validateContests([contest])[0].entries.length,0);
- const recording={url:'https://example.com/reviewed.mp4',capturedAt:entry.updatedAt,sourceRevision:'commit abc123',kind:'public-page',credit:'Recorded by contributor'};
+ const recording={url:'https://raw.githubusercontent.com/example/reviewed/main/video.mp4',capturedAt:entry.updatedAt,sourceRevision:'commit abc123',kind:'public-page',credit:'Recorded by contributor'};
  assert.equal(validateContests([{...contest,entries:[{...entry,recording}]}])[0].entries.length,1);
 });
 test('rejects duplicate posts, unsafe media, mismatched months, hidden fields and malformed dates',()=>{
@@ -30,7 +31,7 @@ test('monitor distinguishes edits from unchanged reviewed entries',async()=>{
  const read=async()=>({id:396,post_stream:{stream:[101],posts:[{...post,updated_at:'2026-10-03T13:00:00Z'}]}});
  const report=await monitorContest({read,contest:{...contest,entries:[entry]}});
  assert.equal(report.candidates[0].review,'updated');
- const unchanged=await monitorContest({read:async()=>({id:396,post_stream:{stream:[101],posts:[post]}}),contest:{...contest,entries:[entry]}});
+ const unchanged=await monitorContest({read:async()=>({id:396,post_stream:{stream:[101],posts:[post]}}),contest:{...contest,entries:[{...entry,sourceContentSha256:createHash('sha256').update(post.cooked).digest('hex')}]}});
  assert.equal(unchanged.candidates[0].review,'listed');
 });
 test('monitor fails incomplete or unavailable snapshots instead of claiming zero entries',async()=>{

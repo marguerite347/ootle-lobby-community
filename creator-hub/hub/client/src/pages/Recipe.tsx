@@ -1,3 +1,4 @@
+import {safeHref} from '../../../shared/safeLinks.mjs';
 import BuildToolkit from '../components/BuildToolkit';
 import { useEffect, useMemo, useState, useRef } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
@@ -163,7 +164,7 @@ export default function Recipe() {
                 <div key={c.id}>
                   <Link to={`/resource/${encodeURIComponent(c.templateId)}`} style={{ color: 'var(--accent)', fontWeight: 600, fontSize: 14 }}>{c.name}</Link>
                   <div className="faint" style={{ fontSize: 12 }}>{c.summary}</div>
-                  <div className="faint" style={{ fontSize: 11 }}>rev {c.revision.slice(0, 8)} · <ExternalLink href={c.source}>source ↗</ExternalLink></div>
+                  <div className="faint" style={{ fontSize: 11 }}>rev {c.revision.slice(0, 8)} · <ExternalLink href={safeHref(c.source)}>source ↗</ExternalLink></div>
                 </div>
               ))}
             </div>

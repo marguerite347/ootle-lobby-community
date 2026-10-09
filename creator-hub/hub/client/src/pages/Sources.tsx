@@ -1,3 +1,4 @@
+import {safeHref} from '../../../shared/safeLinks.mjs';
 import {Link} from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { api, type Source } from '../api';
@@ -35,14 +36,14 @@ export default function Sources() {
             {s.note && <p className="faint" style={{ fontSize: 12 }}>{s.note}</p>}
             {s.monitoring&&<div className="source-watch-detail">
               <p>{s.monitoring.linkCount} README links observed · {s.monitoring.pushedAt?`Repo pushed ${new Date(s.monitoring.pushedAt).toLocaleDateString()}`:'Activity not checked'}</p>
-              {s.monitoring.changes?<details><summary>{s.monitoring.changes.added.length} added / {s.monitoring.changes.removed.length} removed at last detected change ({new Date(s.monitoring.changes.checkedAt).toLocaleDateString()})</summary><p>{s.kind==='github-list'?'List entries are indexed automatically. This diff includes navigation links and other items the importer may exclude.':'Discovery candidates, not reviewed or imported resources.'}</p><ul>{s.monitoring.changes.added.slice(0,30).map(url=><li key={url}><ExternalLink href={url}>{url}</ExternalLink></li>)}</ul>{s.monitoring.changes.added.length>30&&<p>First 30 shown; full diff is in the sources API.</p>}</details>:<p>{s.monitoring.baselineAt?'Baseline recorded; no subsequent README change observed yet.':'No baseline yet.'}</p>}
+              {s.monitoring.changes?<details><summary>{s.monitoring.changes.added.length} added / {s.monitoring.changes.removed.length} removed at last detected change ({new Date(s.monitoring.changes.checkedAt).toLocaleDateString()})</summary><p>{s.kind==='github-list'?'List entries are indexed automatically. This diff includes navigation links and other items the importer may exclude.':'Discovery candidates, not reviewed or imported resources.'}</p><ul>{s.monitoring.changes.added.slice(0,30).map(url=><li key={url}><ExternalLink href={safeHref(url)}>{url}</ExternalLink></li>)}</ul>{s.monitoring.changes.added.length>30&&<p>First 30 shown; full diff is in the sources API.</p>}</details>:<p>{s.monitoring.baselineAt?'Baseline recorded; no subsequent README change observed yet.':'No baseline yet.'}</p>}
             </div>}
             {s.kind==='github-list'&&<Link to={`/explore?tag=${encodeURIComponent(s.name)}`}>Browse this list’s imported resources →</Link>}
             {s.canonicalUrl.includes('Stanestane/')&&<Link to="/skills?q=game%20design">Browse game design skills →</Link>}
             <div className="foot">
               <span>{s.kind==='github-list'?`${s.recordCount} indexed resources`:s.monitoring?'Upstream monitor':s.kind==='manual'?'Manual review':`${s.recordCount} records`}</span>
               <span>· last ok {s.lastSuccessAt ? new Date(s.lastSuccessAt).toLocaleString() : '—'}</span>
-              <ExternalLink href={s.canonicalUrl}><span style={{ marginLeft: 'auto', color: 'var(--accent)' }}>source ↗</span></ExternalLink>
+              <ExternalLink href={safeHref(s.canonicalUrl)}><span style={{ marginLeft: 'auto', color: 'var(--accent)' }}>source ↗</span></ExternalLink>
             </div>
           </div>
         ))}
