@@ -1,6 +1,8 @@
 // Public preview is a discovery site. Stateful services require separate authenticated storage.
+// GLTF ImageBitmapLoader fetches embedded textures from browser-created blob URLs.
+// Permit those local reads while keeping network connections same-origin.
 export const SECURITY_HEADERS = {
- 'Content-Security-Policy': "default-src 'self'; script-src 'self' 'wasm-unsafe-eval' 'sha256-uv6C8SvVZ2uUoElK/37yraYA/Qn8kTC1yiCLJejNULI=' 'sha256-qKixQ4y904xNw2jTHruM0+UBwTAc9DhJD9mahJM1kto=' 'sha256-Yp37/7aVh3/vRQbARTMM99meTkuheBYNtQJqdF6tUS0=' 'sha256-pY4WOiR15dITZlysG3bMhlFrjZHw0+5QIMTCMg1jt+I=' 'sha256-AWQUp1nz9D6XkCxLSQ9gtzwlCas2qYd1frBbUh4z3jU=' 'sha256-YVtyz1pt1ciOxyHdOSC8Mf0P/KbuOU/2yEBo2+yU9U0='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; media-src 'self' blob: https:; connect-src 'self'; worker-src 'self' blob:; frame-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; form-action 'self'",
+ 'Content-Security-Policy': "default-src 'self'; script-src 'self' 'wasm-unsafe-eval' 'sha256-uv6C8SvVZ2uUoElK/37yraYA/Qn8kTC1yiCLJejNULI=' 'sha256-qKixQ4y904xNw2jTHruM0+UBwTAc9DhJD9mahJM1kto=' 'sha256-Yp37/7aVh3/vRQbARTMM99meTkuheBYNtQJqdF6tUS0=' 'sha256-pY4WOiR15dITZlysG3bMhlFrjZHw0+5QIMTCMg1jt+I=' 'sha256-AWQUp1nz9D6XkCxLSQ9gtzwlCas2qYd1frBbUh4z3jU=' 'sha256-YVtyz1pt1ciOxyHdOSC8Mf0P/KbuOU/2yEBo2+yU9U0='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; media-src 'self' blob: https:; connect-src 'self' blob:; worker-src 'self' blob:; frame-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; form-action 'self'",
  'Strict-Transport-Security':'max-age=31536000',
  'X-Content-Type-Options':'nosniff',
  'X-Frame-Options':'SAMEORIGIN',
