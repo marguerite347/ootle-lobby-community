@@ -4,7 +4,7 @@ The public home for this work is [ootle-lobby-community](https://github.com/marg
 
 ## Contributor access
 
-[Join Lobby and Workbench](https://github.com/marguerite347/ootle-contributor-access/issues/new?template=join.yml) for automatic invitations to both repositories. After acceptance, developers and their agents can commit and push directly. The interim policy in [CONTRIBUTING.md](../CONTRIBUTING.md) supersedes older mandatory-review language; source verification and contest eligibility remain separate.
+Automatic invitations are closed. Contribute through a fork and pull request. Trusted collaborators are approved individually and also use reviewed pull requests. See [CONTRIBUTING.md](../CONTRIBUTING.md).
 
 ## What is shared
 
@@ -38,10 +38,10 @@ An editor reviews the report, opens each new/edited public post and checks the p
 ## Add or update an October project
 
 1. The creator posts their entry to the official October forum thread. Updates belong in that original post.
-2. Suggest a listing through the issue form, or add `content/submissions/october-2026/<slug>.json` in a direct commit or optional PR. Use one stable slug and source post per project.
+2. Suggest a listing through the issue form, or add `content/submissions/october-2026/<slug>.json` in a reviewed PR. Use one stable slug and source post per project.
 3. Record a factual description, creator credit, publicly available source repo, submission/last-edit dates and source evidence for technologies. Do not copy payout addresses. Review eligibility separately; a listing is not a Council endorsement.
 4. Run the monitor and update the registry's `checkedAt` and `observedSubmissionPosts` from the successful report. Do not invent an empty check after a network failure.
-5. Run `npm test && npm run validate && npm run build`. Website changes also require the production site build. Include source links and recording review evidence in the commit, optional PR or task handoff.
+5. Run `npm test && npm run validate && npm run build`. Website changes also require the production site build. Include source links and recording review evidence in the PR or task handoff.
 6. After a direct push or merge to main, **Validate and publish** publishes the accepted feed through GitHub Pages. Refresh the Lobby after the successful run (the server caches for one minute). If the feed fails validation, the site keeps its last good snapshot or bundled records. Website code changes currently require the documented maintainer Vercel deploy.
 
 Example shape (documentation only; do not submit this fictional project):

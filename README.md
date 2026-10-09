@@ -1,6 +1,6 @@
 # Ootle Lobby · community website
 
-**Open contributor access:** [Join Lobby and Workbench](https://github.com/marguerite347/ootle-contributor-access/issues/new?template=join.yml). Anyone who requests access is automatically invited to both repositories until the owner changes the policy. Accept both invitations, then developers and their agents can commit, push and merge without a mandatory review gate. See [CONTRIBUTING.md](CONTRIBUTING.md).
+**Contributions:** automatic enrollment is closed. Contribute through a fork and pull request; individual collaborator access is owner-approved. Reviews and passing checks are required. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 **Help creators tell their story accurately.**
 
@@ -33,7 +33,7 @@ Missing services, configuration requirements, browser-only features and retired 
 | Community project descriptions and labels | `content/projects/` |
 | Hosting configuration | `vercel.json`, `api/`, `scripts/prepare-site.mjs` |
 
-Authorized contributors can push website changes directly to main or use a pull request for discussion. The **Validate website** workflow builds the actual site; it is not a required push or merge gate during open development. See [CONTRIBUTING.md](CONTRIBUTING.md).
+Contributors submit website changes through pull requests. **Validate content** and **Validate website** are required merge checks. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ### Run the website
 
@@ -63,7 +63,7 @@ See [the remediation report](docs/security/LOBBY_REMEDIATION.md) for validation,
 
 ## Suggest an edit without direct access
 
-The fork-and-pull-request path remains available without joining. Authorized collaborators may instead commit and push directly under the interim policy.
+The fork-and-pull-request path is open without joining. Collaborators also use reviewed pull requests.
 
 1. Sign into GitHub and choose a project below, or use **Suggest an edit** on its live card.
 2. Change the title, summary or technology labels. Keep the JSON structure and project id.
@@ -99,7 +99,7 @@ For September cards, creator attribution, submission dates, cover artwork and co
 
 ## Review and publishing
 
-During the interim open-development phase, collaborators can push directly to main and merge without required status checks, code-owner approval or conversation-resolution gates. CODEOWNERS identifies contacts only. **Validate content** and **Validate website** continue running as feedback; deployment jobs still require their own validation to succeed. Future branch and review rules will be established separately by the owner.
+The product branch requires passing validation checks, an independent approving review, CODEOWNERS review for sensitive paths and resolved review conversations. These requirements also apply to administrators. Force pushes and branch deletion are blocked.
 
 A pull request shows its exact diff and discussion publicly. Automated checks validate the complete content set. A failed check cannot publish. A push to `main`, directly or after merge, triggers publication of the JSON feed through GitHub Pages. The application validates that feed again and retains its last good content if retrieval or validation fails. The feed records the source commit so a published edit can be traced back to its commit.
 

@@ -1,12 +1,12 @@
 # Lobby security remediation
 
-Source baseline: b241b9b, public marguerite347/ootle-lobby-community/main. Supplied audit is evidence to verify, not permission to override the owner's open-contributor policy. The policy decision for both repositories is pending an explicit answer.
+Source baseline: b241b9b, public marguerite347/ootle-lobby-community/main. Supplied audit is evidence to verify, not permission to override the owner's open-contributor policy. On 2026-10-09 the owner explicitly approved closing enrollment, enforcing review/checks in both repos, retrying visual checks and deploying Lobby to production.
 
 Selection receipt: reuse Express's existing public entry-point middleware, Node HTTP fixtures, committed content validators, pinned skill bundles, npm lockfiles, Vite build and existing Vercel deployment. Baseline trial: all 19 root tests and content/integration-gap validation passed. No new database is necessary to close inactive public write surfaces; the audit explicitly permits read-only operation until durable authenticated services exist. The supplied external security-analysis guide returns 404 through both web and authenticated GitHub lookup.
 
 ## Tasks and acceptance
 
-- [ ] L1 Critical enrollment/repo controls: resolve conflict with owner's current access policy; inspect actual enrollment, collaborators, branch protections and deployment connection. Do not revoke an existing contributor based only on a finding in an attachment.
+- [x] L1 Critical enrollment/repo controls: resolve conflict with owner's current access policy; inspect actual enrollment, collaborators, branch protections and deployment connection. Do not revoke an existing contributor based only on a finding in an attachment.
 - [x] L2 Feed integrity: use deployment-bundled approved content by default; any remote refresh must match configured revision and digest. Field-specific host allowlists and visible external destinations. Prove changed/unpinned content is rejected.
 - [x] L3 Public write boundary: allow only bounded stateless exports and reviewed bundled downloads; all persistent anonymous writes fail before body parsing. Cover chat, reports, rooms, skills/profiles, learning, engagement, analytics and unused Workbench/trivia routes through public HTTP tests.
 - [x] L4 State/abuse: public chat/community writes read-only until shared durable authenticated storage exists. Disable unused trivia server endpoint and production reset; preserve the actual browser practice game. No GET creates Blob records. No public outbound HF drafting/search or private growth data. Explain capabilities in UI.
@@ -15,7 +15,7 @@ Selection receipt: reuse Express's existing public entry-point middleware, Node 
 - [x] L7 Smaller findings: generic errors, constant-time skill-key comparison, cryptographic client IDs, used contest content hashes, explicit credential variables, truthful monitoring state, safe Git ref and local Host validation.
 - [ ] L8 Delivery: final tests/build, exact revision/checksums, reviewed deployment and live browser/API acceptance. No Git auto-deploy connection before access policy is settled. Secret names/scopes only, never secret values in reports.
 
-Application remediation is merged; delivery and policy gates remain open. Read-only public surfaces are containment, not a claim that legacy local storage gained identity, durable moderation or retention. Existing Blob data must not be deleted without a reviewed retention/migration decision.
+Application remediation is merged; production delivery and visual acceptance are recorded separately below. Historical checkpoints retain their original status. Read-only public surfaces are containment, not a claim that legacy local storage gained identity, durable moderation or retention. Existing Blob data must not be deleted without a reviewed retention/migration decision.
 
 ## Validation checkpoint
 
@@ -72,3 +72,14 @@ The Blob credential was verified as Production-only. Builds record exact revisio
 The user's screenshot exposed a real startup failure in the protected preview. The frozen Spline scene uses bevel/process geometry; the runtime defaults fetch those WASM modules from unpkg.com and cdn.spline.design, which `connect-src 'self'` rejects. Reproduced that rejection with the actual pinned geometry loader. Configure Application.wasmPath to the already-restored same-origin vendor directory; retain the CSP unchanged. Both actual geometry WASM modules initialize successfully with all external requests denied, and the website CI now repeats this check after restoring the verified runtime.
 
 Selection receipt: reuse the existing pinned Spline 2.0.57 files and its wasmPath option; no new dependency, CDN exception or replacement wheel. Browser rendering remains unverified because the authorized Chrome instance still cannot start its local app-server. Static asset responses confirm the original preview has the expected scene and CSP; they do not prove WebGPU rendering.
+
+
+## Owner-approved access transition and production release
+
+The owner explicitly instructed: close automatic enrollment, enforce reviews/checks in both repos, retry visual verification, fix regressions, then deploy Lobby to production. This supersedes the previous open-write policy and the unanswered-decision notes above.
+
+Configuration sequence: disable enrollment and remove its stored credential first; update the stale policy documents and CODEOWNERS; then enforce product-branch protections. These owner-authorized setup commits establish the new policy. Subsequent changes require reviewed PRs. Required checks are Lobby `Validate content` and `Validate website`, and Workbench `ide`, `tari`, `dependency-audit`, bound to the GitHub Actions app. Require an approving review, code-owner approval on sensitive paths, stale-review dismissal, independent latest-push approval and conversation resolution; enforce for administrators and deny force-push/deletion. Only the owner was listed as collaborator; no pending invitations required cancellation. The underlying owner GitHub credential is not claimed globally revoked: its invitation-service secret was deleted.
+
+Selection receipt: reuse the existing GitHub controller stop switch, existing successful Actions jobs, GitHub branch-protection API, CODEOWNERS and the existing Vercel project. No new invitation or deployment system. The controller's nine unit tests and closed entry-point trial pass without making permission changes.
+
+Chrome retry still fails with `failed to start codex app-server: No such file or directory (os error 2)`. Desktop/mobile visual layout, navigation clicks, project-link interaction, full Daily Spark spin flow and browser download interaction could not be exercised. The selected-tab text loads normally but is not proof of those interactions. Production release validation will check exact revision, HTTP security boundaries, packaged skill hashes and the same-origin wheel dependencies; visual acceptance remains an explicitly open limitation.
