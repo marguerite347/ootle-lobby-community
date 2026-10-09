@@ -15,7 +15,7 @@ Selection receipt: reuse Express's existing public entry-point middleware, Node 
 - [x] L7 Smaller findings: generic errors, constant-time skill-key comparison, cryptographic client IDs, used contest content hashes, explicit credential variables, truthful monitoring state, safe Git ref and local Host validation.
 - [ ] L8 Delivery: final tests/build, exact revision/checksums, reviewed deployment and live browser/API acceptance. No Git auto-deploy connection before access policy is settled. Secret names/scopes only, never secret values in reports.
 
-This list is in progress. Read-only public surfaces are containment, not a claim that legacy local storage gained identity, durable moderation or retention. Existing Blob data must not be deleted without a reviewed retention/migration decision.
+Application remediation is merged; delivery and policy gates remain open. Read-only public surfaces are containment, not a claim that legacy local storage gained identity, durable moderation or retention. Existing Blob data must not be deleted without a reviewed retention/migration decision.
 
 ## Validation checkpoint
 
@@ -55,3 +55,13 @@ Chrome verification is currently blocked by the extension's local service failin
 Full server sweep: 270/278 passed. The eight failures reproduce on the application-identical baseline (52cf568; b241b9b changes only contribution docs): missing private growth/calendar fixtures, missing Hugging Face .env.example bundle file, stale endpoint contract and preview expectations. They are recorded as pre-existing failures, not suppressed. Required server checks pass. Capture tooling adds four passing tests.
 
 The Blob credential was verified as Production-only. Builds record exact revision and SHA-256 package hashes; CI audits root, Hub and Remotion and runs the full client suite. Integrity artifacts are uploaded only for non-PR runs with revision-specific names. Build hashes establish package identity, not provenance against a malicious repository writer.
+
+
+## Delivery record — 2026-10-09
+
+- Implementation source: `ac1f320bc7e29302d19e1bd79e7e9c8808b6afeb`, merged in [PR #33](https://github.com/marguerite347/ootle-lobby-community/pull/33) as `f4cec6156a1dead0ad7ad93164b8601bce4395ed`. Trees match.
+- [Clean PR CI](https://github.com/marguerite347/ootle-lobby-community/actions/runs/37988890602) passed both Validate content and Validate website. Pages publishing correctly skipped on the PR.
+- Vercel built source `ac1f320` successfully as deployment `dpl_8e9P8uDNfRD4M7P6kXG2byBgerq5`: [protected preview](https://ootle-lobby-preview-m664b3yq8-peekaboo4.vercel.app). The actual app TypeScript/Vite build passed. Vercel's separate function packager printed type-resolution diagnostics for copied Remotion and skill-example TSX files that are not installed as function dependencies; it nevertheless completed and marked the deployment Ready. No claim that every copied example typechecks is made.
+- Production has not been changed in this delivery. Promotion is awaiting the owner's answer to the explicit production question; the deployment skill requires an explicit production request.
+- Rendered desktop/mobile and real-input checks remain blocked: Chrome's selected instance returns `failed to start codex app-server: No such file or directory (os error 2)`. No alternate browser/runtime was used. Preview runtime/API acceptance is not claimed from build readiness alone.
+- Open-contributor policy remains unchanged pending the earlier question. Until that decision is made, Critical 1 is still open even though mutable-feed and anonymous-runtime instruction paths are contained.
