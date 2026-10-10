@@ -25,6 +25,7 @@ export function createCommunityRouter({
   store,
   origin,
   oauth,
+  invites,
   preview = false,
   previewAccount = "github-1",
   fetcher = fetch,
@@ -69,6 +70,7 @@ export function createCommunityRouter({
       configured,
       preview,
       signIn: configured && !!oauth?.clientId,
+      invitations: configured && !!invites?.secret,
       platforms: ["telegram", "discord", "slack"],
       externalConnected: false,
     }),
@@ -118,6 +120,17 @@ export function createCommunityRouter({
         await store.createSession(previewAccount, token);
         res.cookie(cookieName, token, cookieOptions);
         res.json({ account: await store.account(previewAccount) });
+      }),
+    );
+  if (invites?.secret)
+    router.post(
+      "/invitations/redeem",
+      wrap(async (req, res) => {
+        await store.rateLimit("invite:" + createHmac("sha256", invites.secret).update(req.ip || "unknown").digest("hex"));
+        const token = randomBytes(32).toString("hex");
+        const account = await store.redeemInvitation(req.body.token, req.body.name, token);
+        res.cookie(cookieName, token, cookieOptions);
+        res.json({ account });
       }),
     );
   router.get(

@@ -123,6 +123,13 @@ export default function Community({
   const [reporting, setReporting] = useState<Message | null>(null),
     [reason, setReason] = useState(""),
     [reports, setReports] = useState<Report[]>([]);
+  const [inviteToken, setInviteToken] = useState(() => new URLSearchParams(window.location.hash.slice(1)).get("invite") || ""),
+    [inviteName, setInviteName] = useState(""),
+    [joining, setJoining] = useState(false);
+  useEffect(() => {
+    if (new URLSearchParams(window.location.hash.slice(1)).has("invite"))
+      window.history.replaceState(window.history.state, "", window.location.pathname + window.location.search);
+  }, []);
   const [lastRead, setLastRead] = useState<Record<string, string>>({});
   const [messageMenu, setMessageMenu] = useState<string | null>(null);
   const draftRef = useRef<HTMLTextAreaElement>(null),
@@ -321,6 +328,19 @@ export default function Community({
     setStatus("");
     setError("");
     setMobileNav(false);
+  }
+  async function joinInvitation(event: FormEvent) {
+    event.preventDefault();
+    if (joining) return;
+    setJoining(true);
+    try {
+      const result = await chatApi<{ account: Account }>("/invitations/redeem", { token: inviteToken.trim(), name: inviteName.trim() });
+      setAccount(result.account);
+      setInviteToken("");
+      setError("");
+    } catch (e) {
+      setError((e as Error).message);
+    } finally { setJoining(false); }
   }
   async function previewLogin() {
     try {
@@ -687,6 +707,14 @@ export default function Community({
                 >
                   Enter the local preview <Glyph name="arrow" />
                 </button>
+              ) : capabilities?.invitations ? (
+                <form className="cc-invitation" onSubmit={(event) => void joinInvitation(event)}>
+                  <p>Join the shared test with your own invitation.</p>
+                  <label>Your name<input autoComplete="nickname" value={inviteName} onChange={(e) => setInviteName(e.target.value)} maxLength={40} required /></label>
+                  <label>Invitation code<input type="password" autoComplete="off" value={inviteToken} onChange={(e) => setInviteToken(e.target.value)} required /></label>
+                  <button className="cc-primary" disabled={joining || !inviteName.trim() || !inviteToken.trim()}>{joining ? "Joining…" : "Join the conversation"}<Glyph name="arrow" /></button>
+                  <small>Each invitation works once. This browser stays signed in for 7 days.</small>
+                </form>
               ) : capabilities?.signIn ? (
                 <a
                   className="cc-primary"

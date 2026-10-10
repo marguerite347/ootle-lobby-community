@@ -466,3 +466,48 @@ test("OAuth binds the callback to a one-time browser state and PKCE before creat
     );
   }
 });
+
+test("shared invitations create separate identities, expire, and cannot be replayed or escalate roles", async (t) => {
+  const db = new PGlite();
+  await installSchema(db);
+  const store = createChatStore(db);
+  const app = express(), server = app.listen(0, "127.0.0.1");
+  await new Promise((r) => server.once("listening", r));
+  const base = "http://127.0.0.1:" + server.address().port;
+  app.use("/api/chat", createCommunityRouter({store, origin: base, invites: {secret: "test-invite-secret"}}));
+  t.after(async () => { server.closeAllConnections(); server.close(); await db.close(); });
+  for (const [token, role] of [["1".repeat(64), "owner"], ["2".repeat(64), "member"], ["3".repeat(64), "member"]])
+    await store.createInvitation({token, name: "Tester", role, expiresAt: new Date(Date.now()+86400000).toISOString()});
+  const join = (token, name, headers = {}) => fetch(base+"/api/chat/invitations/redeem", {method:"POST", headers:{"Content-Type":"application/json", "Origin":base, "X-Ootle-Chat":"1", ...headers}, body:JSON.stringify({token,name,role:"owner",accountId:"forged"})});
+  assert.equal((await join("1".repeat(64), "A", {Origin:"https://other.example"})).status,403);
+  assert.equal((await join("1".repeat(64), "")).status,400);
+  const owner = await join("1".repeat(64), "Test owner");
+  const ownerAccount = (await owner.json()).account;
+  assert.equal(ownerAccount.role,"owner");
+  assert.match(owner.headers.get("set-cookie"), /HttpOnly/);
+  assert.match(owner.headers.get("set-cookie"), /Secure/);
+  const cookieA=owner.headers.get("set-cookie").split(";")[0];
+  assert.equal((await join("1".repeat(64), "Replay")).status,401);
+  const concurrent = await Promise.all([join("2".repeat(64), "Tester B"), join("2".repeat(64), "Tester B")]);
+  assert.deepEqual(concurrent.map(r=>r.status).sort(),[200,401]);
+  const member = concurrent.find(r=>r.status===200);
+  const memberAccount=(await member.json()).account;
+  assert.equal(memberAccount.role,"member");
+  assert.notEqual(memberAccount.id,ownerAccount.id);
+  const cookieB=member.headers.get("set-cookie").split(";")[0];
+  const post = (cookie, body) => fetch(base+"/api/chat/messages", {method:"POST", headers:{Origin:base,"X-Ootle-Chat":"1","Content-Type":"application/json",Cookie:cookie},body:JSON.stringify({channelId:"lobby",body,clientId:body.replaceAll(" ", "-"),accountId:ownerAccount.id})});
+  const sentA=await post(cookieA,"Owner test message");
+  assert.equal(sentA.status,201);
+  const sentB=await post(cookieB,"Member test message");
+  assert.equal(sentB.status,201);
+  assert.equal((await sentB.json()).message.account_id,memberAccount.id);
+  for (const cookie of [cookieA,cookieB]) {
+    const response=await fetch(base+"/api/chat/channels/lobby/messages",{headers:{Cookie:cookie}});
+    assert.equal((await response.json()).messages.length,2);
+  }
+  assert.equal((await fetch(base+"/api/chat/channels/lobby/messages")).status,401);
+  await db.query("UPDATE community_chat.invitations SET expires_at=now()-interval '1 day' WHERE redeemed_at IS NULL");
+  assert.equal((await join("3".repeat(64),"Expired")).status,401);
+  const invitations=(await db.query("SELECT digest FROM community_chat.invitations")).rows;
+  assert.ok(invitations.every(r=>!["1".repeat(64),"2".repeat(64)].includes(r.digest)));
+});

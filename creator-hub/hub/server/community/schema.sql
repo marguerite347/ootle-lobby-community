@@ -11,6 +11,12 @@ CREATE TABLE IF NOT EXISTS community_chat.sessions (
  digest text PRIMARY KEY, account_id text NOT NULL REFERENCES community_chat.accounts,
  expires_at timestamptz NOT NULL
 );
+CREATE TABLE IF NOT EXISTS community_chat.invitations (
+ digest text PRIMARY KEY, name text NOT NULL,
+ role text NOT NULL DEFAULT 'member' CHECK(role IN ('member','moderator','owner')),
+ expires_at timestamptz NOT NULL, redeemed_at timestamptz,
+ account_id text REFERENCES community_chat.accounts
+);
 CREATE TABLE IF NOT EXISTS community_chat.login_states (
  digest text PRIMARY KEY, verifier text NOT NULL, expires_at timestamptz NOT NULL
 );
@@ -59,6 +65,7 @@ CREATE TABLE IF NOT EXISTS community_chat.audit (
 ALTER TABLE community_chat.accounts ENABLE ROW LEVEL SECURITY;
 ALTER TABLE community_chat.sessions ENABLE ROW LEVEL SECURITY;
 ALTER TABLE community_chat.login_states ENABLE ROW LEVEL SECURITY;
+ALTER TABLE community_chat.invitations ENABLE ROW LEVEL SECURITY;
 ALTER TABLE community_chat.rate_limits ENABLE ROW LEVEL SECURITY;
 ALTER TABLE community_chat.channels ENABLE ROW LEVEL SECURITY;
 ALTER TABLE community_chat.channel_members ENABLE ROW LEVEL SECURITY;

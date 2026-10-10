@@ -82,6 +82,43 @@ export function createChatStore(db) {
       );
       return publicAccount(await actor(db, id));
     },
+    // Operator-only issuance. No public endpoint may choose an invitation role.
+    async createInvitation({ token, name, role = "member", expiresAt }) {
+      if (!/^[a-f0-9]{64}$/.test(token) || !["member", "moderator", "owner"].includes(role))
+        reject("Invalid invitation.");
+      const label = text(name, 40);
+      if (!label || label.length > 40 || !Number.isFinite(Date.parse(expiresAt)) || Date.parse(expiresAt) <= Date.now())
+        reject("Choose a name and future invitation expiry.");
+      await db.query(
+        "INSERT INTO community_chat.invitations(digest,name,role,expires_at) VALUES($1,$2,$3,$4)",
+        [digest(token), label, role, expiresAt],
+      );
+    },
+    async redeemInvitation(token, name, sessionToken) {
+      const invalid = () => reject("This invitation has expired or has already been used. Ask for a new invitation.", 401);
+      if (typeof token !== "string" || !/^[a-f0-9]{64}$/.test(token)) invalid();
+      const label = text(name, 40);
+      if (!label || label.length > 40) reject("Enter a display name of 1–40 characters.");
+      return db.transaction(async (q) => {
+        const { rows } = await q.query(
+          "SELECT * FROM community_chat.invitations WHERE digest=$1 AND expires_at>now() AND redeemed_at IS NULL FOR UPDATE",
+          [digest(token)],
+        );
+        const invitation = rows[0];
+        if (!invitation) invalid();
+        const id = "invite-" + randomUUID();
+        await q.query(
+          "INSERT INTO community_chat.accounts(id,provider_id,name,role) VALUES($1,$1,$2,$3)",
+          [id, label, invitation.role],
+        );
+        await q.query(
+          "INSERT INTO community_chat.sessions(digest,account_id,expires_at) VALUES($1,$2,now()+interval '7 days')",
+          [digest(sessionToken), id],
+        );
+        await q.query("UPDATE community_chat.invitations SET redeemed_at=now(),account_id=$2 WHERE digest=$1", [digest(token), id]);
+        return { id, name: label, role: invitation.role };
+      });
+    },
     async session(token) {
       if (typeof token !== "string" || !/^[a-f0-9]{64}$/.test(token))
         return null;

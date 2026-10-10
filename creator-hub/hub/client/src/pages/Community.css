@@ -1234,3 +1234,12 @@
     transition: none !important;
   }
 }
+
+.cc-invitation { display: grid; gap: 0.8rem; width: min(100%, 22rem); text-align: left; flex-shrink: 0; }
+.cc-invitation p { margin: 0; color: var(--cc-muted); }
+.cc-invitation label { display: grid; gap: 0.3rem; font-size: 0.8rem; }
+.cc-invitation input { width: 100%; min-width: 0; box-sizing: border-box; border: 1px solid var(--cc-line); border-radius: 0.5rem; padding: 0.7rem; background: var(--cc-panel); color: var(--cc-text); }
+.cc-invitation small { color: var(--cc-muted); font-size: 0.75rem; }
+.is-embedded .cc-welcome:has(.cc-invitation) { justify-content: flex-start; padding-top: 1.25rem; }
+.is-embedded .cc-welcome:has(.cc-invitation) > p,
+.is-embedded .cc-welcome:has(.cc-invitation) > .cc-eyebrow { display: none; }

@@ -35,6 +35,7 @@ export type Capabilities = {
   configured: boolean;
   preview: boolean;
   signIn: boolean;
+  invitations?: boolean;
   platforms: string[];
   externalConnected: boolean;
 };
