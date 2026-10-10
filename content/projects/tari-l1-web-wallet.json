@@ -11,5 +11,7 @@
       "label": "Ootle SDK",
       "sourceUrl": "https://github.com/chironbuilds/tari-l1-wallet-ui/blob/935ffe4696f366cd63ee805e410a5c623c7f2e50/README.md"
     }
-  ]
+  ],
+  "cardSummary": "Manage Tari L1 and Ootle accounts in a browser wallet with a burn-and-claim workflow.",
+  "cardStatus": "Runtime not verified"
 }

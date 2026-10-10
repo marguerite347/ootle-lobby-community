@@ -7,5 +7,7 @@
       "label": "Tari L1 WASM",
       "sourceUrl": "https://github.com/solvetony/outruna/blob/bf5726e083b9011801b22214233b788f57d30bd0/package.json"
     }
-  ]
+  ],
+  "cardSummary": "Manage Tari mainnet and other network accounts in a wallet with locally held Tari keys.",
+  "cardStatus": "Runtime not verified"
 }

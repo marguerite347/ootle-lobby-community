@@ -33,5 +33,7 @@
     "reviewedAt": "2026-10-04T16:02:52.616125Z",
     "sha256": "a220335f5c7c1969fcd325b8247b39151e96f16803d1f4895534a6f70ba75e57"
   },
-  "officialSource": "https://ootle.tari.com/guides/build-a-guessing-game/"
+  "officialSource": "https://ootle.tari.com/guides/build-a-guessing-game/",
+  "cardSummary": "Start Ootle apps with official Rust templates for games, tokens, NFTs, swaps and counters.",
+  "cardStatus": "Official source templates"
 }

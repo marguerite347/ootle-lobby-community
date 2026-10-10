@@ -1,6 +1,6 @@
 import {useEffect,useState} from 'react';
 export const COMMUNITY_REPOSITORY = 'https://github.com/marguerite347/ootle-lobby-community';
-export type CommunityProject = {id:string;title:string;summary:string;technologies:{label:string;sourceUrl:string}[]};
+export type CommunityProject = {id:string;title:string;summary:string;cardSummary?:string;cardStatus?:string;technologies:{label:string;sourceUrl:string}[]};
 export function projectEditUrl(id:string) {
   return `${COMMUNITY_REPOSITORY}/edit/main/content/projects/${encodeURIComponent(id.replace('tari-ootle:app:',''))}.json`;
 }

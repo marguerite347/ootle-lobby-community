@@ -1,7 +1,7 @@
 import {requireLinkHost} from './safeLinks.mjs';
 import {validateCommunityProjects} from './communityProjects.mjs';
 import {validateContests} from './contestContentValidation.mjs';
-const FIELDS = ['id', 'title', 'summary', 'technologies'];
+const FIELDS = ['id', 'title', 'summary','cardSummary','cardStatus', 'technologies'];
 function text(value, label, max) {
   if (typeof value !== 'string' || !value.trim() || value.length > max || /[<>\u0000-\u0008]/.test(value)) {
     throw new Error(`${label} must be nonempty plain text, at most ${max} characters.`);
@@ -21,7 +21,7 @@ export function validateProjects(projects) {
     if (!/^tari-ootle:app:[a-z0-9-]+$/.test(project.id) || ids.has(project.id)) throw new Error('Invalid or duplicate project id.');
     ids.add(project.id);
     text(project.title, 'Title', 100);
-    text(project.summary, 'Summary', 1500);
+    text(project.summary, 'Summary', 1500);if(project.cardSummary!==undefined)text(project.cardSummary,'Card summary',160);if(project.cardStatus!==undefined)text(project.cardStatus,'Card status',80);
     if (!Array.isArray(project.technologies) || project.technologies.length < 1 || project.technologies.length > 6) throw new Error('Expected 1–6 technology labels.');
     const labels = new Set();
     for (const technology of project.technologies) {

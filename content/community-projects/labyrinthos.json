@@ -31,5 +31,7 @@
     "reviewedAt": "2026-10-04T16:02:52.616125Z",
     "sha256": "848f0d34228f08625ca4fac8219d2826e94e69ed20956867b1282457ba28e860"
   },
-  "demoUrl": "https://labyrinthos.markets/"
+  "demoUrl": "https://labyrinthos.markets/",
+  "cardSummary": "Explore a private lending and payments experiment built around bearer-token positions on Ootle.",
+  "cardStatus": "Experiment \u00b7 Availability unverified"
 }

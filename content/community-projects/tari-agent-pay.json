@@ -39,5 +39,7 @@
     "capturedAt": "2026-10-04T16:02:52.616125Z",
     "reviewedAt": "2026-10-04T16:02:52.616125Z",
     "sha256": "0c36741d8be2c4c699a98bc382963056c0977b3105965824d4def046de2d48bf"
-  }
+  },
+  "cardSummary": "Explore payment policies, approval queues and a web console for AI agents using Ootle.",
+  "cardStatus": "Source only \u00b7 Runtime unverified"
 }

@@ -40,5 +40,7 @@
     "reviewedAt": "2026-10-04T16:02:52.616125Z",
     "sha256": "523cd58aa8b14ddd183bc719e1dc3070d6ca6c9364c65c870d5162ba68e34876"
   },
-  "demoUrl": "https://feeltherevolt-xehqj-studio.wp.build/"
+  "demoUrl": "https://feeltherevolt-xehqj-studio.wp.build/",
+  "cardSummary": "Follow community guides for Ootle wallets, templates, publishing and transactions.",
+  "cardStatus": "Community guides"
 }

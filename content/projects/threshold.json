@@ -11,5 +11,7 @@
       "label": "Stealth escrow",
       "sourceUrl": "https://github.com/Seal-Clubber/Threshold/blob/4ccfd91688a3124c634436282f3aa25b873d9fe3/crates/threshold-template/src/lib.rs"
     }
-  ]
+  ],
+  "cardSummary": "Coordinate community funding with sponsor matching, milestones and reviewer approvals.",
+  "cardStatus": "Runtime not verified"
 }

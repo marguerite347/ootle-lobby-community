@@ -22,5 +22,7 @@
     "sourceRevision": "abe3b49775f9ecb8508b4d40de60a8791b2ac249",
     "kind": "public-page",
     "credit": "Source/docs walkthrough \u2014 application not demonstrated"
-  }
+  },
+  "cardSummary": "Inspect and convert Tari addresses with an offline Python toolkit.",
+  "cardStatus": "Source only \u00b7 Runtime untested"
 }

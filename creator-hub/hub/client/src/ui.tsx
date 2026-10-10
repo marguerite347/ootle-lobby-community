@@ -171,7 +171,8 @@ export function ResourceCard({ r, dimensionLabel }: { r: Resource; dimensionLabe
         <ReadinessBadge r={r} />
       </div>
       <h3>{r.title}</h3>
-      <p className="summary">{r.summary || r.category || 'No description imported yet — open to see source links.'}</p>
+      <p className={r.cardSummary ? "card-front-summary" : "summary"}>{r.cardSummary || r.summary || r.category || 'No description imported yet — open to see source links.'}</p>
+      {r.cardStatus && <p className="card-front-status"><strong>{r.cardStatus}</strong></p>}
       <div className="foot">
         {r.creator?.name && <span>by {r.creator.name}</span>}
         <StarButton kind="resource" id={r.id} initialStars={r.engagement?.stars ?? 0} />

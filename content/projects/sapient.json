@@ -11,5 +11,7 @@
       "label": "CipherSeed",
       "sourceUrl": "https://github.com/chironbuilds/tari-wallet/blob/f2f48bf1ef9a938afc0eb5e92a04255eab7784a5/README.md"
     }
-  ]
+  ],
+  "cardSummary": "Manage Tari Ootle accounts through a self-custody browser wallet.",
+  "cardStatus": "Community wallet"
 }

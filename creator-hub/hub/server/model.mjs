@@ -58,6 +58,8 @@ export function makeResource(input) {
     native: ECOSYSTEMS[ecosystem].native,
 
     title: input.title,
+    cardSummary: input.cardSummary || null,
+    cardStatus: input.cardStatus || null,
     summary: input.summary || null, // concise imported/source-attested purpose
     audience: input.audience || null,
 
