@@ -8,6 +8,7 @@ const projects=readCommunityProjects(new URL('../',import.meta.url));
 test('reviewed community media is committed and matches its recorded digest',()=>{
  assert.ok(projects.some(p=>p.section==='official'));assert.ok(projects.some(p=>p.slug==='liquidity'));
  for(const p of projects){
+  if(p.media===null)continue; // Source-only listings explicitly allow no recording.
   const bytes=readFileSync(new URL(`../creator-hub/hub/data/seed${p.media.video}`,import.meta.url));
   assert.equal(createHash('sha256').update(bytes).digest('hex'),p.media.sha256);
   assert.ok(readFileSync(new URL(`../creator-hub/hub/data/seed${p.media.image}`,import.meta.url)).length>100);

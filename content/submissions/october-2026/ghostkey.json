@@ -1,0 +1,18 @@
+{
+  "slug": "ghostkey",
+  "title": "GhostKey",
+  "summary": "Offline Python tools for inspecting Tari addresses. The author describes address encoding, validation and key generation. Source reviewed; code not executed or independently audited. Python scalar math is not constant-time.",
+  "creator": "ghostxtm",
+  "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/6",
+  "repoUrl": "https://github.com/Alex20Sas12/ghostkey",
+  "publishedAt": "2026-10-08T19:36:01.053Z",
+  "updatedAt": "2026-10-10T00:42:45.647Z",
+  "sourceContentSha256": "fb024c461e524ec9df799b8e22cbee061a387b180af5b572e3efff6d514ebf7d",
+  "technologies": [
+    {
+      "label": "Python \u00b7 MIT source",
+      "sourceUrl": "https://github.com/Alex20Sas12/ghostkey/blob/abe3b49775f9ecb8508b4d40de60a8791b2ac249/ghostkey.py"
+    }
+  ],
+  "ecosystem": "tari"
+}

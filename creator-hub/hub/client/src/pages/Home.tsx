@@ -1,4 +1,5 @@
 import {OfficialProjects} from '../components/ExternalCommunityProjects';
+import EcosystemResources from '../components/EcosystemResources';
 import PublicationGallery from '../workbench/PublicationGallery';
 import {useEffect} from 'react';
 import {Link, useLocation} from 'react-router-dom';
@@ -28,6 +29,7 @@ export default function Home() {
     <OctoberSubmissions/>
     <div id="community-entries"><ContestProjects/></div>
     <PublicationGallery destination="community" section/><OfficialProjects/>
+    <EcosystemResources/>
     <section className="season-community" id="creator-community">
       <div className="season-community-copy">
         <h2>Brew something<br/>brilliant.</h2>
