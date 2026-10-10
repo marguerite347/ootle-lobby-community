@@ -1329,3 +1329,73 @@
 .is-embedded .cc-welcome:has(.cc-invitation) { justify-content: flex-start; padding-top: 1.25rem; }
 .is-embedded .cc-welcome:has(.cc-invitation) > p,
 .is-embedded .cc-welcome:has(.cc-invitation) > .cc-eyebrow { display: none; }
+
+/* Chatscope display primitives, themed for the Lobby. Input and viewport retain
+   the existing plain-text, IME and unread-state behavior. */
+.community-app { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; --cc-muted: #a7a4b1; }
+.cc-conversation-header { min-height: 3.75rem; }
+.cc-connection-status { display: flex; align-items: center; gap: .35rem; font-size: .75rem; color: var(--cc-muted); margin-top: .1rem; }
+.cc-connection-status i { width: .4rem; height: .4rem; border-radius: 50%; background: #d7aa64; }
+.cc-connection-status[data-state="Connected"] i { background: #93cda7; }
+.cc-conversation-header p { display: none; }
+.cc-channel-intro { padding: 1rem 0; }
+.cc-message-tools { padding-top: .2rem; padding-bottom: .2rem; }
+.cc-message-tools > span { font-size: .6875rem; }
+.cc-message-tools input { font-size: .875rem; }
+.cc-messages { overflow-anchor: none; }
+.cc-message { gap: .65rem; padding: .65rem 2.5rem .15rem .25rem; border-radius: .35rem; }
+.cc-message:hover { background: #ffffff04; }
+.cc-message.is-grouped { padding-top: .05rem; }
+.cc-avatar-slot { flex: 0 0 2rem; width: 2rem; }
+.cc-avatar-slot .cc-avatar { width: 2rem; height: 2rem; border-radius: 50%; font-size: .7rem; }
+.cc-group-time { display: none; font-size: .6rem; color: var(--cc-muted); padding-top: .3rem; white-space: nowrap; }
+.is-grouped .cc-avatar { display: none; }
+.is-grouped .cc-group-time { display: block; opacity: 0; }
+.is-grouped:hover .cc-group-time, .is-grouped:focus-within .cc-group-time { opacity: 1; }
+.community-app .cc-kit-message { flex: 1; min-width: 0; margin: 0; padding: 0; font: inherit; color: inherit; overflow: visible; }
+.community-app .cc-kit-message .cs-message__content-wrapper { width: 100%; max-width: 100%; min-width: 0; }
+.community-app .cc-message .cc-kit-message .cs-message__content { background: transparent; border: 0; padding: 0; border-radius: 0; color: inherit; font: inherit; }
+.community-app .cc-kit-message .cc-message-meta { display: flex; justify-content: flex-start; gap: .45rem; padding: 0; margin: 0; color: inherit; min-height: 1.4rem; line-height: 1.4; }
+.community-app .is-grouped .cc-message-meta { display: none; }
+.community-app .cc-message-body { font-size: 1rem; line-height: 1.5; margin: .1rem 0 0 !important; color: #e0dde6; }
+.cc-message-meta time { font-size: .75rem; color: var(--cc-muted); }
+.cc-message-meta strong { font-size: .875rem; overflow-wrap: anywhere; }
+.cc-message-more { position: absolute; right: -.25rem; top: .2rem; z-index: 1; }
+.cc-message-actions { z-index: 3; top: -1.8rem; right: 0; box-shadow: 0 3px 10px #0005; pointer-events: none; }
+.cc-message:hover .cc-message-actions, .cc-message:focus-within .cc-message-actions, .cc-message-actions[data-open="true"] { pointer-events: auto; }
+.cc-message-actions button { font-size: 1.2rem; }
+.community-app .cc-date-divider { background: none; font-size: .75rem; color: #b7b2c0; margin: 1.1rem 0 .5rem; padding: 0; }
+.community-app .cc-date-divider::before, .community-app .cc-date-divider::after { background: var(--cc-line); }
+.cc-load-older { display: block; width: 100%; min-height: 2.75rem; color: var(--cc-accent) !important; font-size: .875rem !important; }
+.cc-reactions { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .25rem; }
+.cc-reactions button { display: inline-flex; align-items: center; gap: .35rem; min-height: 2.25rem; min-width: 2.75rem; padding: .2rem .55rem; border: 1px solid var(--cc-line); border-radius: 1rem; background: #ffffff06; font-size: .875rem; }
+.cc-reactions button[aria-pressed="true"] { border-color: var(--cc-accent); background: #c4a8ff1c; color: var(--cc-accent); }
+.cc-reaction-picker { display: flex; flex-wrap: wrap; gap: .15rem; background: var(--cc-panel); border: 1px solid var(--cc-line); border-radius: .6rem; padding: .3rem; margin-top: .3rem; }
+.cc-reaction-picker button { min-width: 2.75rem; min-height: 2.75rem; font-size: 1.2rem; border-radius: .4rem; }
+.cc-reaction-picker button:hover { background: #ffffff14; }
+.cc-replies { font-size: .8125rem !important; min-height: 2.25rem; gap: .35rem; padding: .15rem 0 !important; }
+.cc-replies span { display: none; }
+.cc-composer-area, .is-embedded .cc-composer-area { padding: .35rem .75rem .25rem; }
+.cc-composer { display: flex; align-items: flex-end; background: #27222f; border-color: #443b50; border-radius: .8rem; }
+.cc-composer textarea, .is-embedded .cc-composer textarea { flex: 1; min-width: 0; min-height: 2.9rem; max-height: 10rem; resize: none; box-sizing: border-box; padding: .75rem .85rem; line-height: 1.4; font-size: 1rem; }
+.cc-composer textarea::placeholder { color: #b2aaba; }
+.cc-composer-bottom { padding: .25rem; flex: 0 0 auto; }
+.cc-composer-tip { display: none; }
+.cc-send { margin: 0; border-radius: .6rem !important; }
+.cc-typing { min-height: 1.5rem; font-size: .75rem; }
+.community-app .cs-typing-indicator { background: none; padding: 0; font-size: .75rem; }
+.community-app .cs-typing-indicator__text { color: var(--cc-accent); }
+.community-app .cs-typing-indicator__dot { background: var(--cc-accent); }
+.cc-composer-foot { align-items: center; padding: .15rem 0 0; font-size: .75rem; min-height: 2.75rem; }
+.cc-composer-foot > span { color: var(--cc-muted); }
+.cc-profile-button { display: inline-flex; align-items: center; gap: .4rem; min-height: 2.75rem; max-width: 75%; padding: 0 .2rem; font-size: .8125rem !important; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.cc-profile-dot { width: .4rem; height: .4rem; border-radius: 50%; background: var(--cc-accent); flex-shrink: 0; }
+.cc-reply-context { color: var(--cc-accent); font-size: .8125rem; padding: .5rem .25rem; }
+.cc-reply-context > span { min-width: 0; flex: 1; }
+.cc-reply-context small { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--cc-muted); font-size: .8125rem; }
+@media (hover: none) { .cc-reactions button { min-height: 2.75rem; } }
+@container community (min-width: 1280px) {
+  .community-app { grid-template-columns: 4.25rem 15.5rem minmax(0, 1fr); }
+  .cc-about { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .community-app .cs-typing-indicator__dot { animation: none !important; } }

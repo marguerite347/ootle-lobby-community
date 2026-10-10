@@ -8,6 +8,10 @@ export function createMessageViewport() {
 
   return {
     get following() { return following; },
+    prepend(ids: string[]) {
+      for (const id of ids) known.add(id);
+      following = false;
+    },
     follow() {
       following = true;
       unread.clear();

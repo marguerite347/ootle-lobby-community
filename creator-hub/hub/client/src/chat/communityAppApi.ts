@@ -23,6 +23,8 @@ export type Message = {
   platform: string;
   created_at: string;
   reply_count: number;
+  cursor_at?: string;
+  reactions?: Array<{ emoji: string; count: number; mine: boolean }>;
   deliveries: Array<{
     id: string;
     channel_id: string;
@@ -66,7 +68,7 @@ export async function chatApi<T>(
   });
   const result = await response.json();
   if (!response.ok)
-    throw new Error(result.error || "Chat could not complete that request.");
+    throw Object.assign(new Error(result.error || "Chat could not complete that request."), { status: response.status });
   return result;
 }
 export function draftKey(account: string, channel: string, thread?: string) {

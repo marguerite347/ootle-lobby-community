@@ -676,3 +676,70 @@ test("typing endpoints require a session and exact-origin CSRF checks", async (t
   await db.query("UPDATE community_chat.rate_limits SET count=1200 WHERE key=$1", ["typing:"+guest.id]);
   assert.equal((await fetch(base+"/api/chat/typing", {method: "POST", headers, body})).status, 429);
 });
+
+test("history cursors keep timestamp ties and threads survive the channel window", async (t) => {
+  const db = new PGlite(); t.after(() => db.close()); await installSchema(db);
+  const store = createChatStore(db); await store.login({id:1,login:"owner"},{ownerId:"1"});
+  await db.query(`INSERT INTO community_chat.messages(id,channel_id,account_id,author_name,body,created_at)
+    SELECT 'history-'||lpad(i::text,4,'0'),'lobby','github-1','owner','History '||i,'2026-10-09 12:00:00.123456+00' FROM generate_series(1,125) i`);
+  const first = await store.messagePage("github-1","lobby",{rootsOnly:true});
+  assert.equal(first.messages.length,100); assert.equal(first.hasMore,true);
+  const cursor = first.messages[0];
+  const older = await store.messagePage("github-1","lobby",{rootsOnly:true,before:cursor.cursor_at,beforeId:cursor.id});
+  assert.equal(older.messages.length,25); assert.equal(older.hasMore,false);
+  assert.equal(new Set([...first.messages,...older.messages].map(m=>m.id)).size,125);
+  await db.query(`INSERT INTO community_chat.messages(id,channel_id,account_id,author_name,body,parent_id)
+    SELECT 'reply-'||lpad(i::text,4,'0'),'lobby','github-1','owner','Reply '||i,'history-0001' FROM generate_series(1,110) i`);
+  const thread = await store.messagePage("github-1","lobby",{parentId:"history-0001"});
+  assert.equal(thread.parent.id,"history-0001"); assert.equal(thread.messages.length,100); assert.equal(thread.hasMore,true);
+  const replyCursor=thread.messages[0];
+  const oldReplies=await store.messagePage("github-1","lobby",{parentId:"history-0001",before:replyCursor.cursor_at,beforeId:replyCursor.id});
+  assert.equal(new Set([...thread.messages,...oldReplies.messages].map(m=>m.id)).size,110);
+  await assert.rejects(()=>store.messagePage("github-1","builders",{parentId:"history-0001"}),{status:404});
+  await store.moderate("github-1","history-0001","hide");
+  await assert.rejects(()=>store.messagePage("github-1","lobby",{parentId:"history-0001"}),{status:404});
+  await assert.rejects(()=>store.messagePage("github-1","lobby",{before:"invalid"}),{status:400});
+});
+
+test("reactions are durable, identity-bound, idempotent and permission-scoped", async(t)=> {
+  const db=new PGlite(); t.after(()=>db.close()); await installSchema(db);
+  const store=createChatStore(db); await store.login({id:1,login:"owner"},{ownerId:"1"}); await store.login({id:2,login:"member"},{allowedIds:["2"]});
+  const message=await store.send("github-1",{channelId:"lobby",body:"React here",clientId:"reaction-test-0001"});
+  await store.setReaction("github-2",message.id,{emoji:"👍",active:true});
+  await store.setReaction("github-2",message.id,{emoji:"👍",active:true});
+  await store.setReaction("github-1",message.id,{emoji:"👍",active:true});
+  const reopened=createChatStore(db);
+  assert.deepEqual((await reopened.messages("github-2","lobby"))[0].reactions,[{emoji:"👍",count:2,mine:true}]);
+  await store.setReaction("github-2",message.id,{emoji:"👍",active:false});
+  await store.setReaction("github-2",message.id,{emoji:"👍",active:false});
+  assert.deepEqual((await reopened.messages("github-2","lobby"))[0].reactions,[{emoji:"👍",count:1,mine:false}]);
+  await assert.rejects(()=>store.setReaction("github-2",message.id,{emoji:"unsupported",active:true}),{status:400});
+  await assert.rejects(()=>store.setReaction("github-2",message.id,{emoji:"👍",active:"true"}),{status:400});
+  await db.query("UPDATE community_chat.channels SET visibility='restricted' WHERE id='lobby'");
+  await assert.rejects(()=>store.setReaction("github-2",message.id,{emoji:"👍",active:true}),{status:404});
+  await db.query("INSERT INTO community_chat.channel_members VALUES('lobby','github-1')");
+  await store.moderate("github-1",message.id,"hide");
+  await assert.rejects(()=>store.setReaction("github-1",message.id,{emoji:"👍",active:true}),{status:404});
+  await db.query("UPDATE community_chat.accounts SET blocked=true WHERE id='github-2'");
+  await assert.rejects(()=>store.setReaction("github-2",message.id,{emoji:"👍",active:true}),{status:401});
+  await db.exec("CREATE ROLE chat_reaction_reader; GRANT USAGE ON SCHEMA community_chat TO chat_reaction_reader; GRANT SELECT ON community_chat.reactions TO chat_reaction_reader; SET ROLE chat_reaction_reader;");
+  assert.deepEqual((await db.query("SELECT * FROM community_chat.reactions")).rows,[]);
+});
+
+test("reaction HTTP writes enforce the existing session, origin, header and shared rate limit", async(t)=> {
+  const db=new PGlite(); t.after(()=>db.close()); await installSchema(db);
+  const store=createChatStore(db); await store.login({id:1,login:"owner"},{ownerId:"1"});
+  const message=await store.send("github-1",{channelId:"lobby",body:"HTTP reaction",clientId:"http-reaction-0001"});
+  const app=express(); app.use('/api/chat',createCommunityRouter({store,origin:'http://127.0.0.1',preview:true}));
+  const server=app.listen(0,'127.0.0.1'); await new Promise(r=>server.once('listening',r)); t.after(()=>server.close());
+  const url=`http://127.0.0.1:${server.address().port}/api/chat`;
+  const login=await fetch(url+'/preview/session',{method:'POST',headers:{Origin:'http://127.0.0.1','X-Ootle-Chat':'1'}});
+  const cookie=login.headers.get('set-cookie').split(';')[0];
+  const write=(extra={})=>fetch(url+`/messages/${message.id}/reactions`,{method:'POST',headers:{'Content-Type':'application/json',Origin:'http://127.0.0.1','X-Ootle-Chat':'1',Cookie:cookie,...extra},body:JSON.stringify({emoji:'🎉',active:true})});
+  assert.equal((await write({Cookie:''})).status,401);
+  assert.equal((await write({Origin:'https://other.invalid'})).status,403);
+  assert.equal((await write({'X-Ootle-Chat':''})).status,403);
+  assert.equal((await write()).status,200);
+  await db.query("UPDATE community_chat.rate_limits SET count=120 WHERE key='reactions:github-1'");
+  assert.equal((await write()).status,429);
+});
