@@ -61,6 +61,24 @@ export function createChatStore(db) {
     async account(userId) {
       return publicAccount(await actor(db, userId));
     },
+    // Guest identities and permissions are server-owned, just like invited accounts.
+    async createGuest(name, sessionToken) {
+      const label = text(name, 40).replace(/\s+/g, " ");
+      if (!label || label.length > 40)
+        reject("Enter a display name of 1–40 characters.");
+      return db.transaction(async (q) => {
+        const id = "guest-" + randomUUID();
+        await q.query(
+          "INSERT INTO community_chat.accounts(id,provider_id,name,role) VALUES($1,$1,$2,'member')",
+          [id, label],
+        );
+        await q.query(
+          "INSERT INTO community_chat.sessions(digest,account_id,expires_at) VALUES($1,$2,now()+interval '7 days')",
+          [digest(sessionToken), id],
+        );
+        return { id, name: label, role: "member" };
+      });
+    },
     async login(
       identity,
       { ownerId, allowedIds = [], openEnrollment = false } = {},

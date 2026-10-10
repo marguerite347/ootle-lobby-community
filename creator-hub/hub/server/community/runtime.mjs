@@ -11,10 +11,12 @@ export function communityServicesFromEnv(env = process.env) {
   ])
     if (!env[name]) throw new Error("Missing chat configuration: " + name);
   const invitations = env.CHAT_INVITES_ENABLED === "1";
+  const guests = env.CHAT_GUESTS_ENABLED === "1";
   const github = !!env.CHAT_GITHUB_CLIENT_ID;
   if (invitations && !env.CHAT_INVITE_SECRET) throw new Error("Missing chat configuration: CHAT_INVITE_SECRET");
+  if (guests && !env.CHAT_GUEST_SECRET) throw new Error("Missing chat configuration: CHAT_GUEST_SECRET");
   if (github && (!env.CHAT_GITHUB_CLIENT_SECRET || !env.CHAT_OWNER_GITHUB_ID)) throw new Error("GitHub chat sign-in is incomplete.");
-  if (!invitations && !github) throw new Error("Configure chat sign-in or invitations.");
+  if (!invitations && !github && !guests) throw new Error("Configure chat guests, sign-in or invitations.");
   const origin = new URL(env.CHAT_PUBLIC_ORIGIN);
   if (origin.protocol !== "https:")
     throw new Error("Hosted chat requires HTTPS.");
@@ -46,6 +48,7 @@ export function communityServicesFromEnv(env = process.env) {
     store: createChatStore(db),
     origin: origin.origin,
     invites: invitations ? { secret: env.CHAT_INVITE_SECRET } : undefined,
+    guests: guests ? { secret: env.CHAT_GUEST_SECRET } : undefined,
     oauth: github ? {
       clientId: env.CHAT_GITHUB_CLIENT_ID,
       clientSecret: env.CHAT_GITHUB_CLIENT_SECRET,

@@ -1,5 +1,6 @@
 // A local, clearly labeled review environment. Never load this in a deployment.
 import { PGlite } from "@electric-sql/pglite";
+import { randomBytes } from "node:crypto";
 import { mkdirSync } from "node:fs";
 import { resolve } from "node:path";
 import {
@@ -54,7 +55,7 @@ for (const [userId, channelId, body, clientId] of [
 ])
   await store.send(userId, { channelId, body, clientId });
 const app = createInspirationLobby({
-  communityServices: { store, origin, preview: true },
+  communityServices: { store, origin, preview: true, guests: { secret: randomBytes(32).toString("hex") } },
 });
 const server = app.listen(port, "127.0.0.1", () =>
   console.log("Community preview: " + origin + "/chat"),

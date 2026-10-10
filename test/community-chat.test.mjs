@@ -467,6 +467,70 @@ test("OAuth binds the callback to a one-time browser state and PKCE before creat
   }
 });
 
+test("name-only guests exchange messages with separate durable sessions and member permissions", async (t) => {
+  const db = new PGlite();
+  await installSchema(db);
+  const store = createChatStore(db);
+  const app = express(), server = app.listen(0, "127.0.0.1");
+  await new Promise((r) => server.once("listening", r));
+  const base = "http://127.0.0.1:" + server.address().port;
+  app.use("/api/chat", createCommunityRouter({ store, origin: base, guests: { secret: "test-guest-secret" } }));
+  app.use("/closed", createCommunityRouter({ store, origin: base }));
+  t.after(async () => { server.closeAllConnections(); server.close(); await db.close(); });
+  const headers = { Origin: base, "X-Ootle-Chat": "1", "Content-Type": "application/json" };
+  const join = (name, extra = {}) => fetch(base + "/api/chat/guest/session", {
+    method: "POST", headers: { ...headers, ...extra },
+    body: JSON.stringify({ name, role: "owner", accountId: "github-1" }),
+  });
+  assert.equal((await (await fetch(base + "/api/chat/capabilities")).json()).guests, true);
+  assert.equal((await (await fetch(base + "/closed/capabilities")).json()).guests, false);
+  assert.equal((await fetch(base + "/closed/guest/session", { method: "POST", headers, body: '{"name":"Closed"}' })).status, 401);
+  assert.equal((await join("Alice", { Origin: "https://other.example" })).status, 403);
+  assert.equal((await join("Alice", { "X-Ootle-Chat": "" })).status, 403);
+  assert.equal((await join("  ")).status, 400);
+  assert.equal((await join("a".repeat(41))).status, 400);
+  const a = await join("QA Alice"), b = await join("QA Blake");
+  assert.equal(a.status, 200);
+  assert.equal(b.status, 200);
+  const alice = (await a.json()).account, blake = (await b.json()).account;
+  assert.notEqual(alice.id, blake.id);
+  assert.match(alice.id, /^guest-/);
+  assert.equal(alice.role, "member");
+  assert.equal(blake.role, "member");
+  const cookieA = a.headers.get("set-cookie").split(";")[0];
+  const cookieB = b.headers.get("set-cookie").split(";")[0];
+  assert.match(a.headers.get("set-cookie"), /HttpOnly/);
+  assert.match(a.headers.get("set-cookie"), /Secure/);
+  assert.match(a.headers.get("set-cookie"), /SameSite=Lax/);
+  assert.equal((await (await join("Changed", { Cookie: cookieA })).json()).account.id, alice.id);
+  assert.equal((await (await fetch(base + "/api/chat/session", { headers: { Cookie: cookieA } })).json()).account.name, "QA Alice");
+  const post = (cookie, body) => fetch(base + "/api/chat/messages", {
+    method: "POST", headers: { ...headers, Cookie: cookie },
+    body: JSON.stringify({ channelId: "lobby", body, clientId: body.replaceAll(" ", "-"), accountId: alice.id }),
+  });
+  assert.equal((await post(cookieA, "Hello from Alice")).status, 201);
+  const reply = await post(cookieB, "Hello from Blake");
+  assert.equal(reply.status, 201);
+  assert.equal((await reply.json()).message.account_id, blake.id);
+  for (const cookie of [cookieA, cookieB]) {
+    const messages = await (await fetch(base + "/api/chat/channels/lobby/messages", { headers: { Cookie: cookie } })).json();
+    assert.deepEqual(messages.messages.map(m => m.author_name), ["QA Alice", "QA Blake"]);
+    assert.equal((await fetch(base + "/api/chat/moderation", { headers: { Cookie: cookie } })).status, 403);
+  }
+  await db.query("INSERT INTO community_chat.channels(id,name,description,visibility) VALUES('staff','staff','Staff only','restricted')");
+  assert.equal((await fetch(base + "/api/chat/channels/staff/messages", { headers: { Cookie: cookieA } })).status, 404);
+  const sessions = (await db.query("SELECT digest FROM community_chat.sessions")).rows;
+  assert.ok(sessions.every(row => row.digest !== cookieA.split("=")[1]));
+  // The IP quota persists across router instances; invalid joins also consume attempts.
+  for (let i = 0; i < 6; i++) assert.equal((await join("Tester " + i)).status, 200);
+  assert.equal((await join("Too many")).status, 429);
+  assert.equal((await (await join("Existing guest", { Cookie: cookieA })).json()).account.id, alice.id);
+  await db.query("UPDATE community_chat.sessions SET expires_at=now()-interval '1 second' WHERE account_id=$1", [alice.id]);
+  assert.equal((await (await fetch(base + "/api/chat/session", { headers: { Cookie: cookieA } })).json()).account, null);
+  await fetch(base + "/api/chat/logout", { method: "POST", headers: { ...headers, Cookie: cookieB }, body: "{}" });
+  assert.equal((await (await fetch(base + "/api/chat/session", { headers: { Cookie: cookieB } })).json()).account, null);
+});
+
 test("shared invitations create separate identities, expire, and cannot be replayed or escalate roles", async (t) => {
   const db = new PGlite();
   await installSchema(db);

@@ -124,7 +124,7 @@ export default function Community({
     [reason, setReason] = useState(""),
     [reports, setReports] = useState<Report[]>([]);
   const [inviteToken, setInviteToken] = useState(() => new URLSearchParams(window.location.hash.slice(1)).get("invite") || ""),
-    [inviteName, setInviteName] = useState(""),
+    [joinName, setJoinName] = useState(""),
     [joining, setJoining] = useState(false);
   useEffect(() => {
     if (new URLSearchParams(window.location.hash.slice(1)).has("invite"))
@@ -140,6 +140,8 @@ export default function Community({
   const channel = channels.find((c) => c.id === channelId);
   const canModerate =
     account?.role === "owner" || account?.role === "moderator";
+  const useInvitation = !!capabilities?.invitations && (!!inviteToken || !capabilities?.guests);
+  const isGuest = account?.id.startsWith("guest-");
   const draftStorage = account
     ? draftKey(account.id, channelId, thread?.id)
     : "";
@@ -329,12 +331,15 @@ export default function Community({
     setError("");
     setMobileNav(false);
   }
-  async function joinInvitation(event: FormEvent) {
+  async function joinChat(event: FormEvent) {
     event.preventDefault();
     if (joining) return;
     setJoining(true);
     try {
-      const result = await chatApi<{ account: Account }>("/invitations/redeem", { token: inviteToken.trim(), name: inviteName.trim() });
+      const result = await chatApi<{ account: Account }>(
+        useInvitation ? "/invitations/redeem" : "/guest/session",
+        { name: joinName.trim(), ...(useInvitation ? { token: inviteToken.trim() } : {}) },
+      );
       setAccount(result.account);
       setInviteToken("");
       setError("");
@@ -599,7 +604,7 @@ export default function Community({
                 <div>
                   <strong>{account.name}</strong>
                   <span>
-                    {capabilities?.preview ? "Preview account" : account.role}
+                    {isGuest ? "Guest" : capabilities?.preview ? "Preview account" : account.role}
                   </span>
                 </div>
                 <button
@@ -610,12 +615,16 @@ export default function Community({
                       setAccount(null);
                       setMessages([]);
                       setChannels([]);
+                      setThread(null);
+                      setPanel(null);
+                      setError("");
+                      setStatus("");
                     } catch (e) {
                       setError((e as Error).message);
                     }
                   }}
                 >
-                  Sign out
+                  {isGuest ? "Leave chat" : "Sign out"}
                 </button>
               </>
             ) : (
@@ -700,6 +709,14 @@ export default function Community({
               </p>
               {loading ? (
                 <p role="status">Opening chat…</p>
+              ) : capabilities?.guests || capabilities?.invitations ? (
+                <form className="cc-invitation" onSubmit={(event) => void joinChat(event)}>
+                  <p>{useInvitation ? "Join with your invitation." : "Choose a name and say hello."}</p>
+                  <label>Your name<input autoComplete="nickname" value={joinName} onChange={(e) => setJoinName(e.target.value)} maxLength={40} required /></label>
+                  {useInvitation && <label>Invitation code<input type="password" autoComplete="off" value={inviteToken} onChange={(e) => setInviteToken(e.target.value)} required /></label>}
+                  <button className="cc-primary" disabled={joining || !joinName.trim() || (useInvitation && !inviteToken.trim())}>{joining ? "Joining…" : useInvitation ? "Join the conversation" : "Start chatting"}<Glyph name="arrow" /></button>
+                  <small>{useInvitation ? "Each invitation works once. This browser remembers you for 7 days." : "No account or password needed. This browser remembers you for 7 days."}</small>
+                </form>
               ) : capabilities?.preview ? (
                 <button
                   className="cc-primary"
@@ -707,14 +724,6 @@ export default function Community({
                 >
                   Enter the local preview <Glyph name="arrow" />
                 </button>
-              ) : capabilities?.invitations ? (
-                <form className="cc-invitation" onSubmit={(event) => void joinInvitation(event)}>
-                  <p>Join the shared test with your own invitation.</p>
-                  <label>Your name<input autoComplete="nickname" value={inviteName} onChange={(e) => setInviteName(e.target.value)} maxLength={40} required /></label>
-                  <label>Invitation code<input type="password" autoComplete="off" value={inviteToken} onChange={(e) => setInviteToken(e.target.value)} required /></label>
-                  <button className="cc-primary" disabled={joining || !inviteName.trim() || !inviteToken.trim()}>{joining ? "Joining…" : "Join the conversation"}<Glyph name="arrow" /></button>
-                  <small>Each invitation works once. This browser stays signed in for 7 days.</small>
-                </form>
               ) : capabilities?.signIn ? (
                 <a
                   className="cc-primary"

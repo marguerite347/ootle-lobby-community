@@ -1,4 +1,4 @@
-// INTEGRATION_GAP[LOBBY-CHAT] (build-required): see docs/DEVELOPMENT_GAPS.md#lobby-chat.
+// INTEGRATION_GAP[LOBBY-CHAT] (build-required): guest sessions support native chat; external transports remain unconnected. See docs/DEVELOPMENT_GAPS.md#lobby-chat.
 import { Router, json } from "express";
 import {
   randomBytes,
@@ -26,6 +26,7 @@ export function createCommunityRouter({
   origin,
   oauth,
   invites,
+  guests,
   preview = false,
   previewAccount = "github-1",
   fetcher = fetch,
@@ -71,6 +72,7 @@ export function createCommunityRouter({
       preview,
       signIn: configured && !!oauth?.clientId,
       invitations: configured && !!invites?.secret,
+      guests: configured && !!guests?.secret,
       platforms: ["telegram", "discord", "slack"],
       externalConnected: false,
     }),
@@ -120,6 +122,22 @@ export function createCommunityRouter({
         await store.createSession(previewAccount, token);
         res.cookie(cookieName, token, cookieOptions);
         res.json({ account: await store.account(previewAccount) });
+      }),
+    );
+  if (guests?.secret)
+    router.post(
+      "/guest/session",
+      wrap(async (req, res) => {
+        const current = await store.session(cookies(req)[cookieName]);
+        if (current) return res.json({ account: current });
+        await store.rateLimit(
+          "guest:" + createHmac("sha256", guests.secret).update(req.ip || "unknown").digest("hex"),
+          10,
+        );
+        const token = randomBytes(32).toString("hex");
+        const account = await store.createGuest(req.body.name, token);
+        res.cookie(cookieName, token, cookieOptions);
+        res.json({ account });
       }),
     );
   if (invites?.secret)
@@ -231,7 +249,7 @@ export function createCommunityRouter({
       if (!account)
         return res
           .status(401)
-          .json({ error: "Sign in to join the conversation." });
+          .json({ error: "Join the conversation to continue." });
       req.chatAccount = account;
       next();
     }, next),
