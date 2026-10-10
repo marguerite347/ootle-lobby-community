@@ -1,4 +1,4 @@
-// INTEGRATION_GAP[LOBBY-CHAT] (build-required): see docs/DEVELOPMENT_GAPS.md#lobby-chat.
+// INTEGRATION_GAP[LOBBY-CHAT] (build-required): native typing uses expiring shared leases; external transports remain unconnected. See docs/DEVELOPMENT_GAPS.md#lobby-chat.
 import { randomUUID, randomInt, createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 export const digest = (value) =>
@@ -59,7 +59,53 @@ export function createChatStore(db) {
     name: account.name,
     role: account.role,
   });
+  async function typingContext(q, userId, channelId, parentId) {
+    const source = await channel(q, userId, channelId);
+    if (source.platform !== "ootle" || !source.can_post)
+      reject("This conversation does not accept native posts.", 403);
+    if (parentId != null) {
+      if (typeof parentId !== "string" || !idPattern.test(parentId))
+        reject("Reply not found.", 404);
+      const { rows } = await q.query(
+        "SELECT id FROM community_chat.messages WHERE id=$1 AND channel_id=$2 AND hidden_at IS NULL",
+        [parentId, channelId],
+      );
+      if (!rows.length) reject("Reply not found.", 404);
+    }
+  }
   return {
+    async typing(userId, channelId, parentId = null) {
+      await actor(db, userId);
+      await typingContext(db, userId, channelId, parentId);
+      return (await db.query(
+        `SELECT DISTINCT a.id,a.name FROM community_chat.typing t
+         JOIN community_chat.accounts a ON a.id=t.account_id
+         JOIN community_chat.channels c ON c.id=t.channel_id
+         WHERE t.channel_id=$2 AND t.parent_id IS NOT DISTINCT FROM $3::text
+         AND t.expires_at>now() AND a.id<>$1 AND NOT a.blocked
+         AND (c.visibility='workspace' OR EXISTS(SELECT 1 FROM community_chat.channel_members cm WHERE cm.channel_id=c.id AND cm.account_id=a.id))
+         ORDER BY a.id LIMIT 10`, [userId, channelId, parentId],
+      )).rows;
+    },
+    async setTyping(userId, { channelId, parentId = null, clientId, active }) {
+      if (typeof clientId !== "string" || !/^[a-zA-Z0-9_-]{8,100}$/.test(clientId) || typeof active !== "boolean")
+        reject("Invalid typing activity.");
+      await db.transaction(async (q) => {
+        await actor(q, userId, true);
+        await typingContext(q, userId, channelId, parentId);
+        if (!active) {
+          await q.query("DELETE FROM community_chat.typing WHERE account_id=$1 AND client_id=$2 AND channel_id=$3 AND parent_id IS NOT DISTINCT FROM $4::text", [userId, clientId, channelId, parentId]);
+          return;
+        }
+        await q.query("DELETE FROM community_chat.typing WHERE expires_at<=now()");
+        const { rows } = await q.query("SELECT count(*)::int AS count FROM community_chat.typing WHERE account_id=$1 AND client_id<>$2", [userId, clientId]);
+        if (rows[0].count >= 5) reject("Too many active chat windows.", 429);
+        await q.query(`INSERT INTO community_chat.typing(account_id,client_id,channel_id,parent_id,expires_at)
+          VALUES($1,$2,$3,$4,now()+interval '8 seconds') ON CONFLICT(account_id,client_id)
+          DO UPDATE SET channel_id=EXCLUDED.channel_id,parent_id=EXCLUDED.parent_id,expires_at=EXCLUDED.expires_at`,
+          [userId, clientId, channelId, parentId]);
+      });
+    },
     async rateLimit(key, limit = 20) {
       const { rows } = await db.query(
         `INSERT INTO community_chat.rate_limits(key,window_at,count) VALUES($1,now(),1) ON CONFLICT(key) DO UPDATE SET count=CASE WHEN community_chat.rate_limits.window_at<now()-interval '10 minutes' THEN 1 ELSE community_chat.rate_limits.count+1 END,window_at=CASE WHEN community_chat.rate_limits.window_at<now()-interval '10 minutes' THEN now() ELSE community_chat.rate_limits.window_at END RETURNING count`,
@@ -299,6 +345,7 @@ export function createChatStore(db) {
             clientId,
           ],
         );
+        await q.query("DELETE FROM community_chat.typing WHERE account_id=$1 AND channel_id=$2 AND parent_id IS NOT DISTINCT FROM $3::text", [userId, source.id, input.parentId || null]);
         for (const destination of destinations)
           await q.query(
             "INSERT INTO community_chat.deliveries(id,message_id,channel_id) VALUES($1,$2,$3)",
@@ -358,6 +405,7 @@ export function createChatStore(db) {
       ).rows;
     },
     async retention() {
+      await db.query("DELETE FROM community_chat.typing WHERE expires_at<=now()");
       // Operator-only maintenance: preserve thread roots while replies remain.
       await db.query(
         "DELETE FROM community_chat.sessions WHERE expires_at<now()",
