@@ -2,6 +2,7 @@ import { StrictMode, Suspense, lazy } from 'react';
 import {installShellRestore} from './shellRestore';
 installShellRestore();
 const BuildFeedback = lazy(() => import('./pages/BuildFeedback'));
+const Community = lazy(() => import('./pages/Community'));
 const MarketingCalendar = lazy(() => import('./pages/MarketingCalendar'));
 const Blog = lazy(() => import('./pages/Blog'));
 const OotleLaunch = lazy(() => import('./components/OotleLaunch'));
@@ -46,6 +47,7 @@ const VideoPicker = lazy(() => import('./pages/MakeVideo').then(module => ({defa
 function LegacyRoute(){const l=useLocation();return <Navigate replace to={legacyDestination(l.pathname,l.search)}/>;}
 
 const router = createBrowserRouter([
+  {path: '/chat', element: <Suspense fallback={<p role="status">Opening community chat…</p>}><Community /></Suspense>},
   {path: '/workbench', element: <WorkbenchEntry />},
   {path: '/workbench-backup', element: <WorkbenchBackup />},
   {path: '/play/trivia-riff', element: <Suspense fallback={<p>Opening your Riff…</p>}><TriviaRiffPlayer /></Suspense>},

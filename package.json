@@ -11,12 +11,16 @@
     "validate": "node scripts/build.mjs --check && node scripts/check-development-gaps.mjs",
     "build": "node scripts/build.mjs",
     "setup:site": "npm --prefix creator-hub/hub ci --ignore-scripts",
-    "build:site": "npm --prefix creator-hub/hub ci --ignore-scripts && npm --prefix creator-hub/hub run restore:wheel && npm --prefix creator-hub/hub run build && node scripts/prepare-site.mjs",
+    "build:site": "npm --prefix creator-hub/hub ci --ignore-scripts && npm --prefix creator-hub/hub run restore:wheel && npm --prefix creator-hub/hub run build && node scripts/prepare-site.mjs && node scripts/check-site-runtime.mjs",
     "start:site": "node scripts/start-site.mjs",
     "monitor:october": "node scripts/monitor-contest.mjs"
   },
   "dependencies": {
     "@vercel/blob": "2.8.0",
-    "express": "4.22.3"
+    "express": "4.22.3",
+    "pg": "8.23.1"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.5.8"
   }
 }

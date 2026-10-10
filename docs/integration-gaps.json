@@ -93,15 +93,17 @@
     {
       "id": "LOBBY-CHAT",
       "status": "build-required",
-      "surface": "/api/community-chat/*; /api/project-chat/*; /api/collective-chat/*",
-      "current": "Public entry point blocks every chat, report, moderation and room write. The visible panel explains read-only mode and links to Discord. Legacy local JSON handlers are retained for tests, not enabled as public durable services.",
-      "required": "Before re-enabling: implement shared durable identity-bound messages/reports, server-verified roles, atomic shared rate limits, retention and authenticated moderator audit/restore.",
-      "verify": "Messages/reports persist across deployments/instances; role spoofing and duplicate abuse are rejected; moderation is authorized.",
+      "surface": "Lobby Chat sidebar and /chat pop-out; /api/chat/*; legacy /api/community-chat/*, /api/project-chat/*, /api/collective-chat/*",
+      "current": "The Lobby sidebar and larger /chat view share one community chat component and a separate default-off authenticated service with PostgreSQL messages/replies, private-channel membership, shared quotas, moderator reports/audit/restore, hashed sessions and GitHub PKCE. Local disk-backed preview and tests pass. Legacy anonymous writes remain blocked. External connections and delivery workers are not enabled. The shared hosted test supports automatic guest joining with generated names and optional customization with separate server-owned member identities, secure seven-day sessions and durable join limits through a private Supabase schema. Optional invitations retain owner/moderator access; ordinary testers need no name entry, invitation or GitHub account. Renaming preserves identity, permissions, quotas and historical message author labels.",
+      "required": "Complete broad production abuse-prevention, backup and scheduled-retention verification; verify the identity provider if enabled. Guest names are unverified and browser/session blocking does not prevent rejoining. Add pagination/full-thread retrieval and channel administration. Connect approved platform adapters with verified webhooks/Gateway, source audience boundaries, inbound deduplication/echo suppression, and receipt-backed outbox delivery before enabling cross-app posting.",
+      "verify": "Test hosted messages/reports across deployments and app instances, identity/role isolation, quotas, moderation, retention and backups. For each connected channel verify permitted import, explicit destination approval, no echoes/duplicates, and actual provider delivery receipts.",
       "files": [
         "creator-hub/hub/server/communityChat.mjs",
         "creator-hub/hub/server/projectChat.mjs",
         "creator-hub/hub/server/collectiveChat.mjs",
-        "creator-hub/hub/server/paths.mjs"
+        "creator-hub/hub/server/paths.mjs",
+        "creator-hub/hub/server/community/store.mjs",
+        "creator-hub/hub/server/community/router.mjs"
       ]
     },
     {
@@ -273,7 +275,7 @@
       "id": "COMMUNITY-METRICS",
       "status": "build-required",
       "surface": "GET /api/community-projects/metrics",
-      "current": "Public GitHub stars/push dates and complete project-specific Discourse reply counts work for reviewed Community, Official Tari and October records. Daily caching is per warm server instance; bundled counts survive upstream outages. Shared directory posts covering several projects have unknown per-project counts.",
+      "current": "Public GitHub stars/push dates and complete project-specific Discourse reply counts work for reviewed Community, Official Tari and October records. Daily caching is per warm server instance; bundled counts survive upstream outages. Shared directory posts covering several projects have unknown per-project counts. Clean deployments tolerate an absent optional local metrics cache and preserve unknown values until refresh.",
       "required": "For globally once-daily refresh across serverless cold starts, persist and coordinate the daily cache. Optionally configure a GitHub read token for higher rate limits.",
       "verify": "Across cold starts and upstream failures, retain counts and checkedAt; show unknown when never verified. Confirm no more than one global upstream refresh per project per day.",
       "files": [

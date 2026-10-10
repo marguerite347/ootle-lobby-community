@@ -5,6 +5,8 @@ import {securityHeaders,localHostGuard} from './publicSecurity.mjs';
 import {createWorkbenchRouter} from './workbench.mjs';
 import {createApp} from './app.mjs';
 import {publicRestriction} from './publicAccess.mjs';
+import {createCommunityRouter} from './community/router.mjs';
+import {communityServicesFromEnv} from './community/runtime.mjs';
 
 /** Only these routes compute bounded responses without persisting visitor data. */
 export function preventProjectHosting(req, res, next) {
@@ -20,10 +22,12 @@ export function preventProjectHosting(req, res, next) {
 }
 
 /** Public entry point; the original app remains available for legacy store tests. */
-export function createInspirationLobby({workbenchServices}={}) {
+export function createInspirationLobby({workbenchServices,communityServices}={}) {
   const lobby = express();
   lobby.disable('x-powered-by');
-  lobby.use(securityHeaders,localHostGuard,preventProjectHosting);
+  lobby.use(securityHeaders,localHostGuard);
+  lobby.use('/api/chat',createCommunityRouter(communityServices||communityServicesFromEnv()));
+  lobby.use(preventProjectHosting);
   lobby.use('/api/workbench', createWorkbenchRouter(workbenchServices));
   lobby.use(createApp({publicReadOnly:true}));
   return lobby;

@@ -20,6 +20,32 @@
       "continue": true
     },
     {
+      "src": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "ootle-lobby-preview-peekaboo4.vercel.app"
+        }
+      ],
+      "status": 307,
+      "headers": {
+        "Location": "https://ootle-lobby-preview.vercel.app/$1"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "ootle-lobby-chat-test-peekaboo4.vercel.app"
+        }
+      ],
+      "status": 307,
+      "headers": {
+        "Location": "https://ootle-lobby-preview.vercel.app/$1"
+      }
+    },
+    {
       "src": "/workbench/?",
       "status": 307,
       "headers": {

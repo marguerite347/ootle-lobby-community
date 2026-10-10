@@ -202,6 +202,7 @@ html[data-chat-dock='sheet'] .chat-sidebar-root::before {
 }
 
 .collective-chat-icon-btn {
+  text-decoration: none;
   border: 1px solid var(--cc-border);
   background: transparent;
   color: var(--cc-text);
