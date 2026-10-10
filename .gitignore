@@ -13,3 +13,6 @@ creator-hub/hub/data/*
 *.log
 *.tsbuildinfo
 **/node_modules
+
+# Pinned upstream example contains only a documented placeholder.
+!skills/vendor/huggingface/huggingface-community-evals/examples/.env.example

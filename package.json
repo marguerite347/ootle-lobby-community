@@ -16,7 +16,7 @@
     "monitor:october": "node scripts/monitor-contest.mjs"
   },
   "dependencies": {
-    "@vercel/blob": "2.8.0",
+    "@vercel/blob": "2.8.1",
     "express": "4.22.3",
     "pg": "8.23.1"
   },

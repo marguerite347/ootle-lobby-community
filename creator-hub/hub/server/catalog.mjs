@@ -1,4 +1,5 @@
 import {withShowcaseProjects} from './showcaseCatalog.mjs';
+import {withEcosystemResources} from './ecosystemResources.mjs';
 import {withGenreReferences} from './genreReferences.mjs';
 import {learningCategories, categoriesFor, learningSkills} from './learningCategories.mjs';
 import {insightSource} from './creatorIdeas.mjs';
@@ -90,7 +91,7 @@ export function get(id) {
 }
 
 export function all() {
-  return withShowcaseProjects(withContestEntries(withGenreReferences([...snapshot.records,...listUploads(),...builtins,...communityLearning.list()])));
+  return withEcosystemResources(withShowcaseProjects(withContestEntries(withGenreReferences([...snapshot.records,...listUploads(),...builtins,...communityLearning.list()]))));
 }
 
 function matchText(r, q) {

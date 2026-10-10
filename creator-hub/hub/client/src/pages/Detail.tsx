@@ -27,7 +27,7 @@ export default function Detail() {
   if (!r) return <Spinner />;
 
   const links: [string, string | null][] = [
-    ['Website / demo', r.demoUrl || r.sourceUrl],
+    [r.demoUrl ? 'Website / demo' : 'Source reference', r.demoUrl || r.sourceUrl],
     ['Source repo', r.repoUrl],
     ['Docs / guide', r.docsUrl],
     ['Directory / source', r.provenance.upstreamUrl || null],

@@ -14,7 +14,8 @@ cpSync(new URL('creator-hub/hub/data/seed/previews/',root),new URL('previews/',o
 for (const name of ['creator-hub','skills','.agents','content']) {
   cpSync(new URL(`${name}/`,root),new URL(`${name}/`,server),{recursive:true,filter:source => {
     const normalized=source.replaceAll('\\','/');
-    if (normalized.includes('/node_modules') || normalized.includes('/.env')) return false;
+    const reviewedEnvExample=normalized.endsWith('/skills/vendor/huggingface/huggingface-community-evals/examples/.env.example');
+    if (normalized.includes('/node_modules') || (normalized.includes('/.env') && !reviewedEnvExample)) return false;
     if (normalized.includes('/creator-hub/hub/client/')) return normalized.endsWith('/client/dist') || normalized.endsWith('/client/dist/index.html');
     if (normalized.includes('/creator-hub/hub/scripts')) return false;
     const dataMarker='/creator-hub/hub/data/';

@@ -1,0 +1,654 @@
+{
+  "checkedAt": "2026-10-10T11:49:24.812Z",
+  "manifests": [
+    {
+      "repo": "lobby",
+      "file": "creator-hub/capture/package.json",
+      "name": "tari-app-capture",
+      "engines": {
+        "node": ">=20"
+      }
+    },
+    {
+      "repo": "lobby",
+      "file": "creator-hub/hub/client/package.json",
+      "name": "tari-creator-hub-client"
+    },
+    {
+      "repo": "lobby",
+      "file": "creator-hub/hub/package.json",
+      "name": "tari-creator-hub",
+      "engines": {
+        "node": ">=20"
+      }
+    },
+    {
+      "repo": "lobby",
+      "file": "creator-hub/video-templates/package.json",
+      "name": "tari-video-templates",
+      "engines": {
+        "node": ">=20"
+      }
+    },
+    {
+      "repo": "lobby",
+      "file": "package.json",
+      "name": "ootle-lobby-community",
+      "engines": {
+        "node": "22.x"
+      }
+    }
+  ],
+  "lockfiles": [
+    {
+      "repo": "lobby",
+      "file": "creator-hub/capture/package-lock.json"
+    },
+    {
+      "repo": "lobby",
+      "file": "creator-hub/hub/client/public/daily-spark/crystal-unlock/PROVENANCE.md"
+    },
+    {
+      "repo": "lobby",
+      "file": "creator-hub/hub/client/public/daily-spark/crystal-unlock/ai-spark-crystal-v2.png"
+    },
+    {
+      "repo": "lobby",
+      "file": "creator-hub/hub/client/src/components/SparkUnlock.css"
+    },
+    {
+      "repo": "lobby",
+      "file": "creator-hub/hub/client/src/components/SparkUnlock.md"
+    },
+    {
+      "repo": "lobby",
+      "file": "creator-hub/hub/client/src/components/SparkUnlock.tsx"
+    },
+    {
+      "repo": "lobby",
+      "file": "creator-hub/hub/package-lock.json"
+    },
+    {
+      "repo": "lobby",
+      "file": "creator-hub/hub/server/communityChatBlocklist.json"
+    },
+    {
+      "repo": "lobby",
+      "file": "creator-hub/skills/examples/counter/Cargo.lock"
+    },
+    {
+      "repo": "lobby",
+      "file": "creator-hub/skills/examples/counter/Cargo.toml"
+    },
+    {
+      "repo": "lobby",
+      "file": "creator-hub/video-templates/package-lock.json"
+    },
+    {
+      "repo": "lobby",
+      "file": "package-lock.json"
+    },
+    {
+      "repo": "lobby",
+      "file": "skills/upstream-lock.json"
+    },
+    {
+      "repo": "lobby",
+      "file": "skills/vendor/game-design/game-design-creative-unblocker/COMMERCIAL-LICENSE.md"
+    },
+    {
+      "repo": "lobby",
+      "file": "skills/vendor/game-design/game-design-creative-unblocker/LICENSE"
+    },
+    {
+      "repo": "lobby",
+      "file": "skills/vendor/game-design/game-design-creative-unblocker/SKILL.md"
+    },
+    {
+      "repo": "lobby",
+      "file": "skills/vendor/game-design/game-design-creative-unblocker/references/oblique-prompts.md"
+    },
+    {
+      "repo": "lobby",
+      "file": "skills/vendor/game-design/game-design-creative-unblocker/references/usage-notes.md"
+    },
+    {
+      "repo": "lobby",
+      "file": "skills/vendor/game-design/game-design-roadblock-reframing/COMMERCIAL-LICENSE.md"
+    },
+    {
+      "repo": "lobby",
+      "file": "skills/vendor/game-design/game-design-roadblock-reframing/LICENSE"
+    },
+    {
+      "repo": "lobby",
+      "file": "skills/vendor/game-design/game-design-roadblock-reframing/SKILL.md"
+    },
+    {
+      "repo": "lobby",
+      "file": "skills/vendor/game-design/game-design-roadblock-reframing/references/family-conventions.md"
+    },
+    {
+      "repo": "lobby",
+      "file": "skills/vendor/gamedev/skills/disciplines/create-game-assets/scripts/requirements.txt"
+    },
+    {
+      "repo": "lobby",
+      "file": "skills/vendor/huggingface/hf-cloud-python-env-setup/requirements.txt"
+    },
+    {
+      "repo": "lobby",
+      "file": "skills/vendor/huggingface/huggingface-spaces/references/requirements.md"
+    }
+  ],
+  "records": [
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/capture/package.json",
+      "name": "playwright-core",
+      "range": "1.47.2",
+      "locked": "1.47.2",
+      "installed": null,
+      "latestCompatible": "1.47.2",
+      "latest": "1.64.0",
+      "error": null,
+      "disposition": "Hold optional capture/render tool migration pending actual media acceptance; not part of deployed server.",
+      "latestSameMajor": "1.64.0"
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/hub/client/package.json",
+      "name": "@chatscope/chat-ui-kit-react",
+      "range": "2.1.1",
+      "locked": null,
+      "installed": null,
+      "latestCompatible": "2.1.1",
+      "latest": "2.1.1",
+      "error": null,
+      "disposition": "current within declared range",
+      "latestSameMajor": null
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/hub/client/package.json",
+      "name": "@chatscope/chat-ui-kit-styles",
+      "range": "1.4.0",
+      "locked": null,
+      "installed": null,
+      "latestCompatible": "1.4.0",
+      "latest": "1.4.0",
+      "error": null,
+      "disposition": "current within declared range",
+      "latestSameMajor": null
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/hub/client/package.json",
+      "name": "@codemirror/lang-html",
+      "range": "6.4.12",
+      "locked": null,
+      "installed": null,
+      "latestCompatible": "6.4.12",
+      "latest": "6.4.12",
+      "error": null,
+      "disposition": "current within declared range",
+      "latestSameMajor": null
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/hub/client/package.json",
+      "name": "@codemirror/lang-javascript",
+      "range": "6.2.5",
+      "locked": null,
+      "installed": null,
+      "latestCompatible": "6.2.5",
+      "latest": "6.2.5",
+      "error": null,
+      "disposition": "current within declared range",
+      "latestSameMajor": null
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/hub/client/package.json",
+      "name": "@codemirror/lang-json",
+      "range": "6.0.2",
+      "locked": null,
+      "installed": null,
+      "latestCompatible": "6.0.2",
+      "latest": "6.0.2",
+      "error": null,
+      "disposition": "current within declared range",
+      "latestSameMajor": null
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/hub/client/package.json",
+      "name": "@codemirror/lang-markdown",
+      "range": "6.5.2",
+      "locked": null,
+      "installed": null,
+      "latestCompatible": "6.5.2",
+      "latest": "6.5.2",
+      "error": null,
+      "disposition": "current within declared range",
+      "latestSameMajor": null
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/hub/client/package.json",
+      "name": "@codemirror/lang-rust",
+      "range": "6.0.2",
+      "locked": null,
+      "installed": null,
+      "latestCompatible": "6.0.2",
+      "latest": "6.0.2",
+      "error": null,
+      "disposition": "current within declared range",
+      "latestSameMajor": null
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/hub/client/package.json",
+      "name": "@fontsource/poppins",
+      "range": "5.2.7",
+      "locked": null,
+      "installed": null,
+      "latestCompatible": "5.2.7",
+      "latest": "5.3.0",
+      "error": null,
+      "disposition": "major/range migration deferred pending upstream compatibility",
+      "latestSameMajor": null
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/hub/client/package.json",
+      "name": "canvas-confetti",
+      "range": "1.9.3",
+      "locked": null,
+      "installed": null,
+      "latestCompatible": "1.9.3",
+      "latest": "1.9.4",
+      "error": null,
+      "disposition": "major/range migration deferred pending upstream compatibility",
+      "latestSameMajor": null
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/hub/client/package.json",
+      "name": "codemirror",
+      "range": "6.0.2",
+      "locked": null,
+      "installed": null,
+      "latestCompatible": "6.0.2",
+      "latest": "6.0.2",
+      "error": null,
+      "disposition": "current within declared range",
+      "latestSameMajor": null
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/hub/client/package.json",
+      "name": "fflate",
+      "range": "0.8.3",
+      "locked": null,
+      "installed": null,
+      "latestCompatible": "0.8.3",
+      "latest": "0.8.3",
+      "error": null,
+      "disposition": "current within declared range",
+      "latestSameMajor": null
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/hub/client/package.json",
+      "name": "motion",
+      "range": "13.4.1",
+      "locked": null,
+      "installed": null,
+      "latestCompatible": "13.4.1",
+      "latest": "14.1.0",
+      "error": null,
+      "disposition": "major/range migration deferred pending upstream compatibility",
+      "latestSameMajor": null
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/hub/client/package.json",
+      "name": "react",
+      "range": "^18.3.1",
+      "locked": null,
+      "installed": null,
+      "latestCompatible": "18.3.1",
+      "latest": "19.3.0",
+      "error": null,
+      "disposition": "major/range migration deferred pending upstream compatibility",
+      "latestSameMajor": null
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/hub/client/package.json",
+      "name": "react-dom",
+      "range": "^18.3.1",
+      "locked": null,
+      "installed": null,
+      "latestCompatible": "18.3.1",
+      "latest": "19.3.0",
+      "error": null,
+      "disposition": "major/range migration deferred pending upstream compatibility",
+      "latestSameMajor": null
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/hub/client/package.json",
+      "name": "react-router-dom",
+      "range": "7.18.4",
+      "locked": null,
+      "installed": null,
+      "latestCompatible": "7.18.4",
+      "latest": "7.18.4",
+      "error": null,
+      "disposition": "current within declared range",
+      "latestSameMajor": null
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/hub/client/package.json",
+      "name": "@types/canvas-confetti",
+      "range": "^1.9.0",
+      "locked": null,
+      "installed": null,
+      "latestCompatible": "1.9.0",
+      "latest": "1.9.0",
+      "error": null,
+      "disposition": "current within declared range",
+      "latestSameMajor": null
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/hub/client/package.json",
+      "name": "@types/node",
+      "range": "^22.19.1",
+      "locked": null,
+      "installed": null,
+      "latestCompatible": "22.20.5",
+      "latest": "26.6.5",
+      "error": null,
+      "disposition": "major/range migration deferred pending upstream compatibility",
+      "latestSameMajor": null
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/hub/client/package.json",
+      "name": "@types/react",
+      "range": "^18.3.11",
+      "locked": null,
+      "installed": null,
+      "latestCompatible": "18.3.31",
+      "latest": "19.3.0",
+      "error": null,
+      "disposition": "major/range migration deferred pending upstream compatibility",
+      "latestSameMajor": null
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/hub/client/package.json",
+      "name": "@types/react-dom",
+      "range": "^18.3.0",
+      "locked": null,
+      "installed": null,
+      "latestCompatible": "18.3.7",
+      "latest": "19.3.0",
+      "error": null,
+      "disposition": "major/range migration deferred pending upstream compatibility",
+      "latestSameMajor": null
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/hub/client/package.json",
+      "name": "@vitejs/plugin-react",
+      "range": "4.7.0",
+      "locked": null,
+      "installed": null,
+      "latestCompatible": "4.7.0",
+      "latest": "6.1.2",
+      "error": null,
+      "disposition": "major/range migration deferred pending upstream compatibility",
+      "latestSameMajor": null
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/hub/client/package.json",
+      "name": "typescript",
+      "range": "^5.6.2",
+      "locked": null,
+      "installed": null,
+      "latestCompatible": "5.9.3",
+      "latest": "7.0.2",
+      "error": null,
+      "disposition": "major/range migration deferred pending upstream compatibility",
+      "latestSameMajor": null
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/hub/client/package.json",
+      "name": "vite",
+      "range": "6.4.4",
+      "locked": null,
+      "installed": null,
+      "latestCompatible": "6.4.4",
+      "latest": "8.3.4",
+      "error": null,
+      "disposition": "major/range migration deferred pending upstream compatibility",
+      "latestSameMajor": null
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/hub/client/package.json",
+      "name": "vitest",
+      "range": "4.1.11",
+      "locked": null,
+      "installed": null,
+      "latestCompatible": "4.1.11",
+      "latest": "5.0.3",
+      "error": null,
+      "disposition": "major/range migration deferred pending upstream compatibility",
+      "latestSameMajor": null
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/hub/package.json",
+      "name": "express",
+      "range": "4.22.3",
+      "locked": "4.22.3",
+      "installed": "4.22.3",
+      "latestCompatible": "4.22.3",
+      "latest": "5.3.0",
+      "error": null,
+      "disposition": "major/range migration deferred pending upstream compatibility",
+      "latestSameMajor": "4.22.3"
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/video-templates/package.json",
+      "name": "@remotion/bundler",
+      "range": "4.0.534",
+      "locked": "4.0.534",
+      "installed": null,
+      "latestCompatible": "4.0.534",
+      "latest": "4.0.534",
+      "error": null,
+      "disposition": "current within declared range",
+      "latestSameMajor": "4.0.534"
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/video-templates/package.json",
+      "name": "@remotion/cli",
+      "range": "4.0.534",
+      "locked": "4.0.534",
+      "installed": null,
+      "latestCompatible": "4.0.534",
+      "latest": "4.0.534",
+      "error": null,
+      "disposition": "current within declared range",
+      "latestSameMajor": "4.0.534"
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/video-templates/package.json",
+      "name": "@remotion/google-fonts",
+      "range": "4.0.534",
+      "locked": "4.0.534",
+      "installed": null,
+      "latestCompatible": "4.0.534",
+      "latest": "4.0.534",
+      "error": null,
+      "disposition": "current within declared range",
+      "latestSameMajor": "4.0.534"
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/video-templates/package.json",
+      "name": "@remotion/renderer",
+      "range": "4.0.534",
+      "locked": "4.0.534",
+      "installed": null,
+      "latestCompatible": "4.0.534",
+      "latest": "4.0.534",
+      "error": null,
+      "disposition": "current within declared range",
+      "latestSameMajor": "4.0.534"
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/video-templates/package.json",
+      "name": "react",
+      "range": "19.1.0",
+      "locked": "19.1.0",
+      "installed": null,
+      "latestCompatible": "19.1.0",
+      "latest": "19.3.0",
+      "error": null,
+      "disposition": "Hold optional capture/render tool migration pending actual media acceptance; not part of deployed server.",
+      "latestSameMajor": "19.3.0"
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/video-templates/package.json",
+      "name": "react-dom",
+      "range": "19.1.0",
+      "locked": "19.1.0",
+      "installed": null,
+      "latestCompatible": "19.1.0",
+      "latest": "19.3.0",
+      "error": null,
+      "disposition": "Hold optional capture/render tool migration pending actual media acceptance; not part of deployed server.",
+      "latestSameMajor": "19.3.0"
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/video-templates/package.json",
+      "name": "remotion",
+      "range": "4.0.534",
+      "locked": "4.0.534",
+      "installed": null,
+      "latestCompatible": "4.0.534",
+      "latest": "4.0.534",
+      "error": null,
+      "disposition": "current within declared range",
+      "latestSameMajor": "4.0.534"
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/video-templates/package.json",
+      "name": "zod",
+      "range": "3.22.3",
+      "locked": "3.22.3",
+      "installed": null,
+      "latestCompatible": "3.22.3",
+      "latest": "4.6.5",
+      "error": null,
+      "disposition": "Hold optional capture/render tool migration pending actual media acceptance; not part of deployed server.",
+      "latestSameMajor": "3.25.76"
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/video-templates/package.json",
+      "name": "@types/react",
+      "range": "19.1.0",
+      "locked": "19.1.0",
+      "installed": null,
+      "latestCompatible": "19.1.0",
+      "latest": "19.3.0",
+      "error": null,
+      "disposition": "Hold optional capture/render tool migration pending actual media acceptance; not part of deployed server.",
+      "latestSameMajor": "19.3.0"
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/video-templates/package.json",
+      "name": "typescript",
+      "range": "5.6.3",
+      "locked": "5.6.3",
+      "installed": null,
+      "latestCompatible": "5.6.3",
+      "latest": "7.0.2",
+      "error": null,
+      "disposition": "Hold optional capture/render tool migration pending actual media acceptance; not part of deployed server.",
+      "latestSameMajor": "5.9.3"
+    },
+    {
+      "repo": "lobby",
+      "manifest": "package.json",
+      "name": "@vercel/blob",
+      "range": "2.8.0",
+      "locked": "2.8.0",
+      "installed": "2.8.0",
+      "latestCompatible": "2.8.0",
+      "latest": "2.8.1",
+      "error": null,
+      "disposition": "Applied 2.8.1 patch; required tests and build pass.",
+      "latestSameMajor": "2.8.1",
+      "updatedTo": "2.8.1"
+    },
+    {
+      "repo": "lobby",
+      "manifest": "package.json",
+      "name": "express",
+      "range": "4.22.3",
+      "locked": "4.22.3",
+      "installed": "4.22.3",
+      "latestCompatible": "4.22.3",
+      "latest": "5.3.0",
+      "error": null,
+      "disposition": "major/range migration deferred pending upstream compatibility",
+      "latestSameMajor": "4.22.3"
+    },
+    {
+      "repo": "lobby",
+      "manifest": "package.json",
+      "name": "pg",
+      "range": "8.23.1",
+      "locked": "8.23.1",
+      "installed": "8.23.1",
+      "latestCompatible": "8.23.1",
+      "latest": "8.23.1",
+      "error": null,
+      "disposition": "current within declared range",
+      "latestSameMajor": "8.23.1"
+    },
+    {
+      "repo": "lobby",
+      "manifest": "package.json",
+      "name": "@electric-sql/pglite",
+      "range": "0.5.8",
+      "locked": "0.5.8",
+      "installed": "0.5.8",
+      "latestCompatible": "0.5.8",
+      "latest": "0.5.8",
+      "error": null,
+      "disposition": "current within declared range",
+      "latestSameMajor": null
+    }
+  ]
+}
