@@ -1,4 +1,4 @@
-> **Workbench moved:** The live `/workbench` entry now opens the actual [Remix fork](https://github.com/marguerite347/ootle-workbench). Its [integration handoff](https://github.com/marguerite347/ootle-workbench/blob/ootle/docs/ootle/DEVELOPER_HANDOFF.md) owns future IDE work. Earlier browser-local files can be exported at `/workbench-backup`. The API gaps below still apply to the Lobby; legacy Workbench endpoints remain stubs.
+> **Current products:** The live `/workbench` entry opens the actual [Ootle Workbench fork](https://github.com/marguerite347/ootle-workbench). Its [integration handoff](https://github.com/marguerite347/ootle-workbench/blob/ootle/docs/ootle/DEVELOPER_HANDOFF.md) owns IDE work. The discarded Lobby editor has no migration flow. Shared Lobby chat is implemented in the sidebar; see [COMMUNITY_CHAT.md](COMMUNITY_CHAT.md) for the current release and remaining cross-app work. The October 4 plan below is historical; its old Workbench API status is not the live fork’s status.
 
 # Ootle Lobby and Workbench: delivery plan
 
