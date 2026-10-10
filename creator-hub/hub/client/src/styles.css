@@ -397,3 +397,10 @@ label.lbl { display: block; font-size: 13px; color: var(--muted); margin: 14px 0
 }
 
 .media-video.recorded-walkthrough{object-fit:contain;z-index:4;pointer-events:auto;background:#110d18}.project-card .recorded-walkthrough{position:absolute;z-index:4}.resource-recording-caption{font-size:12px;line-height:1.5;margin:8px 0;color:var(--muted)}
+
+/* Card feedback belongs to the card, not a stretched title-link overlay.
+   Apply directly to the link too, so its own color cannot mask the heading. */
+:is(.project-card,.ecosystem-card,.card-link):is(:hover,:focus-within)>h3,
+:is(.project-card,.ecosystem-card,.card-link):is(:hover,:focus-within)>h3>a {
+  color:var(--season-lime,var(--accent-strong));
+}

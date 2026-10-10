@@ -57,7 +57,6 @@
 .project-card a:not(.project-card-primary), .project-card button, .project-card video[controls] { position:relative; z-index:3; }
 .project-card:has(.project-card-primary:focus-visible) { outline:2px solid var(--season-lime); outline-offset:4px; }
 .project-card .project-card-primary:focus-visible { outline:none; }
-.project-card:has(.project-card-primary:hover) h3 { color:var(--season-lime); }
 
 .project-card .project-technology { z-index:3; }
 .project-card .media-pop { z-index:3; }
