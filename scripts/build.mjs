@@ -26,7 +26,7 @@ for(const p of september.entries)if(p.repoUrl)contestRepos.add(p.repoUrl.toLower
 if(communityProjects.some(p=>p.repoUrl&&contestRepos.has(p.repoUrl.toLowerCase())))throw new Error('Community projects must not duplicate contest entries.');
 console.log(`Validated ${projects.length} project records.`);
 if (!process.argv.includes('--check')) {
-  const revision = process.env.GITHUB_SHA || execFileSync('git', ['rev-parse', 'HEAD'], {cwd: root, encoding: 'utf8'}).trim();
+  const revision = process.env.GITHUB_SHA || process.env.VERCEL_GIT_COMMIT_SHA || execFileSync('git', ['rev-parse', 'HEAD'], {cwd: root, encoding: 'utf8'}).trim();
   const feed = validateFeed({schemaVersion: 1, revision, publishedAt: new Date().toISOString(), projects, contests, communityProjects});
   mkdirSync(new URL('dist/', root), {recursive: true});
   writeFileSync(new URL('dist/content.json', root), JSON.stringify(feed, null, 2) + '\n');
