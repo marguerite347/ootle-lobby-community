@@ -10,7 +10,10 @@ import {
 import { createInspirationLobby } from "../creator-hub/hub/server/inspirationLobby.mjs";
 if (process.env.VERCEL) throw new Error("This preview cannot run on Vercel.");
 const port = Number(process.env.PORT || 4318),
-  origin = "http://127.0.0.1:" + port;
+  host = process.env.CHAT_PREVIEW_HOST || "127.0.0.1",
+  origin = "http://" + host + ":" + port;
+if (!["127.0.0.1", "localhost"].includes(host))
+  throw new Error("Preview host must be loopback.");
 const directory = resolve(
   process.env.CHAT_PREVIEW_DIR || "work/community-preview",
 );
@@ -55,7 +58,13 @@ for (const [userId, channelId, body, clientId] of [
 ])
   await store.send(userId, { channelId, body, clientId });
 const app = createInspirationLobby({
-  communityServices: { store, origin, preview: true, guests: { secret: randomBytes(32).toString("hex") } },
+  communityServices: {
+    store,
+    origin,
+    preview: true,
+    privateEnabled: true,
+    guests: { secret: randomBytes(32).toString("hex") },
+  },
 });
 const server = app.listen(port, "127.0.0.1", () =>
   console.log("Community preview: " + origin + "/chat"),

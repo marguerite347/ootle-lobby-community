@@ -41,6 +41,7 @@ export type Capabilities = {
   guests?: boolean;
   platforms: string[];
   externalConnected: boolean;
+  privateMessages?: boolean;
 };
 export type Report = {
   id: string;

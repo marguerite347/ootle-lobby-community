@@ -83,6 +83,7 @@ export default function ChatSidebar() {
   const [dockPreference, setDockPreference] = useState<DockPreference>(() => returnToSidebar ? 'open' : readDockPreference(browserStorage()));
   const [isSheetOpen, setIsSheetOpen] = useState(returnToSidebar);
   const [greetingAttention, setGreetingAttention] = useState(false);
+  const [selectedPrivate, setSelectedPrivate] = useState<string | null>(null);
   const [selectedChannel, setSelectedChannel] = useState('lobby');
   const pendingFocus = useRef<FocusTarget>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
@@ -192,7 +193,7 @@ export default function ChatSidebar() {
             {isPopOut ? null : (
               <a
                 className="collective-chat-icon-btn"
-                href={`/chat?channel=${encodeURIComponent(selectedChannel)}`}
+                href={`/chat?channel=${encodeURIComponent(selectedChannel)}${selectedPrivate ? "&dm=" + encodeURIComponent(selectedPrivate) : ""}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={sidebarCopy.popOutLabel}
@@ -217,7 +218,7 @@ export default function ChatSidebar() {
 
         <div className="chat-sidebar-panel">
           {hasOpened && <Suspense fallback={<p role="status">Opening chat…</p>}>
-            <Community embedded isActive={isOpen} onChannelChange={setSelectedChannel} />
+            <Community embedded isActive={isOpen} onChannelChange={setSelectedChannel} onPrivateChange={setSelectedPrivate} />
           </Suspense>}
         </div>
       </aside>

@@ -50,3 +50,7 @@ Make the existing public Lobby conversation comfortable and familiar to Discord/
 - Browser checks cover 375/390/768/1024/1440px layouts without horizontal overflow, sidebar and full chat, separate channel/thread drafts, channel URL/pop-out agreement, and safe markup rendering. Local test messages and screenshots are outside public source.
 - Applied additive `community_chat_reactions` migration to the existing authorized database. Verified RLS enabled, existing runtime DML access, one backend-only policy, and no anon/authenticated table access. No guest/provider credential values were read.
 - Release-stage checklist items above are intentionally pending in this pre-release source snapshot. Exact merged commit, CI conclusion, deployment and live acceptance will be recorded in the PR release receipt and task handoff after publication.
+
+## Caravel-inspired private-message slice
+
+The next bounded release implements contact requests and optional encrypted one-to-one messages, preserving the shipped guest chat. The reuse decision, key lifecycle, activation/rollback and test contract are maintained in [PRIVATE_MESSAGES.md](PRIVATE_MESSAGES.md). Payment/name features and cross-app adapters remain later phases. Exact merge/deployment and browser evidence belong in the release receipt after publication.

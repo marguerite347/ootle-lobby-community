@@ -35,6 +35,8 @@ import {
 import { useConversationMessages } from "../chat/useConversationMessages";
 import { createMessageViewport } from "../chat/messageViewport";
 import { useTyping } from "../chat/useTyping";
+import PrivateMessages from "../chat/PrivateMessages";
+import { usePrivateInbox, muted } from "../chat/usePrivateInbox";
 
 function Glyph({ name }: { name: string }) {
   const paths: Record<string, string> = {
@@ -116,14 +118,60 @@ export default function Community({
   embedded = false,
   isActive = true,
   onChannelChange,
+  onPrivateChange,
 }: {
   embedded?: boolean;
   isActive?: boolean;
   onChannelChange?: (id: string) => void;
+  onPrivateChange?: (id: string | null) => void;
 } = {}) {
   const Conversation = embedded ? "section" : "main";
   const [capabilities, setCapabilities] = useState<Capabilities | null>(null),
     [account, setAccount] = useState<Account | null>(null);
+  const [privateSelection, setPrivateSelection] = useState<string | null>(
+    () => {
+      const value = new URLSearchParams(window.location.search).get("dm");
+      return value === "inbox" || (value && /^[a-f0-9-]{36}$/.test(value))
+        ? value
+        : null;
+    },
+  );
+  useEffect(() => {
+    if (capabilities && !capabilities.privateMessages)
+      setPrivateSelection(null);
+  }, [capabilities]);
+  const [privateTarget, setPrivateTarget] = useState<{
+    id: string;
+    name: string;
+  } | null>(null);
+  const privateInbox = usePrivateInbox(
+    account?.id,
+    isActive && !!capabilities?.privateMessages,
+  );
+  const privateBadge = account
+    ? privateInbox.overview?.contacts.reduce(
+        (n, c) =>
+          n +
+          (c.state === "pending" && c.requester_id !== account.id
+            ? 1
+            : c.state === "accepted" && !muted(account.id, c.id)
+              ? c.unread
+              : 0),
+        0,
+      ) || 0
+    : 0;
+  function choosePrivate(id: string | null) {
+    setPrivateSelection(id);
+    setPrivateTarget(null);
+    setMobileNav(false);
+  }
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    if (privateSelection) url.searchParams.set("dm", privateSelection);
+    else url.searchParams.delete("dm");
+    window.history.replaceState(window.history.state, "", url);
+    onPrivateChange?.(privateSelection);
+  }, [privateSelection, onPrivateChange]);
   const [channels, setChannels] = useState<Channel[]>([]),
     [channelId, setChannelId] = useState(() => {
       const requested = new URLSearchParams(window.location.search).get(
@@ -178,7 +226,7 @@ export default function Community({
     channelId,
     thread?.id,
     query,
-    isActive,
+    isActive && !privateSelection,
   );
   const { messages, setMessages } = conversation;
   const draftRef = useRef<HTMLTextAreaElement>(null),
@@ -194,7 +242,10 @@ export default function Community({
     account?.id,
     channelId,
     thread?.id,
-    isActive && !!channel?.can_post && channel.platform === "ootle",
+    isActive &&
+      !privateSelection &&
+      !!channel?.can_post &&
+      channel.platform === "ootle",
   );
   const canModerate =
     account?.role === "owner" || account?.role === "moderator";
@@ -360,6 +411,7 @@ export default function Community({
     sendId.current = null;
   }
   function chooseChannel(id: string) {
+    choosePrivate(null);
     setMessageMenu(null);
     setChannelId(id);
     setThread(null);
@@ -676,7 +728,10 @@ export default function Community({
                 <button
                   key={item.id}
                   className={
-                    "cc-channel" + (channelId === item.id ? " is-active" : "")
+                    "cc-channel" +
+                    (!privateSelection && channelId === item.id
+                      ? " is-active"
+                      : "")
                   }
                   onClick={() => chooseChannel(item.id)}
                 >
@@ -690,6 +745,25 @@ export default function Community({
               ))}
             </nav>
           </div>
+          {account && capabilities?.privateMessages && (
+            <div className="cc-channel-section">
+              <span className="cc-section-label">PRIVATE MESSAGES</span>
+              <button
+                className={
+                  "cc-channel" + (privateSelection ? " is-active" : "")
+                }
+                onClick={() => choosePrivate("inbox")}
+              >
+                <Glyph name="shield" />
+                <span>Requests & messages</span>
+                {privateBadge > 0 && (
+                  <span aria-label={privateBadge + " private updates"}>
+                    {privateBadge}
+                  </span>
+                )}
+              </button>
+            </div>
+          )}
           <div className="cc-channel-section">
             <div className="cc-section-line">
               <span className="cc-section-label">CONNECTED CHANNELS</span>
@@ -704,7 +778,10 @@ export default function Community({
             {externalChannels.map((item) => (
               <button
                 className={
-                  "cc-channel" + (channelId === item.id ? " is-active" : "")
+                  "cc-channel" +
+                  (!privateSelection && channelId === item.id
+                    ? " is-active"
+                    : "")
                 }
                 key={item.id}
                 onClick={() => chooseChannel(item.id)}
@@ -761,6 +838,7 @@ export default function Community({
                       sessionVersion.current++;
                       setGuestPaused(true);
                       setAccount(null);
+                      choosePrivate(null);
                       setMessages([]);
                       setChannels([]);
                       setThread(null);
@@ -781,590 +859,635 @@ export default function Community({
             )}
           </div>
         </aside>
-        <Conversation
-          className="cc-main"
-          id="community-main"
-          aria-label="Community chat"
-        >
-          <header className="cc-conversation-header">
-            <button
-              className="cc-icon cc-menu"
-              aria-label="Open conversations"
-              onClick={() => setMobileNav(true)}
-            >
-              <Glyph name="menu" />
-            </button>
-            {thread ? (
+        {privateSelection && account && capabilities?.privateMessages ? (
+          <PrivateMessages
+            key={account.id}
+            active={isActive}
+            account={account}
+            inbox={privateInbox}
+            selected={privateSelection}
+            target={privateTarget}
+            select={choosePrivate}
+            openNavigation={() => setMobileNav(true)}
+          />
+        ) : (
+          <Conversation
+            className="cc-main"
+            id="community-main"
+            aria-label="Community chat"
+          >
+            <header className="cc-conversation-header">
               <button
-                className="cc-icon"
-                aria-label="Back to conversation"
-                onClick={() => setThread(null)}
+                className="cc-icon cc-menu"
+                aria-label="Open conversations"
+                onClick={() => setMobileNav(true)}
               >
-                <Glyph name="back" />
+                <Glyph name="menu" />
+                {privateBadge > 0 && (
+                  <span className="cc-private-badge" aria-hidden="true">
+                    {privateBadge}
+                  </span>
+                )}
               </button>
-            ) : (
-              <span className="cc-header-hash">#</span>
-            )}
-            <div>
-              <h2>
-                {thread
-                  ? `Thread in #${channel?.name || "the-lobby"}`
-                  : channel?.name || "the-lobby"}
-              </h2>
-              {account && (
-                <span
-                  className="cc-connection-status"
-                  data-state={conversation.connection}
-                  role="status"
+              {thread ? (
+                <button
+                  className="cc-icon"
+                  aria-label="Back to conversation"
+                  onClick={() => setThread(null)}
                 >
-                  <i aria-hidden="true" />
-                  {conversation.connection}
-                </span>
+                  <Glyph name="back" />
+                </button>
+              ) : (
+                <span className="cc-header-hash">#</span>
               )}
-              <p>
-                {thread
-                  ? "A conversation within the conversation"
-                  : channel?.description ||
-                    "Meet the people building what comes next."}
-              </p>
-            </div>
-            <button
-              className="cc-icon cc-header-connect"
-              aria-label="Show connections"
-              onClick={() => setPanel("connections")}
-            >
-              <Glyph name="link" />
-            </button>
-          </header>
-          {capabilities?.preview && (
-            <div className="cc-preview-banner">
-              <i />
-              Local preview{" "}
-              <span>Sample conversations · messages stay on this computer</span>
-            </div>
-          )}
-          {(error || conversation.error) && (
-            <div className="cc-error" role="alert">
-              {error || conversation.error}
-              <button
-                onClick={() =>
-                  error ? setError("") : void conversation.refresh()
-                }
-                aria-label={error ? "Dismiss error" : "Retry connection"}
-              >
-                {error ? "×" : "Retry"}
-              </button>
-            </div>
-          )}
-          {!account ? (
-            <div className="cc-welcome">
-              <div className="cc-welcome-art">
-                <span>#</span>
-                <i />
-                <b>hello, world.</b>
+              <div>
+                <h2>
+                  {thread
+                    ? `Thread in #${channel?.name || "the-lobby"}`
+                    : channel?.name || "the-lobby"}
+                </h2>
+                {account && (
+                  <span
+                    className="cc-connection-status"
+                    data-state={conversation.connection}
+                    role="status"
+                  >
+                    <i aria-hidden="true" />
+                    {conversation.connection}
+                  </span>
+                )}
+                <p>
+                  {thread
+                    ? "A conversation within the conversation"
+                    : channel?.description ||
+                      "Meet the people building what comes next."}
+                </p>
               </div>
-              <span className="cc-eyebrow">
-                SAME PEOPLE. MORE POSSIBILITIES.
-              </span>
-              <h2>
-                Your community,
-                <br />
-                <em>in conversation.</em>
-              </h2>
-              <p>
-                A home for questions, half-formed ideas, first builds, and the
-                people who make them happen.
-              </p>
-              {loading ? (
-                <p role="status">Opening chat…</p>
-              ) : useInvitation ? (
-                <form
-                  className="cc-invitation"
-                  onSubmit={(event) => void joinChat(event)}
+              <button
+                className="cc-icon cc-header-connect"
+                aria-label="Show connections"
+                onClick={() => setPanel("connections")}
+              >
+                <Glyph name="link" />
+              </button>
+            </header>
+            {capabilities?.preview && (
+              <div className="cc-preview-banner">
+                <i />
+                Local preview{" "}
+                <span>
+                  Sample conversations · messages stay on this computer
+                </span>
+              </div>
+            )}
+            {(error || conversation.error) && (
+              <div className="cc-error" role="alert">
+                {error || conversation.error}
+                <button
+                  onClick={() =>
+                    error ? setError("") : void conversation.refresh()
+                  }
+                  aria-label={error ? "Dismiss error" : "Retry connection"}
                 >
-                  <p>Join with your invitation.</p>
-                  <label>
-                    Your name
-                    <input
-                      autoComplete="nickname"
-                      value={joinName}
-                      onChange={(e) => setJoinName(e.target.value)}
-                      maxLength={40}
-                      required
-                    />
-                  </label>
-                  <label>
-                    Invitation code
-                    <input
-                      type="password"
-                      autoComplete="off"
-                      value={inviteToken}
-                      onChange={(e) => setInviteToken(e.target.value)}
-                      required
-                    />
-                  </label>
+                  {error ? "×" : "Retry"}
+                </button>
+              </div>
+            )}
+            {!account ? (
+              <div className="cc-welcome">
+                <div className="cc-welcome-art">
+                  <span>#</span>
+                  <i />
+                  <b>hello, world.</b>
+                </div>
+                <span className="cc-eyebrow">
+                  SAME PEOPLE. MORE POSSIBILITIES.
+                </span>
+                <h2>
+                  Your community,
+                  <br />
+                  <em>in conversation.</em>
+                </h2>
+                <p>
+                  A home for questions, half-formed ideas, first builds, and the
+                  people who make them happen.
+                </p>
+                {loading ? (
+                  <p role="status">Opening chat…</p>
+                ) : useInvitation ? (
+                  <form
+                    className="cc-invitation"
+                    onSubmit={(event) => void joinChat(event)}
+                  >
+                    <p>Join with your invitation.</p>
+                    <label>
+                      Your name
+                      <input
+                        autoComplete="nickname"
+                        value={joinName}
+                        onChange={(e) => setJoinName(e.target.value)}
+                        maxLength={40}
+                        required
+                      />
+                    </label>
+                    <label>
+                      Invitation code
+                      <input
+                        type="password"
+                        autoComplete="off"
+                        value={inviteToken}
+                        onChange={(e) => setInviteToken(e.target.value)}
+                        required
+                      />
+                    </label>
+                    <button
+                      className="cc-primary"
+                      disabled={
+                        joining || !joinName.trim() || !inviteToken.trim()
+                      }
+                    >
+                      {joining ? "Joining…" : "Join the conversation"}
+                      <Glyph name="arrow" />
+                    </button>
+                    <small>
+                      Each invitation works once. This browser remembers you for
+                      7 days.
+                    </small>
+                  </form>
+                ) : capabilities?.guests ? (
                   <button
                     className="cc-primary"
-                    disabled={
-                      joining || !joinName.trim() || !inviteToken.trim()
-                    }
+                    onClick={() => {
+                      setGuestPaused(false);
+                      setSessionRetry((current) => current + 1);
+                    }}
                   >
-                    {joining ? "Joining…" : "Join the conversation"}
+                    {error ? "Try again" : "Start chatting"}{" "}
                     <Glyph name="arrow" />
                   </button>
-                  <small>
-                    Each invitation works once. This browser remembers you for 7
-                    days.
-                  </small>
-                </form>
-              ) : capabilities?.guests ? (
-                <button
-                  className="cc-primary"
-                  onClick={() => {
-                    setGuestPaused(false);
-                    setSessionRetry((current) => current + 1);
-                  }}
-                >
-                  {error ? "Try again" : "Start chatting"}{" "}
-                  <Glyph name="arrow" />
-                </button>
-              ) : capabilities?.preview ? (
-                <button
-                  className="cc-primary"
-                  onClick={() => void previewLogin()}
-                >
-                  Enter the local preview <Glyph name="arrow" />
-                </button>
-              ) : capabilities?.signIn ? (
-                <a
-                  className="cc-primary"
-                  href={
-                    embedded
-                      ? "/api/chat/auth/start?returnTo=lobby"
-                      : "/api/chat/auth/start"
-                  }
-                >
-                  Continue with GitHub <Glyph name="arrow" />
-                </a>
-              ) : (
-                <div className="cc-setup-note">
-                  Chat is being connected. You can still{" "}
-                  <a
-                    href="https://discord.com/invite/dj34vQSe6d"
-                    target="_blank"
-                    rel="noreferrer"
+                ) : capabilities?.preview ? (
+                  <button
+                    className="cc-primary"
+                    onClick={() => void previewLogin()}
                   >
-                    join the community on Discord ↗
+                    Enter the local preview <Glyph name="arrow" />
+                  </button>
+                ) : capabilities?.signIn ? (
+                  <a
+                    className="cc-primary"
+                    href={
+                      embedded
+                        ? "/api/chat/auth/start?returnTo=lobby"
+                        : "/api/chat/auth/start"
+                    }
+                  >
+                    Continue with GitHub <Glyph name="arrow" />
                   </a>
-                  .
-                </div>
-              )}
-              <div className="cc-welcome-foot">
-                <span>Conversations</span>
-                <i />
-                <span>Community</span>
-                <i />
-                <span>Connected channels</span>
-              </div>
-            </div>
-          ) : (
-            <>
-              <div className="cc-message-tools">
-                <span>{thread ? "REPLIES" : "CONVERSATION"}</span>
-                <label>
-                  <Glyph name="search" />
-                  <input
-                    aria-label="Search this conversation"
-                    placeholder="Search messages"
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
-                  />
-                </label>
-              </div>
-              <div
-                className="cc-messages"
-                ref={listRef}
-                onScroll={(event) =>
-                  setUnreadMessages(
-                    messageViewport.current.scrolled(event.currentTarget),
-                  )
-                }
-                role="log"
-                aria-label={
-                  thread ? "Thread messages" : "Conversation messages"
-                }
-                aria-live="polite"
-              >
-                {!query && !thread && (
-                  <div className="cc-channel-intro">
-                    <span>#</span>
-                    <h3>This is #{channel?.name || "the-lobby"}.</h3>
-                    <p>{channel?.description} Start something good.</p>
+                ) : (
+                  <div className="cc-setup-note">
+                    Chat is being connected. You can still{" "}
+                    <a
+                      href="https://discord.com/invite/dj34vQSe6d"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      join the community on Discord ↗
+                    </a>
+                    .
                   </div>
                 )}
-                {conversation.hasMore && (
-                  <button
-                    type="button"
-                    className="cc-load-older"
-                    disabled={conversation.loadingOlder}
-                    onClick={() => void loadOlderMessages()}
-                  >
-                    {conversation.loadingOlder
-                      ? "Loading…"
-                      : "Load earlier messages"}
-                  </button>
-                )}
-                {!visibleMessages.length && (
-                  <p className="cc-empty">
-                    {conversation.connection === "Connecting…"
-                      ? "Loading messages…"
-                      : query
-                        ? "No messages match this search."
-                        : "A fresh conversation. Say the first hello."}
-                  </p>
-                )}
-                {visibleMessages.map((message, index) => (
-                  <Fragment key={message.id}>
-                    {(!index ||
-                      !sameDay(
-                        visibleMessages[index - 1].created_at,
-                        message.created_at,
-                      )) && (
-                      <MessageSeparator
-                        className="cc-date-divider"
-                        content={dayLabel(message.created_at)}
-                      />
-                    )}
-                    <article
-                      className={
-                        "cc-message" +
-                        (groupsWith(visibleMessages[index - 1], message)
-                          ? " is-grouped"
-                          : "")
-                      }
-                      data-message-id={message.id}
+                <div className="cc-welcome-foot">
+                  <span>Conversations</span>
+                  <i />
+                  <span>Community</span>
+                  <i />
+                  <span>Connected channels</span>
+                </div>
+              </div>
+            ) : (
+              <>
+                <div className="cc-message-tools">
+                  <span>{thread ? "REPLIES" : "CONVERSATION"}</span>
+                  <label>
+                    <Glyph name="search" />
+                    <input
+                      aria-label="Search this conversation"
+                      placeholder="Search messages"
+                      value={query}
+                      onChange={(e) => setQuery(e.target.value)}
+                    />
+                  </label>
+                </div>
+                <div
+                  className="cc-messages"
+                  ref={listRef}
+                  onScroll={(event) =>
+                    setUnreadMessages(
+                      messageViewport.current.scrolled(event.currentTarget),
+                    )
+                  }
+                  role="log"
+                  aria-label={
+                    thread ? "Thread messages" : "Conversation messages"
+                  }
+                  aria-live="polite"
+                >
+                  {!query && !thread && (
+                    <div className="cc-channel-intro">
+                      <span>#</span>
+                      <h3>This is #{channel?.name || "the-lobby"}.</h3>
+                      <p>{channel?.description} Start something good.</p>
+                    </div>
+                  )}
+                  {conversation.hasMore && (
+                    <button
+                      type="button"
+                      className="cc-load-older"
+                      disabled={conversation.loadingOlder}
+                      onClick={() => void loadOlderMessages()}
                     >
-                      <button
-                        className="cc-message-more"
-                        aria-label={
-                          "Message actions for " + message.author_name
+                      {conversation.loadingOlder
+                        ? "Loading…"
+                        : "Load earlier messages"}
+                    </button>
+                  )}
+                  {!visibleMessages.length && (
+                    <p className="cc-empty">
+                      {conversation.connection === "Connecting…"
+                        ? "Loading messages…"
+                        : query
+                          ? "No messages match this search."
+                          : "A fresh conversation. Say the first hello."}
+                    </p>
+                  )}
+                  {visibleMessages.map((message, index) => (
+                    <Fragment key={message.id}>
+                      {(!index ||
+                        !sameDay(
+                          visibleMessages[index - 1].created_at,
+                          message.created_at,
+                        )) && (
+                        <MessageSeparator
+                          className="cc-date-divider"
+                          content={dayLabel(message.created_at)}
+                        />
+                      )}
+                      <article
+                        className={
+                          "cc-message" +
+                          (groupsWith(visibleMessages[index - 1], message)
+                            ? " is-grouped"
+                            : "")
                         }
-                        aria-expanded={messageMenu === message.id}
-                        onClick={() =>
-                          setMessageMenu(
-                            messageMenu === message.id ? null : message.id,
-                          )
-                        }
+                        data-message-id={message.id}
                       >
-                        <span aria-hidden="true">···</span>
-                      </button>
-                      <div className="cc-avatar-slot">
-                        <Avatar name={message.author_name} />
-                        <time
-                          className="cc-group-time"
-                          dateTime={message.created_at}
+                        <button
+                          className="cc-message-more"
+                          aria-label={
+                            "Message actions for " + message.author_name
+                          }
+                          aria-expanded={messageMenu === message.id}
+                          onClick={() =>
+                            setMessageMenu(
+                              messageMenu === message.id ? null : message.id,
+                            )
+                          }
                         >
-                          {time(message.created_at)}
-                        </time>
-                      </div>
-                      <ChatMessage
-                        className="cc-kit-message"
-                        model={{
-                          sender: message.author_name,
-                          direction: "incoming",
-                          position: messagePosition(visibleMessages, index),
-                          type: "custom",
-                        }}
-                      >
-                        <ChatMessage.Header className="cc-message-meta">
-                          <strong>{message.author_name}</strong>
-                          {message.account_id === account.id && (
-                            <span className="cc-you">you</span>
-                          )}
-                          {message.platform !== "ootle" && (
-                            <span className="cc-source">
-                              via {message.platform}
-                            </span>
-                          )}
-                          <time dateTime={message.created_at}>
+                          <span aria-hidden="true">···</span>
+                        </button>
+                        <div className="cc-avatar-slot">
+                          <Avatar name={message.author_name} />
+                          <time
+                            className="cc-group-time"
+                            dateTime={message.created_at}
+                          >
                             {time(message.created_at)}
                           </time>
-                        </ChatMessage.Header>
-                        <ChatMessage.CustomContent>
-                          <Body body={message.body} />
-                          {message.reactions?.length ||
-                          reactionMenu === message.id ? (
-                            <div
-                              className="cc-reactions"
-                              aria-label="Reactions"
-                            >
-                              {message.reactions?.map((reaction) => (
-                                <button
-                                  key={reaction.emoji}
-                                  type="button"
-                                  aria-pressed={reaction.mine}
-                                  disabled={!!reacting}
-                                  aria-label={`${reaction.emoji} ${reaction.count} ${reaction.count === 1 ? "reaction" : "reactions"}${reaction.mine ? ", including you" : ""}`}
-                                  onClick={() =>
-                                    void reactTo(
-                                      message,
-                                      reaction.emoji,
-                                      !reaction.mine,
-                                    )
-                                  }
-                                >
-                                  <span>{reaction.emoji}</span>
-                                  <span>{reaction.count}</span>
-                                </button>
-                              ))}
-                            </div>
-                          ) : null}
-                          {reactionMenu === message.id && (
-                            <div
-                              className="cc-reaction-picker"
-                              role="group"
-                              aria-label="Choose a reaction"
-                            >
-                              {reactions.map(([emoji, label]) => (
-                                <button
-                                  key={emoji}
-                                  type="button"
-                                  title={label}
-                                  aria-label={`React with ${label}`}
-                                  disabled={!!reacting}
-                                  onClick={() =>
-                                    void reactTo(
-                                      message,
-                                      emoji,
-                                      !message.reactions?.find(
-                                        (r) => r.emoji === emoji,
-                                      )?.mine,
-                                    )
-                                  }
-                                >
-                                  {emoji}
-                                </button>
-                              ))}
-                              <button
-                                type="button"
-                                aria-label="Close reactions"
-                                onClick={() => setReactionMenu(null)}
+                        </div>
+                        <ChatMessage
+                          className="cc-kit-message"
+                          model={{
+                            sender: message.author_name,
+                            direction: "incoming",
+                            position: messagePosition(visibleMessages, index),
+                            type: "custom",
+                          }}
+                        >
+                          <ChatMessage.Header className="cc-message-meta">
+                            <strong>{message.author_name}</strong>
+                            {message.account_id === account.id && (
+                              <span className="cc-you">you</span>
+                            )}
+                            {message.platform !== "ootle" && (
+                              <span className="cc-source">
+                                via {message.platform}
+                              </span>
+                            )}
+                            <time dateTime={message.created_at}>
+                              {time(message.created_at)}
+                            </time>
+                          </ChatMessage.Header>
+                          <ChatMessage.CustomContent>
+                            <Body body={message.body} />
+                            {message.reactions?.length ||
+                            reactionMenu === message.id ? (
+                              <div
+                                className="cc-reactions"
+                                aria-label="Reactions"
                               >
-                                ×
+                                {message.reactions?.map((reaction) => (
+                                  <button
+                                    key={reaction.emoji}
+                                    type="button"
+                                    aria-pressed={reaction.mine}
+                                    disabled={!!reacting}
+                                    aria-label={`${reaction.emoji} ${reaction.count} ${reaction.count === 1 ? "reaction" : "reactions"}${reaction.mine ? ", including you" : ""}`}
+                                    onClick={() =>
+                                      void reactTo(
+                                        message,
+                                        reaction.emoji,
+                                        !reaction.mine,
+                                      )
+                                    }
+                                  >
+                                    <span>{reaction.emoji}</span>
+                                    <span>{reaction.count}</span>
+                                  </button>
+                                ))}
+                              </div>
+                            ) : null}
+                            {reactionMenu === message.id && (
+                              <div
+                                className="cc-reaction-picker"
+                                role="group"
+                                aria-label="Choose a reaction"
+                              >
+                                {reactions.map(([emoji, label]) => (
+                                  <button
+                                    key={emoji}
+                                    type="button"
+                                    title={label}
+                                    aria-label={`React with ${label}`}
+                                    disabled={!!reacting}
+                                    onClick={() =>
+                                      void reactTo(
+                                        message,
+                                        emoji,
+                                        !message.reactions?.find(
+                                          (r) => r.emoji === emoji,
+                                        )?.mine,
+                                      )
+                                    }
+                                  >
+                                    {emoji}
+                                  </button>
+                                ))}
+                                <button
+                                  type="button"
+                                  aria-label="Close reactions"
+                                  onClick={() => setReactionMenu(null)}
+                                >
+                                  ×
+                                </button>
+                              </div>
+                            )}
+                            {message.reply_count > 0 && !thread && (
+                              <button
+                                className="cc-replies"
+                                onClick={() => {
+                                  setThread(message);
+                                  setQuery("");
+                                }}
+                              >
+                                <Glyph name="reply" />
+                                {message.reply_count}{" "}
+                                {message.reply_count === 1
+                                  ? "reply"
+                                  : "replies"}
+                                <span>View thread</span>
                               </button>
-                            </div>
-                          )}
-                          {message.reply_count > 0 && !thread && (
-                            <button
-                              className="cc-replies"
-                              onClick={() => {
-                                setThread(message);
-                                setQuery("");
-                              }}
-                            >
-                              <Glyph name="reply" />
-                              {message.reply_count}{" "}
-                              {message.reply_count === 1 ? "reply" : "replies"}
-                              <span>View thread</span>
-                            </button>
-                          )}
-                          {message.deliveries?.map((delivery) => (
-                            <span className="cc-delivery" key={delivery.id}>
-                              {channels.find(
-                                (c) => c.id === delivery.channel_id,
-                              )?.name || "Destination"}{" "}
-                              · {delivery.status}
-                            </span>
-                          ))}
-                        </ChatMessage.CustomContent>
-                      </ChatMessage>
-                      <div
-                        className="cc-message-actions"
-                        data-open={messageMenu === message.id}
-                        role="group"
-                        aria-label="Message actions"
-                      >
-                        <button
-                          type="button"
-                          aria-label={
-                            "Add reaction to message from " +
-                            message.author_name
-                          }
-                          title="Add reaction"
-                          onClick={() => {
-                            setReactionMenu(
-                              reactionMenu === message.id ? null : message.id,
-                            );
-                            setMessageMenu(null);
-                          }}
+                            )}
+                            {message.deliveries?.map((delivery) => (
+                              <span className="cc-delivery" key={delivery.id}>
+                                {channels.find(
+                                  (c) => c.id === delivery.channel_id,
+                                )?.name || "Destination"}{" "}
+                                · {delivery.status}
+                              </span>
+                            ))}
+                          </ChatMessage.CustomContent>
+                        </ChatMessage>
+                        <div
+                          className="cc-message-actions"
+                          data-open={messageMenu === message.id}
+                          role="group"
+                          aria-label="Message actions"
                         >
-                          <span aria-hidden="true">☺</span>
-                        </button>
-                        <button
-                          aria-label={"Reply to " + message.author_name}
-                          title="Reply"
-                          onClick={() => {
-                            setMessageMenu(null);
-                            setThread(
-                              message.parent_id
-                                ? conversation.parent ||
-                                    messages.find(
-                                      (m) => m.id === message.parent_id,
-                                    ) || { ...message, id: message.parent_id }
-                                : message,
-                            );
-                            setQuery("");
-                            draftRef.current?.focus();
-                          }}
-                        >
-                          <Glyph name="reply" />
-                        </button>
-                        <button
-                          aria-label={
-                            "Report message from " + message.author_name
-                          }
-                          title="Report"
-                          onClick={() => {
-                            setMessageMenu(null);
-                            setReporting(message);
-                            setReason("");
-                          }}
-                        >
-                          <Glyph name="shield" />
-                        </button>
-                        {canModerate && (
                           <button
-                            title="Hide message"
+                            type="button"
                             aria-label={
-                              "Hide message from " + message.author_name
+                              "Add reaction to message from " +
+                              message.author_name
                             }
+                            title="Add reaction"
                             onClick={() => {
+                              setReactionMenu(
+                                reactionMenu === message.id ? null : message.id,
+                              );
                               setMessageMenu(null);
-                              void moderate(message.id, "hide");
                             }}
                           >
-                            <Glyph name="close" />
+                            <span aria-hidden="true">☺</span>
                           </button>
-                        )}
-                      </div>
-                    </article>
-                  </Fragment>
-                ))}
-              </div>
-              {unreadMessages > 0 && (
-                <div className="cc-new-messages" role="status">
-                  <button type="button" onClick={showLatestMessages}>
-                    <span aria-hidden="true">↓</span> {unreadMessages} new{" "}
-                    {unreadMessages === 1 ? "message" : "messages"} · Jump to
-                    latest
-                  </button>
+                          {capabilities?.privateMessages &&
+                            message.account_id &&
+                            message.account_id !== account?.id && (
+                              <button
+                                aria-label={
+                                  "Private message " + message.author_name
+                                }
+                                title="Private message"
+                                onClick={() => {
+                                  setMessageMenu(null);
+                                  setPrivateSelection("inbox");
+                                  setPrivateTarget({
+                                    id: message.account_id!,
+                                    name: message.author_name,
+                                  });
+                                  setMobileNav(false);
+                                }}
+                              >
+                                <Glyph name="chat" />
+                              </button>
+                            )}
+                          <button
+                            aria-label={"Reply to " + message.author_name}
+                            title="Reply"
+                            onClick={() => {
+                              setMessageMenu(null);
+                              setThread(
+                                message.parent_id
+                                  ? conversation.parent ||
+                                      messages.find(
+                                        (m) => m.id === message.parent_id,
+                                      ) || { ...message, id: message.parent_id }
+                                  : message,
+                              );
+                              setQuery("");
+                              draftRef.current?.focus();
+                            }}
+                          >
+                            <Glyph name="reply" />
+                          </button>
+                          <button
+                            aria-label={
+                              "Report message from " + message.author_name
+                            }
+                            title="Report"
+                            onClick={() => {
+                              setMessageMenu(null);
+                              setReporting(message);
+                              setReason("");
+                            }}
+                          >
+                            <Glyph name="shield" />
+                          </button>
+                          {canModerate && (
+                            <button
+                              title="Hide message"
+                              aria-label={
+                                "Hide message from " + message.author_name
+                              }
+                              onClick={() => {
+                                setMessageMenu(null);
+                                void moderate(message.id, "hide");
+                              }}
+                            >
+                              <Glyph name="close" />
+                            </button>
+                          )}
+                        </div>
+                      </article>
+                    </Fragment>
+                  ))}
                 </div>
-              )}
-              <div className="cc-composer-area">
-                <div
-                  className="cc-typing"
-                  role="status"
-                  aria-live="polite"
-                  aria-atomic="true"
-                >
-                  {typing.label && <TypingIndicator content={typing.label} />}
-                </div>
-                {thread && (
-                  <div className="cc-reply-context">
-                    <Glyph name="reply" />
-                    <span>
-                      Replying to{" "}
-                      <strong>
-                        {(conversation.parent || thread).author_name}
-                      </strong>
-                      <small>{(conversation.parent || thread).body}</small>
-                    </span>
-                    <button
-                      onClick={() => setThread(null)}
-                      aria-label="Cancel reply"
-                    >
-                      ×
+                {unreadMessages > 0 && (
+                  <div className="cc-new-messages" role="status">
+                    <button type="button" onClick={showLatestMessages}>
+                      <span aria-hidden="true">↓</span> {unreadMessages} new{" "}
+                      {unreadMessages === 1 ? "message" : "messages"} · Jump to
+                      latest
                     </button>
                   </div>
                 )}
-                <form className="cc-composer" onSubmit={send}>
-                  <textarea
-                    rows={1}
-                    ref={draftRef}
-                    aria-label={thread ? "Write a reply" : "Write a message"}
-                    placeholder={
-                      thread
-                        ? "Keep the conversation going…"
-                        : "Message #" + (channel?.name || "the-lobby")
-                    }
-                    maxLength={4000}
-                    value={draft}
-                    disabled={
-                      sending ||
-                      !channel?.can_post ||
-                      channel.platform !== "ootle"
-                    }
-                    onChange={(e) => updateDraft(e.target.value)}
-                    onBlur={typing.stop}
-                    onKeyDown={(e) => {
-                      if (
-                        e.key === "Enter" &&
-                        !e.shiftKey &&
-                        !e.nativeEvent.isComposing
-                      ) {
-                        e.preventDefault();
-                        void send();
-                      }
-                    }}
-                  />
-                  <div className="cc-composer-bottom">
-                    {externalChannels.some(
-                      (c) => c.connected && c.can_post,
-                    ) && (
+                <div className="cc-composer-area">
+                  <div
+                    className="cc-typing"
+                    role="status"
+                    aria-live="polite"
+                    aria-atomic="true"
+                  >
+                    {typing.label && <TypingIndicator content={typing.label} />}
+                  </div>
+                  {thread && (
+                    <div className="cc-reply-context">
+                      <Glyph name="reply" />
+                      <span>
+                        Replying to{" "}
+                        <strong>
+                          {(conversation.parent || thread).author_name}
+                        </strong>
+                        <small>{(conversation.parent || thread).body}</small>
+                      </span>
                       <button
-                        className="cc-destinations"
-                        type="button"
-                        onClick={() => setCrosspost(true)}
+                        onClick={() => setThread(null)}
+                        aria-label="Cancel reply"
                       >
-                        <Glyph name="link" />
-                        <span>Post to…</span>
+                        ×
                       </button>
-                    )}
-                    <span className="cc-composer-tip">
-                      Shift + Enter for a new line
-                    </span>
-                    <button
-                      className="cc-send"
-                      type="submit"
+                    </div>
+                  )}
+                  <form className="cc-composer" onSubmit={send}>
+                    <textarea
+                      rows={1}
+                      ref={draftRef}
+                      aria-label={thread ? "Write a reply" : "Write a message"}
+                      placeholder={
+                        thread
+                          ? "Keep the conversation going…"
+                          : "Message #" + (channel?.name || "the-lobby")
+                      }
+                      maxLength={4000}
+                      value={draft}
                       disabled={
                         sending ||
-                        !draft.trim() ||
                         !channel?.can_post ||
                         channel.platform !== "ootle"
                       }
-                      aria-label={sending ? "Sending message" : "Send message"}
+                      onChange={(e) => updateDraft(e.target.value)}
+                      onBlur={typing.stop}
+                      onKeyDown={(e) => {
+                        if (
+                          e.key === "Enter" &&
+                          !e.shiftKey &&
+                          !e.nativeEvent.isComposing
+                        ) {
+                          e.preventDefault();
+                          void send();
+                        }
+                      }}
+                    />
+                    <div className="cc-composer-bottom">
+                      {externalChannels.some(
+                        (c) => c.connected && c.can_post,
+                      ) && (
+                        <button
+                          className="cc-destinations"
+                          type="button"
+                          onClick={() => setCrosspost(true)}
+                        >
+                          <Glyph name="link" />
+                          <span>Post to…</span>
+                        </button>
+                      )}
+                      <span className="cc-composer-tip">
+                        Shift + Enter for a new line
+                      </span>
+                      <button
+                        className="cc-send"
+                        type="submit"
+                        disabled={
+                          sending ||
+                          !draft.trim() ||
+                          !channel?.can_post ||
+                          channel.platform !== "ootle"
+                        }
+                        aria-label={
+                          sending ? "Sending message" : "Send message"
+                        }
+                      >
+                        <Glyph name="send" />
+                      </button>
+                    </div>
+                  </form>
+                  <div className="cc-composer-foot">
+                    <button
+                      type="button"
+                      className="cc-profile-button"
+                      onClick={editName}
+                      aria-label="Change your chat name"
                     >
-                      <Glyph name="send" />
+                      <span className="cc-profile-dot" aria-hidden="true" />
+                      {account.name}
+                      <span aria-hidden="true">⌄</span>
                     </button>
+                    <span role="status">{status}</span>
                   </div>
-                </form>
-                <div className="cc-composer-foot">
-                  <button
-                    type="button"
-                    className="cc-profile-button"
-                    onClick={editName}
-                    aria-label="Change your chat name"
-                  >
-                    <span className="cc-profile-dot" aria-hidden="true" />
-                    {account.name}
-                    <span aria-hidden="true">⌄</span>
-                  </button>
-                  <span role="status">{status}</span>
                 </div>
-              </div>
-            </>
-          )}
-        </Conversation>
+              </>
+            )}
+          </Conversation>
+        )}
         <aside className="cc-about">
           <span className="cc-eyebrow">A SHARED SPACE</span>
           <div className="cc-about-mark">

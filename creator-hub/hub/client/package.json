@@ -22,6 +22,7 @@
     "codemirror": "6.0.2",
     "fflate": "0.8.3",
     "motion": "13.4.1",
+    "nostr-tools": "2.24.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "7.18.4"
@@ -32,6 +33,7 @@
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "4.7.0",
+    "fake-indexeddb": "6.2.5",
     "typescript": "^5.6.2",
     "vite": "6.4.4",
     "vitest": "4.1.11"

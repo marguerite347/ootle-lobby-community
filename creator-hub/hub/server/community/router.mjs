@@ -1,4 +1,4 @@
-// INTEGRATION_GAP[LOBBY-CHAT] (build-required): guest chat supports paginated threads, reactions and typing; external transports remain unconnected. See docs/DEVELOPMENT_GAPS.md#lobby-chat.
+// INTEGRATION_GAP[LOBBY-CHAT] (build-required): guest chat supports threads, reactions, typing and optional encrypted DMs; external transports and key recovery remain unimplemented. See docs/DEVELOPMENT_GAPS.md#lobby-chat.
 import { Router, json } from "express";
 import {
   randomBytes,
@@ -28,6 +28,7 @@ export function createCommunityRouter({
   invites,
   guests,
   preview = false,
+  privateEnabled = false,
   previewAccount = "github-1",
   fetcher = fetch,
 } = {}) {
@@ -75,6 +76,7 @@ export function createCommunityRouter({
       guests: configured && !!guests?.secret,
       platforms: ["telegram", "discord", "slack"],
       externalConnected: false,
+      privateMessages: configured && privateEnabled,
     }),
   );
   router.use((req, res, next) =>
@@ -96,7 +98,15 @@ export function createCommunityRouter({
         .json({ error: "Open chat on its own site before posting." });
     next();
   });
-  router.use(json({ limit: "16kb", strict: true }));
+  const privateJson = json({ limit: "64kb", strict: true }),
+    publicJson = json({ limit: "16kb", strict: true });
+  router.use((req, res, next) =>
+    (req.path.startsWith("/private/") ? privateJson : publicJson)(
+      req,
+      res,
+      next,
+    ),
+  );
   router.get(
     "/session",
     wrap(async (req, res) =>
@@ -131,7 +141,10 @@ export function createCommunityRouter({
         const current = await store.session(cookies(req)[cookieName]);
         if (current) return res.json({ account: current });
         await store.rateLimit(
-          "guest:" + createHmac("sha256", guests.secret).update(req.ip || "unknown").digest("hex"),
+          "guest:" +
+            createHmac("sha256", guests.secret)
+              .update(req.ip || "unknown")
+              .digest("hex"),
           10,
         );
         const token = randomBytes(32).toString("hex");
@@ -144,9 +157,18 @@ export function createCommunityRouter({
     router.post(
       "/invitations/redeem",
       wrap(async (req, res) => {
-        await store.rateLimit("invite:" + createHmac("sha256", invites.secret).update(req.ip || "unknown").digest("hex"));
+        await store.rateLimit(
+          "invite:" +
+            createHmac("sha256", invites.secret)
+              .update(req.ip || "unknown")
+              .digest("hex"),
+        );
         const token = randomBytes(32).toString("hex");
-        const account = await store.redeemInvitation(req.body.token, req.body.name, token);
+        const account = await store.redeemInvitation(
+          req.body.token,
+          req.body.name,
+          token,
+        );
         res.cookie(cookieName, token, cookieOptions);
         res.json({ account });
       }),
@@ -254,6 +276,106 @@ export function createCommunityRouter({
       next();
     }, next),
   );
+  router.use("/private", (req, res, next) =>
+    privateEnabled
+      ? next()
+      : res
+          .status(503)
+          .json({ error: "Private messages are temporarily unavailable." }),
+  );
+  router.get(
+    "/private/overview",
+    wrap(async (req, res) =>
+      res.json(await store.privateChat.overview(req.chatAccount.id)),
+    ),
+  );
+  router.post(
+    "/private/challenge",
+    wrap(async (req, res) => {
+      await store.rateLimit("private-key:" + req.chatAccount.id, 20);
+      res.json(
+        await store.privateChat.challenge(
+          req.chatAccount.id,
+          req.body.pubkey,
+          safeOrigin,
+        ),
+      );
+    }),
+  );
+  router.post(
+    "/private/identity",
+    wrap(async (req, res) => {
+      await store.rateLimit("private-bind:" + req.chatAccount.id, 20);
+      res.json(
+        await store.privateChat.bind(
+          req.chatAccount.id,
+          req.body.event,
+          safeOrigin,
+        ),
+      );
+    }),
+  );
+  router.post(
+    "/private/requests",
+    wrap(async (req, res) => {
+      await store.rateLimit("private-requests:" + req.chatAccount.id, 20);
+      res.json(
+        await store.privateChat.request(req.chatAccount.id, req.body.peerId),
+      );
+    }),
+  );
+  router.post(
+    "/private/contacts/:id",
+    wrap(async (req, res) => {
+      await store.rateLimit("private-contacts:" + req.chatAccount.id, 60);
+      res.json(
+        await store.privateChat.respond(
+          req.chatAccount.id,
+          req.params.id,
+          req.body.action,
+        ),
+      );
+    }),
+  );
+  router.get(
+    "/private/contacts/:id/messages",
+    wrap(async (req, res) =>
+      res.json(
+        await store.privateChat.messages(req.chatAccount.id, req.params.id, {
+          before: req.query.before,
+          beforeId: req.query.beforeId,
+        }),
+      ),
+    ),
+  );
+  router.post(
+    "/private/contacts/:id/messages",
+    wrap(async (req, res) => {
+      await store.rateLimit("private-send:" + req.chatAccount.id, 120);
+      res
+        .status(201)
+        .json(
+          await store.privateChat.send(
+            req.chatAccount.id,
+            req.params.id,
+            req.body,
+          ),
+        );
+    }),
+  );
+  router.post(
+    "/private/contacts/:id/received",
+    wrap(async (req, res) => {
+      await store.rateLimit("private-receive:" + req.chatAccount.id, 1200);
+      res.json(
+        await store.privateChat.received(
+          req.chatAccount.id,
+          req.params.id,
+          req.body.id,
+        ),
+      );
+    }),
+  );
   router.post(
     "/profile/name",
     wrap(async (req, res) => {
@@ -274,21 +396,23 @@ export function createCommunityRouter({
   router.get(
     "/channels/:id/messages",
     wrap(async (req, res) =>
-      res.json(await store.messagePage(req.chatAccount.id, req.params.id, {
-        before: req.query.before,
-        beforeId: req.query.beforeId,
-        search: req.query.q,
-        parentId: req.query.parentId ?? null,
-        rootsOnly: req.query.rootsOnly === "1",
-      })),
+      res.json(
+        await store.messagePage(req.chatAccount.id, req.params.id, {
+          before: req.query.before,
+          beforeId: req.query.beforeId,
+          search: req.query.q,
+          parentId: req.query.parentId ?? null,
+          rootsOnly: req.query.rootsOnly === "1",
+        }),
+      ),
     ),
   );
   router.post(
     "/messages/:id/reactions",
-    wrap(async (req,res) => {
-      await store.rateLimit("reactions:" + req.chatAccount.id,120);
-      await store.setReaction(req.chatAccount.id,req.params.id,req.body);
-      res.json({ok:true});
+    wrap(async (req, res) => {
+      await store.rateLimit("reactions:" + req.chatAccount.id, 120);
+      await store.setReaction(req.chatAccount.id, req.params.id, req.body);
+      res.json({ ok: true });
     }),
   );
   router.post(
@@ -306,9 +430,15 @@ export function createCommunityRouter({
   );
   router.get(
     "/channels/:id/typing",
-    wrap(async (req, res) => res.json({
-      typing: await store.typing(req.chatAccount.id, req.params.id, req.query.parentId ?? null),
-    })),
+    wrap(async (req, res) =>
+      res.json({
+        typing: await store.typing(
+          req.chatAccount.id,
+          req.params.id,
+          req.query.parentId ?? null,
+        ),
+      }),
+    ),
   );
   router.post(
     "/typing",
