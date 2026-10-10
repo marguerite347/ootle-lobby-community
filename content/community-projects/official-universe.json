@@ -33,5 +33,7 @@
     "reviewedAt": "2026-10-04T16:02:52.616125Z",
     "sha256": "436f2bf2c586f97a21caf9ebced6a566daec362e1c48c6c7a84adf41acb7990c"
   },
-  "officialSource": "https://tari.com/downloads"
+  "officialSource": "https://tari.com/downloads",
+  "cardSummary": "Mine Tari on your desktop with a visual interface and companion wallet.",
+  "cardStatus": "Official app \u00b7 Not tested here"
 }

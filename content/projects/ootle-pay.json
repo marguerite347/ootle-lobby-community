@@ -15,5 +15,7 @@
       "label": "SubscriptionManager",
       "sourceUrl": "https://github.com/imphila/ootle-pay/blob/2b22eb8d5007019087983d39dd451203835be6cd/contracts/subscription/src/lib.rs"
     }
-  ]
+  ],
+  "cardSummary": "Explore merchant storefronts, subscriptions and refunds with stake-gated registration.",
+  "cardStatus": "Runtime not verified"
 }

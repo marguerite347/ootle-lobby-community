@@ -1,7 +1,7 @@
 {
   "id": "tari-ootle:app:tariorg",
   "title": "TariOrg",
-  "summary": "A community-built organization and treasury application on Tari Ootle. TariOrg enables on-chain organization management with member governance, proposals, and a treasury for managing and spending funds. Experimental / Exploration — not production-ready",
+  "summary": "A community-built organization and treasury application on Tari Ootle. TariOrg enables on-chain organization management with member governance, proposals, and a treasury for managing and spending funds. Experimental / Exploration \u2014 not production-ready",
   "technologies": [
     {
       "label": "Organization template",
@@ -11,5 +11,7 @@
       "label": "Treasury vaults",
       "sourceUrl": "https://github.com/n0izn0iz/tariorg/blob/74fc320a2861de98e3abcd3821f18c0c2eb6f1b9/tariorg/src/lib.rs"
     }
-  ]
+  ],
+  "cardSummary": "Explore member governance, proposals and shared treasury management for organizations on Tari Ootle.",
+  "cardStatus": "Experimental \u00b7 Not production-ready"
 }

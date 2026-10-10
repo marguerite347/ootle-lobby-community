@@ -11,5 +11,7 @@
       "label": "Vault + access rules",
       "sourceUrl": "https://github.com/huzhazha/legacy-vault-ootle/blob/911da552fa8248570e6f554c70289be8e9682399/src/lib.rs"
     }
-  ]
+  ],
+  "cardSummary": "Explore guardian-approved recovery with heartbeat checks, waiting periods and beneficiary controls.",
+  "cardStatus": "Runtime not verified"
 }

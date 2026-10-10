@@ -31,5 +31,7 @@
     "reviewedAt": "2026-10-04T16:02:52.616125Z",
     "sha256": "c169022b4cf24ef35b9f87d9560ec020c6785e85cd73222216c3436dbb20558e"
   },
-  "demoUrl": "https://tari-market.johnnytsunami14.chatgpt.site/"
+  "demoUrl": "https://tari-market.johnnytsunami14.chatgpt.site/",
+  "cardSummary": "A marketplace concept pairing Ootle testnet escrow with seller ratings.",
+  "cardStatus": "Concept \u00b7 Sign-in required"
 }

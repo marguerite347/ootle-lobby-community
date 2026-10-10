@@ -5,14 +5,29 @@ import ProjectTechnology from './ProjectTechnology';
 import ContestProjectMetrics, {type ProjectMetrics} from './ContestProjectMetrics';
 import './CommunityContent.css';
 
-type Props={resource:CardMediaResource;sourceUrl:string;creator:string;summary:string;repoUrl?:string|null;metrics?:ProjectMetrics;technologies?:{label:string;sourceUrl:string}[];dates?:ReactNode;caption?:ReactNode;actions?:ReactNode};
-// The title's native link stretches over the card. Other links and controls sit
-// above it, preserving keyboard access, middle-click and independent actions.
-export default function ProjectCard({resource,sourceUrl,creator,summary,repoUrl,metrics,technologies,dates,caption,actions}:Props){
+type Props={resource:CardMediaResource;sourceUrl:string;creator:string;summary:string;cardSummary?:string;cardStatus?:string;repoUrl?:string|null;metrics?:ProjectMetrics;technologies?:{label:string;sourceUrl:string}[];dates?:ReactNode;caption?:ReactNode;actions?:ReactNode;frontActions?:ReactNode};
+export function recordingLabel(source?:string|null){
+ if(!source)return null;
+ if(/concept overview/i.test(source))return 'Concept overview';
+ if(/announcement walkthrough/i.test(source))return 'Announcement';
+ if(/docs|source|repository|guide/i.test(source))return 'Docs walkthrough';
+ return 'Page walkthrough';
+}
+// Separate authored front copy from complete source qualifications. Native
+// details keeps metadata and secondary links reachable with mouse and keyboard.
+export default function ProjectCard({resource,sourceUrl,creator,summary,cardSummary,cardStatus,repoUrl,metrics,technologies,dates,caption,actions,frontActions}:Props){
  return <article id={`project-${resource.id.replaceAll(':','-')}`} className="card contest-project-card project-card">
-  <div className="contest-project-cover"><ResourceCardMedia r={resource} metrics={<ContestProjectMetrics value={metrics} repoUrl={repoUrl}/>}/>{(!technologies||technologies.length>0)&&<ProjectTechnology resourceId={resource.id} labels={technologies}/>}</div>{caption}
-  <h3 className="mt16"><a className="project-card-primary" href={safeHref(sourceUrl)} target="_blank" rel="noreferrer">{resource.title}</a></h3>
-  {dates}<p>{summary}</p><p className="faint">By {creator}</p>
-  <div className="contest-project-actions">{actions}</div>{safeHref(sourceUrl)&&<small className="faint">Source: {new URL(sourceUrl,'https://ootle-lobby-preview.vercel.app').hostname}</small>}
+  <div className="contest-project-cover"><ResourceCardMedia r={resource} metrics={<ContestProjectMetrics value={metrics} repoUrl={repoUrl}/>}/></div>
+  <h3><a className="project-card-primary" href={safeHref(sourceUrl)} target="_blank" rel="noreferrer">{resource.title}</a></h3>
+  <p className="card-front-summary">{cardSummary || summary}</p>
+  <div className="card-front-status">{cardStatus&&<strong>{cardStatus}</strong>}{resource.preview?.video&&<span>{recordingLabel(resource.preview.source)}</span>}</div>
+  <p className="card-byline">By {creator}{technologies?.[0]&&<> · {technologies[0].label}</>}</p>
+  <div className="card-front-links">{frontActions || <a href={safeHref(sourceUrl)} target="_blank" rel="noreferrer">Creator’s post ↗</a>}</div>
+  <details className="card-details"><summary aria-label={`Details about ${resource.title}`}>Details</summary>
+   {cardSummary&&<p>{summary}</p>}{dates}{caption}
+   {(!technologies||technologies.length>0)&&<ProjectTechnology resourceId={resource.id} labels={technologies}/>}
+   <div className="contest-project-actions">{actions}</div>
+   {repoUrl&&<a href={safeHref(repoUrl)} target="_blank" rel="noreferrer">Repository ↗</a>}
+  </details>
  </article>;
 }

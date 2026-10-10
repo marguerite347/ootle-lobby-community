@@ -86,3 +86,23 @@
 /* Keep source walkthrough controls and labels clear of technology overlays. */
 .project-card .contest-project-cover .media-video.recorded-walkthrough{position:absolute}
 .contest-project-cover:has(.recorded-walkthrough) .project-technology{position:relative;inset:auto;padding:10px 0 0;background:none;border-radius:0}
+
+/* Authored card fronts: natural height, readable copy, metadata on demand. */
+.grid:has(>.project-card){align-items:start}
+.project-card{align-self:start;scroll-margin-top:8rem;display:flex;flex-direction:column;gap:.5rem}
+.project-card .project-card-primary::after{content:none}
+.project-card h3,.season-home .project-card h3{margin:.25rem 0 0;font-size:1.125rem;line-height:1.3}
+.project-card .card-front-summary{margin:0;font-size:1rem;line-height:1.5}
+.card-front-status{display:flex;flex-wrap:wrap;gap:.25rem .75rem;font-size:.875rem;line-height:1.5;color:var(--season-lavender,#c9b6ff)}
+.card-front-status span{color:var(--season-muted,#aaa7c0)}
+.project-card .card-byline{margin:0;font-size:.875rem;line-height:1.5;color:var(--season-muted,#aaa7c0)}
+.card-front-links{display:flex;flex-wrap:wrap;gap:0 1rem}
+.card-front-links a,.card-details summary,.card-details a{display:inline-flex;align-items:center;min-height:2.75rem;font-size:.875rem}
+.card-details{position:relative;z-index:3;border-top:1px solid #c9b6ff33}
+.card-details summary{display:list-item;align-content:center;cursor:pointer;width:fit-content;padding-right:1rem}
+.card-details summary:focus-visible{outline:2px solid var(--season-lime,#cced00);outline-offset:2px}
+.card-details p{font-size:.875rem;line-height:1.6;margin:.5rem 0}
+.card-details .project-technology{position:static;padding:.5rem 0;background:none;border-radius:0}
+.card-details .contest-project-actions{margin:0;gap:0 1rem}
+.card-details .community-media-caption{margin:0;font-size:.875rem}
+.card-details .contest-project-dates{margin:.5rem 0;font-size:.875rem}

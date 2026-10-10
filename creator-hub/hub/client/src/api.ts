@@ -27,6 +27,8 @@ export type Resource = {
   native: boolean;
   title: string;
   summary: string | null;
+  cardSummary?: string | null;
+  cardStatus?: string | null;
   category: string | null;
   sourceUrl: string | null;
   repoUrl: string | null;

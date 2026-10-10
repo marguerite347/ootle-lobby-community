@@ -31,5 +31,7 @@
     "reviewedAt": "2026-10-04T16:02:52.616125Z",
     "sha256": "164f026245e883057a9a05b333bd46457425a87420ebb688992153d90630c31f"
   },
-  "demoUrl": "https://sooon.fun/"
+  "demoUrl": "https://sooon.fun/",
+  "cardSummary": "Explore prediction markets, token launching and on-chain games on Ootle testnet.",
+  "cardStatus": "Testnet \u00b7 Wallet required"
 }
