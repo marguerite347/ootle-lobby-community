@@ -175,7 +175,7 @@
       "id": "LOBBY-VIDEO",
       "status": "design-only",
       "surface": "/api/video/templates/*; capture CLI; /api/studio/recipes",
-      "current": "Validation, props/command export and local capture/render tools exist. These routes do not run a hosted renderer or remote browser capture service.",
+      "current": "Validation, props/command export and local capture/render tools exist. These routes do not run a hosted renderer or remote browser capture service. Reviewed resource walkthroughs use the existing local recorder and committed public MP4/poster path, with per-resource provenance, manual playback controls and frame/playback review. This does not add hosted capture workers.",
       "required": "If hosted rendering is wanted, add isolated queued workers, job status, durable artifacts, resource limits and operator review of capture targets/media. Reuse existing CLI/templates.",
       "verify": "A representative rendered recording plays correctly; job failures are visible; outputs retain provenance and cannot expose internal URLs.",
       "files": [

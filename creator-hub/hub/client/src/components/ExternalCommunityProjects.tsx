@@ -17,7 +17,7 @@ export default function ExternalCommunityProjects({items}:{items:ExternalProject
  const metrics=useContestMetrics('/api/community-projects/metrics');
  return <div className="grid">{[...items].sort((a,b)=>Date.parse(b.publishedAt)-Date.parse(a.publishedAt)).map(p=>{
   const value=metrics[p.slug];
-  return <ProjectCard key={p.slug} resource={{id:p.slug,title:p.title,ecosystem:p.ecosystem,native:true,preview:p.media}} sourceUrl={p.sourceUrl} creator={p.creator} summary={p.summary} repoUrl={p.repoUrl} metrics={value} technologies={p.technologies}
+  return <ProjectCard key={p.slug} resource={{id:p.slug,title:p.title,ecosystem:p.ecosystem,native:true,preview:p.media?{...p.media,source:p.media.label}:null}} sourceUrl={p.sourceUrl} creator={p.creator} summary={p.summary} repoUrl={p.repoUrl} metrics={value} technologies={p.technologies}
    dates={
    <div className="contest-project-dates"><a href={safeHref(p.publicationUrl)} title={p.publicationBasis} target="_blank" rel="noreferrer"><span>{p.publicationLabel}</span><time dateTime={p.publishedAt}>{date(p.publishedAt)}</time></a>{p.repoUrl&&<a href={safeHref(value?.github?.activityUrl||`${p.repoUrl}/activity`)} target="_blank" rel="noreferrer" title="Latest repository push reported by GitHub"><span>GitHub activity</span>{value?.github?.pushedAt?<time dateTime={value.github.pushedAt}>{date(value.github.pushedAt)}</time>:'Unavailable'}</a>}</div>}
    caption={p.media&&<a className="community-media-caption" href={safeHref(p.media.video)} target="_blank" rel="noreferrer">{p.media.label}</a>}

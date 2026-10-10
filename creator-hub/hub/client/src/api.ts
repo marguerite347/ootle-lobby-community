@@ -49,6 +49,7 @@ export type Resource = {
   verification: string;
   tariCompatible: boolean | null;
   signals?: Record<string, any>;
+  discussionLinks?: {url:string;platform:string}[];
   preview?: { image: string | null; video: string | null; source?: string } | null;
   popularity: Popularity;
   engagement: Engagement;

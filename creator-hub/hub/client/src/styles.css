@@ -395,3 +395,5 @@ label.lbl { display: block; font-size: 13px; color: var(--muted); margin: 14px 0
   .project-work-card > div:last-child { grid-column: auto; }
   .project-work-media { width: 100%; }
 }
+
+.media-video.recorded-walkthrough{object-fit:contain;z-index:4;pointer-events:auto;background:#110d18}.project-card .recorded-walkthrough{position:absolute;z-index:4}.resource-recording-caption{font-size:12px;line-height:1.5;margin:8px 0;color:var(--muted)}

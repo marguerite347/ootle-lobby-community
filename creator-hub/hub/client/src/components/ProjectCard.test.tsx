@@ -1,6 +1,7 @@
 import React from 'react';
 import {renderToStaticMarkup} from 'react-dom/server';
 import {describe,it,expect} from 'vitest';
+import {ResourceCardMedia} from '../ui';
 import ProjectCard from './ProjectCard';
 import ContestProjectMetrics from './ContestProjectMetrics';
 describe('project navigation',()=>{
@@ -14,4 +15,12 @@ describe('project navigation',()=>{
    expect(html).toContain(`href="${repoUrl.split('/').slice(0,5).join('/')}"`);expect(html).not.toContain('/stargazers');
   }
  });
+});
+
+it('source walkthroughs expose native playback controls and do not autoplay or loop',()=>{
+ const resource={id:'source',title:'Source',ecosystem:'tari',native:true,preview:{image:'/poster.jpg',video:'/source.mp4',source:'Source/docs walkthrough — application not demonstrated'}};
+ const html=renderToStaticMarkup(<ResourceCardMedia r={resource}/>);
+ expect(html).toContain('controls=""');expect(html).toContain('poster="/poster.jpg"');expect(html).toContain('preload="none"');expect(html).not.toContain('autoplay');expect(html).not.toContain('loop=""');
+ // Cards nested in links show the poster; controls belong on the detail/standalone card.
+ expect(renderToStaticMarkup(<ResourceCardMedia r={resource} interactive={false}/>)).not.toContain('<video');
 });

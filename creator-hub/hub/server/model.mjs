@@ -63,6 +63,7 @@ export function makeResource(input) {
 
     // Link out by default (CREATOR_HUB.md). Any of these may be null (unknown).
     sourceUrl: safeHref(input.sourceUrl) || null,
+    discussionLinks: (input.discussionLinks || []).filter(p => safeHref(p.url)?.startsWith('https:')).map(p => ({url:safeHref(p.url),platform:p.platform})),
     repoUrl: safeHref(input.repoUrl) || null,
     docsUrl: safeHref(input.docsUrl) || null,
     demoUrl: safeHref(input.demoUrl) || null,

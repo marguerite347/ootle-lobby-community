@@ -202,7 +202,7 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 
 **design-only** — /api/video/templates/*; capture CLI; /api/studio/recipes
 
-**Current:** Validation, props/command export and local capture/render tools exist. These routes do not run a hosted renderer or remote browser capture service.
+**Current:** Validation, props/command export and local capture/render tools exist. These routes do not run a hosted renderer or remote browser capture service. Reviewed resource walkthroughs use the existing local recorder and committed public MP4/poster path, with per-resource provenance, manual playback controls and frame/playback review. This does not add hosted capture workers.
 
 **Remaining:** If hosted rendering is wanted, add isolated queued workers, job status, durable artifacts, resource limits and operator review of capture targets/media. Reuse existing CLI/templates.
 

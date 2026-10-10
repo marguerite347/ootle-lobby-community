@@ -14,5 +14,13 @@
       "sourceUrl": "https://github.com/Alex20Sas12/ghostkey/blob/abe3b49775f9ecb8508b4d40de60a8791b2ac249/ghostkey.py"
     }
   ],
-  "ecosystem": "tari"
+  "ecosystem": "tari",
+  "recording": {
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-ghostkey-20261010.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-ghostkey-20261010.jpg",
+    "capturedAt": "2026-10-10T12:48:40.537282+00:00",
+    "sourceRevision": "abe3b49775f9ecb8508b4d40de60a8791b2ac249",
+    "kind": "public-page",
+    "credit": "Source/docs walkthrough \u2014 application not demonstrated"
+  }
 }

@@ -11,7 +11,7 @@ export function requireLinkHost(value,field='source') {
   source:['github.com','git.disroot.org','community.tari.com','ootle.tari.com','tari.com','www.tari.com','wiki.tari.com'],
   repository:['github.com','git.disroot.org'],
   demo:['feeltherevolt-xehqj-studio.wp.build','labyrinthos.markets','sooon.fun','tari-market.johnnytsunami14.chatgpt.site'],
-  recording:['github.com','raw.githubusercontent.com','www.youtube.com','youtube.com','youtu.be','vimeo.com'],
+  recording:['ootle-lobby-preview.vercel.app','github.com','raw.githubusercontent.com','www.youtube.com','youtube.com','youtu.be','vimeo.com'],
  };
  if(!groups[field]?.includes(new URL(href).hostname))throw new Error('Link destination needs maintainer review.');
  return href;

@@ -12,7 +12,7 @@ export function MediaThumb({ r, className, metrics }: { r: Resource; className?:
 export function MediaCard({ r }: { r: Resource }) {
   return (
     <Link to={`/resource/${encodeURIComponent(r.id)}`} className="mcard">
-      <MediaThumb r={r} className="mcard-media" />
+      <ResourceCardMedia r={r} className="mcard-media" interactive={false} />
       <div className="mcard-body">
         <h3>{r.title}</h3>
         <p className="summary">{r.summary || r.category || 'Open to see source links.'}</p>
