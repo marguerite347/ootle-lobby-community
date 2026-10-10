@@ -1,5 +1,5 @@
 // INTEGRATION_GAP[LOBBY-CHAT] (build-required): see docs/DEVELOPMENT_GAPS.md#lobby-chat.
-import { randomUUID, createHash } from "node:crypto";
+import { randomUUID, randomInt, createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 export const digest = (value) =>
   createHash("sha256").update(value).digest("hex");
@@ -19,6 +19,16 @@ const text = (value, max = 4000) =>
 const idPattern = /^[A-Za-z0-9_-]{1,100}$/;
 const accessSql = `(c.visibility='workspace' OR EXISTS(SELECT 1 FROM community_chat.channel_members cm WHERE cm.channel_id=c.id AND cm.account_id=$1))`;
 const moderator = (actor) => ["owner", "moderator"].includes(actor.role);
+const adjectives = ["Cosmic", "Mossy", "Lunar", "Curious", "Velvet", "Neon", "Sunny", "Quiet", "Silver", "Tiny", "Wild", "Mellow", "Amber", "Fuzzy", "Jolly", "Secret"];
+const creatures = ["Otter", "Fox", "Gecko", "Moth", "Panda", "Badger", "Owl", "Turtle", "Lynx", "Frog", "Wren", "Koala", "Raven", "Yak", "Newt", "Crab"];
+function displayName(value) {
+  if (value === undefined)
+    return `${adjectives[randomInt(adjectives.length)]} ${creatures[randomInt(creatures.length)]} ${randomInt(1000, 10000)}`;
+  const label = text(value, 40).replace(/\s+/g, " ");
+  if (!label || label.length > 40)
+    reject("Enter a display name of 1–40 characters.");
+  return label;
+}
 export async function installSchema(db) {
   await db.exec(readFileSync(new URL("./schema.sql", import.meta.url), "utf8"));
 }
@@ -63,9 +73,7 @@ export function createChatStore(db) {
     },
     // Guest identities and permissions are server-owned, just like invited accounts.
     async createGuest(name, sessionToken) {
-      const label = text(name, 40).replace(/\s+/g, " ");
-      if (!label || label.length > 40)
-        reject("Enter a display name of 1–40 characters.");
+      const label = displayName(name);
       return db.transaction(async (q) => {
         const id = "guest-" + randomUUID();
         await q.query(
@@ -77,6 +85,15 @@ export function createChatStore(db) {
           [digest(sessionToken), id],
         );
         return { id, name: label, role: "member" };
+      });
+    },
+    async renameAccount(userId, name) {
+      const label = displayName(name);
+      return db.transaction(async (q) => {
+        const account = await actor(q, userId, true);
+        await q.query("UPDATE community_chat.accounts SET name=$2 WHERE id=$1", [userId, label]);
+        // Prior messages keep the display name used when they were sent.
+        return publicAccount({ ...account, name: label });
       });
     },
     async login(

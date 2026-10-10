@@ -531,6 +531,50 @@ test("name-only guests exchange messages with separate durable sessions and memb
   assert.equal((await (await fetch(base + "/api/chat/session", { headers: { Cookie: cookieB } })).json()).account, null);
 });
 
+test("automatic guests can customize or regenerate names without changing identity or message history", async (t) => {
+  const db = new PGlite();
+  await installSchema(db);
+  const store = createChatStore(db);
+  const app = express(), server = app.listen(0, "127.0.0.1");
+  await new Promise(r => server.once("listening", r));
+  const base = "http://127.0.0.1:" + server.address().port;
+  app.use("/api/chat", createCommunityRouter({ store, origin: base, guests: { secret: "auto-guests-test" } }));
+  t.after(async () => { server.closeAllConnections(); server.close(); await db.close(); });
+  const headers = { Origin: base, "X-Ootle-Chat": "1", "Content-Type": "application/json" };
+  const post = (path, body, extra = {}) => fetch(base + "/api/chat" + path, {
+    method: "POST", headers: { ...headers, ...extra }, body: JSON.stringify(body),
+  });
+  const joined = await post("/guest/session", {});
+  assert.equal(joined.status, 200);
+  const original = (await joined.json()).account;
+  assert.match(original.name, /^[A-Z][a-z]+ [A-Z][a-z]+ [1-9][0-9]{3}$/);
+  const cookie = { Cookie: joined.headers.get("set-cookie").split(";")[0] };
+  const other = await store.createGuest(undefined, "a".repeat(64));
+  assert.notEqual(other.id, original.id);
+  assert.equal((await (await post("/guest/session", {}, cookie)).json()).account.id, original.id);
+  const before = await post("/messages", { channelId: "lobby", body: "Before rename", clientId: "before-rename" }, cookie);
+  assert.equal((await before.json()).message.author_name, original.name);
+  assert.equal((await post("/profile/name", { name: "No session" })).status, 401);
+  assert.equal((await post("/profile/name", { name: "Wrong origin" }, { ...cookie, Origin: "https://other.example" })).status, 403);
+  assert.equal((await post("/profile/name", { name: " " }, cookie)).status, 400);
+  assert.equal((await post("/profile/name", { name: "x".repeat(41) }, cookie)).status, 400);
+  const renamed = await post("/profile/name", { name: "  Custom  Guest  ", accountId: other.id, role: "owner" }, cookie);
+  assert.deepEqual((await renamed.json()).account, { ...original, name: "Custom Guest" });
+  assert.equal((await store.account(other.id)).name, other.name);
+  const after = await post("/messages", { channelId: "lobby", body: "After rename", clientId: "after-rename" }, cookie);
+  assert.equal((await after.json()).message.author_name, "Custom Guest");
+  assert.equal((await store.messages(original.id, "lobby"))[0].author_name, original.name);
+  const random = (await (await post("/profile/name", { randomize: true }, cookie)).json()).account;
+  assert.match(random.name, /^[A-Z][a-z]+ [A-Z][a-z]+ [1-9][0-9]{3}$/);
+  assert.equal(random.id, original.id);
+  assert.equal(random.role, "member");
+  const current = await (await fetch(base + "/api/chat/session", { headers: cookie })).json();
+  assert.equal(current.account.name, random.name);
+  assert.equal((await db.query("SELECT quota_count FROM community_chat.accounts WHERE id=$1", [original.id])).rows[0].quota_count, 2);
+  await db.query("UPDATE community_chat.accounts SET blocked=true WHERE id=$1", [original.id]);
+  assert.equal((await post("/profile/name", { name: "Blocked" }, cookie)).status, 401);
+});
+
 test("shared invitations create separate identities, expire, and cannot be replayed or escalate roles", async (t) => {
   const db = new PGlite();
   await installSchema(db);

@@ -72,3 +72,16 @@ export async function chatApi<T>(
 export function draftKey(account: string, channel: string, thread?: string) {
   return "ootle.chat.draft." + [account, channel, thread || "main"].join(".");
 }
+
+let pendingGuestSession: Promise<{ account: Account }> | null = null;
+export function ensureGuestSession() {
+  if (!pendingGuestSession) {
+    const join = () => chatApi<{ account: Account }>("/guest/session", {});
+    // Share in-flight joins across mounts and serialize separate same-origin tabs.
+    const request = typeof navigator !== "undefined" && navigator.locks
+      ? navigator.locks.request("ootle-chat-guest-session", join)
+      : join();
+    pendingGuestSession = Promise.resolve(request).finally(() => { pendingGuestSession = null; });
+  }
+  return pendingGuestSession;
+}

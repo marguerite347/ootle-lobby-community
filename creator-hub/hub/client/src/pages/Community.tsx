@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Link } from "react-router-dom";
 import {
   chatApi,
+  ensureGuestSession,
   draftKey,
   type Account,
   type Channel,
@@ -118,7 +119,7 @@ export default function Community({
     [sending, setSending] = useState(false),
     [loading, setLoading] = useState(true);
   const [mobileNav, setMobileNav] = useState(false),
-    [panel, setPanel] = useState<"connections" | "moderation" | null>(null),
+    [panel, setPanel] = useState<"connections" | "moderation" | "name" | null>(null),
     [crosspost, setCrosspost] = useState(false);
   const [reporting, setReporting] = useState<Message | null>(null),
     [reason, setReason] = useState(""),
@@ -126,6 +127,11 @@ export default function Community({
   const [inviteToken, setInviteToken] = useState(() => new URLSearchParams(window.location.hash.slice(1)).get("invite") || ""),
     [joinName, setJoinName] = useState(""),
     [joining, setJoining] = useState(false);
+  const [guestPaused, setGuestPaused] = useState(false),
+    [sessionRetry, setSessionRetry] = useState(0),
+    [nameDraft, setNameDraft] = useState(""),
+    [nameError, setNameError] = useState(""),
+    [savingName, setSavingName] = useState(false);
   useEffect(() => {
     if (new URLSearchParams(window.location.hash.slice(1)).has("invite"))
       window.history.replaceState(window.history.state, "", window.location.pathname + window.location.search);
@@ -137,6 +143,7 @@ export default function Community({
     sendId = useRef<string | null>(null),
     context = useRef("");
   const dialogRef = useRef<HTMLElement>(null);
+  const sessionVersion = useRef(0);
   const channel = channels.find((c) => c.id === channelId);
   const canModerate =
     account?.role === "owner" || account?.role === "moderator";
@@ -149,52 +156,44 @@ export default function Community({
     onChannelChange?.(channelId);
   }, [channelId, onChannelChange]);
   useEffect(() => {
-    if (!isActive || !capabilities?.configured) return;
+    if (!isActive) return;
     let cancelled = false;
-    const refreshSession = () =>
-      void chatApi<{ account: Account | null }>("/session").then(
-        ({ account: latest }) => {
-          if (!cancelled)
-            setAccount((current) =>
-              current?.id === latest?.id && current?.role === latest?.role
-                ? current
-                : latest,
-            );
-        },
-        () => {
-          /* Existing request errors remain visible in the chat. */
-        },
-      );
-    refreshSession();
-    window.addEventListener("focus", refreshSession);
-    return () => {
-      cancelled = true;
-      window.removeEventListener("focus", refreshSession);
-    };
-  }, [isActive, capabilities?.configured]);
-  useEffect(() => {
-    let cancelled = false;
-    (async () => {
+    const refreshSession = async () => {
+      const version = ++sessionVersion.current;
+      const current = () => !cancelled && version === sessionVersion.current;
+      setLoading(true);
       try {
         const caps = await chatApi<Capabilities>("/capabilities");
-        if (cancelled) return;
+        if (!current()) return;
         setCapabilities(caps);
+        let latest: Account | null = null;
         if (caps.configured) {
-          const session = await chatApi<{ account: Account | null }>(
-            "/session",
+          latest = (await chatApi<{ account: Account | null }>("/session")).account;
+          if (!current()) return;
+          if (!latest && caps.guests && !(caps.invitations && inviteToken) && !guestPaused)
+            latest = (await ensureGuestSession()).account;
+        }
+        if (current()) {
+          setAccount((previous) =>
+            previous?.id === latest?.id && previous?.name === latest?.name && previous?.role === latest?.role
+              ? previous : latest,
           );
-          if (!cancelled) setAccount(session.account);
+          setError("");
         }
       } catch (e) {
-        if (!cancelled) setError((e as Error).message);
+        if (current()) setError((e as Error).message);
       } finally {
-        if (!cancelled) setLoading(false);
+        if (current()) setLoading(false);
       }
-    })();
+    };
+    void refreshSession();
+    const onFocus = () => { void refreshSession(); };
+    window.addEventListener("focus", onFocus);
     return () => {
       cancelled = true;
+      window.removeEventListener("focus", onFocus);
     };
-  }, []);
+  }, [isActive, inviteToken, guestPaused, sessionRetry]);
   useEffect(() => {
     if (!account) return;
     let cancelled = false;
@@ -358,6 +357,28 @@ export default function Community({
     } catch (e) {
       setError((e as Error).message);
     }
+  }
+  function editName() {
+    setNameDraft(account?.name || "");
+    setNameError("");
+    setPanel("name");
+  }
+  async function saveName(randomize = false) {
+    if (savingName) return;
+    setSavingName(true);
+    setNameError("");
+    sessionVersion.current++;
+    try {
+      const { account: updated } = await chatApi<{ account: Account }>(
+        "/profile/name", randomize ? { randomize: true } : { name: nameDraft.trim() },
+      );
+      sessionVersion.current++;
+      setAccount(updated);
+      setPanel(null);
+      setStatus("Now chatting as " + updated.name);
+    } catch (e) {
+      setNameError((e as Error).message);
+    } finally { setSavingName(false); }
   }
   async function refreshMessages() {
     const data = await chatApi<{ messages: Message[] }>(
@@ -612,11 +633,14 @@ export default function Community({
                   onClick={async () => {
                     try {
                       await chatApi("/logout", {});
+                      sessionVersion.current++;
+                      setGuestPaused(true);
                       setAccount(null);
                       setMessages([]);
                       setChannels([]);
                       setThread(null);
                       setPanel(null);
+                      setMobileNav(false);
                       setError("");
                       setStatus("");
                     } catch (e) {
@@ -709,14 +733,21 @@ export default function Community({
               </p>
               {loading ? (
                 <p role="status">Opening chat…</p>
-              ) : capabilities?.guests || capabilities?.invitations ? (
+              ) : useInvitation ? (
                 <form className="cc-invitation" onSubmit={(event) => void joinChat(event)}>
-                  <p>{useInvitation ? "Join with your invitation." : "Choose a name and say hello."}</p>
+                  <p>Join with your invitation.</p>
                   <label>Your name<input autoComplete="nickname" value={joinName} onChange={(e) => setJoinName(e.target.value)} maxLength={40} required /></label>
-                  {useInvitation && <label>Invitation code<input type="password" autoComplete="off" value={inviteToken} onChange={(e) => setInviteToken(e.target.value)} required /></label>}
-                  <button className="cc-primary" disabled={joining || !joinName.trim() || (useInvitation && !inviteToken.trim())}>{joining ? "Joining…" : useInvitation ? "Join the conversation" : "Start chatting"}<Glyph name="arrow" /></button>
-                  <small>{useInvitation ? "Each invitation works once. This browser remembers you for 7 days." : "No account or password needed. This browser remembers you for 7 days."}</small>
+                  <label>Invitation code<input type="password" autoComplete="off" value={inviteToken} onChange={(e) => setInviteToken(e.target.value)} required /></label>
+                  <button className="cc-primary" disabled={joining || !joinName.trim() || !inviteToken.trim()}>{joining ? "Joining…" : "Join the conversation"}<Glyph name="arrow" /></button>
+                  <small>Each invitation works once. This browser remembers you for 7 days.</small>
                 </form>
+              ) : capabilities?.guests ? (
+                <button className="cc-primary" onClick={() => {
+                  setGuestPaused(false);
+                  setSessionRetry((current) => current + 1);
+                }}>
+                  {error ? "Try again" : "Start chatting"} <Glyph name="arrow" />
+                </button>
               ) : capabilities?.preview ? (
                 <button
                   className="cc-primary"
@@ -916,6 +947,10 @@ export default function Community({
                 ))}
               </div>
               <div className="cc-composer-area">
+                <div className="cc-identity-bar">
+                  <span>Chatting as <strong>{account.name}</strong></span>
+                  <button type="button" onClick={editName} aria-label="Change your chat name">Change name</button>
+                </div>
                 {thread && (
                   <div className="cc-reply-context">
                     <Glyph name="reply" />
@@ -1060,7 +1095,7 @@ export default function Community({
                     ? "Choose post destinations"
                     : panel === "moderation"
                       ? "Moderation reports"
-                      : "Connected apps"
+                      : panel === "name" ? "Change your chat name" : "Connected apps"
               }
               onClick={(e) => e.stopPropagation()}
             >
@@ -1075,7 +1110,22 @@ export default function Community({
               >
                 <Glyph name="close" />
               </button>
-              {reporting ? (
+              {panel === "name" ? (
+                <form className="cc-name-form" onSubmit={(event) => { event.preventDefault(); void saveName(); }}>
+                  <span className="cc-eyebrow">MAKE YOURSELF AT HOME</span>
+                  <h2>Your chat name</h2>
+                  <p>Pick a name, or let us surprise you. Change it whenever you like.</p>
+                  <label>Your name
+                    <input autoComplete="nickname" value={nameDraft} onChange={(event) => setNameDraft(event.target.value)} maxLength={40} required autoFocus />
+                  </label>
+                  {nameError && <p className="cc-name-error" role="alert">{nameError}</p>}
+                  <div className="cc-name-actions">
+                    <button className="cc-primary" type="submit" disabled={savingName || !nameDraft.trim()}>{savingName ? "Saving…" : "Save name"}</button>
+                    <button className="cc-outline" type="button" disabled={savingName} onClick={() => void saveName(true)}>New random name</button>
+                  </div>
+                  <small>Changes apply to new messages.</small>
+                </form>
+              ) : reporting ? (
                 <form onSubmit={report}>
                   <span className="cc-eyebrow">COMMUNITY CARE</span>
                   <h2>Report a message</h2>

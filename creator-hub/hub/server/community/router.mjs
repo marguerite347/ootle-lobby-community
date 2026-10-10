@@ -1,4 +1,4 @@
-// INTEGRATION_GAP[LOBBY-CHAT] (build-required): guest sessions support native chat; external transports remain unconnected. See docs/DEVELOPMENT_GAPS.md#lobby-chat.
+// INTEGRATION_GAP[LOBBY-CHAT] (build-required): automatic guest identities support native chat and editable names; external transports remain unconnected. See docs/DEVELOPMENT_GAPS.md#lobby-chat.
 import { Router, json } from "express";
 import {
   randomBytes,
@@ -253,6 +253,17 @@ export function createCommunityRouter({
       req.chatAccount = account;
       next();
     }, next),
+  );
+  router.post(
+    "/profile/name",
+    wrap(async (req, res) => {
+      await store.rateLimit("name:" + req.chatAccount.id, 20);
+      const account = await store.renameAccount(
+        req.chatAccount.id,
+        req.body.randomize === true ? undefined : req.body.name,
+      );
+      res.json({ account });
+    }),
   );
   router.get(
     "/channels",
