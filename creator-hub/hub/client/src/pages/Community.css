@@ -1,3 +1,52 @@
+.community-host {
+  container: community / inline-size;
+  width: 100%;
+  height: 100dvh;
+  min-height: 0;
+}
+.community-host.is-embedded {
+  height: 100%;
+}
+.is-embedded .community-app {
+  --cc-bg: #100e17;
+  --cc-panel: #181320;
+  --cc-line: #393044;
+  --cc-accent: #c4a8ff;
+}
+.is-embedded .cc-conversation-header {
+  min-height: 3.5rem;
+  padding: 0.25rem 0.5rem;
+}
+.is-embedded .cc-channel-intro {
+  display: none;
+}
+.is-embedded .cc-messages {
+  padding: 0.25rem 0.8rem 0.8rem;
+}
+.is-embedded .cc-message {
+  gap: 0.55rem;
+}
+.is-embedded .cc-avatar {
+  width: 2rem;
+  height: 2rem;
+}
+.is-embedded .cc-composer-area {
+  padding: 0.5rem 0.6rem 0.7rem;
+}
+.is-embedded .cc-composer textarea {
+  min-height: 3.25rem;
+  padding: 0.7rem 0.75rem 0.2rem;
+}
+.is-embedded .cc-welcome-art,
+.is-embedded .cc-welcome-foot {
+  display: none;
+}
+.is-embedded .cc-welcome {
+  padding: 1.5rem 1rem;
+}
+.is-embedded .cc-welcome h2 {
+  font-size: 1.6rem;
+}
 .community-app {
   --cc-bg: #101113;
   --cc-panel: #17181b;
@@ -7,8 +56,9 @@
   --cc-accent: #d6e7a2;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  height: 100dvh;
-  min-height: 28rem;
+  position: relative;
+  height: 100%;
+  min-height: 0;
   background: var(--cc-bg);
   color: var(--cc-text);
   font-family: Poppins, sans-serif;
@@ -75,9 +125,11 @@
   display: none;
 }
 .cc-sidebar {
-  position: fixed;
+  position: absolute;
   inset: 0 auto 0 0;
-  width: min(21rem, 90vw);
+  width: min(21rem, 100%);
+  height: 100%;
+  overflow-y: auto;
   z-index: 70;
   display: none;
   flex-direction: column;
@@ -793,7 +845,7 @@
   text-decoration: underline;
 }
 .cc-overlay {
-  position: fixed;
+  position: absolute;
   inset: 0;
   background: #050708bd;
   backdrop-filter: blur(6px);
@@ -810,7 +862,7 @@
   padding: 2rem 1.3rem;
   max-width: 34rem;
   width: 100%;
-  max-height: 90dvh;
+  max-height: 100%;
   overflow: auto;
   box-shadow: 0 2rem 8rem #0008;
 }
@@ -960,7 +1012,7 @@
 .cc-outline svg {
   width: 1rem;
 }
-@media (min-width: 768px) {
+@container community (min-width: 768px) {
   .community-app {
     grid-template-columns: 4.25rem 14.5rem minmax(0, 1fr);
   }
@@ -1066,7 +1118,7 @@
     padding-top: 1.4rem;
   }
 }
-@media (min-width: 1280px) {
+@container community (min-width: 1280px) {
   .community-app {
     grid-template-columns: 4.25rem 15.5rem minmax(0, 1fr) 17rem;
   }

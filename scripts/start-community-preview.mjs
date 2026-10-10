@@ -1,17 +1,12 @@
 // A local, clearly labeled review environment. Never load this in a deployment.
 import { PGlite } from "@electric-sql/pglite";
-import express from "express";
 import { mkdirSync } from "node:fs";
 import { resolve } from "node:path";
 import {
   createChatStore,
   installSchema,
 } from "../creator-hub/hub/server/community/store.mjs";
-import { createCommunityRouter } from "../creator-hub/hub/server/community/router.mjs";
-import {
-  securityHeaders,
-  localHostGuard,
-} from "../creator-hub/hub/server/publicSecurity.mjs";
+import { createInspirationLobby } from "../creator-hub/hub/server/inspirationLobby.mjs";
 if (process.env.VERCEL) throw new Error("This preview cannot run on Vercel.");
 const port = Number(process.env.PORT || 4318),
   origin = "http://127.0.0.1:" + port;
@@ -58,14 +53,9 @@ for (const [userId, channelId, body, clientId] of [
   ],
 ])
   await store.send(userId, { channelId, body, clientId });
-const app = express();
-app.disable("x-powered-by");
-app.use(securityHeaders, localHostGuard);
-app.use("/api/chat", createCommunityRouter({ store, origin, preview: true }));
-app.use(express.static("creator-hub/hub/client/dist"));
-app.get("*", (_req, res) =>
-  res.sendFile(resolve("creator-hub/hub/client/dist/index.html")),
-);
+const app = createInspirationLobby({
+  communityServices: { store, origin, preview: true },
+});
 const server = app.listen(port, "127.0.0.1", () =>
   console.log("Community preview: " + origin + "/chat"),
 );

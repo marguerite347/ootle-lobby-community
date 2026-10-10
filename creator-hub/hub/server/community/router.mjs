@@ -76,12 +76,10 @@ export function createCommunityRouter({
   router.use((req, res, next) =>
     configured
       ? next()
-      : res
-          .status(503)
-          .json({
-            error: "Community chat is being connected. Please check back soon.",
-            code: "CHAT_NOT_CONFIGURED",
-          }),
+      : res.status(503).json({
+          error: "Community chat is being connected. Please check back soon.",
+          code: "CHAT_NOT_CONFIGURED",
+        }),
   );
   // Mutations need both an exact origin and an explicit custom header. No CORS.
   router.use((req, res, next) => {
@@ -140,6 +138,14 @@ export function createCommunityRouter({
         ...cookieOptions,
         maxAge: 600_000,
       });
+      res.cookie(
+        "ootle_chat_return",
+        req.query.returnTo === "lobby" ? "lobby" : "chat",
+        {
+          ...cookieOptions,
+          maxAge: 600_000,
+        },
+      );
       const params = new URLSearchParams({
         client_id: oauth.clientId,
         redirect_uri: safeOrigin + "/api/chat/auth/callback",
@@ -202,7 +208,9 @@ export function createCommunityRouter({
       const session = randomBytes(32).toString("hex");
       await store.createSession(account.id, session);
       res.cookie(cookieName, session, cookieOptions);
-      res.redirect("/chat");
+      const returnToLobby = cookies(req).ootle_chat_return === "lobby";
+      res.clearCookie("ootle_chat_return", clearCookieOptions);
+      res.redirect(returnToLobby ? "/?chat=open" : "/chat");
     }),
   );
   router.use((req, res, next) =>

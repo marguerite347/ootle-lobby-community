@@ -1,6 +1,6 @@
 # Ootle community chat
 
-This first implementation adds a full `/chat` app to the Lobby, with a separate authenticated `/api/chat` service. It does not reopen the old anonymous community/project/collective chat handlers. Hosted chat is disabled until its own database and sign-in settings are supplied. No external channels are connected and no cross-app messages have been sent.
+This implementation puts the working community chat in the Lobby's existing right sidebar. "Pop out" opens the same conversation in a larger `/chat` view; both reuse one chat component and the same authenticated `/api/chat` service. It does not reopen the old anonymous community/project/collective chat handlers. Hosted chat is disabled until its own database and sign-in settings are supplied. No external channels are connected and no cross-app messages have been sent.
 
 ## Working first slice
 
@@ -21,7 +21,7 @@ npm --prefix creator-hub/hub/client run build
 node scripts/start-community-preview.mjs
 ```
 
-Open `http://127.0.0.1:4318/chat`, then enter the local preview. The preview uses embedded PostgreSQL (PGlite) on disk, including the real storage and authorization code. It is not proof of a hosted multi-instance deployment or a live OAuth provider connection. `CHAT_PREVIEW_DIR` can select another local test-data folder.
+Open `http://127.0.0.1:4318/`, open the Chat sidebar, then enter the local preview. The larger view is also available at `/chat`. Drafts synchronize between same-origin windows, and the sidebar stops polling while collapsed. The preview uses embedded PostgreSQL (PGlite) on disk, including the real storage and authorization code. It is not proof of a hosted multi-instance deployment or a live OAuth provider connection. `CHAT_PREVIEW_DIR` can select another local test-data folder.
 
 ## Hosted activation
 
@@ -76,6 +76,8 @@ Authenticated routes under `/api/chat`: `GET /channels`, `GET /channels/:id/mess
 Validation: `node --test test/community-chat.test.mjs`, `npm test`, `npm run validate`, and the client build/tests. The chat suite covers real PostgreSQL persistence/restart, isolation, quotas, moderation, idempotency, atomic cross-post plans, HTTP CSRF/session boundaries, RLS denial for browser roles, and OAuth state/PKCE with a controlled provider fixture. Live transport delivery and real-provider OAuth are not claimed.
 
 Browser acceptance on 2026-10-09 exercised native posting, replies, channel switching with draft recovery, search, report/hide/restore, and the explicitly unconnected destination picker. A clean local server restart preserved the session, posted message and reply. At widths 375, 390, 768, 1024 and 1440, the composer stayed visible and the page had no horizontal overflow; message text remained 16px. This was the loopback review environment with fictional sample conversations.
+
+The sidebar follow-up verified native posting alongside the Lobby, channel/draft preservation through collapse and reopen, thread viewing, a 390px mobile sheet, and nested dialog Escape handling without closing the sheet. Pop out opened the selected builders channel; editing its draft synchronized back into the sidebar. Embedded chat does not replace the Lobby document title. Its layout responds to the panel width, so a 360px dock remains compact even on a wide desktop.
 
 ## Selection receipt
 

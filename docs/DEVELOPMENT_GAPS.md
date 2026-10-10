@@ -25,7 +25,7 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 | [WB-FEED](#wb-feed) | build-required | GET /api/workbench/publications; Community Projects and October galleries |
 | [WB-AUTH](#wb-auth) | build-required | Workbench service injection and capabilities |
 | [WB-SYNC](#wb-sync) | local-only | Workbench browser workspace storage |
-| [LOBBY-CHAT](#lobby-chat) | build-required | /chat; /api/chat/*; legacy /api/community-chat/*, /api/project-chat/*, /api/collective-chat/* |
+| [LOBBY-CHAT](#lobby-chat) | build-required | Lobby Chat sidebar and /chat pop-out; /api/chat/*; legacy /api/community-chat/*, /api/project-chat/*, /api/collective-chat/* |
 | [LOBBY-AGENT-BRIDGE](#lobby-agent-bridge) | build-required | Collective chat agent coordination |
 | [LOBBY-COMMUNITY-WRITES](#lobby-community-writes) | build-required | /api/engagement/*; /api/creator-profiles/*; /api/skill-market*; /api/learn/resources; /api/learning/lessons*; /api/build-budgets*; /api/creator-analytics* |
 | [LOBBY-CHECKOUT](#lobby-checkout) | build-required | POST /api/skill-market/:id/download for priced listings |
@@ -128,9 +128,9 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 
 ## LOBBY-CHAT
 
-**build-required** — /chat; /api/chat/*; legacy /api/community-chat/*, /api/project-chat/*, /api/collective-chat/*
+**build-required** — Lobby Chat sidebar and /chat pop-out; /api/chat/*; legacy /api/community-chat/*, /api/project-chat/*, /api/collective-chat/*
 
-**Current:** New full-page community app and separate default-off authenticated chat service implement PostgreSQL messages/replies, private-channel membership, shared quotas, moderator reports/audit/restore, hashed sessions and GitHub PKCE. Local disk-backed preview and tests pass. Legacy anonymous writes remain blocked. External connections and delivery workers are not enabled.
+**Current:** The Lobby sidebar and larger /chat view share one community chat component and a separate default-off authenticated service with PostgreSQL messages/replies, private-channel membership, shared quotas, moderator reports/audit/restore, hashed sessions and GitHub PKCE. Local disk-backed preview and tests pass. Legacy anonymous writes remain blocked. External connections and delivery workers are not enabled.
 
 **Remaining:** Configure and verify the approved hosted database, real identity provider, backup and scheduled retention. Add pagination/full-thread retrieval and channel administration. Connect approved platform adapters with verified webhooks/Gateway, source audience boundaries, inbound deduplication/echo suppression, and receipt-backed outbox delivery before enabling cross-app posting.
 

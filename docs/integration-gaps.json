@@ -93,8 +93,8 @@
     {
       "id": "LOBBY-CHAT",
       "status": "build-required",
-      "surface": "/chat; /api/chat/*; legacy /api/community-chat/*, /api/project-chat/*, /api/collective-chat/*",
-      "current": "New full-page community app and separate default-off authenticated chat service implement PostgreSQL messages/replies, private-channel membership, shared quotas, moderator reports/audit/restore, hashed sessions and GitHub PKCE. Local disk-backed preview and tests pass. Legacy anonymous writes remain blocked. External connections and delivery workers are not enabled.",
+      "surface": "Lobby Chat sidebar and /chat pop-out; /api/chat/*; legacy /api/community-chat/*, /api/project-chat/*, /api/collective-chat/*",
+      "current": "The Lobby sidebar and larger /chat view share one community chat component and a separate default-off authenticated service with PostgreSQL messages/replies, private-channel membership, shared quotas, moderator reports/audit/restore, hashed sessions and GitHub PKCE. Local disk-backed preview and tests pass. Legacy anonymous writes remain blocked. External connections and delivery workers are not enabled.",
       "required": "Configure and verify the approved hosted database, real identity provider, backup and scheduled retention. Add pagination/full-thread retrieval and channel administration. Connect approved platform adapters with verified webhooks/Gateway, source audience boundaries, inbound deduplication/echo suppression, and receipt-backed outbox delivery before enabling cross-app posting.",
       "verify": "Test hosted messages/reports across deployments and app instances, identity/role isolation, quotas, moderation, retention and backups. For each connected channel verify permitted import, explicit destination approval, no echoes/duplicates, and actual provider delivery receipts.",
       "files": [

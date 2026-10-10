@@ -435,4 +435,34 @@ test("OAuth binds the callback to a one-time browser state and PKCE before creat
     400,
   );
   assert.equal(calls.length, 2);
+  for (const [returnTo, expected] of [
+    ["lobby", "/?chat=open"],
+    ["https://example.com", "/chat"],
+  ]) {
+    const startAgain = await fetch(
+      base + "/api/chat/auth/start?returnTo=" + encodeURIComponent(returnTo),
+      { redirect: "manual" },
+    );
+    const nextState = new URL(
+      startAgain.headers.get("location"),
+    ).searchParams.get("state");
+    const nextCookies = startAgain.headers
+      .getSetCookie()
+      .map((value) => value.split(";")[0])
+      .join("; ");
+    const returned = await fetch(
+      base + "/api/chat/auth/callback?state=" + nextState + "&code=test",
+      { headers: { Cookie: nextCookies }, redirect: "manual" },
+    );
+    assert.equal(returned.headers.get("location"), expected);
+    assert.ok(
+      returned.headers
+        .getSetCookie()
+        .some(
+          (value) =>
+            value.startsWith("ootle_chat_return=;") &&
+            value.includes("Expires="),
+        ),
+    );
+  }
 });

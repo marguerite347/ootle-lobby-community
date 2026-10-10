@@ -10,6 +10,8 @@ import {
   useLayoutEffect,
   useRef,
   useState,
+  lazy,
+  Suspense,
 } from 'react';
 
 import { copy, sidebarCopy } from './copy';
@@ -23,9 +25,8 @@ import {
 } from './chatSidebarState';
 import './chat.css';
 
-const POPOUT_WINDOW_NAME = 'hub-collective-chat';
 const POPOUT_QUERY_KEY = 'collectiveChat';
-const POPOUT_FEATURES = 'popup=yes,width=420,height=760,menubar=no,toolbar=no,location=no,status=no';
+const Community = lazy(() => import('../pages/Community'));
 const DOCK_ATTRIBUTE = 'data-chat-dock';
 const FOCUSABLE_SELECTOR =
   'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
@@ -59,6 +60,7 @@ function useDockedViewport(): boolean {
 /** Keep Tab inside the modal sheet so keyboard focus cannot wander behind it. */
 function trapTabKey(event: ReactKeyboardEvent<HTMLElement>) {
   if (event.key !== 'Tab') return;
+  if ((event.target as HTMLElement).closest('.cc-dialog')) return;
   const focusable = [...event.currentTarget.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR)].filter(
     (element) => element.offsetParent !== null,
   );
@@ -74,17 +76,14 @@ function trapTabKey(event: ReactKeyboardEvent<HTMLElement>) {
   }
 }
 
-function openPopOutWindow() {
-  const url = `${window.location.origin}/?${POPOUT_QUERY_KEY}=popout`;
-  return window.open(url, POPOUT_WINDOW_NAME, POPOUT_FEATURES) !== null;
-}
-
 export default function ChatSidebar() {
   const isPopOut = isChatPopOutWindow();
   const isDockedViewport = useDockedViewport();
-  const [dockPreference, setDockPreference] = useState<DockPreference>(() => readDockPreference(browserStorage()));
-  const [isSheetOpen, setIsSheetOpen] = useState(false);
+  const returnToSidebar = new URLSearchParams(window.location.search).get('chat') === 'open';
+  const [dockPreference, setDockPreference] = useState<DockPreference>(() => returnToSidebar ? 'open' : readDockPreference(browserStorage()));
+  const [isSheetOpen, setIsSheetOpen] = useState(returnToSidebar);
   const [greetingAttention, setGreetingAttention] = useState(false);
+  const [selectedChannel, setSelectedChannel] = useState('lobby');
   const pendingFocus = useRef<FocusTarget>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -93,6 +92,8 @@ export default function ChatSidebar() {
 
   const isSheetMode = !isPopOut && !isDockedViewport;
   const isOpen = isPopOut || (isDockedViewport ? dockPreference === 'open' : isSheetOpen);
+  const [hasOpened, setHasOpened] = useState(isOpen);
+  useEffect(() => { if (isOpen) setHasOpened(true); }, [isOpen]);
 
   useEffect(() => {
     if (isOpen) {setGreetingAttention(false); return;}
@@ -149,17 +150,13 @@ export default function ChatSidebar() {
   useEffect(() => {
     if (!isSheetMode || !isSheetOpen) return;
     function onKeyDown(event: KeyboardEvent) {
-      if (event.key !== 'Escape') return;
+      if (event.key !== 'Escape' || event.defaultPrevented) return;
       event.stopPropagation();
       closeSidebar();
     }
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [isSheetMode, isSheetOpen, closeSidebar]);
-
-  function popOut() {
-    if (openPopOutWindow()) closeSidebar({ shouldRemember: false });
-  }
 
   const mode = isPopOut ? 'popout' : isSheetMode ? 'sheet' : 'docked';
 
@@ -193,14 +190,15 @@ export default function ChatSidebar() {
           <h2 id={titleId} ref={headingRef} tabIndex={-1}>{copy.panelTitle}</h2>
           <div className="collective-chat-header-actions">
             {isPopOut ? null : (
-              <button
-                type="button"
+              <a
                 className="collective-chat-icon-btn"
-                onClick={popOut}
+                href={`/chat?channel=${encodeURIComponent(selectedChannel)}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={sidebarCopy.popOutLabel}
               >
                 {copy.popOut}
-              </button>
+              </a>
             )}
             {isPopOut ? null : (
               <button
@@ -218,7 +216,9 @@ export default function ChatSidebar() {
         </div>
 
         <div className="chat-sidebar-panel">
-          <div className="panel"><h3>A home for the conversation</h3><p>Open the community app for conversations, replies, and connected channels.</p><a className="btn primary" href="/chat">Open community chat ↗</a><p>External channels require their owners to connect them.</p></div>
+          {hasOpened && <Suspense fallback={<p role="status">Opening chat…</p>}>
+            <Community embedded isActive={isOpen} onChannelChange={setSelectedChannel} />
+          </Suspense>}
         </div>
       </aside>
     </div>
