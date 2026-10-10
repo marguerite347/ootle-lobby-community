@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type FormEvent } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import { Link } from "react-router-dom";
 import {
   chatApi,
@@ -11,6 +11,7 @@ import {
   type Report,
 } from "../chat/communityAppApi";
 import "./Community.css";
+import { createMessageViewport } from "../chat/messageViewport";
 
 function Glyph({ name }: { name: string }) {
   const paths: Record<string, string> = {
@@ -143,6 +144,8 @@ export default function Community({
     sendId = useRef<string | null>(null),
     context = useRef("");
   const dialogRef = useRef<HTMLElement>(null);
+  const messageViewport = useRef(createMessageViewport());
+  const [unreadMessages, setUnreadMessages] = useState(0);
   const sessionVersion = useRef(0);
   const channel = channels.find((c) => c.id === channelId);
   const canModerate =
@@ -266,11 +269,6 @@ export default function Community({
     const latest = messages[messages.length - 1].created_at;
     setLastRead((current) => ({ ...current, [channelId]: latest }));
   }, [messages, channelId]);
-  useEffect(() => {
-    const list = listRef.current;
-    if (list && list.scrollHeight - list.scrollTop - list.clientHeight < 350)
-      list.scrollTo({ top: list.scrollHeight, behavior: "smooth" });
-  }, [messages.length]);
   useEffect(() => {
     if (panel !== "moderation") return;
     chatApi<{ reports: Report[] }>("/moderation").then(
@@ -403,6 +401,7 @@ export default function Community({
       });
       storeValue(currentContext, "");
       if (context.current === currentContext) {
+        messageViewport.current.follow();
         setDraft("");
         sendId.current = null;
         setMessages((current) =>
@@ -448,9 +447,34 @@ export default function Community({
       setError((e as Error).message);
     }
   }
-  const visibleMessages = thread
+  const visibleMessages = useMemo(() => thread
     ? messages.filter((m) => m.id === thread.id || m.parent_id === thread.id)
-    : messages.filter((m) => query || !m.parent_id);
+    : messages.filter((m) => query || !m.parent_id), [messages, thread, query]);
+  const messageContext = JSON.stringify([account?.id, channelId, thread?.id, query]);
+  useLayoutEffect(() => {
+    const list = listRef.current;
+    if (!list || !isActive) return;
+    const next = messageViewport.current.receive(messageContext, visibleMessages.map(m => m.id), !query);
+    setUnreadMessages(next.unread);
+    if (next.scrollTo) list.scrollTop = next.scrollTo === "latest" ? list.scrollHeight : 0;
+  }, [visibleMessages, messageContext, query, isActive]);
+  useEffect(() => {
+    const list = listRef.current;
+    if (!list || !isActive) return;
+    // Keep the latest reply visible when the panel/keyboard changes its height.
+    const observer = new ResizeObserver(() => {
+      if (messageViewport.current.following) list.scrollTop = list.scrollHeight;
+    });
+    observer.observe(list);
+    return () => observer.disconnect();
+  }, [account?.id, isActive]);
+  function showLatestMessages() {
+    messageViewport.current.follow();
+    setUnreadMessages(0);
+    const list = listRef.current;
+    if (list) list.scrollTop = list.scrollHeight;
+    draftRef.current?.focus({ preventScroll: true });
+  }
   const nativeChannels = channels.filter(
     (c) =>
       c.platform === "ootle" && c.name.includes(channelQuery.toLowerCase()),
@@ -804,6 +828,7 @@ export default function Community({
               <div
                 className="cc-messages"
                 ref={listRef}
+                onScroll={(event) => setUnreadMessages(messageViewport.current.scrolled(event.currentTarget))}
                 role="log"
                 aria-label={
                   thread ? "Thread messages" : "Conversation messages"
@@ -946,6 +971,14 @@ export default function Community({
                   </article>
                 ))}
               </div>
+              {unreadMessages > 0 && (
+                <div className="cc-new-messages" role="status">
+                  <button type="button" onClick={showLatestMessages}>
+                    <span aria-hidden="true">↓</span>{" "}
+                    {unreadMessages} new {unreadMessages === 1 ? "message" : "messages"} · Jump to latest
+                  </button>
+                </div>
+              )}
               <div className="cc-composer-area">
                 <div className="cc-identity-bar">
                   <span>Chatting as <strong>{account.name}</strong></span>
