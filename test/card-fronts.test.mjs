@@ -10,11 +10,13 @@ test('every curated project and builder reference has distinct authored front co
   assert.ok(entry.cardSummary?.trim(),`${entry.title}: missing card summary`);
   assert.ok(entry.cardSummary.length<=160,`${entry.title}: front copy too long`);
   assert.ok(entry.cardStatus===undefined || (entry.cardStatus.trim()&&entry.cardStatus.length<=80),`${entry.title}: empty or overlong status`);
-  for (const field of ['title','cardSummary','cardStatus']) assert.doesNotMatch(entry[field]||'',internalReviewWording,`${entry.title}: ${field} must describe the resource, not internal testing`);
+  for (const field of ['title','cardSummary','cardStatus']) {
+   assert.doesNotMatch(entry[field]||'',internalReviewWording,`${entry.title}: ${field} must describe the resource, not internal testing`);
+   assert.doesNotMatch(entry[field]||'',/no playable demo|not deployed|skill links unavailable/i,`${entry.title}: put dated source-scoped absence observations in Details`);
+  }
   assert.ok(entry.summary?.trim(),`${entry.title}: preserve full description`);
  }
- const candy=entries.find(x=>x.slug==='candy-summoner');assert.match(candy.cardStatus,/No playable demo/);
- assert.match(entries.find(x=>x.slug==='ghostkey').cardStatus,/Source code/);
+ // Availability labels may change after a real source review; do not freeze a project in its current state.
  assert.match(catalog.records.find(x=>x.key==='caravel-burn-wallet').cardStatus,/Testnet.*Irreversible/);
 });
 

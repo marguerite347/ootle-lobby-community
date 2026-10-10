@@ -1,7 +1,7 @@
 {
   "slug": "candy-summoner",
   "title": "Ootlejuice Candy Summoner",
-  "summary": "Submitted concept for a privacy-themed candy game. The linked repository contains only a README; no playable implementation or privacy integration has been verified.",
+  "summary": "A privacy-themed candy-game entry for the October build contest. At our October 10, 2026 review, the linked GitHub repository contained a README, with no homepage or releases listed. No demo link was found in that repository or the complete contest thread checked; the creator\u2019s post said a demo video was coming. This observation is limited to those sources and may change.",
   "creator": "Ongchi",
   "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/5",
   "repoUrl": "https://github.com/ongwingchi-commits/ootlejuice-candy-summoner",
@@ -17,6 +17,6 @@
     "kind": "public-page",
     "credit": "Concept overview \u2014 application not demonstrated"
   },
-  "cardSummary": "A privacy-themed candy-game concept for the October build contest.",
-  "cardStatus": "Concept \u00b7 No playable demo"
+  "cardSummary": "A privacy-themed candy-game entry for the October build contest.",
+  "cardStatus": "Build contest entry"
 }

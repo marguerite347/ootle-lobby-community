@@ -13,7 +13,7 @@ test('source references deduplicate canonical repositories without granting runt
 test('paused deployments and L1 references retain their distinct boundaries', () => {
   const records=withEcosystemResources([]);
   assert.equal(records.length,ecosystemResources.records.length);
-  assert.match(records.find(r=>r.id.endsWith(':veil')).summary,/paused/);
+  assert.match(records.find(r=>r.id.endsWith(':veil')).summary,/October 10, 2026.*DEPLOYMENT_DISABLED/);
   assert.equal(records.find(r=>r.id.endsWith(':tari-l1-wasm')).ecosystem,'tari');
 });
 
