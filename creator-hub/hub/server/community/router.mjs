@@ -1,4 +1,4 @@
-// INTEGRATION_GAP[LOBBY-CHAT] (build-required): automatic guest identities support native chat and editable names; external transports remain unconnected. See docs/DEVELOPMENT_GAPS.md#lobby-chat.
+// INTEGRATION_GAP[LOBBY-CHAT] (build-required): guest chat includes scoped, expiring typing activity; external transports remain unconnected. See docs/DEVELOPMENT_GAPS.md#lobby-chat.
 import { Router, json } from "express";
 import {
   randomBytes,
@@ -293,6 +293,20 @@ export function createCommunityRouter({
       res
         .status(201)
         .json({ message: await store.send(req.chatAccount.id, req.body) });
+    }),
+  );
+  router.get(
+    "/channels/:id/typing",
+    wrap(async (req, res) => res.json({
+      typing: await store.typing(req.chatAccount.id, req.params.id, req.query.parentId ?? null),
+    })),
+  );
+  router.post(
+    "/typing",
+    wrap(async (req, res) => {
+      await store.rateLimit("typing:" + req.chatAccount.id, 1200);
+      await store.setTyping(req.chatAccount.id, req.body);
+      res.json({ ok: true });
     }),
   );
   router.post(

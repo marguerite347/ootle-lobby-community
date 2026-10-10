@@ -12,6 +12,7 @@ import {
 } from "../chat/communityAppApi";
 import "./Community.css";
 import { createMessageViewport } from "../chat/messageViewport";
+import { useTyping } from "../chat/useTyping";
 
 function Glyph({ name }: { name: string }) {
   const paths: Record<string, string> = {
@@ -148,6 +149,7 @@ export default function Community({
   const [unreadMessages, setUnreadMessages] = useState(0);
   const sessionVersion = useRef(0);
   const channel = channels.find((c) => c.id === channelId);
+  const typing = useTyping(account?.id, channelId, thread?.id, isActive && !!channel?.can_post && channel.platform === "ootle");
   const canModerate =
     account?.role === "owner" || account?.role === "moderator";
   const useInvitation = !!capabilities?.invitations && (!!inviteToken || !capabilities?.guests);
@@ -231,8 +233,10 @@ export default function Community({
     if (!account || !isActive) return;
     const controller = new AbortController();
     let active = true;
+    let refreshing = false;
     const refresh = async () => {
-      if (document.hidden) return;
+      if (document.hidden || refreshing) return;
+      refreshing = true;
       try {
         const data = await chatApi<{ messages: Message[] }>(
           "/channels/" +
@@ -249,11 +253,13 @@ export default function Community({
       } catch (e) {
         if (active && (e as Error).name !== "AbortError")
           setError((e as Error).message);
+      } finally {
+        refreshing = false;
       }
     };
     setMessages([]);
     const first = window.setTimeout(() => void refresh(), query ? 250 : 0);
-    const timer = window.setInterval(() => void refresh(), 5000);
+    const timer = window.setInterval(() => void refresh(), 1500);
     const visible = () => void refresh();
     document.addEventListener("visibilitychange", visible);
     return () => {
@@ -315,6 +321,7 @@ export default function Community({
     };
   }, [dialogOpen]);
   function updateDraft(value: string) {
+    typing.edit(value);
     setDraft(value);
     storeValue(draftStorage, value);
     sendId.current = null;
@@ -387,6 +394,7 @@ export default function Community({
   async function send(event?: FormEvent) {
     event?.preventDefault();
     if (sending || !draft.trim() || !account) return;
+    typing.stop();
     setSending(true);
     setError("");
     const currentContext = context.current;
@@ -980,6 +988,9 @@ export default function Community({
                 </div>
               )}
               <div className="cc-composer-area">
+                <div className="cc-typing" role="status" aria-live="polite" aria-atomic="true">
+                  {typing.label && <><span className="cc-typing-dots" aria-hidden="true"><i /><i /><i /></span><span>{typing.label}</span></>}
+                </div>
                 <div className="cc-identity-bar">
                   <span>Chatting as <strong>{account.name}</strong></span>
                   <button type="button" onClick={editName} aria-label="Change your chat name">Change name</button>
@@ -1015,6 +1026,7 @@ export default function Community({
                       channel.platform !== "ootle"
                     }
                     onChange={(e) => updateDraft(e.target.value)}
+                    onBlur={typing.stop}
                     onKeyDown={(e) => {
                       if (
                         e.key === "Enter" &&
