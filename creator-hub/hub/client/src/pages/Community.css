@@ -420,6 +420,30 @@
   scrollbar-width: thin;
   scrollbar-color: #34363d transparent;
 }
+.cc-new-messages {
+  flex-shrink: 0;
+  padding: 0.3rem 0.75rem;
+  text-align: center;
+}
+.cc-new-messages button {
+  min-height: 2.75rem;
+  width: 100%;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--cc-accent);
+  border-radius: 0.75rem;
+  background: var(--cc-accent);
+  color: var(--cc-bg);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.cc-new-messages button:hover {
+  filter: brightness(1.08);
+}
+.cc-new-messages button:focus-visible {
+  outline: 2px solid var(--cc-text);
+  outline-offset: 2px;
+}
 .cc-channel-intro {
   padding: 1.1rem 0 1.5rem;
 }
