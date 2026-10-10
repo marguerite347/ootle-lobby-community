@@ -28,6 +28,7 @@ export default function Detail() {
 
   const links: [string, string | null][] = [
     [r.demoUrl ? 'Website / demo' : 'Source reference', r.demoUrl || r.sourceUrl],
+    ...(r.discussionLinks || []).map(p => [`Discussion · ${p.platform}`, p.url] as [string,string]),
     ['Source repo', r.repoUrl],
     ['Docs / guide', r.docsUrl],
     ['Directory / source', r.provenance.upstreamUrl || null],
@@ -37,7 +38,7 @@ export default function Detail() {
     <article className="resource-detail">
       <div className="resource-breadcrumb"><Link className="muted" to="/explore">← Discover</Link></div>
       <header className="resource-header">
-      <div className="resource-preview"><MediaThumb r={r} /></div>
+      <div className="resource-preview"><MediaThumb r={r} />{r.preview?.video && <p className="resource-recording-caption">{r.preview.source}</p>}</div>
       <div className="resource-intro">
         <div>
           <div className="pill-row resource-badges">

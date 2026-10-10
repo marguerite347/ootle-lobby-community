@@ -9,7 +9,7 @@ type Props={resource:CardMediaResource;sourceUrl:string;creator:string;summary:s
 // The title's native link stretches over the card. Other links and controls sit
 // above it, preserving keyboard access, middle-click and independent actions.
 export default function ProjectCard({resource,sourceUrl,creator,summary,repoUrl,metrics,technologies,dates,caption,actions}:Props){
- return <article className="card contest-project-card project-card">
+ return <article id={`project-${resource.id.replaceAll(':','-')}`} className="card contest-project-card project-card">
   <div className="contest-project-cover"><ResourceCardMedia r={resource} metrics={<ContestProjectMetrics value={metrics} repoUrl={repoUrl}/>}/>{(!technologies||technologies.length>0)&&<ProjectTechnology resourceId={resource.id} labels={technologies}/>}</div>
   <h3 className="mt16"><a className="project-card-primary" href={safeHref(sourceUrl)} target="_blank" rel="noreferrer">{resource.title}</a></h3>
   {dates}<p>{summary}</p><p className="faint">By {creator}</p>{caption}

@@ -109,7 +109,7 @@ function hueOf(id: string) { let h = 0; for (let i = 0; i < id.length; i++) h = 
 // muted looping clip while visible when one exists (e.g. a live app-webpage capture), or
 // a styled animated placeholder. Never a fabricated screenshot.
 export type CardMediaResource = Pick<Resource,'id'|'ecosystem'|'native'|'title'|'preview'> & {popularity?:Resource['popularity']};
-export function ResourceCardMedia({ r, className, metrics }: { r: CardMediaResource; className?: string; metrics?: ReactNode }) {
+export function ResourceCardMedia({ r, className, metrics, interactive = true }: { r: CardMediaResource; className?: string; metrics?: ReactNode; interactive?: boolean }) {
   const [failed, setFailed] = useState(false);
   const [hover, setHover] = useState(false);
   const [visible, setVisible] = useState(false);
@@ -119,6 +119,7 @@ export function ResourceCardMedia({ r, className, metrics }: { r: CardMediaResou
   const image = !failed ? r.preview?.image : null;
   const video = r.preview?.video || null;
   const h = hueOf(r.id);
+  const walkthrough = !!r.preview?.source && /^(Source\/docs walkthrough|Concept overview|Announcement walkthrough)/.test(r.preview.source);
 
   useEffect(() => {
     const el = container.current;
@@ -130,7 +131,7 @@ export function ResourceCardMedia({ r, className, metrics }: { r: CardMediaResou
 
   useEffect(() => {
     const v = vref.current;
-    if (!v) return;
+    if (!v || walkthrough) return;
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
     const update = () => {
       if (visible && (!reduced.matches || hover)) {
@@ -141,7 +142,7 @@ export function ResourceCardMedia({ r, className, metrics }: { r: CardMediaResou
     update();
     reduced.addEventListener('change', update);
     return () => { reduced.removeEventListener('change', update); v.pause(); };
-  }, [visible, hover, video]);
+  }, [visible, hover, video, walkthrough]);
 
   return (
     <div ref={container} className={`media ${className || ''}`} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
@@ -153,7 +154,7 @@ export function ResourceCardMedia({ r, className, metrics }: { r: CardMediaResou
           <span className="media-ph-title">{r.title}</span>
         </div>
       )}
-      {video && <video ref={vref} className={`media-video ${playing ? 'on' : ''}`} src={video} muted loop playsInline preload="metadata" onPlaying={() => setPlaying(true)} onPause={() => setPlaying(false)} onError={() => setPlaying(false)} />}
+      {video && (!walkthrough || interactive) && <video ref={vref} className={`media-video ${playing || walkthrough ? 'on' : ''} ${walkthrough ? 'recorded-walkthrough' : ''}`} src={video} poster={image || undefined} aria-label={`${r.title} recording`} controls={walkthrough} muted loop={!walkthrough} playsInline preload="none" onClick={event => { if(walkthrough) {event.stopPropagation();} }} onPlaying={() => setPlaying(true)} onPause={() => setPlaying(false)} onError={() => setPlaying(false)} />}
       <div className="media-badges"><EcosystemBadge r={r} /></div>
       <div className="media-pop">{metrics ?? (r.popularity ? <PopularityChip p={r.popularity} compact /> : null)}</div>
     </div>
@@ -163,7 +164,7 @@ export function ResourceCardMedia({ r, className, metrics }: { r: CardMediaResou
 export function ResourceCard({ r, dimensionLabel }: { r: Resource; dimensionLabel?: string | null }) {
   return (
     <Link to={`/resource/${encodeURIComponent(r.id)}`} className="card card-link">
-      <ResourceCardMedia r={r} />
+      <ResourceCardMedia r={r} interactive={false} />
       <div className="top">
         <span className="badge type">{r.type}</span>
         {dimensionLabel ? <span className="badge">{dimensionLabel}</span> : null}

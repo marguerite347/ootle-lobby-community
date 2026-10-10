@@ -23,3 +23,8 @@ test('encoding trims the tour from the recording tail and removes audio',async()
  assert.equal(args[args.indexOf('-t')+1],'12');assert.ok(args.includes('-an'));
  assert.equal(args[args.indexOf('-c:v')+1],'libx264');
 });
+
+test('rejects invalid crop dimensions rather than silently discarding content',()=>{
+ for(const cropBottom of [-2,1,162,'80'])assert.throws(()=>validateApps([{name:'source',url:'https://example.com',cropBottom}]));
+ assert.equal(validateApps([{name:'source',url:'https://example.com',cropBottom:80}]).length,1);
+});

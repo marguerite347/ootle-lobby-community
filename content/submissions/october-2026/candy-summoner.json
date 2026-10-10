@@ -8,5 +8,13 @@
   "publishedAt": "2026-10-08T13:46:41.716Z",
   "updatedAt": "2026-10-08T13:46:41.716Z",
   "sourceContentSha256": "649f573808df8dcb290103b9b3c974558ccf987d8c7a0090c4bb2aaed6983d9d",
-  "technologies": []
+  "technologies": [],
+  "recording": {
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-candy-summoner-20261010.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-candy-summoner-20261010.jpg",
+    "capturedAt": "2026-10-10T12:47:28.878448+00:00",
+    "sourceRevision": "64d34a3260d80a423cf2357e20f15cdc3ea24532",
+    "kind": "public-page",
+    "credit": "Concept overview \u2014 application not demonstrated"
+  }
 }

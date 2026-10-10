@@ -6,7 +6,7 @@
 // loads each app URL, does a gentle scripted scroll, and records ~12s of the real
 // page. Output is real third-party footage — accurate, not an endorsement and not
 // a security review. Apps that need a wallet/interaction will only show their
-// landing state; unreachable apps are skipped (fall back to a generated cover).
+// landing state; unreachable apps remain recording-pending. Covers do not satisfy recordings.
 //
 // Requirements: system `ffmpeg` on PATH; an installed Chrome; network egress to
 // the app domains. Outputs (out/) are git-ignored.
@@ -15,7 +15,7 @@
 
 import { chromium } from 'playwright-core';
 import { spawnSync } from 'node:child_process';
-import { existsSync, mkdirSync, readFileSync, writeFileSync, rmSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync, rmSync, renameSync } from 'node:fs';
 import path from 'node:path';
 import {pathToFileURL} from 'node:url';
 
@@ -47,11 +47,12 @@ export async function captureOne(browser, app, outDir, run = spawnSync) {
     await page.waitForTimeout(3500);
     // Discard navigation/loading. Scroll in continuous eased animation frames,
     // rather than jumping 320px between mouse-wheel events.
-    await page.evaluate(async () => {
+    await page.evaluate(async (focused) => {
       const root = document.scrollingElement || document.documentElement;
       const prior = root.style.scrollBehavior;
       root.style.scrollBehavior = 'auto';
-      window.scrollTo(0, 0);
+      const base = focused ? window.scrollY : 0;
+      window.scrollTo(0, base);
       const hold = ms => new Promise(resolve => setTimeout(resolve, ms));
       const travel = (from, to, duration) => new Promise(resolve => {
         const start = performance.now();
@@ -64,13 +65,14 @@ export async function captureOne(browser, app, outDir, run = spawnSync) {
         requestAnimationFrame(frame);
       });
       try {
-        await hold(1000);
-        const distance = Math.min(1800, Math.max(0, root.scrollHeight-innerHeight));
-        await travel(0,distance,5000);
-        await travel(distance,0,5000);
-        await hold(1000);
+        await hold(focused ? 2000 : 1000);
+        const distance = Math.min(focused ? 350 : 1800, Math.max(0, root.scrollHeight-innerHeight-base));
+        await travel(base,base+distance,focused ? 2000 : 5000);
+        if(focused) await hold(4000);
+        await travel(base+distance,base,focused ? 2000 : 5000);
+        await hold(focused ? 2000 : 1000);
       } finally { root.style.scrollBehavior = prior; }
-    });
+    }, app.focused === true);
   } catch (e) {
     ok = false;
     console.error(`  ! ${app.name}: ${e.message.split('\n')[0]}`);
@@ -81,15 +83,16 @@ export async function captureOne(browser, app, outDir, run = spawnSync) {
   const webm = await video.path();
   const poster = path.join(outDir, `${slug(app.name)}.poster.png`);
   try {
-    const t = run('ffmpeg', ['-y', '-sseof', String(-CLIP_SECONDS), '-i', webm, '-t', String(CLIP_SECONDS), '-an', '-c:v', 'libx264', '-crf', '20', '-movflags', '+faststart', '-pix_fmt', 'yuv420p', out], { encoding: 'utf8' });
+    const t = run('ffmpeg', ['-y', '-sseof', String(-CLIP_SECONDS), '-i', webm, '-t', String(CLIP_SECONDS), '-an', ...(app.cropBottom ? ['-vf', `crop=iw:ih-${app.cropBottom}`] : []), '-c:v', 'libx264', '-crf', '20', '-movflags', '+faststart', '-pix_fmt', 'yuv420p', out], { encoding: 'utf8' });
     if(t.status !== 0) throw new Error(`MP4 transcode failed: ${t.error?.message || t.stderr?.trim().split('\n').slice(-3).join(' ') || t.status}`);
     const p = run('ffmpeg', ['-y', '-ss', '3', '-i', out, '-frames:v', '1', poster], {stdio:'ignore'});
     if(p.status !== 0) throw new Error('Poster generation failed');
+    if (app.preserveRaw) renameSync(webm, path.join(outDir, `${slug(app.name)}.raw.webm`));
     return out;
   } catch(e) {
     rmSync(out,{force:true});rmSync(poster,{force:true});
     console.error(`  ! ${app.name}: ${e.message}`);return null;
-  } finally { await video.delete().catch(()=>{}); }
+  } finally { if (!app.preserveRaw) await video.delete().catch(()=>{}); }
 
 }
 
@@ -99,6 +102,7 @@ export function validateApps(apps) {
   for(const app of apps){
     if(typeof app.name!=='string'||!slug(app.name)||names.has(slug(app.name)))throw new Error('App names need unique nonempty filename slugs.');
     names.add(slug(app.name));
+    if(app.cropBottom!==undefined && (!Number.isInteger(app.cropBottom)||app.cropBottom<0||app.cropBottom>160||app.cropBottom%2))throw new Error('Invalid capture crop.');
     const url=new URL(app.url);
     if(!['http:','https:'].includes(url.protocol)||url.username||url.password)throw new Error('App URLs must be public http(s) URLs without credentials.');
   }
@@ -122,8 +126,8 @@ async function main() {
       console.log('  Retrying once in the same browser session');
       out = await captureOne(browser, app, outDir).catch(() => null);
     }
-    manifest.push({ name: app.name, url: app.url, slug: slug(app.name), category: app.category || null, status: app.status || null, captured: !!out, output: out || null, capturedAt: new Date().toISOString(), note: 'Live third-party page capture; not an endorsement or security review.' });
-    console.log(out ? `  ✓ ${out}` : `  ✗ skipped (unreachable/failed) — use a generated cover instead`);
+    manifest.push({ name: app.name, url: app.url, slug: slug(app.name), category: app.category || null, status: app.status || null, captured: !!out, output: out || null, rawOutput: out && app.preserveRaw ? path.join(outDir, `${slug(app.name)}.raw.webm`) : null, capturedAt: new Date().toISOString(), note: app.caption || 'Live third-party page capture; not an endorsement or security review.' });
+    console.log(out ? `  ✓ ${out}` : `  ✗ skipped (unreachable/failed) — recording pending; a generated cover is not a recording`);
   }
   } finally { await browser.close(); }
   writeFileSync(path.join(outDir, 'manifest.json'), JSON.stringify(manifest, null, 2));
