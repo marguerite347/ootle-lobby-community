@@ -28,5 +28,5 @@
     "sha256": "800f5bd58e12857e4f362e02d8803cd4c0dbc0810a6378270979749b932e9568"
   },
   "cardSummary": "A community Tari wallet for Apple Silicon Macs, with a separate Ootle testnet app.",
-  "cardStatus": "Untested \u00b7 Not Apple notarized"
+  "cardStatus": "Desktop app \u00b7 macOS 14+ \u00b7 Not Apple notarized"
 }

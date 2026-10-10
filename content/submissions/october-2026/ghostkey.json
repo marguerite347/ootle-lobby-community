@@ -24,5 +24,5 @@
     "credit": "Source/docs walkthrough \u2014 application not demonstrated"
   },
   "cardSummary": "Inspect and convert Tari addresses with an offline Python toolkit.",
-  "cardStatus": "Source only \u00b7 Runtime untested"
+  "cardStatus": "Source code"
 }

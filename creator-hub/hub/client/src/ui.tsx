@@ -168,7 +168,7 @@ export function ResourceCard({ r, dimensionLabel }: { r: Resource; dimensionLabe
       <div className="top">
         <span className="badge type">{r.type}</span>
         {dimensionLabel ? <span className="badge">{dimensionLabel}</span> : null}
-        <ReadinessBadge r={r} />
+        {!r.cardSummary && <ReadinessBadge r={r} />}
       </div>
       <h3>{r.title}</h3>
       <p className={r.cardSummary ? "card-front-summary" : "summary"}>{r.cardSummary || r.summary || r.category || 'No description imported yet — open to see source links.'}</p>
