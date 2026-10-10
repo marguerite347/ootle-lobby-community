@@ -54,6 +54,12 @@ CREATE TABLE IF NOT EXISTS community_chat.typing (
  PRIMARY KEY(account_id,client_id)
 );
 CREATE INDEX IF NOT EXISTS typing_channel_expiry ON community_chat.typing(channel_id,expires_at);
+CREATE TABLE IF NOT EXISTS community_chat.reactions (
+ message_id text NOT NULL REFERENCES community_chat.messages ON DELETE CASCADE,
+ account_id text NOT NULL REFERENCES community_chat.accounts ON DELETE CASCADE,
+ emoji text NOT NULL CHECK(emoji IN ('👍','❤️','😂','🎉','👀','🚀')),
+ PRIMARY KEY(message_id,account_id,emoji)
+);
 CREATE TABLE IF NOT EXISTS community_chat.deliveries (
  id text PRIMARY KEY, message_id text NOT NULL REFERENCES community_chat.messages ON DELETE CASCADE,
  channel_id text NOT NULL REFERENCES community_chat.channels,
@@ -81,6 +87,7 @@ ALTER TABLE community_chat.channels ENABLE ROW LEVEL SECURITY;
 ALTER TABLE community_chat.channel_members ENABLE ROW LEVEL SECURITY;
 ALTER TABLE community_chat.messages ENABLE ROW LEVEL SECURITY;
 ALTER TABLE community_chat.typing ENABLE ROW LEVEL SECURITY;
+ALTER TABLE community_chat.reactions ENABLE ROW LEVEL SECURITY;
 ALTER TABLE community_chat.deliveries ENABLE ROW LEVEL SECURITY;
 ALTER TABLE community_chat.reports ENABLE ROW LEVEL SECURITY;
 ALTER TABLE community_chat.audit ENABLE ROW LEVEL SECURITY;

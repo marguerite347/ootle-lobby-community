@@ -1,4 +1,4 @@
-// INTEGRATION_GAP[LOBBY-CHAT] (build-required): guest chat includes scoped, expiring typing activity; external transports remain unconnected. See docs/DEVELOPMENT_GAPS.md#lobby-chat.
+// INTEGRATION_GAP[LOBBY-CHAT] (build-required): guest chat supports paginated threads, reactions and typing; external transports remain unconnected. See docs/DEVELOPMENT_GAPS.md#lobby-chat.
 import { Router, json } from "express";
 import {
   randomBytes,
@@ -274,13 +274,22 @@ export function createCommunityRouter({
   router.get(
     "/channels/:id/messages",
     wrap(async (req, res) =>
-      res.json({
-        messages: await store.messages(req.chatAccount.id, req.params.id, {
-          before: req.query.before,
-          search: req.query.q,
-        }),
-      }),
+      res.json(await store.messagePage(req.chatAccount.id, req.params.id, {
+        before: req.query.before,
+        beforeId: req.query.beforeId,
+        search: req.query.q,
+        parentId: req.query.parentId ?? null,
+        rootsOnly: req.query.rootsOnly === "1",
+      })),
     ),
+  );
+  router.post(
+    "/messages/:id/reactions",
+    wrap(async (req,res) => {
+      await store.rateLimit("reactions:" + req.chatAccount.id,120);
+      await store.setReaction(req.chatAccount.id,req.params.id,req.body);
+      res.json({ok:true});
+    }),
   );
   router.post(
     "/messages",

@@ -1,4 +1,4 @@
-// INTEGRATION_GAP[LOBBY-CHAT] (build-required): native typing uses expiring shared leases; external transports remain unconnected. See docs/DEVELOPMENT_GAPS.md#lobby-chat.
+// INTEGRATION_GAP[LOBBY-CHAT] (build-required): guest chat supports paginated threads, reactions and typing; external transports remain unconnected. See docs/DEVELOPMENT_GAPS.md#lobby-chat.
 import { randomUUID, randomInt, createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 export const digest = (value) =>
@@ -18,6 +18,17 @@ const text = (value, max = 4000) =>
     : "";
 const idPattern = /^[A-Za-z0-9_-]{1,100}$/;
 const accessSql = `(c.visibility='workspace' OR EXISTS(SELECT 1 FROM community_chat.channel_members cm WHERE cm.channel_id=c.id AND cm.account_id=$1))`;
+
+const reactionEmoji = new Set(["👍", "❤️", "😂", "🎉", "👀", "🚀"]);
+const messageFields = (userParameter) => `m.*, m.created_at::text AS cursor_at,
+ (SELECT count(*)::int FROM community_chat.messages replies WHERE replies.parent_id=m.id AND replies.hidden_at IS NULL) AS reply_count,
+ COALESCE((SELECT json_agg(json_build_object('emoji',r.emoji,'count',r.total,'mine',r.mine) ORDER BY r.emoji)
+   FROM (SELECT emoji,count(*)::int AS total,bool_or(account_id=$${userParameter}) AS mine
+     FROM community_chat.reactions WHERE message_id=m.id GROUP BY emoji) r),'[]'::json) AS reactions,
+ COALESCE((SELECT json_agg(json_build_object('id',d.id,'channel_id',d.channel_id,'status',d.status,'receipt_url',d.receipt_url,'error',d.error))
+   FROM community_chat.deliveries d JOIN community_chat.channels c ON c.id=d.channel_id
+   WHERE d.message_id=m.id AND (c.visibility='workspace' OR EXISTS(SELECT 1 FROM community_chat.channel_members cm WHERE cm.channel_id=c.id AND cm.account_id=$${userParameter}))),'[]'::json) AS deliveries`;
+
 const moderator = (actor) => ["owner", "moderator"].includes(actor.role);
 const adjectives = ["Cosmic", "Mossy", "Lunar", "Curious", "Velvet", "Neon", "Sunny", "Quiet", "Silver", "Tiny", "Wild", "Mellow", "Amber", "Fuzzy", "Jolly", "Secret"];
 const creatures = ["Otter", "Fox", "Gecko", "Moth", "Panda", "Badger", "Owl", "Turtle", "Lynx", "Frog", "Wren", "Koala", "Raven", "Yak", "Newt", "Crab"];
@@ -72,6 +83,30 @@ export function createChatStore(db) {
       );
       if (!rows.length) reject("Reply not found.", 404);
     }
+  }
+  async function messagePage(userId, channelId, { before, beforeId, search = "", parentId = null, rootsOnly = false } = {}) {
+    await actor(db, userId);
+    await channel(db, userId, channelId);
+    if ((before && (typeof before !== "string" || !Number.isFinite(Date.parse(before)))) ||
+        (beforeId != null && (typeof beforeId !== "string" || !idPattern.test(beforeId))))
+      reject("Invalid message cursor.");
+    let parent = null;
+    if (parentId !== null) {
+      if (typeof parentId !== "string" || !idPattern.test(parentId)) reject("Reply not found.", 404);
+      parent = (await db.query(`SELECT ${messageFields(2)} FROM community_chat.messages m WHERE m.channel_id=$1 AND m.id=$3 AND m.hidden_at IS NULL`, [channelId,userId,parentId])).rows[0];
+      if (!parent) reject("This thread is no longer available.", 404);
+    }
+    const result = await db.query(
+      `SELECT ${messageFields(4)} FROM community_chat.messages m
+       WHERE m.channel_id=$1 AND m.hidden_at IS NULL
+       AND ($2::timestamptz IS NULL OR m.created_at<$2 OR (m.created_at=$2 AND $5::text IS NOT NULL AND m.id<$5))
+       AND ($3='' OR strpos(lower(m.body),lower($3))>0)
+       AND ($6::text IS NULL OR m.parent_id=$6)
+       AND (NOT $7::boolean OR m.parent_id IS NULL)
+       ORDER BY m.created_at DESC,m.id DESC LIMIT 101`,
+      [channelId,before || null,text(search,100),userId,beforeId || null,parentId,rootsOnly],
+    );
+    return { messages: result.rows.slice(0,100).reverse(), hasMore: result.rows.length > 100, parent };
   }
   return {
     async typing(userId, channelId, parentId = null) {
@@ -244,16 +279,22 @@ export function createChatStore(db) {
         )
       ).rows;
     },
-    async messages(userId, channelId, { before, search = "" } = {}) {
-      await actor(db, userId);
-      await channel(db, userId, channelId);
-      if (before && Number.isNaN(Date.parse(before)))
-        reject("Invalid message cursor.");
-      const result = await db.query(
-        `SELECT m.*, (SELECT count(*)::int FROM community_chat.messages replies WHERE replies.parent_id=m.id AND replies.hidden_at IS NULL) AS reply_count, COALESCE((SELECT json_agg(json_build_object('id',d.id,'channel_id',d.channel_id,'status',d.status,'receipt_url',d.receipt_url,'error',d.error)) FROM community_chat.deliveries d JOIN community_chat.channels c ON c.id=d.channel_id WHERE d.message_id=m.id AND (c.visibility='workspace' OR EXISTS(SELECT 1 FROM community_chat.channel_members cm WHERE cm.channel_id=c.id AND cm.account_id=$4))),'[]'::json) AS deliveries FROM community_chat.messages m WHERE m.channel_id=$1 AND m.hidden_at IS NULL AND ($2::timestamptz IS NULL OR m.created_at<$2) AND ($3='' OR strpos(lower(m.body),lower($3))>0) ORDER BY m.created_at DESC,m.id DESC LIMIT 100`,
-        [channelId, before || null, text(search, 100), userId],
-      );
-      return result.rows.reverse();
+    messagePage,
+    async messages(userId, channelId, options = {}) {
+      return (await messagePage(userId, channelId, options)).messages;
+    },
+    async setReaction(userId, messageId, { emoji, active }) {
+      if (!reactionEmoji.has(emoji) || typeof active !== "boolean" || typeof messageId !== "string" || !idPattern.test(messageId))
+        reject("Choose a supported reaction.");
+      await db.transaction(async (q) => {
+        await actor(q,userId,true);
+        const message = (await q.query("SELECT channel_id FROM community_chat.messages WHERE id=$1 AND hidden_at IS NULL FOR UPDATE",[messageId])).rows[0];
+        if (!message) reject("Message not found.",404);
+        const source = await channel(q,userId,message.channel_id);
+        if (source.platform !== "ootle" || !source.can_post) reject("Reactions are not available here.",403);
+        if (active) await q.query("INSERT INTO community_chat.reactions(message_id,account_id,emoji) VALUES($1,$2,$3) ON CONFLICT DO NOTHING",[messageId,userId,emoji]);
+        else await q.query("DELETE FROM community_chat.reactions WHERE message_id=$1 AND account_id=$2 AND emoji=$3",[messageId,userId,emoji]);
+      });
     },
     async send(userId, input) {
       const body = text(input.body),

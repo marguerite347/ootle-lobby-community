@@ -41,3 +41,10 @@ test("changing channels or threads resets unread; search starts at the first res
   expect(view.receive("builders", ["c"])).toEqual({ unread: 0, scrollTo: "latest" });
   expect(view.receive("builders/search", ["c"], false)).toEqual({ unread: 0, scrollTo: "start" });
 });
+
+test("loading earlier history does not create unread messages or follow the bottom",()=>{
+  const view=createMessageViewport(); view.receive("lobby",["recent"]);
+  view.prepend(["older"]);
+  expect(view.receive("lobby",["older","recent"])).toEqual({unread:0,scrollTo:null});
+  expect(view.receive("lobby",["older","recent","new"])).toEqual({unread:1,scrollTo:null});
+});
