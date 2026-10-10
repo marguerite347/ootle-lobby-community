@@ -17,3 +17,6 @@ creator-hub/hub/data/*
 !creator-hub/hub/data/contests
 !creator-hub/hub/data/contests/**
 !creator-hub/hub/data/genre-reference-games.json
+
+# Include only the reviewed public upstream placeholder.
+!skills/vendor/huggingface/huggingface-community-evals/examples/.env.example
