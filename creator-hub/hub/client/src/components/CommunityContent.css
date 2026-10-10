@@ -82,3 +82,7 @@
 .season-home .project-section-heading .contest-community-links a {display:inline-flex;align-items:center;min-height:2.75rem;}
 
 .season-home .project-section-heading h2 em {font-style:normal;color:var(--season-lime);}
+
+/* Keep source walkthrough controls and labels clear of technology overlays. */
+.project-card .contest-project-cover .media-video.recorded-walkthrough{position:absolute}
+.contest-project-cover:has(.recorded-walkthrough) .project-technology{position:relative;inset:auto;padding:10px 0 0;background:none;border-radius:0}
