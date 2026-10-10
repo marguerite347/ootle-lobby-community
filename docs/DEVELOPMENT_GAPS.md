@@ -298,7 +298,7 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 
 **build-required** — GET /api/community-projects/metrics
 
-**Current:** Public GitHub stars/push dates and complete project-specific Discourse reply counts work for reviewed Community, Official Tari and October records. Daily caching is per warm server instance; bundled counts survive upstream outages. Shared directory posts covering several projects have unknown per-project counts.
+**Current:** Public GitHub stars/push dates and complete project-specific Discourse reply counts work for reviewed Community, Official Tari and October records. Daily caching is per warm server instance; bundled counts survive upstream outages. Shared directory posts covering several projects have unknown per-project counts. Clean deployments tolerate an absent optional local metrics cache and preserve unknown values until refresh.
 
 **Remaining:** For globally once-daily refresh across serverless cold starts, persist and coordinate the daily cache. Optionally configure a GitHub read token for higher rate limits.
 

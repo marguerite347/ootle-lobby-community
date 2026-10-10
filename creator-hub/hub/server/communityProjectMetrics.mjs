@@ -1,8 +1,11 @@
 // INTEGRATION_GAP[COMMUNITY-METRICS] (build-required): see docs/DEVELOPMENT_GAPS.md#community-metrics.
-import {readFileSync} from 'node:fs';
+import {readFileSync,existsSync} from 'node:fs';
 import {getJson,githubHeaders} from './connectors/http.mjs';
 import {fetchContestPosts,submissionComments} from './contestMetrics.mjs';
-const seed=JSON.parse(readFileSync(new URL('../data/community-project-metrics.json',import.meta.url),'utf8'));
+const seedFile=new URL('../data/community-project-metrics.json',import.meta.url);
+// This optional local cache is absent from clean deployments. Unknown metrics
+// stay unknown until the normal public-source refresh completes.
+const seed=existsSync(seedFile)?JSON.parse(readFileSync(seedFile,'utf8')):{checkedAt:null,items:{}};
 export async function refreshCommunityMetrics(projects, previous={items:{}}, read=getJson, now=Date.now()) {
  const checkedAt=new Date(now).toISOString();
  const results=await Promise.all(projects.map(async p=>{

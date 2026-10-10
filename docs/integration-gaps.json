@@ -275,7 +275,7 @@
       "id": "COMMUNITY-METRICS",
       "status": "build-required",
       "surface": "GET /api/community-projects/metrics",
-      "current": "Public GitHub stars/push dates and complete project-specific Discourse reply counts work for reviewed Community, Official Tari and October records. Daily caching is per warm server instance; bundled counts survive upstream outages. Shared directory posts covering several projects have unknown per-project counts.",
+      "current": "Public GitHub stars/push dates and complete project-specific Discourse reply counts work for reviewed Community, Official Tari and October records. Daily caching is per warm server instance; bundled counts survive upstream outages. Shared directory posts covering several projects have unknown per-project counts. Clean deployments tolerate an absent optional local metrics cache and preserve unknown values until refresh.",
       "required": "For globally once-daily refresh across serverless cold starts, persist and coordinate the daily cache. Optionally configure a GitHub read token for higher rate limits.",
       "verify": "Across cold starts and upstream failures, retain counts and checkedAt; show unknown when never verified. Confirm no more than one global upstream refresh per project per day.",
       "files": [
