@@ -37,5 +37,5 @@
   "publicationLabel": "Published on forum",
   "publicationUrl": "https://community.tari.com/t/open-source-c29-gpu-miner-for-tari-universe/210",
   "cardSummary": "Mine Tari with NVIDIA CUDA on Windows, Linux or HiveOS through LuckyPool.",
-  "cardStatus": "Tari L1 \u00b7 Runtime untested"
+  "cardStatus": "Tari L1 \u00b7 NVIDIA CUDA required"
 }

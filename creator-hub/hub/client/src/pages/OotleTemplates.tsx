@@ -35,7 +35,7 @@ export default function OotleTemplates() {
   function resourceGroup(title:string, id:string, items:Resource[]) {
     return <section id={id} className="ootle-library-section"><div className="ootle-library-heading"><h2>{title}</h2><span>{items.length}</span></div>
       <div className="ootle-library-grid">{items.map(item => <Link className="ootle-library-card" key={item.id} to={`/resource/${encodeURIComponent(item.id)}`}>
-        <ReadinessBadge r={item}/><h3>{item.title}</h3><p>{item.summary}</p><strong>Explore {id === 'templates' ? 'template' : 'guide'} ↗</strong>
+        {item.cardSummary ? (item.cardStatus && <span className="badge">{item.cardStatus}</span>) : <ReadinessBadge r={item}/>}<h3>{item.title}</h3><p>{item.cardSummary || item.summary}</p><strong>Explore {id === 'templates' ? 'template' : 'guide'} ↗</strong>
       </Link>)}</div>{!items.length && <p>No matching {title.toLowerCase()}.</p>}</section>;
   }
   return <div className="ootle-library">
@@ -47,7 +47,7 @@ export default function OotleTemplates() {
     <label className="ootle-library-search">Find a template, concept or task<input type="search" value={query} onChange={event => setQuery(event.target.value)} placeholder="Try tokens, testing, privacy or a guessing game…"/></label>
     {errors.length > 0 && <div role="alert">{errors.map(error => <p key={error}>{error}</p>)}<button className="btn" onClick={() => setRetry(value => value + 1)}>Retry</button></div>}
     {loading ? <p role="status">Loading Ootle resources…</p> : <>
-      <p className="ootle-library-note">Check each resource’s setup and validation scope. Draft skills are research guidance, not verified integrations.</p>
+      <p className="ootle-library-note">Choose a template or guide, then check its setup and compatibility requirements.</p>
       {resourceGroup('Templates', 'templates', templates)}
       {resourceGroup('Guides', 'guides', guides)}
       <section id="agent-skills" className="ootle-library-section"><div className="ootle-library-heading"><h2>Agent Skills</h2><span>{shownSkills.length}</span></div>
