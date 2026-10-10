@@ -1,0 +1,305 @@
+.pm-main {
+  overflow: hidden;
+  color: var(--cc-text);
+}
+.pm-main button {
+  cursor: pointer;
+  min-height: 44px;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font: inherit;
+  font-size: 0.78rem;
+  border: 1px solid var(--cc-line);
+  background: transparent;
+  color: var(--cc-text);
+}
+.pm-main button:hover {
+  background: #b69cf21a;
+  border-color: var(--cc-accent);
+}
+.pm-main button:focus-visible,
+.pm-main textarea:focus-visible,
+.pm-main summary:focus-visible {
+  outline: 2px solid #d7f000;
+  outline-offset: 3px;
+}
+.pm-main button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.pm-main .pm-primary {
+  background: #c3a6ff;
+  color: #191225;
+  border-color: transparent;
+  font-weight: 650;
+}
+.pm-header {
+  flex-wrap: wrap;
+}
+.pm-header > div {
+  flex: 1;
+}
+.pm-header h2 {
+  overflow-wrap: anywhere;
+}
+.pm-header p {
+  font-size: 0.65rem;
+  margin: 3px 0 0;
+  color: var(--cc-muted);
+}
+.pm-header .pm-public {
+  font-size: 0.65rem;
+  padding: 6px;
+}
+.pm-back {
+  font-size: 1.5rem !important;
+}
+.pm-inbox,
+.pm-messages {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  min-height: 0;
+  flex: 1;
+  padding: 18px 14px;
+  scrollbar-width: thin;
+}
+.pm-intro {
+  padding: 8px 0 20px;
+}
+.pm-intro h3 {
+  font-size: 1.3rem;
+  line-height: 1.25;
+  margin: 12px 0;
+  letter-spacing: -0.03em;
+}
+.pm-main p {
+  font-size: 0.83rem;
+  line-height: 1.6;
+}
+.pm-intro p,
+.pm-note {
+  color: var(--cc-muted);
+}
+.pm-intro details {
+  margin-top: 18px;
+}
+.pm-main summary {
+  cursor: pointer;
+  font-size: 0.72rem;
+  color: #c3a6ff;
+  padding: 8px 0;
+}
+.pm-card {
+  border: 1px solid var(--cc-line);
+  background: #b69cf207;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+.pm-card h3 {
+  font-size: 0.95rem;
+}
+.pm-contact-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 0.84rem;
+}
+.pm-contact-line strong {
+  overflow-wrap: anywhere;
+}
+.pm-state {
+  color: #c3a6ff;
+  font-size: 0.67rem;
+  text-transform: capitalize;
+}
+.pm-card small {
+  display: block;
+  color: var(--cc-muted);
+  font-size: 0.64rem;
+  margin-top: 6px;
+}
+.pm-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.pm-list-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin: 8px 0 16px;
+  color: var(--cc-muted);
+}
+.pm-note {
+  font-size: 0.74rem !important;
+  padding: 0;
+}
+.pm-main > .pm-note {
+  padding: 20px;
+}
+.pm-details {
+  padding: 0 14px 4px;
+  border-bottom: 1px solid var(--cc-line);
+  max-height: 40%;
+  overflow: auto;
+}
+.pm-details p {
+  font-size: 0.7rem;
+  color: var(--cc-muted);
+}
+.pm-details code {
+  overflow-wrap: anywhere;
+}
+.pm-status {
+  color: var(--cc-muted);
+  font-size: 0.62rem;
+  padding: 6px 14px;
+}
+.pm-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow-anchor: none;
+}
+.pm-message {
+  max-width: 94%;
+  align-self: flex-start;
+  border: 1px solid var(--cc-line);
+  border-radius: 12px 12px 12px 3px;
+  padding: 11px 13px;
+  background: #ffffff05;
+}
+.pm-message.is-mine {
+  align-self: flex-end;
+  border-radius: 12px 12px 3px 12px;
+  background: #b69cf215;
+}
+.pm-message-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 0.7rem;
+}
+.pm-message-meta strong {
+  overflow-wrap: anywhere;
+}
+.pm-message-meta time,
+.pm-message small {
+  color: var(--cc-muted);
+  font-size: 0.61rem;
+}
+.pm-message p {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  margin: 6px 0;
+}
+.pm-message small {
+  display: block;
+  text-align: right;
+}
+.pm-empty {
+  margin: auto 0;
+  padding: 20px 8px;
+  color: var(--cc-muted);
+}
+.pm-empty h3 {
+  color: var(--cc-text);
+  font-size: 1.15rem;
+}
+.pm-composer {
+  padding: 10px 12px;
+  border-top: 1px solid var(--cc-line);
+}
+.pm-composer form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.pm-composer textarea {
+  flex: 1 1 100%;
+  width: 100%;
+  min-width: 0;
+  min-height: 58px;
+  max-height: 160px;
+  resize: none;
+  background: #ffffff06;
+  border: 1px solid var(--cc-line);
+  color: var(--cc-text);
+  padding: 10px;
+  border-radius: 9px;
+  font: inherit;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.pm-composer form button {
+  margin-left: auto;
+}
+.pm-composer-note {
+  color: var(--cc-muted);
+  font-size: 0.59rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 8px;
+}
+.pm-error {
+  color: #ffb6b6 !important;
+  font-size: 0.73rem !important;
+  margin: 8px 14px;
+  overflow-wrap: anywhere;
+}
+.pm-composer .pm-error {
+  margin: 0 0 10px;
+}
+.pm-new {
+  position: absolute;
+  bottom: 180px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2e2148 !important;
+  box-shadow: 0 3px 20px #0005;
+}
+@media (min-width: 700px) {
+  .pm-inbox,
+  .pm-messages {
+    padding: 24px;
+  }
+  .pm-message {
+    max-width: 80%;
+  }
+}
+
+.community-app .pm-main .pm-primary {
+  background: #c3a6ff;
+  color: #191225;
+  border: 1px solid transparent;
+}
+.community-app .pm-main .pm-primary:hover {
+  background: #d6c2ff;
+}
+.community-app .pm-header p {
+  display: block;
+}
+.pm-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.cc-private-badge {
+  background: #c3a6ff;
+  color: #191225;
+  border-radius: 1rem;
+  min-width: 1rem;
+  font-size: 0.65rem;
+  padding: 1px 4px;
+}

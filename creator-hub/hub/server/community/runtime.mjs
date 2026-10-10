@@ -46,6 +46,7 @@ export function communityServicesFromEnv(env = process.env) {
   };
   services = {
     store: createChatStore(db),
+    privateEnabled: env.CHAT_PRIVATE_ENABLED === "1",
     origin: origin.origin,
     invites: invitations ? { secret: env.CHAT_INVITE_SECRET } : undefined,
     guests: guests ? { secret: env.CHAT_GUEST_SECRET } : undefined,

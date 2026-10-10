@@ -1,6 +1,7 @@
 // INTEGRATION_GAP[LOBBY-CHAT] (build-required): guest chat supports paginated threads, reactions and typing; external transports remain unconnected. See docs/DEVELOPMENT_GAPS.md#lobby-chat.
 import { randomUUID, randomInt, createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
+import { createPrivateStore } from "./privateStore.mjs";
 export const digest = (value) =>
   createHash("sha256").update(value).digest("hex");
 export function reject(message, status = 400) {
@@ -42,6 +43,7 @@ function displayName(value) {
 }
 export async function installSchema(db) {
   await db.exec(readFileSync(new URL("./schema.sql", import.meta.url), "utf8"));
+  await db.exec(readFileSync(new URL("./migrations/20261010_private_messages.sql", import.meta.url), "utf8"));
 }
 
 /** db: parameterized query + transaction(callback). No shared mutable request identity. */
@@ -109,6 +111,7 @@ export function createChatStore(db) {
     return { messages: result.rows.slice(0,100).reverse(), hasMore: result.rows.length > 100, parent };
   }
   return {
+    privateChat: createPrivateStore(db, { actor, reject }),
     async typing(userId, channelId, parentId = null) {
       await actor(db, userId);
       await typingContext(db, userId, channelId, parentId);
@@ -446,6 +449,8 @@ export function createChatStore(db) {
       ).rows;
     },
     async retention() {
+      await db.query("DELETE FROM community_chat.private_challenges WHERE expires_at<=now()");
+      await db.query("DELETE FROM community_chat.private_messages WHERE created_at<now()-interval '90 days'");
       await db.query("DELETE FROM community_chat.typing WHERE expires_at<=now()");
       // Operator-only maintenance: preserve thread roots while replies remain.
       await db.query(

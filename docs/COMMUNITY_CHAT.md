@@ -12,6 +12,10 @@ This implementation puts the working community chat in the Lobby's existing righ
 
 The UI starts with the most recent 100 top-level messages and loads earlier history with timestamp-and-ID cursors (including tied timestamps). Threads independently retrieve their parent and paginated replies. Six server-owned reaction choices use per-account set/unset operations; counts and the viewer's own selection refresh with messages and persist across reloads. Chatscope 2.1.1 supplies message, date-separator and typing display primitives, with styles 1.4.0; upstream MIT notices are served at `/chat-notices.txt`. The existing plain-text textarea retains IME handling and local drafts, and the tested viewport state retains scroll/unread behavior. Attachments, edits, browser notifications, cross-device draft/unread synchronization, and an always-available bot responder remain follow-up work. Private channels and membership currently require operator provisioning; no public channel-creation UI is enabled.
 
+## Optional private conversations
+
+Contact requests and encrypted one-to-one messages use the existing sidebar and pop-out. Public guests need no messaging key or wallet. See [private-message architecture, storage limits and activation](PRIVATE_MESSAGES.md). The feature is separately gated by `CHAT_PRIVATE_ENABLED=1`; private channels in the existing channel service are a different feature and are not end-to-end encrypted.
+
 ## Run the review environment
 
 ```sh
@@ -31,6 +35,7 @@ Configure only on the intended environment:
 
 | Setting | Purpose |
 | --- | --- |
+| `CHAT_PRIVATE_ENABLED=1` | Optional encrypted DMs after the additive private-message migration; off by default. |
 | `CHAT_ENABLED=1` | Explicitly enables the new service. Omit to keep it closed. |
 | `CHAT_DATABASE_URL` | Server-only TLS database connection. |
 | `CHAT_DATABASE_CA` | Optional provider CA certificate in PEM form. Certificate verification is always required. |
