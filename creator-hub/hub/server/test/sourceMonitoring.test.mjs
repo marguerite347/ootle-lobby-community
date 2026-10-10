@@ -29,3 +29,20 @@ test('schedule is non-overlapping, stoppable and explicitly disabled',async t=>{
  startSourceMonitoring({intervalMs:0})();assert.equal(monitoringStatus().enabled,false);
  assert.throws(()=>startSourceMonitoring({intervalMs:1}));
 });
+
+test('existing catalog entries are queued regardless of publication date and deduplicate shared views',async()=>{
+ const {catalogReviewQueue}=await import('../sourceMonitoring.mjs');
+ const entry={id:'old-entry',title:'Old entry',publishedAt:'2020-01-01',repoUrl:'https://github.com/example/project',sourceUrl:'https://example.com/post'};
+ const queue=catalogReviewQueue([entry,entry]);assert.equal(queue.length,1);assert.equal(queue[0].reviewRequired,true);assert.equal(queue[0].lastSuccessfulReviewAt,null);assert.equal(queue[0].sources.length,2);
+});
+test('new demo or release evidence queues copy, actions and recordings; unchanged and failed reads preserve review date',async()=>{
+ const {recordCatalogReview}=await import('../sourceMonitoring.mjs');
+ const url='https://github.com/example/project/releases',first='2026-10-09T12:00:00Z',next='2026-10-10T12:00:00Z';
+ const baseline=recordCatalogReview({id:'entry'},{attemptedAt:first,observations:[{url,hash:'release-v1'}],reviewed:true,complete:true,availability:'Source code'});
+ const unchanged=recordCatalogReview(baseline,{attemptedAt:next,observations:[{url,hash:'release-v1'}],complete:true});
+ assert.equal(unchanged.lastSuccessfulReviewAt,first);assert.equal(unchanged.outcome,'unchanged');
+ const changed=recordCatalogReview(baseline,{attemptedAt:next,observations:[{url,hash:'release-v2-with-demo',demoUrl:'https://example.com/demo'}],complete:true});
+ assert.equal(changed.lastSuccessfulReviewAt,first);assert.equal(changed.reviewRequired,true);assert.deepEqual(changed.reviewQueue,['copy','actions','details','recording','provenance']);
+ const failed=recordCatalogReview(changed,{attemptedAt:next,observations:[{url,error:'HTTP 403'}],reviewed:true,complete:true});
+ assert.equal(failed.lastSuccessfulReviewAt,first);assert.equal(failed.sourceReviews[url].hash,'release-v2-with-demo');assert.equal(failed.outcome,'blocked');
+});

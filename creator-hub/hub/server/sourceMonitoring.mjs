@@ -69,3 +69,37 @@ export function startSourceMonitoring({intervalMs=Number(process.env.CREATOR_HUB
  plan(initialDelayMs);
  return()=>{stopped=true;clearTimeout(timer);schedule.enabled=false;schedule.nextCheckAt=null;};
 }
+
+// Daily catalog re-review uses the existing ledger; it does not start a crawler.
+export function catalogReviewQueue(entries, previous = {}) {
+ const unique = new Map();
+ for (const entry of entries) {
+  const id = entry.id || `project:${entry.slug}`;
+  const sources = [...new Set([entry.sourceUrl,entry.repoUrl,entry.docsUrl,entry.demoUrl,entry.forum?.url,...(entry.discussionLinks||[]).map(post=>post.url)].filter(Boolean))];
+  if (unique.has(id)) unique.get(id).sources=[...new Set([...unique.get(id).sources,...sources])];
+  else unique.set(id,{...previous[id],id,title:entry.title,sources,lastSuccessfulReviewAt:previous[id]?.lastSuccessfulReviewAt||null,outcome:'pending',reviewRequired:true});
+ }
+ return [...unique.values()];
+}
+export function recordCatalogReview(previous, {attemptedAt, observations, reviewed = false, complete = false, availability, nextReviewAt}) {
+ if (!Number.isFinite(Date.parse(attemptedAt)) || !observations.length) throw Error('Dated source observations required');
+ const sourceReviews={...(previous.sourceReviews||{})};
+ const changedSources=[];let blocked=false;
+ for(const observation of observations){
+  const prior=sourceReviews[observation.url];
+  if(observation.error){blocked=true;sourceReviews[observation.url]={...prior,lastAttemptAt:attemptedAt,error:observation.error};continue;}
+  if(!observation.hash)throw Error('Successful observations require a content hash');
+  if(!prior?.hash || prior.hash!==observation.hash)changedSources.push(observation.url);
+  sourceReviews[observation.url]={...observation,lastAttemptAt:attemptedAt,lastSuccessfulReadAt:attemptedAt,error:null};
+ }
+ const needsReview=changedSources.length>0;
+ const successfulReview=reviewed&&complete&&!blocked;
+ return {...previous,lastAttemptAt:attemptedAt,sourceReviews,
+  lastSuccessfulReviewAt:successfulReview?attemptedAt:previous.lastSuccessfulReviewAt||null,
+  observedAvailability:successfulReview?availability:previous.observedAvailability||null,
+  outcome:blocked?'blocked':!complete?'partial':successfulReview?'reviewed':needsReview?'changed':'unchanged',
+  changedSources,reviewRequired:successfulReview?false:!complete||needsReview||previous.reviewRequired||blocked,
+  changedFields:needsReview?['sourceEvidence']:[],
+  reviewQueue:successfulReview?[]:needsReview?['copy','actions','details','recording','provenance']:previous.reviewQueue||[],
+  nextReviewAt:nextReviewAt||previous.nextReviewAt||null};
+}
