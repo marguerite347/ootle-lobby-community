@@ -2,7 +2,7 @@
   "slug": "community-playground",
   "title": "Tari Ootle Playground",
   "creator": "luci666",
-  "summary": "Community-built guides for wallet setup, template development, publishing, transactions and CLI tools. An independent developer resource, separate from the official Tari documentation.",
+  "summary": "Independent community guides for Ootle wallets, templates and transactions. At the October 11, 2026 review, the previously advertised WordPress preview redirected to the general WordPress developer homepage. The original forum announcement remains available; the recording is a walkthrough of that announcement.",
   "sourceUrl": "https://community.tari.com/t/ootle-testnet-community-apps-directory/281/5",
   "sourceLabel": "Project source",
   "repoUrl": null,
@@ -40,7 +40,7 @@
     "reviewedAt": "2026-10-04T16:02:52.616125Z",
     "sha256": "523cd58aa8b14ddd183bc719e1dc3070d6ca6c9364c65c870d5162ba68e34876"
   },
-  "demoUrl": "https://feeltherevolt-xehqj-studio.wp.build/",
-  "cardSummary": "Follow community guides for Ootle wallets, templates, publishing and transactions.",
-  "cardStatus": "Community guides"
+  "demoUrl": null,
+  "cardSummary": "Explore the original announcement of community guides for Ootle wallets, templates and transactions.",
+  "cardStatus": "Guides · Site unavailable"
 }

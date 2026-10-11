@@ -4,11 +4,16 @@
   "summary": "Experimental AMM pools, liquidity-provider markets and NFT trading for Tari Ootle. Includes a browser trading interface and Rust templates. In the README reviewed on October 10, 2026, the creator describes Esmeralda testnet development, mainnet disabled and Cloudflare hosting as configured but not live. This is a dated source statement, not a permanent deployment status.",
   "creator": "GSXRspartan",
   "sourceUrl": "https://github.com/GSXRspartan/tari-ootle-liquidity-protocol#readme",
-  "sourceLabel": "Creator\u2019s repository",
+  "sourceLabel": "Creator’s repository",
   "publishedAt": "2026-09-24T18:39:40Z",
   "publicationBasis": "Repository creation date reported by GitHub; not a verified first release or forum announcement date.",
   "repoUrl": "https://github.com/GSXRspartan/tari-ootle-liquidity-protocol",
-  "forum": null,
+  "forum": {
+    "url": "https://community.tari.com/t/tari-local-opensource-swap-platform/182/15",
+    "topicId": 182,
+    "postNumber": 15,
+    "scope": "replies"
+  },
   "ecosystem": "tari-ootle",
   "technologies": [
     {
@@ -31,7 +36,7 @@
   "media": {
     "image": "/previews/community/liquidity.jpg",
     "video": "/previews/community/liquidity.mp4",
-    "label": "Repository walkthrough \u00b7 testnet interface screenshots",
+    "label": "Repository walkthrough · testnet interface screenshots",
     "sourceUrl": "https://github.com/GSXRspartan/tari-ootle-liquidity-protocol#readme",
     "capturedAt": "2026-10-04T15:32:57.764526Z",
     "reviewedAt": "2026-10-04T15:32:57.764526Z",
@@ -40,5 +45,5 @@
   "publicationLabel": "Repository created",
   "publicationUrl": "https://github.com/GSXRspartan/tari-ootle-liquidity-protocol#readme",
   "cardSummary": "Explore AMM pools, liquidity-provider markets and NFT trading templates for Tari Ootle.",
-  "cardStatus": "Testnet \u00b7 Experimental"
+  "cardStatus": "Testnet · Experimental"
 }
