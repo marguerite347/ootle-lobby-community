@@ -17,8 +17,8 @@ describe('project navigation',()=>{
  });
 });
 
-it('source walkthroughs expose native playback controls and do not autoplay or loop',()=>{
- const resource={id:'source',title:'Source',ecosystem:'tari',native:true,preview:{image:'/poster.jpg',video:'/source.mp4',source:'Source/docs walkthrough — application not demonstrated'}};
+it.each(['Source/docs walkthrough — application not demonstrated','Public source walkthrough','Repository walkthrough · testnet interface screenshots','Official guide walkthrough · guessing-game example','Concept overview','Announcement walkthrough'])('%s exposes native playback controls without autoplay or looping',(source)=>{
+ const resource={id:'source',title:'Source',ecosystem:'tari',native:true,preview:{image:'/poster.jpg',video:'/source.mp4',source}};
  const html=renderToStaticMarkup(<ResourceCardMedia r={resource}/>);
  expect(html).toContain('controls=""');expect(html).toContain('poster="/poster.jpg"');expect(html).toContain('preload="none"');expect(html).not.toContain('autoplay');expect(html).not.toContain('loop=""');
  // Cards nested in links show the poster; controls belong on the detail/standalone card.

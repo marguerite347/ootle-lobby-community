@@ -119,7 +119,7 @@ export function ResourceCardMedia({ r, className, metrics, interactive = true }:
   const image = !failed ? r.preview?.image : null;
   const video = r.preview?.video || null;
   const h = hueOf(r.id);
-  const walkthrough = !!r.preview?.source && /^(Source\/docs walkthrough|Concept overview|Announcement walkthrough)/.test(r.preview.source);
+  const walkthrough = !!r.preview?.source && /^(Source\/docs walkthrough|Concept overview|Announcement walkthrough|Public source walkthrough|Repository walkthrough|Official guide walkthrough)/.test(r.preview.source);
 
   useEffect(() => {
     const el = container.current;
