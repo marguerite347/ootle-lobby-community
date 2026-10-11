@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-10T11:49:24.812Z",
+  "checkedAt": "2026-10-11T09:07:44.895Z",
   "manifests": [
     {
       "repo": "lobby",
@@ -148,7 +148,7 @@
       "name": "playwright-core",
       "range": "1.47.2",
       "locked": "1.47.2",
-      "installed": null,
+      "installed": "1.47.2",
       "latestCompatible": "1.47.2",
       "latest": "1.64.0",
       "error": null,
@@ -165,8 +165,7 @@
       "latestCompatible": "2.1.1",
       "latest": "2.1.1",
       "error": null,
-      "disposition": "current within declared range",
-      "latestSameMajor": null
+      "disposition": "current within declared range"
     },
     {
       "repo": "lobby",
@@ -178,8 +177,7 @@
       "latestCompatible": "1.4.0",
       "latest": "1.4.0",
       "error": null,
-      "disposition": "current within declared range",
-      "latestSameMajor": null
+      "disposition": "current within declared range"
     },
     {
       "repo": "lobby",
@@ -191,8 +189,7 @@
       "latestCompatible": "6.4.12",
       "latest": "6.4.12",
       "error": null,
-      "disposition": "current within declared range",
-      "latestSameMajor": null
+      "disposition": "current within declared range"
     },
     {
       "repo": "lobby",
@@ -204,8 +201,7 @@
       "latestCompatible": "6.2.5",
       "latest": "6.2.5",
       "error": null,
-      "disposition": "current within declared range",
-      "latestSameMajor": null
+      "disposition": "current within declared range"
     },
     {
       "repo": "lobby",
@@ -217,8 +213,7 @@
       "latestCompatible": "6.0.2",
       "latest": "6.0.2",
       "error": null,
-      "disposition": "current within declared range",
-      "latestSameMajor": null
+      "disposition": "current within declared range"
     },
     {
       "repo": "lobby",
@@ -230,8 +225,7 @@
       "latestCompatible": "6.5.2",
       "latest": "6.5.2",
       "error": null,
-      "disposition": "current within declared range",
-      "latestSameMajor": null
+      "disposition": "current within declared range"
     },
     {
       "repo": "lobby",
@@ -243,8 +237,7 @@
       "latestCompatible": "6.0.2",
       "latest": "6.0.2",
       "error": null,
-      "disposition": "current within declared range",
-      "latestSameMajor": null
+      "disposition": "current within declared range"
     },
     {
       "repo": "lobby",
@@ -256,8 +249,7 @@
       "latestCompatible": "5.2.7",
       "latest": "5.3.0",
       "error": null,
-      "disposition": "major/range migration deferred pending upstream compatibility",
-      "latestSameMajor": null
+      "disposition": "major/range migration deferred pending upstream compatibility"
     },
     {
       "repo": "lobby",
@@ -269,8 +261,7 @@
       "latestCompatible": "1.9.3",
       "latest": "1.9.4",
       "error": null,
-      "disposition": "major/range migration deferred pending upstream compatibility",
-      "latestSameMajor": null
+      "disposition": "major/range migration deferred pending upstream compatibility"
     },
     {
       "repo": "lobby",
@@ -282,8 +273,7 @@
       "latestCompatible": "6.0.2",
       "latest": "6.0.2",
       "error": null,
-      "disposition": "current within declared range",
-      "latestSameMajor": null
+      "disposition": "current within declared range"
     },
     {
       "repo": "lobby",
@@ -295,8 +285,7 @@
       "latestCompatible": "0.8.3",
       "latest": "0.8.3",
       "error": null,
-      "disposition": "current within declared range",
-      "latestSameMajor": null
+      "disposition": "current within declared range"
     },
     {
       "repo": "lobby",
@@ -308,8 +297,19 @@
       "latestCompatible": "13.4.1",
       "latest": "14.1.0",
       "error": null,
-      "disposition": "major/range migration deferred pending upstream compatibility",
-      "latestSameMajor": null
+      "disposition": "major/range migration deferred pending upstream compatibility"
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/hub/client/package.json",
+      "name": "nostr-tools",
+      "range": "2.24.1",
+      "locked": null,
+      "installed": null,
+      "latestCompatible": "2.24.1",
+      "latest": "2.25.2",
+      "error": null,
+      "disposition": "Retain 2.24.1 from private-chat release; audit clean. 2.25.2 needs separate two-browser encrypted delivery, persistence and recovery acceptance before upgrade."
     },
     {
       "repo": "lobby",
@@ -321,8 +321,7 @@
       "latestCompatible": "18.3.1",
       "latest": "19.3.0",
       "error": null,
-      "disposition": "major/range migration deferred pending upstream compatibility",
-      "latestSameMajor": null
+      "disposition": "major/range migration deferred pending upstream compatibility"
     },
     {
       "repo": "lobby",
@@ -334,8 +333,7 @@
       "latestCompatible": "18.3.1",
       "latest": "19.3.0",
       "error": null,
-      "disposition": "major/range migration deferred pending upstream compatibility",
-      "latestSameMajor": null
+      "disposition": "major/range migration deferred pending upstream compatibility"
     },
     {
       "repo": "lobby",
@@ -347,8 +345,7 @@
       "latestCompatible": "7.18.4",
       "latest": "7.18.4",
       "error": null,
-      "disposition": "current within declared range",
-      "latestSameMajor": null
+      "disposition": "current within declared range"
     },
     {
       "repo": "lobby",
@@ -360,8 +357,7 @@
       "latestCompatible": "1.9.0",
       "latest": "1.9.0",
       "error": null,
-      "disposition": "current within declared range",
-      "latestSameMajor": null
+      "disposition": "current within declared range"
     },
     {
       "repo": "lobby",
@@ -373,8 +369,7 @@
       "latestCompatible": "22.20.5",
       "latest": "26.6.5",
       "error": null,
-      "disposition": "major/range migration deferred pending upstream compatibility",
-      "latestSameMajor": null
+      "disposition": "major/range migration deferred pending upstream compatibility"
     },
     {
       "repo": "lobby",
@@ -386,8 +381,7 @@
       "latestCompatible": "18.3.31",
       "latest": "19.3.0",
       "error": null,
-      "disposition": "major/range migration deferred pending upstream compatibility",
-      "latestSameMajor": null
+      "disposition": "major/range migration deferred pending upstream compatibility"
     },
     {
       "repo": "lobby",
@@ -399,8 +393,7 @@
       "latestCompatible": "18.3.7",
       "latest": "19.3.0",
       "error": null,
-      "disposition": "major/range migration deferred pending upstream compatibility",
-      "latestSameMajor": null
+      "disposition": "major/range migration deferred pending upstream compatibility"
     },
     {
       "repo": "lobby",
@@ -412,8 +405,19 @@
       "latestCompatible": "4.7.0",
       "latest": "6.1.2",
       "error": null,
-      "disposition": "major/range migration deferred pending upstream compatibility",
-      "latestSameMajor": null
+      "disposition": "major/range migration deferred pending upstream compatibility"
+    },
+    {
+      "repo": "lobby",
+      "manifest": "creator-hub/hub/client/package.json",
+      "name": "fake-indexeddb",
+      "range": "6.2.5",
+      "locked": null,
+      "installed": null,
+      "latestCompatible": "6.2.5",
+      "latest": "6.2.5",
+      "error": null,
+      "disposition": "Current pinned test dependency from private-chat release; root tests pass."
     },
     {
       "repo": "lobby",
@@ -425,8 +429,7 @@
       "latestCompatible": "5.9.3",
       "latest": "7.0.2",
       "error": null,
-      "disposition": "major/range migration deferred pending upstream compatibility",
-      "latestSameMajor": null
+      "disposition": "major/range migration deferred pending upstream compatibility"
     },
     {
       "repo": "lobby",
@@ -438,8 +441,7 @@
       "latestCompatible": "6.4.4",
       "latest": "8.3.4",
       "error": null,
-      "disposition": "major/range migration deferred pending upstream compatibility",
-      "latestSameMajor": null
+      "disposition": "major/range migration deferred pending upstream compatibility"
     },
     {
       "repo": "lobby",
@@ -451,8 +453,7 @@
       "latestCompatible": "4.1.11",
       "latest": "5.0.3",
       "error": null,
-      "disposition": "major/range migration deferred pending upstream compatibility",
-      "latestSameMajor": null
+      "disposition": "major/range migration deferred pending upstream compatibility"
     },
     {
       "repo": "lobby",
@@ -473,7 +474,7 @@
       "name": "@remotion/bundler",
       "range": "4.0.534",
       "locked": "4.0.534",
-      "installed": null,
+      "installed": "4.0.534",
       "latestCompatible": "4.0.534",
       "latest": "4.0.534",
       "error": null,
@@ -486,7 +487,7 @@
       "name": "@remotion/cli",
       "range": "4.0.534",
       "locked": "4.0.534",
-      "installed": null,
+      "installed": "4.0.534",
       "latestCompatible": "4.0.534",
       "latest": "4.0.534",
       "error": null,
@@ -499,7 +500,7 @@
       "name": "@remotion/google-fonts",
       "range": "4.0.534",
       "locked": "4.0.534",
-      "installed": null,
+      "installed": "4.0.534",
       "latestCompatible": "4.0.534",
       "latest": "4.0.534",
       "error": null,
@@ -512,7 +513,7 @@
       "name": "@remotion/renderer",
       "range": "4.0.534",
       "locked": "4.0.534",
-      "installed": null,
+      "installed": "4.0.534",
       "latestCompatible": "4.0.534",
       "latest": "4.0.534",
       "error": null,
@@ -525,7 +526,7 @@
       "name": "react",
       "range": "19.1.0",
       "locked": "19.1.0",
-      "installed": null,
+      "installed": "19.1.0",
       "latestCompatible": "19.1.0",
       "latest": "19.3.0",
       "error": null,
@@ -538,7 +539,7 @@
       "name": "react-dom",
       "range": "19.1.0",
       "locked": "19.1.0",
-      "installed": null,
+      "installed": "19.1.0",
       "latestCompatible": "19.1.0",
       "latest": "19.3.0",
       "error": null,
@@ -551,7 +552,7 @@
       "name": "remotion",
       "range": "4.0.534",
       "locked": "4.0.534",
-      "installed": null,
+      "installed": "4.0.534",
       "latestCompatible": "4.0.534",
       "latest": "4.0.534",
       "error": null,
@@ -564,7 +565,7 @@
       "name": "zod",
       "range": "3.22.3",
       "locked": "3.22.3",
-      "installed": null,
+      "installed": "3.22.3",
       "latestCompatible": "3.22.3",
       "latest": "4.6.5",
       "error": null,
@@ -577,7 +578,7 @@
       "name": "@types/react",
       "range": "19.1.0",
       "locked": "19.1.0",
-      "installed": null,
+      "installed": "19.1.0",
       "latestCompatible": "19.1.0",
       "latest": "19.3.0",
       "error": null,
@@ -590,7 +591,7 @@
       "name": "typescript",
       "range": "5.6.3",
       "locked": "5.6.3",
-      "installed": null,
+      "installed": "5.6.3",
       "latestCompatible": "5.6.3",
       "latest": "7.0.2",
       "error": null,
@@ -601,15 +602,14 @@
       "repo": "lobby",
       "manifest": "package.json",
       "name": "@vercel/blob",
-      "range": "2.8.0",
-      "locked": "2.8.0",
-      "installed": "2.8.0",
-      "latestCompatible": "2.8.0",
+      "range": "2.8.1",
+      "locked": "2.8.1",
+      "installed": "2.8.1",
+      "latestCompatible": "2.8.1",
       "latest": "2.8.1",
       "error": null,
-      "disposition": "Applied 2.8.1 patch; required tests and build pass.",
-      "latestSameMajor": "2.8.1",
-      "updatedTo": "2.8.1"
+      "disposition": "Current patch, applied in October 10 release; audit rerun clean.",
+      "latestSameMajor": "2.8.1"
     },
     {
       "repo": "lobby",
@@ -623,6 +623,18 @@
       "error": null,
       "disposition": "major/range migration deferred pending upstream compatibility",
       "latestSameMajor": "4.22.3"
+    },
+    {
+      "repo": "lobby",
+      "manifest": "package.json",
+      "name": "nostr-tools",
+      "range": "2.24.1",
+      "locked": "2.24.1",
+      "installed": null,
+      "latestCompatible": "2.24.1",
+      "latest": "2.25.2",
+      "error": null,
+      "disposition": "Retain 2.24.1 from private-chat release; audit clean. 2.25.2 needs separate two-browser encrypted delivery, persistence and recovery acceptance before upgrade."
     },
     {
       "repo": "lobby",
@@ -647,8 +659,7 @@
       "latestCompatible": "0.5.8",
       "latest": "0.5.8",
       "error": null,
-      "disposition": "current within declared range",
-      "latestSameMajor": null
+      "disposition": "current within declared range"
     }
   ]
 }
