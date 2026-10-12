@@ -23,8 +23,20 @@ test('late entries keep distinct submissions, shared creators and follow-up prov
  const seal = contestCreators.find(creator => creator.id === 'forum-sealclubber');
  assert.equal(seal.projects.filter(url => url.startsWith('/resource/')).length, 2);
  assert.equal(new Set(contestCreators.map(creator => creator.id)).size, contestCreators.length);
- assert.deepEqual(records.find(record => record.contest.slug === 'wunschswap').contest.updates.map(update => update.postNumber), [23, 26, 34]);
+ assert.deepEqual(records.find(record => record.contest.slug === 'wunschswap').contest.updates.map(update => update.postNumber), [23, 26, 34, 38]);
  assert.deepEqual(records.find(record => record.contest.slug === 'ootle-surveys').contest.updates.map(update => update.postNumber), [22, 28]);
  assert.equal(records.find(record => record.contest.slug === 'outruna').network, 'Tari Mainnet and EVM (submission-reported)');
  assert.match(records.find(record => record.contest.slug === 'threshold-bounties').contest.notes, /historical proof archive/);
+});
+
+test('announced September placements retain the moderator source and attributed follow-ups', () => {
+ const records = withContestEntries([]);
+ for (const [slug, placement] of [['sapient', '1st'], ['signal-vault', '2nd'], ['wunschswap', '3rd']]) {
+  const entry = records.find(record => record.contest.slug === slug);
+  assert.ok(entry, slug);
+  assert.match(entry.contest.status, new RegExp(placement));
+  assert.ok(entry.contest.updates.some(update => update.postNumber === 38));
+ }
+ assert.ok(records.find(record => record.contest.slug === 'signal-vault').contest.updates.some(update => update.postNumber === 39));
+ assert.equal(records.find(record => record.contest.slug === 'wunschswap').demoUrl, 'https://git.disroot.org/comiama/wunschswap/releases');
 });

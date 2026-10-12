@@ -31,7 +31,7 @@ export function withContestEntries(records) {
     merged.set(entry.id, {...resource, ...cardCopy.get(entry.id), repoUrl:entry.repoUrl, demoUrl:entry.demoUrl || resource.demoUrl,
       license:entry.license || resource.license, tags:[...new Set([...(resource.tags||[]),'september-contest-2026'])],
       creator:{name:entry.creator,url:`/creators/${entry.creatorId}`},
-      contest:{...entry,checkedAt:contestRegistry.checkedAt,edition:'September 2026',rulesUrl:'https://community.tari.com/t/ootle-launch-date-and-launch-contest-rules/323',status:'Imported submission; Council review not verified'},
+      contest:{...entry,checkedAt:contestRegistry.checkedAt,edition:'September 2026',rulesUrl:'https://community.tari.com/t/ootle-launch-date-and-launch-contest-rules/323',status:entry.status || 'Imported submission; result not recorded'},
     });
   }
   return [...merged.values()];

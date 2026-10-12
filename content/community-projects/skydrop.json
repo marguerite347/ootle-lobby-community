@@ -1,0 +1,33 @@
+{
+  "slug": "skydrop",
+  "title": "Skydrop",
+  "summary": "Send testnet TARI gifts to Bluesky accounts through an Ootle escrow. The creator describes account ownership proofs checked by the contract, optional challenges and refunds. On October 12, 2026 the public landing and How it works guide were read; the FAQ limits support to did:plc accounts. No transfer or claim was performed. The recording shows the public guide only.",
+  "creator": "0xhra",
+  "sourceUrl": "https://community.tari.com/t/skydrop-send-tari-to-anyone-on-bluesky-no-wallet-needed-on-their-side-esmeralda-testnet/429/1",
+  "sourceLabel": "Creator\u2019s announcement",
+  "publishedAt": "2026-10-11T11:12:03.190Z",
+  "publicationBasis": "Creator\u2019s first post in the dedicated forum announcement.",
+  "publicationLabel": "Announced",
+  "publicationUrl": "https://community.tari.com/t/skydrop-send-tari-to-anyone-on-bluesky-no-wallet-needed-on-their-side-esmeralda-testnet/429/1",
+  "demoUrl": "https://skydrop.tari.mw/",
+  "forum": {
+    "url": "https://community.tari.com/t/skydrop-send-tari-to-anyone-on-bluesky-no-wallet-needed-on-their-side-esmeralda-testnet/429/1",
+    "topicId": 429,
+    "postNumber": 1,
+    "scope": "topic"
+  },
+  "ecosystem": "tari-ootle",
+  "technologies": [],
+  "media": {
+    "image": "/previews/community/resource-skydrop-20261012.jpg",
+    "video": "/previews/community/resource-skydrop-20261012.mp4",
+    "label": "Source/docs walkthrough \u2014 transfers not demonstrated",
+    "sourceUrl": "https://skydrop.tari.mw/#/how",
+    "capturedAt": "2026-10-12T09:04:33.226Z",
+    "reviewedAt": "2026-10-12T10:24:07.788156+00:00",
+    "sha256": "daa1c7759c7fd383690ce8dacf00aca20105af7726fc9f7926b22b1b88bcc0f4"
+  },
+  "cardSummary": "Send testnet TARI gifts to Bluesky accounts, with ownership proved through a post.",
+  "cardStatus": "Web app \u00b7 Testnet \u00b7 did:plc accounts",
+  "repoUrl": null
+}

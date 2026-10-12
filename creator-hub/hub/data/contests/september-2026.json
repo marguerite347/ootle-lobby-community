@@ -1,7 +1,7 @@
 {
-  "checkedAt": "2026-10-03",
+  "checkedAt": "2026-10-12",
   "topicId": 324,
-  "totalPosts": 31,
+  "totalPosts": 35,
   "streamPostIds": [
     1290,
     1330,
@@ -33,7 +33,11 @@
     1641,
     1642,
     1643,
-    1651
+    1651,
+    1752,
+    1753,
+    1758,
+    1763
   ],
   "entries": [
     {
@@ -97,10 +101,21 @@
           "postNumber": 5,
           "url": "https://community.tari.com/t/september-contest-thread/324/5",
           "updatedAt": "2026-09-08T02:23:04.923Z"
+        },
+        {
+          "postNumber": 38,
+          "url": "https://community.tari.com/t/september-contest-thread/324/38",
+          "updatedAt": "2026-10-11T23:59:13.578Z"
+        },
+        {
+          "postNumber": 39,
+          "url": "https://community.tari.com/t/september-contest-thread/324/39",
+          "updatedAt": "2026-10-12T01:23:43.613Z"
         }
       ],
-      "notes": "Requirements recorded from public submission; originality, eligibility, safety and Council acceptance are not independently certified.",
-      "publishedAt": "2026-09-08T00:30:37.966Z"
+      "notes": "The result is reported in the linked official forum announcement. This records the announced placement; it does not establish prize payment or a security audit. On October 12 the creator reported two audit rounds, eight fixes and 29 passing tests; those are creator-reported results, not tests performed by this catalog.",
+      "publishedAt": "2026-09-08T00:30:37.966Z",
+      "status": "2nd place, announced by Fox on October 11, 2026"
     },
     {
       "id": "tari-ootle:app:ootle-pay",
@@ -189,9 +204,16 @@
       "socialUrl": "https://x.com/Erebus_Lab/status/2099940639454756948",
       "paymentAddressPresent": true,
       "license": "MIT",
-      "updates": [],
-      "notes": "Requirements recorded from public submission; originality, eligibility, safety and Council acceptance are not independently certified.",
-      "publishedAt": "2026-09-15T19:28:26.887Z"
+      "updates": [
+        {
+          "postNumber": 38,
+          "url": "https://community.tari.com/t/september-contest-thread/324/38",
+          "updatedAt": "2026-10-11T23:59:13.578Z"
+        }
+      ],
+      "notes": "The result is reported in the linked official forum announcement. This records the announced placement; it does not establish prize payment or a security audit.",
+      "publishedAt": "2026-09-15T19:28:26.887Z",
+      "status": "1st place, announced by Fox on October 11, 2026"
     },
     {
       "id": "tari-ootle:app:ootle-surveys",
@@ -272,7 +294,7 @@
       "creator": "urelamba",
       "creatorId": "forum-urelamba",
       "repoUrl": "https://git.disroot.org/comiama/wunschswap",
-      "demoUrl": "https://wunschswap.com",
+      "demoUrl": "https://git.disroot.org/comiama/wunschswap/releases",
       "summary": "Peer-to-peer voucher swaps using private redemption proofs and Ootle settlement.",
       "postNumber": 21,
       "postId": 1590,
@@ -296,10 +318,16 @@
           "postNumber": 34,
           "url": "https://community.tari.com/t/september-contest-thread/324/34",
           "updatedAt": "2026-10-01T09:42:51.764Z"
+        },
+        {
+          "postNumber": 38,
+          "url": "https://community.tari.com/t/september-contest-thread/324/38",
+          "updatedAt": "2026-10-11T23:59:13.578Z"
         }
       ],
-      "notes": "Requirements recorded from public submission; originality, eligibility, safety and Council acceptance are not independently certified.",
-      "publishedAt": "2026-09-26T18:52:14.607Z"
+      "notes": "The result is reported in the linked official forum announcement. This records the announced placement; it does not establish prize payment or a security audit. October 12 source review found v0.5 Android APK, released October 1. The wunschswap.com page is a reference voucher provider using fictional testnet EUR, not the swap client. No APK installed.",
+      "publishedAt": "2026-09-26T18:52:14.607Z",
+      "status": "3rd place, announced by Fox on October 11, 2026"
     },
     {
       "id": "tari-ootle:app:outruna",
@@ -364,5 +392,5 @@
       "publishedAt": "2026-09-30T16:01:51.421Z"
     }
   ],
-  "fetchedAt": "2026-10-03T17:37:02.710069+00:00"
+  "fetchedAt": "2026-10-12T09:08:43.248746+00:00"
 }
