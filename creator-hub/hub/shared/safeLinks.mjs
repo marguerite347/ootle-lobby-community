@@ -8,9 +8,9 @@ export function requireLinkHost(value,field='source') {
  const href=safeHref(value);
  if(!href||!href.startsWith('https:'))throw new Error('A public HTTPS link is required.');
  const groups={
-  source:['github.com','git.disroot.org','community.tari.com','ootle.tari.com','tari.com','www.tari.com','wiki.tari.com'],
+  source:['github.com','git.disroot.org','community.tari.com','ootle.tari.com','tari.com','www.tari.com','wiki.tari.com','skydrop.tari.mw','bsky.app'],
   repository:['github.com','git.disroot.org'],
-  demo:['feeltherevolt-xehqj-studio.wp.build','labyrinthos.markets','sooon.fun','tari-market.johnnytsunami14.chatgpt.site'],
+  demo:['skydrop.tari.mw','feeltherevolt-xehqj-studio.wp.build','labyrinthos.markets','sooon.fun','tari-market.johnnytsunami14.chatgpt.site'],
   recording:['ootle-lobby-preview.vercel.app','github.com','raw.githubusercontent.com','www.youtube.com','youtube.com','youtu.be','vimeo.com'],
  };
  if(!groups[field]?.includes(new URL(href).hostname))throw new Error('Link destination needs maintainer review.');
