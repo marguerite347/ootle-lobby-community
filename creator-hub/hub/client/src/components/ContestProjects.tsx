@@ -27,7 +27,12 @@ export default function ContestProjects({creatorId}: {creatorId?: string}) {
     <div className="section-head project-section-heading"><div><h2>{creatorId ? 'Contest portfolio' : <>September <em>Submissions</em></>}</h2><p>{creatorId ? 'Newest submissions first. Explore the builds and meet their creators on the Tari forum.' : 'General Submissions · Community builds on the Ootle.'}</p></div><div className="contest-community-links"><a className="more" href={safeHref(SEPTEMBER_THREAD)} target="_blank" rel="noreferrer">All entries on the forum</a><a href={safeHref(`${COMMUNITY_REPOSITORY}/pulls`)} target="_blank" rel="noreferrer">Community edits</a></div></div>
     {error ? <p role="alert">Contest projects could not load. Refresh to retry.</p> : <CollapsibleProjects label={creatorId ? 'Contest portfolio' : 'September Submissions'}><div className="grid">{sortedEntries.map(entry => <ProjectCard key={entry.id} resource={entry} sourceUrl={entry.contest?.sourceUrl || SEPTEMBER_THREAD} creator={entry.creator?.name || 'Community creator'} summary={entry.summary || ""} cardSummary={community[entry.id]?.cardSummary} cardStatus={community[entry.id]?.cardStatus} repoUrl={entry.repoUrl} metrics={metrics[entry.id]} technologies={community[entry.id]?.technologies}
       dates={<ContestProjectDates entry={entry} metrics={metrics[entry.id]}/>}
-      actions={<><a href={safeHref(entry.contest?.sourceUrl || SEPTEMBER_THREAD)} target="_blank" rel="noreferrer">See the creator’s post</a><a className="suggest-project-edit" href={safeHref(projectEditUrl(entry.id))} target="_blank" rel="noreferrer" aria-label={`Suggest an edit to ${entry.title}`}>Suggest an edit</a></>}/>
+      caption={entry.contest&&<>
+        {/^[123](st|nd|rd) place/.test(entry.contest.status)&&<p><strong>{entry.contest.status}</strong></p>}
+        {entry.contest.notes&&<p>{entry.contest.notes}</p>}
+        {entry.contest.updates.length>0&&<p>{entry.contest.updates.map(update=><a key={update.url} href={safeHref(update.url)} target="_blank" rel="noreferrer" style={{display:'block'}}>Forum update · post {update.postNumber} ↗</a>)}</p>}
+      </>}
+      actions={<>{entry.demoUrl&&<a href={safeHref(entry.demoUrl)} target="_blank" rel="noreferrer">{entry.demoUrl.endsWith('/releases')?'Downloads':'Open project'} ↗</a>}<a href={safeHref(entry.contest?.sourceUrl || SEPTEMBER_THREAD)} target="_blank" rel="noreferrer">See the creator’s post</a><a className="suggest-project-edit" href={safeHref(projectEditUrl(entry.id))} target="_blank" rel="noreferrer" aria-label={`Suggest an edit to ${entry.title}`}>Suggest an edit</a></>}/>
     )}</div></CollapsibleProjects>}
   </section>;
 }
