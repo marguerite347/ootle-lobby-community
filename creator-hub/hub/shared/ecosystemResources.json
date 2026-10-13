@@ -408,9 +408,9 @@
       ],
       "demoUrl": "https://explorer.tari.mw/",
       "preview": {
-        "image": "https://ootle-lobby-preview.vercel.app/previews/community/resource-veil-20261010.jpg",
-        "video": "https://ootle-lobby-preview.vercel.app/previews/community/resource-veil-20261010.mp4",
-        "source": "Source/docs walkthrough — application not demonstrated"
+        "video": "https://ootle-lobby-preview.vercel.app/previews/community/resource-veil-20261013.mp4",
+        "image": "https://ootle-lobby-preview.vercel.app/previews/community/resource-veil-20261013.jpg",
+        "source": "App demo — Public read-only interface scrolling; no wallet or transaction flow demonstrated."
       },
       "discussionLinks": [
         {
@@ -537,6 +537,13 @@
         {
           "url": "https://bsky.app/profile/ogboy92.bsky.social/post/3mxoehhu2b22o",
           "platform": "Bluesky"
+        },
+        {
+          "url": "https://bsky.app/profile/tariproject.bsky.social/post/3mxpffkqnsk2x",
+          "platform": "Bluesky",
+          "author": "tariproject.bsky.social",
+          "publishedAt": "2026-10-12T20:49:53.930Z",
+          "context": "Official sharing of creator announcement"
         }
       ],
       "cardSummary": "Explore encrypted secret sales with escrow and contract-settled delivery disputes.",
@@ -544,7 +551,7 @@
       "preview": {
         "video": "https://ootle-lobby-preview.vercel.app/previews/community/resource-crypt-20261013.mp4",
         "image": "https://ootle-lobby-preview.vercel.app/previews/community/resource-crypt-20261013.jpg",
-        "source": "Source/docs walkthrough — source, not executed application"
+        "source": "Source/docs walkthrough — Public repository README scrolling; no application execution demonstrated."
       }
     },
     {
@@ -588,7 +595,12 @@
         }
       ],
       "cardSummary": "Create expiring testnet gift links with a Rust CLI, optional riddles and refunds for unopened envelopes.",
-      "cardStatus": "CLI · Esmeralda testnet"
+      "cardStatus": "CLI · Esmeralda testnet",
+      "preview": {
+        "video": "https://ootle-lobby-preview.vercel.app/previews/community/resource-phantom-drop-20261013.mp4",
+        "image": "https://ootle-lobby-preview.vercel.app/previews/community/resource-phantom-drop-20261013.jpg",
+        "source": "Source/docs walkthrough — Public repository README scrolling; no application execution demonstrated."
+      }
     }
   ],
   "opportunities": [
