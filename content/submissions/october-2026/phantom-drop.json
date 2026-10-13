@@ -1,0 +1,20 @@
+{
+  "slug": "phantom-drop",
+  "title": "Phantom Drop",
+  "summary": "Rust CLI and library for testnet gift envelopes using native stealth outputs and claim/refund branches, without a custom template. Links can include riddles and expiry. Anyone holding a plain link can claim it; riddle strength and public transaction timing limit privacy. The creator published October 12 Esmeralda seal/open/refund evidence; this listing reviews source and those links, without executing the CLI or a wallet transaction.",
+  "cardSummary": "Create expiring testnet gift links with a Rust CLI, optional riddles and refunds for unopened envelopes.",
+  "cardStatus": "CLI · Esmeralda testnet",
+  "creator": "hycorange",
+  "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/8",
+  "publishedAt": "2026-10-12T13:55:52.735Z",
+  "updatedAt": "2026-10-12T13:55:52.735Z",
+  "sourceContentSha256": "961efd299c2229bc486cde4d21db91996847d0d577792dfd7a044fae3c9791e6",
+  "repoUrl": "https://gitlab.com/hycorange/phantom-drop",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust · MIT source",
+      "sourceUrl": "https://gitlab.com/hycorange/phantom-drop"
+    }
+  ]
+}

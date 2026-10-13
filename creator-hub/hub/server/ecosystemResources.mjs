@@ -15,13 +15,14 @@ export function withEcosystemResources(records, additions = ecosystemResources.r
     if (entry.preview) {
       requireLinkHost(entry.preview.video, 'recording');
       requireLinkHost(entry.preview.image, 'recording');
-      if (!entry.preview.source.startsWith('Source/docs walkthrough')) throw new Error('Reference media must disclose source-only capture');
+      if (!/^(Source\/docs walkthrough|App demo)/.test(entry.preview.source)) throw new Error('Reference media must disclose capture scope');
     }
     for (const post of entry.discussionLinks || []) {
       const url=new URL(post.url);
       if(url.protocol!=='https:' || url.username || url.password) throw new Error('Public discussion permalink required');
     }
-    if (entry.demoUrl !== null || entry.verification !== 'source-attested' || entry.readiness !== 'conceptual') throw new Error('Reference listings cannot imply runtime acceptance');
+    if (entry.demoUrl) requireLinkHost(entry.demoUrl, 'demo');
+    if (entry.verification !== 'source-attested' || entry.readiness !== 'conceptual') throw new Error('Reference listings cannot imply runtime acceptance');
     if (!entry.upstreamRevision || !Number.isFinite(Date.parse(entry.lastCheckedAt))) throw new Error('Missing ecosystem source evidence');
     const resource = makeResource({...entry, summary: `${entry.summary}\n\n${entry.status}.`,
       sourceId: 'reviewed-ecosystem', sourceName: 'Reviewed Tari ecosystem sources',
