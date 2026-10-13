@@ -16,5 +16,13 @@
       "label": "Rust · MIT source",
       "sourceUrl": "https://gitlab.com/hycorange/phantom-drop"
     }
-  ]
+  ],
+  "recording": {
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-phantom-drop-20261013.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-phantom-drop-20261013.jpg",
+    "capturedAt": "2026-10-13T09:27:27.671Z",
+    "sourceRevision": "1b6138a245813eb477b80388a8a5802b79ae0eb0",
+    "kind": "public-page",
+    "credit": "Docs walkthrough — Public repository README scrolling; no application execution demonstrated."
+  }
 }
