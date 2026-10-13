@@ -10,6 +10,7 @@ export function recordingLabel(source?:string|null){
  if(!source)return null;
  if(/concept overview/i.test(source))return 'Concept overview';
  if(/announcement walkthrough/i.test(source))return 'Announcement';
+ if(/^app demo\b/i.test(source))return 'App demo';
  if(/docs|source|repository|guide/i.test(source))return 'Docs walkthrough';
  return 'Page walkthrough';
 }
