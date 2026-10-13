@@ -10,10 +10,15 @@ test('source references deduplicate canonical repositories without granting runt
   assert.throws(()=>withEcosystemResources([], [{...entry,demoUrl:'https://example.com'}]));
   assert.throws(()=>withEcosystemResources([], [{...entry,sourceUrl:'http://localhost'}]));
 });
-test('paused deployments and L1 references retain their distinct boundaries', () => {
+test('recovered public demos retain source-attested status and L1 references retain their boundary', () => {
   const records=withEcosystemResources([]);
   assert.equal(records.length,ecosystemResources.records.length);
-  assert.match(records.find(r=>r.id.endsWith(':veil')).summary,/October 10, 2026.*DEPLOYMENT_DISABLED/);
+  const veil=records.find(r=>r.id.endsWith(':veil'));
+  assert.equal(veil.demoUrl,'https://explorer.tari.mw/');
+  assert.equal(veil.verification,'source-attested');
+  assert.equal(veil.readiness,'conceptual');
+  assert.match(veil.summary,/October 13, 2026/);
+  assert.throws(()=>withEcosystemResources([], [{...ecosystemResources.records.find(r=>r.key==='veil'),verification:'verified'}]));
   assert.equal(records.find(r=>r.id.endsWith(':tari-l1-wasm')).ecosystem,'tari');
 });
 

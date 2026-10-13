@@ -1,0 +1,21 @@
+{
+  "slug": "hauntboard",
+  "title": "Hauntboard",
+  "summary": "Public message board on Ootle Esmeralda testnet. On October 13, 2026, the hosted public board and guide rendered without a wallet. Posts are public and cannot be edited or deleted; testnet resets may remove history. Wallet keys stay in the browser. Posting privacy is limited by public content, transaction links, timing and provider observations. No wallet, posting, recovery or transaction flow was exercised for this listing.",
+  "cardSummary": "Read public discussions stored on Ootle, with browser-held wallet keys for posting on Esmeralda testnet.",
+  "cardStatus": "Testnet beta · Posts are permanent",
+  "creator": "_squared",
+  "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/9",
+  "publishedAt": "2026-10-12T22:16:52.102Z",
+  "updatedAt": "2026-10-12T22:16:52.102Z",
+  "sourceContentSha256": "261e1e10d64e3e291a4418fa8b11258338310afaee9b5e31e19e588d8d742140",
+  "repoUrl": "https://github.com/kstrycharz/hauntboard",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust · MIT source",
+      "sourceUrl": "https://github.com/kstrycharz/hauntboard"
+    }
+  ],
+  "demoUrl": "https://hauntboard.taritracker.com/"
+}
