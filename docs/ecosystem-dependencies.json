@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-12T09:01:25.445Z",
+  "checkedAt": "2026-10-14T13:26:58.327Z",
   "manifests": [
     {
       "repo": "lobby",
@@ -46,11 +46,39 @@
     },
     {
       "repo": "lobby",
+      "file": "creator-hub/hub/client/public/daily-spark/crystal-unlock/PROVENANCE.md"
+    },
+    {
+      "repo": "lobby",
+      "file": "creator-hub/hub/client/public/daily-spark/crystal-unlock/ai-spark-crystal-v2.png"
+    },
+    {
+      "repo": "lobby",
+      "file": "creator-hub/hub/client/src/components/SparkUnlock.css"
+    },
+    {
+      "repo": "lobby",
+      "file": "creator-hub/hub/client/src/components/SparkUnlock.md"
+    },
+    {
+      "repo": "lobby",
+      "file": "creator-hub/hub/client/src/components/SparkUnlock.tsx"
+    },
+    {
+      "repo": "lobby",
       "file": "creator-hub/hub/package-lock.json"
     },
     {
       "repo": "lobby",
+      "file": "creator-hub/hub/server/communityChatBlocklist.json"
+    },
+    {
+      "repo": "lobby",
       "file": "creator-hub/skills/examples/counter/Cargo.lock"
+    },
+    {
+      "repo": "lobby",
+      "file": "creator-hub/skills/examples/counter/Cargo.toml"
     },
     {
       "repo": "lobby",
@@ -59,6 +87,310 @@
     {
       "repo": "lobby",
       "file": "package-lock.json"
+    },
+    {
+      "repo": "lobby",
+      "file": "skills/upstream-lock.json"
+    },
+    {
+      "repo": "lobby",
+      "file": "skills/vendor/game-design/game-design-creative-unblocker/COMMERCIAL-LICENSE.md"
+    },
+    {
+      "repo": "lobby",
+      "file": "skills/vendor/game-design/game-design-creative-unblocker/LICENSE"
+    },
+    {
+      "repo": "lobby",
+      "file": "skills/vendor/game-design/game-design-creative-unblocker/SKILL.md"
+    },
+    {
+      "repo": "lobby",
+      "file": "skills/vendor/game-design/game-design-creative-unblocker/references/oblique-prompts.md"
+    },
+    {
+      "repo": "lobby",
+      "file": "skills/vendor/game-design/game-design-creative-unblocker/references/usage-notes.md"
+    },
+    {
+      "repo": "lobby",
+      "file": "skills/vendor/game-design/game-design-roadblock-reframing/COMMERCIAL-LICENSE.md"
+    },
+    {
+      "repo": "lobby",
+      "file": "skills/vendor/game-design/game-design-roadblock-reframing/LICENSE"
+    },
+    {
+      "repo": "lobby",
+      "file": "skills/vendor/game-design/game-design-roadblock-reframing/SKILL.md"
+    },
+    {
+      "repo": "lobby",
+      "file": "skills/vendor/game-design/game-design-roadblock-reframing/references/family-conventions.md"
+    },
+    {
+      "repo": "lobby",
+      "file": "skills/vendor/gamedev/skills/disciplines/create-game-assets/scripts/requirements.txt"
+    },
+    {
+      "repo": "lobby",
+      "file": "skills/vendor/huggingface/hf-cloud-python-env-setup/requirements.txt"
+    },
+    {
+      "repo": "lobby",
+      "file": "skills/vendor/huggingface/huggingface-spaces/references/requirements.md"
+    },
+    {
+      "repo": "workbench",
+      "file": ".nvmrc"
+    },
+    {
+      "repo": "workbench",
+      "file": "apps/contract-verification/src/app/Verifiers/BlockscoutVerifier.ts"
+    },
+    {
+      "repo": "workbench",
+      "file": "apps/remix-ide-e2e/src/githttpbackend/yarn.lock"
+    },
+    {
+      "repo": "workbench",
+      "file": "apps/remix-ide-e2e/src/tests/blockchain.test.ts"
+    },
+    {
+      "repo": "workbench",
+      "file": "apps/remix-ide-e2e/yarn.lock"
+    },
+    {
+      "repo": "workbench",
+      "file": "apps/remix-ide/.nvmrc"
+    },
+    {
+      "repo": "workbench",
+      "file": "apps/remix-ide/src/blockchain/blockchain.tsx"
+    },
+    {
+      "repo": "workbench",
+      "file": "apps/remix-ide/src/blockchain/execution-context.js"
+    },
+    {
+      "repo": "workbench",
+      "file": "apps/remix-ide/src/blockchain/helper.ts"
+    },
+    {
+      "repo": "workbench",
+      "file": "apps/remix-ide/src/blockchain/providers/injected.ts"
+    },
+    {
+      "repo": "workbench",
+      "file": "apps/remix-ide/src/blockchain/providers/node.ts"
+    },
+    {
+      "repo": "workbench",
+      "file": "apps/remix-ide/src/blockchain/providers/vm.ts"
+    },
+    {
+      "repo": "workbench",
+      "file": "apps/remix-ide/src/blockchain/providers/worker-vm.ts"
+    },
+    {
+      "repo": "workbench",
+      "file": "apps/remixdesktop/yarn.lock"
+    },
+    {
+      "repo": "workbench",
+      "file": "apps/solhint/yarn.lock"
+    },
+    {
+      "repo": "workbench",
+      "file": "examples/ootle-counter-remix/Cargo.lock"
+    },
+    {
+      "repo": "workbench",
+      "file": "examples/ootle-counter-remix/Cargo.toml"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-analyzer/src/solidity-analyzer/modules/blockBlockhash.ts"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-analyzer/src/solidity-analyzer/modules/blockTimestamp.ts"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-analyzer/test/analysis/astBlocks/abiNamespaceCallNodes.json"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-analyzer/test/analysis/astBlocks/assignment.json"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-analyzer/test/analysis/astBlocks/blockHashAccess.json"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-analyzer/test/analysis/astBlocks/blockTimestamp.json"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-analyzer/test/analysis/astBlocks/contractDefinition.json"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-analyzer/test/analysis/astBlocks/doWhileLoopNode.json"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-analyzer/test/analysis/astBlocks/dynamicDeleteUnaryOp.json"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-analyzer/test/analysis/astBlocks/externalDirect.json"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-analyzer/test/analysis/astBlocks/forLoopNode.json"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-analyzer/test/analysis/astBlocks/fullyQualifiedFunctionDefinition.json"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-analyzer/test/analysis/astBlocks/funcDefForComplexParams.json"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-analyzer/test/analysis/astBlocks/functionDefinition.json"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-analyzer/test/analysis/astBlocks/index.js"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-analyzer/test/analysis/astBlocks/inheritance.json"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-analyzer/test/analysis/astBlocks/inlineAssembly.json"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-analyzer/test/analysis/astBlocks/libCall.json"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-analyzer/test/analysis/astBlocks/localCall.json"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-analyzer/test/analysis/astBlocks/lowlevelCall.json"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-analyzer/test/analysis/astBlocks/nowAst.json"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-analyzer/test/analysis/astBlocks/parameterFunction.json"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-analyzer/test/analysis/astBlocks/parameterFunctionCall.json"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-analyzer/test/analysis/astBlocks/requireCall.json"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-analyzer/test/analysis/astBlocks/selfdestruct.json"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-analyzer/test/analysis/astBlocks/stateVariableContractNode.json"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-analyzer/test/analysis/astBlocks/storageVariableNodes.json"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-analyzer/test/analysis/astBlocks/superLocal.json"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-analyzer/test/analysis/astBlocks/thisLocalCall.json"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-analyzer/test/analysis/astBlocks/unaryOperation.json"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-analyzer/test/analysis/astBlocks/whileLoopNode.json"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-analyzer/test/analysis/test-contracts/solidity-v0.4.24/blockLevelCompare.sol"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-analyzer/test/analysis/test-contracts/solidity-v0.5/blockLevelCompare.sol"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-api/src/lib/plugins/matomo/events/blockchain-events.ts"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-core-plugin/src/lib/helpers/fetch-blockscout.ts"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-simulator/src/methods/blocks.ts"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-simulator/test/blocks.ts"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-ui/run-tab/src/lib/types/blockchain.d.ts"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-ui/workspace/src/lib/cloud/cloud-workspace-lock.ts"
+    },
+    {
+      "repo": "workbench",
+      "file": "libs/remix-ws-templates/src/templates/daoGovernance/contracts/DAOTimelock.sol"
+    },
+    {
+      "repo": "workbench",
+      "file": "templates/tari-counter/Cargo.lock"
+    },
+    {
+      "repo": "workbench",
+      "file": "templates/tari-counter/Cargo.toml"
+    },
+    {
+      "repo": "workbench",
+      "file": "templates/tari-counter/vendor/gix-hash-0.15.1/Cargo.toml"
+    },
+    {
+      "repo": "workbench",
+      "file": "templates/tari-counter/vendor/shared-buffer-0.1.4/Cargo.toml"
+    },
+    {
+      "repo": "workbench",
+      "file": "tools/agent-service/package-lock.json"
+    },
+    {
+      "repo": "workbench",
+      "file": "yarn.lock"
     }
   ],
   "records": [
@@ -70,10 +402,11 @@
       "locked": "1.47.2",
       "installed": "1.47.2",
       "latestCompatible": "1.47.2",
-      "latest": "1.64.0",
+      "latest": "1.64.1",
       "error": null,
-      "disposition": "Hold optional capture/render tool migration pending actual media acceptance; not part of deployed server.",
-      "latestSameMajor": "1.64.0"
+      "disposition": "New upstream version observed; Hold optional capture/render tool migration pending actual media acceptance; not part of deployed server. Revalidation is required before adopting the new version.",
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "Hold optional capture/render tool migration pending actual media acceptance; not part of deployed server."
     },
     {
       "repo": "lobby",
@@ -85,7 +418,9 @@
       "latestCompatible": "2.1.1",
       "latest": "2.1.1",
       "error": null,
-      "disposition": "current within declared range"
+      "disposition": "current within declared range",
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "current within declared range"
     },
     {
       "repo": "lobby",
@@ -97,7 +432,9 @@
       "latestCompatible": "1.4.0",
       "latest": "1.4.0",
       "error": null,
-      "disposition": "current within declared range"
+      "disposition": "current within declared range",
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "current within declared range"
     },
     {
       "repo": "lobby",
@@ -109,7 +446,9 @@
       "latestCompatible": "6.4.12",
       "latest": "6.4.12",
       "error": null,
-      "disposition": "current within declared range"
+      "disposition": "current within declared range",
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "current within declared range"
     },
     {
       "repo": "lobby",
@@ -121,7 +460,9 @@
       "latestCompatible": "6.2.5",
       "latest": "6.2.5",
       "error": null,
-      "disposition": "current within declared range"
+      "disposition": "current within declared range",
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "current within declared range"
     },
     {
       "repo": "lobby",
@@ -133,7 +474,9 @@
       "latestCompatible": "6.0.2",
       "latest": "6.0.2",
       "error": null,
-      "disposition": "current within declared range"
+      "disposition": "current within declared range",
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "current within declared range"
     },
     {
       "repo": "lobby",
@@ -145,7 +488,9 @@
       "latestCompatible": "6.5.2",
       "latest": "6.5.2",
       "error": null,
-      "disposition": "current within declared range"
+      "disposition": "current within declared range",
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "current within declared range"
     },
     {
       "repo": "lobby",
@@ -157,7 +502,9 @@
       "latestCompatible": "6.0.2",
       "latest": "6.0.2",
       "error": null,
-      "disposition": "current within declared range"
+      "disposition": "current within declared range",
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "current within declared range"
     },
     {
       "repo": "lobby",
@@ -169,7 +516,9 @@
       "latestCompatible": "5.2.7",
       "latest": "5.3.0",
       "error": null,
-      "disposition": "major/range migration deferred pending upstream compatibility"
+      "disposition": "major/range migration deferred pending upstream compatibility",
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "major/range migration deferred pending upstream compatibility"
     },
     {
       "repo": "lobby",
@@ -181,7 +530,9 @@
       "latestCompatible": "1.9.3",
       "latest": "1.9.4",
       "error": null,
-      "disposition": "major/range migration deferred pending upstream compatibility"
+      "disposition": "major/range migration deferred pending upstream compatibility",
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "major/range migration deferred pending upstream compatibility"
     },
     {
       "repo": "lobby",
@@ -193,7 +544,9 @@
       "latestCompatible": "6.0.2",
       "latest": "6.0.2",
       "error": null,
-      "disposition": "current within declared range"
+      "disposition": "current within declared range",
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "current within declared range"
     },
     {
       "repo": "lobby",
@@ -205,7 +558,9 @@
       "latestCompatible": "0.8.3",
       "latest": "0.8.3",
       "error": null,
-      "disposition": "current within declared range"
+      "disposition": "current within declared range",
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "current within declared range"
     },
     {
       "repo": "lobby",
@@ -215,9 +570,11 @@
       "locked": null,
       "installed": null,
       "latestCompatible": "13.4.1",
-      "latest": "14.1.0",
+      "latest": "14.2.0",
       "error": null,
-      "disposition": "major/range migration deferred pending upstream compatibility"
+      "disposition": "New upstream version observed; major/range migration deferred pending upstream compatibility Revalidation is required before adopting the new version.",
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "major/range migration deferred pending upstream compatibility"
     },
     {
       "repo": "lobby",
@@ -229,7 +586,9 @@
       "latestCompatible": "2.24.1",
       "latest": "2.25.2",
       "error": null,
-      "disposition": "Retain 2.24.1 from private-chat release; audit clean. 2.25.2 needs separate two-browser encrypted delivery, persistence and recovery acceptance before upgrade."
+      "disposition": "Retain 2.24.1 from private-chat release; audit clean. 2.25.2 needs separate two-browser encrypted delivery, persistence and recovery acceptance before upgrade.",
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "Retain 2.24.1 from private-chat release; audit clean. 2.25.2 needs separate two-browser encrypted delivery, persistence and recovery acceptance before upgrade."
     },
     {
       "repo": "lobby",
@@ -241,7 +600,9 @@
       "latestCompatible": "18.3.1",
       "latest": "19.3.0",
       "error": null,
-      "disposition": "major/range migration deferred pending upstream compatibility"
+      "disposition": "major/range migration deferred pending upstream compatibility",
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "major/range migration deferred pending upstream compatibility"
     },
     {
       "repo": "lobby",
@@ -253,7 +614,9 @@
       "latestCompatible": "18.3.1",
       "latest": "19.3.0",
       "error": null,
-      "disposition": "major/range migration deferred pending upstream compatibility"
+      "disposition": "major/range migration deferred pending upstream compatibility",
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "major/range migration deferred pending upstream compatibility"
     },
     {
       "repo": "lobby",
@@ -265,7 +628,9 @@
       "latestCompatible": "7.18.4",
       "latest": "7.18.4",
       "error": null,
-      "disposition": "current within declared range"
+      "disposition": "current within declared range",
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "current within declared range"
     },
     {
       "repo": "lobby",
@@ -277,7 +642,9 @@
       "latestCompatible": "1.9.0",
       "latest": "1.9.0",
       "error": null,
-      "disposition": "current within declared range"
+      "disposition": "current within declared range",
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "current within declared range"
     },
     {
       "repo": "lobby",
@@ -289,7 +656,9 @@
       "latestCompatible": "22.20.5",
       "latest": "26.6.5",
       "error": null,
-      "disposition": "major/range migration deferred pending upstream compatibility"
+      "disposition": "major/range migration deferred pending upstream compatibility",
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "major/range migration deferred pending upstream compatibility"
     },
     {
       "repo": "lobby",
@@ -301,7 +670,9 @@
       "latestCompatible": "18.3.31",
       "latest": "19.3.0",
       "error": null,
-      "disposition": "major/range migration deferred pending upstream compatibility"
+      "disposition": "major/range migration deferred pending upstream compatibility",
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "major/range migration deferred pending upstream compatibility"
     },
     {
       "repo": "lobby",
@@ -313,7 +684,9 @@
       "latestCompatible": "18.3.7",
       "latest": "19.3.0",
       "error": null,
-      "disposition": "major/range migration deferred pending upstream compatibility"
+      "disposition": "major/range migration deferred pending upstream compatibility",
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "major/range migration deferred pending upstream compatibility"
     },
     {
       "repo": "lobby",
@@ -325,7 +698,9 @@
       "latestCompatible": "4.7.0",
       "latest": "6.1.2",
       "error": null,
-      "disposition": "major/range migration deferred pending upstream compatibility"
+      "disposition": "major/range migration deferred pending upstream compatibility",
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "major/range migration deferred pending upstream compatibility"
     },
     {
       "repo": "lobby",
@@ -337,7 +712,9 @@
       "latestCompatible": "6.2.5",
       "latest": "6.2.5",
       "error": null,
-      "disposition": "Current pinned test dependency from private-chat release; root tests pass."
+      "disposition": "Current pinned test dependency from private-chat release; root tests pass.",
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "Current pinned test dependency from private-chat release; root tests pass."
     },
     {
       "repo": "lobby",
@@ -349,7 +726,9 @@
       "latestCompatible": "5.9.3",
       "latest": "7.0.2",
       "error": null,
-      "disposition": "major/range migration deferred pending upstream compatibility"
+      "disposition": "major/range migration deferred pending upstream compatibility",
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "major/range migration deferred pending upstream compatibility"
     },
     {
       "repo": "lobby",
@@ -361,7 +740,9 @@
       "latestCompatible": "6.4.4",
       "latest": "8.3.4",
       "error": null,
-      "disposition": "major/range migration deferred pending upstream compatibility"
+      "disposition": "major/range migration deferred pending upstream compatibility",
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "major/range migration deferred pending upstream compatibility"
     },
     {
       "repo": "lobby",
@@ -371,9 +752,11 @@
       "locked": null,
       "installed": null,
       "latestCompatible": "4.1.11",
-      "latest": "5.0.3",
+      "latest": "5.0.4",
       "error": null,
-      "disposition": "major/range migration deferred pending upstream compatibility"
+      "disposition": "major/range migration deferred pending upstream compatibility",
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "major/range migration deferred pending upstream compatibility"
     },
     {
       "repo": "lobby",
@@ -386,7 +769,8 @@
       "latest": "5.3.0",
       "error": null,
       "disposition": "major/range migration deferred pending upstream compatibility",
-      "latestSameMajor": "4.22.3"
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "major/range migration deferred pending upstream compatibility"
     },
     {
       "repo": "lobby",
@@ -396,10 +780,11 @@
       "locked": "4.0.534",
       "installed": "4.0.534",
       "latestCompatible": "4.0.534",
-      "latest": "4.0.534",
+      "latest": "4.0.535",
       "error": null,
       "disposition": "current within declared range",
-      "latestSameMajor": "4.0.534"
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "current within declared range"
     },
     {
       "repo": "lobby",
@@ -409,10 +794,11 @@
       "locked": "4.0.534",
       "installed": "4.0.534",
       "latestCompatible": "4.0.534",
-      "latest": "4.0.534",
+      "latest": "4.0.535",
       "error": null,
       "disposition": "current within declared range",
-      "latestSameMajor": "4.0.534"
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "current within declared range"
     },
     {
       "repo": "lobby",
@@ -422,10 +808,11 @@
       "locked": "4.0.534",
       "installed": "4.0.534",
       "latestCompatible": "4.0.534",
-      "latest": "4.0.534",
+      "latest": "4.0.535",
       "error": null,
       "disposition": "current within declared range",
-      "latestSameMajor": "4.0.534"
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "current within declared range"
     },
     {
       "repo": "lobby",
@@ -435,10 +822,11 @@
       "locked": "4.0.534",
       "installed": "4.0.534",
       "latestCompatible": "4.0.534",
-      "latest": "4.0.534",
+      "latest": "4.0.535",
       "error": null,
       "disposition": "current within declared range",
-      "latestSameMajor": "4.0.534"
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "current within declared range"
     },
     {
       "repo": "lobby",
@@ -451,7 +839,8 @@
       "latest": "19.3.0",
       "error": null,
       "disposition": "Hold optional capture/render tool migration pending actual media acceptance; not part of deployed server.",
-      "latestSameMajor": "19.3.0"
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "Hold optional capture/render tool migration pending actual media acceptance; not part of deployed server."
     },
     {
       "repo": "lobby",
@@ -464,7 +853,8 @@
       "latest": "19.3.0",
       "error": null,
       "disposition": "Hold optional capture/render tool migration pending actual media acceptance; not part of deployed server.",
-      "latestSameMajor": "19.3.0"
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "Hold optional capture/render tool migration pending actual media acceptance; not part of deployed server."
     },
     {
       "repo": "lobby",
@@ -474,10 +864,11 @@
       "locked": "4.0.534",
       "installed": "4.0.534",
       "latestCompatible": "4.0.534",
-      "latest": "4.0.534",
+      "latest": "4.0.535",
       "error": null,
       "disposition": "current within declared range",
-      "latestSameMajor": "4.0.534"
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "current within declared range"
     },
     {
       "repo": "lobby",
@@ -487,9 +878,11 @@
       "locked": "3.22.3",
       "installed": "3.22.3",
       "latestCompatible": "3.22.3",
-      "latest": "4.6.6",
+      "latest": "4.6.7",
       "error": null,
-      "disposition": "major/range migration deferred pending upstream compatibility"
+      "disposition": "major/range migration deferred pending upstream compatibility",
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "major/range migration deferred pending upstream compatibility"
     },
     {
       "repo": "lobby",
@@ -502,7 +895,8 @@
       "latest": "19.3.0",
       "error": null,
       "disposition": "Hold optional capture/render tool migration pending actual media acceptance; not part of deployed server.",
-      "latestSameMajor": "19.3.0"
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "Hold optional capture/render tool migration pending actual media acceptance; not part of deployed server."
     },
     {
       "repo": "lobby",
@@ -515,20 +909,22 @@
       "latest": "7.0.2",
       "error": null,
       "disposition": "Hold optional capture/render tool migration pending actual media acceptance; not part of deployed server.",
-      "latestSameMajor": "5.9.3"
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "Hold optional capture/render tool migration pending actual media acceptance; not part of deployed server."
     },
     {
       "repo": "lobby",
       "manifest": "package.json",
       "name": "@vercel/blob",
-      "range": "2.8.1",
-      "locked": "2.8.1",
-      "installed": "2.8.1",
-      "latestCompatible": "2.8.1",
-      "latest": "2.8.1",
+      "range": "2.8.2",
+      "locked": "2.8.2",
+      "installed": "2.8.2",
+      "latestCompatible": "2.8.2",
+      "latest": "2.8.2",
       "error": null,
-      "disposition": "Current patch, applied in October 10 release; audit rerun clean.",
-      "latestSameMajor": "2.8.1"
+      "disposition": "Applied compatible patch 2.8.1 to 2.8.2; official path normalization fix. Root tests, content/build and zero-vulnerability npm audit required; external Blob writes not exercised.",
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "Current patch, applied in October 10 release; audit rerun clean."
     },
     {
       "repo": "lobby",
@@ -541,7 +937,8 @@
       "latest": "5.3.0",
       "error": null,
       "disposition": "major/range migration deferred pending upstream compatibility",
-      "latestSameMajor": "4.22.3"
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "major/range migration deferred pending upstream compatibility"
     },
     {
       "repo": "lobby",
@@ -553,7 +950,9 @@
       "latestCompatible": "2.24.1",
       "latest": "2.25.2",
       "error": null,
-      "disposition": "Retain 2.24.1 from private-chat release; audit clean. 2.25.2 needs separate two-browser encrypted delivery, persistence and recovery acceptance before upgrade."
+      "disposition": "Retain 2.24.1 from private-chat release; audit clean. 2.25.2 needs separate two-browser encrypted delivery, persistence and recovery acceptance before upgrade.",
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "Retain 2.24.1 from private-chat release; audit clean. 2.25.2 needs separate two-browser encrypted delivery, persistence and recovery acceptance before upgrade."
     },
     {
       "repo": "lobby",
@@ -566,19 +965,181 @@
       "latest": "8.23.1",
       "error": null,
       "disposition": "current within declared range",
-      "latestSameMajor": "8.23.1"
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "current within declared range"
     },
     {
       "repo": "lobby",
       "manifest": "package.json",
       "name": "@electric-sql/pglite",
-      "range": "0.5.8",
-      "locked": "0.5.8",
-      "installed": "0.5.8",
-      "latestCompatible": "0.5.8",
-      "latest": "0.5.8",
+      "range": "0.5.9",
+      "locked": "0.5.9",
+      "installed": "0.5.9",
+      "latestCompatible": "0.5.9",
+      "latest": "0.5.9",
       "error": null,
-      "disposition": "current within declared range"
+      "disposition": "Updated0.5.8 to0.5.9; all51 root tests passed including database-backed paths.",
+      "checkedAt": "2026-10-14T13:26:58.327Z",
+      "priorDisposition": "Updated0.5.8 to0.5.9; all51 root tests passed including database-backed paths."
     }
-  ]
+  ],
+  "toolRegistry": [
+    {
+      "name": "ootle-py",
+      "source": "https://pypi.org/pypi/ootle-py/json",
+      "latest": "0.3.1"
+    },
+    {
+      "name": "tari_template_lib",
+      "source": "https://crates.io/api/v1/crates/tari_template_lib",
+      "latest": "0.34.0"
+    },
+    {
+      "name": "tari_template_test_tooling",
+      "source": "https://crates.io/api/v1/crates/tari_template_test_tooling",
+      "latest": "0.46.1"
+    },
+    {
+      "name": "ootle-go",
+      "source": "https://proxy.golang.org/github.com/tari-project/ootle-go/@v/list",
+      "latest": "v0.4.0"
+    },
+    {
+      "name": "node",
+      "source": "https://nodejs.org/dist/index.json",
+      "latest": {
+        "22": "v22.23.3",
+        "24": "v24.21.0",
+        "26": "v26.11.1"
+      }
+    },
+    {
+      "name": "vercel",
+      "source": "https://registry.npmjs.org/vercel/latest",
+      "latest": "64.0.2"
+    },
+    {
+      "name": "yarn",
+      "source": "https://registry.npmjs.org/yarn/latest",
+      "latest": "1.22.22"
+    },
+    {
+      "name": "chiron-sdk",
+      "source": "https://registry.npmjs.org/@chironbuilder%2Footle-sdk/latest",
+      "latest": "0.1.20"
+    },
+    {
+      "name": "chiron-l1",
+      "source": "https://registry.npmjs.org/@chironbuilder%2Ftari-l1-wasm/latest",
+      "latest": "6.0.1-pre.2"
+    },
+    {
+      "name": "official-ootle-sdk",
+      "source": "https://registry.npmjs.org/@tari-project%2Footle/latest",
+      "latest": "0.9.0"
+    },
+    {
+      "name": "official-ootle-wasm",
+      "source": "https://registry.npmjs.org/@tari-project%2Footle-wasm/latest",
+      "latest": "0.46.1"
+    },
+    {
+      "name": "spline",
+      "source": "https://registry.npmjs.org/@splinetool%2Fruntime/latest",
+      "latest": "2.0.80"
+    }
+  ],
+  "advisories": {
+    "checkedAt": "2026-10-14T13:26:58.327Z",
+    "runs": [
+      {
+        "path": "lobby",
+        "tool": "npm",
+        "exitCode": 0
+      },
+      {
+        "path": "lobby/creator-hub/hub",
+        "tool": "npm",
+        "exitCode": 0
+      },
+      {
+        "path": "lobby/creator-hub/hub/client",
+        "tool": "npm",
+        "exitCode": 0
+      },
+      {
+        "path": "lobby/creator-hub/capture",
+        "tool": "npm",
+        "exitCode": 0
+      },
+      {
+        "path": "lobby/creator-hub/video-templates",
+        "tool": "npm",
+        "exitCode": 0
+      },
+      {
+        "path": "workbench/tools/agent-service",
+        "tool": "npm",
+        "exitCode": 0
+      },
+      {
+        "path": "workbench",
+        "tool": "yarn",
+        "exitCode": 30
+      },
+      {
+        "path": "workbench/apps/remixdesktop",
+        "tool": "yarn",
+        "exitCode": 30
+      },
+      {
+        "path": "workbench/apps/remix-ide-e2e",
+        "tool": "yarn",
+        "exitCode": 30
+      },
+      {
+        "path": "workbench/apps/remix-ide-e2e/src/githttpbackend",
+        "tool": "yarn",
+        "exitCode": 30
+      },
+      {
+        "path": "workbench/apps/solhint",
+        "tool": "yarn",
+        "exitCode": 14
+      }
+    ],
+    "summary": "Six npm roots clean; five Yarn graphs retain existing advisory counts. Separate graphs are not additive production vulnerability counts.",
+    "yarnCounts": {
+      "root": [
+        436,
+        113
+      ],
+      "desktop": [
+        910,
+        212
+      ],
+      "e2e": [
+        213,
+        75
+      ],
+      "githttp": [
+        18,
+        10
+      ],
+      "solhint": [
+        39,
+        33
+      ]
+    }
+  },
+  "compatibilityDisposition": "Ootle 0.46/Protocol V2 and official JS 0.9/Python 0.3.1/Go 0.4 reviewed at source. Workbench template/deployment dependencies require actual compatibility validation before migration; catalog references are not installed integrations.",
+  "rustStable": {
+    "version": "1.99.0",
+    "source": "https://static.rust-lang.org/dist/channel-rust-stable.toml",
+    "disposition": "Retain tested pinned toolchain pending Rust/WASM compatibility validation."
+  },
+  "pythonVendorRequirements": {
+    "scope": "Two optional vendored requirements files (boto3, awscli, Pillow) metadata refreshed; no installed product Python environment or transitive lock found.",
+    "evidence": "work/daily-2026-10-14/extra-reads.json"
+  }
 }

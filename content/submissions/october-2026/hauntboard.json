@@ -1,9 +1,9 @@
 {
   "slug": "hauntboard",
   "title": "Hauntboard",
-  "summary": "Public message board on Ootle Esmeralda testnet. On October 13, 2026, the hosted public board and guide rendered without a wallet. Posts are public and cannot be edited or deleted; testnet resets may remove history. Wallet keys stay in the browser. Posting privacy is limited by public content, transaction links, timing and provider observations. No wallet, posting, recovery or transaction flow was exercised for this listing.",
+  "summary": "Public Ootle message-board source with browser-held wallet keys. On October 14, 2026, two browser loads reported “Network unavailable” and failed configuration checks; reading and posting were unavailable in that session. The prior October 13 public-reader success remains historical evidence. Posts are public and permanent; testnet resets may remove history. Current documentation points users to the separate TariTracker faucet and includes local-client instructions. No wallet or transaction action was performed.",
   "cardSummary": "Read public discussions stored on Ootle, with browser-held wallet keys for posting on Esmeralda testnet.",
-  "cardStatus": "Testnet beta · Posts are permanent",
+  "cardStatus": "Unavailable · Testnet · Public permanent posts",
   "creator": "_squared",
   "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/9",
   "publishedAt": "2026-10-12T22:16:52.102Z",
@@ -19,11 +19,11 @@
   ],
   "demoUrl": "https://hauntboard.taritracker.com/",
   "recording": {
-    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-hauntboard-20261013.mp4",
-    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-hauntboard-20261013.jpg",
-    "capturedAt": "2026-10-13T09:27:48.642Z",
-    "sourceRevision": "02ace501fdea2c4841c405eb4d6bf72bacb70471",
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-hauntboard-20261014.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-hauntboard-20261014.jpg",
+    "capturedAt": "2026-10-14T13:39:12.940Z",
+    "sourceRevision": "c493fe76c0d016c414fdc38e75a378507b71b7a3",
     "kind": "public-page",
-    "credit": "App demo — Public read-only interface scrolling; no wallet or transaction flow demonstrated."
+    "credit": "Docs walkthrough — Public repository README scrolling; no software installation or execution."
   }
 }

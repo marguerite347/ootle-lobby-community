@@ -1,0 +1,27 @@
+{
+  "slug": "macotaur",
+  "title": "Macotaur",
+  "summary": "Apple Silicon C29 GPU miner and desktop app for Tari L1. Requires macOS 15 or later. The October 14 review found GUI v0.1.0 and core v0.2.0 downloads and BSD-3-Clause source. Releases are ad-hoc signed and not Apple notarized. No mining, installation or download execution was performed. No separate public sharing announcement was found; the actual discovery was the creator’s public repository inventory.",
+  "creator": "big-chief-1889",
+  "sourceUrl": "https://github.com/big-chief-1889/MacotaurGUI/releases/tag/v0.1.0",
+  "sourceLabel": "Release notes",
+  "publishedAt": "2026-10-10T03:55:52Z",
+  "publicationBasis": "GitHub release timestamp.",
+  "publicationLabel": "Released",
+  "publicationUrl": "https://github.com/big-chief-1889/MacotaurGUI/releases/tag/v0.1.0",
+  "repoUrl": "https://github.com/big-chief-1889/MacotaurGUI",
+  "ecosystem": "tari",
+  "technologies": [],
+  "cardSummary": "Mine Tari C29 on Apple Silicon Macs with pool selection, power controls and a desktop dashboard.",
+  "cardStatus": "Apple Silicon · macOS 15+ · Not notarized",
+  "media": {
+    "image": "/previews/community/resource-macotaur-20261014.jpg",
+    "video": "/previews/community/resource-macotaur-20261014.mp4",
+    "label": "Docs walkthrough",
+    "sourceUrl": "https://github.com/big-chief-1889/MacotaurGUI#readme",
+    "capturedAt": "2026-10-14T13:38:22.169Z",
+    "reviewedAt": "2026-10-14T13:41:39.756960+00:00",
+    "sha256": "2d6038ffe70a35211ec729fea67e466ed20bf6c01d12cec13fc1af144bcb10df"
+  },
+  "forum": null
+}
