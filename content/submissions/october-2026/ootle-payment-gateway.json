@@ -1,0 +1,29 @@
+{
+  "slug": "ootle-payment-gateway",
+  "title": "Ootle Payment Gateway",
+  "summary": "WooCommerce plugin source for Ootle payment sessions, webhook handling and a customer-payment address flow. On October 15, 2026, the linked HTTP test storefront displayed one product. The maintainer reports an accepted confidential transfer in contest-verification.md; this is distinct from a completed customer checkout. The README roadmap still lists checkout wiring/reconciliation as remaining work, while current code includes a receive-address and balance-comparison path. These sources do not establish anonymous purchases or production readiness. Requires WordPress, WooCommerce, PHP and a wallet daemon. MIT source; reviewed for Esmeralda testnet. No plugin install, order, wallet or payment action was performed.",
+  "cardSummary": "Explore WooCommerce plugin code for Ootle payment sessions, webhook handling and testnet customer payments.",
+  "cardStatus": "Source code · Testnet",
+  "creator": "luci666",
+  "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/10",
+  "publishedAt": "2026-10-15T04:11:53.858Z",
+  "updatedAt": "2026-10-15T04:23:25.422Z",
+  "sourceContentSha256": "b4f0f2a884408669b816f860a5780159304208fe0489482501b5866c8e743cf5",
+  "repoUrl": "https://github.com/Luci666-Onyx/ootle-payment-gateway",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "PHP · WooCommerce · MIT",
+      "sourceUrl": "https://github.com/Luci666-Onyx/ootle-payment-gateway"
+    }
+  ],
+  "demoUrl": null,
+  "recording": {
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-ootle-payment-gateway-20261015.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-ootle-payment-gateway-20261015.jpg",
+    "capturedAt": "2026-10-15T09:15:50.978Z",
+    "sourceRevision": "3606ab25988eab6e33d2b93cb6189b2c2326411b",
+    "kind": "public-page",
+    "credit": "Docs walkthrough — Public repository README scrolling; maintainer claims shown as source material, not a demonstrated checkout."
+  }
+}
