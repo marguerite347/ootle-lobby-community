@@ -2,7 +2,7 @@
   "slug": "ootle-payment-gateway",
   "title": "Ootle Payment Gateway",
   "summary": "WooCommerce plugin source for Ootle payment sessions, webhook handling and a customer-payment address flow. On October 15, 2026, the linked HTTP test storefront displayed one product. The maintainer reports an accepted confidential transfer in contest-verification.md; this is distinct from a completed customer checkout. The README roadmap still lists checkout wiring/reconciliation as remaining work, while current code includes a receive-address and balance-comparison path. These sources do not establish anonymous purchases or production readiness. Requires WordPress, WooCommerce, PHP and a wallet daemon. MIT source; reviewed for Esmeralda testnet. No plugin install, order, wallet or payment action was performed.",
-  "cardSummary": "Explore WooCommerce plugin code for Ootle payment sessions, webhook handling and testnet customer payments.",
+  "cardSummary": "Explore Ootle payments for WooCommerce with PHP plugin code and setup guides.",
   "cardStatus": "Source code · Testnet",
   "creator": "luci666",
   "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/10",
