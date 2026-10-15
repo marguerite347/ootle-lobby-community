@@ -711,7 +711,7 @@
           "context": "Creator announcement of WooCommerce Ootle gateway"
         }
       ],
-      "cardSummary": "Explore WooCommerce plugin code for Ootle payment sessions, webhook handling and testnet customer payments.",
+      "cardSummary": "Explore Ootle payments for WooCommerce with PHP plugin code and setup guides.",
       "cardStatus": "Source code · Testnet",
       "preview": {
         "video": "https://ootle-lobby-preview.vercel.app/previews/community/resource-ootle-payment-gateway-20261015.mp4",

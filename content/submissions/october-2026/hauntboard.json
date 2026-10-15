@@ -1,9 +1,9 @@
 {
   "slug": "hauntboard",
   "title": "Hauntboard",
-  "summary": "Public Ootle message-board source with browser-held wallet keys. On October 14, 2026, two browser loads reported “Network unavailable” and failed configuration checks; reading and posting were unavailable in that session. The prior October 13 public-reader success remains historical evidence. Posts are public and permanent; testnet resets may remove history. Current documentation points users to the separate TariTracker faucet and includes local-client instructions. No wallet or transaction action was performed.",
+  "summary": "Public Ootle message board with browser-held wallet keys. On October 15, 2026, the public reader recovered: the General board and a conversation with two replies loaded successfully. This follows the October 14 configuration/network failure; earlier observations remain in the maintenance history. Posts are public and permanent; testnet resets may remove history. Posting needs a funded testnet wallet. Public reading was inspected; no wallet, posting or transaction action was performed.",
   "cardSummary": "Read public discussions stored on Ootle, with browser-held wallet keys for posting on Esmeralda testnet.",
-  "cardStatus": "Unavailable · Testnet · Public permanent posts",
+  "cardStatus": "Web app · Testnet · Public permanent posts",
   "creator": "_squared",
   "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/9",
   "publishedAt": "2026-10-12T22:16:52.102Z",
@@ -19,11 +19,11 @@
   ],
   "demoUrl": "https://hauntboard.taritracker.com/",
   "recording": {
-    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-hauntboard-20261014.mp4",
-    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-hauntboard-20261014.jpg",
-    "capturedAt": "2026-10-14T13:39:12.940Z",
-    "sourceRevision": "c493fe76c0d016c414fdc38e75a378507b71b7a3",
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-hauntboard-20261015.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-hauntboard-20261015.jpg",
+    "capturedAt": "2026-10-15T09:25:35.303Z",
+    "sourceRevision": "bfdea97c85d4396df9a355ed4d62db3007c2a07d",
     "kind": "public-page",
-    "credit": "Docs walkthrough — Public repository README scrolling; no software installation or execution."
+    "credit": "App demo — Recovered public conversation reader and replies; wallet remains locked, no post or payment submitted."
   }
 }
