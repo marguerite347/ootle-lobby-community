@@ -1,13 +1,13 @@
 {
   "slug": "hauntboard",
   "title": "Hauntboard",
-  "summary": "Public Ootle message board with browser-held wallet keys. On October 15, 2026, the public reader recovered: the General board and a conversation with two replies loaded successfully. This follows the October 14 configuration/network failure; earlier observations remain in the maintenance history. Posts are public and permanent; testnet resets may remove history. Posting needs a funded testnet wallet. Public reading was inspected; no wallet, posting or transaction action was performed.",
-  "cardSummary": "Read public discussions stored on Ootle, with browser-held wallet keys for posting on Esmeralda testnet.",
-  "cardStatus": "Web app · Testnet · Public permanent posts",
+  "summary": "Ootle message board with public threads and optional AES-256-GCM sealed message bodies. Titles, categories, fees, graph and timing remain public; accepted posts cannot be edited or deleted, and testnet resets can remove history. Invitation links carry a shared key: holders can read past and future messages, share access and impersonate participants; access cannot be revoked and authorship is not authenticated. Wallet recovery does not restore invitation keys. On October 16, 2026, the public reader and privacy explanation loaded with the wallet locked; repository revision 0598b28 documents schema 4 and the sealed-body flow. No encrypted message, wallet, post or payment action was tested. Prior outage and recovery evidence remains in the maintenance history.",
+  "cardSummary": "Read Ootle discussions with public threads or invitation-encrypted message bodies, while titles and categories remain public.",
+  "cardStatus": "Web app · Testnet · Permanent posts",
   "creator": "_squared",
   "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/9",
   "publishedAt": "2026-10-12T22:16:52.102Z",
-  "updatedAt": "2026-10-12T22:16:52.102Z",
+  "updatedAt": "2026-10-16T17:39:46.303Z",
   "sourceContentSha256": "261e1e10d64e3e291a4418fa8b11258338310afaee9b5e31e19e588d8d742140",
   "repoUrl": "https://github.com/kstrycharz/hauntboard",
   "ecosystem": "tari-ootle",
@@ -19,11 +19,11 @@
   ],
   "demoUrl": "https://hauntboard.taritracker.com/",
   "recording": {
-    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-hauntboard-20261015.mp4",
-    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-hauntboard-20261015.jpg",
-    "capturedAt": "2026-10-15T09:25:35.303Z",
-    "sourceRevision": "bfdea97c85d4396df9a355ed4d62db3007c2a07d",
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-hauntboard-20261016.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-hauntboard-20261016.jpg",
+    "capturedAt": "2026-10-16T17:56:51.673Z",
+    "sourceRevision": "0598b28c22d26c1bb2d43215b7b3f823dadadd0c",
     "kind": "public-page",
-    "credit": "App demo — Recovered public conversation reader and replies; wallet remains locked, no post or payment submitted."
+    "credit": "Docs walkthrough — Public privacy explanation; no encrypted message or transaction demonstrated."
   }
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-10-16T17:51:42.808645+00:00",
+  "reviewedAt": "2026-10-16T18:01:52.936641+00:00",
   "records": [
     {
       "id": "tari-ootle:learn:official-agent-docs",
@@ -768,6 +768,61 @@
         "video": "https://ootle-lobby-preview.vercel.app/previews/community/resource-sealed-coffin-20261016.mp4",
         "image": "https://ootle-lobby-preview.vercel.app/previews/community/resource-sealed-coffin-20261016.jpg",
         "source": "Source/docs walkthrough — Auction-template README; no execution."
+      }
+    },
+    {
+      "id": "tari:component:supportxtm-testnet-faucet",
+      "key": "supportxtm-testnet-faucet",
+      "type": "component",
+      "ecosystem": "tari",
+      "group": "Developer tools",
+      "title": "SupportXTM testnet faucet",
+      "summary": "Community faucet for L1 Esmeralda tXTM. The public form was reachable on October 16, 2026 and asks for a Tari L1 testnet address. Ootle L2 funding requires a separate irreversible burn and claim workflow, linked in the official guide. No claim, burn or wallet action was performed. Operator identity and source license are not established by the public page; 0xhra is the forum sharer, not an asserted operator. The recording walks through the September public discussion, including historical screenshots, not a live faucet claim.",
+      "status": "Web app · L1 testnet",
+      "sourceUrl": "https://community.tari.com/t/tari-universe-on-web/354/12",
+      "docsUrl": "https://ootle.tari.com/guides/burn-minotari/",
+      "demoUrl": "https://testnet-faucet.supportxtm.com/",
+      "creator": {
+        "name": "SupportXTM",
+        "url": "https://testnet-faucet.supportxtm.com/"
+      },
+      "license": "Not stated",
+      "network": "Esmeralda L1 testnet",
+      "platform": "Web",
+      "upstreamRevision": "50820a8979e47870dcedd60485ad58e9fbaa9eb9f3e6a3a7ff2f22caea545e70",
+      "sourceUpdatedAt": "2026-09-25T17:04:24.958Z",
+      "lastCheckedAt": "2026-10-16T18:01:52.936641+00:00",
+      "verification": "source-attested",
+      "readiness": "conceptual",
+      "tags": [
+        "ecosystem-resources",
+        "faucet",
+        "testnet",
+        "l1"
+      ],
+      "discussionLinks": [
+        {
+          "url": "https://hauntboard.taritracker.com/?board=component_594f90d8cb8c2d0f70d941ba1c513769727feceeabd9d2137b5b6a130a6aa28e&category=general&thread=component_59df751bd774e777c97b4cab4dc7b6723ffcbb66cd3d8656ffcb87de99630011",
+          "platform": "Hauntboard",
+          "context": "Notice on Faucet!! reply 3 links the L1 faucet; author and date not exposed in the inspected default reader."
+        },
+        {
+          "url": "https://community.tari.com/t/tari-universe-on-web/354/12",
+          "platform": "Tari Community forum",
+          "context": "Public sharing post linking SupportXTM testnet faucet"
+        },
+        {
+          "url": "https://community.tari.com/t/tari-universe-on-web/354/16",
+          "platform": "Tari Community forum",
+          "context": "Core contributor explanation: L1 tXTM faucet, separate Ootle burn"
+        }
+      ],
+      "cardSummary": "Request L1 test coins for development; funding Ootle requires a separate burn and claim workflow.",
+      "cardStatus": "Web app · L1 testnet",
+      "preview": {
+        "video": "https://ootle-lobby-preview.vercel.app/previews/community/resource-supportxtm-testnet-faucet-20261016.mp4",
+        "image": "https://ootle-lobby-preview.vercel.app/previews/community/resource-supportxtm-testnet-faucet-20261016.jpg",
+        "source": "Source/docs walkthrough — Historical L1 faucet discussion; no claim or burn."
       }
     }
   ],
