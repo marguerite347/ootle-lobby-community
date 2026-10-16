@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-10-15T09:17:59.839532+00:00",
+  "reviewedAt": "2026-10-16T17:51:42.808645+00:00",
   "records": [
     {
       "id": "tari-ootle:learn:official-agent-docs",
@@ -717,6 +717,57 @@
         "video": "https://ootle-lobby-preview.vercel.app/previews/community/resource-ootle-payment-gateway-20261015.mp4",
         "image": "https://ootle-lobby-preview.vercel.app/previews/community/resource-ootle-payment-gateway-20261015.jpg",
         "source": "Source/docs walkthrough — Public plugin README; no checkout, wallet or payment execution."
+      }
+    },
+    {
+      "id": "tari-ootle:integration:sealed-coffin",
+      "key": "sealed-coffin",
+      "type": "integration",
+      "ecosystem": "tari-ootle",
+      "group": "Templates",
+      "title": "Sealed Coffin",
+      "summary": "Rust/WASM source for a second-price sealed-bid auction on Ootle. Equal deposits and salted commitments conceal bid amounts until reveal; payouts use stealth outputs. Revealed bids, deposit sizes and timing are public. Unrevealed bids forfeit their deposit; losing the one-time key loses access to the refund. The lot remains off-chain. On October 16, 2026, the README states that the template has in-process engine tests and is not yet deployed to Esmeralda. MIT; tari_template_lib 0.34.0 and test tooling 0.45.0 with a committed compatibility lock. Source/docs review only; no auction or transaction executed. The creator-linked Reddit announcement was marked removed by Reddit filters on October 16; the public forum submission remains readable.",
+      "status": "Source code · Testnet · Unrevealed bids forfeit deposits",
+      "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/12",
+      "repoUrl": "https://github.com/mak777uh/sealed-coffin",
+      "docsUrl": "https://github.com/mak777uh/sealed-coffin#readme",
+      "creator": {
+        "name": "sealedcoffin",
+        "url": "https://github.com/mak777uh"
+      },
+      "license": "MIT",
+      "network": "Esmeralda testnet",
+      "platform": "Rust · WASM",
+      "upstreamRevision": "a9bd4612fb7d32f080d6e43278beeec10191f316",
+      "sourceUpdatedAt": "2026-10-15T19:20:24.651Z",
+      "lastCheckedAt": "2026-10-16T17:51:42.808645+00:00",
+      "verification": "source-attested",
+      "readiness": "conceptual",
+      "tags": [
+        "ecosystem-resources",
+        "auctions",
+        "template",
+        "testnet"
+      ],
+      "demoUrl": null,
+      "discussionLinks": [
+        {
+          "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/12",
+          "platform": "Tari Community forum",
+          "context": "October contest auction-template submission"
+        },
+        {
+          "url": "https://www.reddit.com/r/tari/comments/1x6u7q5/i_built_sealed_coffin_a_private_sealedbid_auction/",
+          "platform": "Reddit · r/tari",
+          "context": "Creator-linked Sealed Coffin announcement"
+        }
+      ],
+      "cardSummary": "Explore a sealed-bid auction template with equal deposits, timed reveals and stealth refunds.",
+      "cardStatus": "Source code · Testnet · Unrevealed bids forfeit deposits",
+      "preview": {
+        "video": "https://ootle-lobby-preview.vercel.app/previews/community/resource-sealed-coffin-20261016.mp4",
+        "image": "https://ootle-lobby-preview.vercel.app/previews/community/resource-sealed-coffin-20261016.jpg",
+        "source": "Source/docs walkthrough — Auction-template README; no execution."
       }
     }
   ],
