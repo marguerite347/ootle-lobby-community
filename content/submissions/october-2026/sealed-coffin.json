@@ -1,0 +1,29 @@
+{
+  "slug": "sealed-coffin",
+  "title": "Sealed Coffin",
+  "summary": "Rust/WASM source for a second-price sealed-bid auction on Ootle. Equal deposits and salted commitments conceal bid amounts until reveal; payouts use stealth outputs. Revealed bids, deposit sizes and timing are public. Unrevealed bids forfeit their deposit; losing the one-time key loses access to the refund. The lot remains off-chain. On October 16, 2026, the README states that the template has in-process engine tests and is not yet deployed to Esmeralda. MIT; tari_template_lib 0.34.0 and test tooling 0.45.0 with a committed compatibility lock. Source/docs review only; no auction or transaction executed. The creator-linked Reddit announcement was marked removed by Reddit filters on October 16; the public forum submission remains readable.",
+  "cardSummary": "Explore a sealed-bid auction template with equal deposits, timed reveals and stealth refunds.",
+  "cardStatus": "Source code · Testnet · Unrevealed bids forfeit deposits",
+  "creator": "sealedcoffin",
+  "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/12",
+  "publishedAt": "2026-10-15T19:20:24.651Z",
+  "updatedAt": "2026-10-15T19:20:24.651Z",
+  "sourceContentSha256": "6b49499a9112bfe406d8f063df6a9cd6f9bdc43c965561254afefd068694f76c",
+  "repoUrl": "https://github.com/mak777uh/sealed-coffin",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust · WASM · MIT",
+      "sourceUrl": "https://github.com/mak777uh/sealed-coffin"
+    }
+  ],
+  "demoUrl": null,
+  "recording": {
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-sealed-coffin-20261016.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-sealed-coffin-20261016.jpg",
+    "capturedAt": "2026-10-16T17:50:44.260Z",
+    "sourceRevision": "a9bd4612fb7d32f080d6e43278beeec10191f316",
+    "kind": "public-page",
+    "credit": "Docs walkthrough — Public README; no auction or payment execution."
+  }
+}
