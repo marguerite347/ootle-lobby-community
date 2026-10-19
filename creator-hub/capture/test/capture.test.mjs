@@ -28,3 +28,15 @@ test('rejects invalid crop dimensions rather than silently discarding content',(
  for(const cropBottom of [-2,1,162,'80'])assert.throws(()=>validateApps([{name:'source',url:'https://example.com',cropBottom}]));
  assert.equal(validateApps([{name:'source',url:'https://example.com',cropBottom:80}]).length,1);
 });
+
+// Interactive captures must fail closed when a reviewed control is missing.
+test('interactive capture cleans up when a requested button is unavailable', async()=>{
+ const m=mock();
+ assert.equal(await captureOne(m.browser,{name:'missing-button',steps:[{button:'PLAY',holdMs:12000}]},'/tmp',()=>{throw Error('must not transcode')}),null);
+ assert.deepEqual(m.stats,{closed:1,deleted:1});
+});
+test('interactive capture configuration is bounded',()=>{
+ const app={name:'demo',url:'https://example.com'};
+ for(const steps of [[],[{button:'',holdMs:12000}],[{button:'PLAY',holdMs:100}],[{button:'PLAY',holdMs:10000}],[...Array(8)].map(()=>({button:'PLAY',holdMs:10000}))])assert.throws(()=>validateApps([{...app,steps}]));
+ assert.equal(validateApps([{...app,steps:[{button:'PLAY',holdMs:6000},{button:'START',holdMs:6000}]}]).length,1);
+});

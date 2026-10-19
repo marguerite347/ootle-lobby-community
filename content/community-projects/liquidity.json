@@ -1,7 +1,7 @@
 {
   "slug": "liquidity",
   "title": "Shadow Swap",
-  "summary": "Experimental public-asset AMM pools, liquidity provision and NFT marketplace templates on Esmeralda testnet. Formerly Tari/Ootle Liquidity Protocol. On October 14, 2026, the creator documented migration to Ootle 0.46 / Protocol V2 and CLI-based on-chain settlements; live browser-wallet approval remains unproven in the creator\u2019s record. Mainnet is disabled. The reviewed README names a Cloudflare hosting project but supplies no public demo URL. MIT is declared in package metadata, with a missing license-text file acknowledged by the creator.",
+  "summary": "Experimental public-asset AMM pools, liquidity provision and NFT marketplace templates on Esmeralda testnet. Formerly Tari/Ootle Liquidity Protocol. On October 14, 2026, the creator documented migration to Ootle 0.46 / Protocol V2 and CLI-based on-chain settlements; live browser-wallet approval remains unproven in the creator’s record. Mainnet is disabled. The reviewed README names a Cloudflare hosting project but supplies no public demo URL. October 19 review found the MIT license text committed at revision 49d3d26. Newly added UI screenshots use illustrative fixture data and do not demonstrate live execution.",
   "creator": "GSXRspartan",
   "sourceUrl": "https://community.tari.com/t/tari-local-opensource-swap-platform/182/15",
   "sourceLabel": "Discussion",
@@ -45,5 +45,5 @@
   "publicationLabel": "Repository created",
   "publicationUrl": "https://github.com/GSXRspartan/tari-ootle-liquidity-protocol#readme",
   "cardSummary": "Explore public-asset AMM pools, liquidity provision and NFT marketplace templates for Ootle testnet.",
-  "cardStatus": "Source code \u00b7 Testnet"
+  "cardStatus": "Source code · Testnet"
 }

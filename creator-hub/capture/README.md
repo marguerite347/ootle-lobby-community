@@ -31,7 +31,7 @@ Each run writes `out/manifest.json` recording, per app, the captured URL, whethe
 
 ## Honest scope
 
-- The clip is the app's **public webpage**, captured passively (load + smooth eased scroll). No credentials, wallet connection or interaction beyond scrolling.
+- The clip is the app's **public webpage**, captured passively (load + smooth eased scroll). No credentials or wallet connection. The default capture scrolls; a maintainer-reviewed `steps` array may click exact public-demo button names.
 - Do not present a capture as a verified/working transaction or as gameplay. Testnet status and "not an endorsement" carry through from the directory.
 
 ## Populating the hub
@@ -51,3 +51,7 @@ Capture uses a fresh, sandboxed browser context. macOS and Linux Chrome paths ar
 The hub uses one shared media component for grids, Home carousels and detail pages. Muted clips play while at least 15% visible and pause offscreen. The poster stays visible until playback actually starts. Reduced-motion preferences disable automatic motion; hovering enables a preview. No hover is needed for the normal motion setting.
 
 The `npm run previews` command uses these capture changes automatically. This is an on-demand pipeline, not an installed recurring scheduler. Before configuring a scheduled run, provide an awake host, Chrome, ffmpeg and persistent runtime storage. Capture to a staging directory, inspect manifest failures and retain last-good clips before assembling the served directory. Do not replace working recordings with failed attempts. Verify `/learn` and a visible app clip after rebuilding; merging code alone does not move media.
+
+## Reviewed interactive demos
+
+For a wallet-free demo whose controls have already been inspected, supply `steps: [{ "button": "PLAY", "holdMs": 6000 }, ...]`. Each exact button name is clicked through Playwright, followed by its hold. Use 1–8 steps, each holding 1–10 seconds, with 12–60 seconds total. A missing control fails the capture instead of skipping ahead. Do not supply payment, wallet, account, publishing or permission actions. The video contains real clicks; labels must distinguish local simulation from network execution. Review opening/middle/closing frames and deployed playback before publication. Preserve raw footage with `preserveRaw: true`.
