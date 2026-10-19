@@ -1,14 +1,14 @@
 {
   "slug": "ootle-payment-gateway",
   "title": "Ootle Payment Gateway",
-  "summary": "WooCommerce plugin source for Ootle payment sessions, webhook handling and a customer-payment address flow. On October 15, 2026, the linked HTTP test storefront displayed one product. The maintainer reports an accepted confidential transfer in contest-verification.md; this is distinct from a completed customer checkout. The README roadmap still lists checkout wiring/reconciliation as remaining work, while current code includes a receive-address and balance-comparison path. These sources do not establish anonymous purchases or production readiness. Requires WordPress, WooCommerce, PHP and a wallet daemon. MIT source; reviewed for Esmeralda testnet. No plugin install, order, wallet or payment action was performed.",
+  "summary": "WooCommerce plugin source for Ootle payment sessions, webhook handling and a customer-payment address flow. On October 15, 2026, the linked HTTP test storefront displayed one product. The maintainer reports an accepted confidential transfer in contest-verification.md; this is distinct from a completed customer checkout. The README roadmap still lists checkout wiring/reconciliation as remaining work, while current code includes a receive-address and balance-comparison path. These sources do not establish anonymous purchases or production readiness. Requires WordPress, WooCommerce, PHP and a wallet daemon. MIT source; reviewed for Esmeralda testnet. No plugin install, order, wallet or payment action was performed. On October 19, the previously linked test shop at 172.105.4.177/shop/ refused connection; that observation does not establish permanent closure.",
   "cardSummary": "Explore Ootle payments for WooCommerce with PHP plugin code and setup guides.",
   "cardStatus": "Source code · Testnet",
   "creator": "luci666",
   "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/10",
   "publishedAt": "2026-10-15T04:11:53.858Z",
-  "updatedAt": "2026-10-15T04:23:25.422Z",
-  "sourceContentSha256": "b4f0f2a884408669b816f860a5780159304208fe0489482501b5866c8e743cf5",
+  "updatedAt": "2026-10-17T14:25:29.755Z",
+  "sourceContentSha256": "ec7a4b1c41aafddc77f6b6818e0502f0e14ea90c76bb6eda87da341583e63f3d",
   "repoUrl": "https://github.com/Luci666-Onyx/ootle-payment-gateway",
   "ecosystem": "tari-ootle",
   "technologies": [

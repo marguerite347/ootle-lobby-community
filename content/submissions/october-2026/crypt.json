@@ -1,14 +1,14 @@
 {
   "slug": "crypt",
   "title": "Crypt",
-  "summary": "Rust escrow template and offline CLI for encrypted secret sales on Ootle. A dispute reveals the secret publicly; the contract compares delivery with the seller’s commitment, not its value. Source reviewed October 13, 2026; no hosted client or release was linked in the reviewed repository. Creator test and security-review claims were not independently reproduced. The README’s historical “Stealth XTM” wording refers to native Ootle TARI mechanisms.",
-  "cardSummary": "Explore encrypted secret sales with escrow and contract-settled delivery disputes.",
-  "cardStatus": "Rust template · Disputes reveal secrets",
+  "summary": "Rust escrow template and CLI for encrypted secret sales on Ootle, with a wallet-free WebAssembly browser demo. On October 19, 2026, the demo accepted real BUY, OPEN and DISPUTE clicks and reached The Forger’s Curse locally; this did not submit a network transaction. Disputes reveal the secret publicly, and the contract checks delivery against the seller’s commitment, not its value. Sale metadata, amounts and funding links remain public. The maintainer supplies Esmeralda transaction evidence separately; historical same-wallet funding is not proof of independent counterparties. BSD-3-Clause source at 242f11b. Earlier source-only availability observations remain in the maintenance history.",
+  "cardSummary": "Play a wallet-free secret-trading demo, choosing honest or deceptive actions to explore escrow and delivery disputes.",
+  "cardStatus": "Browser demo · Testnet source · Disputes reveal secrets",
   "creator": "Og.boy",
   "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/7",
   "publishedAt": "2026-10-12T11:07:25.452Z",
-  "updatedAt": "2026-10-12T11:07:25.452Z",
-  "sourceContentSha256": "1d8bc0ffacd5d7c9536b0ab3077ed664d015d255417aa0c733d6b685eba01694",
+  "updatedAt": "2026-10-18T13:23:50.855Z",
+  "sourceContentSha256": "df747219f663fa7fe4e11e9da9f9a2d7c5602d027bdd8e791d923c2d874339aa",
   "repoUrl": "https://github.com/Lrifton92/crypt",
   "ecosystem": "tari-ootle",
   "technologies": [
@@ -18,11 +18,12 @@
     }
   ],
   "recording": {
-    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-crypt-20261013.mp4",
-    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-crypt-20261013.jpg",
-    "capturedAt": "2026-10-13T09:10:14.060Z",
-    "sourceRevision": "7ba0cb4feadc51b9ccfc6e5a2b15d22666d8e4c7",
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-crypt-20261019.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-crypt-20261019.jpg",
+    "capturedAt": "2026-10-19T12:52:59.732Z",
+    "sourceRevision": "242f11bb8d570e434ed0a21b3aecde1b71d51c91",
     "kind": "public-page",
-    "credit": "Docs walkthrough — Public repository README scrolling; no application execution demonstrated."
-  }
+    "credit": "App demo — Wallet-free local WebAssembly game; no on-chain transaction."
+  },
+  "demoUrl": "https://lrifton92.github.io/crypt/"
 }

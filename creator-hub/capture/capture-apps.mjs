@@ -6,7 +6,7 @@
 // loads each app URL, does a gentle scripted scroll, and records ~12s of the real
 // page. Output is real third-party footage — accurate, not an endorsement and not
 // a security review. Apps that need a wallet/interaction will only show their
-// landing state; unreachable apps remain recording-pending. Covers do not satisfy recordings.
+// landing state unless an explicitly reviewed button sequence is supplied; unreachable apps remain recording-pending. Covers do not satisfy recordings.
 //
 // Requirements: system `ffmpeg` on PATH; an installed Chrome; network egress to
 // the app domains. Outputs (out/) are git-ignored.
@@ -33,6 +33,7 @@ export const slug = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').r
 
 export async function captureOne(browser, app, outDir, run = spawnSync) {
   const out = path.join(outDir, `${slug(app.name)}.mp4`);
+  const clipSeconds = app.steps ? app.steps.reduce((n, step) => n + step.holdMs, 0) / 1000 : CLIP_SECONDS;
   const ctx = await browser.newContext({
     viewport: { width: W, height: H },
     recordVideo: { dir: outDir, size: { width: W, height: H } },
@@ -47,7 +48,12 @@ export async function captureOne(browser, app, outDir, run = spawnSync) {
     await page.waitForTimeout(3500);
     // Discard navigation/loading. Scroll in continuous eased animation frames,
     // rather than jumping 320px between mouse-wheel events.
-    await page.evaluate(async (focused) => {
+    if (app.steps) {
+      for (const step of app.steps) {
+        await page.getByRole('button', {name: step.button, exact: true}).click({timeout: 10000});
+        await page.waitForTimeout(step.holdMs);
+      }
+    } else await page.evaluate(async (focused) => {
       const root = document.scrollingElement || document.documentElement;
       const prior = root.style.scrollBehavior;
       root.style.scrollBehavior = 'auto';
@@ -83,7 +89,7 @@ export async function captureOne(browser, app, outDir, run = spawnSync) {
   const webm = await video.path();
   const poster = path.join(outDir, `${slug(app.name)}.poster.png`);
   try {
-    const t = run('ffmpeg', ['-y', '-sseof', String(-CLIP_SECONDS), '-i', webm, '-t', String(CLIP_SECONDS), '-an', ...(app.cropBottom ? ['-vf', `crop=iw:ih-${app.cropBottom}`] : []), '-c:v', 'libx264', '-crf', '20', '-movflags', '+faststart', '-pix_fmt', 'yuv420p', out], { encoding: 'utf8' });
+    const t = run('ffmpeg', ['-y', '-sseof', String(-clipSeconds), '-i', webm, '-t', String(clipSeconds), '-an', ...(app.cropBottom ? ['-vf', `crop=iw:ih-${app.cropBottom}`] : []), '-c:v', 'libx264', '-crf', '20', '-movflags', '+faststart', '-pix_fmt', 'yuv420p', out], { encoding: 'utf8' });
     if(t.status !== 0) throw new Error(`MP4 transcode failed: ${t.error?.message || t.stderr?.trim().split('\n').slice(-3).join(' ') || t.status}`);
     const p = run('ffmpeg', ['-y', '-ss', '3', '-i', out, '-frames:v', '1', poster], {stdio:'ignore'});
     if(p.status !== 0) throw new Error('Poster generation failed');
@@ -103,6 +109,11 @@ export function validateApps(apps) {
     if(typeof app.name!=='string'||!slug(app.name)||names.has(slug(app.name)))throw new Error('App names need unique nonempty filename slugs.');
     names.add(slug(app.name));
     if(app.cropBottom!==undefined && (!Number.isInteger(app.cropBottom)||app.cropBottom<0||app.cropBottom>160||app.cropBottom%2))throw new Error('Invalid capture crop.');
+    if (app.steps !== undefined) {
+      if (!Array.isArray(app.steps) || !app.steps.length || app.steps.length > 8 || app.steps.some(s => typeof s.button !== 'string' || !s.button.trim() || !Number.isInteger(s.holdMs) || s.holdMs < 1000 || s.holdMs > 10000)) throw new Error('Capture steps require 1–8 exact button names and 1–10 second holds.');
+      const duration = app.steps.reduce((n, s) => n + s.holdMs, 0);
+      if (duration < 12000 || duration > 60000) throw new Error('Interactive captures must last 12–60 seconds.');
+    }
     const url=new URL(app.url);
     if(!['http:','https:'].includes(url.protocol)||url.username||url.password)throw new Error('App URLs must be public http(s) URLs without credentials.');
   }
