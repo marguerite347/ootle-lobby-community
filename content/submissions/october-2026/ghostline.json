@@ -1,0 +1,29 @@
+{
+  "slug": "ghostline",
+  "title": "Ghostline",
+  "summary": "Payment-channel toolkit for agent API calls on Ootle: cumulative off-chain vouchers, HTTP 402 quotes, spending policies, CLI, Rust/TypeScript support and MCP tools. October 19 source review found release v0.3.1 and a hosted static motion explainer, not a live payment interface. The maintainer links Esmeralda settlement/refund evidence; service-side ledgers record call counts separately. Services see requests, prices and vouchers; fees, timing, channel metadata and funding links remain public. The experimental pooled close is not coordinator-private. Esmeralda testnet only; Linux x86-64 CLI releases. MIT. No software installation, wallet, paid call or transaction was performed in this catalog review.",
+  "cardSummary": "Explore payment channels that let AI agents pay per API call using cumulative vouchers and one settlement.",
+  "cardStatus": "CLI · SDK · Testnet",
+  "creator": "AduAkorful",
+  "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/14",
+  "publishedAt": "2026-10-17T21:50:36.623Z",
+  "updatedAt": "2026-10-17T21:50:36.623Z",
+  "sourceContentSha256": "d1e42872d099a7f4ce172ed35104a2adafb0cf30c42be97ba7c2ddf87d8cce11",
+  "repoUrl": "https://github.com/AduAkorful/ghostline",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust · TypeScript · MIT",
+      "sourceUrl": "https://github.com/AduAkorful/ghostline"
+    }
+  ],
+  "demoUrl": "https://ghostline-ui.vercel.app/",
+  "recording": {
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-ghostline-20261019.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-ghostline-20261019.jpg",
+    "capturedAt": "2026-10-19T12:40:39.998Z",
+    "sourceRevision": "5e4c754635f2b3dd1a7fc1b19d87dd95b140171d",
+    "kind": "public-page",
+    "credit": "Concept overview — Hosted static motion explainer; no wallet, paid call or transaction performed."
+  }
+}
