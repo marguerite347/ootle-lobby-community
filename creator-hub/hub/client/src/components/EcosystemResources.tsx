@@ -1,3 +1,4 @@
+import {recordingLabel} from './ProjectCard';
 import {useState} from 'react';
 import {ResourceCardMedia} from '../ui';
 import {Link} from 'react-router-dom';
@@ -16,7 +17,7 @@ export default function EcosystemResources() {
       <ResourceCardMedia r={{...record,native:true}}/>
       <h3><Link to={`/resource/${encodeURIComponent(record.id)}`}>{record.title}</Link></h3>
       <p className="card-front-summary">{record.cardSummary}</p>
-      <div className="card-front-status"><strong>{record.cardStatus}</strong>{record.preview && <span>{record.preview.source.startsWith('App demo') ? 'App demo' : 'Docs walkthrough'}</span>}</div>
+      <div className="card-front-status"><strong>{record.cardStatus}</strong>{record.preview && <span>{recordingLabel(record.preview.source)}</span>}</div>
       <p className="card-byline">{record.creator.name} · {record.group}</p>
       <div className="card-front-links">{record.demoUrl && <a href={record.demoUrl} target="_blank" rel="noreferrer">Open app ↗</a>}<a href={record.repoUrl || record.sourceUrl} target="_blank" rel="noreferrer">Source ↗</a>{record.discussionLinks?.map(post=><a key={post.url} href={post.url} target="_blank" rel="noreferrer">Discussion · {post.platform} ↗</a>)}</div>
       <details className="card-details"><summary aria-label={`Details about ${record.title}`}>Details</summary>
