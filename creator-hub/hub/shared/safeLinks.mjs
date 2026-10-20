@@ -8,8 +8,8 @@ export function requireLinkHost(value,field='source') {
  const href=safeHref(value);
  if(!href||!href.startsWith('https:'))throw new Error('A public HTTPS link is required.');
  const groups={
-  source:['gitlab.com','github.com','git.disroot.org','community.tari.com','ootle.tari.com','tari.com','www.tari.com','wiki.tari.com','skydrop.tari.mw','bsky.app'],
-  repository:['gitlab.com','github.com','git.disroot.org'],
+  source:['radicle.network','gitlab.com','github.com','git.disroot.org','community.tari.com','ootle.tari.com','tari.com','www.tari.com','wiki.tari.com','skydrop.tari.mw','bsky.app'],
+  repository:['radicle.network','gitlab.com','github.com','git.disroot.org'],
   demo:['lrifton92.github.io','ghostline-ui.vercel.app','testnet-faucet.supportxtm.com','testnet-faucet.taritracker.com','hauntboard.taritracker.com','explorer.tari.mw','skydrop.tari.mw','feeltherevolt-xehqj-studio.wp.build','labyrinthos.markets','sooon.fun','tari-market.johnnytsunami14.chatgpt.site'],
   recording:['ootle-lobby-preview.vercel.app','github.com','raw.githubusercontent.com','www.youtube.com','youtube.com','youtu.be','vimeo.com'],
  };

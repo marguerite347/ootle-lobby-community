@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-10-19T12:53:54.707951+00:00",
+  "reviewedAt": "2026-10-20T14:06:51.288529+00:00",
   "records": [
     {
       "id": "tari-ootle:learn:official-agent-docs",
@@ -894,6 +894,51 @@
         "video": "https://ootle-lobby-preview.vercel.app/previews/community/resource-ghostline-20261019.mp4",
         "image": "https://ootle-lobby-preview.vercel.app/previews/community/resource-ghostline-20261019.jpg",
         "source": "Source/docs walkthrough — Hosted static motion explainer; no payment execution."
+      }
+    },
+    {
+      "id": "tari-ootle:component:seance",
+      "key": "seance",
+      "type": "component",
+      "ecosystem": "tari-ootle",
+      "group": "Templates",
+      "title": "Séance",
+      "summary": "Rust CLI and Ootle template for sealed ballots in groups of 2–64. Ring signatures prove group membership without naming the voter; per-poll pseudonyms allow recasting, and commit/reveal controls when choices become public. The source also includes the reusable ootle-ring crate and Confessional example. October 20 review read the README, MIT license, manifest and maintainer-supplied Esmeralda proof. The maintainer reports 62 tests and network receipts; those are upstream claims, not tests run by this catalog. Source pins template_lib 0.34.0 and test tooling 0.46.1; the proof names wallet/network 0.47.0. Fee-pot contributions cannot be withdrawn. Losing a receipt prevents a vote from being counted; receipt holders can learn the choice. Revealed choices are public per pseudonym, and timing/funding links remain possible. Esmeralda testnet only.",
+      "status": "Source code · Testnet · Fee-pot deposits irreversible",
+      "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/15",
+      "repoUrl": "https://radicle.network/nodes/iris.radicle.network/rad:zqLEV4RxeFNAuZxxwwNtjJdFvRuA",
+      "docsUrl": "https://radicle.network/nodes/iris.radicle.network/rad:zqLEV4RxeFNAuZxxwwNtjJdFvRuA",
+      "creator": {
+        "name": "DevXTools",
+        "url": "https://community.tari.com/u/DevXTools"
+      },
+      "license": "MIT",
+      "network": "Esmeralda testnet",
+      "platform": "Rust CLI · Ootle template",
+      "upstreamRevision": "4e0dde7758593b58087bbd4d045d6d3c6f87a836",
+      "sourceUpdatedAt": "2026-10-20T11:25:58.437Z",
+      "lastCheckedAt": "2026-10-20T14:06:51.288529+00:00",
+      "verification": "source-attested",
+      "readiness": "conceptual",
+      "tags": [
+        "ecosystem-resources",
+        "privacy",
+        "voting",
+        "testnet"
+      ],
+      "discussionLinks": [
+        {
+          "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/15",
+          "platform": "Tari Community forum",
+          "context": "October contest submission for Séance sealed group polls, with source and network proof links"
+        }
+      ],
+      "cardSummary": "Create sealed group polls with anonymous eligibility, replaceable ballots and a scheduled reveal of choices.",
+      "cardStatus": "Source code · Testnet · Fee-pot deposits irreversible",
+      "preview": {
+        "video": "https://ootle-lobby-preview.vercel.app/previews/community/resource-seance-announcement-20261020.mp4",
+        "image": "https://ootle-lobby-preview.vercel.app/previews/community/resource-seance-announcement-20261020.jpg",
+        "source": "Source/docs walkthrough — Announcement: original contest submission; no vote executed."
       }
     }
   ],

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-19T13:09:38.499144+00:00",
+  "updatedAt": "2026-10-20T14:06:51.288529+00:00",
   "records": [
     {
       "resourceId": "candy-summoner",
@@ -1928,6 +1928,44 @@
         "workbenchRevision": "bfe087886636f70effe4d733c71f94847beb6ff2",
         "evidence": "daily-2026-10-19/playback.json",
         "integrityEvidence": "daily-2026-10-19/media-integrity.json"
+      }
+    },
+    {
+      "resourceId": "seance",
+      "title": "Séance",
+      "targetUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/15",
+      "originalPosts": [
+        {
+          "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/15",
+          "platform": "Tari Community forum",
+          "author": "DevXTools",
+          "publishedAt": "2026-10-20T11:25:58.437Z",
+          "foundOn": "2026-10-20",
+          "context": "October contest submission for Séance sealed group polls, with source and network proof links",
+          "visibility": "public"
+        }
+      ],
+      "captureType": "announcement",
+      "capturedAt": "2026-10-20T14:02:39.052Z",
+      "observedRevision": "4e0dde7758593b58087bbd4d045d6d3c6f87a836",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "durationSeconds": 12,
+      "publicMediaUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-seance-announcement-20261020.mp4",
+      "publicPosterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-seance-announcement-20261020.jpg",
+      "sha256": "28fd8ec11c721f32a2aa78b752ea02e0bc75bf78772c8f04d3d1b57374c80790",
+      "caption": "Announcement",
+      "method": "Continuous original forum announcement scroll; opening, middle and 11-second closing frames inspected. Earlier Radicle capture retained but rejected because outer-page scrolling did not move the inner content pane.",
+      "status": "reviewed-publication-pending",
+      "verification": {
+        "framesReviewed": [
+          0,
+          6,
+          11
+        ],
+        "livePlayback": "pending"
       }
     }
   ],
