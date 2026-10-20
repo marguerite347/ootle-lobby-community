@@ -1,0 +1,35 @@
+{
+  "slug": "sealed-bids-at-midnight",
+  "title": "Sealed Bids at Midnight",
+  "summary": "Rust Ootle auction template and headless CLI using signer-bound, domain-separated commit/reveal bids and equal bonds. Consensus epochs define sealing, reveal and settlement; the highest qualifying revealed bid wins, with individual claims for the lot, proceeds and refunds. Unrevealed bids and bids revealed below the reserve permanently forfeit their bonds; these remain locked in the component. Revealed amounts and bidder public keys are public, and bidders with multiple commitments can choose what to reveal. October 20 review read the MIT source at f8796ec7d955. The maintainer reports 17 tests and an Esmeralda v2 lifecycle; this catalog did not execute bids, bridge funds or verify payouts. Source pins tari_template_lib 0.34. The README timeline still says forfeited bonds go to the seller; its detailed v2 description and announcement instead say they remain locked. No hosted browser demo was linked in the reviewed README; the recorded terminal animation is the maintainer\u2019s embedded GIF.",
+  "cardSummary": "Run sealed-bid auctions with equal entry bonds, timed reveals and separate claims for winners, sellers and losing bidders.",
+  "cardStatus": "Source code \u00b7 Testnet \u00b7 Forfeited bonds locked forever",
+  "creator": "xB0unty911",
+  "sourceUrl": "https://www.reddit.com/r/tari/comments/1xas9x4/sealed_bids_at_midnight_a_tari_auction_where/",
+  "publishedAt": "2026-10-20T13:32:56.682Z",
+  "repoUrl": "https://github.com/xB0unty911/sealed-bid-auction",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust \u00b7 MIT",
+      "sourceUrl": "https://github.com/xB0unty911/sealed-bid-auction"
+    }
+  ],
+  "sourceLabel": "Original post",
+  "publicationBasis": "Public creator announcement on Reddit, read October 20, 2026.",
+  "publicationLabel": "Shared October 20, 2026",
+  "publicationUrl": "https://www.reddit.com/r/tari/comments/1xas9x4/sealed_bids_at_midnight_a_tari_auction_where/",
+  "forum": null,
+  "resourceIds": [
+    "tari-ootle:component:sealed-bids-at-midnight"
+  ],
+  "media": {
+    "image": "/previews/community/resource-sealed-bids-at-midnight-20261020.jpg",
+    "video": "/previews/community/resource-sealed-bids-at-midnight-20261020.mp4",
+    "label": "Docs walkthrough",
+    "sourceUrl": "https://github.com/xB0unty911/sealed-bid-auction",
+    "capturedAt": "2026-10-20T14:14:00.384Z",
+    "reviewedAt": "2026-10-20T14:14:00.384Z",
+    "sha256": "49bd55845427e37635e7e6eb03a27a028c941ae1fe8b5367c44b86ea0b7ef996"
+  }
+}

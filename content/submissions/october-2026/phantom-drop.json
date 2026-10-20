@@ -1,9 +1,9 @@
 {
   "slug": "phantom-drop",
   "title": "Phantom Drop",
-  "summary": "Rust CLI and library for testnet gift envelopes using native stealth outputs and claim/refund branches, without a custom template. Links can include riddles and expiry. Anyone holding a plain link can claim it; riddle strength and public transaction timing limit privacy. The creator published October 12 Esmeralda seal/open/refund evidence; this listing reviews source and those links, without executing the CLI or a wallet transaction.",
+  "summary": "Rust CLI and library for testnet gift envelopes using native stealth outputs and claim/refund branches, without a custom template. Links can include riddles and expiry. Anyone holding a plain link can claim it; riddle strength and public transaction timing limit privacy. The creator published October 12 Esmeralda seal/open/refund evidence; this listing reviews source and those links, without executing the CLI or a wallet transaction. October 20: the linked browser walkthrough offers a chain/link-holder toggle and five narrated acts. Real clicks changed the riddle, expiry and replay panels. These are a replay of the maintainer example, not new engine execution or network transactions.",
   "cardSummary": "Create expiring testnet gift links with a Rust CLI, optional riddles and refunds for unopened envelopes.",
-  "cardStatus": "CLI · Esmeralda testnet",
+  "cardStatus": "CLI · Interactive walkthrough · Testnet",
   "creator": "hycorange",
   "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/8",
   "publishedAt": "2026-10-12T13:55:52.735Z",
@@ -18,11 +18,12 @@
     }
   ],
   "recording": {
-    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-phantom-drop-20261013.mp4",
-    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-phantom-drop-20261013.jpg",
-    "capturedAt": "2026-10-13T09:27:27.671Z",
-    "sourceRevision": "1b6138a245813eb477b80388a8a5802b79ae0eb0",
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-phantom-drop-walkthrough-20261020.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-phantom-drop-walkthrough-20261020.jpg",
+    "capturedAt": "2026-10-20T14:27:07.275Z",
+    "sourceRevision": "aa6edb6d96f3ce29d4215ad0ce98e00a9d9729c1",
     "kind": "public-page",
-    "credit": "Docs walkthrough — Public repository README scrolling; no application execution demonstrated."
-  }
+    "credit": "Concept overview — Interactive narrated browser replay; no live transaction."
+  },
+  "demoUrl": "https://hycorange.github.io/phantom-drop/"
 }
