@@ -109,3 +109,10 @@ test('CSP permits only the exact inline import maps and bundled preview code use
  }
  assert.match(csp,/frame-src 'self'/);assert.doesNotMatch(csp,/script-src[^;]*'unsafe-inline'/);
 });
+
+test('HTTP exception permits only the reviewed public test-shop page',()=>{
+ assert.equal(requireLinkHost('http://172.105.101.24/shop/','demo'),'http://172.105.101.24/shop/');
+ for(const url of ['http://172.105.101.24/checkout/','http://172.105.101.24/shop/?redirect=https://example.com','http://172.105.101.24:8080/shop/','http://a:b@172.105.101.24/shop/','http://172.105.101.24.example.com/shop/'])assert.equal(safeHref(url),undefined);
+ assert.throws(()=>requireLinkHost('http://172.105.101.24/shop/','source'));
+ assert.equal(requireLinkHost('https://radicle.network/nodes/iris.radicle.network/rad:zqLEV4RxeFNAuZxxwwNtjJdFvRuA','repository'),'https://radicle.network/nodes/iris.radicle.network/rad:zqLEV4RxeFNAuZxxwwNtjJdFvRuA');
+});

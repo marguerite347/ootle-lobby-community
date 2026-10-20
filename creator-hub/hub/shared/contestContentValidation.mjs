@@ -6,10 +6,9 @@ function plain(value, name, max = 1500) {
 function fields(value, allowed) {
   if (!value || Array.isArray(value) || typeof value !== 'object' || Object.keys(value).some(k => !allowed.includes(k))) throw new Error('Unsupported contest content fields.');
 }
-function https(value,field='source') {
+function publicLink(value,field='source') {
   requireLinkHost(value,field);
-  plain(value, 'URL');const url = new URL(value);
-  if (url.protocol !== 'https:' || url.username || url.password) throw new Error('Expected public HTTPS URL without credentials.');
+  plain(value, 'URL'); // requireLinkHost enforces the protocol, host and credential policy.
 }
 function date(value) {
   if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}T/.test(value) || !Number.isFinite(Date.parse(value))) throw new Error('Invalid timestamp.');
@@ -29,17 +28,17 @@ export function validateContests(contests) {
     if(entry.ecosystem!==undefined&&!['tari','tari-ootle'].includes(entry.ecosystem))throw new Error('Invalid submission ecosystem.');
     if(entry.cardSummary!==undefined)plain(entry.cardSummary,'card summary',160);if(entry.cardStatus!==undefined)plain(entry.cardStatus,'card status',80);
     slugs.add(entry.slug);plain(entry.title,'entry title',100);plain(entry.summary,'summary');plain(entry.creator,'creator',80);
-    https(entry.sourceUrl);
+    publicLink(entry.sourceUrl);
     if (!entry.sourceUrl.startsWith(`${OCTOBER_THREAD}/`) || !/^[2-9]\d*$|^1\d+$/.test(entry.sourceUrl.slice(OCTOBER_THREAD.length+1)) || posts.has(entry.sourceUrl)) throw new Error('Expected a unique October submission post.');
-    posts.add(entry.sourceUrl);https(entry.repoUrl,'repository');if(entry.demoUrl)https(entry.demoUrl,'demo');
+    posts.add(entry.sourceUrl);publicLink(entry.repoUrl,'repository');if(entry.demoUrl)publicLink(entry.demoUrl,'demo');
     date(entry.publishedAt);date(entry.updatedAt);
     if(entry.sourceContentSha256!==undefined&&!/^[a-f0-9]{64}$/.test(entry.sourceContentSha256))throw new Error('Invalid reviewed source digest.');
     if (Date.parse(entry.updatedAt)<Date.parse(entry.publishedAt)) throw new Error('Update precedes submission.');
     if(!Array.isArray(entry.technologies)||entry.technologies.length>6)throw new Error('Expected up to six evidenced technology labels.');
-    for(const item of entry.technologies){fields(item,['label','sourceUrl']);plain(item.label,'technology',60);https(item.sourceUrl);}
+    for(const item of entry.technologies){fields(item,['label','sourceUrl']);plain(item.label,'technology',60);publicLink(item.sourceUrl);}
     if(entry.recording){
       fields(entry.recording,['url','posterUrl','capturedAt','sourceRevision','kind','credit']);
-      https(entry.recording.url,'recording');if(entry.recording.posterUrl)https(entry.recording.posterUrl,'recording');date(entry.recording.capturedAt);
+      publicLink(entry.recording.url,'recording');if(entry.recording.posterUrl)publicLink(entry.recording.posterUrl,'recording');date(entry.recording.capturedAt);
       plain(entry.recording.sourceRevision,'source revision',120);plain(entry.recording.credit,'recording credit',200);
       if(!['public-page','walkthrough','gameplay'].includes(entry.recording.kind))throw new Error('Unknown recording kind.');
     }
