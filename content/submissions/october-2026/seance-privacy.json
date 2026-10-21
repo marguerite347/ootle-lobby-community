@@ -1,0 +1,29 @@
+{
+  "slug": "seance-privacy",
+  "title": "Seance — privacy demo",
+  "summary": "Read-only browser demo comparing three views of private Esmeralda payments: public fields, a recipient view key that opens amount and memo, and a token audit key that counts amounts without opening memos. October 21 browser inspection of prepared Demo 1 returned a live indexer result; Bob’s public example key opened the memo, the audit example counted both amounts, and Eve’s wrong key stayed sealed. These intentionally public test keys are demonstrations only. The page trusts the indexer and offers a clearly labeled recorded fallback. Its Poltergeist comparison uses eleven recorded payments from one wallet and a synthetic transparent ledger; timing, fees and the spend graph still link those payments. The audit amount search is bounded to 0–0.0005 SEANCE. MIT source reviewed at e98765a19aa0. No personal key, wallet action or payment was used. Distinct from DevXTools’ Séance sealed-poll CLI.",
+  "cardSummary": "Compare what strangers, recipients and auditors can read from private testnet payments, including the metadata that remains public.",
+  "cardStatus": "Web app · Testnet",
+  "creator": "Kylne700",
+  "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/17",
+  "publishedAt": "2026-10-20T18:35:07.259Z",
+  "updatedAt": "2026-10-20T21:43:29.251Z",
+  "sourceContentSha256": "12c9f91a70c1736383133e95cee39cb14ee889f1204c4f7477f10e856e7fb494",
+  "repoUrl": "https://github.com/Kylne700/seance",
+  "demoUrl": "https://kylne700.github.io/seance/",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "TypeScript · Rust · MIT",
+      "sourceUrl": "https://github.com/Kylne700/seance"
+    }
+  ],
+  "recording": {
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-seance-privacy-20261021.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-seance-privacy-20261021.jpg",
+    "capturedAt": "2026-10-21T13:31:11.431Z",
+    "sourceRevision": "e98765a19aa0e4d335eaccb04a68aaeb98956033",
+    "kind": "public-page",
+    "credit": "App demo — Public transaction inspection; no payment sent. Prepared-key behavior separately observed in browser."
+  }
+}
