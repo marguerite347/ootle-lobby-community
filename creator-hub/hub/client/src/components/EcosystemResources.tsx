@@ -28,6 +28,6 @@ export default function EcosystemResources() {
       </details>
     </article>)}</div>
     {!records.length && <p role="status">No matching resources.</p>}
-    {opportunities.map(item => <aside key={item.id} id={`resource-${item.id}`} className="ecosystem-opportunity">{item.preview && <figure><video controls muted playsInline preload="none" src={item.preview.video} poster={item.preview.image} aria-label={`${item.title} recording`}/></figure>}<h3>{item.title}</h3><p className="card-front-summary">{item.cardSummary}</p><div className="card-front-status"><strong>{item.cardStatus}</strong><span>Announcement</span></div><a href={item.sourceUrl} target="_blank" rel="noreferrer">Organizer’s post ↗</a><details className="card-details"><summary>Details</summary><p>{item.summary}</p><p>{item.preview?.source}</p></details></aside>)}
+    {opportunities.map(item => <aside key={item.id} id={`resource-${item.id}`} className="ecosystem-opportunity">{item.preview && <figure><video controls muted playsInline preload="none" src={item.preview.video} poster={item.preview.image} aria-label={`${item.title} recording`}/></figure>}<h3>{item.title}</h3><p className="card-front-summary">{item.cardSummary}</p><div className="card-front-status"><strong>{item.cardStatus}</strong><span>Announcement</span></div><a href={item.sourceUrl} target="_blank" rel="noreferrer">Original post ↗</a><details className="card-details"><summary>Details</summary><p>{item.summary}</p><p>{item.preview?.source}</p></details></aside>)}
   </section>;
 }
