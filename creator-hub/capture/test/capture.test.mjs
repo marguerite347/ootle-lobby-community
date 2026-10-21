@@ -40,3 +40,8 @@ test('interactive capture configuration is bounded',()=>{
  for(const steps of [[],[{button:'',holdMs:12000}],[{button:'PLAY',holdMs:100}],[{button:'PLAY',holdMs:10000}],[...Array(8)].map(()=>({button:'PLAY',holdMs:10000}))])assert.throws(()=>validateApps([{...app,steps}]));
  assert.equal(validateApps([{...app,steps:[{button:'PLAY',holdMs:6000},{button:'START',holdMs:6000}]}]).length,1);
 });
+
+test('bound resource-specific scroll framing',()=>{
+ for(const scrollDistance of [-1,3001,1.5,'780'])assert.throws(()=>validateApps([{name:'demo',url:'https://example.com',scrollDistance}]));
+ assert.equal(validateApps([{name:'demo',url:'https://example.com',scrollDistance:780}]).length,1);
+});

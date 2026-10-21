@@ -53,7 +53,7 @@ export async function captureOne(browser, app, outDir, run = spawnSync) {
         await page.getByRole('button', {name: step.button, exact: true}).click({timeout: 10000});
         await page.waitForTimeout(step.holdMs);
       }
-    } else await page.evaluate(async (focused) => {
+    } else await page.evaluate(async ({focused, scrollDistance}) => {
       const root = document.scrollingElement || document.documentElement;
       const prior = root.style.scrollBehavior;
       root.style.scrollBehavior = 'auto';
@@ -72,13 +72,13 @@ export async function captureOne(browser, app, outDir, run = spawnSync) {
       });
       try {
         await hold(focused ? 2000 : 1000);
-        const distance = Math.min(focused ? 350 : 1800, Math.max(0, root.scrollHeight-innerHeight-base));
+        const distance = Math.min(scrollDistance ?? (focused ? 350 : 1800), Math.max(0, root.scrollHeight-innerHeight-base));
         await travel(base,base+distance,focused ? 2000 : 5000);
         if(focused) await hold(4000);
         await travel(base+distance,base,focused ? 2000 : 5000);
         await hold(focused ? 2000 : 1000);
       } finally { root.style.scrollBehavior = prior; }
-    }, app.focused === true);
+    }, {focused: app.focused === true, scrollDistance: app.scrollDistance});
   } catch (e) {
     ok = false;
     console.error(`  ! ${app.name}: ${e.message.split('\n')[0]}`);
@@ -108,6 +108,7 @@ export function validateApps(apps) {
   for(const app of apps){
     if(typeof app.name!=='string'||!slug(app.name)||names.has(slug(app.name)))throw new Error('App names need unique nonempty filename slugs.');
     names.add(slug(app.name));
+    if(app.scrollDistance!==undefined && (!Number.isInteger(app.scrollDistance)||app.scrollDistance<0||app.scrollDistance>3000))throw new Error('Capture scroll distance must be 0–3000 pixels.');
     if(app.cropBottom!==undefined && (!Number.isInteger(app.cropBottom)||app.cropBottom<0||app.cropBottom>160||app.cropBottom%2))throw new Error('Invalid capture crop.');
     if (app.steps !== undefined) {
       if (!Array.isArray(app.steps) || !app.steps.length || app.steps.length > 8 || app.steps.some(s => typeof s.button !== 'string' || !s.button.trim() || !Number.isInteger(s.holdMs) || s.holdMs < 1000 || s.holdMs > 10000)) throw new Error('Capture steps require 1–8 exact button names and 1–10 second holds.');
