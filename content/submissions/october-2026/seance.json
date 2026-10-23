@@ -1,9 +1,9 @@
 {
   "slug": "seance",
   "title": "Séance",
-  "summary": "Rust CLI and Ootle template for sealed ballots in groups of 2–64. Ring signatures prove group membership without naming the voter; per-poll pseudonyms allow recasting, and commit/reveal controls when choices become public. The source also includes the reusable ootle-ring crate and Confessional example. October 20 review read the README, MIT license, manifest and maintainer-supplied Esmeralda proof. The maintainer reports 62 tests and network receipts; those are upstream claims, not tests run by this catalog. Source pins template_lib 0.34.0 and test tooling 0.46.1; the proof names wallet/network 0.47.0. Fee-pot contributions cannot be withdrawn. Losing a receipt prevents a vote from being counted; receipt holders can learn the choice. Revealed choices are public per pseudonym, and timing/funding links remain possible. Esmeralda testnet only.",
+  "summary": "Sealed group polls with anonymous eligibility, replaceable ballots and scheduled reveal. October 23 browser inspection cast a local Treat ballot, rejected an outsider and revealed a 0/1/0 tally; the page also read two historical Esmeralda polls and displayed matching recomputed hashes. The local browser exercise creates no chain transaction. The recorded clip tours this public interface. Prior pinned Radicle source is retained; current repository head was not established. Fee-pot contributions cannot be withdrawn. Receipt loss prevents counting; revealed choices and timing/funding links can expose information. MIT source, Esmeralda testnet.",
   "cardSummary": "Create sealed group polls with anonymous eligibility, replaceable ballots and a scheduled reveal of choices.",
-  "cardStatus": "Source code · Testnet · Fee-pot deposits irreversible",
+  "cardStatus": "Browser demo · Testnet · Fee-pot deposits irreversible",
   "creator": "DevXTools",
   "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/15",
   "publishedAt": "2026-10-20T11:25:58.437Z",
@@ -18,11 +18,12 @@
     }
   ],
   "recording": {
-    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-seance-announcement-20261020.mp4",
-    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-seance-announcement-20261020.jpg",
-    "capturedAt": "2026-10-20T14:02:39.052Z",
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-seance-20261023.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-seance-20261023.png",
+    "capturedAt": "2026-10-23T17:54:33.632Z",
     "sourceRevision": "4e0dde7758593b58087bbd4d045d6d3c6f87a836",
     "kind": "public-page",
-    "credit": "Announcement walkthrough — Original contest submission; no vote or fee-pot transaction performed."
-  }
+    "credit": "App demo — Browser poll interface overview; local interactions and historical poll reads are separate from chain voting."
+  },
+  "demoUrl": "https://seance.madebydevx.com"
 }

@@ -1,9 +1,9 @@
 {
   "slug": "ghostline",
   "title": "Ghostline",
-  "summary": "Payment-channel toolkit for agent API calls on Ootle: cumulative off-chain vouchers, HTTP 402 quotes, spending policies, CLI, Rust/TypeScript support and MCP tools. October 21 review found v0.3.2 and a guided local Esmeralda runner that checks the template, starts a sample API, asks before opening and settling, and prints finality links. The documented runner requires walletd 0.47.0 or newer and a funded test wallet; the maintainer reports 0.46.1 decoding failures. The hosted website remains a static motion explainer. Services see requests, prices and vouchers; fees, timing, funding links and channel metadata remain public. Experimental pooled close is not coordinator-private. Esmeralda only; Linux x86-64 CLI releases; MIT. This review read the pinned guide and captured its setup requirements without installing software, using a wallet or sending transactions.",
+  "summary": "Private pay-per-call channels for AI agents, with cumulative vouchers and one settlement. October 23 inspection ran all five browser-simulated calls: the interface displayed 50 µT accepted and then an explicitly separate archived Esmeralda receipt. Those clicks did not create a transaction. Release v0.4.0 also offers a Sapient test relay; it controls the test deposit and refund, so it is a custody experiment rather than a production payment service. The service sees requests and timing; privacy is not anonymity. No wallet, relay payment or CLI was run.",
   "cardSummary": "Explore payment channels that let AI agents pay per API call using cumulative vouchers and one settlement.",
-  "cardStatus": "CLI · SDK · Testnet",
+  "cardStatus": "Browser demo · CLI · Testnet",
   "creator": "AduAkorful",
   "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/14",
   "publishedAt": "2026-10-17T21:50:36.623Z",
@@ -17,13 +17,13 @@
       "sourceUrl": "https://github.com/AduAkorful/ghostline"
     }
   ],
-  "demoUrl": "https://ghostline-ui.vercel.app/",
+  "demoUrl": "https://ghostline-ui.vercel.app/play.html",
   "recording": {
-    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-ghostline-guided-20261021.mp4",
-    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-ghostline-guided-20261021.jpg",
-    "capturedAt": "2026-10-21T13:41:49.616Z",
-    "sourceRevision": "0b0ff7dfc5f8a774a5f8176c375b191492757b00",
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-ghostline-20261023.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-ghostline-20261023.png",
+    "capturedAt": "2026-10-23T17:55:07.261Z",
+    "sourceRevision": "894b3ed3c41936a21d8ed3ea8d281b2e95d91fd4",
     "kind": "public-page",
-    "credit": "Docs walkthrough — Guided Esmeralda setup requirements at v0.3.2; no script or payment executed."
+    "credit": "App demo — Five simulated calls and separate archived chain evidence; no wallet or payment."
   }
 }

@@ -1,0 +1,29 @@
+{
+  "slug": "caravel-trade",
+  "title": "Caravel Trade",
+  "summary": "Caravel Trade has progressed from its October 14 README-only listing to implemented Rust templates, TypeScript integration and a creator-reported Esmeralda deployment. The October 23 source describes full-order TARI/cUSD trades, owner cancellation and a 1% fee split: 0.7% Caravel, 0.3% burn. cUSD is a test token with no value. The public app reaches wallet creation or recovery before Trade; no wallet was created and no order was placed. Source now builds against template_lib 0.35 and test tooling 0.47; deployed templates retain their older 0.46.1 build according to the maintainer. Recording is a README walkthrough, not a trade. Original repository discovery and earlier concept footage are retained.",
+  "creator": "okansaglam016161-pixel",
+  "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/25",
+  "publishedAt": "2026-10-22T13:13:32.947Z",
+  "repoUrl": "https://github.com/okansaglam016161-pixel/caravel-trade",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust · MIT",
+      "sourceUrl": "https://github.com/okansaglam016161-pixel/caravel-trade"
+    }
+  ],
+  "cardSummary": "Explore private peer-to-peer orders exchanging testnet TARI and cUSD, with full-order fills and owner cancellation.",
+  "cardStatus": "Web app · Testnet · Wallet required",
+  "demoUrl": "https://caravellabs.net",
+  "recording": {
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-caravel-trade-20261023.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-caravel-trade-20261023.png",
+    "capturedAt": "2026-10-23T17:54:16.897Z",
+    "sourceRevision": "4f755d3366a32cede06e11fc32f56a325ba38eb2",
+    "kind": "public-page",
+    "credit": "Source/docs walkthrough — Updated README, implementation and deployment documentation; no wallet or trade."
+  },
+  "updatedAt": "2026-10-22T13:13:32.947Z",
+  "sourceContentSha256": "f5a7808538e8267db43fa6ad1df051efbd32307646448fc33be9a602a385dc00"
+}

@@ -1,0 +1,29 @@
+{
+  "slug": "caravel-burn-wallet",
+  "title": "Caravel Burn Wallet",
+  "summary": "Deposit-only Ootle burn template with no withdrawal method. Funds sent into it cannot be recovered. October 23 source and creator submission describe the integrated Caravel Burn page, public totals and private transfers. The public app reaches wallet setup before the Burn page; no wallet or deposit was created. Esmeralda testnet only. Existing footage is a source walkthrough, not a burn transaction.",
+  "cardSummary": "Explore a deposit-only Ootle template with public burn totals and private transfers into an irreversible vault.",
+  "cardStatus": "Testnet · Irreversible deposits",
+  "creator": "Okz",
+  "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/24",
+  "publishedAt": "2026-10-22T12:56:44.709Z",
+  "updatedAt": "2026-10-22T12:56:44.709Z",
+  "sourceContentSha256": "72b8ff48dcc44007cd1cb04dc2a571197dbbf1ef74c871810bff0eb0cf9a59dc",
+  "repoUrl": "https://github.com/okansaglam016161-pixel/caravel-burn-wallet",
+  "demoUrl": "https://caravellabs.net",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust · MIT",
+      "sourceUrl": "https://github.com/okansaglam016161-pixel/caravel-burn-wallet"
+    }
+  ],
+  "recording": {
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-caravel-burn-wallet-20261010.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-caravel-burn-wallet-20261010.jpg",
+    "capturedAt": "2026-10-10T12:50:04.551362+00:00",
+    "sourceRevision": "1f1b29765487cdd36aa58b92c0320551f4a0dfd3",
+    "kind": "public-page",
+    "credit": "Source/docs walkthrough — Original deposit-only template documentation; no deposit performed."
+  }
+}
