@@ -1,0 +1,29 @@
+{
+  "slug": "hidebox",
+  "title": "HideBox",
+  "summary": "Browser-encrypted file drive with link, word, address and pay-to-open sharing. The October 23 public how-it-works page describes browser-held keys, encrypted uploads and a SealLog record when a file leaves the drive. Losing the saved key loses access. The creator says the server observes padded sizes, timing and sharing rules; this is not a claim that all metadata is hidden. The public site and documentation were inspected without creating a drive, keys or wallet, uploading files, or making payments. MIT source; Esmeralda testnet. Recording shows the documentation and its illustrative UI, not an uploaded file.",
+  "cardSummary": "Store encrypted files and share them through links, recipient addresses or paid access on Ootle testnet.",
+  "cardStatus": "Web app · Testnet · Save your browser key",
+  "creator": "c7b",
+  "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/19",
+  "publishedAt": "2026-10-21T18:10:34.677Z",
+  "updatedAt": "2026-10-22T01:01:13.307Z",
+  "sourceContentSha256": "9c83d070c27cd5f08e689150c3d742aa21c8c45c6f16734e25195350e77f97de",
+  "repoUrl": "https://github.com/c7b/hidebox",
+  "demoUrl": "https://hidebox.app",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust · MIT",
+      "sourceUrl": "https://github.com/c7b/hidebox"
+    }
+  ],
+  "recording": {
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-hidebox-20261023.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-hidebox-20261023.png",
+    "capturedAt": "2026-10-23T17:53:42.965Z",
+    "sourceRevision": "c696c5466a1f6827fdc239a44a6c87bf0a93971c",
+    "kind": "public-page",
+    "credit": "Source/docs walkthrough — Public how-it-works page and illustrative UI; no drive, key, upload or payment created."
+  }
+}

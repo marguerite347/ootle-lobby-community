@@ -1,0 +1,29 @@
+{
+  "slug": "familiar",
+  "title": "Familiar",
+  "summary": "Rust template and CLI for agent allowances, approved payees, pause and recall. The public walkthrough presents 27 recorded Esmeralda transactions, with 17 accepted and 10 refused according to the creator. October 23 browser inspection advanced between recorded steps 19 and 20; no agent or wallet was connected. Amount mode exposes payment amounts; coupon mode hides denominations while coupon counts and transaction fees remain public. The live-read control did not complete during inspection. MIT prototype; the footage is a source walkthrough of recorded results, not a new on-chain run. Downloaded binaries were not installed.",
+  "cardSummary": "Give AI agents a revocable testnet allowance with network-enforced spending limits and approved payees.",
+  "cardStatus": "Prototype · Testnet",
+  "creator": "ArturBaranouski",
+  "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/21",
+  "publishedAt": "2026-10-21T23:23:41.531Z",
+  "updatedAt": "2026-10-21T23:23:41.531Z",
+  "sourceContentSha256": "988967cc85e3bd27f2354e7630c3f2f5a4d79ef0e4c9759f9c95d1f2a4ee659c",
+  "repoUrl": "https://github.com/ttimesai-star/familiar-ootle",
+  "demoUrl": "https://ttimesai-star.github.io/familiar-ootle/",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust · MIT",
+      "sourceUrl": "https://github.com/ttimesai-star/familiar-ootle"
+    }
+  ],
+  "recording": {
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-familiar-20261023.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-familiar-20261023.png",
+    "capturedAt": "2026-10-23T17:55:53.011Z",
+    "sourceRevision": "73b01af39b1f51f1713104ed4a557b48a4f9bda2",
+    "kind": "public-page",
+    "credit": "Source/docs walkthrough — Creator’s recorded transaction walkthrough; no agent, wallet or new transaction."
+  }
+}

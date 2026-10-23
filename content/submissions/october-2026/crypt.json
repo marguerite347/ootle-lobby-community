@@ -1,9 +1,9 @@
 {
   "slug": "crypt",
   "title": "Crypt",
-  "summary": "Rust escrow template and CLI for encrypted secret sales on Ootle, with a wallet-free WebAssembly browser demo. On October 19, 2026, the demo accepted real BUY, OPEN and DISPUTE clicks and reached The Forger’s Curse locally; this did not submit a network transaction. Disputes reveal the secret publicly, and the contract checks delivery against the seller’s commitment, not its value. Sale metadata, amounts and funding links remain public. The maintainer supplies Esmeralda transaction evidence separately; historical same-wallet funding is not proof of independent counterparties. BSD-3-Clause source at 242f11b. Earlier source-only availability observations remain in the maintenance history.",
+  "summary": "Secret-trading game with a wallet-free simulation and an experimental Sapient path. October 23 inspection of ON-CHAIN · SAPIENT found the creator’s warning that 15 test units remain in settled escrow because the browser wallet cannot yet sign the Rust SDK stealth payout; reloading mid-sale abandons the session. No wallet was connected and no funds were sent. The new recording shows this restriction and returns to the title. The original simulation footage remains in capture history. Disputes can reveal secrets; public metadata remains visible. MIT source, Esmeralda testnet.",
   "cardSummary": "Play a wallet-free secret-trading demo, choosing honest or deceptive actions to explore escrow and delivery disputes.",
-  "cardStatus": "Browser demo · Testnet source · Disputes reveal secrets",
+  "cardStatus": "Browser demo · Testnet · Wallet payouts unavailable",
   "creator": "Og.boy",
   "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/7",
   "publishedAt": "2026-10-12T11:07:25.452Z",
@@ -18,12 +18,12 @@
     }
   ],
   "recording": {
-    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-crypt-20261019.mp4",
-    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-crypt-20261019.jpg",
-    "capturedAt": "2026-10-19T12:52:59.732Z",
-    "sourceRevision": "242f11bb8d570e434ed0a21b3aecde1b71d51c91",
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-crypt-20261023.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-crypt-20261023.png",
+    "capturedAt": "2026-10-23T17:54:50.313Z",
+    "sourceRevision": "17cf366682a59c1116e0dd50be3cc161d9d33874",
     "kind": "public-page",
-    "credit": "App demo — Wallet-free local WebAssembly game; no on-chain transaction."
+    "credit": "App demo — Wallet-path requirements and payout warning, then title screen; no wallet connected or transaction performed."
   },
   "demoUrl": "https://lrifton92.github.io/crypt/"
 }
