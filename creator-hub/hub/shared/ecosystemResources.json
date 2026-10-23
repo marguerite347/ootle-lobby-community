@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-10-21T13:42:52.311787+00:00",
+  "reviewedAt": "2026-10-23T17:45:25.701757+00:00",
   "records": [
     {
       "id": "tari-ootle:learn:official-agent-docs",
@@ -1054,6 +1054,61 @@
         "video": "https://ootle-lobby-preview.vercel.app/previews/community/resource-seance-privacy-20261021.mp4",
         "image": "https://ootle-lobby-preview.vercel.app/previews/community/resource-seance-privacy-20261021.jpg",
         "source": "App demo — Read-only public transaction view; no payment sent."
+      }
+    },
+    {
+      "id": "tari-ootle:component:graveyard-shift",
+      "key": "graveyard-shift",
+      "type": "component",
+      "ecosystem": "tari-ootle",
+      "group": "Templates",
+      "title": "Graveyard Shift",
+      "summary": "Confidential payroll template and interactive browser replay. October 23 inspection showed Alice’s recorded 3000 SHIFT pay stub, an auditor reconciliation to the 10000 SHIFT budget, and hidden coworker amounts. The page replays an engine transcript; it does not decrypt or pay through the browser. The original post’s empty-faucet limitation was superseded by the creator’s October 22 update linking a published Esmeralda template and two-paycheck shift transaction. The browser replay has three paychecks and is separate from that deployment evidence. Roster, roles, paid status and total budget remain public; the auditor key is fixed per payroll. MIT source; no wallet or payroll transaction performed here.",
+      "status": "Browser demo · Testnet",
+      "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/20",
+      "repoUrl": "https://github.com/XachP/graveyard-shift",
+      "docsUrl": "https://github.com/XachP/graveyard-shift#readme",
+      "demoUrl": "https://xachp.github.io/graveyard-shift/",
+      "creator": {
+        "name": "XachP",
+        "url": "https://github.com/XachP"
+      },
+      "license": "MIT",
+      "network": "Esmeralda testnet",
+      "platform": "Browser · Rust",
+      "upstreamRevision": "a46223faac256a746a33671ff93b4c2b0c7e0d0d",
+      "sourceUpdatedAt": "2026-10-21T23:23:34.426Z",
+      "lastCheckedAt": "2026-10-23T17:45:25.701757+00:00",
+      "verification": "source-attested",
+      "readiness": "conceptual",
+      "tags": [
+        "ecosystem-resources",
+        "privacy",
+        "testnet"
+      ],
+      "discussionLinks": [
+        {
+          "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/20",
+          "platform": "Tari Community forum",
+          "context": "October contest submission"
+        },
+        {
+          "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/23",
+          "platform": "Tari Community forum",
+          "context": "Follow-up Esmeralda deployment evidence supersedes original faucet hold"
+        },
+        {
+          "url": "https://bsky.app/profile/zjpenterprises.bsky.social/post/3myfxphq3ps2u",
+          "platform": "Bluesky",
+          "context": "Creator announcement linked from submission"
+        }
+      ],
+      "cardSummary": "Explore confidential payroll from employee, auditor and public perspectives, with selective disclosure of individual payslips.",
+      "cardStatus": "Browser demo · Testnet",
+      "preview": {
+        "video": "https://ootle-lobby-preview.vercel.app/previews/community/resource-graveyard-shift-20261023.mp4",
+        "image": "https://ootle-lobby-preview.vercel.app/previews/community/resource-graveyard-shift-20261023.png",
+        "source": "App demo — Interactive replay of the creator’s engine transcript; four perspectives, no browser decryption or payment."
       }
     }
   ],
