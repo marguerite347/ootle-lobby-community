@@ -1,0 +1,29 @@
+{
+  "slug": "graveyard-shift",
+  "title": "Graveyard Shift",
+  "summary": "Confidential payroll template and interactive browser replay. October 23 inspection showed Alice’s recorded 3000 SHIFT pay stub, an auditor reconciliation to the 10000 SHIFT budget, and hidden coworker amounts. The page replays an engine transcript; it does not decrypt or pay through the browser. The original post’s empty-faucet limitation was superseded by the creator’s October 22 update linking a published Esmeralda template and two-paycheck shift transaction. The browser replay has three paychecks and is separate from that deployment evidence. Roster, roles, paid status and total budget remain public; the auditor key is fixed per payroll. MIT source; no wallet or payroll transaction performed here.",
+  "cardSummary": "Explore confidential payroll from employee, auditor and public perspectives, with selective disclosure of individual payslips.",
+  "cardStatus": "Browser demo · Testnet",
+  "creator": "XachP",
+  "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/20",
+  "publishedAt": "2026-10-21T23:23:34.426Z",
+  "updatedAt": "2026-10-21T23:23:34.426Z",
+  "sourceContentSha256": "202660441dca556d54875eff5a52083849cbcf835e21a7d66aa11ef3d99d123e",
+  "repoUrl": "https://github.com/XachP/graveyard-shift",
+  "demoUrl": "https://xachp.github.io/graveyard-shift/",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust · MIT",
+      "sourceUrl": "https://github.com/XachP/graveyard-shift"
+    }
+  ],
+  "recording": {
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-graveyard-shift-20261023.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-graveyard-shift-20261023.png",
+    "capturedAt": "2026-10-23T17:44:32.845Z",
+    "sourceRevision": "a46223faac256a746a33671ff93b4c2b0c7e0d0d",
+    "kind": "public-page",
+    "credit": "App demo — Interactive replay of the creator’s engine transcript; four perspectives, no browser decryption or payment."
+  }
+}
