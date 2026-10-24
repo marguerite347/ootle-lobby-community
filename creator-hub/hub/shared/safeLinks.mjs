@@ -9,9 +9,9 @@ export function requireLinkHost(value,field='source') {
  const href=safeHref(value);
  if(!href||(!href.startsWith('https:')&&!(field==='demo'&&reviewedHttpDemo(href))))throw new Error('A reviewed public link is required.');
  const groups={
-  source:['www.reddit.com','radicle.network','gitlab.com','github.com','git.disroot.org','community.tari.com','ootle.tari.com','tari.com','www.tari.com','wiki.tari.com','skydrop.tari.mw','bsky.app'],
+  source:['x.com','www.reddit.com','radicle.network','gitlab.com','github.com','git.disroot.org','community.tari.com','ootle.tari.com','tari.com','www.tari.com','wiki.tari.com','skydrop.tari.mw','bsky.app'],
   repository:['radicle.network','gitlab.com','github.com','git.disroot.org'],
-  demo:['hidebox.app','ttimesai-star.github.io','seance.madebydevx.com','caravellabs.net','xachp.github.io','kylne700.github.io','hycorange.github.io','172.105.101.24','lrifton92.github.io','ghostline-ui.vercel.app','testnet-faucet.supportxtm.com','testnet-faucet.taritracker.com','hauntboard.taritracker.com','explorer.tari.mw','skydrop.tari.mw','feeltherevolt-xehqj-studio.wp.build','labyrinthos.markets','sooon.fun','tari-market.johnnytsunami14.chatgpt.site'],
+  demo:['grave-robber.netlify.app','hidebox.app','ttimesai-star.github.io','seance.madebydevx.com','caravellabs.net','xachp.github.io','kylne700.github.io','hycorange.github.io','172.105.101.24','lrifton92.github.io','ghostline-ui.vercel.app','testnet-faucet.supportxtm.com','testnet-faucet.taritracker.com','hauntboard.taritracker.com','explorer.tari.mw','skydrop.tari.mw','feeltherevolt-xehqj-studio.wp.build','labyrinthos.markets','sooon.fun','tari-market.johnnytsunami14.chatgpt.site'],
   recording:['ootle-lobby-preview.vercel.app','github.com','raw.githubusercontent.com','www.youtube.com','youtube.com','youtu.be','vimeo.com'],
  };
  if(!groups[field]?.includes(new URL(href).hostname))throw new Error('Link destination needs maintainer review.');

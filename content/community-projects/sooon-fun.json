@@ -2,14 +2,14 @@
   "slug": "sooon-fun",
   "title": "SOOON FUN",
   "creator": "TariRari",
-  "summary": "Prediction markets, token launching and on-chain games on Ootle testnet. The public directory documents the build; a wallet is needed to use the current app.",
-  "sourceUrl": "https://community.tari.com/t/ootle-testnet-community-apps-directory/281/1",
-  "sourceLabel": "Project source",
+  "summary": "Prediction markets, token launching and games on Ootle testnet. The creator’s October 21 v2 announcement adds Call It UP/DOWN trading and longer-dated prediction markets after the announced v0.47 upgrade. October 24 public entry inspection reached a wallet gate; no wallet was created or unlocked and no trade was placed. The refreshed recording shows the public entry screen in an isolated browser, not market execution. The earlier community-directory walkthrough remains in media history.",
+  "sourceUrl": "https://x.com/sooonfun/status/2113043736620077141",
+  "sourceLabel": "Original post",
   "repoUrl": null,
-  "publishedAt": "2026-08-17T12:41:11.394Z",
-  "publicationLabel": "Listed on forum",
-  "publicationBasis": "Date of the public community directory listing, not an independently verified launch date.",
-  "publicationUrl": "https://community.tari.com/t/ootle-testnet-community-apps-directory/281/1",
+  "publishedAt": "2026-10-21T23:04:19.000Z",
+  "publicationLabel": "v2 announced",
+  "publicationBasis": "Date of the creator’s v2 announcement; original directory history retained in the source ledger.",
+  "publicationUrl": "https://x.com/sooonfun/status/2113043736620077141",
   "ecosystem": "tari-ootle",
   "technologies": [
     {
@@ -17,21 +17,26 @@
       "sourceUrl": "https://community.tari.com/t/ootle-testnet-community-apps-directory/281/1"
     }
   ],
-  "forum": null,
+  "forum": {
+    "url": "https://community.tari.com/t/ootle-testnet-community-apps-directory/281/1",
+    "topicId": 281,
+    "postNumber": 1,
+    "scope": "topic"
+  },
   "resourceIds": [
     "tari-ootle:app:sooon-fun"
   ],
   "section": "community",
   "media": {
-    "image": "/previews/community/sooon-fun.jpg",
-    "video": "/previews/community/sooon-fun.mp4",
-    "label": "Public source walkthrough",
-    "sourceUrl": "https://community.tari.com/t/ootle-testnet-community-apps-directory/281",
-    "capturedAt": "2026-10-04T16:02:52.616125Z",
-    "reviewedAt": "2026-10-04T16:02:52.616125Z",
-    "sha256": "164f026245e883057a9a05b333bd46457425a87420ebb688992153d90630c31f"
+    "image": "/previews/community/resource-sooon-fun-20261024.jpg",
+    "video": "/previews/community/resource-sooon-fun-20261024.mp4",
+    "label": "Public wallet entry · no trading",
+    "sourceUrl": "https://community.tari.com/t/ootle-testnet-community-apps-directory/281/1",
+    "capturedAt": "2026-10-24T14:34:21.390Z",
+    "reviewedAt": "2026-10-24T14:46:11.419842+00:00",
+    "sha256": "0f8428f867083c2975ef5213899e183e1ce8f79b2fb2aee4249f891a7339619e"
   },
   "demoUrl": "https://sooon.fun/",
-  "cardSummary": "Explore prediction markets, token launching and on-chain games on Ootle testnet.",
-  "cardStatus": "Testnet \u00b7 Wallet required"
+  "cardSummary": "Explore testnet prediction markets and UP/DOWN trading, with wallet access required to enter the app.",
+  "cardStatus": "Testnet · Wallet required"
 }
