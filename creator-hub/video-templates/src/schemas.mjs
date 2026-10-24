@@ -48,7 +48,7 @@ export const metaSchema = z
       .max(2048).refine((v) => { if (v === '') return true; try { const u = new URL(v); return ['http:', 'https:'].includes(u.protocol) && !!u.hostname && !u.username && !u.password; } catch { return false; } }, { message: 'must be a valid http(s) URL without credentials' })
       .default(''),
   })
-  .default({});
+  .prefault({});
 
 const base = {
   format: formatEnum,

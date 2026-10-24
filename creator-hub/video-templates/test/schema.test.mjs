@@ -45,6 +45,7 @@ test('defaults fill optional fields (format, duration, background, kind)', () =>
   assert.equal(p.durationInSeconds, 12);
   assert.equal(p.background.type, 'brand');
   assert.equal(p.background.kind, 'demo');
+  assert.deepEqual(p.meta, {projectId: '', templateId: '', campaignId: '', clipId: '', revision: '', destinationUrl: ''});
 });
 
 test('rejects missing media, path traversal and remote media in the local renderer', () => {
