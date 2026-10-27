@@ -29,7 +29,7 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 | [LOBBY-AGENT-BRIDGE](#lobby-agent-bridge) | build-required | Collective chat agent coordination |
 | [LOBBY-COMMUNITY-WRITES](#lobby-community-writes) | build-required | /api/engagement/*; /api/creator-profiles/*; /api/skill-market*; /api/learn/resources; /api/learning/lessons*; /api/build-budgets*; /api/creator-analytics* |
 | [LOBBY-CHECKOUT](#lobby-checkout) | build-required | POST /api/skill-market/:id/download for priced listings |
-| [LOBBY-REWARDS](#lobby-rewards) | local-only | Daily Ritual, AI Sparks balance and rewardPlaytest |
+| [LOBBY-REWARDS](#lobby-rewards) | local-only | Withheld Daily Ritual spinner and AI Sparks balance; retained practice-game source |
 | [LOBBY-WALLET](#lobby-wallet) | design-only | WalletPreview and asset-commerce plans |
 | [LOBBY-VIDEO](#lobby-video) | design-only | /api/video/templates/*; capture CLI; /api/studio/recipes |
 | [LOBBY-RECIPE-ADAPTER](#lobby-recipe-adapter) | design-only | Recipe composition adapters |
@@ -176,15 +176,15 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 
 ## LOBBY-REWARDS
 
-**local-only** — Daily Ritual, AI Sparks balance and rewardPlaytest
+**local-only** — Withheld Daily Ritual spinner and AI Sparks balance; retained practice-game source
 
-**Current:** The public UI remains a replayable browser-only practice game. The unused public /api/daily-trivia endpoint is closed for every method, so it cannot create or mutate Blob records. Local retained router registers only on POST start; GET does not issue a session or persist state. Production reset is disabled.
+**Current:** The public Lobby no longer mounts Daily Ritual, its spinner, the AI Sparks balance or the shared trivia provider. Practice/Riff code remains isolated for development, with simulated rewards only. The unused public /api/daily-trivia endpoint is closed for every method, so it cannot create or mutate Blob records. Local retained router registers only on POST start; GET does not issue a session or persist state. Production reset is disabled.
 
-**Remaining:** Do not enable retained Blob trivia publicly without a shared atomic player quota, retention sweep, shared abuse limits and authentication. Existing legacy Blob data was not deleted; retention/migration requires reviewed operator action. Real rewards require a server ledger and verified identity.
+**Remaining:** Keep public reward controls withheld until authenticated identity, a durable server ledger and exactly-once awards are implemented and verified. Do not enable retained Blob trivia publicly without a shared atomic player quota, retention sweep and abuse limits. Existing legacy Blob data was not deleted; retention/migration requires reviewed operator action.
 
-**Completion check:** Current reset/playtest regression passes; any future real awards prove exactly-once settlement and cannot be minted by browser edits.
+**Completion check:** Public desktop/mobile navigation must show no Daily Ritual spinner, AI Sparks balance or reward prompt. Retained practice/reset regressions must pass; any future real awards prove exactly-once settlement and cannot be minted by browser edits.
 
-**Source:** [creator-hub/hub/client/src/components/rewardPlaytest.ts](../creator-hub/hub/client/src/components/rewardPlaytest.ts), [creator-hub/hub/client/src/components/DailyTrivia.tsx](../creator-hub/hub/client/src/components/DailyTrivia.tsx), [creator-hub/hub/server/dailyTrivia.mjs](../creator-hub/hub/server/dailyTrivia.mjs), [creator-hub/hub/server/dailyTriviaBlob.mjs](../creator-hub/hub/server/dailyTriviaBlob.mjs)
+**Source:** [creator-hub/hub/client/src/Layout.tsx](../creator-hub/hub/client/src/Layout.tsx), [creator-hub/hub/client/src/components/rewardPlaytest.ts](../creator-hub/hub/client/src/components/rewardPlaytest.ts), [creator-hub/hub/client/src/components/DailyTrivia.tsx](../creator-hub/hub/client/src/components/DailyTrivia.tsx), [creator-hub/hub/server/dailyTrivia.mjs](../creator-hub/hub/server/dailyTrivia.mjs), [creator-hub/hub/server/dailyTriviaBlob.mjs](../creator-hub/hub/server/dailyTriviaBlob.mjs)
 
 ## LOBBY-WALLET
 
