@@ -45,7 +45,7 @@ npm run build:site
 npm run start:site
 ```
 
-Open http://localhost:4180. Node.js 22 is the deployment version. The public Lobby and local discovery entry point are read-only for community state. Project content changes are stored in Git. Daily Ritual remains a browser-only practice simulator, with no redeemable balance or prizes.
+Open http://localhost:4180. Node.js 22 is the deployment version. The public Lobby and local discovery entry point are read-only for community state. Project content changes are stored in Git. The Daily Ritual spinner and AI Sparks balance are withheld from public navigation until a real points system is connected. Retained practice games have no redeemable balance or prizes.
 
 `npm run build:site` produces static assets in `public/` and the serverless dependency package in `server-content/`. Generated files are ignored. `public/build.json` records the source revision; `public/artifact-sha256.json` records package file hashes. Builds and installs disable dependency lifecycle scripts.
 
@@ -121,9 +121,11 @@ npm run build
 
 Project names, descriptions and source references describe independently created community work. Their presence here does not relicense upstream projects, artwork or trademarks. Only contribute text you have the right to share publicly and allow the Lobby to display. Preserve the original project attribution.
 
-## Current Daily Ritual testing flow
+## Retained Daily Ritual testing flow
 
-Daily Ritual now has one client flow: trivia → 3D first wheel → Super wheel,
+The public header no longer mounts Daily Ritual, its spinner, the AI Sparks balance or the trivia provider. Re-enable public rewards only after the ledger and identity checks in `docs/DEVELOPMENT_GAPS.md#lobby-rewards` are complete. Existing browser practice state and private server records are preserved.
+
+The retained practice code has one client flow: trivia → 3D first wheel → Super wheel,
 with simulated, replayable Sparks. **Test again ↻** clears the playtest and
 starts fresh. The retired 2D renderer, its animation handlers, the alternate
 client API path and the hostname/query/session selector have been removed.

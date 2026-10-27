@@ -54,7 +54,7 @@ export default function GuessingGameEditor() {
 
   return <div className="guessing-editor">
     <header className="guessing-editor-header">
-      <div><Link to="/#daily-spark">← Daily Ritual</Link><h1>A little twist. <em>Your game.</em></h1><p>Customize a guessing game. Try it, then download the source.</p><Link to="/create/trivia">Riff the Daily Ritual instead →</Link></div>
+      <div><Link to="/">← Ootle Lobby</Link><h1>A little twist. <em>Your game.</em></h1><p>Customize a guessing game. Try it, then download the source.</p><Link to="/create/trivia">Riff the Daily Ritual instead →</Link></div>
       <div className="guessing-editor-actions"><button className="season-button" onClick={download}>Download source ↓</button></div>
     </header>
     <div className="guessing-save-status" role="status">{status || 'Not saved online. Download the source to keep your changes.'}</div>

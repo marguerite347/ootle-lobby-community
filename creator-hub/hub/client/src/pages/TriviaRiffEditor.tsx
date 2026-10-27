@@ -49,7 +49,7 @@ export default function TriviaRiffEditor() {
   }
   return <div className="trivia-editor">
     <header className="trivia-editor-heading">
-      <div><Link to="/#daily-spark">← Daily Ritual</Link><h1>Same spark. <em>Your twist.</em></h1><p>Make the Daily Ritual’s questions and style your own.</p></div>
+      <div><Link to="/">← Ootle Lobby</Link><h1>Same spark. <em>Your twist.</em></h1><p>Make the Daily Ritual’s questions and style your own.</p></div>
       <div className="trivia-editor-actions"><a className="btn" href="#riff-preview">Preview ↓</a><button className="season-button" onClick={exportQuestions}>Download question pack ↓</button><label className="btn">Open question pack<input type="file" accept=".json,application/json" onChange={async event => {
         const file = event.target.files?.[0];
         if (!file) return;
