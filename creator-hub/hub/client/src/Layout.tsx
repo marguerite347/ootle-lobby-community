@@ -3,7 +3,6 @@ import { Outlet, Link, useLocation } from 'react-router-dom';
 import {Suspense, useEffect} from 'react';
 import DailyRitualDock from './components/DailyRitualDock';
 import CommunityLinks from './components/CommunityLinks';
-import WorkbenchWordmark from './components/WorkbenchWordmark';
 import {LaunchTicket} from './components/OotleLaunch';
 import './components/LobbyHeader.css';
 import './Shell.css';
@@ -26,7 +25,7 @@ export default function Layout() {
           <Link to="/" className="season-brand" aria-label="Ootle Lobby home"><img src="/ootle-jam-mark.svg" alt="" width="40" height="40"/><span>ootle<span className="season-brand-light">lobby</span><small>BUILT ON TARI</small></span></Link>
           <CommunityLinks/>
           <SparkBalance/>
-          <Link className="season-header-create workbench-brand-link" to="/workbench" aria-label="Open Ootle Workbench"><img src="/ootle-jam-mark.svg" alt="" width="26" height="26"/><WorkbenchWordmark/></Link>
+          <Link className="season-header-create" to="/#october-submissions">Projects</Link>
           <LaunchTicket/>
           {location.pathname === '/' && <DailyRitualDock/>}
         </div>

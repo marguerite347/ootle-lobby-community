@@ -20,6 +20,8 @@ The October gallery reads reviewed entries from the shared content feed. Add one
 
 Missing services, configuration requirements, browser-only features and retired routes are explicitly flagged in source with `INTEGRATION_GAP[ID]`. The register includes implementation requirements and completion checks; validation catches stale markers. The Workbench editor/import/export are usable locally; compile, test, deploy, AI and public publishing need backend services before they are enabled.
 
+The public Lobby does not promote Workbench while it is being prepared for release. The header links to the project showcase, and community calls to action lead to the forum. Direct Workbench and backup routes remain available for existing development workflows.
+
 ## Website source
 
 | What to change | Location |

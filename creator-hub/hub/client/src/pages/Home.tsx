@@ -2,8 +2,7 @@ import {OfficialProjects} from '../components/ExternalCommunityProjects';
 import EcosystemResources from '../components/EcosystemResources';
 import PublicationGallery from '../workbench/PublicationGallery';
 import {useEffect} from 'react';
-import {Link, useLocation} from 'react-router-dom';
-import WorkbenchWordmark from '../components/WorkbenchWordmark';
+import {useLocation} from 'react-router-dom';
 import ConcoctionArt from '../components/ConcoctionArt';
 import ContestProjects from '../components/ContestProjects';
 import OctoberSubmissions from '../components/OctoberSubmissions';
@@ -33,9 +32,9 @@ export default function Home() {
     <section className="season-community" id="creator-community">
       <div className="season-community-copy">
         <h2>Brew something<br/>brilliant.</h2>
-        <p>Build in Ootle Workbench. Trade ideas on Discord. Share your creation with the community.</p>
+        <p>Trade ideas on Discord. Share your creation and follow other builders on the forum.</p>
         <div className="season-community-actions">
-          <Link className="season-button workbench-cta" to="/workbench" aria-label="Open Ootle Workbench"><img src="/ootle-jam-mark.svg" alt="" width="28" height="28"/><WorkbenchWordmark/></Link>
+          <a className="season-button" href="https://community.tari.com/" target="_blank" rel="noreferrer">Join the community</a>
           <div className="season-community-actions">
             <a className="season-text-link" href="https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396" target="_blank" rel="noreferrer">Contest thread</a>
             <a className="season-text-link" href="https://discord.com/invite/dj34vQSe6d" target="_blank" rel="noreferrer">Join Tari on Discord</a>
