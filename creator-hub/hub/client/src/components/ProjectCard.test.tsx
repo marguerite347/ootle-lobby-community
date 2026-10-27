@@ -17,7 +17,7 @@ describe('project navigation',()=>{
  });
 });
 
-it.each(['Source/docs walkthrough — application not demonstrated','Docs walkthrough — source, not executed application','App demo — public read-only interface','Public source walkthrough','Repository walkthrough · testnet interface screenshots','Official guide walkthrough · guessing-game example','Concept overview','Announcement walkthrough'])('%s exposes native playback controls without autoplay or looping',(source)=>{
+it.each(['Source/docs walkthrough — application not demonstrated','Docs walkthrough — source, not executed application','App demo — public read-only interface','Public source walkthrough','Repository walkthrough · testnet interface screenshots','Official guide walkthrough · guessing-game example','Concept overview','Announcement walkthrough','Page walkthrough — public wallet entry; no trading'])('%s exposes native playback controls without autoplay or looping',(source)=>{
  const resource={id:'source',title:'Source',ecosystem:'tari',native:true,preview:{image:'/poster.jpg',video:'/source.mp4',source}};
  const html=renderToStaticMarkup(<ResourceCardMedia r={resource}/>);
  expect(html).toContain('controls=""');expect(html).toContain('poster="/poster.jpg"');expect(html).toContain('preload="none"');expect(html).not.toContain('autoplay');expect(html).not.toContain('loop=""');
