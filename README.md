@@ -14,6 +14,8 @@ This repository contains the public website source and the community content sho
 
 The October gallery reads reviewed entries from the shared content feed. Add one JSON file per new project; accepted listings are shared with every visitor. The read-only monitor detects new and edited official forum posts. Its scheduled GitHub workflow begins after merge to `main`; it never publishes entries automatically. Browser-local Workbench drafts and exported Riffs are not public GitHub submissions. Legacy hosted project writes are retired.
 
+The homepage ecosystem section excludes projects already listed in September, October or Community/Official galleries, matching reviewed project IDs and source/repository URLs. The complete ecosystem catalog and resource detail pages remain available for discovery and source provenance. New reviewed submissions are included in this placement check at build time.
+
 ## Developer integration handoff
 
 [End-to-end developer delivery plan](docs/DEVELOPER_HANDOFF.md) · [Development gaps for Lobby and Workbench](docs/DEVELOPMENT_GAPS.md) · [Workbench API contract](docs/WORKBENCH.md)

@@ -3,11 +3,12 @@ import {useState} from 'react';
 import {ResourceCardMedia} from '../ui';
 import {Link} from 'react-router-dom';
 import resources from '../../../shared/ecosystemResources.json';
+import {homepageResources} from './homepageEcosystem';
 import './EcosystemResources.css';
 
 export default function EcosystemResources() {
   const [query, setQuery] = useState('');
-  const records = resources.records.filter(record => `${record.title} ${record.group} ${record.summary}`.toLowerCase().includes(query.toLowerCase()));
+  const records = homepageResources.filter(record => `${record.title} ${record.group} ${record.summary}`.toLowerCase().includes(query.toLowerCase()));
   const opportunities = resources.opportunities.filter(item => Date.now() < Date.parse(item.expiresAt));
   return <section className="section ecosystem-resources" id="ecosystem-resources" aria-labelledby="ecosystem-title">
     <div className="section-head"><div><h2 id="ecosystem-title">Build with the <em>ecosystem.</em></h2><p>Official guides, language SDKs and reusable community sources.</p></div></div>
