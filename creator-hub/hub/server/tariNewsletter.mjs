@@ -1,6 +1,7 @@
 // INTEGRATION_GAP[CFG-SUBSCRIPTIONS] (configuration-required): the provider verifies
 // each short-lived Turnstile token; an approved site key/hostname and live receipt
-// are required before declaring signup operational. See docs/DEVELOPMENT_GAPS.md.
+// are required before declaring signup operational. Canonical signup opens the
+// lobby's #newsletter disclosure. See docs/DEVELOPMENT_GAPS.md.
 import {Router, json} from 'express';
 import {createHash} from 'node:crypto';
 
@@ -17,7 +18,7 @@ export function newsletterConfiguration(env = process.env) {
   // Cloudflare's public test keys must never enable a hosted signup form.
   const available = Boolean(origin && siteKey && /^[a-zA-Z0-9_-]{10,100}$/.test(siteKey)
     && !/^[123]x0{8,}/.test(siteKey));
-  return {available, siteKey: available ? siteKey : null, privacyUrl: TARI_PRIVACY_URL, signupUrl: origin ? `${origin}/ootle` : null};
+  return {available, siteKey: available ? siteKey : null, privacyUrl: TARI_PRIVACY_URL, signupUrl: origin ? `${origin}/#newsletter` : null};
 }
 
 export function validateTariSignup(body) {

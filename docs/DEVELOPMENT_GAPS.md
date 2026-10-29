@@ -226,7 +226,7 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 
 **configuration-required** — GET /api/subscriptions/config; POST /api/subscriptions
 
-**Current:** The public signup route forwards only email and the browser Turnstile token to Tari’s existing https://rwa.y.at/miner/exchanges/user endpoint. It requires explicit consent, an exact origin and custom header, bounded JSON, and provider success:true. Topic segmentation and double opt-in are not claimed. Local burst limits supplement upstream Turnstile validation. No email is collected when a production-approved site key is absent.
+**Current:** The public signup route forwards only email and the browser Turnstile token to Tari’s existing https://rwa.y.at/miner/exchanges/user endpoint. It requires explicit consent, an exact origin and custom header, bounded JSON, and provider success:true. Topic segmentation and double opt-in are not claimed. Local burst limits supplement upstream Turnstile validation. No email is collected when a production-approved site key is absent. Canonical signup opens /#newsletter on the lobby; the retired /ootle landing page redirects to /.
 
 **Remaining:** The approved public Turnstile key is configured for production following the October 29 hostname approval. Redeploy and verify a real signup plus downstream list membership. The Tari backend retains its matching secret and token/hostname validation.
 
