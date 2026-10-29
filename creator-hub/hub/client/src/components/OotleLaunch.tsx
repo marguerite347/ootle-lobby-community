@@ -10,14 +10,14 @@ export function remainingLaunchTime(now=Date.now()) {
 function useCountdown(){const [time,setTime]=useState(()=>remainingLaunchTime());useEffect(()=>{const timer=setInterval(()=>setTime(remainingLaunchTime()),1000);return()=>clearInterval(timer);},[]);return time;}
 export function LaunchTicket(){
  const time=useCountdown();
- return <Link to="/ootle" className="launch-ticket launch-ticket-live" aria-label="Ootle mainnet launch countdown. November 11 at 11:11 UTC. Explore the launch">
+ return <Link to="/ootle" className="launch-ticket launch-ticket-live" aria-label="Ootle mainnet launch countdown. November 11 at 11:11 UTC. Explore Ootle">
   <span className="launch-ticket-label"><span className="launch-dot"/><b>OOTLE</b><small>11.11 · 11:11 UTC</small></span>
-  {time.ended?<span className="launch-ticket-ended">Launch updates</span>:<span className="launch-ticket-digits" role="timer" aria-live="off" aria-label={`${time.days} days, ${time.hours} hours, ${time.minutes} minutes, ${time.seconds} seconds until planned launch`}>
+  {time.ended?<span className="launch-ticket-ended">Explore Ootle</span>:<span className="launch-ticket-digits" role="timer" aria-live="off" aria-label={`${time.days} days, ${time.hours} hours, ${time.minutes} minutes, ${time.seconds} seconds until planned launch`}>
    {(['days','hours','minutes','seconds'] as const).map(unit=><span className={`launch-digit launch-digit-${unit}`} key={unit}>
     <span className="launch-digit-window"><b key={time[unit]}>{String(time[unit]).padStart(2,'0')}</b></span><small>{unit==='minutes'?'MIN':unit==='seconds'?'SEC':unit==='hours'?'HRS':'DAYS'}</small>
    </span>)}
   </span>}
-  <span className="launch-ticket-join">Launch updates</span>
+  {!time.ended && <span className="launch-ticket-join">Explore Ootle</span>}
  </Link>;
 }
 export function LaunchFeature(){return <Link to="/ootle" className="launch-feature"><div className="launch-clock-art" aria-hidden="true">11<span>:</span>11</div><div><span className="journal-kicker">NEXT UP · OOTLE MAINNET</span><h2>It’s about to get loud.</h2><p>11/11. 11:11 UTC. You in?</p><p>Planned time. Countdown ≠ network live.</p></div><span className="btn primary">Explore the launch</span></Link>;}
