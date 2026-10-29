@@ -1,0 +1,29 @@
+{
+  "slug": "arkimals",
+  "title": "Arkimals — Halloween on Tari",
+  "summary": "Halloween canine game on Esmeralda. Incubation delivers a surprise through an encrypted Tari memo; the player can preview it privately in Sapient before voluntarily revealing and minting a canine NFT. The operator knows the outcome and can delay delivery; timing, fees and account activity remain public. The October 29 public landing and rules views loaded without a wallet. The rules also describe breeding, staking and rebirth, which permanently retires the submitted canine. Current prices are shown before wallet approval. The recorded walkthrough shows public pages only; no incubation, private memo, mint or transaction was exercised. MIT code; existing Arkimals artwork has separate provenance in the repository.",
+  "cardSummary": "Receive a secret canine through an encrypted wallet memo, then choose when to reveal and mint it.",
+  "cardStatus": "Web game · Testnet",
+  "creator": "Black_Turtle",
+  "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/29",
+  "publishedAt": "2026-10-26T16:45:58.142Z",
+  "updatedAt": "2026-10-26T16:45:58.142Z",
+  "sourceContentSha256": "f7a82420687f4c15bc4504abba26da0b56d977be4b26986a80936211b0c21274",
+  "repoUrl": "https://github.com/BlackTurtle123/tari-midnight-kennel",
+  "demoUrl": "https://tari.staging.arkimals-game.com/",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust · React · MIT code",
+      "sourceUrl": "https://github.com/BlackTurtle123/tari-midnight-kennel"
+    }
+  ],
+  "recording": {
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-arkimals-20261029.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-arkimals-20261029.png",
+    "capturedAt": "2026-10-29T09:31:25.861Z",
+    "sourceRevision": "d927e586f4e0a8830a290a32096f2351e780fae5",
+    "kind": "public-page",
+    "credit": "App demo — Public landing and game rules only; no wallet or incubation."
+  }
+}

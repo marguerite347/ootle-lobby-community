@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-10-24T14:20:27.964705+00:00",
+  "reviewedAt": "2026-10-29T09:33:14.318171+00:00",
   "records": [
     {
       "id": "tari-ootle:learn:official-agent-docs",
@@ -1420,6 +1420,51 @@
         "video": "https://ootle-lobby-preview.vercel.app/previews/community/resource-grave-robber-20261024.mp4",
         "image": "https://ootle-lobby-preview.vercel.app/previews/community/resource-grave-robber-20261024.png",
         "source": "App demo — Sandbox explorer and riddle ledger; no wallet, bounty claim or transaction."
+      }
+    },
+    {
+      "id": "tari-ootle:component:arkimals",
+      "key": "arkimals",
+      "type": "component",
+      "ecosystem": "tari-ootle",
+      "group": "Templates",
+      "title": "Arkimals — Halloween on Tari",
+      "summary": "Halloween canine game on Esmeralda. Incubation delivers a surprise through an encrypted Tari memo; the player can preview it privately in Sapient before voluntarily revealing and minting a canine NFT. The operator knows the outcome and can delay delivery; timing, fees and account activity remain public. The October 29 public landing and rules views loaded without a wallet. The rules also describe breeding, staking and rebirth, which permanently retires the submitted canine. Current prices are shown before wallet approval. The recorded walkthrough shows public pages only; no incubation, private memo, mint or transaction was exercised. MIT code; existing Arkimals artwork has separate provenance in the repository.",
+      "status": "Web game · Testnet",
+      "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/29",
+      "repoUrl": "https://github.com/BlackTurtle123/tari-midnight-kennel",
+      "docsUrl": "https://github.com/BlackTurtle123/tari-midnight-kennel#readme",
+      "demoUrl": "https://tari.staging.arkimals-game.com/",
+      "creator": {
+        "name": "Black_Turtle",
+        "url": "https://github.com/BlackTurtle123"
+      },
+      "license": "MIT",
+      "network": "Esmeralda testnet",
+      "platform": "Browser · Rust",
+      "upstreamRevision": "d927e586f4e0a8830a290a32096f2351e780fae5",
+      "sourceUpdatedAt": "2026-10-26T16:45:58.142Z",
+      "lastCheckedAt": "2026-10-29T09:33:14.318171+00:00",
+      "verification": "source-attested",
+      "readiness": "conceptual",
+      "tags": [
+        "ecosystem-resources",
+        "privacy",
+        "testnet"
+      ],
+      "discussionLinks": [
+        {
+          "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/29",
+          "platform": "Tari Community forum",
+          "context": "October contest submission"
+        }
+      ],
+      "cardSummary": "Receive a secret canine through an encrypted wallet memo, then choose when to reveal and mint it.",
+      "cardStatus": "Web game · Testnet",
+      "preview": {
+        "video": "https://ootle-lobby-preview.vercel.app/previews/community/resource-arkimals-20261029.mp4",
+        "image": "https://ootle-lobby-preview.vercel.app/previews/community/resource-arkimals-20261029.png",
+        "source": "App demo — Public landing and game rules only; no wallet or incubation."
       }
     }
   ],
