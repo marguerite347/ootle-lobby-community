@@ -30,3 +30,5 @@ When content changes, update the corresponding JSON schedule and the event seque
 - Seven client tests: countdown, game-night lifecycle and independent shared-banner expiry.
 - Content validation and integration-gap registry checks.
 - Rendered desktop and phone layout, calendar dialog and downloaded file. Production provider handoffs are checked after the exact merged revision is deployed; checks do not subscribe the operator's personal calendar.
+
+The production Google trial confirmed that its `cid` parameter must contain the encoded `webcal://` URL, not HTTPS. The corrected link opens Google's “Add calendar” confirmation with the live feed. This matches the provider integration documented by [OneUptime](https://oneuptime.com/docs/en/on-call/calendar-feeds). The confirmation was cancelled; no operator subscription was created.
