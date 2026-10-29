@@ -29,15 +29,15 @@ export default function GameNightBanner() {
   return <aside className="game-night-banner" aria-labelledby="game-night-title">
     <div className="game-night-art" aria-hidden="true"><img src="/community/game-night-gamer.webp" alt="" width="512" height="512" decoding="async" /></div>
     <div className="game-night-copy"><div className="game-night-heading"><span className="game-night-kicker">TARI COMMUNITY</span><h2 id="game-night-title">Game <em>night.</em></h2></div>
-      <div className="game-night-lineup"><p className="game-night-tagline">Pick our next nightmare.</p><p className="game-night-games">{status.scheduled ? event.game : 'Next date and game to be announced.'}</p></div>
+      <div className="game-night-lineup"><p className="game-night-tagline">Come play, chat, or just watch.</p><p className="game-night-games">{status.scheduled ? event.game : 'Next date and game to be announced.'}</p></div>
     </div>
     <div className="game-night-join">
       <div className="game-night-details">
         {start && <time className="game-night-time" dateTime={event.startsAt!}><span>{dateLabel}</span><strong>{timeLabel} <small>/ {utcLabel}</small></strong></time>}
         <p className="game-night-channel"><a href={event.channelUrl} target="_blank" rel="noreferrer">{event.channelName}</a> voice · Discord</p>
       </div>
-      <div className="game-night-actions"><a className="btn primary" href={event.announcementUrl || event.channelUrl} target="_blank" rel="noreferrer">{status.voting?'Vote on Discord':'Join game night'}</a><a className="game-night-invite" href={event.inviteUrl} target="_blank" rel="noreferrer">New here? Join Tari Discord</a></div>
-      {status.voting && <p className="game-night-vote">Vote by {new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',weekday:'short',month:'short',day:'numeric',hour:'numeric',timeZoneName:'short'}).format(new Date(event.voteClosesAt!))}.</p>}
+      <div className="game-night-actions"><a className="btn primary" href={event.channelUrl} target="_blank" rel="noreferrer">Come hang out</a><a className="game-night-invite" href={event.inviteUrl} target="_blank" rel="noreferrer">New here? Join Tari Discord</a></div>
+      {status.voting && <p className="game-night-vote"><a href={event.announcementUrl || event.channelUrl} target="_blank" rel="noreferrer">Vote for the game</a> by {new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',weekday:'short',month:'short',day:'numeric',hour:'numeric',timeZoneName:'short'}).format(new Date(event.voteClosesAt!))}.</p>}
     </div>
     <button type="button" className="game-night-dismiss" aria-label="Dismiss game night banner" onClick={()=>{setDismissed(true);try{localStorage.setItem(key,'dismissed');}catch{/* Dismiss for this visit when storage is blocked. */}}}><span aria-hidden="true">×</span></button>
   </aside>;
