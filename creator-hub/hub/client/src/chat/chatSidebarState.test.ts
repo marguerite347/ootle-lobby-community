@@ -4,7 +4,7 @@ import {
   ensureClientId,
   mergeCommunityMessages,
   nextTabIndex,
-  readDockPreference,
+  initialChatSelection,
   readReportedIds,
   writeReportedIds,
   writeStoredValue,
@@ -30,18 +30,20 @@ const throwingStorage: KeyValueStorage = {
 
 const message = (id: string) => ({ id, at: '2026-09-24T12:00:00Z', name: 'Ada', body: id });
 
-describe('dock preference', () => {
-  test('defaults to collapsed and remembers open', () => {
-    const storage = memoryStorage();
-    expect(readDockPreference(storage)).toBe('collapsed');
-    writeStoredValue(storage, STORAGE_KEYS.dock, 'open');
-    expect(readDockPreference(storage)).toBe('open');
+describe('fresh chat entry', () => {
+  test('ordinary page loads ignore a previous conversation in the URL', () => {
+    expect(initialChatSelection('?channel=builders&dm=inbox', true)).toEqual({channel:'lobby',dm:null});
+    expect(initialChatSelection('?chat=closed&channel=builders', true)).toEqual({channel:'lobby',dm:null});
   });
 
-  test('survives storage that throws', () => {
-    expect(readDockPreference(throwingStorage)).toBe('collapsed');
-    expect(() => writeStoredValue(throwingStorage, STORAGE_KEYS.dock, 'open')).not.toThrow();
-    expect(readDockPreference(undefined)).toBe('collapsed');
+  test('explicit sidebar links and standalone chat preserve their destination', () => {
+    expect(initialChatSelection('?chat=open&channel=builders&dm=inbox', true)).toEqual({channel:'builders',dm:'inbox'});
+    expect(initialChatSelection('?channel=builders&dm=inbox', false)).toEqual({channel:'builders',dm:'inbox'});
+  });
+
+  test('invalid destinations fall back to the Lobby', () => {
+    expect(initialChatSelection('?chat=open&channel=%2Fbad&dm=invalid', true)).toEqual({channel:'lobby',dm:null});
+    expect(initialChatSelection('', false)).toEqual({channel:'lobby',dm:null});
   });
 });
 
@@ -52,6 +54,7 @@ describe('client id and reports', () => {
     expect(first).toMatch(/^[A-Za-z0-9_-]{8,128}$/);
     expect(ensureClientId(storage)).toBe(first);
     expect(ensureClientId(throwingStorage)).toMatch(/^[A-Za-z0-9_-]{8,128}$/);
+    expect(() => writeStoredValue(throwingStorage, STORAGE_KEYS.displayName, 'Ada')).not.toThrow();
   });
 
   test('reported ids round-trip and ignore corrupt data', () => {

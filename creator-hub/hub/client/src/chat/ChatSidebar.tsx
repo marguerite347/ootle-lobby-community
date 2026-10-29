@@ -1,5 +1,6 @@
+// INTEGRATION_GAP[LOBBY-CHAT] (build-required): see docs/DEVELOPMENT_GAPS.md#lobby-chat.
 // Right-docked Community chat with creator-posted project rooms.
-// ≥1100px: docked beside the page (collapsed by default, remembers an explicit open preference).
+// ≥1100px: docked beside the page; each page starts collapsed unless its link explicitly opens chat.
 // Narrower: closed by default, opened as a full-height sheet from a "Chat" button.
 
 import {
@@ -18,10 +19,7 @@ import { copy, sidebarCopy } from './copy';
 import {
   CHAT_GREETING_EVENT,
   DOCKED_MEDIA_QUERY,
-  STORAGE_KEYS,
   type DockPreference,
-  readDockPreference,
-  writeStoredValue,
 } from './chatSidebarState';
 import './chat.css';
 
@@ -32,14 +30,6 @@ const FOCUSABLE_SELECTOR =
   'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 type FocusTarget = 'panel' | 'toggle' | null;
-
-function browserStorage(): Storage | undefined {
-  try {
-    return window.localStorage;
-  } catch {
-    return undefined;
-  }
-}
 
 export function isChatPopOutWindow(): boolean {
   if (typeof window === 'undefined') return false;
@@ -80,7 +70,7 @@ export default function ChatSidebar() {
   const isPopOut = isChatPopOutWindow();
   const isDockedViewport = useDockedViewport();
   const returnToSidebar = new URLSearchParams(window.location.search).get('chat') === 'open';
-  const [dockPreference, setDockPreference] = useState<DockPreference>(() => returnToSidebar ? 'open' : readDockPreference(browserStorage()));
+  const [dockPreference, setDockPreference] = useState<DockPreference>(returnToSidebar ? 'open' : 'collapsed');
   const [isSheetOpen, setIsSheetOpen] = useState(returnToSidebar);
   const [greetingAttention, setGreetingAttention] = useState(false);
   const [selectedPrivate, setSelectedPrivate] = useState<string | null>(null);
@@ -112,18 +102,16 @@ export default function ChatSidebar() {
     pendingFocus.current = 'panel';
     if (isDockedViewport) {
       setDockPreference('open');
-      writeStoredValue(browserStorage(), STORAGE_KEYS.dock, 'open');
     } else {
       setIsSheetOpen(true);
     }
   }, [isDockedViewport]);
 
   const closeSidebar = useCallback(
-    ({ shouldRemember = true } = {}) => {
+    () => {
       pendingFocus.current = 'toggle';
       if (isDockedViewport) {
         setDockPreference('collapsed');
-        if (shouldRemember) writeStoredValue(browserStorage(), STORAGE_KEYS.dock, 'collapsed');
       } else {
         setIsSheetOpen(false);
       }

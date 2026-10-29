@@ -37,6 +37,7 @@ import { createMessageViewport } from "../chat/messageViewport";
 import { useTyping } from "../chat/useTyping";
 import PrivateMessages from "../chat/PrivateMessages";
 import { usePrivateInbox, muted } from "../chat/usePrivateInbox";
+import { initialChatSelection } from "../chat/chatSidebarState";
 
 function Glyph({ name }: { name: string }) {
   const paths: Record<string, string> = {
@@ -129,12 +130,7 @@ export default function Community({
   const [capabilities, setCapabilities] = useState<Capabilities | null>(null),
     [account, setAccount] = useState<Account | null>(null);
   const [privateSelection, setPrivateSelection] = useState<string | null>(
-    () => {
-      const value = new URLSearchParams(window.location.search).get("dm");
-      return value === "inbox" || (value && /^[a-f0-9-]{36}$/.test(value))
-        ? value
-        : null;
-    },
+    () => initialChatSelection(window.location.search, embedded).dm,
   );
   useEffect(() => {
     if (capabilities && !capabilities.privateMessages)
@@ -166,21 +162,18 @@ export default function Community({
     setMobileNav(false);
   }
   useEffect(() => {
-    const url = new URL(window.location.href);
-    if (privateSelection) url.searchParams.set("dm", privateSelection);
-    else url.searchParams.delete("dm");
-    window.history.replaceState(window.history.state, "", url);
+    if (!embedded) {
+      const url = new URL(window.location.href);
+      if (privateSelection) url.searchParams.set("dm", privateSelection);
+      else url.searchParams.delete("dm");
+      window.history.replaceState(window.history.state, "", url);
+    }
     onPrivateChange?.(privateSelection);
-  }, [privateSelection, onPrivateChange]);
+  }, [embedded, privateSelection, onPrivateChange]);
   const [channels, setChannels] = useState<Channel[]>([]),
-    [channelId, setChannelId] = useState(() => {
-      const requested = new URLSearchParams(window.location.search).get(
-        "channel",
-      );
-      return requested && /^[A-Za-z0-9_-]{1,100}$/.test(requested)
-        ? requested
-        : "lobby";
-    });
+    [channelId, setChannelId] = useState(
+      () => initialChatSelection(window.location.search, embedded).channel,
+    );
   const [query, setQuery] = useState(""),
     [channelQuery, setChannelQuery] = useState(""),
     [draft, setDraft] = useState(""),
@@ -336,17 +329,19 @@ export default function Community({
     return () => window.removeEventListener("storage", syncDraft);
   }, [draftStorage]);
   useEffect(() => {
-    const url = new URL(window.location.href);
-    url.searchParams.set("channel", channelId);
-    window.history.replaceState(
-      window.history.state,
-      "",
-      url.pathname + url.search + url.hash,
-    );
+    if (!embedded) {
+      const url = new URL(window.location.href);
+      url.searchParams.set("channel", channelId);
+      window.history.replaceState(
+        window.history.state,
+        "",
+        url.pathname + url.search + url.hash,
+      );
+    }
     onChannelChange?.(channelId);
     historyAnchor.current = null;
     setReactionMenu(null);
-  }, [channelId, onChannelChange]);
+  }, [embedded, channelId, onChannelChange]);
   useLayoutEffect(() => {
     const input = draftRef.current;
     if (!input) return;

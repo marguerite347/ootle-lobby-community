@@ -12,6 +12,10 @@ This implementation puts the working community chat in the Lobby's existing righ
 
 The UI starts with the most recent 100 top-level messages and loads earlier history with timestamp-and-ID cursors (including tied timestamps). Threads independently retrieve their parent and paginated replies. Six server-owned reaction choices use per-account set/unset operations; counts and the viewer's own selection refresh with messages and persist across reloads. Chatscope 2.1.1 supplies message, date-separator and typing display primitives, with styles 1.4.0; upstream MIT notices are served at `/chat-notices.txt`. The existing plain-text textarea retains IME handling and local drafts, and the tested viewport state retains scroll/unread behavior. Attachments, edits, browser notifications, cross-device draft/unread synchronization, and an always-available bot responder remain follow-up work. Private channels and membership currently require operator provisioning; no public channel-creation UI is enabled.
 
+## Fresh page behavior
+
+The embedded sidebar starts collapsed in the Lobby on each full page load and pathname navigation. Its open state is kept only within the current page; conversation, search and thread selections are reset for the next page. A normal embedded visit ignores old `channel`/`dm` parameters and does not write its selections into the page URL. Explicit `?chat=open` links and standalone `/chat` links still honor their destination. Closing and reopening within one page retains the current conversation. Guest identity, saved drafts, encrypted messaging keys and shared message history are retained.
+
 ## Optional private conversations
 
 Contact requests and encrypted one-to-one messages use the existing sidebar and pop-out. Public guests need no messaging key or wallet. See [private-message architecture, storage limits and activation](PRIVATE_MESSAGES.md). The feature is separately gated by `CHAT_PRIVATE_ENABLED=1`; private channels in the existing channel service are a different feature and are not end-to-end encrypted.
