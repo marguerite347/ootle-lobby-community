@@ -8,5 +8,7 @@
   "inviteUrl": "https://discord.gg/tari",
   "expiresAt": "2026-11-02T00:00:00-05:00",
   "voteClosesAt": "2026-10-31T18:00:00-04:00",
-  "announcementUrl": "https://discord.com/channels/892738558316662855/893157378789351475/1564658377647464551"
+  "announcementUrl": "https://discord.com/channels/892738558316662855/893157378789351475/1564658377647464551",
+  "calendarUpdatedAt": "2026-10-29T22:00:00Z",
+  "calendarSequence": 0
 }

@@ -25,9 +25,11 @@ describe('game night announcement lifecycle',()=>{
 });
 
 describe('shared banner expiry',()=>{
+ const game={...event,expiresAt:'2026-11-02T05:00Z'};
+ const show={enabled:true,endsAt:'2026-11-03T19:00Z'};
  it('keeps the show after game night ends, and retires both after the show',()=>{
-  expect(communityBannerState(Date.parse('2026-10-29T22:00Z'))).toEqual({gameVisible:true,showVisible:true,count:2});
-  expect(communityBannerState(Date.parse('2026-11-02T05:00Z'))).toEqual({gameVisible:false,showVisible:true,count:1});
-  expect(communityBannerState(Date.parse('2026-11-03T19:00Z'))).toEqual({gameVisible:false,showVisible:false,count:0});
+  expect(communityBannerState(Date.parse('2026-10-29T22:00Z'),game,show)).toEqual({gameVisible:true,showVisible:true,count:2});
+  expect(communityBannerState(Date.parse('2026-11-02T05:00Z'),game,show)).toEqual({gameVisible:false,showVisible:true,count:1});
+  expect(communityBannerState(Date.parse('2026-11-03T19:00Z'),game,show)).toEqual({gameVisible:false,showVisible:false,count:0});
  });
 });

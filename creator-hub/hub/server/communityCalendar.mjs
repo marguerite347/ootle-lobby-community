@@ -19,16 +19,16 @@ export function foldCalendarLine(value) {
 export function communityCalendar(gameNight=game,tariShow=show) {
   const events=[];
   if(gameNight.enabled && gameNight.game && Number.isFinite(Date.parse(gameNight.startsAt))) events.push({
-    id:gameNight.id,title:'Tari Community Game Night',start:gameNight.startsAt,
+    id:gameNight.id,updatedAt:gameNight.calendarUpdatedAt,sequence:gameNight.calendarSequence,title:'Tari Community Game Night',start:gameNight.startsAt,
     location:`${gameNight.channelName} voice · Tari Discord`,url:gameNight.channelUrl,
     description:`Come play, chat, or just watch.\n${gameNight.game}.\nJoin Game Streams and select Join Voice: ${gameNight.channelUrl}\nNew to Tari? ${gameNight.inviteUrl}\nThe end time has not been announced.`
   });
   if(tariShow.enabled && Number.isFinite(Date.parse(tariShow.startsAt)) && Date.parse(tariShow.endsAt)>Date.parse(tariShow.startsAt)) events.push({
-    id:tariShow.id,title:'The Tari Show',start:tariShow.startsAt,end:tariShow.endsAt,
+    id:tariShow.id,updatedAt:tariShow.calendarUpdatedAt,sequence:tariShow.calendarSequence,title:'The Tari Show',start:tariShow.startsAt,end:tariShow.endsAt,
     location:`${tariShow.channelName} · Tari Discord`,url:tariShow.inviteUrl,
     description:`Don't ghost the Tari Show. Bring your questions.\nJoin the Stage channel in Tari Discord: ${tariShow.inviteUrl}`
   });
   const lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Tari//Community Events//EN','CALSCALE:GREGORIAN','METHOD:PUBLISH','X-WR-CALNAME:Tari community','NAME:Tari community',`URL:${COMMUNITY_CALENDAR_URL}`];
-  for(const event of events) lines.push('BEGIN:VEVENT',`UID:${escapeText(event.id)}@lobby.tari.com`,'DTSTAMP:20261029T220000Z','SEQUENCE:0',`DTSTART:${utc(event.start)}`,...(event.end?[`DTEND:${utc(event.end)}`]:[]),`SUMMARY:${escapeText(event.title)}`,`DESCRIPTION:${escapeText(event.description)}`,`LOCATION:${escapeText(event.location)}`,`URL:${event.url}`,'STATUS:CONFIRMED','TRANSP:TRANSPARENT','BEGIN:VALARM','TRIGGER:-PT15M','ACTION:DISPLAY',`DESCRIPTION:${escapeText(event.title)}`,'END:VALARM','END:VEVENT');
+  for(const event of events) lines.push('BEGIN:VEVENT',`UID:${escapeText(event.id)}@lobby.tari.com`,`DTSTAMP:${utc(event.updatedAt||'2026-10-29T22:00:00Z')}`,`SEQUENCE:${Number.isSafeInteger(event.sequence)&&event.sequence>=0?event.sequence:0}`,`DTSTART:${utc(event.start)}`,...(event.end?[`DTEND:${utc(event.end)}`]:[]),`SUMMARY:${escapeText(event.title)}`,`DESCRIPTION:${escapeText(event.description)}`,`LOCATION:${escapeText(event.location)}`,`URL:${event.url}`,'STATUS:CONFIRMED','TRANSP:TRANSPARENT','BEGIN:VALARM','TRIGGER:-PT15M','ACTION:DISPLAY',`DESCRIPTION:${escapeText(event.title)}`,'END:VALARM','END:VEVENT');
   return [...lines,'END:VCALENDAR'].map(foldCalendarLine).join('\r\n')+'\r\n';
 }
