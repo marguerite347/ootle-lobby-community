@@ -1,15 +1,12 @@
 .lobby-updates {margin-block:0 1rem;}
-.lobby-newsletter {border-bottom:1px solid #b7a6cd35;}
-.lobby-newsletter summary {display:flex;align-items:center;gap:1rem;min-height:2.75rem;padding:.25rem 0;cursor:pointer;list-style:none;}
+.lobby-newsletter {position:relative;flex:none;}
+.lobby-newsletter summary {display:flex;align-items:center;min-height:2.75rem;cursor:pointer;list-style:none;}
 .lobby-newsletter summary::-webkit-details-marker {display:none;}
-.lobby-newsletter summary>span:first-child {display:flex;flex-direction:column;gap:.125rem;min-width:0;}
-.lobby-newsletter strong {font-size:.875rem;color:#eeeaff;}
-.lobby-newsletter summary>span:first-child>span {font-size:.8125rem;color:#bfb8d2;}
-.newsletter-toggle {display:flex;align-items:center;justify-content:center;flex-shrink:0;min-height:2.25rem;padding:0 .75rem;border-radius:.5rem;background:var(--season-lime,#c9eb00);font-size:.8125rem;font-weight:600;color:#151128;white-space:nowrap;}
+.newsletter-toggle {display:flex;align-items:center;justify-content:center;flex-shrink:0;box-sizing:border-box;min-width:11.125rem;min-height:2.25rem;padding:0 .75rem;border-radius:.5rem;background:var(--season-lime,#c9eb00);font-size:.8125rem;font-weight:600;color:#151128;white-space:nowrap;}
 .lobby-newsletter summary:hover .newsletter-toggle {background:#ddf65c;}
 .lobby-newsletter[open] .newsletter-toggle {background:#c9b6ff12;color:#d6ee53;}
 .lobby-newsletter[open] summary:hover .newsletter-toggle {background:#c9b6ff25;}
-.lobby-newsletter-form {max-width:36rem;padding:.5rem 0 1rem;}
+.lobby-newsletter-form {position:absolute;z-index:1;top:calc(100% + .5rem);right:0;box-sizing:border-box;width:min(24rem,calc(100vw - 2.5rem));padding:1rem;border:1px solid #c9b6ff50;border-radius:.75rem;background:#151128;box-shadow:0 .75rem 2rem #04072380;}
 .lobby-newsletter .subscribe-form p,.lobby-newsletter .subscribe-form label {font-size:.875rem;}
 .lobby-newsletter .subscribe-form input[type=email] {font-size:1rem;min-height:2.75rem;box-sizing:border-box;}
 .lobby-newsletter .subscribe-form .signup-option {min-height:2.75rem;font-size:.875rem;}
@@ -50,14 +47,9 @@
 .community-calendar-options a:first-child {background:#c9eb00;color:#151128;border-color:#c9eb00;}
 .community-banner .community-calendar-note {font-size:.75rem;color:#bfb8d2;}
 @media(max-width:759px) {
-  .lobby-newsletter summary {display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.125rem .5rem;}
-  .lobby-newsletter summary>span:first-child {display:contents;}
-  .lobby-newsletter strong {grid-row:1;grid-column:1;}
-  .lobby-newsletter summary>span:first-child>span {grid-row:2;grid-column:1 / -1;}
-  .newsletter-toggle {grid-row:1;grid-column:2;font-size:.75rem;padding-inline:.625rem;}
+  .newsletter-toggle {min-width:10.125rem;font-size:.75rem;padding-inline:.625rem;}
 }
 @media(min-width:760px) {
-  .lobby-newsletter summary>span:first-child {flex-direction:row;align-items:baseline;gap:.75rem;flex-wrap:wrap;}
   .community-banner {padding:1.5rem 1.5rem .75rem;}
   .community-event-pair {grid-template-columns:1fr 1fr;gap:1.5rem;}
   .community-event {grid-template-columns:6rem minmax(0,1fr);gap:.875rem;}
