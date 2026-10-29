@@ -1,0 +1,41 @@
+{
+  "slug": "tari-agent-registry",
+  "title": "Tari Agent Registry",
+  "summary": "Community-maintained registry of Tari-themed skills, agents and MCP servers, published through TariTracker. October 29 inspection of the AI Resources section showed four packages with source links and declared permissions. Packages use manifests, pull-request checks and maintainer review; these are not independent security certification. One development skill declares wallet signing/spending permissions, so installing a package is a separate decision from reading its listing. MIT registry at v1.0.0; no package was installed or executed. The recording walks through repository documentation. TariTracker is an independent community service, not an official Tari agent service.",
+  "cardSummary": "Find community Tari skills, agents and MCP servers with source downloads, declared permissions and contribution guidelines.",
+  "cardStatus": "Community directory",
+  "creator": "_squared",
+  "sourceUrl": "https://community.tari.com/t/are-you-building-things-on-ai-looking-for-tari-mcp-and-ai-skills-want-to-share-your-work-check-out-the-tari-agent-registry/491/1",
+  "publishedAt": "2026-10-28T03:46:15.639Z",
+  "repoUrl": "https://github.com/kstrycharz/tari-agent-registry",
+  "demoUrl": "https://taritracker.com/#ai-tools",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Python · JSON · MIT",
+      "sourceUrl": "https://github.com/kstrycharz/tari-agent-registry"
+    }
+  ],
+  "sourceLabel": "Original post",
+  "publicationBasis": "Timestamp of the creator’s forum announcement.",
+  "publicationLabel": "Announced",
+  "publicationUrl": "https://community.tari.com/t/are-you-building-things-on-ai-looking-for-tari-mcp-and-ai-skills-want-to-share-your-work-check-out-the-tari-agent-registry/491/1",
+  "forum": {
+    "url": "https://community.tari.com/t/are-you-building-things-on-ai-looking-for-tari-mcp-and-ai-skills-want-to-share-your-work-check-out-the-tari-agent-registry/491/1",
+    "topicId": 491,
+    "postNumber": 1,
+    "scope": "topic"
+  },
+  "resourceIds": [
+    "tari-ootle:component:tari-agent-registry"
+  ],
+  "media": {
+    "image": "/previews/community/resource-tari-agent-registry-20261029.jpg",
+    "video": "/previews/community/resource-tari-agent-registry-20261029.mp4",
+    "label": "Source/docs walkthrough — registry README; no installation",
+    "sourceUrl": "https://github.com/kstrycharz/tari-agent-registry#readme",
+    "capturedAt": "2026-10-29T10:28:39.282Z",
+    "reviewedAt": "2026-10-29T10:42:32.590094+00:00",
+    "sha256": "9a1d6ebf510899ec59af24fd23d7508506ee6b6a5fb5981c1d14a7536b30c458"
+  }
+}

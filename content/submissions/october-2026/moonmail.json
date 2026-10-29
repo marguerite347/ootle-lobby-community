@@ -1,0 +1,29 @@
+{
+  "slug": "moonmail",
+  "title": "MoonMail",
+  "summary": "Browser mailbox for encrypted Ootle letters, recoverable Inbox/Sent and encrypted preferences; it does not send ordinary email. October 29 landing and privacy pages loaded. Sapient private-view access is a separate account-wide grant that can expose other resources’ private amounts and memos; spending still needs approval. Public postbox identities, signers, timing, fees and size buckets remain observable, and historical mailbox-key compromise has no forward-secrecy protection. Private payment requests use three approvals with non-atomic transfer and receipt delivery. Public/link gifts expose vault amounts and have no expiry or sender refund; complete private links grant bearer access. The README separates historical funded tests from current read-only recovery and local tests. The recording shows public privacy documentation, not mail delivery or a payment. MIT source; no wallet grant or transaction exercised.",
+  "cardSummary": "Exchange encrypted letters between Ootle postboxes and recover conversations, sent mail and saved settings through Sapient.",
+  "cardStatus": "Web app · Testnet · Sapient",
+  "creator": "SealClubber",
+  "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/33",
+  "publishedAt": "2026-10-29T00:03:01.603Z",
+  "updatedAt": "2026-10-29T00:03:01.603Z",
+  "sourceContentSha256": "c5d71b9de676278204afdc999caf43c8bad7f892cdffa3b2df623990824fb1d3",
+  "repoUrl": "https://github.com/Seal-Clubber/MoonMail",
+  "demoUrl": "https://seal-clubber.github.io/MoonMail/",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "React · Rust · MIT",
+      "sourceUrl": "https://github.com/Seal-Clubber/MoonMail"
+    }
+  ],
+  "recording": {
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-moonmail-20261029.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-moonmail-20261029.png",
+    "capturedAt": "2026-10-29T10:10:08.751Z",
+    "sourceRevision": "dbf816853e811f7581151202192b952f4d40ad3b",
+    "kind": "public-page",
+    "credit": "Docs walkthrough — Public privacy page; no mailbox grant, letter delivery or payment."
+  }
+}

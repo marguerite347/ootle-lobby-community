@@ -1,0 +1,29 @@
+{
+  "slug": "cursed-pumpkin",
+  "title": "The Cursed Pumpkin",
+  "summary": "Stealth-resource hot-potato game with sealed guesses and an epoch-timed holder reveal. The public browser replays the creator’s October 28 four-player Esmeralda game and links each of 23 recorded transactions; October 29 inspection confirmed replay steps advance. A separate live view and Sapient ownership-check tab are provided. Playing new games uses the Python client and testnet bonds; the browser replay is not a new multiplayer match. Timing, pass counts, the host’s first hop, off-chain information and the final revealed holder remain observable. A holder who never reveals causes partial bond refunds. MIT source reviewed; no wallet access, ownership signing or payments were performed.",
+  "cardSummary": "Replay a secret hot-potato game and compare public transaction clues with the hidden route of its single pumpkin.",
+  "cardStatus": "Replay demo · Testnet",
+  "creator": "iammzee",
+  "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/32",
+  "publishedAt": "2026-10-28T20:07:16.080Z",
+  "updatedAt": "2026-10-28T20:07:16.080Z",
+  "sourceContentSha256": "9b2f26881a1c8134ed036d457da85e1f47e91d761c019fc01c2103680f9e1504",
+  "repoUrl": "https://github.com/Mzee04/cursed-pumpkin",
+  "demoUrl": "https://mzee04.github.io/cursed-pumpkin/",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust · Python · MIT",
+      "sourceUrl": "https://github.com/Mzee04/cursed-pumpkin"
+    }
+  ],
+  "recording": {
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-cursed-pumpkin-20261029.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-cursed-pumpkin-20261029.png",
+    "capturedAt": "2026-10-29T10:09:51.803Z",
+    "sourceRevision": "5858ddfd31e36ad961379aff379e1618240619bc",
+    "kind": "public-page",
+    "credit": "App demo — Interactive replay of the creator’s recorded October 28 testnet game; no new transactions."
+  }
+}
