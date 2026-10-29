@@ -24,3 +24,8 @@ test('Kickstarter and document templates are not playable starters; parenthesize
  const rows=parseList('## Learning\n- [Math](https://example.com/Math_(game))',{});
  assert.equal(rows[0].url,'https://example.com/Math_(game)');
 });
+
+test('imports actual source descriptions and leaves missing descriptions explicit',()=>{
+ const rows=parseList('## Audio\n- [Wave](https://example.com/wave) - Edit audio clips and export loops.\n- [Guide](https://example.com/guide)',{});
+ assert.equal(rows[0].description,'Edit audio clips and export loops.');assert.equal(rows[1].description,'');
+});

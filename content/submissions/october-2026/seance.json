@@ -1,7 +1,7 @@
 {
   "slug": "seance",
   "title": "Séance",
-  "summary": "Sealed group polls with anonymous eligibility, replaceable ballots and scheduled reveal. October 23 browser inspection cast a local Treat ballot, rejected an outsider and revealed a 0/1/0 tally; the page also read two historical Esmeralda polls and displayed matching recomputed hashes. The local browser exercise creates no chain transaction. The recorded clip tours this public interface. Prior pinned Radicle source is retained; current repository head was not established. Fee-pot contributions cannot be withdrawn. Receipt loss prevents counting; revealed choices and timing/funding links can expose information. MIT source, Esmeralda testnet.",
+  "summary": "Sealed group polls with anonymous eligibility, replaceable ballots and scheduled reveal. October 23 browser inspection cast a local Treat ballot, rejected an outsider and revealed a 0/1/0 tally; the page also read two historical Esmeralda polls and displayed matching recomputed hashes. The local browser exercise creates no chain transaction. The recorded clip tours this public interface. October 29 Radicle review identified current source a1ef9667b34ba8a009ee850ecd23df22bbf2565e and Made by DevX branding; earlier recording remains dated to its original source revision. Fee-pot contributions cannot be withdrawn. Receipt loss prevents counting; revealed choices and timing/funding links can expose information. MIT source, Esmeralda testnet.",
   "cardSummary": "Create sealed group polls with anonymous eligibility, replaceable ballots and a scheduled reveal of choices.",
   "cardStatus": "Browser demo · Testnet · Fee-pot deposits irreversible",
   "creator": "DevXTools",

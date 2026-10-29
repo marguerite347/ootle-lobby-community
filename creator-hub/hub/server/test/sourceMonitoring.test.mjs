@@ -43,6 +43,25 @@ test('new demo or release evidence queues copy, actions and recordings; unchange
  assert.equal(unchanged.lastSuccessfulReviewAt,first);assert.equal(unchanged.outcome,'unchanged');
  const changed=recordCatalogReview(baseline,{attemptedAt:next,observations:[{url,hash:'release-v2-with-demo',demoUrl:'https://example.com/demo'}],complete:true});
  assert.equal(changed.lastSuccessfulReviewAt,first);assert.equal(changed.reviewRequired,true);assert.deepEqual(changed.reviewQueue,['copy','actions','details','recording','provenance']);
- const failed=recordCatalogReview(changed,{attemptedAt:next,observations:[{url,error:'HTTP 403'}],reviewed:true,complete:true});
+ const failed=recordCatalogReview(changed,{attemptedAt:next,observations:[{url,error:'HTTP 403',failureKind:'http',evidence:'failed-read.json',nextAction:'Retry tomorrow'}],reviewed:true,complete:true});
  assert.equal(failed.lastSuccessfulReviewAt,first);assert.equal(failed.sourceReviews[url].hash,'release-v2-with-demo');assert.equal(failed.outcome,'blocked');
+});
+
+test('unattempted and missing sources cannot be passed off as blocked or complete',async()=>{
+ const {recordCatalogReview}=await import('../sourceMonitoring.mjs');
+ const a='https://example.com/a',b='https://example.com/b',date='2026-10-29T12:00:00Z';
+ const previous={sources:[a,b],lastSuccessfulReviewAt:'2026-10-28T12:00:00Z',sourceReviews:{[b]:{lastAttemptAt:'2026-10-28T12:00:00Z'}}};
+ assert.throws(()=>recordCatalogReview(previous,{attemptedAt:date,observations:[{url:b,error:'Not read in this run'}]}),/unfinished work is pending/);
+ const result=recordCatalogReview(previous,{attemptedAt:date,observations:[{url:a,hash:'a'}],reviewed:true,complete:true});
+ assert.equal(result.outcome,'pending');assert.deepEqual(result.pendingReviewSources,[b]);assert.equal(result.lastSuccessfulReviewAt,previous.lastSuccessfulReviewAt);
+ const pending=recordCatalogReview(previous,{attemptedAt:date,observations:[{url:b,status:'pending'}]});
+ assert.equal(pending.sourceReviews[b].lastAttemptAt,previous.sourceReviews[b].lastAttemptAt);
+});
+test('superseded URLs retain failure history and require a reviewed replacement',async()=>{
+ const {recordCatalogReview}=await import('../sourceMonitoring.mjs');
+ const old='https://old.test',current='https://new.test',date='2026-10-29T12:00:00Z';
+ const previous={sources:[old,current],sourceReviews:{[old]:{hash:'last-good',error:'HTTP 404',lastSuccessfulReadAt:'2026-10-20T00:00:00Z'}},supersededSources:{[old]:{replacementUrl:current,evidence:'creator-announcement.json',reason:'Creator moved the demo'}}};
+ const result=recordCatalogReview(previous,{attemptedAt:date,observations:[{url:current,hash:'new',attemptedAt:'2026-10-29T11:00:00Z'}],reviewed:true,complete:true});
+ assert.equal(result.outcome,'reviewed');assert.deepEqual(result.sourceReviews[old],previous.sourceReviews[old]);assert.equal(result.sourceReviews[current].lastSuccessfulReadAt,'2026-10-29T11:00:00Z');
+ const missing=recordCatalogReview(previous,{attemptedAt:date,observations:[{url:old,hash:'old'}],reviewed:true,complete:true});assert.equal(missing.outcome,'pending');
 });
