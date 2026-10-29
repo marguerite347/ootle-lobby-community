@@ -323,9 +323,9 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 
 **configuration-required** — GET /community/events.ics; shared community banner calendar options
 
-**Current:** A public read-only iCalendar feed contains the configured game night and Tari Show, stable event UIDs, UTC timestamps and 15-minute display alarms. Google and Apple subscription links point to the same feed; a download imports both events into other compatible calendars. Calendar confirmation and notification settings remain controlled by the visitor. No OAuth access or private calendar data is requested.
+**Current:** A public read-only iCalendar feed contains the configured game night and Tari Show, stable event UIDs, UTC timestamps and 15-minute display alarms. Google and Apple subscription links point to the same feed; a download imports both events into other compatible calendars. Calendar confirmation and notification settings remain controlled by the visitor. No OAuth access or private calendar data is requested. Event-specific calendarUpdatedAt and calendarSequence fields support schedule updates without changing an existing event UID. The local hourly Discord watch is configured separately in Codex.
 
-**Remaining:** Keep both public event configurations current when schedules change; increment the calendar sequence and timestamp for revisions. Verify provider handoffs against the deployed feed. No automatic sync with private calendars, all-account insertion, or guaranteed provider notifications is claimed.
+**Remaining:** Run the local hourly announcement watch with the Mac awake and Codex running. Keep event configurations and source evidence current; preserve an instance UID and increment its calendarSequence and calendarUpdatedAt when revised. No always-on cloud monitor, private calendar writes, all-account insertion or guaranteed provider notification delivery is claimed.
 
 **Completion check:** Fetch the production calendar, parse both dates through the DST change, verify Google subscription confirmation and Apple calendar handoff or import, download the same file, and verify desktop/mobile banner and dismissal.
 

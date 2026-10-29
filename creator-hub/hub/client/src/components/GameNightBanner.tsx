@@ -16,9 +16,9 @@ export function gameNightDismissalKey(event:GameNight) {
   // A changed schedule or lineup gets a fresh announcement, even for returning visitors.
   return `tari-game-night:${event.id}:${event.game}:${event.startsAt}:${event.expiresAt}`;
 }
-export function communityBannerState(now:number) {
-  const gameVisible=gameNightStatus(event,now).visible;
-  const showVisible=show.enabled && now<Date.parse(show.endsAt);
+export function communityBannerState(now:number,gameEvent:GameNight=event,showEvent:{enabled:boolean;endsAt:string}=show) {
+  const gameVisible=gameNightStatus(gameEvent,now).visible;
+  const showVisible=showEvent.enabled && now<Date.parse(showEvent.endsAt);
   return {gameVisible,showVisible,count:Number(gameVisible)+Number(showVisible)};
 }
 function EventTime({value}:{value:string}) {
@@ -58,7 +58,7 @@ export default function GameNightBanner() {
     </div>
     <div className="community-banner-actions">
       <a className="community-discord" href={event.inviteUrl} target="_blank" rel="noreferrer">Join us on Discord</a>
-      <button className="community-calendar-button" type="button" onClick={()=>calendarDialog.current?.showModal()}>{count===2?'Add both to calendar':'Add to calendar'}</button>
+      <button className="community-calendar-button" type="button" onClick={()=>calendarDialog.current?.showModal()}>Add to calendar</button>
     </div>
     <button type="button" className="community-dismiss" aria-label="Dismiss community events banner" onClick={()=>{setDismissed(true);try{localStorage.setItem(key,'dismissed');}catch{/* Dismiss for this visit when storage is blocked. */}}}><span aria-hidden="true">×</span></button>
     <dialog ref={calendarDialog} className="community-calendar-dialog" aria-labelledby="community-calendar-title" onClick={e=>{if(e.target===e.currentTarget)e.currentTarget.close();}}>
