@@ -1,13 +1,13 @@
-.lobby-updates {margin-block:1rem 1.5rem;}
-.lobby-newsletter {border-block:1px solid #b7a6cd35;}
-.lobby-newsletter summary {display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.5rem 1.5rem;min-height:4.5rem;padding:.75rem 0;cursor:pointer;list-style:none;}
+.lobby-updates {margin-block:0 1rem;}
+.lobby-newsletter {border-bottom:1px solid #b7a6cd35;}
+.lobby-newsletter summary {display:flex;align-items:center;gap:1rem;min-height:2.75rem;padding:.25rem 0;cursor:pointer;list-style:none;}
 .lobby-newsletter summary::-webkit-details-marker {display:none;}
-.lobby-newsletter summary>span:first-child {display:flex;flex-direction:column;gap:.25rem;}
-.lobby-newsletter strong {font-size:1rem;color:#eeeaff;}
-.lobby-newsletter summary>span:first-child>span {font-size:.875rem;color:#bfb8d2;}
-.newsletter-toggle {display:flex;align-items:center;gap:1rem;min-height:2.75rem;font-size:.875rem;font-weight:600;color:#d6ee53;}
-.newsletter-toggle>span {font-size:1.5rem;}
-.lobby-newsletter-form {max-width:36rem;padding:1rem 0 1.5rem;}
+.lobby-newsletter summary>span:first-child {display:flex;flex-direction:column;gap:.125rem;min-width:0;}
+.lobby-newsletter strong {font-size:.875rem;color:#eeeaff;}
+.lobby-newsletter summary>span:first-child>span {font-size:.8125rem;color:#bfb8d2;}
+.newsletter-toggle {display:flex;align-items:center;flex-shrink:0;gap:.5rem;font-size:.8125rem;font-weight:600;color:#d6ee53;white-space:nowrap;}
+.newsletter-toggle>span {font-size:1.25rem;}
+.lobby-newsletter-form {max-width:36rem;padding:.5rem 0 1rem;}
 .lobby-newsletter .subscribe-form p,.lobby-newsletter .subscribe-form label {font-size:.875rem;}
 .lobby-newsletter .subscribe-form input[type=email] {font-size:1rem;min-height:2.75rem;box-sizing:border-box;}
 .lobby-newsletter .subscribe-form .signup-option {min-height:2.75rem;font-size:.875rem;}
@@ -56,8 +56,7 @@
   .game-night-vote {grid-column:1/-1;}
 }
 @media(min-width:760px) {
-  .lobby-newsletter summary>span:first-child {flex-direction:row;align-items:baseline;gap:1rem;flex-wrap:wrap;}
-  .lobby-newsletter-form {margin-left:auto;}
+  .lobby-newsletter summary>span:first-child {flex-direction:row;align-items:baseline;gap:.75rem;flex-wrap:wrap;}
 }
 @media(min-width:1040px) {
   .game-night-banner {grid-template-columns:minmax(11rem,.9fr) minmax(0,1.5fr) minmax(15rem,1fr);grid-template-areas:"art copy join";gap:1.5rem;padding:1.25rem 2.5rem 1.25rem 1.5rem;}
