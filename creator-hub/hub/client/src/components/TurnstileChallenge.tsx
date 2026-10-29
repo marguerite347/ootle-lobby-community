@@ -1,5 +1,5 @@
 // INTEGRATION_GAP[CFG-SUBSCRIPTIONS] (configuration-required): see docs/DEVELOPMENT_GAPS.md#cfg-subscriptions.
-import {useEffect, useRef} from 'react';
+import {useEffect, useRef, useState} from 'react';
 
 type Turnstile = {
   render: (container:HTMLElement, options:Record<string,unknown>) => string;
@@ -28,14 +28,22 @@ export default function TurnstileChallenge({siteKey,resetKey,onToken,onError}:{
   siteKey:string;resetKey:number;onToken:(token:string)=>void;onError:(message:string)=>void;
 }) {
   const container = useRef<HTMLDivElement>(null);
+  const [size,setSize] = useState<'compact'|'flexible'|null>(null);
   useEffect(() => {
+    if (!container.current) return;
+    const observer = new ResizeObserver(([entry]) => setSize(entry.contentRect.width < 300 ? 'compact' : 'flexible'));
+    observer.observe(container.current);
+    return () => observer.disconnect();
+  },[]);
+  useEffect(() => {
+    if (!size) return;
     let active = true, widget:string|undefined, api:Turnstile|undefined;
     onToken('');
     loadTurnstile().then(turnstile => {
       if (!active || !container.current) return;
       api = turnstile;
       widget = api.render(container.current, {
-        sitekey:siteKey, theme:'dark', size:'flexible',
+        sitekey:siteKey, theme:'dark', size,
         callback:(token:string) => { if (active) { onToken(token); onError(''); } },
         'expired-callback':() => { if (active) onToken(''); },
         'error-callback':() => { if (active) { onToken(''); onError('Verification failed. Please retry.'); } return true; },
@@ -43,6 +51,6 @@ export default function TurnstileChallenge({siteKey,resetKey,onToken,onError}:{
       });
     }).catch(() => { if (active) onError('Verification could not load. Please retry.'); });
     return () => { active = false; if (widget !== undefined) api?.remove(widget); };
-  },[siteKey,resetKey,onToken,onError]);
+  },[siteKey,resetKey,onToken,onError,size]);
   return <div ref={container} aria-label="Email signup verification" style={{minHeight:65,maxWidth:'100%'}}/>;
 }
