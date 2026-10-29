@@ -24,6 +24,7 @@ const equal = (a, b) =>
 export function createCommunityRouter({
   store,
   origin,
+  additionalOrigins = [],
   oauth,
   invites,
   guests,
@@ -35,6 +36,14 @@ export function createCommunityRouter({
   const router = Router(),
     configured = !!store;
   const safeOrigin = origin ? new URL(origin).origin : null;
+  // Explicit deployed aliases only. Never derive trust from Host or enable CORS.
+  const safeOrigins = new Set([safeOrigin]);
+  for (const value of additionalOrigins) {
+    const url = new URL(value);
+    if (url.protocol !== 'https:' || url.origin !== value)
+      throw new Error('Additional chat origins must be exact HTTPS origins.');
+    safeOrigins.add(value);
+  }
   if (
     preview &&
     (process.env.VERCEL ||
@@ -91,7 +100,7 @@ export function createCommunityRouter({
   router.use((req, res, next) => {
     if (
       !["GET", "HEAD", "OPTIONS"].includes(req.method) &&
-      (req.get("origin") !== safeOrigin || req.get("x-ootle-chat") !== "1")
+      (!safeOrigins.has(req.get("origin")) || req.get("x-ootle-chat") !== "1")
     )
       return res
         .status(403)

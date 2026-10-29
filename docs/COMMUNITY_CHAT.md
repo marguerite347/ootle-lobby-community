@@ -39,7 +39,8 @@ Configure only on the intended environment:
 | `CHAT_ENABLED=1` | Explicitly enables the new service. Omit to keep it closed. |
 | `CHAT_DATABASE_URL` | Server-only TLS database connection. |
 | `CHAT_DATABASE_CA` | Optional provider CA certificate in PEM form. Certificate verification is always required. |
-| `CHAT_PUBLIC_ORIGIN` | Exact HTTPS origin; no wildcard origins. |
+| `CHAT_PUBLIC_ORIGIN` | Primary HTTPS origin for sign-in callbacks; no wildcard origins. |
+| `CHAT_ADDITIONAL_ORIGINS` | Comma-separated exact HTTPS origins for explicitly operated aliases, such as `https://lobby.tari.com`. Does not enable CORS or move browser keys. |
 | `CHAT_GUESTS_ENABLED=1` | Enables automatic guest joining with generated names; off unless explicitly enabled. |
 | `CHAT_GUEST_SECRET` | Server-only random key for hashing guest join rate-limit buckets. |
 | `CHAT_INVITES_ENABLED=1` | Enables optional single-use invitations, including owner access. |
@@ -113,3 +114,7 @@ Reused the Lobby's React/Vite shell, Poppins assets, Express security headers an
 The guest follow-up reuses the verified store, cookie/session boundary, existing schema, and the deployment-scoped Supabase/Vercel test setup. A focused HTTP trial passed two name-only joins, message exchange, session reuse and expiry, CSRF rejection, ignored forged roles/identities, private-channel denial and join quotas before UI work. No new provider or dependency was added.
 
 The automatic-name follow-up reuses the guest session endpoint and account schema. The focused trial proved generated-name joins, same-session reuse, custom and randomized names, unchanged roles/quotas, preserved historical author labels, cross-account rejection and blocked-session rejection. Client tests cover concurrent mounts sharing one join, the cross-tab lock, and retry after a failed join.
+
+## Custom-domain rollout (October 29, 2026)
+
+The new visitor URL is `https://lobby.tari.com/`. Set `CHAT_ADDITIONAL_ORIGINS=https://lobby.tari.com` while retaining the original `CHAT_PUBLIC_ORIGIN=https://ootle-lobby-preview.vercel.app`. Both exact origins can join and post with the existing custom-header and session checks. Keep the older origin reachable: private-message keys live in its browser storage and are not migrated by a domain change. Public history uses the same existing database. `PUBLIC_SITE_URL=https://lobby.tari.com` controls public links and newsletter origin checks.

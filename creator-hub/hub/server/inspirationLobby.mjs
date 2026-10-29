@@ -1,3 +1,4 @@
+// INTEGRATION_GAP[CFG-SUBSCRIPTIONS] (configuration-required): see docs/DEVELOPMENT_GAPS.md#cfg-subscriptions.
 // INTEGRATION_GAP[RETIRED-HOSTING] (retired): see docs/DEVELOPMENT_GAPS.md#retired-hosting.
 // INTEGRATION_GAP[WB-AUTH] (build-required): see docs/DEVELOPMENT_GAPS.md#wb-auth.
 import express from 'express';
@@ -7,6 +8,7 @@ import {createApp} from './app.mjs';
 import {publicRestriction} from './publicAccess.mjs';
 import {createCommunityRouter} from './community/router.mjs';
 import {communityServicesFromEnv} from './community/runtime.mjs';
+import {createTariNewsletterRouter} from './tariNewsletter.mjs';
 
 /** Only these routes compute bounded responses without persisting visitor data. */
 export function preventProjectHosting(req, res, next) {
@@ -22,11 +24,13 @@ export function preventProjectHosting(req, res, next) {
 }
 
 /** Public entry point; the original app remains available for legacy store tests. */
-export function createInspirationLobby({workbenchServices,communityServices}={}) {
+export function createInspirationLobby({workbenchServices,communityServices,newsletterServices}={}) {
   const lobby = express();
   lobby.disable('x-powered-by');
   lobby.use(securityHeaders,localHostGuard);
   lobby.use('/api/chat',createCommunityRouter(communityServices||communityServicesFromEnv()));
+  // Narrow opt-in route; all unrelated public writes remain disabled below.
+  lobby.use('/api/subscriptions',createTariNewsletterRouter(newsletterServices));
   lobby.use(preventProjectHosting);
   lobby.use('/api/workbench', createWorkbenchRouter(workbenchServices));
   lobby.use(createApp({publicReadOnly:true}));

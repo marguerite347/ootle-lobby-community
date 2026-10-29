@@ -743,3 +743,18 @@ test("reaction HTTP writes enforce the existing session, origin, header and shar
   await db.query("UPDATE community_chat.rate_limits SET count=120 WHERE key='reactions:github-1'");
   assert.equal((await write()).status,429);
 });
+
+test('custom-domain chat accepts only explicitly configured origins and preserves the original origin', async t => {
+  const db=new PGlite(); await installSchema(db);
+  const store=createChatStore(db), app=express(), server=app.listen(0,'127.0.0.1');
+  await new Promise(resolve=>server.once('listening',resolve));
+  const base='http://127.0.0.1:'+server.address().port;
+  app.use('/api/chat',createCommunityRouter({store,origin:'https://ootle-lobby-preview.vercel.app',additionalOrigins:['https://lobby.tari.com'],guests:{secret:'custom-domain-test'}}));
+  t.after(async()=>{server.closeAllConnections();server.close();await db.close();});
+  for(const [origin,expected] of [['https://lobby.tari.com',200],['https://ootle-lobby-preview.vercel.app',200],['https://lobby.tari.com.evil.example',403],['null',403],['',403]]) {
+    const response=await fetch(base+'/api/chat/guest/session',{method:'POST',headers:{Origin:origin,'X-Ootle-Chat':'1','Content-Type':'application/json'},body:JSON.stringify({name:'Domain QA'})});
+    assert.equal(response.status,expected,origin);assert.equal(response.headers.get('access-control-allow-origin'),null);
+    if(expected===200)assert.match(response.headers.get('set-cookie'),/HttpOnly/);
+  }
+  for(const additionalOrigin of ['http://lobby.tari.com','https://lobby.tari.com/path','https://a:b@lobby.tari.com'])assert.throws(()=>createCommunityRouter({additionalOrigins:[additionalOrigin]}),/exact HTTPS/);
+});

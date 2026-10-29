@@ -4,7 +4,7 @@ import express from 'express';
 import {join} from 'node:path';
 import {tmpdir} from 'node:os';
 process.env.CREATOR_HUB_DATA_DIR = join(tmpdir(), 'ootle-lobby-preview');
-process.env.PUBLIC_SITE_URL = 'https://ootle-lobby-preview.vercel.app';
+process.env.PUBLIC_SITE_URL ||= 'https://lobby.tari.com';
 // The public browser practice game does not use server trivia storage.
 delete process.env.TRIVIA_ALLOW_RESET;
 const catalog = await import('../server-content/creator-hub/hub/server/catalog.mjs');
