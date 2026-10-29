@@ -228,7 +228,7 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 
 **Current:** The public signup route forwards only email and the browser Turnstile token to Tari’s existing https://rwa.y.at/miner/exchanges/user endpoint. It requires explicit consent, an exact origin and custom header, bounded JSON, and provider success:true. Topic segmentation and double opt-in are not claimed. Local burst limits supplement upstream Turnstile validation. No email is collected when a production-approved site key is absent.
 
-**Remaining:** Possum must approve lobby.tari.com on the Turnstile widget used by the Tari newsletter backend and supply its public site key. Set TARI_TURNSTILE_SITE_KEY and PUBLIC_SITE_URL on the Lobby deployment. The backend retains its matching secret and token/hostname validation. Confirm an approved real test signup and downstream list membership before announcing availability.
+**Remaining:** The approved public Turnstile key is configured for production following the October 29 hostname approval. Redeploy and verify a real signup plus downstream list membership. The Tari backend retains its matching secret and token/hostname validation.
 
 **Completion check:** Verify the widget loads on lobby.tari.com, a fresh token reaches Tari, success:true is returned, and the approved test address appears in the intended subscriber list. Expired/reused tokens and provider failures must not show success. Verify production abuse controls with the API owner.
 

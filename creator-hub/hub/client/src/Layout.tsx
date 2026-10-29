@@ -5,6 +5,7 @@ import CommunityLinks from './components/CommunityLinks';
 import {LaunchTicket} from './components/OotleLaunch';
 import './components/LobbyHeader.css';
 import './Shell.css';
+import LobbyUpdates from './components/LobbyUpdates';
 
 import {HubMotion} from './HubMotion';
 import ChatSidebar, { isChatPopOutWindow } from './chat/ChatSidebar';
@@ -27,6 +28,7 @@ export default function Layout() {
         </div>
       </header>
       <main className="container" id="main-content" tabIndex={-1}>
+        {location.pathname === '/' && <LobbyUpdates/>}
         <Suspense fallback={<div className="route-loading" role="status"><span/>Opening your workspace…</div>}><Outlet /></Suspense>
       </main>
       <footer className="footer season-footer"><div className="container">

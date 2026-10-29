@@ -1,0 +1,34 @@
+.lobby-updates {margin-block:1rem 1.5rem;}
+.lobby-newsletter {border-block:1px solid #b7a6cd35;}
+.lobby-newsletter summary {display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.5rem 1.5rem;min-height:4.5rem;padding:.75rem 0;cursor:pointer;list-style:none;}
+.lobby-newsletter summary::-webkit-details-marker {display:none;}
+.lobby-newsletter summary>span:first-child {display:flex;flex-direction:column;gap:.25rem;}
+.lobby-newsletter strong {font-size:1rem;color:#eeeaff;}
+.lobby-newsletter summary>span:first-child>span {font-size:.875rem;color:#bfb8d2;}
+.newsletter-toggle {display:flex;align-items:center;gap:1rem;min-height:2.75rem;font-size:.875rem;font-weight:600;color:#d6ee53;}
+.newsletter-toggle>span {font-size:1.5rem;}
+.lobby-newsletter-form {max-width:36rem;padding:1rem 0 1.5rem;}
+.lobby-newsletter .subscribe-form p,.lobby-newsletter .subscribe-form label {font-size:.875rem;}
+.lobby-newsletter .subscribe-form input[type=email] {font-size:1rem;min-height:2.75rem;box-sizing:border-box;}
+.lobby-newsletter .subscribe-form .signup-option {min-height:2.75rem;font-size:.875rem;}
+.lobby-newsletter .subscribe-form .btn {min-height:2.75rem;}
+.game-night-banner {position:relative;display:grid;gap:1rem;margin-top:1rem;padding:1.25rem;background:linear-gradient(110deg,#25183e,#15122c);border-left:3px solid #a78ae8;border-radius:0 .75rem .75rem 0;}
+.game-night-copy {min-width:0;padding-right:2rem;}
+.game-night-kicker {display:block;font-size:.6875rem;font-weight:600;letter-spacing:.12em;color:#d4c0f1;}
+.game-night-banner h2 {font-size:1.125rem;line-height:1.35;margin:.35rem 0;color:#f2edff;}
+.game-night-banner p {font-size:.875rem;line-height:1.6;margin:.25rem 0;color:#d2c7e1;}
+.game-night-time {display:block;}
+.game-night-channel a {text-decoration:underline;text-underline-offset:.2em;color:inherit;}
+.game-night-actions {display:flex;align-items:flex-start;flex-direction:column;gap:.5rem;}
+.game-night-actions .btn {min-height:2.75rem;font-size:.875rem;}
+.game-night-invite {display:flex;align-items:center;min-height:2.75rem;font-size:.875rem;color:#d2c7e1;text-decoration:underline;text-underline-offset:.2em;}
+.game-night-dismiss {position:absolute;top:.25rem;right:.25rem;display:grid;place-items:center;width:2.75rem;height:2.75rem;border:0;border-radius:.5rem;background:transparent;color:#d2c7e1;font:inherit;font-size:1.5rem;cursor:pointer;}
+.game-night-dismiss:hover {background:#ffffff12;color:white;}
+.lobby-updates :is(summary,button,a):focus-visible {outline:2px solid #d6ee53;outline-offset:4px;}
+@media(min-width:760px) {
+  .lobby-newsletter summary>span:first-child {flex-direction:row;align-items:baseline;gap:1rem;flex-wrap:wrap;}
+  .lobby-newsletter-form {margin-left:auto;}
+  .game-night-banner {grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:2rem;padding:1.25rem 3.5rem 1.25rem 1.5rem;}
+  .game-night-copy {padding:0;}
+  .game-night-actions {align-items:center;gap:0;}
+}
