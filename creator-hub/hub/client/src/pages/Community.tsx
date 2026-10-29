@@ -515,6 +515,7 @@ export default function Community({
     const submitted = draft;
     const clientId = sendId.current || (sendId.current = crypto.randomUUID());
     try {
+      await conversation.startVisit();
       const result = await chatApi<{ message: Message }>("/messages", {
         channelId,
         body: submitted,
@@ -1112,7 +1113,7 @@ export default function Community({
                         ? "Loading messages…"
                         : query
                           ? "No messages match this search."
-                          : "A fresh conversation. Say the first hello."}
+                          : "Fresh chat for this visit. New messages will appear here."}
                     </p>
                   )}
                   {visibleMessages.map((message, index) => (

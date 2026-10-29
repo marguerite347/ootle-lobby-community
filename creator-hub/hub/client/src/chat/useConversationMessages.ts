@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { chatApi, type Message } from "./communityAppApi";
+import { createMessageVisit } from "./messageVisit";
 type Page = { messages: Message[]; parent: Message | null; hasMore: boolean };
 type Cursor = { at: string; id: string };
 export function useConversationMessages(
@@ -9,6 +10,9 @@ export function useConversationMessages(
   query: string,
   active: boolean,
 ) {
+  const [visit] = useState(() => createMessageVisit(async () =>
+    (await chatApi<{ startedAt: string }>("/view")).startedAt,
+  ));
   const [messages, setMessages] = useState<Message[]>([]);
   const [parent, setParent] = useState<Message | null>(null);
   const [hasMore, setHasMore] = useState(false);
@@ -34,8 +38,9 @@ export function useConversationMessages(
     setError("");
     setLoadingOlder(false);
     setConnection("Connecting…");
-    const read = (cursor?: Cursor) => {
-      const params = new URLSearchParams({ q: query });
+    const read = async (cursor?: Cursor) => {
+      const after = await visit.start(accountId);
+      const params = new URLSearchParams({ q: query, after });
       if (parentId) params.set("parentId", parentId);
       else if (!query) params.set("rootsOnly", "1");
       if (cursor) {
@@ -149,10 +154,14 @@ export function useConversationMessages(
       window.removeEventListener("online", online);
       window.removeEventListener("offline", offline);
     };
-  }, [accountId, channelId, parentId, query, active]);
+  }, [accountId, channelId, parentId, query, active, visit]);
   const refresh = useCallback(async () => {
     await controls.current?.refresh();
   }, []);
+  const startVisit = useCallback(async () => {
+    if (!accountId) throw new Error('Join chat before sending a message.');
+    return visit.start(accountId);
+  }, [accountId, visit]);
   const loadOlder = useCallback(
     async (beforeCommit: (ids: string[]) => void) => {
       await controls.current?.older(beforeCommit);
@@ -168,6 +177,7 @@ export function useConversationMessages(
     connection,
     error,
     refresh,
+    startVisit,
     loadOlder,
   };
 }

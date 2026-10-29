@@ -86,16 +86,17 @@ export function createChatStore(db) {
       if (!rows.length) reject("Reply not found.", 404);
     }
   }
-  async function messagePage(userId, channelId, { before, beforeId, search = "", parentId = null, rootsOnly = false } = {}) {
+  async function messagePage(userId, channelId, { before, beforeId, after, search = "", parentId = null, rootsOnly = false } = {}) {
     await actor(db, userId);
     await channel(db, userId, channelId);
     if ((before && (typeof before !== "string" || !Number.isFinite(Date.parse(before)))) ||
-        (beforeId != null && (typeof beforeId !== "string" || !idPattern.test(beforeId))))
+        (beforeId != null && (typeof beforeId !== "string" || !idPattern.test(beforeId))) ||
+        (after != null && (typeof after !== "string" || !Number.isFinite(Date.parse(after)))))
       reject("Invalid message cursor.");
     let parent = null;
     if (parentId !== null) {
       if (typeof parentId !== "string" || !idPattern.test(parentId)) reject("Reply not found.", 404);
-      parent = (await db.query(`SELECT ${messageFields(2)} FROM community_chat.messages m WHERE m.channel_id=$1 AND m.id=$3 AND m.hidden_at IS NULL`, [channelId,userId,parentId])).rows[0];
+      parent = (await db.query(`SELECT ${messageFields(2)} FROM community_chat.messages m WHERE m.channel_id=$1 AND m.id=$3 AND m.hidden_at IS NULL AND ($4::timestamptz IS NULL OR m.created_at>=$4)`, [channelId,userId,parentId,after ?? null])).rows[0];
       if (!parent) reject("This thread is no longer available.", 404);
     }
     const result = await db.query(
@@ -105,13 +106,19 @@ export function createChatStore(db) {
        AND ($3='' OR strpos(lower(m.body),lower($3))>0)
        AND ($6::text IS NULL OR m.parent_id=$6)
        AND (NOT $7::boolean OR m.parent_id IS NULL)
+       AND ($8::timestamptz IS NULL OR m.created_at>=$8)
        ORDER BY m.created_at DESC,m.id DESC LIMIT 101`,
-      [channelId,before || null,text(search,100),userId,beforeId || null,parentId,rootsOnly],
+      [channelId,before || null,text(search,100),userId,beforeId || null,parentId,rootsOnly,after ?? null],
     );
     return { messages: result.rows.slice(0,100).reverse(), hasMore: result.rows.length > 100, parent };
   }
   return {
     privateChat: createPrivateStore(db, { actor, reject }),
+    async beginView(userId) {
+      await actor(db, userId);
+      // Use the message database clock so device clock skew cannot hide new posts.
+      return (await db.query("SELECT clock_timestamp()::text AS started_at")).rows[0].started_at;
+    },
     async typing(userId, channelId, parentId = null) {
       await actor(db, userId);
       await typingContext(db, userId, channelId, parentId);

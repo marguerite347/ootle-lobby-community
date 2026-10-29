@@ -403,12 +403,19 @@ export function createCommunityRouter({
     ),
   );
   router.get(
+    "/view",
+    wrap(async (req, res) =>
+      res.json({ startedAt: await store.beginView(req.chatAccount.id) }),
+    ),
+  );
+  router.get(
     "/channels/:id/messages",
     wrap(async (req, res) =>
       res.json(
         await store.messagePage(req.chatAccount.id, req.params.id, {
           before: req.query.before,
           beforeId: req.query.beforeId,
+          after: req.query.after,
           search: req.query.q,
           parentId: req.query.parentId ?? null,
           rootsOnly: req.query.rootsOnly === "1",
