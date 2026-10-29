@@ -6,6 +6,7 @@ import LaunchCountdown from './components/LaunchCountdown';
 import './components/LobbyHeader.css';
 import './Shell.css';
 import LobbyUpdates from './components/LobbyUpdates';
+import GameNightBanner from './components/GameNightBanner';
 
 import {HubMotion} from './HubMotion';
 import ChatSidebar, { isChatPopOutWindow } from './chat/ChatSidebar';
@@ -24,11 +25,11 @@ export default function Layout() {
           <Link to="/" className="season-brand" aria-label="Ootle Lobby home"><img src="/ootle-jam-mark.svg" alt="" width="40" height="40"/><span>ootle<span className="season-brand-light">lobby</span><small>BUILT ON TARI</small></span></Link>
           <CommunityLinks/>
           <a className="season-header-create" href="https://ootle.tari.com/">Build</a>
-          <LaunchCountdown/>
+          {location.pathname === '/' ? <div className="lobby-header-updates"><LaunchCountdown/><LobbyUpdates/></div> : <LaunchCountdown/>}
         </div>
       </header>
       <main className="container" id="main-content" tabIndex={-1}>
-        {location.pathname === '/' && <LobbyUpdates/>}
+        {location.pathname === '/' && <div className="lobby-updates"><GameNightBanner/></div>}
         <Suspense fallback={<div className="route-loading" role="status"><span/>Opening your workspace…</div>}><Outlet /></Suspense>
       </main>
       <footer className="footer season-footer"><div className="container">
