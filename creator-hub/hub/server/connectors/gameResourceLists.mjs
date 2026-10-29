@@ -49,7 +49,9 @@ export function parseList(markdown, definition) {
       if(!title || title.length<2 || /^(license|contributing|awesome|back to top)$/i.test(title))continue;
       const canonical=new URL(url);canonical.hash='';
       const key=canonical.href.replace(/^http:/,'https:').replace('://www.', '://').replace(/\/$/,'');
-      if(!found.has(key))found.set(key,{title:title.slice(0,180),url,section,key,...classifyEntry(title,section)});
+      const tail=cell.slice(match.index+match[0].length).replace(/^\s*[-–—:]\s*/, '');
+      const description=clean(tail.replace(/\[([^\]]+)\]\([^)]*\)/g,'$1')).replace(/^[).\s]+|[\s]+$/g,'');
+      if(!found.has(key))found.set(key,{title:title.slice(0,180),url,section,key,description,...classifyEntry(title,section)});
     }
   }
   return [...found.values()];
@@ -69,7 +71,7 @@ export const gameResourceConnectors=listDefinitions.map(definition => {
       for(const entry of entries) records.push(makeResource({
         id:`game-list-resource:${createHash('sha256').update(entry.key).digest('hex').slice(0,24)}`,
         ...entry,ecosystem:'creative',category:entry.section,title:entry.title,
-        summary:`Listed under ${entry.section} in ${definition.repo}. Open the original resource for details; execution and compatibility have not been checked.`,
+        summary:entry.description || `${entry.section} resource.`,
         sourceUrl:entry.url,docsUrl:entry.url,repoUrl:/^https:\/\/github.com\//.test(entry.url)?entry.url:null,
         tags:['game-resource-lists',definition.repo,entry.section,entry.assetKind==='workflow'?'workflow':entry.type],
         readiness:'conceptual',verification:'source-attested',sourceId:source.id,sourceName:source.name,

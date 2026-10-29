@@ -81,24 +81,52 @@ export function catalogReviewQueue(entries, previous = {}) {
  }
  return [...unique.values()];
 }
+const failureKinds = new Set(['http', 'timeout', 'authentication', 'rate-limit', 'unavailable-client', 'unavailable-content']);
 export function recordCatalogReview(previous, {attemptedAt, observations, reviewed = false, complete = false, availability, nextReviewAt}) {
  if (!Number.isFinite(Date.parse(attemptedAt)) || !observations.length) throw Error('Dated source observations required');
  const sourceReviews={...(previous.sourceReviews||{})};
- const changedSources=[];let blocked=false;
+ const changedSources=[], blockedSources=[], pendingSources=[];
+ const requiredSources=previous.sources?.length ? previous.sources : observations.map(o=>o.url);
+ const seen=new Set();
  for(const observation of observations){
-  const prior=sourceReviews[observation.url];
-  if(observation.error){blocked=true;sourceReviews[observation.url]={...prior,lastAttemptAt:attemptedAt,error:observation.error};continue;}
+  const {url}=observation;
+  if(!url || seen.has(url))throw Error('Unique source URLs required');
+  seen.add(url);
+  const prior=sourceReviews[url];
+  if(observation.status==='pending'){
+   pendingSources.push(url);
+   // Not attempting a read must not advance even the attempt date.
+   sourceReviews[url]={...prior,status:'pending',pendingReason:observation.reason||'Not read in this run'};
+   continue;
+  }
+  const readAt=observation.attemptedAt||attemptedAt;
+  if(!Number.isFinite(Date.parse(readAt)) || Date.parse(readAt)>Date.parse(attemptedAt))throw Error('Valid source attempt date required');
+  if(observation.error){
+   if(!failureKinds.has(observation.failureKind)||!observation.evidence||!observation.nextAction||/not (read|checked|rechecked|attempted)|unfinished|not yet/i.test(observation.error))throw Error('Blocked reads require an actual failure, evidence and next action; unfinished work is pending');
+   blockedSources.push(url);
+   sourceReviews[url]={...prior,lastAttemptAt:readAt,status:'blocked',error:observation.error,failureKind:observation.failureKind,evidence:observation.evidence,nextAction:observation.nextAction};continue;
+  }
   if(!observation.hash)throw Error('Successful observations require a content hash');
-  if(!prior?.hash || prior.hash!==observation.hash)changedSources.push(observation.url);
-  sourceReviews[observation.url]={...observation,lastAttemptAt:attemptedAt,lastSuccessfulReadAt:attemptedAt,error:null};
+  if(!prior?.hash || prior.hash!==observation.hash)changedSources.push(url);
+  sourceReviews[url]={...observation,lastAttemptAt:readAt,lastSuccessfulReadAt:readAt,status:'read',error:null};
  }
+ // Only explicitly superseded destinations can leave the active read scope. Keep their history.
+ const superseded=previous.supersededSources||{};
+ const activeSources=requiredSources.filter(url=>{
+  const replacement=superseded[url];
+  return !(replacement?.replacementUrl && replacement?.evidence && replacement?.reason && requiredSources.includes(replacement.replacementUrl));
+ });
+ for(const url of activeSources)if(!seen.has(url))pendingSources.push(url);
+ const activeBlocked=blockedSources.filter(url=>activeSources.includes(url));
+ const pending=[...new Set(pendingSources.filter(url=>activeSources.includes(url)))];
+ const successfulReview=reviewed&&complete&&!activeBlocked.length&&!pending.length;
  const needsReview=changedSources.length>0;
- const successfulReview=reviewed&&complete&&!blocked;
  return {...previous,lastAttemptAt:attemptedAt,sourceReviews,
   lastSuccessfulReviewAt:successfulReview?attemptedAt:previous.lastSuccessfulReviewAt||null,
   observedAvailability:successfulReview?availability:previous.observedAvailability||null,
-  outcome:blocked?'blocked':!complete?'partial':successfulReview?'reviewed':needsReview?'changed':'unchanged',
-  changedSources,reviewRequired:successfulReview?false:!complete||needsReview||previous.reviewRequired||blocked,
+  outcome:pending.length?'pending':activeBlocked.length?'blocked':!complete?'partial':successfulReview?'reviewed':needsReview?'changed':'unchanged',
+  pendingReviewSources:pending,blockedSources:activeBlocked,
+  changedSources,reviewRequired:!successfulReview,
   changedFields:needsReview?['sourceEvidence']:[],
   reviewQueue:successfulReview?[]:needsReview?['copy','actions','details','recording','provenance']:previous.reviewQueue||[],
   nextReviewAt:nextReviewAt||previous.nextReviewAt||null};
