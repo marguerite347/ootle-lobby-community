@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import {assessMaintenance} from './maintenance-completion.mjs';
+import {assessMaintenance,catalogReviewDateIssues} from './maintenance-completion.mjs';
 const [file,root=process.cwd()]=process.argv.slice(2);
 if(!file){console.error('Usage: node scripts/check-maintenance-completion.mjs RUN.json [evidence-root]');process.exit(2);}
 try{
@@ -11,5 +11,10 @@ try{
  const contest=JSON.parse(fs.readFileSync(new URL('../content/contests/october-2026.json',import.meta.url),'utf8'));
  const topic=ledger.sources.find(s=>s.id==='396');
  if(topic?.status==='complete'&&Date.parse(contest.checkedAt)<Date.parse(topic.lastAttemptAt)){result.issues.push('publication: visible contest checkpoint is older than the successful source read');result.status='incomplete';}
+ for(const catalogPath of ['work/lobby/creator-hub/hub/shared/ecosystemResources.json','work/workbench/apps/remix-ide/src/app/plugins/ootle/ecosystem-resources.json']){
+  const catalog=JSON.parse(fs.readFileSync(path.resolve(root,catalogPath),'utf8'));
+  result.issues.push(...catalogReviewDateIssues(catalog.records,ledger.resourceReviews).map(issue=>`${catalogPath}: ${issue}`));
+ }
+ if(result.issues.length)result.status='incomplete';
  console.log(JSON.stringify(result,null,2));process.exitCode=result.status==='incomplete'?1:0;
 }catch(error){console.error(error.message);process.exitCode=2;}

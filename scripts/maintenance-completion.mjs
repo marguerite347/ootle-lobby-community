@@ -2,6 +2,15 @@
 export const requiredSections = ['discovery','existingResources','dependencies','editorial','recordings','validation','publication'];
 const failureKinds = new Set(['http','timeout','authentication','rate-limit','unavailable-client','unavailable-content']);
 const terminal = new Set(['complete','blocked','deferred']);
+export function catalogReviewDateIssues(records, reviews) {
+ return records.flatMap(record => {
+  const review = reviews[record.id];
+  if (review?.outcome !== 'reviewed') return [];
+  const successful = Date.parse(review.lastSuccessfulReviewAt);
+  return Number.isFinite(successful) && Date.parse(record.lastCheckedAt) === successful
+   ? [] : [`${record.id}: visible checked date does not match successful source review`];
+ });
+}
 export function assessMaintenance(run,{evidenceExists=()=>true,requiredScope={}}={}) {
  const issues=[],counts={complete:0,blocked:0,deferred:0,pending:0};
  if(!run?.date || !/^\d{4}-\d{2}-\d{2}$/.test(run.date))issues.push('Dated run required');
