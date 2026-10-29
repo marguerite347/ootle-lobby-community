@@ -1,0 +1,8 @@
+{
+  "id": "2026-11-03-tari-show",
+  "enabled": true,
+  "startsAt": "2026-11-03T13:00:00-05:00",
+  "endsAt": "2026-11-03T14:00:00-05:00",
+  "channelName": "Stage",
+  "inviteUrl": "https://discord.gg/tari"
+}
