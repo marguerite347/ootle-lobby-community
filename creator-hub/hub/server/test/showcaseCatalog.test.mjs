@@ -1,0 +1,2 @@
+import{test}from'node:test';import assert from'node:assert/strict';import{withShowcaseProjects}from'../showcaseCatalog.mjs';
+test('Discover retains curated showcase front copy while keeping detailed evidence',()=>{const clew=withShowcaseProjects([]).find(r=>r.id==='tari:app:clew');assert.ok(clew);assert.match(clew.cardSummary,/community Tari wallet/i);assert.match(clew.cardStatus,/macOS/);assert.match(clew.summary,/not installed or independently audited/);});

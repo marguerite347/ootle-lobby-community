@@ -10,7 +10,7 @@ export function withShowcaseProjects(records){
   for(const id of ids){
    const existing=result.get(id);
    const resource=existing||makeResource({id,type:'app',ecosystem:p.ecosystem,title:p.title,summary:p.summary,sourceId:'reviewed-showcase',sourceName:'Reviewed Lobby project registry',sourceUrl:p.sourceUrl,sourceUpdatedAt:p.publishedAt,verification:'source-attested',readiness:'conceptual'});
-   result.set(id,{...resource,summary:existing?.type==='starter'?existing.summary:p.summary,repoUrl:p.repoUrl,demoUrl:p.demoUrl||resource.demoUrl,creator:existing?.creator||{name:p.creator,url:p.sourceUrl},preview:{image:p.media?.image||null,video:p.media?.video||null,source:p.media?.label||null}});
+   result.set(id,{...resource,summary:existing?.type==='starter'?existing.summary:p.summary,...(existing?.type==='starter'?{}:{cardSummary:p.cardSummary,cardStatus:p.cardStatus}),repoUrl:p.repoUrl,demoUrl:p.demoUrl||resource.demoUrl,creator:existing?.creator||{name:p.creator,url:p.sourceUrl},preview:{image:p.media?.image||null,video:p.media?.video||null,source:p.media?.label||null}});
   }
  }
  return [...result.values()];
