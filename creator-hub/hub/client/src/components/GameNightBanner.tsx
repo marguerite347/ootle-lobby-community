@@ -65,7 +65,7 @@ export default function GameNightBanner() {
       <h2 id="community-calendar-title">Save your spot.</h2>
       <p>Game night + The Tari Show</p>
       <div className="community-calendar-options">
-        <a href={`https://calendar.google.com/calendar/r?cid=${encodeURIComponent(calendarUrl)}`} target="_blank" rel="noreferrer">Google Calendar</a>
+        <a href={`https://calendar.google.com/calendar/r?cid=${encodeURIComponent(calendarUrl.replace('https:','webcal:'))}`} target="_blank" rel="noreferrer">Google Calendar</a>
         <a href={calendarUrl.replace('https:','webcal:')}>Apple Calendar</a>
         <a href="/community/events.ics" download="tari-community.ics">Download for any calendar</a>
       </div>
