@@ -26,7 +26,7 @@ function OctoberMysteries(){
         <h3>{mystery.title}</h3><p>Your build could be here.</p>
       </article>)}
     </div>
-    <p className="mystery-invitation">The first reveals are still to come. <a href={safeHref(THREAD)} target="_blank" rel="noreferrer">Bring your secret to life <span aria-hidden="true">↗</span></a></p>
+    <p className="mystery-invitation">The first reveals are still to come. <a href={safeHref(THREAD)} target="_blank" rel="noreferrer">Bring your secret to life</a></p>
   </div>;
 }
 export function OctoberGallery({contest,hasWorkbenchEntries=false}:{contest:OctoberContest;hasWorkbenchEntries?:boolean}){

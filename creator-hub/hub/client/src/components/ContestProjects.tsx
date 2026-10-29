@@ -30,9 +30,9 @@ export default function ContestProjects({creatorId}: {creatorId?: string}) {
       caption={entry.contest&&<>
         {/^[123](st|nd|rd) place/.test(entry.contest.status)&&<p><strong>{entry.contest.status}</strong></p>}
         {entry.contest.notes&&<p>{entry.contest.notes}</p>}
-        {entry.contest.updates.length>0&&<p>{entry.contest.updates.map(update=><a key={update.url} href={safeHref(update.url)} target="_blank" rel="noreferrer" style={{display:'block'}}>Forum update · post {update.postNumber} ↗</a>)}</p>}
+        {entry.contest.updates.length>0&&<p>{entry.contest.updates.map(update=><a key={update.url} href={safeHref(update.url)} target="_blank" rel="noreferrer" style={{display:'block'}}>Forum update · post {update.postNumber}</a>)}</p>}
       </>}
-      actions={<>{entry.demoUrl&&<a href={safeHref(entry.demoUrl)} target="_blank" rel="noreferrer">{entry.demoUrl.endsWith('/releases')?'Downloads':'Open project'} ↗</a>}<a href={safeHref(entry.contest?.sourceUrl || SEPTEMBER_THREAD)} target="_blank" rel="noreferrer">See the creator’s post</a><a className="suggest-project-edit" href={safeHref(projectEditUrl(entry.id))} target="_blank" rel="noreferrer" aria-label={`Suggest an edit to ${entry.title}`}>Suggest an edit</a></>}/>
+      actions={<>{entry.demoUrl&&<a href={safeHref(entry.demoUrl)} target="_blank" rel="noreferrer">{entry.demoUrl.endsWith('/releases')?'Downloads':'Open project'}</a>}<a href={safeHref(entry.contest?.sourceUrl || SEPTEMBER_THREAD)} target="_blank" rel="noreferrer">See the creator’s post</a><a className="suggest-project-edit" href={safeHref(projectEditUrl(entry.id))} target="_blank" rel="noreferrer" aria-label={`Suggest an edit to ${entry.title}`}>Suggest an edit</a></>}/>
     )}</div></CollapsibleProjects>}
   </section>;
 }

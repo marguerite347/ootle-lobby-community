@@ -642,7 +642,7 @@ function PrivateThread({
             setUnread(0);
           }}
         >
-          {unread} new {unread === 1 ? "message" : "messages"} ↓
+          {unread} new {unread === 1 ? "message" : "messages"}
         </button>
       )}
       <div className="pm-composer">

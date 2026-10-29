@@ -43,7 +43,6 @@ function Glyph({ name }: { name: string }) {
   const paths: Record<string, string> = {
     chat: "M4 5h16v11H9l-5 4V5Z",
     search: "M10 17a7 7 0 1 0 0-14 7 7 0 0 0 0 14Zm5-2 6 6",
-    arrow: "m5 12 14 0m-6-6 6 6-6 6",
     back: "m15 5-7 7 7 7",
     close: "m6 6 12 12M6 18 18 6",
     menu: "M4 6h16M4 12h16M4 18h16",
@@ -796,7 +795,7 @@ export default function Community({
                 <p>Bring your people together.</p>
                 <span>Your connected channels will live here.</span>
                 <button onClick={() => setPanel("connections")}>
-                  Explore connections <Glyph name="arrow" />
+                  Explore connections
                 </button>
               </div>
             )}
@@ -1003,7 +1002,6 @@ export default function Community({
                       }
                     >
                       {joining ? "Joining…" : "Join the conversation"}
-                      <Glyph name="arrow" />
                     </button>
                     <small>
                       Each invitation works once. This browser remembers you for
@@ -1019,14 +1017,13 @@ export default function Community({
                     }}
                   >
                     {error ? "Try again" : "Start chatting"}{" "}
-                    <Glyph name="arrow" />
                   </button>
                 ) : capabilities?.preview ? (
                   <button
                     className="cc-primary"
                     onClick={() => void previewLogin()}
                   >
-                    Enter the local preview <Glyph name="arrow" />
+                    Enter the local preview
                   </button>
                 ) : capabilities?.signIn ? (
                   <a
@@ -1037,7 +1034,7 @@ export default function Community({
                         : "/api/chat/auth/start"
                     }
                   >
-                    Continue with GitHub <Glyph name="arrow" />
+                    Continue with GitHub
                   </a>
                 ) : (
                   <div className="cc-setup-note">
@@ -1047,7 +1044,7 @@ export default function Community({
                       target="_blank"
                       rel="noreferrer"
                     >
-                      join the community on Discord ↗
+                      join the community on Discord
                     </a>
                     .
                   </div>
@@ -1370,7 +1367,7 @@ export default function Community({
                 {unreadMessages > 0 && (
                   <div className="cc-new-messages" role="status">
                     <button type="button" onClick={showLatestMessages}>
-                      <span aria-hidden="true">↓</span> {unreadMessages} new{" "}
+                      {unreadMessages} new{" "}
                       {unreadMessages === 1 ? "message" : "messages"} · Jump to
                       latest
                     </button>
@@ -1516,14 +1513,14 @@ export default function Community({
             className="cc-outline"
             onClick={() => setPanel("connections")}
           >
-            Manage connections <Glyph name="arrow" />
+            Manage connections
           </button>
           <div className="cc-about-note">
             <Glyph name="shield" />
             <p>You choose the channels. You choose where a message goes.</p>
           </div>
           <Link to="/" className="cc-back-lobby">
-            ← Back to the Lobby
+            Back to the Lobby
           </Link>
         </aside>
         {(panel || crosspost || reporting) && (
@@ -1629,7 +1626,7 @@ export default function Community({
                     />
                   </label>
                   <button className="cc-primary" type="submit">
-                    Send report <Glyph name="arrow" />
+                    Send report
                   </button>
                 </form>
               ) : panel === "moderation" ? (
@@ -1705,7 +1702,7 @@ export default function Community({
                       setCrosspost(false);
                     }}
                   >
-                    Back to the conversation <Glyph name="arrow" />
+                    Back to the conversation
                   </button>
                 </>
               )}

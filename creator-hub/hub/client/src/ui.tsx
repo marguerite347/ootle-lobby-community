@@ -177,7 +177,7 @@ export function ResourceCard({ r, dimensionLabel }: { r: Resource; dimensionLabe
         {r.creator?.name && <span>by {r.creator.name}</span>}
         <StarButton kind="resource" id={r.id} initialStars={r.engagement?.stars ?? 0} />
         {r.engagement?.comments ? <span title="comments">💬 {r.engagement.comments}</span> : null}
-        <span style={{ marginLeft: 'auto' }}>View →</span>
+        <span style={{ marginLeft: 'auto' }}>View</span>
       </div>
     </Link>
   );
