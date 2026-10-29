@@ -10,7 +10,7 @@ export default function LobbyUpdates() {
   useEffect(()=>{if (hash==='#newsletter') setOpen(true);},[hash]);
   return <div className="lobby-updates">
     <details id="newsletter" className="lobby-newsletter" open={open} onToggle={event=>setOpen(event.currentTarget.open)}>
-      <summary><span><strong>Tari, delivered.</strong><span>New projects. Game nights. What’s next.</span></span><span className="newsletter-toggle">{open?'Close signup':'Keep me posted'} <span aria-hidden="true">{open?'−':'+'}</span></span></summary>
+      <summary><span><strong>Tari, delivered.</strong><span>New projects. Game nights. What’s next.</span></span><span className="newsletter-toggle">{open?'Close signup':'Send me the good stuff'}</span></summary>
       {open && <div className="lobby-newsletter-form"><SubscribeForm showIntro={false}/></div>}
     </details>
     <GameNightBanner/>
