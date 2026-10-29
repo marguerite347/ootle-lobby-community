@@ -34,10 +34,9 @@ export default function GameNightBanner() {
     <div className="game-night-join">
       <div className="game-night-details">
         {start && <time className="game-night-time" dateTime={event.startsAt!}><span>{dateLabel}</span><strong>{timeLabel} <small>/ {utcLabel}</small></strong></time>}
-        <p className="game-night-channel"><a href={event.channelUrl} target="_blank" rel="noreferrer">{event.channelName}</a> voice · Discord</p>
+        <p className="game-night-channel">{event.channelName} voice</p>
       </div>
-      <div className="game-night-actions"><a className="btn primary" href={event.channelUrl} target="_blank" rel="noreferrer">Come hang out</a><a className="game-night-invite" href={event.inviteUrl} target="_blank" rel="noreferrer">New here? Join Tari Discord</a></div>
-      {status.voting && <p className="game-night-vote"><a href={event.announcementUrl || event.channelUrl} target="_blank" rel="noreferrer">Vote for the game</a> by {new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',weekday:'short',month:'short',day:'numeric',hour:'numeric',timeZoneName:'short'}).format(new Date(event.voteClosesAt!))}.</p>}
+      <div className="game-night-actions"><a className="btn primary" href={event.inviteUrl} target="_blank" rel="noreferrer">Join us on Discord</a></div>
     </div>
     <button type="button" className="game-night-dismiss" aria-label="Dismiss game night banner" onClick={()=>{setDismissed(true);try{localStorage.setItem(key,'dismissed');}catch{/* Dismiss for this visit when storage is blocked. */}}}><span aria-hidden="true">×</span></button>
   </aside>;

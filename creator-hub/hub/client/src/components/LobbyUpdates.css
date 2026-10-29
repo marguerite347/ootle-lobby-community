@@ -32,13 +32,10 @@
 .game-night-time strong {font-weight:600;}
 .game-night-time small {font-size:.75rem;font-weight:400;color:#d9cfe7;white-space:nowrap;}
 .game-night-banner .game-night-channel {font-size:.75rem;margin-top:.25rem;}
-.game-night-channel a,.game-night-vote a {text-decoration:underline;text-underline-offset:.2em;color:inherit;}
 .game-night-actions {display:flex;align-items:center;gap:.875rem;min-width:0;margin-top:.875rem;}
 .game-night-actions .btn.primary {--accent:var(--season-lime,#c9eb00);--accent-strong:#ddf65c;flex:1;min-height:2.875rem;padding:.625rem .875rem;border-radius:.5rem;background:var(--season-lime,#c9eb00);border-color:var(--season-lime,#c9eb00);color:#151128;font-size:.8125rem;font-weight:600;text-align:center;white-space:nowrap;transition:background 180ms ease,transform 180ms ease;}
 .game-night-actions .btn.primary:hover {background:#ddf65c;border-color:#ddf65c;transform:translateY(-1px);}
 .game-night-actions .btn.primary:active {transform:translateY(1px);}
-.game-night-invite {display:flex;align-items:center;max-width:7rem;min-height:2.75rem;font-size:.6875rem;line-height:1.5;color:#d9cfe7;text-decoration:underline;text-underline-offset:.2em;}
-.game-night-banner .game-night-vote {margin-top:.625rem;font-size:.625rem;color:#c5b7d8;}
 .game-night-dismiss {position:absolute;top:.125rem;right:.125rem;z-index:1;display:grid;place-items:center;width:2.75rem;height:2.75rem;border:0;border-radius:.5rem;background:transparent;color:#d2c7e1;font:inherit;font-size:1.5rem;cursor:pointer;}
 .game-night-dismiss:hover {background:#ffffff12;color:white;}
 .lobby-updates :is(summary,button,a):focus-visible {outline:2px solid #d6ee53;outline-offset:4px;}
@@ -53,7 +50,6 @@
   .game-night-lineup {margin-top:.875rem;}
   .game-night-join {display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.25rem 1rem;align-items:center;}
   .game-night-actions {margin:0;}
-  .game-night-vote {grid-column:1/-1;}
 }
 @media(min-width:760px) {
   .lobby-newsletter summary>span:first-child {flex-direction:row;align-items:baseline;gap:.75rem;flex-wrap:wrap;}
@@ -71,8 +67,6 @@
   .game-night-time>strong {display:block;margin-top:.125rem;font-size:1.375rem;}
   .game-night-actions {display:flex;flex-direction:column;gap:0;margin-top:.875rem;align-items:stretch;}
   .game-night-actions .btn.primary {font-size:.875rem;}
-  .game-night-invite {justify-content:center;max-width:none;min-height:2rem;}
-  .game-night-banner .game-night-vote {margin-top:.125rem;text-align:center;}
 }
 @media(prefers-reduced-motion:reduce) {
   .game-night-art img,.game-night-actions .btn.primary {transition:none;}
