@@ -1,6 +1,12 @@
 import {test} from 'node:test';import assert from 'node:assert/strict';
-import {assessMaintenance,requiredSections} from '../scripts/maintenance-completion.mjs';
+import {assessMaintenance,requiredSections,catalogReviewDateIssues} from '../scripts/maintenance-completion.mjs';
 const fixture=()=>({date:'2026-10-29',sections:Object.fromEntries(requiredSections.map(s=>[s,{expectedIds:['a'],items:[{id:'a',status:'complete',checkedAt:'2026-10-29T10:00:00Z',evidence:['read.json'],coverageComplete:true}]}]))});
+test('visible review dates track successful reads without refreshing blocked entries',()=>{
+ const reviews={a:{outcome:'reviewed',lastSuccessfulReviewAt:'2026-10-29T10:00:00Z'},b:{outcome:'blocked'}};
+ assert.equal(catalogReviewDateIssues([{id:'a',lastCheckedAt:'2026-10-23T10:00:00Z'}],reviews).length,1);
+ assert.deepEqual(catalogReviewDateIssues([{id:'a',lastCheckedAt:'2026-10-29T10:00:00.000Z'},{id:'b',lastCheckedAt:'2026-10-23T10:00:00Z'}],reviews),[]);
+ assert.equal(catalogReviewDateIssues([{id:'a',lastCheckedAt:'2026-10-30T10:00:00Z'}],reviews).length,1);
+});
 test('a shipped release cannot hide an unfinished source or omitted scope',()=>{
  const r=fixture();r.sections.discovery.items[0].status='pending';assert.equal(assessMaintenance(r).status,'incomplete');
  r.sections.discovery.items=[];assert.match(assessMaintenance(r).issues.join(),/omitted/);
