@@ -6964,7 +6964,8 @@
         "spotlight": false,
         "moderation": null
       },
-      "relationships": []
+      "relationships": [],
+      "cardSummary": "Find 3D models, materials, HDRIs and scenes with per-asset CC0 or royalty-free licensing."
     },
     {
       "schemaVersion": 1,
@@ -393690,7 +393691,8 @@
         "spotlight": false,
         "moderation": null
       },
-      "relationships": []
+      "relationships": [],
+      "cardSummary": "Study a branching video adventure built with Next.js and fal, requiring a server-side key and paid inference."
     },
     {
       "schemaVersion": 1,
@@ -393745,7 +393747,8 @@
         "spotlight": false,
         "moderation": null
       },
-      "relationships": []
+      "relationships": [],
+      "cardSummary": "Explore a Windows demonstration of procedurally generated labyrinth layouts."
     },
     {
       "schemaVersion": 1,
@@ -635709,7 +635712,8 @@
         "spotlight": false,
         "moderation": null
       },
-      "relationships": []
+      "relationships": [],
+      "cardSummary": "Explore Blueprint generation and project-aware Unreal assistance, with engine support and account requirements set by the vendor."
     },
     {
       "schemaVersion": 1,
@@ -636157,7 +636161,8 @@
         "spotlight": false,
         "moderation": null
       },
-      "relationships": []
+      "relationships": [],
+      "cardSummary": "A creator-shared video about a launchpad, level changes and a turret."
     },
     {
       "schemaVersion": 1,
