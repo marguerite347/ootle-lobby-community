@@ -4,7 +4,7 @@ import {useEffect,useState} from 'react';
 import TurnstileChallenge from './TurnstileChallenge';
 
 type Configuration = {available:boolean;privacyUrl:string;siteKey:string|null;signupUrl:string|null};
-export default function SubscribeForm({waitlist=false}:{waitlist?:boolean}) {
+export default function SubscribeForm({waitlist=false,showIntro=true}:{waitlist?:boolean;showIntro?:boolean}) {
   const [config,setConfig] = useState<Configuration|null>(null);
   const [email,setEmail] = useState(''), [consent,setConsent] = useState(false);
   const [token,setToken] = useState(''), [verificationError,setVerificationError] = useState('');
@@ -18,7 +18,7 @@ export default function SubscribeForm({waitlist=false}:{waitlist?:boolean}) {
     return () => controller.abort();
   },[]);
   const canonicalSignup = config?.signupUrl && new URL(config.signupUrl).origin !== window.location.origin;
-  return <form className="subscribe-form" onSubmit={async event => {
+  return <form className="subscribe-form" aria-label="Tari newsletter" onSubmit={async event => {
     event.preventDefault();
     if (!config?.available || !token || !consent || busy) return;
     setBusy(true); setMessage('');
@@ -35,8 +35,8 @@ export default function SubscribeForm({waitlist=false}:{waitlist?:boolean}) {
       setToken(''); setResetKey(value => value+1);
     } finally { setBusy(false); }
   }}>
-    <h2>{waitlist?'Be in the loop.':'Keep me in the loop.'}</h2>
-    <p>Get Tari news, Ootle launch updates and community highlights in your inbox.</p>
+    {showIntro && <><h2>{waitlist?'Be in the loop.':'Keep me in the loop.'}</h2>
+    <p>Get Tari news, Ootle launch updates and community highlights in your inbox.</p></>}
     {!config ? <p role="status">Checking signup availability…</p> : !config.available ?
       <div className="signup-unavailable" role="status"><p>Email signup is being connected. Follow the latest launch news on the Tari forum.</p><a className="btn primary" href="https://community.tari.com/">Follow Tari updates</a></div> : canonicalSignup ?
       <a className="btn primary" href={safeHref(config.signupUrl!)}>Subscribe on lobby.tari.com</a> : !done ? <>
