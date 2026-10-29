@@ -1,0 +1,12 @@
+{
+  "id": "2026-11-01-horror-night",
+  "enabled": true,
+  "game": "R.E.P.O. or Shift At Midnight",
+  "startsAt": "2026-11-01T18:00:00-05:00",
+  "channelName": "Game Streams",
+  "channelUrl": "https://discord.com/channels/892738558316662855/1558828371100573726",
+  "inviteUrl": "https://discord.gg/tari",
+  "expiresAt": "2026-11-02T00:00:00-05:00",
+  "voteClosesAt": "2026-10-31T18:00:00-04:00",
+  "announcementUrl": "https://discord.com/channels/892738558316662855/893157378789351475/1564658377647464551"
+}
