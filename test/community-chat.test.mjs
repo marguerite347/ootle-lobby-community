@@ -744,6 +744,47 @@ test("reaction HTTP writes enforce the existing session, origin, header and shar
   assert.equal((await write()).status,429);
 });
 
+test('fresh chat visits hide history, receive new messages and preserve stored conversations', async t => {
+  const db=new PGlite(); await installSchema(db);
+  const store=createChatStore(db), app=express(), server=app.listen(0,'127.0.0.1');
+  await new Promise(resolve=>server.once('listening',resolve));
+  const base='http://127.0.0.1:'+server.address().port+'/api/chat';
+  app.use('/api/chat',createCommunityRouter({store,origin:'https://lobby.tari.com',guests:{secret:'fresh-view-test'}}));
+  t.after(async()=>{server.closeAllConnections();server.close();await db.close();});
+  const join=async()=>{
+    const res=await fetch(base+'/guest/session',{method:'POST',headers:{Origin:'https://lobby.tari.com','X-Ootle-Chat':'1','Content-Type':'application/json'},body:'{}'});
+    return {cookie:res.headers.get('set-cookie').split(';')[0],account:(await res.json()).account};
+  };
+  const a=await join(),b=await join(), headers={Cookie:a.cookie};
+  const old=await store.send(b.account.id,{channelId:'lobby',body:'Previous visit',clientId:'fresh-previous-message'});
+  assert.equal((await fetch(base+'/view')).status,401);
+  const response=await fetch(base+'/view',{headers});
+  assert.equal(response.headers.get('cache-control'),'no-store');
+  const {startedAt}=await response.json();
+  assert.ok(Number.isFinite(Date.parse(startedAt)));
+  const path='/channels/lobby/messages?rootsOnly=1&after='+encodeURIComponent(startedAt);
+  const read=async(suffix='')=>(await (await fetch(base+path+suffix,{headers})).json());
+  assert.deepEqual((await read()).messages,[]);
+  assert.equal((await read()).hasMore,false);
+  const first=await store.send(a.account.id,{channelId:'lobby',body:'New from me',clientId:'fresh-current-message-a'});
+  const second=await store.send(b.account.id,{channelId:'lobby',body:'New from someone else',clientId:'fresh-current-message-b'});
+  assert.deepEqual((await read()).messages.map(m=>m.id),[first.id,second.id]);
+  assert.deepEqual((await read('&q=Previous')).messages,[]);
+  assert.equal((await fetch(base+'/channels/lobby/messages?parentId='+old.id+'&after='+encodeURIComponent(startedAt),{headers})).status,404);
+  assert.equal((await fetch(base+'/channels/lobby/messages?after=invalid',{headers})).status,400);
+  await db.query(`INSERT INTO community_chat.messages(id,channel_id,account_id,author_name,body)
+    SELECT 'fresh-page-'||lpad(i::text,4,'0'),'lobby',$1,'Pagination','New page '||i FROM generate_series(1,105) i`,[b.account.id]);
+  const page=await read(),cursor=page.messages[0];
+  assert.equal(page.messages.length,100);assert.equal(page.hasMore,true);
+  const older=await read('&before='+encodeURIComponent(cursor.cursor_at)+'&beforeId='+cursor.id);
+  assert.equal(older.messages.length,7);assert.equal(older.hasMore,false);
+  assert.ok(![...page.messages,...older.messages].some(m=>m.id===old.id));
+  const nextView=(await (await fetch(base+'/view',{headers})).json()).startedAt;
+  assert.deepEqual((await store.messagePage(a.account.id,'lobby',{after:nextView})).messages,[]);
+  assert.ok((await store.messages(a.account.id,'lobby',{search:'Previous'})).some(m=>m.id===old.id));
+  assert.equal((await (await fetch(base+'/session',{headers})).json()).account.id,a.account.id);
+});
+
 test('custom-domain chat accepts only explicitly configured origins and preserves the original origin', async t => {
   const db=new PGlite(); await installSchema(db);
   const store=createChatStore(db), app=express(), server=app.listen(0,'127.0.0.1');
