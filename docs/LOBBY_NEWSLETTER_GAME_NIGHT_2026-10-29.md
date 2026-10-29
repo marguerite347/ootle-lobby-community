@@ -9,11 +9,11 @@
 
 ## Public behavior
 
-The home page has a newsletter signup disclosure below the countdown header, using the same consent and Turnstile flow as /ootle. A dismissible event banner follows. No addresses or verification tokens are stored in the repository.
+The home page has a newsletter signup disclosure below the countdown header, using the existing consent and Turnstile flow. Canonical signup links open /#newsletter. The header countdown is informational; the removed /ootle landing page redirects to the lobby. A dismissible event banner follows. No addresses or verification tokens are stored in the repository.
 
-Source: [October 27 Discord announcement](https://discord.com/channels/892738558316662855/893157378789351475/1564658377647464551), independently read alongside Customer.io broadcast 535 on October 29. Sunday November 1, 6 p.m. Eastern is EST / 23:00 UTC. R.E.P.O. and Shift At Midnight remain the choices. Voting closes October 31 at 6 p.m. EDT. Direct Game Streams and public server invite links are included.
+Source: [October 27 Discord announcement](https://discord.com/channels/892738558316662855/893157378789351475/1564658377647464551), independently read alongside Customer.io broadcast 535 on October 29. Sunday November 1, 6 p.m. Eastern is EST / 23:00 UTC. R.E.P.O. and Shift At Midnight remain the choices. Voting closes October 31 at 6 p.m. EDT. Game Streams is displayed as the voice-channel label. A single Discord invite is the banner action.
 
-Edit creator-hub/hub/content/game-night.json for future events. expiresAt is the banner removal time (midnight after the event), not an announced event end. Changing the ID, game or schedule resets dismissal. After voting closes, the CTA links to event details. Newsletter signup remains after banner dismissal.
+Edit creator-hub/hub/content/game-night.json for future events. expiresAt is the banner removal time (midnight after the event), not an announced event end. Changing the ID, game or schedule resets dismissal. The banner does not repeat the voting prompt or separate newcomer links. Newsletter signup remains after banner dismissal.
 
 ## Validation and release boundary
 

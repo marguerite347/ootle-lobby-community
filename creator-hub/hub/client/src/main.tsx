@@ -5,7 +5,6 @@ const BuildFeedback = lazy(() => import('./pages/BuildFeedback'));
 const Community = lazy(() => import('./pages/Community'));
 const MarketingCalendar = lazy(() => import('./pages/MarketingCalendar'));
 const Blog = lazy(() => import('./pages/Blog'));
-const OotleLaunch = lazy(() => import('./components/OotleLaunch'));
 const LearningLoop = lazy(() => import('./pages/LearningLoop'));
 const Challenges = lazy(() => import('./pages/Challenges'));
 const WeeklyChallenges = lazy(() => import('./pages/WeeklyChallenges'));
@@ -82,7 +81,7 @@ const router = createBrowserRouter([
       { path: 'calendar', element: <MarketingCalendar /> },
       { path: 'blog', element: <Blog /> },
       { path: 'blog/:slug', element: <Blog /> },
-      { path: 'ootle', element: <OotleLaunch /> },
+      { path: 'ootle', element: <Navigate to="/" replace /> },
       { path: 'learn', element: <Learn /> },
       { path: 'skills', element: <SkillMarket /> },
       { path: 'skills/learning-loop', element: <LearningLoop /> },

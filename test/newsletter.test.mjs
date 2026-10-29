@@ -21,7 +21,7 @@ test('signup requires an exact HTTPS origin, a non-test key, consent, email and 
 test('the actual public app exposes bounded signup and retains all unrelated write restrictions',async t=>{
   let calls=[];
   const base=await serve(t,{fetcher:async(url,options)=>{calls.push({url,options});return {ok:true,json:async()=>({success:true})};}});
-  const config=await (await fetch(base+'/api/subscriptions/config')).json(); assert.equal(config.available,true);assert.equal(config.signupUrl,'https://lobby.tari.com/ootle');
+  const config=await (await fetch(base+'/api/subscriptions/config')).json(); assert.equal(config.available,true);assert.equal(config.signupUrl,'https://lobby.tari.com/#newsletter');
   for(const origin of ['https://evil.example','https://lobby.tari.com.evil.example','null',''])assert.equal((await submit(base,body,{Origin:origin})).status,403);
   assert.equal((await submit(base,body,{'X-Tari-Newsletter':''})).status,403);
   assert.equal((await submit(base,body,{'Content-Type':'text/plain'})).status,415);
@@ -33,6 +33,13 @@ test('the actual public app exposes bounded signup and retains all unrelated wri
   assert.deepEqual(JSON.parse(calls[0].options.body),{email:'test@example.com',token:body.token});
   assert.equal(calls[0].options.headers.Origin,env.PUBLIC_SITE_URL);assert.equal(calls[0].options.redirect,'error');assert.ok(calls[0].options.signal);
   for(const path of ['/api/projects','/api/subscriptions/other'])assert.equal((await fetch(base+path,{method:'POST'})).status,410);
+});
+test('retired launch page redirects to the lobby',async t=>{
+  const base=await serve(t);
+  for(const path of ['/ootle','/ootle/','/ootle?source=old-link']) {
+    const response=await fetch(base+path,{redirect:'manual'});
+    assert.equal(response.status,308);assert.equal(response.headers.get('location'),'/');
+  }
 });
 test('provider errors and malformed responses never become a success or automatic retry',async t=>{
   for(const response of [{ok:false,status:403,json:async()=>({success:true})},{ok:true,json:async()=>({success:false})},{ok:true,json:async()=>({success:'true'})},{ok:true,json:async()=>{throw Error('invalid json');}},null]) {

@@ -28,6 +28,7 @@ export function createInspirationLobby({workbenchServices,communityServices,news
   const lobby = express();
   lobby.disable('x-powered-by');
   lobby.use(securityHeaders,localHostGuard);
+  lobby.get('/ootle',(_req,res)=>res.redirect(308,'/'));
   lobby.use('/api/chat',createCommunityRouter(communityServices||communityServicesFromEnv()));
   // Narrow opt-in route; all unrelated public writes remain disabled below.
   lobby.use('/api/subscriptions',createTariNewsletterRouter(newsletterServices));

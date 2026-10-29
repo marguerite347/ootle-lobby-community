@@ -2,7 +2,7 @@
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import {Suspense, useEffect} from 'react';
 import CommunityLinks from './components/CommunityLinks';
-import {LaunchTicket} from './components/OotleLaunch';
+import LaunchCountdown from './components/LaunchCountdown';
 import './components/LobbyHeader.css';
 import './Shell.css';
 import LobbyUpdates from './components/LobbyUpdates';
@@ -24,7 +24,7 @@ export default function Layout() {
           <Link to="/" className="season-brand" aria-label="Ootle Lobby home"><img src="/ootle-jam-mark.svg" alt="" width="40" height="40"/><span>ootle<span className="season-brand-light">lobby</span><small>BUILT ON TARI</small></span></Link>
           <CommunityLinks/>
           <a className="season-header-create" href="https://ootle.tari.com/">Build</a>
-          <LaunchTicket/>
+          <LaunchCountdown/>
         </div>
       </header>
       <main className="container" id="main-content" tabIndex={-1}>
