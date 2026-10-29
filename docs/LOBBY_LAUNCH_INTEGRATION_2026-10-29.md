@@ -15,7 +15,7 @@
 3. Mount a narrowly scoped public signup adapter before the general public-write block. It posts `{email, token}` to `https://rwa.y.at/miner/exchanges/user`, matching [Tari's published hook](https://github.com/tari-project/tari-dot-com/blob/3a33d0b7c939435a5d4b3b97664c12e5d4c78652/src/services/api/useSubscribeNewsletter.ts). The API owner verifies the Turnstile token with the matching secret. No email/token logging or local subscription storage is added.
 4. Add explicit-render Turnstile lifecycle, expiration/error handling and fresh verification after failed submissions. Permit only Cloudflare's widget origin in the script/frame CSP directives, following [Cloudflare's CSP guidance](https://developers.cloudflare.com/turnstile/reference/content-security-policy/).
 5. Remove unsupported topic selection and confirmation-email claims. The provider's boolean success is the only signup success signal; this does not establish downstream delivery.
-6. Replace the launch page's old journal CTA with the current October project gallery. Its main header Projects link already targets that gallery. The exact additional button Fox meant remains unconfirmed.
+6. Replace the launch page's old journal CTA with the current October project gallery. Following the owner's clarification, rename the top-right header button from Projects to Build and link it directly to the official Ootle docs at `https://ootle.tari.com/`.
 7. While no approved key is configured, collect no addresses and offer the forum as an immediate path to launch news. The countdown CTA says Launch updates rather than promising a working waitlist.
 
 ## Configuration and remaining acceptance
