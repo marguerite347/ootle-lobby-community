@@ -9,6 +9,7 @@ import {publicRestriction} from './publicAccess.mjs';
 import {createCommunityRouter} from './community/router.mjs';
 import {communityServicesFromEnv} from './community/runtime.mjs';
 import {createTariNewsletterRouter} from './tariNewsletter.mjs';
+import {communityCalendar} from './communityCalendar.mjs';
 
 /** Only these routes compute bounded responses without persisting visitor data. */
 export function preventProjectHosting(req, res, next) {
@@ -29,6 +30,7 @@ export function createInspirationLobby({workbenchServices,communityServices,news
   lobby.disable('x-powered-by');
   lobby.use(securityHeaders,localHostGuard);
   lobby.get('/ootle',(_req,res)=>res.redirect(308,'/'));
+  lobby.get('/community/events.ics',(_req,res)=>res.set({'Content-Type':'text/calendar; charset=utf-8','Content-Disposition':'inline; filename="tari-community.ics"','Cache-Control':'public, max-age=300'}).send(communityCalendar()));
   lobby.use('/api/chat',createCommunityRouter(communityServices||communityServicesFromEnv()));
   // Narrow opt-in route; all unrelated public writes remain disabled below.
   lobby.use('/api/subscriptions',createTariNewsletterRouter(newsletterServices));

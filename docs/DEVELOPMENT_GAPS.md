@@ -41,6 +41,7 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 | [RETIRED-HOSTING](#retired-hosting) | retired | Writes to /api/projects*, /api/assets*, /api/recipes/:id/projects, /api/challenges/submissions |
 | [COMMUNITY-METRICS](#community-metrics) | build-required | GET /api/community-projects/metrics |
 | [WB-FORK](#wb-fork) | configuration-required | /workbench and Workbench navigation links |
+| [COMMUNITY-CALENDAR](#community-calendar) | configuration-required | GET /community/events.ics; shared community banner calendar options |
 
 ## WB-RUNNER
 
@@ -317,3 +318,15 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 **Completion check:** Follow both a Lobby client-side navigation and a direct /workbench request into the actual fork. Download an old browser workspace and import its files into Remix. Do not claim network deployment or a published submission without a real receipt.
 
 **Source:** [creator-hub/hub/client/src/pages/WorkbenchEntry.tsx](../creator-hub/hub/client/src/pages/WorkbenchEntry.tsx)
+
+## COMMUNITY-CALENDAR
+
+**configuration-required** — GET /community/events.ics; shared community banner calendar options
+
+**Current:** A public read-only iCalendar feed contains the configured game night and Tari Show, stable event UIDs, UTC timestamps and 15-minute display alarms. Google and Apple subscription links point to the same feed; a download imports both events into other compatible calendars. Calendar confirmation and notification settings remain controlled by the visitor. No OAuth access or private calendar data is requested.
+
+**Remaining:** Keep both public event configurations current when schedules change; increment the calendar sequence and timestamp for revisions. Verify provider handoffs against the deployed feed. No automatic sync with private calendars, all-account insertion, or guaranteed provider notifications is claimed.
+
+**Completion check:** Fetch the production calendar, parse both dates through the DST change, verify Google subscription confirmation and Apple calendar handoff or import, download the same file, and verify desktop/mobile banner and dismissal.
+
+**Source:** [creator-hub/hub/server/communityCalendar.mjs](../creator-hub/hub/server/communityCalendar.mjs), [creator-hub/hub/client/src/components/GameNightBanner.tsx](../creator-hub/hub/client/src/components/GameNightBanner.tsx)
