@@ -1,0 +1,29 @@
+{
+  "slug": "ootle-steam-kit",
+  "title": "Ootle Steam Kit",
+  "summary": "Steam-linked Ootle integration kit with wallet, trade, games and prediction modules. The October 29 public guide loaded; Games, Trade and Predict were disabled before Steam sign-in. The guide says the site currently watches deliveries and settles holds itself, while template-enforced trade escrow is a future destination. Source supports optional wallet-daemon integration and a local ledger mode. Do not interpret the guide or its recording as a completed Steam trade or independently enforced settlement. MIT source reviewed; no Steam login, wallet connection, payment or gameplay was exercised.",
+  "cardSummary": "Explore Steam-linked wallet, trading and game modules with private testnet payments and an operator-managed settlement flow.",
+  "cardStatus": "Alpha · Testnet · Steam account",
+  "creator": "iGaming",
+  "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/30",
+  "publishedAt": "2026-10-26T19:06:41.496Z",
+  "updatedAt": "2026-10-26T19:06:41.496Z",
+  "sourceContentSha256": "1e4c3af7a73efb92dfc5a6d60fa167f2007799b2fcbb087f298ef7e8d3799ce4",
+  "repoUrl": "https://github.com/1igaming/ootle-steam-kit",
+  "demoUrl": "https://ootle.sbox.trading/#/how",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "TypeScript · Rust · MIT",
+      "sourceUrl": "https://github.com/1igaming/ootle-steam-kit"
+    }
+  ],
+  "recording": {
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-ootle-steam-kit-20261029.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-ootle-steam-kit-20261029.png",
+    "capturedAt": "2026-10-29T10:09:18.570Z",
+    "sourceRevision": "d54da6654ed0100405e9413cabc3738a418d1b99",
+    "kind": "public-page",
+    "credit": "Docs walkthrough — Public settlement guide; no Steam login, trade or payment."
+  }
+}

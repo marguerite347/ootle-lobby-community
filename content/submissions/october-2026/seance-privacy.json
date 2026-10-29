@@ -1,7 +1,7 @@
 {
   "slug": "seance-privacy",
   "title": "Seance — privacy demo",
-  "summary": "Read-only browser demo comparing three views of private Esmeralda payments: public fields, a recipient view key that opens amount and memo, and a token audit key that counts amounts without opening memos. October 21 browser inspection of prepared Demo 1 returned a live indexer result; Bob’s public example key opened the memo, the audit example counted both amounts, and Eve’s wrong key stayed sealed. These intentionally public test keys are demonstrations only. The page trusts the indexer and offers a clearly labeled recorded fallback. Its Poltergeist comparison uses eleven recorded payments from one wallet and a synthetic transparent ledger; timing, fees and the spend graph still link those payments. The audit amount search is bounded to 0–0.0005 SEANCE. MIT source reviewed at e98765a19aa0. No personal key, wallet action or payment was used. Distinct from DevXTools’ Séance sealed-poll CLI.",
+  "summary": "Read-only browser comparison of what strangers, recipients and auditors can learn from private Esmeralda payments. October 29 inspection confirmed the initial example is explicitly a saved October 20 copy, even while the request mode says Live. A separate Summon a recent transaction action returned Commit for 17d6b433db0d47106f90c5d84460a984166bd057969ff751dc8a22cc72cacb7e; that is a public indexer read, not a payment we sent. Public demonstration keys opened the saved memo and counted amounts locally. The refreshed recording shows that saved-example mode. Timing, fees and the spend graph remain visible; the Poltergeist comparison uses eleven recorded payments and a synthetic transparent ledger. Audit search is bounded to 0–0.0005 SEANCE. Source at 0642c4ad5fc1; no personal keys or wallet actions used. Distinct from DevXTools’ sealed-poll project.",
   "cardSummary": "Compare what strangers, recipients and auditors can read from private testnet payments, including the metadata that remains public.",
   "cardStatus": "Web app · Testnet",
   "creator": "Kylne700",
@@ -19,11 +19,11 @@
     }
   ],
   "recording": {
-    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-seance-privacy-20261021.mp4",
-    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-seance-privacy-20261021.jpg",
-    "capturedAt": "2026-10-21T13:31:11.431Z",
-    "sourceRevision": "e98765a19aa0e4d335eaccb04a68aaeb98956033",
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-seance-privacy-20261029.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-seance-privacy-20261029.png",
+    "capturedAt": "2026-10-29T10:29:13.322Z",
+    "sourceRevision": "0642c4ad5fc13dbbec5241ac3000e417a183203d",
     "kind": "public-page",
-    "credit": "App demo — Public transaction inspection; no payment sent. Prepared-key behavior separately observed in browser."
+    "credit": "App demo — Public saved example and disclosure panels; deliberately public test keys, no wallet."
   }
 }

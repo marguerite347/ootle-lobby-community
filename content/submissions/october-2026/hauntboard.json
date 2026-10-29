@@ -1,8 +1,8 @@
 {
   "slug": "hauntboard",
   "title": "Hauntboard",
-  "summary": "Ootle message board with public threads and optional AES-256-GCM sealed message bodies. Titles, categories, fees, graph and timing remain public; accepted posts cannot be edited or deleted, and testnet resets can remove history. Invitation links carry a shared key: holders can read past and future messages, share access and impersonate participants; access cannot be revoked and authorship is not authenticated. Wallet recovery does not restore invitation keys. On October 16, 2026, the public reader and privacy explanation loaded with the wallet locked; repository revision 0598b28 documents schema 4 and the sealed-body flow. No encrypted message, wallet, post or payment action was tested. Prior outage and recovery evidence remains in the maintenance history.",
-  "cardSummary": "Read Ootle discussions with public threads or invitation-encrypted message bodies, while titles and categories remain public.",
+  "summary": "Public message board on Ootle testnet with public threads and encrypted sealed rooms. October 29 public inspection loaded five general threads and a privacy explanation; the deployed page reported runtime 0.46.0. Classic invitations share a key in the URL fragment. The current explanation also describes recipient-specific encrypted invitations, a separate recovery vault and rotation for future messages. Old keys and plaintext cannot be revoked; wallet recovery does not restore room keys, and messages do not authenticate individual authors. Titles, categories, fees, spent-output links, timing and network metadata remain public; accepted posts cannot be edited or deleted through Hauntboard. The October 28 creator update describes SDK/recovery work in PR 3 as not yet deployed; historical test transactions are not fresh acceptance of that upgrade. The recording shows public pages and privacy documentation, with no wallet, private-room access or posting.",
+  "cardSummary": "Read public Ootle discussions or share encrypted room messages with invitations and separate room-key recovery.",
   "cardStatus": "Web app · Testnet · Permanent posts",
   "creator": "_squared",
   "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/9",
@@ -19,11 +19,11 @@
   ],
   "demoUrl": "https://hauntboard.taritracker.com/",
   "recording": {
-    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-hauntboard-20261016.mp4",
-    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-hauntboard-20261016.jpg",
-    "capturedAt": "2026-10-16T17:56:51.673Z",
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-hauntboard-20261029.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-hauntboard-20261029.png",
+    "capturedAt": "2026-10-29T10:28:55.900Z",
     "sourceRevision": "0598b28c22d26c1bb2d43215b7b3f823dadadd0c",
     "kind": "public-page",
-    "credit": "Docs walkthrough — Public privacy explanation; no encrypted message or transaction demonstrated."
+    "credit": "App demo — Public board and room-privacy explanation; no wallet or private-room access."
   }
 }
