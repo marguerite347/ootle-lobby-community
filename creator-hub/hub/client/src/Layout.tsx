@@ -22,7 +22,7 @@ export default function Layout() {
         <div className="container lobby-nav-grid">
           <Link to="/" className="season-brand" aria-label="Ootle Lobby home"><img src="/ootle-jam-mark.svg" alt="" width="40" height="40"/><span>ootle<span className="season-brand-light">lobby</span><small>BUILT ON TARI</small></span></Link>
           <CommunityLinks/>
-          <Link className="season-header-create" to="/#october-submissions">Projects</Link>
+          <a className="season-header-create" href="https://ootle.tari.com/">Build</a>
           <LaunchTicket/>
         </div>
       </header>
