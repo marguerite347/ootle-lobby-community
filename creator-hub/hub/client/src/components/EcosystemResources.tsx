@@ -20,15 +20,15 @@ export default function EcosystemResources() {
       <p className="card-front-summary">{record.cardSummary}</p>
       <div className="card-front-status"><strong>{record.cardStatus}</strong>{record.preview && <span>{recordingLabel(record.preview.source)}</span>}</div>
       <p className="card-byline">{record.creator.name} · {record.group}</p>
-      <div className="card-front-links">{record.demoUrl && <a href={record.demoUrl} target="_blank" rel="noreferrer">Open app ↗</a>}<a href={record.repoUrl || record.sourceUrl} target="_blank" rel="noreferrer">Source ↗</a>{record.discussionLinks?.map(post=><a key={post.url} href={post.url} target="_blank" rel="noreferrer">Discussion · {post.platform} ↗</a>)}</div>
+      <div className="card-front-links">{record.demoUrl && <a href={record.demoUrl} target="_blank" rel="noreferrer">Open app</a>}<a href={record.repoUrl || record.sourceUrl} target="_blank" rel="noreferrer">Source</a>{record.discussionLinks?.map(post=><a key={post.url} href={post.url} target="_blank" rel="noreferrer">Discussion · {post.platform}</a>)}</div>
       <details className="card-details"><summary aria-label={`Details about ${record.title}`}>Details</summary>
        <p>{record.summary}</p><p>{record.status} · {record.network}</p>
        <p>{record.license || 'License not established'} · Checked {record.lastCheckedAt.slice(0,10)}</p>
        <p>{record.preview?.source}</p>
-       <Link to={`/resource/${encodeURIComponent(record.id)}`}>Full resource &amp; provenance →</Link>
+       <Link to={`/resource/${encodeURIComponent(record.id)}`}>Full resource &amp; provenance</Link>
       </details>
     </article>)}</div>
     {!records.length && <p role="status">No matching resources.</p>}
-    {opportunities.map(item => <aside key={item.id} id={`resource-${item.id}`} className="ecosystem-opportunity">{item.preview && <figure><video controls muted playsInline preload="none" src={item.preview.video} poster={item.preview.image} aria-label={`${item.title} recording`}/></figure>}<h3>{item.title}</h3><p className="card-front-summary">{item.cardSummary}</p><div className="card-front-status"><strong>{item.cardStatus}</strong><span>Announcement</span></div><a href={item.sourceUrl} target="_blank" rel="noreferrer">Original post ↗</a><details className="card-details"><summary>Details</summary><p>{item.summary}</p><p>{item.preview?.source}</p></details></aside>)}
+    {opportunities.map(item => <aside key={item.id} id={`resource-${item.id}`} className="ecosystem-opportunity">{item.preview && <figure><video controls muted playsInline preload="none" src={item.preview.video} poster={item.preview.image} aria-label={`${item.title} recording`}/></figure>}<h3>{item.title}</h3><p className="card-front-summary">{item.cardSummary}</p><div className="card-front-status"><strong>{item.cardStatus}</strong><span>Announcement</span></div><a href={item.sourceUrl} target="_blank" rel="noreferrer">Original post</a><details className="card-details"><summary>Details</summary><p>{item.summary}</p><p>{item.preview?.source}</p></details></aside>)}
   </section>;
 }

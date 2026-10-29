@@ -23,12 +23,12 @@ export default function ProjectCard({resource,sourceUrl,creator,summary,cardSumm
   <p className="card-front-summary">{cardSummary || summary}</p>
   <div className="card-front-status">{cardStatus&&<strong>{cardStatus}</strong>}{resource.preview?.video&&<span>{recordingLabel(resource.preview.source)}</span>}</div>
   <p className="card-byline">By {creator}{technologies?.[0]&&<> · {technologies[0].label}</>}</p>
-  <div className="card-front-links">{frontActions || <a href={safeHref(sourceUrl)} target="_blank" rel="noreferrer">Creator’s post ↗</a>}</div>
+  <div className="card-front-links">{frontActions || <a href={safeHref(sourceUrl)} target="_blank" rel="noreferrer">Creator’s post</a>}</div>
   <details className="card-details"><summary aria-label={`Details about ${resource.title}`}>Details</summary>
    {cardSummary&&<p>{summary}</p>}{dates}{caption}
    {(!technologies||technologies.length>0)&&<ProjectTechnology resourceId={resource.id} labels={technologies}/>}
    <div className="contest-project-actions">{actions}</div>
-   {repoUrl&&<a href={safeHref(repoUrl)} target="_blank" rel="noreferrer">Repository ↗</a>}
+   {repoUrl&&<a href={safeHref(repoUrl)} target="_blank" rel="noreferrer">Repository</a>}
   </details>
  </article>;
 }

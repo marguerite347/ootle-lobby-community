@@ -98,7 +98,10 @@
 .card-front-links{display:flex;flex-wrap:wrap;gap:0 1rem}
 .card-front-links a,.card-details summary,.card-details a{display:inline-flex;align-items:center;min-height:2.75rem;font-size:.875rem}
 .card-details{position:relative;z-index:3;border-top:1px solid #c9b6ff33}
-.card-details summary{display:list-item;align-content:center;cursor:pointer;width:fit-content;padding-right:1rem}
+.card-details summary{display:inline-flex;gap:.75rem;cursor:pointer;width:fit-content;padding-right:1rem;list-style:none}
+.card-details summary::-webkit-details-marker{display:none}
+.card-details summary::after{content:'+'}
+.card-details[open] summary::after{content:'−'}
 .card-details summary:focus-visible{outline:2px solid var(--season-lime,#cced00);outline-offset:2px}
 .card-details p{font-size:.875rem;line-height:1.6;margin:.5rem 0}
 .card-details .project-technology{position:static;padding:.5rem 0;background:none;border-radius:0}

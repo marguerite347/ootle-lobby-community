@@ -38,13 +38,13 @@ export default function SubscribeForm({waitlist=false}:{waitlist?:boolean}) {
     <h2>{waitlist?'Be in the loop.':'Keep me in the loop.'}</h2>
     <p>Get Tari news, Ootle launch updates and community highlights in your inbox.</p>
     {!config ? <p role="status">Checking signup availability…</p> : !config.available ?
-      <div className="signup-unavailable" role="status"><p>Email signup is being connected. Follow the latest launch news on the Tari forum.</p><a className="btn primary" href="https://community.tari.com/">Follow Tari updates ↗</a></div> : canonicalSignup ?
-      <a className="btn primary" href={safeHref(config.signupUrl!)}>Subscribe on lobby.tari.com ↗</a> : !done ? <>
+      <div className="signup-unavailable" role="status"><p>Email signup is being connected. Follow the latest launch news on the Tari forum.</p><a className="btn primary" href="https://community.tari.com/">Follow Tari updates</a></div> : canonicalSignup ?
+      <a className="btn primary" href={safeHref(config.signupUrl!)}>Subscribe on lobby.tari.com</a> : !done ? <>
         <label>Email address<input type="email" autoComplete="email" required maxLength={254} value={email} disabled={busy} onChange={event=>setEmail(event.target.value)}/></label>
-        <label className="signup-option"><input type="checkbox" required checked={consent} disabled={busy} onChange={event=>setConsent(event.target.checked)}/><span>I agree to receive Tari email updates. I can unsubscribe at any time. <a href={safeHref(config.privacyUrl)} target="_blank" rel="noreferrer">Privacy notice ↗</a></span></label>
+        <label className="signup-option"><input type="checkbox" required checked={consent} disabled={busy} onChange={event=>setConsent(event.target.checked)}/><span>I agree to receive Tari email updates. I can unsubscribe at any time. <a href={safeHref(config.privacyUrl)} target="_blank" rel="noreferrer">Privacy notice</a></span></label>
         <TurnstileChallenge siteKey={config.siteKey!} resetKey={resetKey} onToken={setToken} onError={setVerificationError}/>
         {verificationError && <div role="alert"><p>{verificationError}</p><button type="button" className="btn" disabled={busy} onClick={()=>{setVerificationError('');setResetKey(value=>value+1);}}>Retry verification</button></div>}
-        <button className="btn primary" disabled={busy||!token||!consent}>{busy?'Subscribing…':'Subscribe ↗'}</button>
+        <button className="btn primary" disabled={busy||!token||!consent}>{busy?'Subscribing…':'Subscribe'}</button>
       </> : null}
     <p role="status" aria-live="polite">{message}</p>
   </form>;
