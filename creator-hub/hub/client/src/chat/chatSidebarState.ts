@@ -9,7 +9,6 @@ export const COMMUNITY_POLL_INTERVAL_MS = 4000;
 export const MAX_RENDERED_MESSAGES = 200;
 
 export const STORAGE_KEYS = {
-  dock: 'ootleLobby.chatSidebar.dock',
   displayName: 'ootleLobby.communityChat.displayName',
   clientId: 'ootleLobby.communityChat.clientId',
   reportedIds: 'ootleLobby.communityChat.reportedIds',
@@ -34,8 +33,16 @@ export function writeStoredValue(storage: KeyValueStorage | undefined, key: stri
   }
 }
 
-export function readDockPreference(storage: KeyValueStorage | undefined): DockPreference {
-  return readStoredValue(storage, STORAGE_KEYS.dock) === 'open' ? 'open' : 'collapsed';
+/** Ordinary embedded visits start in the Lobby; explicit chat links retain their destination. */
+export function initialChatSelection(search: string, embedded: boolean) {
+  const params = new URLSearchParams(search);
+  const useDestination = !embedded || params.get('chat') === 'open';
+  const channel = useDestination ? params.get('channel') : null;
+  const dm = useDestination ? params.get('dm') : null;
+  return {
+    channel: channel && /^[A-Za-z0-9_-]{1,100}$/.test(channel) ? channel : 'lobby',
+    dm: dm === 'inbox' || (dm && /^[a-f0-9-]{36}$/.test(dm)) ? dm : null,
+  };
 }
 
 export function readReportedIds(storage: KeyValueStorage | undefined): Set<string> {
