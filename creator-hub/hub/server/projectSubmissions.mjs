@@ -1,5 +1,6 @@
 // INTEGRATION_GAP[LOBBY-SUBMISSIONS] (configuration-required): durable private intake;
-// publication remains a reviewed repository change. See docs/PROJECT_SUBMISSIONS.md.
+// October reply links discard Discourse share attribution; publication remains a
+// reviewed repository change. See docs/PROJECT_SUBMISSIONS.md.
 import {Router, json} from 'express';
 import {createHash, createHmac, randomBytes, randomUUID, timingSafeEqual} from 'node:crypto';
 import {readFileSync} from 'node:fs';
@@ -31,8 +32,11 @@ export function validateProjectSubmission(body){
   const submission={destination:body.destination,title:text(body.title,'a project name',2,100),creator:text(body.creator,'your name or handle',1,80),summary:text(body.summary,'a short project description',20,1200),projectUrl:publicUrl(body.projectUrl,'your project link',true),repoUrl:publicUrl(body.repoUrl,'source code',body.destination==='october-2026'),forumUrl:publicUrl(body.forumUrl,'your creator post',body.destination==='october-2026')};
   if(submission.destination==='october-2026'){
     const url=new URL(submission.forumUrl);
+    // Discourse adds ?u=username to links copied by signed-in members.
+    url.searchParams.delete('u');
     const match=url.pathname.match(/^\/t\/(?:[^/]+\/)?396\/(\d+)\/?$/);
     if(url.hostname!=='community.tari.com'||!match||Number(match[1])<2||url.search||url.hash)fail('Link your individual entry in the official October contest thread.');
+    submission.forumUrl=url.href;
   }
   return {clientId:body.clientId,submission};
 }

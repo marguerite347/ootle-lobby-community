@@ -336,7 +336,7 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 
 **configuration-required** — /submit; POST /api/project-submissions; private /submit/review
 
-**Current:** Direct Lobby intake stores bounded project proposals in private PostgreSQL with retry-safe receipts, exact-origin checks, signed form challenges and durable quotas. Existing owner/moderator chat sessions can paginate and annotate the private queue. October listings require an individual official forum entry; intake neither judges eligibility nor publishes automatically. The schema is installed by an operator, never a public request.
+**Current:** Direct Lobby intake stores bounded project proposals in private PostgreSQL with retry-safe receipts, exact-origin checks, signed form challenges and durable quotas. Existing owner/moderator chat sessions can paginate and annotate the private queue. October listings require an individual official forum entry; copied links have Discourse username attribution removed before storage and retry matching. Intake neither judges eligibility nor publishes automatically. The schema is installed by an operator, never a public request.
 
 **Remaining:** Apply the private schema and backend-only grants to the configured database; verify actual hosted submit/readback and role isolation. Publication continues through reviewed content PRs. Automated publisher identity verification, notifications, scheduled retention and backup-restore verification are not supplied.
 

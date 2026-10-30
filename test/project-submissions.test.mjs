@@ -19,6 +19,9 @@ test('intake validates destinations, public links, consent and individual Octobe
   assert.equal(validateProjectSubmission(input()).submission.title,'Trial project');
   const contest=input({destination:'october-2026',repoUrl:'https://github.com/example/project',forumUrl:OCTOBER_THREAD+'/34'});
   assert.equal(validateProjectSubmission(contest).submission.destination,'october-2026');
+  const shared={...contest,forumUrl:contest.forumUrl+'?u=example_member'};
+  assert.deepEqual(validateProjectSubmission(shared),validateProjectSubmission(contest));
+  for(const forumUrl of [OCTOBER_THREAD+'?u=example_member',OCTOBER_THREAD+'/34?u=example_member&x=1','https://example.com/t/396/34?u=example_member',OCTOBER_THREAD+'/34?u=example_member#other'])assert.throws(()=>validateProjectSubmission({...contest,forumUrl}),{status:400});
   for(const extra of [{destination:'official'},{consent:false},{website:'spam'},{title:'x'},{creator:'a'.repeat(81)},{summary:'short'},{title:'bad\u202e'},{clientId:'invalid'},{projectUrl:'javascript:alert(1)'},{projectUrl:'http://example.com'},{projectUrl:'https://127.0.0.1/a'},{projectUrl:'https://user:password@example.com'},{projectUrl:'https://private.local'}])assert.throws(()=>validateProjectSubmission(input(extra)),{status:400});
   for(const extra of [{repoUrl:''},{forumUrl:OCTOBER_THREAD},{forumUrl:OCTOBER_THREAD+'/1'},{forumUrl:OCTOBER_THREAD+'/34?x=1'},{forumUrl:'https://example.com/t/396/34'}])assert.throws(()=>validateProjectSubmission({...contest,...extra}),{status:400});
 });
