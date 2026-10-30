@@ -7,6 +7,9 @@
 .lobby-newsletter[open] .newsletter-toggle {background:#c9b6ff12;color:#d6ee53;}
 .lobby-newsletter[open] summary:hover .newsletter-toggle {background:#c9b6ff25;}
 .lobby-newsletter-form {position:absolute;z-index:1;top:calc(100% + .5rem);right:0;box-sizing:border-box;width:min(24rem,calc(100vw - 2.5rem));padding:1rem;border:1px solid #c9b6ff50;border-radius:.75rem;background:#151128;box-shadow:0 .75rem 2rem #04072380;}
+.newsletter-close {position:absolute;top:.25rem;right:.25rem;display:grid;place-items:center;width:2.75rem;height:2.75rem;padding:0;border:0;border-radius:.5rem;background:transparent;color:#eeeaff;font:inherit;font-size:1.5rem;line-height:1;cursor:pointer;}
+.newsletter-close:hover {background:#c9b6ff25;color:#fff;}
+.lobby-newsletter :is(summary,button,a,input):focus-visible {outline:2px solid #d6ee53;outline-offset:3px;}
 .lobby-newsletter .subscribe-form p,.lobby-newsletter .subscribe-form label {font-size:.875rem;}
 .lobby-newsletter .subscribe-form input[type=email] {font-size:1rem;min-height:2.75rem;box-sizing:border-box;}
 .lobby-newsletter .subscribe-form .signup-option {min-height:2.75rem;font-size:.875rem;}
