@@ -1,6 +1,6 @@
 # Community submissions, recordings and project elements
 
-The public home for this work is [ootle-lobby-community](https://github.com/marguerite347/ootle-lobby-community). [Open the Lobby](https://ootle-lobby-preview.vercel.app/#october-submissions) or [suggest an October listing](https://github.com/marguerite347/ootle-lobby-community/issues/new?template=october-submission.yml).
+The public home for this work is [ootle-lobby-community](https://github.com/marguerite347/ootle-lobby-community). [Open the Lobby](https://lobby.tari.com/) or [submit a project for review](https://lobby.tari.com/submit).
 
 ## Contributor access
 
@@ -15,7 +15,7 @@ Automatic invitations are closed. Contribute through a fork and pull request. Tr
 - Built-with elements are evidence-backed `technologies` labels linking to source files, ideally pinned commits. Do not imply that every template in a project's dependency tree was authored by its creator.
 - A Lobby card links to the creator's project; it does not copy or relicense their entire application. Their repository remains the source of truth.
 
-Workbench files/drafts are browser-local and exported Riffs are not automatic contributions to this public repository. Legacy hosted project-write endpoints are retired. The new Workbench publication API requires a backend; see [Workbench](WORKBENCH.md) and [development gaps](DEVELOPMENT_GAPS.md). Until connected, share from your own public repository, submit on the official forum, and propose a listing here.
+Workbench files/drafts are browser-local and exported Riffs are not automatic contributions to this public repository. Legacy hosted project-write endpoints are retired. The new Workbench publication API requires a backend; see [Workbench](WORKBENCH.md) and [development gaps](DEVELOPMENT_GAPS.md). The separate [Lobby submission form](https://lobby.tari.com/submit) accepts project links into a private review queue. Community projects need no forum post. October entries still require an individual post in the official contest thread. See [intake and reviewer operations](PROJECT_SUBMISSIONS.md).
 
 ## Monitor October
 
@@ -38,7 +38,7 @@ An editor reviews the report, opens each new/edited public post and checks the p
 ## Add or update an October project
 
 1. The creator posts their entry to the official October forum thread. Updates belong in that original post.
-2. Suggest a listing through the issue form, or add `content/submissions/october-2026/<slug>.json` in a reviewed PR. Use one stable slug and source post per project.
+2. Suggest a listing through [the Lobby form](https://lobby.tari.com/submit?contest=october), the repository issue form, or add `content/submissions/october-2026/<slug>.json` in a reviewed PR. Use one stable slug and source post per project.
 3. Record a factual description, creator credit, publicly available source repo, submission/last-edit dates and source evidence for technologies. Do not copy payout addresses. Review eligibility separately; a listing is not a Council endorsement.
 4. Run the monitor and update the registry's `checkedAt` and `observedSubmissionPosts` from the successful report. Do not invent an empty check after a network failure.
 5. Run `npm test && npm run validate && npm run build`. Website changes also require the production site build. Include source links and recording review evidence in the PR or task handoff.

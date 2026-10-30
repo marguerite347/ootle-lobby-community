@@ -8,6 +8,7 @@ import {
   installSchema,
 } from "../creator-hub/hub/server/community/store.mjs";
 import { createInspirationLobby } from "../creator-hub/hub/server/inspirationLobby.mjs";
+import {createProjectSubmissionStore,installProjectSubmissionSchema} from '../creator-hub/hub/server/projectSubmissions.mjs';
 if (process.env.VERCEL) throw new Error("This preview cannot run on Vercel.");
 const port = Number(process.env.PORT || 4318),
   host = process.env.CHAT_PREVIEW_HOST || "127.0.0.1",
@@ -20,6 +21,7 @@ const directory = resolve(
 mkdirSync(directory, { recursive: true });
 const db = new PGlite(directory);
 await installSchema(db);
+await installProjectSubmissionSchema(db);
 const store = createChatStore(db);
 await store.login({ id: 1, login: "You" }, { ownerId: "1" });
 await store.login({ id: 2, login: "Ari" }, { allowedIds: ["2"] });
@@ -60,10 +62,11 @@ for (const [userId, channelId, body, clientId] of [
 const app = createInspirationLobby({
   communityServices: {
     store,
+    projectSubmissions: {store:createProjectSubmissionStore(db),origin,secret:randomBytes(32).toString('hex')},
     origin,
     preview: true,
     privateEnabled: true,
-    guests: { secret: randomBytes(32).toString("hex") },
+    guests: process.env.CHAT_PREVIEW_OWNER === "1" ? undefined : { secret: randomBytes(32).toString("hex") },
   },
 });
 const server = app.listen(port, "127.0.0.1", () =>

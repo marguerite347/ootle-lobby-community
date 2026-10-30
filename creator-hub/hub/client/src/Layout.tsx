@@ -24,7 +24,7 @@ export default function Layout() {
         <div className="container lobby-nav-grid">
           <Link to="/" className="season-brand" aria-label="Ootle Lobby home"><img src="/ootle-jam-mark.svg" alt="" width="40" height="40"/><span>ootle<span className="season-brand-light">lobby</span><small>BUILT ON TARI</small></span></Link>
           <CommunityLinks/>
-          <a className="season-header-create" href="https://ootle.tari.com/">Build</a>
+          <div className="lobby-header-actions"><Link className="lobby-submit-link" to="/submit">Submit a project</Link><a className="season-header-create" href="https://ootle.tari.com/">Build</a></div>
           {location.pathname === '/' ? <div className="lobby-header-updates"><LaunchCountdown/><LobbyUpdates/></div> : <LaunchCountdown/>}
         </div>
       </header>

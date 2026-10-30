@@ -42,6 +42,7 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 | [COMMUNITY-METRICS](#community-metrics) | build-required | GET /api/community-projects/metrics |
 | [WB-FORK](#wb-fork) | configuration-required | /workbench and Workbench navigation links |
 | [COMMUNITY-CALENDAR](#community-calendar) | configuration-required | GET /community/events.ics; shared community banner calendar options |
+| [LOBBY-SUBMISSIONS](#lobby-submissions) | configuration-required | /submit; POST /api/project-submissions; private /submit/review |
 
 ## WB-RUNNER
 
@@ -330,3 +331,15 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 **Completion check:** Fetch the production calendar, parse both dates through the DST change, verify Google subscription confirmation and Apple calendar handoff or import, download the same file, and verify desktop/mobile banner and dismissal.
 
 **Source:** [creator-hub/hub/server/communityCalendar.mjs](../creator-hub/hub/server/communityCalendar.mjs), [creator-hub/hub/client/src/components/GameNightBanner.tsx](../creator-hub/hub/client/src/components/GameNightBanner.tsx)
+
+## LOBBY-SUBMISSIONS
+
+**configuration-required** — /submit; POST /api/project-submissions; private /submit/review
+
+**Current:** Direct Lobby intake stores bounded project proposals in private PostgreSQL with retry-safe receipts, exact-origin checks, signed form challenges and durable quotas. Existing owner/moderator chat sessions can paginate and annotate the private queue. October listings require an individual official forum entry; intake neither judges eligibility nor publishes automatically. The schema is installed by an operator, never a public request.
+
+**Remaining:** Apply the private schema and backend-only grants to the configured database; verify actual hosted submit/readback and role isolation. Publication continues through reviewed content PRs. Automated publisher identity verification, notifications, scheduled retention and backup-restore verification are not supplied.
+
+**Completion check:** A real hosted form returns a receipt only after saving; an independent database read matches it. Retrying returns the same receipt, including after restart. Guests cannot read/review; browser database roles have no grants. Rejected input, expired challenge, origin, quota and outage cases fail closed. Review before adding a public gallery record.
+
+**Source:** [creator-hub/hub/server/projectSubmissions.mjs](../creator-hub/hub/server/projectSubmissions.mjs)

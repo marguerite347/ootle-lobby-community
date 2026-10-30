@@ -1,0 +1,44 @@
+.project-submit-page {max-width:44rem;margin:2.5rem auto 4rem;color:#eeeaff;}
+.project-submit-page header {margin-bottom:1.75rem;}
+.project-submit-back {display:inline-flex;align-items:center;min-height:2.75rem;color:#c9b6ff;font-size:.8125rem;text-underline-offset:.25rem;}
+.project-submit-page h1 {margin:.5rem 0 .75rem;font-size:clamp(2.25rem,7vw,3.5rem);line-height:1.1;letter-spacing:-.045em;font-weight:800;}
+.project-submit-page h1 em {color:#d6ee53;font-style:normal;}
+.project-submit-page p {color:#c7c0d8;line-height:1.6;font-size:.875rem;}
+.project-submit-form {padding:1.5rem;border:1px solid #c9b6ff35;border-radius:1rem;background:#111127;}
+.project-submit-form fieldset {border:0;margin:0;padding:0;min-width:0;}
+.project-submit-form label {display:flex;flex-wrap:wrap;align-items:center;gap:.375rem .5rem;font-size:.8125rem;font-weight:600;margin-bottom:1rem;}
+.project-submit-form label>span {font-weight:400;color:#aaa1c1;font-size:.75rem;}
+.project-submit-form :is(input:not([type=radio]):not([type=checkbox]),textarea) {box-sizing:border-box;width:100%;min-height:2.875rem;border:1px solid #c9b6ff50;border-radius:.5rem;padding:.75rem;background:#080a20;color:#fff;font:inherit;font-size:1rem;font-weight:400;}
+.project-submit-form textarea {resize:vertical;}
+.project-submit-form input::placeholder,.project-submit-form textarea::placeholder {color:#9e96b0;font-size:.8125rem;}
+.project-submit-form :is(input,textarea,button):focus-visible {outline:2px solid #d6ee53;outline-offset:3px;}
+.project-submit-fields {display:grid;gap:0 1rem;}
+.project-submit-destinations {display:flex;flex-wrap:wrap;gap:.5rem 1.25rem;margin-bottom:.75rem;}
+.project-submit-destinations label {min-height:2.75rem;margin:0;cursor:pointer;}
+.project-submit-form input:is([type=radio],[type=checkbox]) {accent-color:#d6ee53;width:1.125rem;height:1.125rem;flex-shrink:0;margin:0;}
+.project-submit-form .project-submit-consent {flex-wrap:nowrap;align-items:flex-start;font-weight:400;line-height:1.5;min-height:2.75rem;margin:.75rem 0 0;}
+.project-submit-form .project-submit-consent input {margin-top:.125rem;}
+.project-submit-contest-note {border-left:2px solid #d6ee53;padding:.25rem 0 .25rem .875rem;margin:.5rem 0 1.25rem;font-size:.875rem;}
+.project-submit-contest-note p {margin:.375rem 0 0;}
+.project-submit-page a:not(.season-button) {color:#d6ee53;text-underline-offset:.2rem;}
+.project-submit-page .project-submit-note {font-size:.75rem;margin:0 0 1.25rem;}
+.project-submit-form .season-button {width:100%;min-height:2.875rem;font:inherit;font-weight:600;cursor:pointer;}
+.project-submit-form button:disabled {opacity:.6;cursor:wait;}
+.project-submit-form .project-submit-trap {position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);}
+.project-submit-error {padding:.75rem 1rem;background:#f28d9b14;border:1px solid #f28d9b80;border-radius:.5rem;margin-bottom:1rem;font-size:.875rem;}
+.project-submit-receipt {padding:1.5rem;border:1px solid #d6ee5360;border-radius:1rem;background:#111127;}
+.project-submit-receipt h2 {font-size:1.5rem;line-height:1.3;overflow-wrap:anywhere;}
+.project-submit-receipt .project-submit-kicker {color:#d6ee53;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;}
+.project-submit-reference code {display:block;overflow-wrap:anywhere;margin:.5rem 0 1.5rem;color:#eeeaff;font-size:.8125rem;}
+.submission-review-list {display:grid;gap:1rem;margin-block:1.5rem;}
+.submission-review-card {border:1px solid #c9b6ff40;border-radius:.75rem;padding:1.25rem;background:#111127;overflow-wrap:anywhere;}
+.submission-review-card h2 {margin:0 0 .5rem;font-size:1.25rem;}
+.submission-review-card pre {white-space:pre-wrap;font:inherit;font-size:.875rem;}
+.submission-review-card a {display:block;margin-block:.5rem;}
+.submission-review-card label {display:block;margin-block:1rem;}
+.submission-review-card select,.submission-review-card textarea {width:100%;padding:.75rem;background:#080a20;color:#fff;border:1px solid #c9b6ff50;border-radius:.5rem;font:inherit;box-sizing:border-box;}
+.submission-review-card button {min-height:2.75rem;}
+@media(min-width:600px) {.project-submit-fields {grid-template-columns:1fr 1fr;}.project-submit-form {padding:1.75rem;}.project-submit-form .season-button {width:auto;min-width:12rem;}}
+@media(max-width:420px) {.project-submit-form {padding:1rem;}.project-submit-page {margin-top:1.5rem;}}
+
+.project-submit-page .sr-only {position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0;}
