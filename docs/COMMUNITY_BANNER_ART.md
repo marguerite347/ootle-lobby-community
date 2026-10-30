@@ -10,6 +10,12 @@ The first built-site trial exposed text crossing the characters at narrow widths
 
 Validation: the production site build and packaged-runtime check passed; all five banner lifecycle tests and four calendar tests passed. The rendered site was reviewed at 375, 414, 768, 1024 and 1440 pixels with loaded artwork and no horizontal overflow. The calendar dialog opens and closes and retains the existing Google, Apple and downloadable-feed links.
 
+## Compact strip refinement
+
+The owner requested that the banner stay skinny. The follow-up keeps the approved scenes and Anton typography, uses the reel's deep-purple, cream and lime palette, and places the calendar CTA beside the two events at desktop widths. At 1440px the banner is 170px high. Tablet layouts retain two event panels and a compact action row; phones use two compact stacked rows. Supporting taglines are omitted visually to prioritize the event, lineup, time and venue. Artwork edges fade into the background without darkening the characters' faces.
+
+Selection: reused the merged campaign-art component and exact WebP files; only its CSS was refined. A served desktop and phone trial preceded the final build. Existing calendar links, event expiry, dismissal keys and event data remain unchanged. Root tests (69) and banner lifecycle tests (5) pass, and content/integration validation passes. Browser checks cover 375, 414, 768, 1024 and 1440px, loaded artwork, no horizontal overflow and a 44px calendar button. Local screenshots and delivery evidence are retained in ignored `work/` in the slim-banner checkout.
+
 ## Assets and provenance
 
 - `creator-hub/hub/client/public/community/game-night-horror-scene.webp`: optimized from `Game-Night-2026-11-01-Artwork-only-master.png`, the existing game-night social kit. The scared lime turtle, haunted loot cart and gas-station setting represent the two options still under vote.

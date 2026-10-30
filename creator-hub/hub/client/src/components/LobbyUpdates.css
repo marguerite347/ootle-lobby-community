@@ -11,35 +11,36 @@
 .lobby-newsletter .subscribe-form input[type=email] {font-size:1rem;min-height:2.75rem;box-sizing:border-box;}
 .lobby-newsletter .subscribe-form .signup-option {min-height:2.75rem;font-size:.875rem;}
 .lobby-newsletter .subscribe-form .btn {min-height:2.75rem;}
-/* Text-free campaign scenes keep event details accessible and independently updateable. */
+/* Compact campaign strip: real text stays separate from the approved artwork. */
 @font-face {font-family:"Tari Campaign";src:url('/community/fonts/Anton.ttf') format('truetype');font-style:normal;font-weight:400;font-display:swap;}
-.community-banner {position:relative;isolation:isolate;overflow:hidden;margin-top:1rem;background:#080a22;border:1px solid #c9b6ff38;border-radius:1rem;}
-.community-event-pair {display:grid;}
-.community-event {position:relative;isolation:isolate;display:flex;align-items:center;min-width:0;min-height:14rem;padding:1.25rem;box-sizing:border-box;overflow:hidden;background:#080a22;}
-.community-event::after {content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#080a22 8%,#080a22f5 37%,#080a22b3 54%,#080a2200 76%);pointer-events:none;}
-.community-event-copy {width:70%;min-width:0;position:relative;text-shadow:0 2px 12px #080a22;}
-.community-scene {position:absolute;z-index:-2;right:0;top:0;display:block;width:65%;height:100%;object-fit:cover;pointer-events:none;}
-.community-game-scene {object-position:50% 48%;}
-.community-show-scene {object-position:50% 45%;mask-image:linear-gradient(90deg,transparent,#000 20%);}
-.community-show {border-top:1px solid #c9b6ff30;}
-.community-event h2 {font-family:"Tari Campaign",Impact,sans-serif;font-size:2.125rem;font-weight:400;line-height:1.08;letter-spacing:0;text-transform:uppercase;margin:0 0 .5rem;color:#fff;text-wrap:balance;}
+.community-banner {position:relative;isolation:isolate;overflow:hidden;margin-top:1rem;background:#0d0b22;border:1px solid #8e68cf60;border-radius:1rem;box-shadow:inset 0 1px #dac9ff0d;}
+.community-event-pair {display:grid;min-width:0;}
+.community-event {position:relative;isolation:isolate;display:flex;align-items:center;min-width:0;min-height:10.5rem;padding:1rem;box-sizing:border-box;overflow:hidden;background:#0b0b22;}
+.community-event::after {content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#0b0b22 6%,#0b0b22ef 43%,#0b0b2266 62%,transparent 80%);pointer-events:none;}
+.community-event-copy {width:72%;min-width:0;position:relative;text-shadow:0 2px 8px #0b0b22;}
+.community-scene {position:absolute;z-index:-2;right:-.25rem;top:0;display:block;width:53%;height:100%;object-fit:cover;mask-image:linear-gradient(90deg,transparent,#000 24%);pointer-events:none;}
+.community-game-scene {object-position:58% 48%;}
+.community-show-scene {object-position:52% 40%;}
+.community-show {border-top:1px solid #c9b6ff26;}
+.community-event h2 {font-family:"Tari Campaign",Impact,sans-serif;font-size:1.75rem;font-weight:400;line-height:1.08;letter-spacing:0;text-transform:uppercase;margin:0 0 .375rem;color:#fff8df;text-wrap:balance;}
 .community-event h2 em {color:#d6f328;font-style:normal;}
-.community-banner p {margin:0;color:#d9cfe7;font-size:.75rem;line-height:1.45;}
-.community-banner .community-tagline {font-size:.8125rem;font-weight:500;color:#f2edff;}
-.community-banner .community-lineup {margin-top:.125rem;}
-.community-show-kicker {display:block;color:#fff;font-size:.78em;margin-bottom:.125rem;}
-.community-event-time {display:flex;flex-wrap:wrap;gap:0 .5rem;margin-top:.625rem;color:#f2edff;font-size:.8125rem;line-height:1.5;font-variant-numeric:tabular-nums;}
+.community-banner p {margin:0;color:#d9cfe7;font-size:.875rem;line-height:1.35;}
+.community-banner .community-tagline {display:none;}
+.community-banner .community-lineup {margin-top:.125rem;max-width:15rem;}
+.community-show-kicker {display:block;color:#fff8df;font-family:inherit;font-size:.55em;letter-spacing:.06em;margin-bottom:.25rem;}
+.community-event-time {display:flex;flex-wrap:wrap;gap:0 .5rem;margin-top:.5rem;color:#fff8df;font-size:.875rem;line-height:1.45;font-variant-numeric:tabular-nums;}
 .community-event-time strong {font-weight:600;}
-.community-event-time small {font-size:.6875rem;color:#c5bad8;white-space:nowrap;align-self:baseline;}
-.community-banner .community-channel {font-size:.6875rem;color:#c5bad8;}
-.community-banner-actions {display:flex;align-items:center;justify-content:space-between;gap:.5rem;border-top:1px solid #c9b6ff30;padding:.5rem 1.25rem;background:#0c0c25;}
+.community-event-time small {font-size:.75rem;color:#c5bad8;white-space:nowrap;align-self:baseline;flex-basis:100%;}
+.community-banner .community-channel {margin-top:.125rem;font-size:.75rem;color:#c5bad8;}
+.community-banner-actions {display:flex;align-items:center;justify-content:space-between;gap:.75rem;border-top:1px solid #c9b6ff26;padding:.5rem 1rem;background:#100d29;}
 .community-discord {display:flex;align-items:center;min-height:2.75rem;font-size:.75rem;font-weight:500;color:#eeeaff;text-underline-offset:4px;}
 .community-discord:hover {color:#d6ee53;}
-.community-calendar-button {min-height:2.75rem;border:1px solid #c9eb00;border-radius:.5rem;background:var(--season-lime,#c9eb00);color:#151128;padding:.625rem .75rem;line-height:1.25;font-family:inherit;font-size:.75rem;font-weight:600;cursor:pointer;}
-.community-calendar-button:hover {background:#ddf65c;border-color:#ddf65c;}
+.community-calendar-button {min-height:2.75rem;border:1px solid #d6f328;border-radius:.5rem;background:#d6f328;color:#151128;padding:.625rem .875rem;line-height:1.25;font-family:inherit;font-size:.8125rem;font-weight:600;cursor:pointer;transition:background .18s,transform .18s;}
+.community-calendar-button:hover {background:#e7fa73;border-color:#e7fa73;transform:translateY(-1px);}
+.community-calendar-button:active {transform:translateY(0);}
 .community-dismiss {position:absolute;top:.125rem;right:.125rem;z-index:1;display:grid;place-items:center;width:2.75rem;height:2.75rem;border:0;border-radius:.5rem;background:#080a2240;color:#eeeaff;font:inherit;font-size:1.5rem;cursor:pointer;}
 .community-dismiss:hover {background:#ffffff12;color:white;}
-.lobby-updates :is(summary,button,a):focus-visible {outline:2px solid #d6ee53;outline-offset:4px;}
+.lobby-updates :is(summary,button,a):focus-visible,.community-banner :is(button,a):focus-visible {outline:2px solid #d6ee53;outline-offset:3px;}
 .community-calendar-dialog {box-sizing:border-box;width:min(25rem,calc(100vw - 2rem));max-height:calc(100dvh - 2rem);padding:1.75rem 1.5rem 1.25rem;border:1px solid #c9b6ff70;border-radius:1rem;background:#211833;color:#eeeaff;box-shadow:0 1rem 5rem #05031499;}
 .community-calendar-dialog::backdrop {background:#08051bc9;}
 .community-calendar-dialog h2 {font-size:1.5rem;margin:0 0 .375rem;}
@@ -51,37 +52,36 @@
 @media(max-width:759px) {
   .newsletter-toggle {min-width:10.125rem;font-size:.75rem;padding-inline:.625rem;}
 }
-@media(max-width:1099px) {
-  .community-event-copy {width:70%;}
-  .community-scene {width:58%;}
-  .community-event h2 {font-size:2rem;}
-  .community-show h2 {font-size:1.875rem;}
-  .community-tagline,.community-lineup,.community-event-time {max-width:11.5rem;}
-}
 @media(min-width:760px) {
   .community-event-pair {grid-template-columns:1fr 1fr;}
-  .community-event {min-height:15rem;padding:1.5rem;}
-  .community-show {border-top:0;border-left:1px solid #c9b6ff30;}
+  .community-event {padding:1rem 1.25rem;min-height:10.5rem;}
+  .community-show {border-top:0;border-left:1px solid #c9b6ff26;}
+  .community-event h2 {font-size:2rem;}
+  .community-event-copy {width:75%;}
+  .community-scene {width:49%;}
   .community-banner-actions {justify-content:flex-end;gap:1.5rem;}
   .community-calendar-button,.community-discord {font-size:.8125rem;}
-  .community-calendar-button {padding-inline:1.25rem;}
   .community-banner-single .community-event-pair {grid-template-columns:1fr;}
   .community-banner-single .community-show {border:0;}
-  .community-banner-single .community-event-copy {width:60%;}
-  .community-banner-single .community-scene {width:45%;object-fit:contain;}
+  .community-banner-single .community-event-copy {width:65%;}
+  .community-banner-single .community-scene {width:38%;object-fit:contain;}
 }
 @media(min-width:1100px) {
-  .community-event {padding-inline:1.75rem;}
-  .community-event-copy {width:65%;}
-  .community-show-scene {width:46%;}
-  .community-event h2 {font-size:clamp(2.25rem,2.8vw,3rem);}
-  .community-banner .community-tagline {font-size:.875rem;}
-  .community-banner .community-lineup,.community-event-time {font-size:.875rem;}
-  .community-event-time small,.community-banner .community-channel {font-size:.75rem;}
+  .community-banner {display:grid;grid-template-columns:minmax(0,1fr) 11.5rem;}
+  .community-event-time small {flex-basis:auto;}
+  .community-event {min-height:10.5rem;padding:1rem 1.5rem;}
+  .community-event-copy {width:73%;}
+  .community-banner-actions {flex-direction:column;justify-content:center;gap:0;border-top:0;border-left:1px solid #c9b6ff26;padding:2rem 1rem .75rem;}
+  .community-calendar-button {order:-1;width:100%;padding-inline:.5rem;}
+  .community-calendar-dialog {grid-column:1/-1;}
 }
 @media(max-width:359px) {
-  .community-event {padding-inline:1rem;}
-  .community-event h2 {font-size:1.875rem;}
-  .community-banner-actions {padding-inline:1rem;}
-  .community-calendar-button,.community-discord {font-size:.6875rem;}
+  .community-event {padding-inline:.875rem;}
+  .community-event h2 {font-size:1.625rem;}
+  .community-event-copy {width:78%;}
+  .community-banner-actions {padding-inline:.75rem;gap:.5rem;}
+  .community-calendar-button {padding-inline:.625rem;}
+}
+@media(prefers-reduced-motion:reduce) {
+  .community-calendar-button {transition:none;}
 }
