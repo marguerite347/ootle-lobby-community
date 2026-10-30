@@ -1,6 +1,6 @@
 # Lobby project intake
 
-Visitors use **Submit a project** in the Lobby header or either project gallery. `/submit` accepts a project name, creator handle, short description, public HTTPS project link, optional source/creator-post links and permission to list these details. No account or email address is required. Creator names are unverified claims until an editor checks the linked source.
+Visitors use **Submit a project** in the Lobby header or either project gallery. `/submit` accepts a project name, creator handle, short description, public HTTPS project link, optional source/creator-post links and permission to list these details. No account or email address is required. The receipt says the submission is awaiting review and has no assigned publication date; there is no automatic asset-generation or posting job, and no email notification is sent. Creator names are unverified claims until an editor checks the linked source.
 
 Selecting October requires source code and the **individual entry** in official forum topic 396. The form requests a Lobby listing; it does not replace official contest entry or decide eligibility. Community projects have no contest membership and need no forum post. Nothing is automatically published, downloaded, executed or sent to another person.
 
