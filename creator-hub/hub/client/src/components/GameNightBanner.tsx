@@ -41,7 +41,7 @@ export default function GameNightBanner() {
   return <aside className={`community-banner${count===1?' community-banner-single':''}`} aria-label="Tari community events">
     <div className="community-event-pair">
       {gameVisible && <section className="community-event community-game" aria-labelledby="game-night-title">
-        <img className="community-mascot turtle" src="/community/game-night-gamer.webp" alt="" width="512" height="512" decoding="async" />
+        <img className="community-scene community-game-scene" src="/community/game-night-horror-scene.webp" alt="" width="800" height="800" decoding="async" />
         <div className="community-event-copy"><h2 id="game-night-title">Game <em>night.</em></h2>
           <p className="community-tagline">Come play, chat, or just watch.</p>
           <p className="community-lineup">{event.game}</p>
@@ -49,8 +49,8 @@ export default function GameNightBanner() {
         </div>
       </section>}
       {showVisible && <section className="community-event community-show" aria-labelledby="tari-show-title">
-        <img className="community-mascot ghost" src="/community/tari-show-ghost.webp" alt="" width="512" height="512" decoding="async" />
-        <div className="community-event-copy"><p className="community-show-kicker">Don’t ghost</p><h2 id="tari-show-title">the <em>Tari Show.</em></h2>
+        <img className="community-scene community-show-scene" src="/community/tari-show-campaign-scene.webp" alt="" width="800" height="800" decoding="async" />
+        <div className="community-event-copy"><h2 id="tari-show-title"><span className="community-show-kicker">Don’t ghost</span><em>the Tari Show.</em></h2>
           <p className="community-tagline">Bring your questions.</p>
           <EventTime value={show.startsAt}/><p className="community-channel">{show.channelName} · Discord</p>
         </div>
