@@ -18,8 +18,12 @@
 .project-submit-form input:is([type=radio],[type=checkbox]) {accent-color:#d6ee53;width:1.125rem;height:1.125rem;flex-shrink:0;margin:0;}
 .project-submit-form .project-submit-consent {flex-wrap:nowrap;align-items:flex-start;font-weight:400;line-height:1.5;min-height:2.75rem;margin:.75rem 0 0;}
 .project-submit-form .project-submit-consent input {margin-top:.125rem;}
-.project-submit-contest-note {border-left:2px solid #d6ee53;padding:.25rem 0 .25rem .875rem;margin:.5rem 0 1.25rem;font-size:.875rem;}
-.project-submit-contest-note p {margin:.375rem 0 0;}
+.project-submit-contest-steps {padding-left:1.375rem;margin:.5rem 0 1.5rem;font-size:.875rem;}
+.project-submit-contest-steps li {padding-left:.25rem;margin-bottom:1rem;}
+.project-submit-contest-steps li::marker {color:#d6ee53;font-weight:600;}
+.project-submit-contest-steps p {margin:.375rem 0 0;}
+.project-submit-contest-steps label {margin-bottom:0;}
+.project-submit-contest-steps #contest-post-help {font-size:.75rem;}
 .project-submit-page a:not(.season-button) {color:#d6ee53;text-underline-offset:.2rem;}
 .project-submit-page .project-submit-note {font-size:.75rem;margin:0 0 1.25rem;}
 .project-submit-form .season-button {width:100%;min-height:2.875rem;font:inherit;font-weight:600;cursor:pointer;}
