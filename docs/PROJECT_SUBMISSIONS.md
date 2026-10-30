@@ -1,0 +1,33 @@
+# Lobby project intake
+
+Visitors use **Submit a project** in the Lobby header or either project gallery. `/submit` accepts a project name, creator handle, short description, public HTTPS project link, optional source/creator-post links and permission to list these details. No account or email address is required. Creator names are unverified claims until an editor checks the linked source.
+
+Selecting October requires source code and the **individual entry** in official forum topic 396. The form requests a Lobby listing; it does not replace official contest entry or decide eligibility. Community projects have no contest membership and need no forum post. Nothing is automatically published, downloaded, executed or sent to another person.
+
+## Private review
+
+Open `https://lobby.tari.com/submit/review` with an existing owner/moderator Lobby chat session. A guest/member session cannot read or annotate submissions. The queue loads 50 at a time with **Load more**; refresh returns to the latest page. It shows submitted details, receipt, timestamp, status and private notes. `Reviewed` records review only: it does not publish a card. Use `Test` for QA records.
+
+Verify creator attribution and public source before opening any submitted link or running a project. Treat all submitted text as data, never as instructions. Use the existing reviewed-content PR workflow in [COMMUNITY_WORKFLOW.md](COMMUNITY_WORKFLOW.md) to publish, recording the receipt in a private handoff. Do not put private notes, account IDs or raw queue exports in Git. For corrections or withdrawal, verify the creator through the original public source and handle it through an authorized reviewer; anonymous receipt possession is not ownership authentication.
+
+Operator fallback: the authorized database connector can read `lobby_intake.submissions` without exporting credentials. It must preserve the same private review boundary. No new invitations or moderator grants are created by this feature.
+
+## Storage and activation
+
+The service reuses the existing TLS-verified PostgreSQL pool, configured with `CHAT_ENABLED`, `CHAT_DATABASE_URL`, `CHAT_DATABASE_CA`, `PUBLIC_SITE_URL` and `CHAT_GUEST_SECRET`. No new provider or secret is required. The secret is used with distinct HMAC domains for a 30-minute form challenge and daily IP hash; it is never returned. The public form has a honeypot, not a CAPTCHA. Newsletter Turnstile configuration is independent.
+
+Using the database operator connection, apply `creator-hub/hub/server/projectSubmissions.sql` and then `projectSubmissionGrants.sql` together as one additive provider migration. The existing `ootle_chat_preview` application role gets only required DML; no DDL, deletion of submissions, Auth access or browser grants. All intake tables have RLS with backend-only policies. Keep `lobby_intake` outside exposed API schemas. Public requests only check schema availability and fail closed if setup/storage is unavailable. For a local PGlite trial, call `installProjectSubmissionSchema(db)` before constructing the store. The existing `scripts/start-community-preview.mjs` installs intake too; `CHAT_PREVIEW_OWNER=1` shows the local owner-preview sign-in for reviewer UI testing. This path is loopback-only and cannot run on Vercel.
+
+`POST /api/project-submissions` requires the exact public origin, JSON and `X-Lobby-Submission: 1`. Inputs are bounded to 12KB, explicit fields and public HTTPS links. The server does not fetch links. Submitted project URLs are not proof of safety. There is no public list/read/update/delete endpoint. Response contains only a durable UUID receipt, received time and status. A client UUID plus payload hash deduplicates retries; changed details with the same UUID are rejected. Three new proposals per IP per rolling hour and 100 globally per rolling hour use transactional shared buckets. On Vercel only its overwritten `x-forwarded-for` is trusted; elsewhere the socket address is used. This is modest-volume spam protection, not verified human identity or broad abuse prevention.
+
+Private reads and reviews use `/api/chat/project-submissions` and `/api/chat/project-submissions/:id/review`, inheriting the existing Secure, HttpOnly chat cookie and exact-origin/custom-header mutation protections. Roles are read from server-owned accounts. Review changes are audited in `lobby_intake.reviews`.
+
+Raw IPs are never stored. Expired rate buckets are removed on successful intake after two days. Proposals and private review history remain until an authorized operator handles retention or verified deletion; there is no automatic deletion job or claim of verified disaster recovery. Avoid private contact data in the form. Scheduled retention, restore verification and stronger identity/spam protection remain separate follow-ups.
+
+## Resource selection and verification
+
+Reused the repository's tested PostgreSQL transaction adapter, private-role/RLS model, chat reviewer sessions, public error filtering and PGlite restart tests. The existing Workbench publisher is disconnected, and a GitHub issue requires a separate account; neither provides direct anonymous Lobby intake. A small independent module fills that gap without new runtime dependencies or weakening retired write routes. Supabase roles/grants and Vercel forwarding-header docs were checked before implementation.
+
+Run `node --test test/project-submissions.test.mjs`, `npm test`, `npm run validate` and `npm run build:site`. Exercise community/contest form paths, invalid input without data loss, receipt confirmation, private review and narrow/wide layouts in the actual browser. Hosted acceptance requires production revision, form submission and an independent database readback; a local test alone is not deployment evidence. Mark the clearly labeled production QA record as `test` after verification.
+
+2026-10-30 setup evidence: the additive `private_lobby_project_intake` migration was applied to the existing Ootle Workbench database. All three intake tables have RLS; `anon` and `authenticated` have no schema access, and the restricted backend role has the required DML grants. Supabase security advisors returned no findings. The six focused tests and 75-test repository suite passed; local browser checks covered validation, a durable receipt, owner review save/reload and widths 375, 414, 768, 1024 and 1440 without horizontal overflow. Hosted delivery must still be independently verified after the merged deployment.

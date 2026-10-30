@@ -2,6 +2,8 @@ import { StrictMode, Suspense, lazy } from 'react';
 import {installShellRestore} from './shellRestore';
 installShellRestore();
 const BuildFeedback = lazy(() => import('./pages/BuildFeedback'));
+const SubmitProject = lazy(() => import('./pages/SubmitProject'));
+const ReviewSubmissions = lazy(() => import('./pages/ReviewSubmissions'));
 const Community = lazy(() => import('./pages/Community'));
 const MarketingCalendar = lazy(() => import('./pages/MarketingCalendar'));
 const Blog = lazy(() => import('./pages/Blog'));
@@ -55,6 +57,8 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       { index: true, element: <Home /> },
+      { path: 'submit', element: <SubmitProject /> },
+      { path: 'submit/review', element: <ReviewSubmissions /> },
       { path: 'insights', element: <Insights /> },
       { path: 'growth', element: <Growth /> },
       { path: 'challenges', element: <Challenges /> },

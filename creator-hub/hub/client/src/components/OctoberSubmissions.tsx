@@ -2,6 +2,7 @@ import {safeHref} from '../../../shared/safeLinks.mjs';
 // INTEGRATION_GAP[WB-FEED] (build-required): see docs/DEVELOPMENT_GAPS.md#wb-feed.
 import PublicationGallery from '../workbench/PublicationGallery';
 import {useEffect,useState} from 'react';
+import {Link} from 'react-router-dom';
 import {COMMUNITY_REPOSITORY} from './CommunityContent';
 import ProjectCard from './ProjectCard';
 import {useContestMetrics} from './ContestProjectMetrics';
@@ -46,7 +47,7 @@ export default function OctoberSubmissions(){
   const [contest,setContest]=useState<OctoberContest|null>(null),[failed,setFailed]=useState(false);
   useEffect(()=>{const controller=new AbortController();fetch('/api/community-content',{signal:controller.signal}).then(response=>{if(!response.ok)throw new Error('Unavailable');return response.json();}).then(feed=>{const result=feed.contests?.find((item:OctoberContest)=>item.id==='october-2026');if(!result)throw new Error('Missing registry');setContest(result);}).catch(error=>{if(error.name!=='AbortError')setFailed(true);});return()=>controller.abort();},[]);
   return <section className="section october-submissions" id="october-submissions" aria-labelledby="october-submissions-title">
-    <div className="section-head project-section-heading"><div><h2 id="october-submissions-title">October <em>Submissions</em></h2><p>Spooky Secrets · New builds from the community.</p></div><div className="contest-community-links"><a className="more" href={safeHref(THREAD)} target="_blank" rel="noreferrer">Submit your build</a><a href={safeHref(`${COMMUNITY_REPOSITORY}/issues/new?template=correction.yml&title=October%20project`)} target="_blank" rel="noreferrer">Suggest a listing</a></div></div>
+    <div className="section-head project-section-heading"><div><h2 id="october-submissions-title">October <em>Submissions</em></h2><p>Spooky Secrets · New builds from the community.</p></div><div className="contest-community-links"><Link className="season-button" to="/submit?contest=october">Submit a project</Link><a href={safeHref(THREAD)} target="_blank" rel="noreferrer">Official contest thread</a></div></div>
     <CollapsibleProjects label="October Submissions"><PublicationGallery destination="october-2026" excludeRepoUrls={contest?.entries.map(entry=>entry.repoUrl)} onCount={setWorkbenchCount}/>
     {contest?<OctoberGallery contest={contest} hasWorkbenchEntries={workbenchCount>0}/>:failed?<p role="status">The submission list could not load. <a href={safeHref(THREAD)} target="_blank" rel="noreferrer">View entries on the forum.</a></p>:<p role="status">Loading October submissions…</p>}
     </CollapsibleProjects>

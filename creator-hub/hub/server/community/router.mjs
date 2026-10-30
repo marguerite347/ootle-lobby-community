@@ -31,6 +31,7 @@ export function createCommunityRouter({
   preview = false,
   privateEnabled = false,
   previewAccount = "github-1",
+  projectSubmissions,
   fetcher = fetch,
 } = {}) {
   const router = Router(),
@@ -125,6 +126,20 @@ export function createCommunityRouter({
       }),
     ),
   );
+  async function submissionReviewer(req){
+    const account=await store.session(cookies(req)[cookieName]);
+    if(!account||!['owner','moderator'].includes(account.role))reject('Moderator sign-in required.',403);
+    if(!projectSubmissions?.store)reject('Project review is not connected.',503);
+    return account;
+  }
+  router.get('/project-submissions',wrap(async(req,res)=>{
+    await submissionReviewer(req);
+    res.json(await projectSubmissions.store.list(Number(req.query.offset||0)));
+  }));
+  router.post('/project-submissions/:id/review',wrap(async(req,res)=>{
+    const reviewer=await submissionReviewer(req);
+    res.json(await projectSubmissions.store.review(req.params.id,req.body,reviewer.id));
+  }));
   router.post(
     "/logout",
     wrap(async (req, res) => {

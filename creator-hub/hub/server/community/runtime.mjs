@@ -1,6 +1,7 @@
 import { Pool } from "pg";
 import { createChatStore } from "./store.mjs";
 import { communityDatabaseOptions } from "./database.mjs";
+import {createProjectSubmissionStore} from '../projectSubmissions.mjs';
 let services;
 export function communityServicesFromEnv(env = process.env) {
   if (env.CHAT_ENABLED !== "1") return {};
@@ -46,6 +47,11 @@ export function communityServicesFromEnv(env = process.env) {
   };
   services = {
     store: createChatStore(db),
+    projectSubmissions: {
+      store: createProjectSubmissionStore(db),
+      origin: env.PUBLIC_SITE_URL || origin.origin,
+      secret: env.CHAT_GUEST_SECRET,
+    },
     privateEnabled: env.CHAT_PRIVATE_ENABLED === "1",
     origin: origin.origin,
     additionalOrigins: (env.CHAT_ADDITIONAL_ORIGINS || '').split(',').map(value => value.trim()).filter(Boolean),

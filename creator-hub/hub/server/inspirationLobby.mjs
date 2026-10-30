@@ -10,6 +10,7 @@ import {createCommunityRouter} from './community/router.mjs';
 import {communityServicesFromEnv} from './community/runtime.mjs';
 import {createTariNewsletterRouter} from './tariNewsletter.mjs';
 import {communityCalendar} from './communityCalendar.mjs';
+import {createProjectSubmissionsRouter} from './projectSubmissions.mjs';
 
 /** Only these routes compute bounded responses without persisting visitor data. */
 export function preventProjectHosting(req, res, next) {
@@ -25,15 +26,17 @@ export function preventProjectHosting(req, res, next) {
 }
 
 /** Public entry point; the original app remains available for legacy store tests. */
-export function createInspirationLobby({workbenchServices,communityServices,newsletterServices}={}) {
+export function createInspirationLobby({workbenchServices,communityServices,newsletterServices,submissionServices}={}) {
   const lobby = express();
   lobby.disable('x-powered-by');
   lobby.use(securityHeaders,localHostGuard);
   lobby.get('/ootle',(_req,res)=>res.redirect(308,'/'));
   lobby.get('/community/events.ics',(_req,res)=>res.set({'Content-Type':'text/calendar; charset=utf-8','Content-Disposition':'inline; filename="tari-community.ics"','Cache-Control':'public, max-age=300'}).send(communityCalendar()));
-  lobby.use('/api/chat',createCommunityRouter(communityServices||communityServicesFromEnv()));
+  const community=communityServices||communityServicesFromEnv();
+  lobby.use('/api/chat',createCommunityRouter(community));
   // Narrow opt-in route; all unrelated public writes remain disabled below.
   lobby.use('/api/subscriptions',createTariNewsletterRouter(newsletterServices));
+  lobby.use('/api/project-submissions',createProjectSubmissionsRouter(submissionServices||community.projectSubmissions));
   lobby.use(preventProjectHosting);
   lobby.use('/api/workbench', createWorkbenchRouter(workbenchServices));
   lobby.use(createApp({publicReadOnly:true}));
