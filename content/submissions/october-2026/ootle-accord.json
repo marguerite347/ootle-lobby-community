@@ -1,0 +1,29 @@
+{
+  "slug": "ootle-accord",
+  "title": "OotleAccord",
+  "summary": "Community milestone escrow with capped native-TARI funding, a percentage quorum and a mandatory reviewer. Contribution amounts, reviewer identities and votes are public; fixed-destination payouts and refunds use private outputs with encrypted recovery memos. The current community accord displays a completed 10 tTARI payout and three approvals; four designated reviewers share a test operator. Create exports terms rather than deploying another escrow. October 31 review inspected the creator’s README, original submission and public accord/review screens; no wallet connection or transaction was performed. The app trusts its pinned indexer; the creator distinguishes installed-extension validation from SDK tests.",
+  "cardSummary": "Fund community milestones with public contributions and reviewer approvals, then release private payouts to a fixed recipient.",
+  "cardStatus": "Web app · Testnet · Sapient",
+  "creator": "SealClubber",
+  "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/38",
+  "publishedAt": "2026-10-30T20:10:40.548Z",
+  "updatedAt": "2026-10-30T20:10:40.548Z",
+  "sourceContentSha256": "a77fc1a79331d6860ef9dd733d48fcb43bd6c81c74d70f96b88cf017363bce14",
+  "repoUrl": "https://github.com/Seal-Clubber/ootle-accord",
+  "demoUrl": "https://seal-clubber.github.io/ootle-accord/#explore",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "JavaScript · Rust · MIT",
+      "sourceUrl": "https://github.com/Seal-Clubber/ootle-accord"
+    }
+  ],
+  "recording": {
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-ootle-accord-20261031.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-ootle-accord-20261031.png",
+    "capturedAt": "2026-10-31T09:53:52.513Z",
+    "sourceRevision": "622b71b73c4cf9038d8e60c183babb3be4d62326",
+    "kind": "public-page",
+    "credit": "App demo — read-only public completed accord and review screen; no funding, approval or payout submitted."
+  }
+}

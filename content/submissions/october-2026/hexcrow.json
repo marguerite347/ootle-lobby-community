@@ -1,0 +1,29 @@
+{
+  "slug": "hexcrow",
+  "title": "Hexcrow",
+  "summary": "Milestone escrow held in a stealth output, with approval, timeout refund and two jointly signed mediator paths. A public invoice book records hashes, one-time keys, deadlines and status; role-specific copies disclose invoice text and amounts. The public website replays four recorded Esmeralda invoices and checks available book/output state through the indexer, using clearly archived transaction results where history is gone. October 31 inspection switched public and client copies and observed the displayed 250 tTARI invoice and Settled status. The recording switches public, client and accountant views; no new funding or transaction was submitted. Mediator judgment remains trusted, fees and timing remain visible, and published demo keys must not hold value.",
+  "cardSummary": "Replay confidential milestone invoices from public, client, contractor, mediator and accountant views to see who can read each detail.",
+  "cardStatus": "Replay demo · Testnet",
+  "creator": "kasbsquall",
+  "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/35",
+  "publishedAt": "2026-10-29T17:51:40.929Z",
+  "updatedAt": "2026-10-30T00:10:36.713Z",
+  "sourceContentSha256": "003f96a0287c134dc201c5d567b48b24c2e5f8bdac79b213fec6ec3750743663",
+  "repoUrl": "https://github.com/kasbsquall/hexcrow",
+  "demoUrl": "https://kasbsquall.github.io/hexcrow/",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust · TypeScript · MIT",
+      "sourceUrl": "https://github.com/kasbsquall/hexcrow"
+    }
+  ],
+  "recording": {
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-hexcrow-20261031.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-hexcrow-20261031.png",
+    "capturedAt": "2026-10-31T09:59:37.974Z",
+    "sourceRevision": "d58ea442900f65859e536a08e02f353afdf85164",
+    "kind": "public-page",
+    "credit": "App demo — recorded-run replay with public, client and accountant disclosure views; no new transaction."
+  }
+}

@@ -1,5 +1,8 @@
 import {test} from 'node:test';
 import http from 'node:http';
+import {mkdtempSync,writeFileSync,rmSync} from 'node:fs';
+import {tmpdir} from 'node:os';
+import path from 'node:path';
 import assert from 'node:assert/strict';
 import {calendarItems,createMarketingCalendar,localCalendarRequest} from '../marketingCalendar.mjs';
 const card = {id:'card1',name:'Launch',url:'https://trello.com/c/abcd1234/launch',due:'2026-09-25T02:00:00Z',start:null,idList:'list1',labels:[{name:'Social'}]};
@@ -31,7 +34,9 @@ test('private calendar rejects remote clients and nonlocal hosts',()=>{
 });
 test('HTTP route provides explicit connection state and serves the saved draft',async()=>{
  const {createApp}=await import('../app.mjs');
- const server=createApp().listen(0,'127.0.0.1');
+ const calendarDraftDir=mkdtempSync(path.join(tmpdir(),'calendar-draft-test-'));
+ writeFileSync(path.join(calendarDraftDir,'index.html'),'<h1>Marketing calendar</h1>');
+ const server=createApp({calendarDraftDir}).listen(0,'127.0.0.1');
  await new Promise(resolve=>server.once('listening',resolve));
  try {
   const origin=`http://127.0.0.1:${server.address().port}`;
@@ -42,7 +47,7 @@ test('HTTP route provides explicit connection state and serves the saved draft',
   assert((await (await fetch(`${origin}/calendar/draft/`)).text()).includes('Marketing calendar'));
   const remoteHostStatus = await new Promise((resolve,reject)=>{http.get(`${origin}/api/marketing-calendar`,{headers:{Host:'external.example'}},response=>{response.resume();resolve(response.statusCode);}).on('error',reject);});
   assert.equal(remoteHostStatus,403);
- } finally {server.closeAllConnections();await new Promise(resolve=>server.close(resolve));}
+ } finally {server.closeAllConnections();await new Promise(resolve=>server.close(resolve));rmSync(calendarDraftDir,{recursive:true,force:true});}
 });
 test('connector snapshots load real cards and become stale after missed refreshes',async()=>{
  let clock=Date.parse('2026-09-24T17:00:00Z');

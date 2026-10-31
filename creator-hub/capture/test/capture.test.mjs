@@ -45,3 +45,14 @@ test('bound resource-specific scroll framing',()=>{
  for(const scrollDistance of [-1,3001,1.5,'780'])assert.throws(()=>validateApps([{name:'demo',url:'https://example.com',scrollDistance}]));
  assert.equal(validateApps([{name:'demo',url:'https://example.com',scrollDistance:780}]).length,1);
 });
+
+test('tab captures retain exact reviewed control names and reject other roles',async()=>{
+ const app={name:'tab-demo',url:'https://example.com',steps:[{role:'tab',button:'Public',holdMs:6000},{role:'tab',button:'Client',holdMs:6000}]};
+ assert.equal(validateApps([app]).length,1);
+ assert.throws(()=>validateApps([{...app,steps:app.steps.map(s=>({...s,role:'link'}))}]));
+ const controls=[];const video={path:async()=>'/tmp/fake.webm',delete:async()=>{}};
+ const page={goto:async()=>({ok:()=>true}),waitForTimeout:async()=>{},getByRole:(role,options)=>({click:async()=>controls.push({role,...options})}),video:()=>video};
+ const browser={newContext:async()=>({newPage:async()=>page,close:async()=>{}})};
+ await captureOne(browser,app,'/tmp',()=>({status:0}));
+ assert.deepEqual(controls,[{role:'tab',name:'Public',exact:true},{role:'tab',name:'Client',exact:true}]);
+});
