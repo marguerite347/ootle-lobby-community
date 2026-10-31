@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import type { Resource, Popularity } from './api';
 import type {ReactNode} from 'react';
 import { api, userId, userName, setUserName } from './api';
+import {webImage} from './imageVariants';
 
 export function Spinner() {
   return <div className="spinner" aria-label="loading" />;
@@ -113,10 +114,12 @@ export function ResourceCardMedia({ r, className, metrics, interactive = true }:
   const [failed, setFailed] = useState(false);
   const [hover, setHover] = useState(false);
   const [visible, setVisible] = useState(false);
+  const [mediaReady, setMediaReady] = useState(false);
   const [playing, setPlaying] = useState(false);
   const container = useRef<HTMLDivElement | null>(null);
   const vref = useRef<HTMLVideoElement | null>(null);
   const image = !failed ? r.preview?.image : null;
+  const thumbnail = image ? webImage(image) : null;
   const video = r.preview?.video || null;
   const h = hueOf(r.id);
   const walkthrough = !!r.preview?.source && /^(Source\/docs walkthrough|Docs walkthrough|Page walkthrough|App demo|Concept overview|Announcement walkthrough|Public source walkthrough|Repository walkthrough|Official guide walkthrough)/.test(r.preview.source);
@@ -124,9 +127,14 @@ export function ResourceCardMedia({ r, className, metrics, interactive = true }:
   useEffect(() => {
     const el = container.current;
     if (!el) return;
+    if (!('IntersectionObserver' in window)) {setVisible(true); setMediaReady(true); return;}
     const observer = new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting), { threshold: 0.15 });
+    const loader = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {setMediaReady(true); loader.disconnect();}
+    }, {rootMargin: '300px 0px'});
     observer.observe(el);
-    return () => observer.disconnect();
+    loader.observe(el);
+    return () => {observer.disconnect(); loader.disconnect();};
   }, []);
 
   useEffect(() => {
@@ -142,19 +150,19 @@ export function ResourceCardMedia({ r, className, metrics, interactive = true }:
     update();
     reduced.addEventListener('change', update);
     return () => { reduced.removeEventListener('change', update); v.pause(); };
-  }, [visible, hover, video, walkthrough]);
+  }, [visible, hover, video, walkthrough, mediaReady]);
 
   return (
-    <div ref={container} className={`media ${className || ''}`} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+    <div ref={container} className={`media ${className || ''}`} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} onFocusCapture={() => setMediaReady(true)}>
       {image ? (
-        <img className="media-img" src={image} alt="" loading="lazy" onError={() => setFailed(true)} />
+        <img className="media-img" {...thumbnail} alt="" loading="lazy" decoding="async" onError={() => setFailed(true)} />
       ) : (
         <div className="media-ph media-shader" style={{ '--ph-hue': h } as React.CSSProperties}>
           <span className="media-ph-glyph" aria-hidden="true">{ECO_GLYPH[r.ecosystem] || '✧'}</span>
           <span className="media-ph-title">{r.title}</span>
         </div>
       )}
-      {video && (!walkthrough || interactive) && <video ref={vref} className={`media-video ${playing || walkthrough ? 'on' : ''} ${walkthrough ? 'recorded-walkthrough' : ''}`} src={video} poster={image || undefined} aria-label={`${r.title} recording`} controls={walkthrough} muted loop={!walkthrough} playsInline preload="none" onClick={event => { if(walkthrough) {event.stopPropagation();} }} onPlaying={() => setPlaying(true)} onPause={() => setPlaying(false)} onError={() => setPlaying(false)} />}
+      {video && mediaReady && (!walkthrough || interactive) && <video ref={vref} className={`media-video ${playing || (walkthrough && mediaReady) ? 'on' : ''} ${walkthrough ? 'recorded-walkthrough' : ''}`} src={video} poster={thumbnail?.src} aria-label={`${r.title} recording`} controls={walkthrough} muted loop={!walkthrough} playsInline preload="none" onClick={event => { if(walkthrough) {event.stopPropagation();} }} onPlaying={() => setPlaying(true)} onPause={() => setPlaying(false)} onError={() => setPlaying(false)} />}
       <div className="media-badges"><EcosystemBadge r={r} /></div>
       <div className="media-pop">{metrics ?? (r.popularity ? <PopularityChip p={r.popularity} compact /> : null)}</div>
     </div>

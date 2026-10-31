@@ -1,5 +1,6 @@
 import {safeHref} from '../../../shared/safeLinks.mjs';
-import {useId} from 'react';
+import {useEffect, useId, useRef, useState} from 'react';
+import {webImage} from '../imageVariants';
 
 type Scene = 'vault' | 'bug' | 'builder';
 const ART = {
@@ -15,9 +16,19 @@ const DROPS = [{x: 1155, y: 533, rx: 66, ry: 64}, {x: 1150, y: 838, rx: 75, ry: 
 export default function SeasonalIllustration({scene, className = ''}: {scene: Scene; className?: string}) {
   const id = useId().replace(/:/g, '');
   const art = ART[scene];
+  const element = useRef<SVGSVGElement>(null);
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    if (!('IntersectionObserver' in window)) {setReady(true); return;}
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {setReady(true); observer.disconnect();}
+    }, {rootMargin: '300px 0px'});
+    if (element.current) observer.observe(element.current);
+    return () => observer.disconnect();
+  }, []);
   const source = `/seasonal/october-2026/${art.file}`;
-  const picture = <image href={safeHref(source)} width={art.width} height={art.height}/>;
-  return <svg className={`season-illustration ${className}`} viewBox={`0 0 ${art.width} ${art.height}`} role="img" aria-label={art.alt}>
+  const picture = <image href={ready ? safeHref(webImage(source).src) : undefined} width={art.width} height={art.height}/>;
+  return <svg ref={element} className={`season-illustration ${className}`} viewBox={`0 0 ${art.width} ${art.height}`} role="img" aria-label={art.alt}>
     <defs>
       <radialGradient id={`${id}-light`}><stop stopColor="#f3ffac" stopOpacity=".9"/><stop offset="1" stopColor="#deff66" stopOpacity="0"/></radialGradient>
       <linearGradient id={`${id}-beam`}><stop stopColor="#fffbd0" stopOpacity=".8"/><stop offset="1" stopColor="#e8ff94" stopOpacity="0"/></linearGradient>
