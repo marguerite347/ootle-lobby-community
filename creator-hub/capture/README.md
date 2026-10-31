@@ -29,7 +29,7 @@ A failed capture is retried once in the same browser session, which recovers the
 
 Human-verification and network-security challenge screens fail capture before encoding. Do not solve or bypass a challenge as part of capture. Keep the failed attempt in the evidence ledger and use a separately reviewed public announcement or documentation source when it accurately represents the resource.
 
-For a previously inspected public page with a dismissible overlay, a target may include `dismissOverlay: { "button": "close", "scrollDistance": 550 }`. Only the exact button names `close` and `Close` are accepted, and the optional scroll distance must be an integer from 0 to 800. The recorder triggers and closes the overlay before the retained clip, then returns to the top. It does not submit forms or accept terms. Inspect opening, middle and closing frames to confirm the overlay stayed dismissed; an encoded file alone is not acceptance.
+For a previously inspected public page with a dismissible overlay, a target may include `dismissOverlay: { "button": "close", "scrollDistance": 550 }`. Only the exact button names `close` and `Close` are accepted, and its scroll distance must be an integer from 0 to 800. The recorder triggers and closes the overlay before the retained clip, then returns to the top. It does not submit forms or accept terms. Inspect opening, middle and closing frames to confirm the overlay stayed dismissed; an encoded file alone is not acceptance.
 
 Each run writes `out/manifest.json` recording, per app, the captured URL, whether capture succeeded, and a timestamp — so a preview can be traced back to its source and refreshed.
 
