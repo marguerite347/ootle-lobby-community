@@ -50,7 +50,7 @@ export async function captureOne(browser, app, outDir, run = spawnSync) {
     // rather than jumping 320px between mouse-wheel events.
     if (app.steps) {
       for (const step of app.steps) {
-        await page.getByRole('button', {name: step.button, exact: true}).click({timeout: 10000});
+        await page.getByRole(step.role || 'button', {name: step.button, exact: true}).click({timeout: 10000});
         await page.waitForTimeout(step.holdMs);
       }
     } else await page.evaluate(async ({focused, scrollDistance}) => {
@@ -111,6 +111,7 @@ export function validateApps(apps) {
     if(app.scrollDistance!==undefined && (!Number.isInteger(app.scrollDistance)||app.scrollDistance<0||app.scrollDistance>3000))throw new Error('Capture scroll distance must be 0–3000 pixels.');
     if(app.cropBottom!==undefined && (!Number.isInteger(app.cropBottom)||app.cropBottom<0||app.cropBottom>160||app.cropBottom%2))throw new Error('Invalid capture crop.');
     if (app.steps !== undefined) {
+      if (Array.isArray(app.steps) && app.steps.some(s => s.role !== undefined && !['button', 'tab'].includes(s.role))) throw new Error('Capture controls must be reviewed buttons or tabs.');
       if (!Array.isArray(app.steps) || !app.steps.length || app.steps.length > 8 || app.steps.some(s => typeof s.button !== 'string' || !s.button.trim() || !Number.isInteger(s.holdMs) || s.holdMs < 1000 || s.holdMs > 10000)) throw new Error('Capture steps require 1–8 exact button names and 1–10 second holds.');
       const duration = app.steps.reduce((n, s) => n + s.holdMs, 0);
       if (duration < 12000 || duration > 60000) throw new Error('Interactive captures must last 12–60 seconds.');

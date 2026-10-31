@@ -1,0 +1,29 @@
+{
+  "slug": "ghost-candy-cards",
+  "title": "Ghost Candy Cards",
+  "summary": "A Rust template, claim client and Python SVG printer for one-time Halloween candy cards. Each printed QR carries a bearer secret; the public bowl stores its corresponding point and records redemption, while the treat is paid to a stealth output. Claims bind the proof to the exact output, and the host can sweep unused treats after the deadline. Anyone who copies a card secret can race its holder; published demo secrets must not be funded. October 31 review covered the creator announcement and MIT README. The recording is a source walkthrough, not a deployed claim demonstration.",
+  "cardSummary": "Print one-time QR candy cards that redeem private testnet treats while keeping the recipient off the public bowl.",
+  "cardStatus": "Source code · Testnet",
+  "creator": "cgrabk7q2",
+  "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/36",
+  "publishedAt": "2026-10-29T21:18:23.300Z",
+  "updatedAt": "2026-10-29T21:18:23.300Z",
+  "sourceContentSha256": "a9ac6218329a0e91476247f560c313997d879736d4192611fd7ac44ac624db4c",
+  "repoUrl": "https://github.com/cgrab-k7q2/ghost-candy-cards",
+  "demoUrl": "",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust · Python · MIT",
+      "sourceUrl": "https://github.com/cgrab-k7q2/ghost-candy-cards"
+    }
+  ],
+  "recording": {
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-ghost-candy-cards-20261031.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-ghost-candy-cards-20261031.png",
+    "capturedAt": "2026-10-31T09:53:05.942Z",
+    "sourceRevision": "d023958902a09b41f15ff5bb9cd4a1c5cc559ff4",
+    "kind": "public-page",
+    "credit": "Source/docs walkthrough — README, printable example cards and claim design; no card redemption."
+  }
+}

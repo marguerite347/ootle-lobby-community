@@ -46,7 +46,7 @@ import { STANDARD } from './popularity.mjs';
 import { clientDist, clientPublic, previewsDir, seedPreviewsDir } from './paths.mjs';
 import { agentGuideFallbackHtml, agentGuideHtml, withAgentGuideLink } from './agentShell.mjs';
 
-export function createApp({publicReadOnly=false}={}) {
+export function createApp({publicReadOnly=false, calendarDraftDir=new URL('../../../calendar/', import.meta.url).pathname}={}) {
   const localWorkflowReference = body => publicReadOnly
     ? '# Local-only workflow reference\n\nThis public deployment disables persistent writes (HTTP 410 PUBLIC_WRITES_DISABLED). The workflow below requires an explicitly configured local application; it cannot create, save, fork or publish here. Use this origin\'s /openapi.json for enabled operations.\n\n' + body
     : body;
@@ -61,7 +61,7 @@ export function createApp({publicReadOnly=false}={}) {
     if (!localCalendarRequest(req)) return res.status(403).send('Marketing calendar requires local access.');
     res.set('Cache-Control', 'no-store');
     next();
-  }, express.static(new URL('../../../calendar/', import.meta.url).pathname, {dotfiles:'deny'}));
+  }, express.static(calendarDraftDir, {dotfiles:'deny'}));
   app.use('/growth-export', express.static(fileURLToPath(new URL('../../../metrics/', import.meta.url)), { dotfiles: 'deny', index: false }));
   app.get('/game-shared/assetCommerce.mjs',(req,res)=>res.type('application/javascript').send(readFileSync(new URL('../shared/assetCommerce.mjs',import.meta.url),'utf8')));
 

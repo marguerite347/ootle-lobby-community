@@ -1,14 +1,14 @@
 {
   "slug": "hauntboard",
   "title": "Hauntboard",
-  "summary": "Public message board on Ootle testnet with public threads and encrypted sealed rooms. October 29 public inspection loaded five general threads and a privacy explanation; the deployed page reported runtime 0.46.0. Classic invitations share a key in the URL fragment. The current explanation also describes recipient-specific encrypted invitations, a separate recovery vault and rotation for future messages. Old keys and plaintext cannot be revoked; wallet recovery does not restore room keys, and messages do not authenticate individual authors. Titles, categories, fees, spent-output links, timing and network metadata remain public; accepted posts cannot be edited or deleted through Hauntboard. The October 28 creator update describes SDK/recovery work in PR 3 as not yet deployed; historical test transactions are not fresh acceptance of that upgrade. The recording shows public pages and privacy documentation, with no wallet, private-room access or posting.",
+  "summary": "Public message board on Ootle testnet with public threads and encrypted sealed rooms. October 31 inspection loaded six general threads, runtime 0.46.0 and a Sapient wallet option. The creator’s October 30 update adds Sapient posting alongside the browser wallet; funded extension posting remains outstanding in the creator’s evidence. Classic invitations share a key in the URL fragment; recipient invitations, a separate recovery vault and future-message rotation are also described. Old keys and plaintext cannot be revoked, wallet recovery does not restore room keys, and messages do not authenticate individual authors. Titles, fees, spent-output links, timing and network metadata remain public; accepted posts cannot be edited or deleted. The refreshed recording shows public pages and privacy documentation, with no wallet or private-room action.",
   "cardSummary": "Read public Ootle discussions or share encrypted room messages with invitations and separate room-key recovery.",
   "cardStatus": "Web app · Testnet · Permanent posts",
   "creator": "_squared",
-  "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/9",
+  "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/39",
   "publishedAt": "2026-10-12T22:16:52.102Z",
-  "updatedAt": "2026-10-16T17:39:46.303Z",
-  "sourceContentSha256": "261e1e10d64e3e291a4418fa8b11258338310afaee9b5e31e19e588d8d742140",
+  "updatedAt": "2026-10-31T04:10:21.702Z",
+  "sourceContentSha256": "dbced832c6c739758344cc2f0176cefbca6d9e73a7a16cfa8b14c96d27b681ec",
   "repoUrl": "https://github.com/kstrycharz/hauntboard",
   "ecosystem": "tari-ootle",
   "technologies": [
@@ -19,11 +19,11 @@
   ],
   "demoUrl": "https://hauntboard.taritracker.com/",
   "recording": {
-    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-hauntboard-20261029.mp4",
-    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-hauntboard-20261029.png",
-    "capturedAt": "2026-10-29T10:28:55.900Z",
-    "sourceRevision": "0598b28c22d26c1bb2d43215b7b3f823dadadd0c",
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-hauntboard-update-20261031.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-hauntboard-update-20261031.png",
+    "capturedAt": "2026-10-31T10:00:06.066Z",
+    "sourceRevision": "b558b1cb56ddf0e0a06b7154248260a95a89d083",
     "kind": "public-page",
-    "credit": "App demo — Public board and room-privacy explanation; no wallet or private-room access."
+    "credit": "App demo — Public board and room-privacy explanation; no wallet, private-room access or posting."
   }
 }

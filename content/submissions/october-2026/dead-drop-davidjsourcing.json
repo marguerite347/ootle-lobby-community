@@ -1,0 +1,29 @@
+{
+  "slug": "dead-drop-davidjsourcing",
+  "title": "Dead Drop",
+  "summary": "David J’s riddle-and-stealth-output app combines an encrypted memo, answer-derived signing key and time conditions. Correct answers decrypt locally; claiming and returning funds require transactions. Public riddles can be guessed offline, first valid claim wins, and browser-stored keys need a backup. The Midnight Grave uses epoch 13031; the creator revised its estimated opening to early November rather than a fixed Halloween time. October 31 review covered the source, original announcement and public landing page. The recording shows the public explanation only; no funding, claim or return was attempted. This is a separate community project from the Workbench Dead Drop social-deduction game.",
+  "cardSummary": "Hide a message and testnet tokens behind a riddle, with timed access and a return path for unclaimed drops.",
+  "cardStatus": "Web app · Testnet",
+  "creator": "davidj_builds",
+  "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/37",
+  "publishedAt": "2026-10-30T13:56:37.560Z",
+  "updatedAt": "2026-10-30T13:56:37.560Z",
+  "sourceContentSha256": "8d1413b78b12bcdd70e3e82a47c0b8108b6f41b6ec12a8d0b2935774864aa17e",
+  "repoUrl": "https://github.com/davidjsourcing/dead-drop",
+  "demoUrl": "https://dead-drop.sites.tab.bot/",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust · TypeScript · MIT",
+      "sourceUrl": "https://github.com/davidjsourcing/dead-drop"
+    }
+  ],
+  "recording": {
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-dead-drop-davidjsourcing-20261031.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-dead-drop-davidjsourcing-20261031.png",
+    "capturedAt": "2026-10-31T09:53:29.349Z",
+    "sourceRevision": "e68360ee7fb978d98573aa7861e2cb1bf5047532",
+    "kind": "public-page",
+    "credit": "Source/docs walkthrough — public landing page, privacy layers and timed hunt explanation; no wallet actions."
+  }
+}

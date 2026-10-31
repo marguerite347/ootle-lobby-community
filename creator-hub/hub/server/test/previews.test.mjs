@@ -19,25 +19,27 @@ test('slugify matches the capture/cover file naming', () => {
   assert.equal(slugify('Caravel'), 'caravel');
 });
 
-test('unreviewed generic seed covers are suppressed', () => {
+test('unreviewed generic covers are suppressed independently of current seed captures', () => {
   const empty = mkdtempSync(path.join(tmpdir(), 'preview-seed-'));
   try {
     const result = spawnSync(process.execPath, ['--input-type=module', '-e', `
       import assert from 'node:assert/strict';
-      import {load, previewFor} from ${JSON.stringify(new URL('../previews.mjs', import.meta.url).href)};
-  load();
-  // URL match across a title variation ("Caravel Labs" vs seed "Caravel").
-  const byUrl = previewFor({ type: 'app', title: 'Caravel Labs', sourceUrl: 'https://caravellabs.net/' });
-  assert.equal(byUrl,null, 'generic poster cannot stand in for source-specific imagery');
-  // A reviewed repository capture now provides a source-specific poster.
-  const bySlug = previewFor({ type: 'app', title: 'Private Ballot' });
-  assert.match(bySlug.image,/contest-private-ballot/);
-  assert.equal(bySlug.video,null);
-  assert.match(bySlug.source,/Recorded webpage/);
+      import {writeFileSync} from 'node:fs';
+      const dir=process.env.CREATOR_HUB_PREVIEWS_DIR;
+      writeFileSync(dir+'/unreviewed-fixture.poster.png','generic fixture');
+      writeFileSync(dir+'/index.json',JSON.stringify([{slug:'unreviewed-fixture',url:'https://fixture.invalid/',source:'cover',image:'/previews/unreviewed-fixture.poster.png'}]));
+      const {load,previewFor}=await import(${JSON.stringify(new URL('../previews.mjs', import.meta.url).href)});
+      load();
+      assert.equal(previewFor({type:'app',title:'Unreviewed fixture',sourceUrl:'https://fixture.invalid/'}),null);
+      writeFileSync(dir+'/index.json',JSON.stringify([{slug:'unreviewed-fixture',url:'https://fixture.invalid/',source:'capture',image:'/previews/unreviewed-fixture.poster.png'}]));
+      load();
+      const captured=previewFor({type:'app',title:'Unreviewed fixture',sourceUrl:'https://fixture.invalid/'});
+      assert.equal(captured.image,'/previews/unreviewed-fixture.poster.png');
+      assert.equal(captured.video,null);
+      assert.match(captured.source,/Recorded webpage/);
     `], {env: {...process.env, CREATOR_HUB_PREVIEWS_DIR: empty}, encoding:'utf8'});
     assert.equal(result.status, 0, result.stderr);
   } finally { rmSync(empty, {recursive:true, force:true}); }
-
 });
 
 test('canonical URLs preserve distinct ports and queries and reject non-web URLs',()=>{

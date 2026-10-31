@@ -1,20 +1,20 @@
 {
   "slug": "crypt",
   "title": "Crypt",
-  "summary": "Secret-trading game with a wallet-free simulation and an experimental Sapient path. The creator’s October 28 forum edit supplies a replacement demo and source archive after GitHub became unavailable; both mirrors were reachable on October 29. The archive is labeled snapshot 683bc4e and contains a BSD-3-Clause license. The former repository is https://github.com/Lrifton92/crypt. The mirrored ON-CHAIN · SAPIENT screen warns that 15 testnet XTM remain in settled escrow because the browser wallet cannot sign the Rust SDK stealth payout; reloading mid-sale abandons the session. Disputes reveal secrets and public metadata remains visible. The refreshed recording shows these requirements and the title screen; no wallet or transaction was used. Earlier simulation footage remains in capture history.",
+  "summary": "Secret-trading game with a wallet-free simulation and an experimental Sapient path. The creator’s October 31 reviewed forum entry identifies ogboy92ii/crypt as the full-history mirror of the restricted Lrifton92/crypt repository; the replacement demo and earlier source archive remain available. BSD-3-Clause source. The mirrored ON-CHAIN · SAPIENT screen warns that 15 testnet XTM remain in settled escrow because the browser wallet cannot sign the Rust SDK stealth payout; reloading mid-sale abandons the session. Disputes reveal secrets and public metadata remains visible. The October 29 recording shows the mirror’s requirements and title screen, with no wallet or transaction. Earlier simulation footage and retired URLs remain in the maintenance history.",
   "cardSummary": "Play a wallet-free secret-trading demo, choosing honest or deceptive actions to explore escrow and delivery disputes.",
   "cardStatus": "Browser demo · Testnet · Wallet payouts unavailable",
   "creator": "Og.boy",
   "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/7",
   "publishedAt": "2026-10-12T11:07:25.452Z",
-  "updatedAt": "2026-10-28T15:08:16.456Z",
-  "sourceContentSha256": "3e6ebe5ac6649246ca6e857816f3da5a2d40cbc31380c5b10033b83568ca75fb",
-  "repoUrl": "https://tari-crypt.vercel.app/crypt-source-683bc4e.zip",
+  "updatedAt": "2026-10-29T14:55:19.284Z",
+  "sourceContentSha256": "d53eb175af39bce77573f8a4a3b80432ed19cadfd5ec1977df1c651fde6fdd58",
+  "repoUrl": "https://github.com/ogboy92ii/crypt",
   "ecosystem": "tari-ootle",
   "technologies": [
     {
-      "label": "Rust · BSD-3-Clause source archive",
-      "sourceUrl": "https://tari-crypt.vercel.app/crypt-source-683bc4e.zip"
+      "label": "Rust · BSD-3-Clause",
+      "sourceUrl": "https://github.com/ogboy92ii/crypt"
     }
   ],
   "recording": {
