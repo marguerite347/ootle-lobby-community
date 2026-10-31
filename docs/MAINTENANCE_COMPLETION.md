@@ -22,3 +22,9 @@ Each item includes `id`, `status`, `checkedAt`, and local `evidence` paths relat
 Run `node --test test/maintenance-completion.test.mjs creator-hub/hub/server/test/sourceMonitoring.test.mjs` after changes to these rules. The tests cover omitted scope, unread work mislabeled blocked, stale or absent evidence, superseded URLs, and preservation of last-good dates.
 
 Public catalog `lastCheckedAt` must match the latest successful full source review for reviewed records in both catalogs. Preserve blocked records and all recording/publication dates. The completion gate rejects stale reviewed dates.
+
+## Immutable evidence storage
+
+Source readers must retain each representation and version separately. Use `scripts/source_evidence.py` (`store_source_evidence`) or an equivalent exclusive-write, content-addressed store: URL/key digest plus the complete SHA-256 content digest. Never use a URL-only filename for both HTML and API JSON, and never overwrite an earlier observation. Before accepting a source hash comparison or advancing coverage, recompute the file digest and check it against the observation manifest. A mismatch is evidence corruption, not a successful read; retain the failed manifest, reread through the supported source client, and record the new attempt separately. This storage guarantee does not establish that a stream or its replies were reviewed.
+
+Regression trial: `python3 -m unittest discover -s scripts -p 'test_source_evidence.py'`. It checks multiple representations of one URL, repeat-read reuse, and rejection of modified existing evidence.
