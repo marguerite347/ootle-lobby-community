@@ -1,6 +1,7 @@
 import {safeHref} from '../../../shared/safeLinks.mjs';
 import {useEffect, useId, useRef, useState} from 'react';
 import {CHAT_GREETING_EVENT} from '../chat/chatSidebarState';
+import {webImage} from '../imageVariants';
 
 const art = '/seasonal/october-2026';
 
@@ -46,9 +47,9 @@ export default function ConcoctionArt() {
           <stop offset="1" stopColor="#eeff9b" stopOpacity=".75"/>
         </radialGradient>
       </defs>
-      <image href={safeHref(`${art}/confidential-potion.png`)} width="1254" height="1254"/>
+      <image href={safeHref(webImage(`${art}/confidential-potion.png`).src)} width="1254" height="1254"/>
       <g className="potion-effect potion-liquid-glow" mask={`url(#${id}-liquid)`} aria-hidden="true">
-        <image href={safeHref(`${art}/confidential-potion.png`)} width="1254" height="1254"/>
+        <image href={safeHref(webImage(`${art}/confidential-potion.png`).src)} width="1254" height="1254"/>
       </g>
       <g aria-hidden="true">
         {[[490,707,23],[620,738,30],[806,729,21],[565,670,17],[761,701,26]].map(([x,y,r], index) => <g key={index} transform={`translate(${x} ${y})`}>
@@ -61,8 +62,8 @@ export default function ConcoctionArt() {
         <svg className="corner-web" viewBox="0 0 160 160" fill="none">
           <path d="M160 0L0 0M160 0L4 62M160 0L42 118M160 0L98 156M160 0V160M128 0Q129 13 131 12Q133 24 137 24Q148 28 148 32Q151 32 160 32M96 0Q98 24 101 24Q106 47 115 45Q137 57 135 59Q141 66 160 64M56 0Q59 41 64 39Q72 76 86 74Q118 91 121 96Q132 107 160 104M8 0Q13 60 20 57Q29 111 52 108Q99 131 104 143Q122 155 160 152"/>
         </svg>
-        <div className="spider-visit"><span className="spider-silk"/><img src={`${art}/friendly-spider.png`} alt="" width="1254" height="1254"/></div>
-        <img className="corner-pumpkin" src={`${art}/pumpkin-leaves.png`} alt="" width="1254" height="1254"/>
+        <div className="spider-visit"><span className="spider-silk"/><img src={webImage(`${art}/friendly-spider.png`).src} alt="" width="1254" height="1254" decoding="async"/></div>
+        <img className="corner-pumpkin" src={webImage(`${art}/pumpkin-leaves.png`).src} alt="" width="1254" height="1254" decoding="async"/>
       </div>
       <button className="spider-greeting" type="button" onClick={() => {setGreeting(count => count + 1); setHelloRequest(count => count + 1);}} aria-label="Replay the spider and pumpkin greeting">Say hello</button>
     </div>

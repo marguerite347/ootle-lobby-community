@@ -3,6 +3,7 @@ import EcosystemResources from '../components/EcosystemResources';
 import PublicationGallery from '../workbench/PublicationGallery';
 import {useEffect} from 'react';
 import {useLocation} from 'react-router-dom';
+import {webImage} from '../imageVariants';
 import ConcoctionArt from '../components/ConcoctionArt';
 import ContestProjects from '../components/ContestProjects';
 import OctoberSubmissions from '../components/OctoberSubmissions';
@@ -41,7 +42,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <img className="season-community-ghost" src="/seasonal/october-2026/creator-ghost.png" alt="A friendly ghost waving and carrying a glowing code block" width="1254" height="1254" loading="lazy"/>
+      <img className="season-community-ghost" src={webImage('/seasonal/october-2026/creator-ghost.png').src} alt="A friendly ghost waving and carrying a glowing code block" width="1254" height="1254" loading="lazy" decoding="async"/>
     </section>
   </div>;
 }

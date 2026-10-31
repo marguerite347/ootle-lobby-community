@@ -17,10 +17,10 @@ describe('project navigation',()=>{
  });
 });
 
-it.each(['Source/docs walkthrough — application not demonstrated','Docs walkthrough — source, not executed application','App demo — public read-only interface','Public source walkthrough','Repository walkthrough · testnet interface screenshots','Official guide walkthrough · guessing-game example','Concept overview','Announcement walkthrough','Page walkthrough — public wallet entry; no trading'])('%s exposes native playback controls without autoplay or looping',(source)=>{
+it.each(['Source/docs walkthrough — application not demonstrated','Docs walkthrough — source, not executed application','App demo — public read-only interface','Public source walkthrough','Repository walkthrough · testnet interface screenshots','Official guide walkthrough · guessing-game example','Concept overview','Announcement walkthrough','Page walkthrough — public wallet entry; no trading'])('%s defers video and eager posters until the card approaches the viewport',(source)=>{
  const resource={id:'source',title:'Source',ecosystem:'tari',native:true,preview:{image:'/poster.jpg',video:'/source.mp4',source}};
  const html=renderToStaticMarkup(<ResourceCardMedia r={resource}/>);
- expect(html).toContain('controls=""');expect(html).toContain('poster="/poster.jpg"');expect(html).toContain('preload="none"');expect(html).not.toContain('autoplay');expect(html).not.toContain('loop=""');
+ expect(html).not.toContain('<video');expect(html).toContain('loading="lazy"');expect(html).not.toContain('poster=');expect(html).not.toContain('src="/source.mp4"');expect(html).not.toContain('autoplay');expect(html).not.toContain('loop=""');
  // Cards nested in links show the poster; controls belong on the detail/standalone card.
  expect(renderToStaticMarkup(<ResourceCardMedia r={resource} interactive={false}/>)).not.toContain('<video');
 });
@@ -30,5 +30,5 @@ it('separates authored purpose and visible status from complete disclosure witho
  expect(html).toContain('Inspect Tari addresses offline.');expect(html).toContain('Source code');expect(html).toContain('aria-label="Details about GhostKey"');
  const details=html.slice(html.indexOf('<details'));
  expect(details).toContain('Scalar math is not constant-time.');expect(details).toContain('October 8');expect(details).toContain('Recorded October 10');
- expect(html.slice(0,html.indexOf('<details'))).not.toContain('Scalar math');expect(html).toContain('controls=""');expect(html).toContain('Creator’s post');
+ expect(html.slice(0,html.indexOf('<details'))).not.toContain('Scalar math');expect(html).toContain('loading="lazy"');expect(html).toContain('Creator’s post');
 });
