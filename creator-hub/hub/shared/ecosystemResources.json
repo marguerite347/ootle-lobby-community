@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-10-29T10:40:36.653507+00:00",
+  "reviewedAt": "2026-10-31T09:27:08.839904+00:00",
   "records": [
     {
       "id": "tari-ootle:learn:official-agent-docs",
@@ -1686,6 +1686,56 @@
         "video": "https://ootle-lobby-preview.vercel.app/previews/community/resource-tari-agent-registry-20261029.mp4",
         "image": "https://ootle-lobby-preview.vercel.app/previews/community/resource-tari-agent-registry-20261029.png",
         "source": "Source/docs walkthrough — registry readme, package structure and contribution scope; no installation."
+      }
+    },
+    {
+      "id": "tari-ootle:component:haunted-passport",
+      "key": "haunted-passport",
+      "type": "component",
+      "ecosystem": "tari-ootle",
+      "group": "Templates",
+      "title": "Haunted Passport",
+      "summary": "Selective-disclosure credentials on Tari Ootle Esmeralda, with issuer, holder, verifier and public observer views. The issuer creates stealth outputs with a public tier floor and can freeze or revoke them; the holder answers a fresh ownership challenge. The issuer can read exact values, repeated presentations of the same output are linkable, and the verifier trusts its indexer. The hosted issuer desk is closed; issuance requires the separate local issuer service. October 31 review covered the creator’s forum and Bluesky announcements, MIT repository and public website. The recording shows public explanations and deployment links; no wallet connection, credential issuance or proof signing was performed.",
+      "status": "Web app · Testnet",
+      "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/34",
+      "repoUrl": "https://github.com/AshThunder/haunted-passport",
+      "docsUrl": "https://github.com/AshThunder/haunted-passport#readme",
+      "demoUrl": "https://haunted-passport.vercel.app/",
+      "creator": {
+        "name": "Chrisgold",
+        "url": "https://github.com/AshThunder"
+      },
+      "license": "MIT",
+      "network": "Esmeralda testnet",
+      "platform": "Browser · Rust",
+      "upstreamRevision": "cb7627b663d6d3225f22d6d90a556cbb298a16f4",
+      "sourceUpdatedAt": "2026-10-29T14:15:21.229Z",
+      "lastCheckedAt": "2026-10-31T09:27:08.839904+00:00",
+      "verification": "source-attested",
+      "readiness": "conceptual",
+      "tags": [
+        "ecosystem-resources",
+        "privacy",
+        "testnet"
+      ],
+      "discussionLinks": [
+        {
+          "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/34",
+          "platform": "Tari Community forum",
+          "context": "October contest submission"
+        },
+        {
+          "url": "https://bsky.app/profile/chrisgoldog.bsky.social/post/3myzc45hcf22l",
+          "platform": "Bluesky",
+          "context": "Creator announcement"
+        }
+      ],
+      "cardSummary": "Present age, membership or reputation credentials while revealing a qualifying threshold instead of the exact value.",
+      "cardStatus": "Web app · Testnet",
+      "preview": {
+        "video": "https://ootle-lobby-preview.vercel.app/previews/community/resource-haunted-passport-20261031.mp4",
+        "image": "https://ootle-lobby-preview.vercel.app/previews/community/resource-haunted-passport-20261031.png",
+        "source": "Source/docs walkthrough — Public credential roles, disclosure model and deployment links; no wallet actions."
       }
     }
   ],
