@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {captureOne,validateApps} from '../capture-apps.mjs';
 function mock(status=200){
  const stats={closed:0,deleted:0};const video={path:async()=>'/tmp/fake.webm',delete:async()=>stats.deleted++};
- const page={goto:async()=>({ok:()=>status<400,status:()=>status}),waitForTimeout:async()=>{},mouse:{wheel:async()=>{}},evaluate:async()=>{},video:()=>video};
+ const page={goto:async()=>({ok:()=>status<400,status:()=>status}),waitForTimeout:async()=>{},locator:()=>({innerText:async()=>''}),mouse:{wheel:async()=>{}},evaluate:async()=>{},video:()=>video};
  return {stats,browser:{newContext:async()=>({newPage:async()=>page,close:async()=>stats.closed++})}};
 }
 test('reject HTTP error pages and clean recording/context',async()=>{const m=mock(404);assert.equal(await captureOne(m.browser,{name:'x',url:'https://example.com'},'/tmp',()=>{throw Error('must not transcode');}),null);assert.deepEqual(m.stats,{closed:1,deleted:1});});
@@ -51,8 +51,28 @@ test('tab captures retain exact reviewed control names and reject other roles',a
  assert.equal(validateApps([app]).length,1);
  assert.throws(()=>validateApps([{...app,steps:app.steps.map(s=>({...s,role:'link'}))}]));
  const controls=[];const video={path:async()=>'/tmp/fake.webm',delete:async()=>{}};
- const page={goto:async()=>({ok:()=>true}),waitForTimeout:async()=>{},getByRole:(role,options)=>({click:async()=>controls.push({role,...options})}),video:()=>video};
+ const page={goto:async()=>({ok:()=>true}),waitForTimeout:async()=>{},locator:()=>({innerText:async()=>''}),getByRole:(role,options)=>({click:async()=>controls.push({role,...options})}),video:()=>video};
  const browser={newContext:async()=>({newPage:async()=>page,close:async()=>{}})};
  await captureOne(browser,app,'/tmp',()=>({status:0}));
  assert.deepEqual(controls,[{role:'tab',name:'Public',exact:true},{role:'tab',name:'Client',exact:true}]);
+});
+
+test('access challenge is rejected before a clip can be marked captured',async()=>{
+ let closed=false,deleted=false;
+ const page={goto:async()=>({ok:()=>true}),waitForTimeout:async()=>{},locator:()=>({innerText:async()=> 'Prove your humanity'}),video:()=>({delete:async()=>{deleted=true;}})};
+ const browser={newContext:async()=>({newPage:async()=>page,close:async()=>{closed=true;}})};
+ assert.equal(await captureOne(browser,{name:'challenge'},'/tmp',()=>{throw Error('must not encode challenge');}),null);
+ assert.ok(closed&&deleted);
+});
+
+test('overlay preparation cannot submit signup or arbitrary controls',()=>{
+ const app={name:'article',url:'https://example.com'};
+ for(const dismissOverlay of [{button:'Create account',scrollDistance:500},{button:'close',scrollDistance:2000},{button:'close',scrollDistance:-1},null])assert.throws(()=>validateApps([{...app,dismissOverlay}]));
+ assert.equal(validateApps([{...app,dismissOverlay:{button:'close',scrollDistance:500}}]).length,1);
+});
+
+test("resource framing rejects unbounded or unfocused start offsets",()=>{
+ const app={name:"announcement",url:"https://example.com"};
+ for(const extra of [{startOffset:400},{focused:true,startOffset:3001},{focused:true,startOffset:-1}])assert.throws(()=>validateApps([{...app,...extra}]));
+ assert.equal(validateApps([{...app,focused:true,startOffset:400,scrollDistance:180}]).length,1);
 });

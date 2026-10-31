@@ -27,6 +27,10 @@ Each clip trims the initial loading period, holds the hero, smoothly scrolls up 
 
 A failed capture is retried once in the same browser session, which recovers the observed first-recording encoder failure.
 
+Human-verification and network-security challenge screens fail capture before encoding. Do not solve or bypass a challenge as part of capture. Keep the failed attempt in the evidence ledger and use a separately reviewed public announcement or documentation source when it accurately represents the resource.
+
+For a previously inspected public page with a dismissible overlay, a target may include `dismissOverlay: { "button": "close", "scrollDistance": 550 }`. Only the exact button names `close` and `Close` are accepted, and its scroll distance must be an integer from 0 to 800. The recorder triggers and closes the overlay before the retained clip, then returns to the top. It does not submit forms or accept terms. Inspect opening, middle and closing frames to confirm the overlay stayed dismissed; an encoded file alone is not acceptance.
+
 Each run writes `out/manifest.json` recording, per app, the captured URL, whether capture succeeded, and a timestamp — so a preview can be traced back to its source and refreshed.
 
 ## Honest scope
@@ -55,3 +59,5 @@ The `npm run previews` command uses these capture changes automatically. This is
 ## Reviewed interactive demos
 
 For a wallet-free demo whose controls have already been inspected, supply `steps: [{ "button": "PLAY", "holdMs": 6000 }, ...]`. Each exact button name is clicked through Playwright, followed by its hold. Use 1–8 steps, each holding 1–10 seconds, with 12–60 seconds total. A missing control fails the capture instead of skipping ahead. Do not supply payment, wallet, account, publishing or permission actions. The video contains real clicks; labels must distinguish local simulation from network execution. Review opening/middle/closing frames and deployed playback before publication. Preserve raw footage with `preserveRaw: true`.
+
+For a specific resource mentioned within a longer announcement, `focused: true, startOffset: 400, scrollDistance: 180` starts the retained tour below the linked post’s initial position. The optional start offset is bounded to 0–3000 pixels and requires focused mode. Choose it from a reviewed page, then confirm the resource title and original-post context are visible in the poster and opening/middle/closing frames.
