@@ -59,3 +59,5 @@ The `npm run previews` command uses these capture changes automatically. This is
 ## Reviewed interactive demos
 
 For a wallet-free demo whose controls have already been inspected, supply `steps: [{ "button": "PLAY", "holdMs": 6000 }, ...]`. Each exact button name is clicked through Playwright, followed by its hold. Use 1–8 steps, each holding 1–10 seconds, with 12–60 seconds total. A missing control fails the capture instead of skipping ahead. Do not supply payment, wallet, account, publishing or permission actions. The video contains real clicks; labels must distinguish local simulation from network execution. Review opening/middle/closing frames and deployed playback before publication. Preserve raw footage with `preserveRaw: true`.
+
+For a specific resource mentioned within a longer announcement, `focused: true, startOffset: 400, scrollDistance: 180` starts the retained tour below the linked post’s initial position. The optional start offset is bounded to 0–3000 pixels and requires focused mode. Choose it from a reviewed page, then confirm the resource title and original-post context are visible in the poster and opening/middle/closing frames.

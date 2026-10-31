@@ -70,3 +70,9 @@ test('overlay preparation cannot submit signup or arbitrary controls',()=>{
  for(const dismissOverlay of [{button:'Create account',scrollDistance:500},{button:'close',scrollDistance:2000},{button:'close',scrollDistance:-1},null])assert.throws(()=>validateApps([{...app,dismissOverlay}]));
  assert.equal(validateApps([{...app,dismissOverlay:{button:'close',scrollDistance:500}}]).length,1);
 });
+
+test("resource framing rejects unbounded or unfocused start offsets",()=>{
+ const app={name:"announcement",url:"https://example.com"};
+ for(const extra of [{startOffset:400},{focused:true,startOffset:3001},{focused:true,startOffset:-1}])assert.throws(()=>validateApps([{...app,...extra}]));
+ assert.equal(validateApps([{...app,focused:true,startOffset:400,scrollDistance:180}]).length,1);
+});

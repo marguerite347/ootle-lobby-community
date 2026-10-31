@@ -58,6 +58,10 @@ export async function captureOne(browser, app, outDir, run = spawnSync) {
       await page.evaluate(() => window.scrollTo(0, 0));
       await page.waitForTimeout(500);
     }
+    if (app.startOffset) {
+      await page.mouse.wheel(0, app.startOffset);
+      await page.waitForTimeout(500);
+    }
     // Discard navigation/loading. Scroll in continuous eased animation frames,
     // rather than jumping 320px between mouse-wheel events.
     if (app.steps) {
@@ -120,6 +124,7 @@ export function validateApps(apps) {
   for(const app of apps){
     if(typeof app.name!=='string'||!slug(app.name)||names.has(slug(app.name)))throw new Error('App names need unique nonempty filename slugs.');
     names.add(slug(app.name));
+    if(app.startOffset!==undefined && (app.focused!==true || !Number.isInteger(app.startOffset) || app.startOffset<0 || app.startOffset>3000))throw new Error('A start offset requires focused capture and 0–3000 pixels.');
     if(app.scrollDistance!==undefined && (!Number.isInteger(app.scrollDistance)||app.scrollDistance<0||app.scrollDistance>3000))throw new Error('Capture scroll distance must be 0–3000 pixels.');
     if(app.cropBottom!==undefined && (!Number.isInteger(app.cropBottom)||app.cropBottom<0||app.cropBottom>160||app.cropBottom%2))throw new Error('Invalid capture crop.');
     if (app.dismissOverlay !== undefined && (!['close', 'Close'].includes(app.dismissOverlay?.button) || !Number.isInteger(app.dismissOverlay.scrollDistance) || app.dismissOverlay.scrollDistance < 0 || app.dismissOverlay.scrollDistance > 800)) throw new Error('Overlay preparation only permits a reviewed close button and bounded scroll.');
