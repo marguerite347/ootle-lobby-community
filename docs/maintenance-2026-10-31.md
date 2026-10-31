@@ -1,0 +1,3 @@
+# October31 maintenance — first release milestone
+
+Reuse: existing paginated readers, catalog schemas, real-page capture pipeline and completion gate. Trial: Haunted Passport public page recording, reviewed opening/middle/closing frames. Adds the entry with forum and Bluesky provenance and explicitly scoped Docs walkthrough. Updates the observed contest count to28 after excluding the deleted Hauntboard31 replacement39 and non-entry posts. Remaining discovery, dependencies, other additions, playback and full-run acceptance remain pending in the workspace completion manifest. This PR does not complete the daily run.

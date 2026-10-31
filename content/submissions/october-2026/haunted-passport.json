@@ -1,0 +1,29 @@
+{
+  "slug": "haunted-passport",
+  "title": "Haunted Passport",
+  "summary": "Selective-disclosure credentials on Tari Ootle Esmeralda, with issuer, holder, verifier and public observer views. The issuer creates stealth outputs with a public tier floor and can freeze or revoke them; the holder answers a fresh ownership challenge. The issuer can read exact values, repeated presentations of the same output are linkable, and the verifier trusts its indexer. The hosted issuer desk is closed; issuance requires the separate local issuer service. October 31 review covered the creator’s forum and Bluesky announcements, MIT repository and public website. The recording shows public explanations and deployment links; no wallet connection, credential issuance or proof signing was performed.",
+  "cardSummary": "Present age, membership or reputation credentials while revealing a qualifying threshold instead of the exact value.",
+  "cardStatus": "Web app · Testnet",
+  "creator": "Chrisgold",
+  "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/34",
+  "publishedAt": "2026-10-29T14:15:21.229Z",
+  "updatedAt": "2026-10-29T14:15:21.229Z",
+  "sourceContentSha256": "e0fd42eb0a5fe206a3fde419a92369ed70b02bed713a5c363f7e27571743103d",
+  "repoUrl": "https://github.com/AshThunder/haunted-passport",
+  "demoUrl": "https://haunted-passport.vercel.app/",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust · TypeScript · MIT",
+      "sourceUrl": "https://github.com/AshThunder/haunted-passport"
+    }
+  ],
+  "recording": {
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-haunted-passport-20261031.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-haunted-passport-20261031.png",
+    "capturedAt": "2026-10-31T09:25:53.575Z",
+    "sourceRevision": "cb7627b663d6d3225f22d6d90a556cbb298a16f4",
+    "kind": "public-page",
+    "credit": "Source/docs walkthrough — Public credential roles, disclosure model and deployment links; no wallet actions."
+  }
+}
