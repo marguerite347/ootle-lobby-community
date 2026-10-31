@@ -143,3 +143,7 @@ The initial plan is complete when the qualified initial queue is reflected in th
 ## Full-run completion and truthful exceptions (October 29 correction)
 
 Follow `MAINTENANCE_COMPLETION.md`. A release is a milestone, not the end of the run. Drain every reachable item in the declared source, catalog, dependency, editorial, capture and acceptance queues. Use the completion gate before declaring the run complete; missing work stays pending. Actual blocked reads require dated evidence, failure category and a next action, while preserving last-good checkpoints. Report canonical resources separately from product surfaces. Retain superseded URLs and provenance, with evidence of the creator replacement. Resume incomplete work before starting another release.
+
+### Preserve every source observation
+
+Use the immutable, content-addressed evidence store described in `docs/MAINTENANCE_COMPLETION.md` and `scripts/source_evidence.py`. A page HTML read must not overwrite API JSON saved for the same URL. Verify each observation file against its recorded digest before reusing a comparison or advancing a checkpoint; preserve failed manifests and save actual rereads as new attempts.

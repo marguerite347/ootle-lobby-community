@@ -19,6 +19,7 @@ jobs:
           node-version: '22'
       - run: npm ci --ignore-scripts
       - run: npm test
+      - run: python3 -m unittest discover -s scripts -p 'test_source_evidence.py'
       - run: npm audit --audit-level=low
       - run: npm run validate
       - run: npm --prefix creator-hub/capture ci --ignore-scripts
