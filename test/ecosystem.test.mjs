@@ -31,3 +31,12 @@ test('recording and discussion provenance survive catalog normalization without 
  assert.throws(()=>withEcosystemResources([], [{...entry,preview:{...entry.preview,source:'Verified gameplay'}}]));
  assert.throws(()=>withEcosystemResources([], [{...entry,discussionLinks:[{url:'javascript:alert(1)',platform:'X'}]}]));
 });
+
+test("release announcement footage retains its scope through normalization", () => {
+ const entry=ecosystemResources.records.find(r=>r.key==='minotari-cli-release');
+ const resource=withEcosystemResources([], [entry])[0];
+ assert.match(resource.preview.source,/^Announcement walkthrough/);
+ assert.equal(resource.ecosystem,'tari');
+ assert.equal(resource.verification,'source-attested');
+ assert.equal(resource.demoUrl,null);
+});
