@@ -6,6 +6,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { api, type Resource } from '../api';
 import { readinessLabel, Spinner, EcosystemBadge, ReadinessBadge, VerificationBadge, FreshnessBadge, TariCompatBadge, ExternalLink, PopularityPanel, StarButton, Comments } from '../ui';
 import { MediaThumb } from '../media';
+import { recordingLabel } from '../components/ProjectCard';
 import './Detail.css';
 
 export default function Detail() {
@@ -38,18 +39,16 @@ export default function Detail() {
     <article className="resource-detail">
       <div className="resource-breadcrumb"><Link className="muted" to="/explore">← Discover</Link></div>
       <header className="resource-header">
-      <div className="resource-preview"><MediaThumb r={r} />{r.preview?.video && <p className="resource-recording-caption">{r.preview.source}</p>}</div>
+      <div className="resource-preview"><MediaThumb r={r} />{r.preview?.video && <p className="resource-recording-caption">{recordingLabel(r.preview.source)}</p>}</div>
       <div className="resource-intro">
         <div>
           <div className="pill-row resource-badges">
             <EcosystemBadge r={r} />
-            <span className="badge type">{r.type}</span>
-            <ReadinessBadge r={r} />
-            <VerificationBadge value={r.verification} />
-            {r.ecosystem === 'tari-ootle' ? <TariCompatBadge value={r.tariCompatible} /> : <span className="badge">External resource</span>}
+            {r.cardStatus ? <span className="badge type">{r.cardStatus}</span> : <><span className="badge type">{r.type}</span><ReadinessBadge r={r} /></>}
+            {r.network && !/not network-specific/i.test(r.network) && !(r.cardStatus && /testnet/i.test(r.cardStatus) && /testnet/i.test(r.network)) && <span className="badge">{r.network}</span>}
           </div>
           <h1>{r.title}</h1>
-          <p className="resource-summary">{r.summary || 'Explore the source for more about this resource.'}</p>
+          <p className="resource-summary">{r.cardSummary || r.summary || 'Explore the source for more about this resource.'}</p>
           {r.sharedBy && <p className="resource-byline">Shared by <Link to={r.sharedBy.url || '/learn'}>{r.sharedBy.name}</Link></p>}
           {r.creator?.name && <p className="resource-byline">Created by {r.creator.url ? <ExternalLink href={safeHref(r.creator.url)}>{r.creator.name} ↗</ExternalLink> : r.creator.name}</p>}
           <div className="resource-actions">
@@ -64,7 +63,13 @@ export default function Detail() {
       <div className="resource-body">
         <section className="resource-main"><ContestSubmission resource={r}/>
           <div className="panel">
-            <h3>Explore this resource</h3>
+            <details className="resource-review-details">
+              <summary>Details</summary>
+              {r.cardSummary && r.summary && <p>{r.summary}</p>}
+              {r.preview?.source && <p>{r.preview.source}</p>}
+              <div className="pill-row"><VerificationBadge value={r.verification} />{r.ecosystem === 'tari-ootle' && <TariCompatBadge value={r.tariCompatible} />}</div>
+              {r.provenance.fetchedAt && <p>Source observation: {new Date(r.provenance.fetchedAt).toLocaleDateString()}</p>}
+            </details>
 
             {r.setupHint && (
               <>

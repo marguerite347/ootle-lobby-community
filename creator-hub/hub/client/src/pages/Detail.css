@@ -15,6 +15,8 @@
 .resource-main, .resource-sidebar { min-width: 0; }
 .resource-main > .panel { background: transparent; border: 0; padding: .5rem 0 1.75rem; }
 .resource-main p { max-width: 65ch; }
+.resource-review-details summary { cursor: pointer; font-weight: 600; min-height: 44px; display: list-item; padding: .65rem 0; box-sizing: border-box; }
+.resource-review-details p { margin: 1rem 0; line-height: 1.65; }
 .resource-main .spread { flex-wrap: wrap; gap: 1rem; }
 .resource-sidebar .panel { margin-top: 0; padding: 1.4rem; }
 .resource-sidebar { display: grid; gap: 1rem; }
