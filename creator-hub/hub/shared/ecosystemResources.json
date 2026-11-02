@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-11-02T14:39:31.649880+00:00",
+  "reviewedAt": "2026-11-02T15:08:18.843126+00:00",
   "records": [
     {
       "id": "tari-ootle:learn:official-agent-docs",
@@ -2734,11 +2734,66 @@
         }
       ],
       "cardSummary": "Turn technical documents into structured references an AI coding agent can load as needed.",
-      "cardStatus": "Agent tool · Source reviewed",
+      "cardStatus": "Agent tool · Source code",
       "preview": {
         "video": "https://lobby.tari.com/previews/community/resource-book-to-skill-20261102-f8d0575d58.mp4",
         "image": "https://lobby.tari.com/previews/community/resource-book-to-skill-20261102-f8d0575d58.jpg",
         "source": "Source/docs walkthrough — public README; tool not installed or run."
+      }
+    },
+    {
+      "id": "tari-ootle:component:danse-macabre",
+      "key": "danse-macabre",
+      "type": "component",
+      "ecosystem": "tari-ootle",
+      "group": "Templates",
+      "title": "Danse Macabre",
+      "summary": "Werewolf without a game master: five players jointly shuffle one wolf into a hidden deck, then submit sealed night actions whose total reveals the victim. The public site offers a solo browser session with four ghosts and an invite-link group mode on Esmeralda testnet. The creator notes that solo ghosts share the host tab, so privacy matters between separate players; table existence, seats, timing and fees remain public. November 2 review covered the MIT repository, public explanation and linked proof/threat-model pages. The recording is a website walkthrough, not a completed game or an independent cryptographic audit. The November 2 Ootle testnet reset may require creator redeployment. Optional stakes can be forfeited by a seat that stalls the table; the creator documents a 48–96 minute closure window. No game, stake or transaction was started during this review.",
+      "status": "Web game · Testnet · Optional stakes can be forfeited",
+      "cardSummary": "Play five-seat Werewolf with jointly shuffled hidden roles and sealed night actions on Tari Ootle.",
+      "cardStatus": "Web game · Testnet · Optional stakes can be forfeited",
+      "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/41",
+      "repoUrl": "https://github.com/YASASWIP012/danse-macabre",
+      "docsUrl": "https://github.com/YASASWIP012/danse-macabre#readme",
+      "demoUrl": "https://danse-macabre.vercel.app/",
+      "creator": {
+        "name": "yasaswip012",
+        "url": "https://github.com/YASASWIP012"
+      },
+      "license": "MIT",
+      "network": "Esmeralda testnet",
+      "platform": "Browser · Rust/WASM",
+      "upstreamRevision": "2341dc39b67f2f3491699a079bdd0103f1efedb5",
+      "sourceUpdatedAt": "2026-10-31T23:37:47.682Z",
+      "lastCheckedAt": "2026-11-02T15:08:18.843126+00:00",
+      "verification": "source-attested",
+      "readiness": "conceptual",
+      "tags": [
+        "ecosystem-resources",
+        "privacy",
+        "testnet"
+      ],
+      "discussionLinks": [
+        {
+          "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/41",
+          "platform": "Tari Community forum",
+          "context": "Original October contest submission"
+        },
+        {
+          "url": "https://bsky.app/profile/yasaswip012.bsky.social/post/3mz77r73oe52k",
+          "platform": "Bluesky",
+          "context": "Creator announcement"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=Mh5FU2Hlr4Q",
+          "platform": "YouTube",
+          "context": "Creator explanation; claims are the creator’s"
+        }
+      ],
+      "preview": {
+        "video": "https://lobby.tari.com/previews/community/resource-danse-macabre-20261102-3e2ff4d607.mp4",
+        "image": "https://lobby.tari.com/previews/community/resource-danse-macabre-20261102-3e2ff4d607.jpg",
+        "source": "Source/docs walkthrough — public game design, privacy limits and proof links; no gameplay or transaction performed."
       }
     }
   ],
