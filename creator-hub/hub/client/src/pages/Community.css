@@ -1399,3 +1399,6 @@
   .cc-about { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .community-app .cs-typing-indicator__dot { animation: none !important; } }
+
+.cc-forum-notice{margin:0 0 8px;font-size:12px;color:var(--cc-muted,#b8afc9)}
+.cc-forum-notice a{color:inherit;text-underline-offset:3px}

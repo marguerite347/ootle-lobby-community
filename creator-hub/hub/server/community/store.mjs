@@ -1,4 +1,4 @@
-// INTEGRATION_GAP[LOBBY-CHAT] (build-required): guest chat supports paginated threads, reactions and typing; external transports remain unconnected. See docs/DEVELOPMENT_GAPS.md#lobby-chat.
+// INTEGRATION_GAP[LOBBY-CHAT] (build-required): guest chat supports paginated threads, reactions and typing; the opt-in Forum bridge awaits configuration and live verification. See docs/DEVELOPMENT_GAPS.md#lobby-chat.
 import { randomUUID, randomInt, createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { createPrivateStore } from "./privateStore.mjs";
@@ -22,7 +22,7 @@ const accessSql = `(c.visibility='workspace' OR EXISTS(SELECT 1 FROM community_c
 
 const reactionEmoji = new Set(["👍", "❤️", "😂", "🎉", "👀", "🚀"]);
 const messageFields = (userParameter) => `m.*, m.created_at::text AS cursor_at,
- (SELECT count(*)::int FROM community_chat.messages replies WHERE replies.parent_id=m.id AND replies.hidden_at IS NULL) AS reply_count,
+ (SELECT count(*)::int FROM community_chat.messages replies WHERE replies.parent_id=m.id AND replies.hidden_at IS NULL AND NOT replies.source_hidden) AS reply_count,
  COALESCE((SELECT json_agg(json_build_object('emoji',r.emoji,'count',r.total,'mine',r.mine) ORDER BY r.emoji)
    FROM (SELECT emoji,count(*)::int AS total,bool_or(account_id=$${userParameter}) AS mine
      FROM community_chat.reactions WHERE message_id=m.id GROUP BY emoji) r),'[]'::json) AS reactions,
@@ -44,10 +44,11 @@ function displayName(value) {
 export async function installSchema(db) {
   await db.exec(readFileSync(new URL("./schema.sql", import.meta.url), "utf8"));
   await db.exec(readFileSync(new URL("./migrations/20261010_private_messages.sql", import.meta.url), "utf8"));
+  await db.exec(readFileSync(new URL("./migrations/20261102_forum_bridge.sql", import.meta.url), "utf8"));
 }
 
 /** db: parameterized query + transaction(callback). No shared mutable request identity. */
-export function createChatStore(db) {
+export function createChatStore(db, { forumBridge = null } = {}) {
   async function actor(q, id, lock = false) {
     const result = await q.query(
       `SELECT * FROM community_chat.accounts WHERE id=$1 ${lock ? "FOR UPDATE" : ""}`,
@@ -80,7 +81,7 @@ export function createChatStore(db) {
       if (typeof parentId !== "string" || !idPattern.test(parentId))
         reject("Reply not found.", 404);
       const { rows } = await q.query(
-        "SELECT id FROM community_chat.messages WHERE id=$1 AND channel_id=$2 AND hidden_at IS NULL",
+        "SELECT id FROM community_chat.messages WHERE id=$1 AND channel_id=$2 AND hidden_at IS NULL AND NOT source_hidden",
         [parentId, channelId],
       );
       if (!rows.length) reject("Reply not found.", 404);
@@ -96,12 +97,12 @@ export function createChatStore(db) {
     let parent = null;
     if (parentId !== null) {
       if (typeof parentId !== "string" || !idPattern.test(parentId)) reject("Reply not found.", 404);
-      parent = (await db.query(`SELECT ${messageFields(2)} FROM community_chat.messages m WHERE m.channel_id=$1 AND m.id=$3 AND m.hidden_at IS NULL AND ($4::timestamptz IS NULL OR m.created_at>=$4)`, [channelId,userId,parentId,after ?? null])).rows[0];
+      parent = (await db.query(`SELECT ${messageFields(2)} FROM community_chat.messages m WHERE m.channel_id=$1 AND m.id=$3 AND m.hidden_at IS NULL AND NOT m.source_hidden AND ($4::timestamptz IS NULL OR m.created_at>=$4)`, [channelId,userId,parentId,after ?? null])).rows[0];
       if (!parent) reject("This thread is no longer available.", 404);
     }
     const result = await db.query(
       `SELECT ${messageFields(4)} FROM community_chat.messages m
-       WHERE m.channel_id=$1 AND m.hidden_at IS NULL
+       WHERE m.channel_id=$1 AND m.hidden_at IS NULL AND NOT m.source_hidden
        AND ($2::timestamptz IS NULL OR m.created_at<$2 OR (m.created_at=$2 AND $5::text IS NOT NULL AND m.id<$5))
        AND ($3='' OR strpos(lower(m.body),lower($3))>0)
        AND ($6::text IS NULL OR m.parent_id=$6)
@@ -284,7 +285,7 @@ export function createChatStore(db) {
       await actor(db, userId);
       return (
         await db.query(
-          `SELECT c.*, (SELECT max(m.created_at) FROM community_chat.messages m WHERE m.channel_id=c.id AND m.hidden_at IS NULL) AS latest_at FROM community_chat.channels c WHERE ${accessSql} ORDER BY c.platform,c.name`,
+          `SELECT c.*, (SELECT max(m.created_at) FROM community_chat.messages m WHERE m.channel_id=c.id AND m.hidden_at IS NULL AND NOT m.source_hidden) AS latest_at FROM community_chat.channels c WHERE ${accessSql} ORDER BY c.platform,c.name`,
           [userId],
         )
       ).rows;
@@ -298,7 +299,7 @@ export function createChatStore(db) {
         reject("Choose a supported reaction.");
       await db.transaction(async (q) => {
         await actor(q,userId,true);
-        const message = (await q.query("SELECT channel_id FROM community_chat.messages WHERE id=$1 AND hidden_at IS NULL FOR UPDATE",[messageId])).rows[0];
+        const message = (await q.query("SELECT channel_id FROM community_chat.messages WHERE id=$1 AND hidden_at IS NULL AND NOT source_hidden FOR UPDATE",[messageId])).rows[0];
         if (!message) reject("Message not found.",404);
         const source = await channel(q,userId,message.channel_id);
         if (source.platform !== "ootle" || !source.can_post) reject("Reactions are not available here.",403);
@@ -334,7 +335,7 @@ export function createChatStore(db) {
           const prior = existing[0];
           const targetIds = (
             await q.query(
-              "SELECT channel_id FROM community_chat.deliveries WHERE message_id=$1",
+              "SELECT channel_id FROM community_chat.deliveries WHERE message_id=$1 AND channel_id<>'forum-general'",
               [prior.id],
             )
           ).rows
@@ -355,7 +356,7 @@ export function createChatStore(db) {
         }
         if (input.parentId) {
           const { rows } = await q.query(
-            "SELECT id FROM community_chat.messages WHERE id=$1 AND channel_id=$2 AND hidden_at IS NULL",
+            "SELECT id FROM community_chat.messages WHERE id=$1 AND channel_id=$2 AND hidden_at IS NULL AND NOT source_hidden",
             [input.parentId, source.id],
           );
           if (!rows.length)
@@ -402,6 +403,7 @@ export function createChatStore(db) {
             "INSERT INTO community_chat.deliveries(id,message_id,channel_id) VALUES($1,$2,$3)",
             [randomUUID(), id, destination],
           );
+        await forumBridge?.enqueue(q, rows[0]);
         return rows[0];
       });
     },
@@ -409,7 +411,7 @@ export function createChatStore(db) {
       await actor(db, userId);
       const message = (
         await db.query(
-          "SELECT channel_id FROM community_chat.messages WHERE id=$1 AND hidden_at IS NULL",
+          "SELECT channel_id FROM community_chat.messages WHERE id=$1 AND hidden_at IS NULL AND NOT source_hidden",
           [messageId],
         )
       ).rows[0];
@@ -456,6 +458,7 @@ export function createChatStore(db) {
       ).rows;
     },
     async retention() {
+      await db.query("DELETE FROM community_chat.forum_events WHERE created_at<now()-interval '100 days'");
       await db.query("DELETE FROM community_chat.private_challenges WHERE expires_at<=now()");
       await db.query("DELETE FROM community_chat.private_messages WHERE created_at<now()-interval '90 days'");
       await db.query("DELETE FROM community_chat.typing WHERE expires_at<=now()");

@@ -230,6 +230,7 @@ export default function Community({
   const [unreadMessages, setUnreadMessages] = useState(0);
   const sessionVersion = useRef(0);
   const channel = channels.find((c) => c.id === channelId);
+  const forumShared = capabilities?.forumBridge?.channelId === channelId;
   const typing = useTyping(
     account?.id,
     channelId,
@@ -619,7 +620,7 @@ export default function Community({
     (c) =>
       c.platform === "ootle" && c.name.includes(channelQuery.toLowerCase()),
   );
-  const externalChannels = channels.filter((c) => c.platform !== "ootle");
+  const externalChannels = channels.filter((c) => c.platform !== "ootle" && c.platform !== "forum");
   const connectionNames = capabilities?.platforms || [
     "telegram",
     "discord",
@@ -787,7 +788,8 @@ export default function Community({
                 <span>{item.name}</span>
               </button>
             ))}
-            {!externalChannels.length && (
+            {capabilities?.forumBridge && <a className="cc-channel" href={capabilities.forumBridge.url} target="_blank" rel="noopener noreferrer">Forum · General</a>}
+            {!externalChannels.length && !capabilities?.forumBridge && (
               <div className="cc-connect-hint">
                 <span className="cc-connect-symbol">
                   <Glyph name="link" />
@@ -1171,9 +1173,9 @@ export default function Community({
                             {message.account_id === account.id && (
                               <span className="cc-you">you</span>
                             )}
-                            {message.platform !== "ootle" && (
+                            {(message.platform !== "ootle" || forumShared) && (
                               <span className="cc-source">
-                                via {message.platform}
+                                {message.platform === "forum" ? "From Forum" : message.platform === "ootle" ? "From Lobby" : `via ${message.platform}`}
                               </span>
                             )}
                             <time dateTime={message.created_at}>
@@ -1182,6 +1184,9 @@ export default function Community({
                           </ChatMessage.Header>
                           <ChatMessage.CustomContent>
                             <Body body={message.body} />
+                            {message.platform === "forum" && message.origin_url && (
+                              <a className="cc-source" href={message.origin_url} target="_blank" rel="noopener noreferrer">View on Forum</a>
+                            )}
                             {message.reactions?.length ||
                             reactionMenu === message.id ? (
                               <div
@@ -1261,8 +1266,8 @@ export default function Community({
                               </button>
                             )}
                             {message.deliveries?.map((delivery) => (
-                              <span className="cc-delivery" key={delivery.id}>
-                                {channels.find(
+                              <span className="cc-delivery" key={delivery.id} title={delivery.error || undefined}>
+                                {delivery.channel_id === "forum-general" ? "Forum" : channels.find(
                                   (c) => c.id === delivery.channel_id,
                                 )?.name || "Destination"}{" "}
                                 · {delivery.status}
@@ -1400,6 +1405,9 @@ export default function Community({
                       </button>
                     </div>
                   )}
+                  {forumShared && (
+                    <p className="cc-forum-notice">Shared with <a href={capabilities?.forumBridge?.url} target="_blank" rel="noopener noreferrer">Forum · General</a></p>
+                  )}
                   <form className="cc-composer" onSubmit={send}>
                     <textarea
                       rows={1}
@@ -1500,6 +1508,7 @@ export default function Community({
             <span className="cc-section-label">YOUR CONNECTIONS</span>
             <Glyph name="link" />
           </div>
+          {capabilities?.forumBridge && <div className="cc-connection-row"><span>Forum · General</span><small>Connected</small></div>}
           {connectionNames.map((name) => (
             <div className="cc-connection-row" key={name}>
               <span className={"cc-platform-logo is-" + name}>
@@ -1517,7 +1526,7 @@ export default function Community({
           </button>
           <div className="cc-about-note">
             <Glyph name="shield" />
-            <p>You choose the channels. You choose where a message goes.</p>
+            <p>{capabilities?.forumBridge ? "The Lobby and Forum General share new public messages automatically." : "You choose the channels. You choose where a message goes."}</p>
           </div>
           <Link to="/" className="cc-back-lobby">
             Back to the Lobby
@@ -1675,6 +1684,7 @@ export default function Community({
                       <strong>Selected</strong>
                     </div>
                   )}
+                  {capabilities?.forumBridge && <div className="cc-connection-card"><div><strong>Forum · General</strong><p>New public messages are shared automatically with the Lobby.</p></div><span className="cc-connection-state">Connected</span></div>}
                   {connectionNames.map((name) => (
                     <div className="cc-connection-card" key={name}>
                       <span className={"cc-platform-logo is-" + name}>
@@ -1690,9 +1700,7 @@ export default function Community({
                   <div className="cc-connection-explainer">
                     <Glyph name="shield" />
                     <p>
-                      Channel owners authorize access before messages can be
-                      imported or posted. No external channels are connected in
-                      this version.
+                      {capabilities?.forumBridge ? "Only the public Lobby and Forum General are linked. Private conversations stay private." : "Channel owners authorize access before messages can be imported or posted. No external channels are connected in this version."}
                     </p>
                   </div>
                   <button

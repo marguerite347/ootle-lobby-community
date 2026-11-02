@@ -21,6 +21,7 @@ export type Message = {
   body: string;
   parent_id: string | null;
   platform: string;
+  origin_url?: string | null;
   created_at: string;
   reply_count: number;
   cursor_at?: string;
@@ -41,6 +42,7 @@ export type Capabilities = {
   guests?: boolean;
   platforms: string[];
   externalConnected: boolean;
+  forumBridge?: { channelId: string; url: string; destinationId: string } | null;
   privateMessages?: boolean;
 };
 export type Report = {
