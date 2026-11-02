@@ -2,7 +2,7 @@
   "slug": "official-universe",
   "title": "Tari Universe",
   "creator": "Tari project",
-  "summary": "The official desktop mining application for Tari, with a visual mining interface and companion wallet. Published by the Tari project.",
+  "summary": "Official desktop mining application and companion wallet. Release v1.6.20, published October 29, 2026, fixes non-text payment IDs and bundles Minotari v0.5.2. The release says oversized payment IDs are refused before reserving funds and history reflects the ID actually sent. v1.6.18 introduced the embedded wallet and Ootle Esmeralda testnet wallet; its NVIDIA TARI Miner integration supports one GPU, and Linux Flatpak requires manual updates. November 2 review covered the public README and complete v1.6.18\u2013v1.6.20 release notes. The recording is an announcement walkthrough of v1.6.20, not a demonstrated wallet or mining session. Earlier source footage and official social announcements are retained in the discovery trail.",
   "sourceUrl": "https://bsky.app/profile/tariproject.bsky.social/post/3mxehm2upov22",
   "sourceLabel": "Official sharing post",
   "repoUrl": "https://github.com/tari-project/universe",
@@ -22,18 +22,20 @@
     }
   ],
   "forum": null,
-  "resourceIds": [],
+  "resourceIds": [
+    "tari-ootle:learn:official-universe"
+  ],
   "section": "official",
   "media": {
-    "image": "/previews/community/official-universe.jpg",
-    "video": "/previews/community/official-universe.mp4",
-    "label": "Public source walkthrough",
-    "sourceUrl": "https://tari.com/downloads",
-    "capturedAt": "2026-10-04T16:02:52.616125Z",
-    "reviewedAt": "2026-10-04T16:02:52.616125Z",
-    "sha256": "436f2bf2c586f97a21caf9ebced6a566daec362e1c48c6c7a84adf41acb7990c"
+    "image": "/previews/community/resource-official-universe-20261102-3547274cd7.jpg",
+    "video": "/previews/community/resource-official-universe-20261102-3547274cd7.mp4",
+    "label": "Announcement",
+    "sourceUrl": "https://github.com/tari-project/universe/releases/tag/v1.6.20",
+    "capturedAt": "2026-11-02T19:20:58.092Z",
+    "reviewedAt": "2026-11-02T19:23:53.139283+00:00",
+    "sha256": "3547274cd7c2cc9a632556e51b0bc9becd8397bfec46836f92b64e8c0ded7bcc"
   },
   "officialSource": "https://tari.com/downloads",
-  "cardSummary": "Mine Tari on your desktop with a visual interface and companion wallet.",
-  "cardStatus": "Desktop app"
+  "cardSummary": "Mine Tari on your desktop with a visual interface, integrated wallet and Ootle balance view.",
+  "cardStatus": "Desktop app \u00b7 Ootle wallet: testnet"
 }
