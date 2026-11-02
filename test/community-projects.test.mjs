@@ -25,3 +25,13 @@ test('official status requires both an official site and official repository',()
  const original=projects.find(p=>p.section==='official');
  for(const change of [p=>p.repoUrl='https://github.com/community/project',p=>p.officialSource='https://tari.example.com/']){const p=structuredClone(original);change(p);assert.throws(()=>validateCommunityProjects([p]));}
 });
+
+test('additional discussions preserve the original post and require distinct public HTTPS links',()=>{
+ const p=structuredClone(projects.find(p=>p.section==='official'));
+ p.discussionLinks=[{url:'https://github.com/tari-project/wasm-template/pull/72',platform:'GitHub'}];
+ assert.equal(validateCommunityProjects([p])[0].sourceUrl,p.sourceUrl);
+ for(const url of ['javascript:alert(1)','http://github.com/tari-project/wasm-template',p.sourceUrl]){
+  const invalid=structuredClone(p);invalid.discussionLinks[0].url=url;
+  assert.throws(()=>validateCommunityProjects([invalid]));
+ }
+});

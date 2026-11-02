@@ -73,8 +73,9 @@ export function startSourceMonitoring({intervalMs=Number(process.env.CREATOR_HUB
 // Daily catalog re-review uses the existing ledger; it does not start a crawler.
 export function catalogReviewQueue(entries, previous = {}) {
  const unique = new Map();
+ const projectAliases=new Map(entries.filter(entry=>entry.slug).flatMap(entry=>(entry.resourceIds||[]).map(id=>[id,`project:${entry.slug}`])));
  for (const entry of entries) {
-  const id = entry.id || `project:${entry.slug}`;
+  const id = projectAliases.get(entry.id) || entry.id || `project:${entry.slug}`;
   const sources = [...new Set([entry.sourceUrl,entry.repoUrl,entry.docsUrl,entry.demoUrl,entry.forum?.url,...(entry.discussionLinks||[]).map(post=>post.url)].filter(Boolean))];
   if (unique.has(id)) unique.get(id).sources=[...new Set([...unique.get(id).sources,...sources])];
   else unique.set(id,{...previous[id],id,title:entry.title,sources,lastSuccessfulReviewAt:previous[id]?.lastSuccessfulReviewAt||null,outcome:'pending',reviewRequired:true});
