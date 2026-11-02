@@ -5,16 +5,21 @@ import show from '../../../content/tari-show.json';
 export type GameNight = {
   id:string; enabled:boolean; game:string|null; startsAt:string|null; expiresAt:string|null;
   voteClosesAt?:string; announcementUrl?:string; channelName:string; channelUrl:string; inviteUrl:string;
+  recurrence?:{frequency:string;timeZone:string};
 };
+export function weeklyGameNight(event:GameNight) {
+  return event.recurrence?.frequency==='weekly' && event.recurrence.timeZone==='America/New_York' && Boolean(event.startsAt && Number.isFinite(Date.parse(event.startsAt)));
+}
 export function gameNightStatus(event:GameNight, now=Date.now()) {
   const start = event.startsAt ? Date.parse(event.startsAt) : NaN;
   const end = event.expiresAt ? Date.parse(event.expiresAt) : NaN;
-  const scheduled = Boolean(event.game && Number.isFinite(start) && Number.isFinite(end) && end > start);
-  return {visible:event.enabled && (!scheduled || now < end), scheduled, voting:Boolean(event.voteClosesAt && now < Date.parse(event.voteClosesAt))};
+  const recurring = weeklyGameNight(event);
+  const scheduled = recurring || Boolean(event.game && Number.isFinite(start) && Number.isFinite(end) && end > start);
+  return {visible:event.enabled && (recurring || !scheduled || now < end), scheduled, voting:Boolean(!recurring && event.voteClosesAt && now < Date.parse(event.voteClosesAt))};
 }
 export function gameNightDismissalKey(event:GameNight) {
   // A changed schedule or lineup gets a fresh announcement, even for returning visitors.
-  return `tari-game-night:${event.id}:${event.game}:${event.startsAt}:${event.expiresAt}`;
+  return `tari-game-night:${event.id}:${event.game}:${event.startsAt}:${event.expiresAt}:${event.recurrence?.frequency||''}:${event.recurrence?.timeZone||''}`;
 }
 export function communityBannerState(now:number,gameEvent:GameNight=event,showEvent:{enabled:boolean;endsAt:string}=show) {
   const gameVisible=gameNightStatus(gameEvent,now).visible;
@@ -28,6 +33,16 @@ function EventTime({value}:{value:string}) {
   const utc=new Intl.DateTimeFormat('en-GB',{timeZone:'UTC',hour:'2-digit',minute:'2-digit',timeZoneName:'short'}).format(start);
   return <time className="community-event-time" dateTime={value}><span>{date} · <strong>{time}</strong></span><small>{utc}</small></time>;
 }
+export function weeklyGameNightTime(value:string) {
+  const start=new Date(value);
+  const day=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',weekday:'long'}).format(start);
+  const time=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',hour:'numeric',minute:start.getUTCMinutes()?'2-digit':undefined}).format(start);
+  return {day,time};
+}
+function WeeklyTime({value}:{value:string}) {
+  const {day,time}=weeklyGameNightTime(value);
+  return <p className="community-event-time"><span>Every {day} · <strong>{time} ET</strong></span></p>;
+}
 // INTEGRATION_GAP[COMMUNITY-CALENDAR] (configuration-required): see docs/DEVELOPMENT_GAPS.md#community-calendar.
 const calendarUrl='https://lobby.tari.com/community/events.ics';
 export default function GameNightBanner() {
@@ -37,15 +52,16 @@ export default function GameNightBanner() {
   const calendarDialog=useRef<HTMLDialogElement>(null);
   useEffect(()=>{const timer=setInterval(()=>setNow(Date.now()),30000);return()=>clearInterval(timer);},[]);
   const {gameVisible,showVisible,count}=communityBannerState(now);
+  const recurring=weeklyGameNight(event);
   if(dismissed || !count)return null;
   return <aside className={`community-banner${count===1?' community-banner-single':''}`} aria-label="Tari community events">
     <div className="community-event-pair">
-      {gameVisible && <section className="community-event community-game" aria-labelledby="game-night-title">
-        <img className="community-scene community-game-scene" src="/community/game-night-horror-scene.webp" alt="" width="800" height="800" decoding="async" />
+      {gameVisible && <section className={`community-event community-game${recurring?' community-game-regular':''}`} aria-labelledby="game-night-title">
+        <img className="community-scene community-game-scene" src={recurring?'/community/game-night-gamer.webp':'/community/game-night-horror-scene.webp'} alt="" width="800" height="800" decoding="async" />
         <div className="community-event-copy"><h2 id="game-night-title">Game <em>night.</em></h2>
           <p className="community-tagline">Come play, chat, or just watch.</p>
-          <p className="community-lineup">{event.game}</p>
-          <EventTime value={event.startsAt}/><p className="community-channel">{event.channelName} voice</p>
+          {event.game && <p className="community-lineup">{event.game}</p>}
+          {recurring?<WeeklyTime value={event.startsAt}/>:<EventTime value={event.startsAt}/>}<p className="community-channel">{event.channelName} voice</p>
         </div>
       </section>}
       {showVisible && <section className="community-event community-show" aria-labelledby="tari-show-title">
@@ -69,7 +85,7 @@ export default function GameNightBanner() {
         <a href={calendarUrl.replace('https:','webcal:')}>Apple Calendar</a>
         <a href="/community/events.ics" download="tari-community.ics">Download for any calendar</a>
       </div>
-      <p className="community-calendar-note">Both events are included. Confirm in your calendar to finish. Google opens in your browser.</p>
+      <p className="community-calendar-note">Subscribe with Google or Apple for schedule updates. Downloads are a one-time copy.</p>
       <button className="community-dismiss" type="button" aria-label="Close calendar options" onClick={()=>calendarDialog.current?.close()}><span aria-hidden="true">×</span></button>
     </dialog>
   </aside>;

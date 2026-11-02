@@ -29,9 +29,12 @@
 .community-event h2 em {color:#d6f328;font-style:normal;}
 .community-banner p {margin:0;color:#d9cfe7;font-size:.875rem;line-height:1.35;}
 .community-banner .community-tagline {display:none;}
+.community-game-regular .community-tagline {display:block;max-width:14rem;}
+.community-game-regular .community-scene {width:42%;right:.5rem;object-fit:contain;object-position:right center;mask-image:none;}
 .community-banner .community-lineup {margin-top:.125rem;max-width:15rem;}
 .community-show-kicker {display:block;color:#fff8df;font-family:inherit;font-size:.55em;letter-spacing:.06em;margin-bottom:.25rem;}
 .community-event-time {display:flex;flex-wrap:wrap;gap:0 .5rem;margin-top:.5rem;color:#fff8df;font-size:.875rem;line-height:1.45;font-variant-numeric:tabular-nums;}
+.community-banner p.community-event-time {margin-top:.5rem;color:#fff8df;line-height:1.45;}
 .community-event-time strong {font-weight:600;}
 .community-event-time small {font-size:.75rem;color:#c5bad8;white-space:nowrap;align-self:baseline;flex-basis:100%;}
 .community-banner .community-channel {margin-top:.125rem;font-size:.75rem;color:#c5bad8;}
@@ -54,6 +57,7 @@
 .community-banner .community-calendar-note {font-size:.75rem;color:#bfb8d2;}
 @media(max-width:759px) {
   .newsletter-toggle {min-width:10.125rem;font-size:.75rem;padding-inline:.625rem;}
+  .community-game-regular .community-tagline {max-width:11rem;}
 }
 @media(min-width:760px) {
   .community-event-pair {grid-template-columns:1fr 1fr;}

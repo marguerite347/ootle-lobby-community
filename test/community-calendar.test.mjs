@@ -54,3 +54,21 @@ test('a revised event keeps its UID and emits its own update timestamp and seque
   assert.match(revised[1],/DTSTAMP:20261029T220000Z/);
   assert.match(revised[1],/SEQUENCE:0/);
 });
+
+test('standing game night upgrades the existing UID to a weekly Eastern series without a selected game',()=>{
+  const weekly={...gameFixture,game:null,recurrence:{frequency:'weekly',timeZone:'America/New_York'},calendarSequence:1,calendarUpdatedAt:'2026-11-02T15:15:47Z'};
+  const raw=unfold(communityCalendar(weekly,showFixture));
+  const events=raw.split('BEGIN:VEVENT\r\n').slice(1);
+  assert.equal(events.length,2);
+  assert.match(events[0],/UID:2026-11-01-horror-night@lobby.tari.com/);
+  assert.match(events[0],/SEQUENCE:1/);
+  assert.match(events[0],/DTSTART;TZID=America\/New_York:20261101T180000\r\nRRULE:FREQ=WEEKLY\r\n/);
+  assert.doesNotMatch(events[0],/DTEND:|DURATION:|R\.E\.P\.O\.|Shift At Midnight|null/);
+  assert.doesNotMatch(events[1],/RRULE:/,'a standing game night must not invent recurring Tari Shows');
+  assert.match(raw,/BEGIN:VTIMEZONE\r\nTZID:America\/New_York/);
+  assert.match(raw,/TZOFFSETFROM:-0500\r\nTZOFFSETTO:-0400\r\nTZNAME:EDT\r\nRRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU/);
+  assert.match(raw,/TZOFFSETFROM:-0400\r\nTZOFFSETTO:-0500\r\nTZNAME:EST\r\nRRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU/);
+  const summer=unfold(communityCalendar({...weekly,startsAt:'2027-07-04T22:00:00Z'},{enabled:false}));
+  assert.match(summer,/DTSTART;TZID=America\/New_York:20270704T180000/);
+  assert.doesNotMatch(communityCalendar({...weekly,enabled:false},{enabled:false}),/BEGIN:VEVENT|BEGIN:VTIMEZONE/);
+});
