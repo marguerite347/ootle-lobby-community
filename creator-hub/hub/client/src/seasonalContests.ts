@@ -6,6 +6,7 @@ export const OCTOBER_CONTESTS = {
   buildThread: 'https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396',
   buildRules: 'https://community.tari.com/t/ootle-launch-date-and-launch-contest-rules/323/1',
   securityThread: 'https://community.tari.com/t/extra-contest-ootle-security-bug-hunt/397',
+  securityClosure: 'https://community.tari.com/t/extra-contest-ootle-security-bug-hunt/397/8',
   privateReporting: 'https://github.com/tari-project/tari-ootle/security',
   securityBranch: 'development',
 };

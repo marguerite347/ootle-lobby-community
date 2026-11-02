@@ -15,7 +15,7 @@ export function SeasonStatus() {
 
 export function ContestCards() {
   return <section className="contest-paths" id="contests" aria-labelledby="contest-paths-title">
-    <div className="season-section-heading"><div><h2 id="contest-paths-title">Give that idea <em>a pulse.</em></h2></div><span className="season-deadline">Closes November 1 · 00:00 UTC</span></div>
+    <div className="season-section-heading"><div><h2 id="contest-paths-title">Give that idea <em>a pulse.</em></h2></div><span className="season-deadline">Closed November 1 · 00:00 UTC</span></div>
     <div className="quest-grid">
       <div className="quest-option"><p className="quest-number"><span>01</span> Build contest</p>
       <Link className="quest-card quest-build" to="/challenges/spooky-secrets">
@@ -27,9 +27,9 @@ export function ContestCards() {
       <div className="quest-option"><p className="quest-number"><span>02</span> Bonus contest</p>
       <Link className="quest-card quest-security" to="/challenges/security-bug-hunt">
         <div className="quest-art"><SeasonalIllustration scene="bug"/></div>
-        <h3><span>Security</span> <em>Bug Hunt.</em></h3><p><strong className="quest-campaign-line">The Ootlejuice sidequest.</strong>Help catch Ootle’s bugs in this bonus Security Bug Hunt.</p>
+        <h3><span>Security</span> <em>Bug Hunt.</em></h3><p><strong className="quest-campaign-line">The Ootlejuice sidequest.</strong>Entries closed November 1. The Council is tallying submissions.</p>
         <div className="quest-prize"><strong>1,750,000 <small>XTM</small></strong><span>Placement bonuses + standard bounties</span></div>
-        <span className="quest-link">Explore the hunt </span>
+        <span className="quest-link">View the contest archive </span>
       </Link></div>
     </div>
   </section>;
