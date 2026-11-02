@@ -400,7 +400,7 @@ label.lbl { display: block; font-size: 13px; color: var(--muted); margin: 14px 0
 
 /* Card feedback belongs to the card, not a stretched title-link overlay.
    Apply directly to the link too, so its own color cannot mask the heading. */
-:is(.project-card,.ecosystem-card,.card-link):is(:hover,:focus-within)>h3,
-:is(.project-card,.ecosystem-card,.card-link):is(:hover,:focus-within)>h3>a {
+:is(.project-card,.ecosystem-card,.ecosystem-opportunity,.card-link):is(:hover,:focus-within)>h3,
+:is(.project-card,.ecosystem-card,.ecosystem-opportunity,.card-link):is(:hover,:focus-within)>h3>a {
   color:var(--season-lime,var(--accent-strong));
 }
