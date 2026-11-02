@@ -35,7 +35,11 @@ export function NovemberContestCards() {
         <span className="november-card-action">{novemberContestPhase(contest, now) === 'closed' ? 'View contest & entries' : contest.action}</span>
       </Link>
     )}</div>
-    <p className="november-archive">Explore submissions: <Link to="/#october-submissions">Spooky Secrets submissions</Link><span aria-hidden="true"> · </span><Link to="/challenges/security-bug-hunt">Security Bug Hunt · Closed, results pending</Link><span aria-hidden="true"> · </span><Link to="/#creator-submissions">Creator submissions</Link></p>
+    <aside className="ongoing-bounty" id="ongoing-bounty" aria-labelledby="ongoing-bounty-title">
+      <div><span className="november-eyebrow">Ongoing</span><h3 id="ongoing-bounty-title">Tari bug <em>bounty.</em></h3><p>Find a security issue? Report it privately.</p></div>
+      <div className="ongoing-bounty-reward"><strong>15,000–250,000 XTM</strong><span>Guideline rewards · Eligibility and severity review apply.</span></div>
+      <a className="season-button" href="https://github.com/tari-project/tari-ootle/security" target="_blank" rel="noreferrer">View scope &amp; report</a>
+    </aside>
   </section>;
 }
 

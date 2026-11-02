@@ -21,9 +21,15 @@
 .november-prize span,.november-timing {color:var(--season-muted);font-size:.875rem;line-height:1.5;}
 .november-timing {margin-top:1rem;}
 .november-card-action {display:flex;align-items:center;min-height:2.75rem;border-top:1px solid #b9a0e438;padding-top:.75rem;margin-top:.75rem;color:var(--season-lime);font-weight:600;font-size:.875rem;}
-.november-archive {margin:1.25rem 0 0;color:var(--season-muted);font-size:.875rem;line-height:1.8;}
-.november-archive a,.november-detail a:not(.season-button) {color:var(--season-lime);text-decoration:underline;text-underline-offset:.2em;}
-.november-archive a {display:inline-block;min-height:2.75rem;align-content:center;}
+.ongoing-bounty {display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem 2rem;margin-top:1rem;padding:1rem 1.25rem;border:1px solid #b9a0e44a;border-left:3px solid var(--season-lime);border-radius:.75rem;background:#c9b6ff08;scroll-margin-top:11rem;}
+.ongoing-bounty .november-eyebrow {font-size:.6875rem;}
+.ongoing-bounty h3 {margin:.25rem 0;font-size:1.375rem;letter-spacing:-.035em;}
+.ongoing-bounty p,.ongoing-bounty-reward span {margin:0;color:var(--season-muted);font-size:.8125rem;line-height:1.5;}
+.ongoing-bounty-reward {display:grid;gap:.25rem;}
+.ongoing-bounty-reward strong {font-size:1.125rem;letter-spacing:-.025em;}
+.ongoing-bounty .season-button {font-size:.875rem;min-height:2.75rem;}
+.ongoing-bounty a:focus-visible {outline:2px solid var(--season-lime);outline-offset:4px;}
+.november-detail a:not(.season-button) {color:var(--season-lime);text-decoration:underline;text-underline-offset:.2em;}
 .november-detail {max-width:72rem;margin:1rem auto 3rem;}
 .november-back {display:inline-flex;align-items:center;min-height:2.75rem;margin-bottom:1.5rem;}
 .november-detail-heading {display:grid;gap:1.5rem;align-items:center;}
