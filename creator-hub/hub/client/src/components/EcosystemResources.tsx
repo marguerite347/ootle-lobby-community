@@ -9,7 +9,7 @@ import './EcosystemResources.css';
 export default function EcosystemResources() {
   const [query, setQuery] = useState('');
   const records = homepageResources.filter(record => `${record.title} ${record.group} ${record.summary}`.toLowerCase().includes(query.toLowerCase()));
-  const opportunities = resources.opportunities.filter(item => Date.now() < Date.parse(item.expiresAt));
+  const opportunities = resources.opportunities.filter(item => (!item.expiresAt || Date.now() < Date.parse(item.expiresAt)));
   return <section className="section ecosystem-resources" id="ecosystem-resources" aria-labelledby="ecosystem-title">
     <div className="section-head"><div><h2 id="ecosystem-title">Build with the <em>ecosystem.</em></h2><p>Official guides, language SDKs and reusable community sources.</p></div></div>
     <p>Start with the docs, choose an SDK, then explore testnet tools and templates.</p>
@@ -29,6 +29,6 @@ export default function EcosystemResources() {
       </details>
     </article>)}</div>
     {!records.length && <p role="status">No matching resources.</p>}
-    {opportunities.map(item => <aside key={item.id} id={`resource-${item.id}`} className="ecosystem-opportunity">{item.preview && <figure><video controls muted playsInline preload="none" src={item.preview.video} poster={item.preview.image} aria-label={`${item.title} recording`}/></figure>}<h3>{item.title}</h3><p className="card-front-summary">{item.cardSummary}</p><div className="card-front-status"><strong>{item.cardStatus}</strong><span>Announcement</span></div><a href={item.sourceUrl} target="_blank" rel="noreferrer">Original post</a><details className="card-details"><summary>Details</summary><p>{item.summary}</p><p>{item.preview?.source}</p></details></aside>)}
+    {opportunities.map(item => <aside key={item.id} id={`resource-${item.id}`} className="ecosystem-opportunity">{item.preview && <figure><video controls muted playsInline preload="none" src={item.preview.video} poster={item.preview.image} aria-label={`${item.title} recording`}/></figure>}<h3>{item.title}</h3><p className="card-front-summary">{item.cardSummary}</p><div className="card-front-status"><strong>{item.cardStatus}</strong><span>Announcement</span></div><p className="card-byline">{item.creator ? `${item.creator.name} · ` : ''}{item.publishedAt.slice(0,10)}</p><a href={item.sourceUrl} target="_blank" rel="noreferrer">Original post</a><details className="card-details"><summary>Details</summary><p>{item.summary}</p><p>{item.preview?.source}</p></details></aside>)}
   </section>;
 }

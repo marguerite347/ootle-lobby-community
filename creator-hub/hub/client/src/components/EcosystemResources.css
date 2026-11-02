@@ -6,7 +6,7 @@
 .ecosystem-card{display:flex;flex-direction:column;gap:.5rem;padding:1rem;align-self:start}
 .ecosystem-card h3{margin:.25rem 0 0;font-size:1.125rem;line-height:1.3}
 .ecosystem-card .card-front-summary,.ecosystem-opportunity .card-front-summary{font-size:1rem;line-height:1.5;margin:0}
-.ecosystem-card .card-byline{font-size:.875rem;line-height:1.5;margin:0;color:var(--season-muted)}
+.ecosystem-card .card-byline,.ecosystem-opportunity .card-byline{font-size:.875rem;line-height:1.5;margin:0;color:var(--season-muted)}
 .ecosystem-opportunity>a{display:inline-flex;align-items:center;min-height:2.75rem}
 @media(min-width:768px){.ecosystem-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(min-width:1024px){.ecosystem-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
