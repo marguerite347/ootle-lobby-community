@@ -40,7 +40,6 @@ export function NovemberContestCards() {
       <div className="ongoing-bounty-reward"><strong>15,000–250,000 XTM</strong><span>Guideline rewards · Eligibility and severity review apply.</span></div>
       <a className="season-button" href="https://github.com/tari-project/tari-ootle/security" target="_blank" rel="noreferrer">View scope &amp; report</a>
     </aside>
-    <p className="november-archive">Explore submissions: <Link to="/#october-submissions">Spooky Secrets submissions</Link><span aria-hidden="true"> · </span><Link to="/challenges/security-bug-hunt">Security Bug Hunt · Closed, results pending</Link><span aria-hidden="true"> · </span><Link to="/#creator-submissions">Creator submissions</Link></p>
   </section>;
 }
 
