@@ -1,5 +1,5 @@
 // INTEGRATION_GAP[LOBBY-SUBMISSIONS] (configuration-required): durable private intake;
-// October and November reply links require their matching official topic and
+// Closed contests reject new intake; open contest replies require their official topic and
 // discard Discourse share attribution; publication remains a
 // reviewed repository change. See docs/PROJECT_SUBMISSIONS.md.
 import {Router, json} from 'express';
@@ -33,6 +33,7 @@ export function validateProjectSubmission(body){
   if(body.website||body.consent!==true)fail('Confirm that these project details may be reviewed and published.');
   const contest=listingContest(body.destination);
   if(body.destination!=='community'&&!contest)fail('Choose where to share your project.');
+  if(contest?.closed)fail(`${contest.label} submissions are closed.`,410);
   const submission={destination:body.destination,title:text(body.title,'a project name',2,100),creator:text(body.creator,'your name or handle',1,80),summary:text(body.summary,'a short project description',20,1200),projectUrl:publicUrl(body.projectUrl,'your project link',true),repoUrl:publicUrl(body.repoUrl,'source code',Boolean(contest)),forumUrl:publicUrl(body.forumUrl,'your creator post',Boolean(contest))};
   if(contest){
     const url=new URL(submission.forumUrl);
