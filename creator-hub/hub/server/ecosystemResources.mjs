@@ -15,7 +15,7 @@ export function withEcosystemResources(records, additions = ecosystemResources.r
     if (entry.preview) {
       requireLinkHost(entry.preview.video, 'recording');
       requireLinkHost(entry.preview.image, 'recording');
-      if (!/^(Source\/docs walkthrough|App demo)/.test(entry.preview.source)) throw new Error('Reference media must disclose capture scope');
+      if (!/^(Source\/docs walkthrough|App demo|Announcement walkthrough)\b/.test(entry.preview.source)) throw new Error('Reference media must disclose capture scope');
     }
     for (const post of entry.discussionLinks || []) {
       const url=new URL(post.url);
