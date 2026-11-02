@@ -27,8 +27,9 @@ it.each(['Source/docs walkthrough — application not demonstrated','Docs walkth
 
 it('separates authored purpose and visible status from complete disclosure without losing media or provenance',()=>{
  const html=renderToStaticMarkup(<ProjectCard resource={{id:'ghostkey',title:'GhostKey',ecosystem:'tari',native:true,preview:{image:'/poster.jpg',video:'/recording.mp4',source:'Source/docs walkthrough — application not demonstrated'}}} sourceUrl="https://community.tari.com/t/example/396/6" creator="Author" summary="Code not executed. Scalar math is not constant-time." cardSummary="Inspect Tari addresses offline." cardStatus="Source code" dates={<time>October 8</time>} caption={<span>Recorded October 10</span>} technologies={[]} />);
- expect(html).toContain('Inspect Tari addresses offline.');expect(html).toContain('Source code');expect(html).toContain('aria-label="Details about GhostKey"');
- const details=html.slice(html.indexOf('<details'));
+ expect(html).toContain('Inspect Tari addresses offline.');expect(html).toContain('Source code');expect(html).toContain('aria-label="Explore project: GhostKey"');
+ const detailsStart=html.indexOf('class="card-details project-card-details-content"');
+ const details=html.slice(detailsStart);
  expect(details).toContain('Scalar math is not constant-time.');expect(details).toContain('October 8');expect(details).toContain('Recorded October 10');
- expect(html.slice(0,html.indexOf('<details'))).not.toContain('Scalar math');expect(html).toContain('loading="lazy"');expect(html).toContain('Creator’s post');
+ expect(html.slice(0,detailsStart)).not.toContain('Scalar math');expect(html).toContain('loading="lazy"');expect(html).toContain('Creator’s post');
 });
