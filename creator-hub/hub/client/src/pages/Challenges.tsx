@@ -1,3 +1,5 @@
+import {NOVEMBER_CONTESTS} from '../novemberContests';
+import {NovemberContestDetail} from '../components/NovemberContests';
 import {safeHref} from '../../../shared/safeLinks.mjs';
 import {useEffect} from 'react';
 import {Link, Navigate, useLocation, useParams} from 'react-router-dom';
@@ -14,7 +16,9 @@ export default function Challenges() {
     if (hash) document.getElementById(hash.slice(1))?.scrollIntoView({block:'start'});
   }, [hash, contest]);
   if (!contest) return <Navigate to={`/${hash || '#contests'}`} replace/>;
-  if (!['spooky-secrets','security-bug-hunt'].includes(contest)) return <section className="contest-hub-heading"><h1>Choose an October contest.</h1><Link className="season-button" to="/#contests">Back to contests</Link></section>;
+  const november = NOVEMBER_CONTESTS.find(item => item.slug === contest);
+  if (november) return <NovemberContestDetail contest={november}/>;
+  if (!['spooky-secrets','security-bug-hunt'].includes(contest)) return <section className="contest-hub-heading"><h1>Choose a contest.</h1><Link className="season-button" to="/#contests">Back to contests</Link></section>;
   const security = contest === 'security-bug-hunt';
   return <div className={`contest-detail ${security ? 'is-security' : 'is-build'}`}>
     <Link className="contest-back" to="/#contests">All contests</Link>
