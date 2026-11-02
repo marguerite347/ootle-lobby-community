@@ -6,6 +6,7 @@
 .resource-intro { min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 1.25rem; }
 .resource-intro h1 { font-size: clamp(2rem, 4vw, 3.75rem); line-height: 1.05; letter-spacing: -.045em; overflow-wrap: anywhere; margin: 1rem 0; text-wrap: balance; }
 .resource-badges { gap: .5rem; }
+.resource-badges .badge { max-width: 100%; white-space: normal; overflow-wrap: anywhere; line-height: 1.5; }
 .resource-summary { color: var(--muted); font-size: 1.05rem; line-height: 1.7; max-width: 62ch; }
 .resource-byline { margin-top: 1rem; color: var(--muted); font-size: .9rem; }
 .resource-byline a { color: var(--accent); }
