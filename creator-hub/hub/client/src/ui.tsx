@@ -122,7 +122,7 @@ export function ResourceCardMedia({ r, className, metrics, interactive = true }:
   const thumbnail = image ? webImage(image) : null;
   const video = r.preview?.video || null;
   const h = hueOf(r.id);
-  const walkthrough = !!r.preview?.source && /^(Source\/docs walkthrough|Docs walkthrough|Page walkthrough|App demo|Concept overview|Announcement walkthrough|Public source walkthrough|Repository walkthrough|Official guide walkthrough)/.test(r.preview.source);
+  const walkthrough = !!r.preview?.source && /^(Source(?:\/docs)? walkthrough|Docs walkthrough|Page walkthrough|App demo|Concept overview|Announcement(?: walkthrough)?|Public source walkthrough|Repository walkthrough|Official guide walkthrough)\b/i.test(r.preview.source);
 
   useEffect(() => {
     const el = container.current;
