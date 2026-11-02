@@ -6108,7 +6108,7 @@
         "height": 800,
         "pix_fmt": "yuv420p"
       },
-      "durationSeconds": 24.364,
+      "durationSeconds": 29.266667,
       "publicMediaUrl": "https://lobby.tari.com/previews/community/resource-taritalk-nodes-20261102-f774b9116a.mp4",
       "publicPosterUrl": "https://lobby.tari.com/previews/community/resource-taritalk-nodes-20261102-f774b9116a.jpg",
       "sha256": "f774b9116af62878f6b260f5b1c8ce8c15e1430db36b42cbbc988346d19791fe",
@@ -6149,7 +6149,7 @@
         "height": 800,
         "pix_fmt": "yuv420p"
       },
-      "durationSeconds": 26.044,
+      "durationSeconds": 26.233333,
       "publicMediaUrl": "https://lobby.tari.com/previews/community/resource-danse-macabre-20261102-3e2ff4d607.mp4",
       "publicPosterUrl": "https://lobby.tari.com/previews/community/resource-danse-macabre-20261102-3e2ff4d607.jpg",
       "sha256": "3e2ff4d607036b377ff2d18da70e21e4fea64890c417006811f241225db06829",
@@ -6190,7 +6190,7 @@
         "height": 800,
         "pix_fmt": "yuv420p"
       },
-      "durationSeconds": 21.493,
+      "durationSeconds": 27.133333,
       "publicMediaUrl": "https://lobby.tari.com/previews/community/resource-ootle-release-0492-20261102-7270ccff9a.mp4",
       "publicPosterUrl": "https://lobby.tari.com/previews/community/resource-ootle-release-0492-20261102-7270ccff9a.jpg",
       "sha256": "7270ccff9a9e4a945bbd78d043bd0f60259164afd5de9b118cb25b5951a72f99",
@@ -6231,7 +6231,7 @@
         "height": 800,
         "pix_fmt": "yuv420p"
       },
-      "durationSeconds": 21.192,
+      "durationSeconds": 26.366667,
       "publicMediaUrl": "https://lobby.tari.com/previews/community/resource-book-to-skill-20261102-f8d0575d58.mp4",
       "publicPosterUrl": "https://lobby.tari.com/previews/community/resource-book-to-skill-20261102-f8d0575d58.jpg",
       "sha256": "f8d0575d5830b750dcf4a1c5255eaf10be7282aa1a7892d203a38d9ed93d5b22",
@@ -6262,7 +6262,7 @@
         "height": 800,
         "pix_fmt": "yuv420p"
       },
-      "durationSeconds": 21.289,
+      "durationSeconds": 26.433333,
       "publicMediaUrl": "https://lobby.tari.com/previews/community/resource-ghost-lantern-20261102-5138b45498.mp4",
       "publicPosterUrl": "https://lobby.tari.com/previews/community/resource-ghost-lantern-20261102-5138b45498.jpg",
       "sha256": "5138b454982cc5275c5674805654289e03c1c5780d4fc77e4b6c104210e0b7eb",
