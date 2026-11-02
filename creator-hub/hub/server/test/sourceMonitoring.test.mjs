@@ -65,3 +65,15 @@ test('superseded URLs retain failure history and require a reviewed replacement'
  assert.equal(result.outcome,'reviewed');assert.deepEqual(result.sourceReviews[old],previous.sourceReviews[old]);assert.equal(result.sourceReviews[current].lastSuccessfulReadAt,'2026-10-29T11:00:00Z');
  const missing=recordCatalogReview(previous,{attemptedAt:date,observations:[{url:old,hash:'old'}],reviewed:true,complete:true});assert.equal(missing.outcome,'pending');
 });
+
+test('declared project aliases share one review while retaining all surface sources',async()=>{
+ const {catalogReviewQueue}=await import('../sourceMonitoring.mjs');
+ const project={slug:'templates',title:'Templates',resourceIds:['tari-ootle:component:templates'],sourceUrl:'https://bsky.app/profile/official/post/one'};
+ const resource={id:'tari-ootle:component:templates',title:'Templates',repoUrl:'https://github.com/official/templates'};
+ for(const entries of [[project,resource,resource],[resource,project]]){
+  const queue=catalogReviewQueue(entries,{'project:templates':{lastSuccessfulReviewAt:'2026-10-31T10:00:00Z'}});
+  assert.equal(queue.length,1);assert.equal(queue[0].id,'project:templates');
+  assert.equal(queue[0].sources.length,2);assert.equal(queue[0].lastSuccessfulReviewAt,'2026-10-31T10:00:00Z');
+  assert.equal(queue[0].outcome,'pending');
+ }
+});
