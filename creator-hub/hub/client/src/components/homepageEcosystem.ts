@@ -1,6 +1,7 @@
 /// <reference types="vite/client" />
 import resources from '../../../shared/ecosystemResources.json';
 import september from '../../../data/contests/september-2026.json';
+import creatorSubmissions from '../../../../../content/creator-submissions/launch-2026.json';
 
 type ProjectReference = {id?: string; resourceIds?: string[]; repoUrl?: string | null; sourceUrl?: string | null};
 
@@ -33,4 +34,4 @@ const galleryFiles = import.meta.glob<ProjectReference>([
   '../../../../../content/submissions/*/*.json',
   '../../../../../content/community-projects/*.json',
 ], {eager: true, import: 'default'});
-export const homepageResources = builderResourcesOnly(resources.records, [...september.entries, ...Object.values(galleryFiles)]);
+export const homepageResources = builderResourcesOnly(resources.records, [...september.entries, ...Object.values(galleryFiles), ...creatorSubmissions.entries]);

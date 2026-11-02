@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedOn": "2026-11-01",
+  "updatedOn": "2026-11-02",
   "purpose": "Retain where resources were shared separately from project sources so readers can return to the discussion.",
   "evidenceNote": "Backfilled from retained October 10 source reads. Sharing post means a known announcement or discussion; it does not assert the earliest post on the internet. Unknown author/date remains null. Do not overwrite older sharing links during refresh.",
   "records": [
@@ -2195,6 +2195,83 @@
           "visibility": "public"
         }
       ]
+    },
+    {
+      "id": "tari:component:taritalk-nodes",
+      "title": "TariTalk Nodes",
+      "projectUrl": "https://nodes.taritalk.xyz/",
+      "discoveryUrl": "https://community.tari.com/t/introducing-taritalk-nodes-a-community-map-and-deployment-guide-for-tari-full-nodes/522/1",
+      "sharingPosts": [
+        {
+          "url": "https://community.tari.com/t/introducing-taritalk-nodes-a-community-map-and-deployment-guide-for-tari-full-nodes/522/1",
+          "platform": "Tari Community forum",
+          "author": "Terence",
+          "publishedAt": "2026-11-02T04:36:55.562Z",
+          "foundOn": "2026-11-02",
+          "context": "Interactive map region filter, deployment guide and privacy review; no installation.",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "october:danse-macabre",
+      "title": "Danse Macabre",
+      "projectUrl": "https://danse-macabre.vercel.app/",
+      "discoveryUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/41",
+      "sharingPosts": [
+        {
+          "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/41",
+          "platform": "Tari Community forum",
+          "author": "yasaswip012",
+          "publishedAt": "2026-10-31T23:37:47.682Z",
+          "foundOn": "2026-11-02",
+          "context": "Public game explanation, three privacy views and proof links; no gameplay.",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "tari-ootle:learn:release-0492",
+      "title": "Ootle v0.49.2 upgrade notes",
+      "projectUrl": "https://github.com/tari-project/tari-ootle/releases/tag/v0.49.2",
+      "discoveryUrl": "https://discord.com/channels/892738558316662855/1478870438334431313/1566787045630812192",
+      "sharingPosts": [
+        {
+          "url": "https://discord.com/channels/892738558316662855/1478870438334431313/1566787045630812192",
+          "platform": "Discord",
+          "author": "animalst",
+          "publishedAt": "2026-11-02T12:12:00Z",
+          "foundOn": "2026-11-02",
+          "context": "Official GitHub pre-release notes, reset requirement and authorization changes.",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "tari-ootle:learn:book-to-skill",
+      "title": "book-to-skill",
+      "projectUrl": "https://github.com/virgiliojr94/book-to-skill",
+      "discoveryUrl": "https://discord.com/channels/892738558316662855/892738558996148236/1565479700816728236",
+      "sharingPosts": [
+        {
+          "url": "https://discord.com/channels/892738558316662855/892738558996148236/1565479700816728236",
+          "platform": "Discord",
+          "author": "Luci666",
+          "publishedAt": "2026-10-29T21:37:00Z",
+          "foundOn": "2026-11-02",
+          "context": "Public README, chapter-reference output structure and document use cases; no install.",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "community:ghost-lantern",
+      "title": "Ghost Lantern",
+      "projectUrl": "https://github.com/penielgold-hub/Ghost-Lantern",
+      "repositoryUrl": "https://github.com/penielgold-hub/Ghost-Lantern",
+      "discoveryUrl": "https://discord.com/channels/892738558316662855/892738558996148236",
+      "sharingPosts": [],
+      "note": "Discovered via a public Discord link; repository existence, MIT license and README verified. No creator announcement permalink or official October submission confirmed. Local simulation and public indexer scope are README claims; application not run."
     }
   ]
 }

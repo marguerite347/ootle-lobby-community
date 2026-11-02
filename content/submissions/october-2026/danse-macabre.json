@@ -1,0 +1,29 @@
+{
+  "slug": "danse-macabre",
+  "title": "Danse Macabre",
+  "summary": "Werewolf without a game master: five players jointly shuffle one wolf into a hidden deck, then submit sealed night actions whose total reveals the victim. The public site offers a solo browser session with four ghosts and an invite-link group mode on Esmeralda testnet. The creator notes that solo ghosts share the host tab, so privacy matters between separate players; table existence, seats, timing and fees remain public. November 2 review covered the MIT repository, public explanation and linked proof/threat-model pages. The recording is a website walkthrough, not a completed game or an independent cryptographic audit. The November 2 Ootle testnet reset may require creator redeployment.",
+  "cardSummary": "A secret wolf, five players and no game master. Explore a hidden-role game built for Ootle.",
+  "cardStatus": "Game · Testnet · Source walkthrough",
+  "creator": "yasaswip012",
+  "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/41",
+  "publishedAt": "2026-10-31T23:37:47.682Z",
+  "updatedAt": "2026-10-31T23:37:47.682Z",
+  "sourceContentSha256": "6add5175dffac85cb2bd0edd14b550eeb0b7138c9a508208aa807c14c253ebc5",
+  "repoUrl": "https://github.com/YASASWIP012/danse-macabre",
+  "demoUrl": "https://danse-macabre.vercel.app/",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust · WebAssembly · MIT",
+      "sourceUrl": "https://github.com/YASASWIP012/danse-macabre"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-danse-macabre-20261102-3e2ff4d607.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-danse-macabre-20261102-3e2ff4d607.jpg",
+    "capturedAt": "2026-11-02T14:39:31.649880+00:00",
+    "sourceRevision": "2341dc39b67f2f3491699a079bdd0103f1efedb5",
+    "kind": "public-page",
+    "credit": "Source walkthrough — game design and privacy model; no gameplay or transaction performed."
+  }
+}

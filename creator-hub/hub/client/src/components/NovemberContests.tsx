@@ -35,7 +35,7 @@ export function NovemberContestCards() {
         <span className="november-card-action">{novemberContestPhase(contest, now) === 'closed' ? 'View contest & entries' : contest.action}</span>
       </Link>
     )}</div>
-    <p className="november-archive">October archive: <Link to="/#october-submissions">Spooky Secrets submissions</Link><span aria-hidden="true"> · </span><Link to="/challenges/security-bug-hunt">Security Bug Hunt</Link></p>
+    <p className="november-archive">Explore submissions: <Link to="/#october-submissions">Spooky Secrets submissions</Link><span aria-hidden="true"> · </span><Link to="/challenges/security-bug-hunt">Security Bug Hunt · Closed, results pending</Link><span aria-hidden="true"> · </span><Link to="/#creator-submissions">Creator submissions</Link></p>
   </section>;
 }
 

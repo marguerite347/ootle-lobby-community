@@ -10,10 +10,10 @@ import OctoberSubmissions from '../components/OctoberSubmissions';
 import {CreatorResources} from '../components/SeasonalLobby';
 
 export default function Home() {
-  const {hash, search} = useLocation();
+  const {hash, search, key} = useLocation();
   useEffect(() => {
     if (hash) document.getElementById(['#my-projects', '#build-ideas'].includes(hash) ? 'creator-toolkit' : hash.slice(1))?.scrollIntoView({block: 'start'});
-  }, [hash, search]);
+  }, [hash, search, key]);
   return <div className="season-home creator-workspace">
     <NovemberHero/>
     <NovemberContestCards/>
