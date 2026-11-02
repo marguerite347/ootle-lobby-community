@@ -21,6 +21,11 @@ jobs:
       - run: npm ci --ignore-scripts
       - run: npm test
       - run: python3 -m unittest discover -s scripts -p 'test_source_evidence.py'
+      - name: Validate bundled Python asset tools
+        run: |
+          python3 -m venv /tmp/ootle-asset-test-env
+          /tmp/ootle-asset-test-env/bin/pip install --only-binary=:all: -r skills/vendor/gamedev/skills/disciplines/create-game-assets/scripts/requirements.txt
+          /tmp/ootle-asset-test-env/bin/python scripts/test_asset_tools.py
       - run: npm audit --audit-level=low
       - run: npm run validate
       - run: npm --prefix creator-hub/capture ci --ignore-scripts
