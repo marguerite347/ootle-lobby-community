@@ -143,7 +143,7 @@ export default function CreatorEffects() {
           {busy ? "Playing…" : "Try this effect"}
         </button>
         <small>
-          Canvas Confetti 1.9.3 · maximum 64 particles · reduced motion
+          Canvas Confetti 1.9.4 · maximum 64 particles · reduced motion
           supported · no automatic audio
         </small>
       </div>
