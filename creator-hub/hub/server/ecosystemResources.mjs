@@ -27,7 +27,7 @@ export function withEcosystemResources(records, additions = ecosystemResources.r
     const resource = makeResource({...entry, summary: `${entry.summary}\n\n${entry.status}.`,
       sourceId: 'reviewed-ecosystem', sourceName: 'Reviewed Tari ecosystem sources',
       upstreamId: entry.repoUrl || entry.sourceUrl, fetchedAt: entry.lastCheckedAt,
-      lastVerifiedAt: entry.lastCheckedAt, setupHint: 'Read the source and compatibility requirements. Listing review does not verify runtime behavior.',
+      lastVerifiedAt: entry.lastCheckedAt, setupHint: 'Open the source or guide for setup steps and compatibility requirements.',
       prerequisites: entry.platform ? [entry.platform] : [], topic: entry.type === 'learn' ? 'understand' : null,
       format: entry.type === 'learn' ? 'reference' : null, level: entry.group === 'Advanced' ? 'advanced' : 'intermediate'});
     // Canonical source identity also catches an older connector record with another ID.
