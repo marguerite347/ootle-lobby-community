@@ -47,7 +47,7 @@ export function NovemberContestDetail({contest}: {contest: NovemberContest}) {
   const now = useContestClock();
   const closed = novemberContestPhase(contest, now) === 'closed';
   return <article className="november-detail">
-    <Link className="november-back" to="/#contests">All contests</Link>
+    <div className="november-detail-navigation"><Link className="november-back" to="/#contests">All contests</Link><Link to={`/#${contest.slug === 'launch-creator' ? 'creator-submissions' : `${contest.slug}-submissions`}`}>View submissions</Link></div>
     <header className="november-detail-heading">
       <div><p className="november-eyebrow">NOVEMBER 2026 · {contest.category}</p><h1>{contest.title}<br/><em>{contest.accent}</em></h1><p>{contest.description}</p></div>
       <aside><strong>{contest.prize}</strong><p>{contest.prizeNote}</p><span>{novemberContestTiming(contest, now)}</span>

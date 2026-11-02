@@ -1,0 +1,21 @@
+.november-submissions,.november-submission-panel{scroll-margin-top:14rem}
+.november-submissions .section-head{margin-bottom:1rem}
+.november-submissions h2{margin:0;font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.04em}
+.november-submissions h2 em{font-style:normal;color:var(--season-lime)}
+.submission-switcher{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
+.submission-switcher a{display:inline-flex;align-items:center;gap:.75rem;min-height:2.75rem;padding:.5rem .875rem;border:1px solid #c9b6ff55;border-radius:.625rem;color:var(--season-lavender);font-size:.875rem;text-decoration:none}
+.submission-switcher a[aria-current]{background:var(--season-lime);border-color:var(--season-lime);color:#14101f;font-weight:700}
+.submission-switcher span{font-size:.75rem;opacity:.8}
+.submission-switcher a:hover{border-color:var(--season-lime)}
+.november-submissions a:focus-visible{outline:2px solid var(--season-lavender);outline-offset:4px}
+.november-submissions-empty{display:flex;flex-direction:column;align-items:flex-start;gap:1rem;padding:1.25rem;background:#c9b6ff09;border:1px solid #c9b6ff33;border-radius:1rem}
+.november-submissions-empty h3,.november-gallery-heading h3{margin:0;font-size:1.25rem}
+.november-submissions-empty p{margin:.375rem 0;max-width:48rem;color:var(--season-muted);font-size:1rem;line-height:1.6}
+.november-submissions-empty small{color:var(--season-muted);font-size:.875rem}
+.november-listing-link{display:flex;align-items:baseline;flex-wrap:wrap;gap:.25rem;margin:.5rem 0 0;color:var(--season-muted);font-size:.875rem}
+.november-listing-link a,.november-gallery-heading a{display:inline-flex;align-items:center;min-height:2.75rem;color:var(--season-lavender)}
+.november-gallery-heading{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem 1rem;margin-bottom:1rem}
+.november-submissions .creator-submissions{margin-top:0;padding-top:1rem}
+.november-detail-navigation{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.november-detail-navigation>a{display:inline-flex;align-items:center;min-height:2.75rem}
+@media(min-width:768px){.november-submissions-empty{flex-direction:row;align-items:center;justify-content:space-between;gap:2rem}.november-submissions-empty .season-button{flex-shrink:0}}
