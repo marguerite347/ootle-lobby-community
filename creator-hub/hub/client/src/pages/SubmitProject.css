@@ -4,6 +4,8 @@
 .project-submit-page h1 {margin:.5rem 0 .75rem;font-size:clamp(2.25rem,7vw,3.5rem);line-height:1.1;letter-spacing:-.045em;font-weight:800;}
 .project-submit-page h1 em {color:#d6ee53;font-style:normal;}
 .project-submit-page p {color:#c7c0d8;line-height:1.6;font-size:.875rem;}
+.project-submit-closed-links {display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1.5rem;font-size:.875rem;}
+.project-submit-closed-links a {display:inline-flex;align-items:center;min-height:2.75rem;}
 .project-submit-form {padding:1.5rem;border:1px solid #c9b6ff35;border-radius:1rem;background:#111127;}
 .project-submit-form fieldset {border:0;margin:0;padding:0;min-width:0;}
 .project-submit-form label {display:flex;flex-wrap:wrap;align-items:center;gap:.375rem .5rem;font-size:.8125rem;font-weight:600;margin-bottom:1rem;}

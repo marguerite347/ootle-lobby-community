@@ -15,15 +15,15 @@ const input=(extra={})=>({clientId:randomUUID(),destination:'community',title:'T
 async function serve(t,app){const server=app.listen(0,'127.0.0.1');await new Promise(resolve=>server.once('listening',resolve));t.after(()=>new Promise(resolve=>{server.closeAllConnections();server.close(resolve);}));return `http://127.0.0.1:${server.address().port}`;}
 const headers={'Content-Type':'application/json','X-Lobby-Submission':'1',Origin:origin};
 
-test('intake validates destinations, public links, consent and individual October posts',()=>{
+test('intake validates destinations, public links, consent and individual open-contest posts',()=>{
   assert.equal(validateProjectSubmission(input()).submission.title,'Trial project');
-  const contest=input({destination:'october-2026',repoUrl:'https://github.com/example/project',forumUrl:OCTOBER_THREAD+'/34'});
-  assert.equal(validateProjectSubmission(contest).submission.destination,'october-2026');
+  const contest=input({destination:'november-2026',repoUrl:'https://github.com/example/project',forumUrl:NOVEMBER_THREAD+'/34'});
+  assert.equal(validateProjectSubmission(contest).submission.destination,'november-2026');
   const shared={...contest,forumUrl:contest.forumUrl+'?u=example_member'};
   assert.deepEqual(validateProjectSubmission(shared),validateProjectSubmission(contest));
-  for(const forumUrl of [OCTOBER_THREAD+'?u=example_member',OCTOBER_THREAD+'/34?u=example_member&x=1','https://example.com/t/396/34?u=example_member',OCTOBER_THREAD+'/34?u=example_member#other'])assert.throws(()=>validateProjectSubmission({...contest,forumUrl}),{status:400});
+  for(const forumUrl of [NOVEMBER_THREAD+'?u=example_member',NOVEMBER_THREAD+'/34?u=example_member&x=1','https://example.com/t/520/34?u=example_member',NOVEMBER_THREAD+'/34?u=example_member#other'])assert.throws(()=>validateProjectSubmission({...contest,forumUrl}),{status:400});
   for(const extra of [{destination:'official'},{consent:false},{website:'spam'},{title:'x'},{creator:'a'.repeat(81)},{summary:'short'},{title:'bad\u202e'},{clientId:'invalid'},{projectUrl:'javascript:alert(1)'},{projectUrl:'http://example.com'},{projectUrl:'https://127.0.0.1/a'},{projectUrl:'https://user:password@example.com'},{projectUrl:'https://private.local'}])assert.throws(()=>validateProjectSubmission(input(extra)),{status:400});
-  for(const extra of [{repoUrl:''},{forumUrl:OCTOBER_THREAD},{forumUrl:OCTOBER_THREAD+'/1'},{forumUrl:OCTOBER_THREAD+'/34?x=1'},{forumUrl:'https://example.com/t/396/34'}])assert.throws(()=>validateProjectSubmission({...contest,...extra}),{status:400});
+  for(const extra of [{repoUrl:''},{forumUrl:NOVEMBER_THREAD},{forumUrl:NOVEMBER_THREAD+'/1'},{forumUrl:NOVEMBER_THREAD+'/34?x=1'},{forumUrl:'https://example.com/t/520/34'}])assert.throws(()=>validateProjectSubmission({...contest,...extra}),{status:400});
 });
 
 test('November listings require November replies and both app and source links',()=>{
@@ -33,7 +33,12 @@ test('November listings require November replies and both app and source links',
   assert.deepEqual(validateProjectSubmission({...contest,forumUrl:contest.forumUrl+'?u=member'}),valid);
   assert.equal(validateProjectSubmission({...contest,forumUrl:'https://community.tari.com/t/520/2'}).submission.destination,'november-2026');
   for(const extra of [{repoUrl:''},{projectUrl:''},{forumUrl:NOVEMBER_THREAD},{forumUrl:NOVEMBER_THREAD+'/1'},{forumUrl:OCTOBER_THREAD+'/34'},{forumUrl:'https://community.tari.com/t/521/2'},{forumUrl:'https://community.tari.com/t/503/2'},{forumUrl:'https://example.com/t/520/2'},{forumUrl:'https://community.tari.com:8443/t/520/2'},{forumUrl:NOVEMBER_THREAD+'/2?other=1'},{forumUrl:NOVEMBER_THREAD+'/2#fragment'}])assert.throws(()=>validateProjectSubmission({...contest,...extra}),{status:400});
-  assert.throws(()=>validateProjectSubmission({...contest,destination:'october-2026'}),{status:400});
+  assert.throws(()=>validateProjectSubmission({...contest,destination:'october-2026'}),{status:410});
+});
+
+test('closed October intake rejects even a valid existing October forum entry',()=>{
+  const closed=input({destination:'october-2026',repoUrl:'https://github.com/example/project',forumUrl:OCTOBER_THREAD+'/34'});
+  assert.throws(()=>validateProjectSubmission(closed),{status:410,message:'October · Spooky Secrets submissions are closed.'});
 });
 
 test('durable private intake survives restart, deduplicates retries and enforces atomic limits',async t=>{
@@ -88,6 +93,9 @@ test('public entry point saves receipts, rejects CSRF/oversize/expired challenge
   assert.equal((await send({'X-Lobby-Submission':'0'})).status,403);
   assert.equal((await send({}, {...body,challenge:config.challenge.slice(0,-1)+'x'})).status,400);
   assert.equal((await send({}, {...body,summary:'a'.repeat(13000)})).status,413);
+  const closed=await send({}, {...body,clientId:randomUUID(),destination:'october-2026',forumUrl:OCTOBER_THREAD+'/34'});
+  assert.equal(closed.status,410);assert.match((await closed.json()).error,/submissions are closed/);
+  assert.equal((await store.list()).items.length,0,'closed intake must not create a private record');
   const r=await send();assert.equal(r.status,201);const saved=await r.json();assert.deepEqual(Object.keys(saved.receipt).sort(),['id','receivedAt','status']);
   assert.equal((await (await send()).json()).receipt.id,saved.receipt.id);
   assert.equal((await fetch(url+'/api/project-submissions')).status,404);
