@@ -1,6 +1,6 @@
 # Ootle community chat
 
-This implementation puts the working community chat in the Lobby's existing right sidebar. "Pop out" opens the same conversation in a larger `/chat` view; both reuse one chat component and the same authenticated `/api/chat` service. It does not reopen the old anonymous community/project/collective chat handlers. Hosted chat is default-off in code and explicitly enabled on the main Vercel app at `https://ootle-lobby-preview.vercel.app/?chat=open`. The main app uses the existing Ootle Supabase project through a private schema and a dedicated backend role. No external channels are connected and no cross-app messages have been sent.
+This implementation puts the working community chat in the Lobby's existing right sidebar. "Pop out" opens the same conversation in a larger `/chat` view; both reuse one chat component and the same authenticated `/api/chat` service. It does not reopen the old anonymous community/project/collective chat handlers. Hosted chat is default-off in code and explicitly enabled on the main Vercel app at `https://ootle-lobby-preview.vercel.app/?chat=open`. The main app uses the existing Ootle Supabase project through a private schema and a dedicated backend role. No external channels are connected and no cross-app messages have been sent. The opt-in [Forum General bridge](FORUM_CHAT_BRIDGE.md) is prepared separately and awaits administrator configuration and live delivery verification.
 
 ## Working first slice
 
@@ -87,7 +87,9 @@ Channel owners authorize each connection and its read/post permissions. The app 
 
 Use the existing Chat SDK adapters as the first transport candidate, with a durable state adapter. Do not add an AI auto-responder by default. Credentials stay server-side, inbound signatures are verified before ingestion, and normalized remote IDs deduplicate replayed events. Own-bot events and delivery receipts must suppress echoes; imported messages never automatically fan out to other channels.
 
-Posting is explicit: choose destinations, review the exact message and audience, then create the native message and delivery rows in one transaction. Only authorized publishers can cross-post. The worker must re-check connection/posting permissions before sending. A platform receipt marks delivery; an ambiguous timeout remains `uncertain` and must not be blindly retried. Retrying one failed destination must not resend successful ones. Editing a message, deleting it, and synchronizing reactions need separate policies.
+Manual cross-posting is explicit: choose destinations, review the exact message and audience, then create the native message and delivery rows in one transaction. Only authorized publishers can cross-post. The worker must re-check connection/posting permissions before sending. A platform receipt marks delivery; an ambiguous timeout remains `uncertain` and must not be blindly retried. Retrying one failed destination must not resend successful ones. Editing a message, deleting it, and synchronizing reactions need separate policies.
+
+The owner-authorized Forum General connection is an exception to manual per-message selection: after activation it automatically shares new public Lobby/General messages, with a composer disclosure and source labels. It never includes private channels or DMs. See [setup, boundaries and acceptance](FORUM_CHAT_BRIDGE.md).
 
 Transport-specific gaps to resolve with the chosen first channels:
 

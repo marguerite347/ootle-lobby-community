@@ -1,4 +1,5 @@
 import { Pool } from "pg";
+import { createForumBridge, forumBridgeConfig } from "./forumBridge.mjs";
 import { createChatStore } from "./store.mjs";
 import { communityDatabaseOptions } from "./database.mjs";
 import {createProjectSubmissionStore} from '../projectSubmissions.mjs';
@@ -45,8 +46,10 @@ export function communityServicesFromEnv(env = process.env) {
       }
     },
   };
+  const forumBridge = createForumBridge(db, forumBridgeConfig(env));
   services = {
-    store: createChatStore(db),
+    forumBridge,
+    store: createChatStore(db, { forumBridge }),
     projectSubmissions: {
       store: createProjectSubmissionStore(db),
       origin: env.PUBLIC_SITE_URL || origin.origin,

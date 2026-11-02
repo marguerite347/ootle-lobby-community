@@ -1,5 +1,5 @@
-// INTEGRATION_GAP[LOBBY-CHAT] (build-required): guest chat supports threads, reactions, typing and optional encrypted DMs; external transports and key recovery remain unimplemented. See docs/DEVELOPMENT_GAPS.md#lobby-chat.
-import { Router, json } from "express";
+// INTEGRATION_GAP[LOBBY-CHAT] (build-required): guest chat supports threads, reactions, typing and optional encrypted DMs; the opt-in Forum bridge awaits configuration; key recovery remains unimplemented. See docs/DEVELOPMENT_GAPS.md#lobby-chat.
+import { Router, json, raw } from "express";
 import {
   randomBytes,
   createHash,
@@ -32,6 +32,7 @@ export function createCommunityRouter({
   privateEnabled = false,
   previewAccount = "github-1",
   projectSubmissions,
+  forumBridge,
   fetcher = fetch,
 } = {}) {
   const router = Router(),
@@ -77,7 +78,8 @@ export function createCommunityRouter({
       return res.status(403).json({ error: "Local preview only." });
     next();
   });
-  router.get("/capabilities", (_req, res) =>
+  router.get("/capabilities", wrap(async (_req, res) => {
+    const forum = await forumBridge?.status() || null;
     res.json({
       configured,
       preview,
@@ -85,10 +87,21 @@ export function createCommunityRouter({
       invitations: configured && !!invites?.secret,
       guests: configured && !!guests?.secret,
       platforms: ["telegram", "discord", "slack"],
-      externalConnected: false,
+      externalConnected: !!forum,
+      forumBridge: forum,
       privateMessages: configured && privateEnabled,
-    }),
-  );
+    });
+  }));
+  // Signed server-to-server routes precede browser-session/CSRF middleware.
+  router.post("/forum/webhook", raw({ type: "application/json", limit: "256kb", inflate: false }), wrap(async (req, res) => {
+    if (!forumBridge) reject("Forum bridge is not configured.", 503);
+    res.json(await forumBridge.receive(req.body, req.headers));
+  }));
+  router.get("/forum/flush", wrap(async (req, res) => {
+    if (!forumBridge) return res.json({ disabled: true });
+    if (!forumBridge.authorizeCron(req.get("authorization"))) reject("Scheduler authorization required.", 401);
+    res.json(await forumBridge.flush());
+  }));
   router.use((req, res, next) =>
     configured
       ? next()
@@ -454,9 +467,13 @@ export function createCommunityRouter({
           "Cross-app posting is not connected yet. Your draft is still here.",
           409,
         );
-      res
-        .status(201)
-        .json({ message: await store.send(req.chatAccount.id, req.body) });
+      const message = await store.send(req.chatAccount.id, req.body);
+      // Await the bounded attempt so serverless teardown cannot abandon it. The durable
+      // queue survives failure; a delivery failure must not pretend the local send failed.
+      if (message.channel_id === "lobby" && forumBridge) {
+        try { await forumBridge.flush({ limit: 1 }); } catch { /* The scheduled worker resumes queued deliveries. */ }
+      }
+      res.status(201).json({ message });
     }),
   );
   router.get(
