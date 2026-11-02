@@ -1,1 +1,3 @@
-Pillow>=10,<13
+# Local compatibility extension: Pillow 13 qualified on 2026-11-02.
+# Python versions below 3.11 resolve an older supported Pillow release.
+Pillow>=10,<14
