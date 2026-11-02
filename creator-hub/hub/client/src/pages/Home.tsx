@@ -4,10 +4,10 @@ import PublicationGallery from '../workbench/PublicationGallery';
 import {useEffect} from 'react';
 import {useLocation} from 'react-router-dom';
 import {webImage} from '../imageVariants';
-import ConcoctionArt from '../components/ConcoctionArt';
+import {NovemberHero, NovemberContestCards} from '../components/NovemberContests';
 import ContestProjects from '../components/ContestProjects';
 import OctoberSubmissions from '../components/OctoberSubmissions';
-import {ContestCards, CreatorResources, SeasonStatus} from '../components/SeasonalLobby';
+import {CreatorResources} from '../components/SeasonalLobby';
 
 export default function Home() {
   const {hash, search} = useLocation();
@@ -15,29 +15,21 @@ export default function Home() {
     if (hash) document.getElementById(['#my-projects', '#build-ideas'].includes(hash) ? 'creator-toolkit' : hash.slice(1))?.scrollIntoView({block: 'start'});
   }, [hash, search]);
   return <div className="season-home creator-workspace">
-    <section className="season-hero" aria-labelledby="season-title">
-      <ConcoctionArt/>
-      <div className="season-hero-copy">
-        <div className="season-hero-kicker"><SeasonStatus/></div>
-        <h1 id="season-title">Create a<br/>confidential<br/><em>concoction.</em></h1>
-        <p>A haunted game. A mysterious app. A secret worth keeping. Spooky Secrets is your excuse to see what Tari’s privacy tools can do.</p>
-        <div className="season-hero-actions"><a className="season-button" href="#contests">Find your contest </a></div>
-      </div>
-    </section>
-    <ContestCards/>
-    <CreatorResources/>
+    <NovemberHero/>
+    <NovemberContestCards/>
+    <CreatorResources compact/>
     <OctoberSubmissions/>
     <div id="community-entries"><ContestProjects/></div>
     <PublicationGallery destination="community" section/><OfficialProjects/>
     <EcosystemResources/>
     <section className="season-community" id="creator-community">
       <div className="season-community-copy">
-        <h2>Brew something<br/>brilliant.</h2>
+        <h2>Make something<br/>worth sharing.</h2>
         <p>Trade ideas on Discord. Share your creation and follow other builders on the forum.</p>
         <div className="season-community-actions">
           <a className="season-button" href="https://community.tari.com/" target="_blank" rel="noreferrer">Join the community</a>
           <div className="season-community-actions">
-            <a className="season-text-link" href="https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396" target="_blank" rel="noreferrer">Contest thread</a>
+            <a className="season-text-link" href="https://community.tari.com/t/november-build-contest-thread-mvp/520" target="_blank" rel="noreferrer">November build contest</a>
             <a className="season-text-link" href="https://discord.com/invite/dj34vQSe6d" target="_blank" rel="noreferrer">Join Tari on Discord</a>
           </div>
         </div>

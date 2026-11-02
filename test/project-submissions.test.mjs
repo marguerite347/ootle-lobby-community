@@ -6,7 +6,7 @@ import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {PGlite} from '@electric-sql/pglite';
 import express from 'express';
-import {createProjectSubmissionStore,installProjectSubmissionSchema,createProjectSubmissionsRouter,validateProjectSubmission,OCTOBER_THREAD} from '../creator-hub/hub/server/projectSubmissions.mjs';
+import {createProjectSubmissionStore,installProjectSubmissionSchema,createProjectSubmissionsRouter,validateProjectSubmission,OCTOBER_THREAD,NOVEMBER_THREAD} from '../creator-hub/hub/server/projectSubmissions.mjs';
 import {createChatStore,installSchema} from '../creator-hub/hub/server/community/store.mjs';
 import {createCommunityRouter} from '../creator-hub/hub/server/community/router.mjs';
 import {createInspirationLobby} from '../creator-hub/hub/server/inspirationLobby.mjs';
@@ -24,6 +24,16 @@ test('intake validates destinations, public links, consent and individual Octobe
   for(const forumUrl of [OCTOBER_THREAD+'?u=example_member',OCTOBER_THREAD+'/34?u=example_member&x=1','https://example.com/t/396/34?u=example_member',OCTOBER_THREAD+'/34?u=example_member#other'])assert.throws(()=>validateProjectSubmission({...contest,forumUrl}),{status:400});
   for(const extra of [{destination:'official'},{consent:false},{website:'spam'},{title:'x'},{creator:'a'.repeat(81)},{summary:'short'},{title:'bad\u202e'},{clientId:'invalid'},{projectUrl:'javascript:alert(1)'},{projectUrl:'http://example.com'},{projectUrl:'https://127.0.0.1/a'},{projectUrl:'https://user:password@example.com'},{projectUrl:'https://private.local'}])assert.throws(()=>validateProjectSubmission(input(extra)),{status:400});
   for(const extra of [{repoUrl:''},{forumUrl:OCTOBER_THREAD},{forumUrl:OCTOBER_THREAD+'/1'},{forumUrl:OCTOBER_THREAD+'/34?x=1'},{forumUrl:'https://example.com/t/396/34'}])assert.throws(()=>validateProjectSubmission({...contest,...extra}),{status:400});
+});
+
+test('November listings require November replies and both app and source links',()=>{
+  const contest=input({destination:'november-2026',repoUrl:'https://github.com/example/mvp',forumUrl:NOVEMBER_THREAD+'/2'});
+  const valid=validateProjectSubmission(contest);
+  assert.equal(valid.submission.destination,'november-2026');
+  assert.deepEqual(validateProjectSubmission({...contest,forumUrl:contest.forumUrl+'?u=member'}),valid);
+  assert.equal(validateProjectSubmission({...contest,forumUrl:'https://community.tari.com/t/520/2'}).submission.destination,'november-2026');
+  for(const extra of [{repoUrl:''},{projectUrl:''},{forumUrl:NOVEMBER_THREAD},{forumUrl:NOVEMBER_THREAD+'/1'},{forumUrl:OCTOBER_THREAD+'/34'},{forumUrl:'https://community.tari.com/t/521/2'},{forumUrl:'https://community.tari.com/t/503/2'},{forumUrl:'https://example.com/t/520/2'},{forumUrl:'https://community.tari.com:8443/t/520/2'},{forumUrl:NOVEMBER_THREAD+'/2?other=1'},{forumUrl:NOVEMBER_THREAD+'/2#fragment'}])assert.throws(()=>validateProjectSubmission({...contest,...extra}),{status:400});
+  assert.throws(()=>validateProjectSubmission({...contest,destination:'october-2026'}),{status:400});
 });
 
 test('durable private intake survives restart, deduplicates retries and enforces atomic limits',async t=>{
@@ -71,7 +81,8 @@ test('public entry point saves receipts, rejects CSRF/oversize/expired challenge
   const db=new PGlite();t.after(()=>db.close());await installProjectSubmissionSchema(db);const store=createProjectSubmissionStore(db);
   const url=await serve(t,createInspirationLobby({communityServices:{},submissionServices:{store,origin,secret}}));
   const config=await fetch(url+'/api/project-submissions/config').then(r=>r.json());assert.equal(config.available,true);
-  const body={...input(),challenge:config.challenge};
+  assert.equal(config.forumUrl,NOVEMBER_THREAD);
+  const body={...input({destination:'november-2026',repoUrl:'https://github.com/example/mvp',forumUrl:NOVEMBER_THREAD+'/2'}),challenge:config.challenge};
   const send=(extraHeaders={},payload=body)=>fetch(url+'/api/project-submissions',{method:'POST',headers:{...headers,...extraHeaders},body:JSON.stringify(payload)});
   assert.equal((await send({Origin:'https://evil.example'})).status,403);
   assert.equal((await send({'X-Lobby-Submission':'0'})).status,403);
@@ -82,6 +93,8 @@ test('public entry point saves receipts, rejects CSRF/oversize/expired challenge
   assert.equal((await fetch(url+'/api/project-submissions')).status,404);
   assert.equal((await fetch(url+'/api/projects',{method:'POST',headers,body:'{}'})).status,410);
   assert.equal((await store.list()).items.length,1);
+  assert.equal((await store.list()).items[0].payload.destination,'november-2026');
+  assert.equal((await store.list()).items[0].payload.forumUrl,NOVEMBER_THREAD+'/2');
   const app=express();let time=Date.now();app.use('/intake',createProjectSubmissionsRouter({store,origin,secret,now:()=>time}));const expiring=await serve(t,app);
   const old=await fetch(expiring+'/intake/config').then(r=>r.json());time+=31*60_000;
   assert.equal((await fetch(expiring+'/intake',{method:'POST',headers,body:JSON.stringify({...input(),challenge:old.challenge})})).status,400);

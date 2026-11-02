@@ -35,10 +35,10 @@ export function ContestCards() {
   </section>;
 }
 
-export function CreatorResources() {
+export function CreatorResources({compact = false}: {compact?: boolean}) {
   return <section className="season-resources" id="creator-toolkit" aria-labelledby="season-resources-title">
-    <div className="resource-feature">
-      <div className="builder-art"><SeasonalIllustration scene="builder"/></div>
+    <div className={`resource-feature${compact ? ' november-resources' : ''}`}>
+      {!compact && <div className="builder-art"><SeasonalIllustration scene="builder"/></div>}
       <div className="resource-feature-copy">
         <h2 id="season-resources-title">Start with a template.<br/><em>Make it yours.</em></h2>
         <p>A guessing game, a private app, a collectible with a secret. Find your starting point in Tari’s templates.</p>

@@ -1,13 +1,13 @@
 import {useEffect,useRef,useState} from 'react';
 import {Link,useSearchParams} from 'react-router-dom';
+import {LISTING_CONTESTS, listingContest} from '../../../shared/listingContests.mjs';
 import './SubmitProject.css';
 
-const forum='https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396';
 type Receipt={id:string;receivedAt:string;status:string};
 type Fields={destination:string;title:string;creator:string;summary:string;projectUrl:string;repoUrl:string;forumUrl:string;website:string;consent:boolean};
 export default function SubmitProject(){
   const [params]=useSearchParams();
-  const [fields,setFields]=useState<Fields>({destination:params.get('contest')==='october'?'october-2026':'community',title:'',creator:'',summary:'',projectUrl:'',repoUrl:'',forumUrl:'',website:'',consent:false});
+  const [fields,setFields]=useState<Fields>({destination:params.get('contest')==='november'?'november-2026':params.get('contest')==='october'?'october-2026':'community',title:'',creator:'',summary:'',projectUrl:'',repoUrl:'',forumUrl:'',website:'',consent:false});
   const [available,setAvailable]=useState<boolean|null>(null),[busy,setBusy]=useState(false),[error,setError]=useState(''),[receipt,setReceipt]=useState<Receipt|null>(null);
   const requestId=useRef(crypto.randomUUID());
   const notice=useRef<HTMLDivElement>(null);
@@ -27,21 +27,23 @@ export default function SubmitProject(){
     }catch(e){setError(e instanceof Error&&e.name!=='TimeoutError'&&e.name!=='TypeError'?e.message:'We couldn’t confirm your submission. Your details are still here; retry to check and save it.');}
     finally{setBusy(false);}
   }
-  const contest=fields.destination==='october-2026';
+  const contest=listingContest(fields.destination);
+  const forum=contest?.forumUrl||LISTING_CONTESTS['november-2026'].forumUrl;
   return <div className="project-submit-page">
     <header><Link className="project-submit-back" to="/">Back to the Lobby</Link><h1>Share your <em>build.</em></h1><p>Made something with Tari? Send it in for a spot in the Lobby.</p></header>
     {receipt?<div className="project-submit-receipt" ref={notice} tabIndex={-1} role="status"><p className="project-submit-kicker">Submission received</p><h2>{fields.title}</h2><p>Your project is awaiting review. A publication date hasn’t been assigned yet.{contest?' Contest eligibility is decided through the official forum entry.':''}</p><p className="project-submit-reference">Your reference <code>{receipt.id}</code></p><Link className="season-button" to="/">Back to the Lobby</Link></div>:
     <form onSubmit={submit} className="project-submit-form">
       <fieldset disabled={busy}><legend className="sr-only">Project details</legend>
-      <div className="project-submit-destinations"><label><input type="radio" name="destination" value="community" checked={!contest} onChange={()=>update('destination','community')}/>Community project</label><label><input type="radio" name="destination" value="october-2026" checked={contest} onChange={()=>update('destination','october-2026')}/>October contest entry</label></div>
+      <div className="project-submit-destinations"><label><input type="radio" name="destination" value="community" checked={!contest} onChange={()=>update('destination','community')}/>Community project</label><label><input type="radio" name="destination" value="november-2026" checked={fields.destination==='november-2026'} onChange={()=>update('destination','november-2026')}/>November MVP entry</label>{params.get('contest')==='october'&&<label><input type="radio" name="destination" value="october-2026" checked={fields.destination==='october-2026'} onChange={()=>update('destination','october-2026')}/>October archive listing</label>}</div>
+      {fields.destination==='october-2026'&&<p>October entries are closed. Use this form to request a Lobby listing for an entry you already posted.</p>}
       {contest&&<ol className="project-submit-contest-steps">
-        <li><strong>Post your entry on the forum.</strong><p>New here? <a href="https://community.tari.com/signup" target="_blank" rel="noreferrer">Create a forum account</a>. Then <a href={forum} target="_blank" rel="noreferrer">reply to the official contest thread</a> with your project description, public app or code link, Tari payment address, and Bluesky or Reddit announcement.</p></li>
+        <li><strong>{fields.destination==='october-2026'?'Use your existing October entry.':'Post your entry on the forum.'}</strong><p>{fields.destination==='october-2026'?<>Find your already-posted entry in the <a href={forum} target="_blank" rel="noreferrer">October contest thread</a>.</>:<>New here? <a href="https://community.tari.com/signup" target="_blank" rel="noreferrer">Create a forum account</a>. Then <a href={forum} target="_blank" rel="noreferrer">reply to the official contest thread</a> with {contest.requirements}.</>}</p></li>
         <li><label>Share your forum post here<input name="forumUrl" type="url" required maxLength={1500} aria-describedby="contest-post-help" placeholder="Paste the link to your reply" value={fields.forumUrl} onChange={e=>update('forumUrl',e.target.value)}/></label><p id="contest-post-help">Use the link icon on your reply to copy its link. Add the listing details below for the Lobby.</p></li>
       </ol>}
       <div className="project-submit-fields"><label>Project name<input name="title" required minLength={2} maxLength={100} value={fields.title} onChange={e=>update('title',e.target.value)}/></label><label>Your name or handle<input name="creator" required maxLength={80} autoComplete="nickname" value={fields.creator} onChange={e=>update('creator',e.target.value)}/></label></div>
       <label>What does it do?<textarea name="summary" required minLength={20} maxLength={1200} rows={3} placeholder="A few sentences about your project and how it uses Tari." value={fields.summary} onChange={e=>update('summary',e.target.value)}/></label>
-      <label>Project link<input name="projectUrl" type="url" required maxLength={1500} placeholder="https://your-project.com or your public repository" value={fields.projectUrl} onChange={e=>update('projectUrl',e.target.value)}/></label>
-      <label>Source code{!contest&&<span>Optional</span>}<input name="repoUrl" type="url" required={contest} maxLength={1500} placeholder="https://github.com/you/your-project" value={fields.repoUrl} onChange={e=>update('repoUrl',e.target.value)}/></label>
+      <label>Project link<input name="projectUrl" type="url" required maxLength={1500} placeholder={fields.destination==='november-2026'?"https://your-working-mvp.com":"https://your-project.com or your public repository"} value={fields.projectUrl} onChange={e=>update('projectUrl',e.target.value)}/></label>
+      <label>Source code{!contest&&<span>Optional</span>}<input name="repoUrl" type="url" required={Boolean(contest)} maxLength={1500} placeholder="https://github.com/you/your-project" value={fields.repoUrl} onChange={e=>update('repoUrl',e.target.value)}/></label>
       {!contest&&<label>Creator post<span>Optional</span><input name="forumUrl" type="url" maxLength={1500} placeholder="A forum or social post introducing your project" value={fields.forumUrl} onChange={e=>update('forumUrl',e.target.value)}/></label>}
       <label className="project-submit-trap" aria-hidden="true">Website<input name="website" tabIndex={-1} autoComplete="off" value={fields.website} onChange={e=>update('website',e.target.value)}/></label>
       <label className="project-submit-consent"><input type="checkbox" required checked={fields.consent} onChange={e=>update('consent',e.target.checked)}/>I can share these project details and links publicly.</label>

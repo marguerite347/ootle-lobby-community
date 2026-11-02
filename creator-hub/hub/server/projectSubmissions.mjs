@@ -1,13 +1,16 @@
 // INTEGRATION_GAP[LOBBY-SUBMISSIONS] (configuration-required): durable private intake;
-// October reply links discard Discourse share attribution; publication remains a
+// October and November reply links require their matching official topic and
+// discard Discourse share attribution; publication remains a
 // reviewed repository change. See docs/PROJECT_SUBMISSIONS.md.
 import {Router, json} from 'express';
 import {createHash, createHmac, randomBytes, randomUUID, timingSafeEqual} from 'node:crypto';
 import {readFileSync} from 'node:fs';
 import {isIP} from 'node:net';
+import {LISTING_CONTESTS, listingContest} from '../shared/listingContests.mjs';
 import {publicError} from './publicSecurity.mjs';
 
-export const OCTOBER_THREAD = 'https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396';
+export const OCTOBER_THREAD = LISTING_CONTESTS['october-2026'].forumUrl;
+export const NOVEMBER_THREAD = LISTING_CONTESTS['november-2026'].forumUrl;
 const fail=(message,status=400)=>{throw Object.assign(new Error(message),{status,expose:true});};
 const sha=value=>createHash('sha256').update(value).digest('hex');
 const uuid=/^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/i;
@@ -28,14 +31,15 @@ export function validateProjectSubmission(body){
   if(!body||typeof body!=='object'||Array.isArray(body))fail('Enter your project details.');
   if(!uuid.test(body.clientId||''))fail('Refresh this form and try again.');
   if(body.website||body.consent!==true)fail('Confirm that these project details may be reviewed and published.');
-  if(!['community','october-2026'].includes(body.destination))fail('Choose where to share your project.');
-  const submission={destination:body.destination,title:text(body.title,'a project name',2,100),creator:text(body.creator,'your name or handle',1,80),summary:text(body.summary,'a short project description',20,1200),projectUrl:publicUrl(body.projectUrl,'your project link',true),repoUrl:publicUrl(body.repoUrl,'source code',body.destination==='october-2026'),forumUrl:publicUrl(body.forumUrl,'your creator post',body.destination==='october-2026')};
-  if(submission.destination==='october-2026'){
+  const contest=listingContest(body.destination);
+  if(body.destination!=='community'&&!contest)fail('Choose where to share your project.');
+  const submission={destination:body.destination,title:text(body.title,'a project name',2,100),creator:text(body.creator,'your name or handle',1,80),summary:text(body.summary,'a short project description',20,1200),projectUrl:publicUrl(body.projectUrl,'your project link',true),repoUrl:publicUrl(body.repoUrl,'source code',Boolean(contest)),forumUrl:publicUrl(body.forumUrl,'your creator post',Boolean(contest))};
+  if(contest){
     const url=new URL(submission.forumUrl);
     // Discourse adds ?u=username to links copied by signed-in members.
     url.searchParams.delete('u');
-    const match=url.pathname.match(/^\/t\/(?:[^/]+\/)?396\/(\d+)\/?$/);
-    if(url.hostname!=='community.tari.com'||!match||Number(match[1])<2||url.search||url.hash)fail('Link your individual entry in the official October contest thread.');
+    const match=url.pathname.match(/^\/t\/(?:[^/]+\/)?(\d+)\/(\d+)\/?$/);
+    if(url.origin!=='https://community.tari.com'||!match||match[1]!==contest.topicId||Number(match[2])<2||url.search||url.hash)fail(`Link your individual entry in the official ${contest.label} contest thread.`);
     submission.forumUrl=url.href;
   }
   return {clientId:body.clientId,submission};
@@ -102,8 +106,8 @@ export function createProjectSubmissionsRouter({store,origin,secret,now=Date.now
   }
   router.use((_req,res,next)=>{res.set('Cache-Control','no-store');next();});
   router.get('/config',async(_req,res)=>{
-    if(!configured)return res.json({available:false,forumUrl:OCTOBER_THREAD});
-    try{await store.ready();res.json({available:true,challenge:issueChallenge(),forumUrl:OCTOBER_THREAD});}
+    if(!configured)return res.json({available:false,forumUrl:NOVEMBER_THREAD});
+    try{await store.ready();res.json({available:true,challenge:issueChallenge(),forumUrl:NOVEMBER_THREAD});}
     catch{res.status(503).json({available:false,error:'Project submissions are temporarily unavailable.'});}
   });
   router.post('/',(req,res,next)=>{
