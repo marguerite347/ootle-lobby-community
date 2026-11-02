@@ -1,0 +1,218 @@
+{
+  "threadUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503",
+  "checkedAt": "2026-11-02T14:30:00Z",
+  "entries": [
+    {
+      "id": "creator-503-3",
+      "creator": "kasbsquall",
+      "title": "Confidential escrow, explained",
+      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/3",
+      "publishedAt": "2026-10-29T21:28:34.289Z",
+      "updatedAt": "2026-10-29T21:28:34.289Z",
+      "resourceIds": [],
+      "works": [
+        {
+          "title": "What stays private on Tari Ootle",
+          "format": "Reddit",
+          "url": "https://www.reddit.com/r/tari/comments/1xiwfz4/what_stays_private_on_tari_ootle_notes_from/"
+        }
+      ],
+      "note": null
+    },
+    {
+      "id": "creator-503-4",
+      "creator": "rajeshmullippa",
+      "title": "Privacy, fees & validator committees",
+      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/4",
+      "publishedAt": "2026-10-30T07:00:47.718Z",
+      "updatedAt": "2026-10-30T08:41:33.572Z",
+      "resourceIds": [
+        "tari-ootle:learn:turbine-explainer",
+        "tari-ootle:learn:sharding-explainer"
+      ],
+      "works": [
+        {
+          "title": "Ootle’s Turbine burn, read from the docs",
+          "format": "Reddit",
+          "url": "https://www.reddit.com/r/tari/comments/1xj9m3e/ootles_turbine_burn_read_from_the_docs_the/"
+        },
+        {
+          "title": "How Ootle splits the work",
+          "format": "Reddit",
+          "url": "https://www.reddit.com/r/tari/comments/1xj9tss/how_ootle_splits_the_work_256_shards_40validator/"
+        }
+      ],
+      "note": "The forum post also names a privacy article and resource-type cheat sheet; direct links were not provided."
+    },
+    {
+      "id": "creator-503-5",
+      "creator": "hycorange",
+      "title": "Tari tutorials & explainers",
+      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/5",
+      "publishedAt": "2026-10-30T09:20:09.261Z",
+      "updatedAt": "2026-10-31T13:02:13.074Z",
+      "resourceIds": [
+        "tari-ootle:learn:hycorange-burn",
+        "tari-ootle:learn:hycorange-privacy",
+        "tari-ootle:learn:hycorange-mining",
+        "tari-ootle:learn:hycorange-permissions",
+        "tari-ootle:learn:hycorange-airdrops"
+      ],
+      "works": [
+        {
+          "title": "Browse the creator’s updated collection",
+          "format": "Articles & Bluesky",
+          "url": "https://paragraph.com/@hycorange/tari-creator-contest-entries"
+        }
+      ],
+      "note": "The creator’s October 31 follow-up moves restricted Medium articles to the same collection."
+    },
+    {
+      "id": "creator-503-6",
+      "creator": "nyam_research",
+      "title": "Four Lanes, One Chain",
+      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/6",
+      "publishedAt": "2026-10-30T11:20:54.070Z",
+      "updatedAt": "2026-10-30T11:20:54.070Z",
+      "resourceIds": [
+        "tari-ootle:learn:nyam-mining"
+      ],
+      "works": [
+        {
+          "title": "Tari’s mining lanes and the C29 incident",
+          "format": "Article",
+          "url": "https://paragraph.com/@nyam/four-lanes-one-chain-what-tari-s-c29-incident-teaches-about"
+        }
+      ],
+      "note": null
+    },
+    {
+      "id": "creator-503-8",
+      "creator": "Gbolly · Penielgold",
+      "title": "Two Layers, Two Jobs",
+      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/8",
+      "publishedAt": "2026-10-30T22:21:13.359Z",
+      "updatedAt": "2026-10-30T22:21:13.359Z",
+      "resourceIds": [
+        "tari-ootle:learn:two-layers"
+      ],
+      "works": [
+        {
+          "title": "How Minotari and Ootle work together",
+          "format": "Medium",
+          "url": "https://medium.com/@penielgold/two-layers-two-jobs-how-minotari-and-ootle-work-together-to-make-tari-programmable-d8dd08334f2b"
+        }
+      ],
+      "note": null
+    },
+    {
+      "id": "creator-503-11",
+      "creator": "Okz",
+      "title": "The Road to $1 Billion",
+      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/11",
+      "publishedAt": "2026-10-31T15:10:34.477Z",
+      "updatedAt": "2026-10-31T21:14:43.484Z",
+      "resourceIds": [],
+      "works": [
+        {
+          "title": "Community strategy discussion",
+          "format": "Reddit",
+          "url": "https://www.reddit.com/r/tari/s/seYjM9qaRU"
+        },
+        {
+          "title": "The Road to $1 Billion",
+          "format": "Medium",
+          "url": "https://medium.com/@okansaglam016161/the-road-to-1-billion-d12fd19ac8ec"
+        },
+        {
+          "title": "Animated strategy walkthrough",
+          "format": "YouTube",
+          "url": "https://www.youtube.com/watch?v=t7Cn7n5t_Y4"
+        }
+      ],
+      "note": "A community proposal, not an adopted Tari roadmap."
+    },
+    {
+      "id": "creator-503-12",
+      "creator": "pashameer",
+      "title": "Why the XTM-to-TARI bridge is one way",
+      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/12",
+      "publishedAt": "2026-10-31T23:06:21.220Z",
+      "updatedAt": "2026-10-31T23:06:21.220Z",
+      "resourceIds": [],
+      "works": [
+        {
+          "title": "Burn, prove, mint and the fee burn",
+          "format": "YouTube Short",
+          "url": "https://youtube.com/shorts/OC3oCSQLz8U"
+        }
+      ],
+      "note": null
+    },
+    {
+      "id": "creator-503-13",
+      "creator": "Kurarmota",
+      "title": "Tari’s Two-Layer Architecture",
+      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/13",
+      "publishedAt": "2026-11-01T11:39:26.150Z",
+      "updatedAt": "2026-11-01T11:39:26.150Z",
+      "resourceIds": [],
+      "works": [
+        {
+          "title": "Understanding Minotari and Ootle",
+          "format": "Medium",
+          "url": "https://medium.com/@isahjaafar12/-8cbde86c94e3"
+        }
+      ],
+      "note": null
+    },
+    {
+      "id": "creator-503-14",
+      "creator": "Digital Node Capital",
+      "title": "Private stablecoins & the Turbine",
+      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/14",
+      "publishedAt": "2026-11-01T12:31:15.482Z",
+      "updatedAt": "2026-11-02T00:01:49.066Z",
+      "resourceIds": [],
+      "works": [
+        {
+          "title": "Private by Default, Compliant When Needed",
+          "format": "Medium",
+          "url": "https://medium.com/@okansaglam016161/private-by-default-compliant-when-needed-inside-taris-stablecoin-af02a8b5b606"
+        },
+        {
+          "title": "You just got paid. Who else knows?",
+          "format": "YouTube Short",
+          "url": "https://youtube.com/shorts/ZgKpqdJ8Tes"
+        },
+        {
+          "title": "How Tari balances its two-token economy",
+          "format": "Medium",
+          "url": "https://medium.com/@okansaglam016161/the-turbine-how-tari-balances-its-two-token-economy-0e7bb772d181"
+        },
+        {
+          "title": "Why Tari can’t just print more tokens",
+          "format": "YouTube Short",
+          "url": "https://www.youtube.com/shorts/974KLD3OODg"
+        },
+        {
+          "title": "The Turbine Model: burn-and-mint design",
+          "format": "Reddit",
+          "url": "https://www.reddit.com/r/CryptoTechnology/comments/1xl8nrz/taris_turbine_model_a_burnandmint_design_linking/"
+        }
+      ],
+      "note": null
+    },
+    {
+      "id": "creator-503-15",
+      "creator": "Sam",
+      "title": "Confidential payments in real estate",
+      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/15",
+      "publishedAt": "2026-11-02T11:02:23.240Z",
+      "updatedAt": "2026-11-02T11:02:23.240Z",
+      "resourceIds": [],
+      "works": [],
+      "note": "Articles announced; publication links have not been shared yet."
+    }
+  ]
+}

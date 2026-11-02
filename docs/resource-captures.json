@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-01T16:12:48.504671+00:00",
+  "updatedAt": "2026-11-02T14:43:21.210267+00:00",
   "records": [
     {
       "resourceId": "candy-summoner",
@@ -6082,6 +6082,200 @@
         "lobbyRevision": "64494fc1ca4bea395f5841e6cb88f67825aaa206",
         "workbenchRevision": "d0ac05696bdd9ac72ccb0ff79ea9a35696132266",
         "result": "Both desktop and390px playback ended12s,errornull; source and Details inspected."
+      }
+    },
+    {
+      "resourceId": "tari:component:taritalk-nodes",
+      "title": "TariTalk Nodes",
+      "targetUrl": "https://nodes.taritalk.xyz/",
+      "originalPosts": [
+        {
+          "url": "https://community.tari.com/t/introducing-taritalk-nodes-a-community-map-and-deployment-guide-for-tari-full-nodes/522/1",
+          "platform": "Tari Community forum",
+          "author": "Terence",
+          "publishedAt": "2026-11-02T04:36:55.562Z",
+          "foundOn": "2026-11-02",
+          "context": "Interactive map region filter, deployment guide and privacy review; no installation.",
+          "visibility": "public"
+        }
+      ],
+      "captureType": "source-walkthrough",
+      "capturedAt": "2026-11-02T14:43:21.210267+00:00",
+      "observedRevision": "Reviewed public page 2026-11-02",
+      "exportDimensions": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 800,
+        "pix_fmt": "yuv420p"
+      },
+      "durationSeconds": 24.364,
+      "publicMediaUrl": "https://lobby.tari.com/previews/community/resource-taritalk-nodes-20261102-f774b9116a.mp4",
+      "publicPosterUrl": "https://lobby.tari.com/previews/community/resource-taritalk-nodes-20261102-f774b9116a.jpg",
+      "sha256": "f774b9116af62878f6b260f5b1c8ce8c15e1430db36b42cbbc988346d19791fe",
+      "review": {
+        "reviewer": "Codex",
+        "reviewedAt": "2026-11-02T14:43:21.210267+00:00",
+        "sceneDescription": "Interactive map region filter, deployment guide and privacy review; no installation.",
+        "faithfulToSource": true,
+        "uniqueVisual": true,
+        "references": [
+          "https://nodes.taritalk.xyz/",
+          "https://community.tari.com/t/introducing-taritalk-nodes-a-community-map-and-deployment-guide-for-tari-full-nodes/522/1"
+        ],
+        "note": "Inspected opening, middle and closing frames. Each clip records its own public source; website playback review recorded in release handoff."
+      }
+    },
+    {
+      "resourceId": "october:danse-macabre",
+      "title": "Danse Macabre",
+      "targetUrl": "https://danse-macabre.vercel.app/",
+      "originalPosts": [
+        {
+          "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/41",
+          "platform": "Tari Community forum",
+          "author": "yasaswip012",
+          "publishedAt": "2026-10-31T23:37:47.682Z",
+          "foundOn": "2026-11-02",
+          "context": "Public game explanation, three privacy views and proof links; no gameplay.",
+          "visibility": "public"
+        }
+      ],
+      "captureType": "source-walkthrough",
+      "capturedAt": "2026-11-02T14:43:21.210267+00:00",
+      "observedRevision": "Reviewed public page 2026-11-02",
+      "exportDimensions": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 800,
+        "pix_fmt": "yuv420p"
+      },
+      "durationSeconds": 26.044,
+      "publicMediaUrl": "https://lobby.tari.com/previews/community/resource-danse-macabre-20261102-3e2ff4d607.mp4",
+      "publicPosterUrl": "https://lobby.tari.com/previews/community/resource-danse-macabre-20261102-3e2ff4d607.jpg",
+      "sha256": "3e2ff4d607036b377ff2d18da70e21e4fea64890c417006811f241225db06829",
+      "review": {
+        "reviewer": "Codex",
+        "reviewedAt": "2026-11-02T14:43:21.210267+00:00",
+        "sceneDescription": "Public game explanation, three privacy views and proof links; no gameplay.",
+        "faithfulToSource": true,
+        "uniqueVisual": true,
+        "references": [
+          "https://danse-macabre.vercel.app/",
+          "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/41"
+        ],
+        "note": "Inspected opening, middle and closing frames. Each clip records its own public source; website playback review recorded in release handoff."
+      }
+    },
+    {
+      "resourceId": "tari-ootle:learn:release-0492",
+      "title": "Ootle v0.49.2 upgrade notes",
+      "targetUrl": "https://github.com/tari-project/tari-ootle/releases/tag/v0.49.2",
+      "originalPosts": [
+        {
+          "url": "https://discord.com/channels/892738558316662855/1478870438334431313/1566787045630812192",
+          "platform": "Discord",
+          "author": "animalst",
+          "publishedAt": "2026-11-02T12:12:00Z",
+          "foundOn": "2026-11-02",
+          "context": "Official GitHub pre-release notes, reset requirement and authorization changes.",
+          "visibility": "public"
+        }
+      ],
+      "captureType": "source-walkthrough",
+      "capturedAt": "2026-11-02T14:43:21.210267+00:00",
+      "observedRevision": "Reviewed public page 2026-11-02",
+      "exportDimensions": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 800,
+        "pix_fmt": "yuv420p"
+      },
+      "durationSeconds": 21.493,
+      "publicMediaUrl": "https://lobby.tari.com/previews/community/resource-ootle-release-0492-20261102-7270ccff9a.mp4",
+      "publicPosterUrl": "https://lobby.tari.com/previews/community/resource-ootle-release-0492-20261102-7270ccff9a.jpg",
+      "sha256": "7270ccff9a9e4a945bbd78d043bd0f60259164afd5de9b118cb25b5951a72f99",
+      "review": {
+        "reviewer": "Codex",
+        "reviewedAt": "2026-11-02T14:43:21.210267+00:00",
+        "sceneDescription": "Official GitHub pre-release notes, reset requirement and authorization changes.",
+        "faithfulToSource": true,
+        "uniqueVisual": true,
+        "references": [
+          "https://github.com/tari-project/tari-ootle/releases/tag/v0.49.2",
+          "https://discord.com/channels/892738558316662855/1478870438334431313/1566787045630812192"
+        ],
+        "note": "Inspected opening, middle and closing frames. Each clip records its own public source; website playback review recorded in release handoff."
+      }
+    },
+    {
+      "resourceId": "tari-ootle:learn:book-to-skill",
+      "title": "book-to-skill",
+      "targetUrl": "https://github.com/virgiliojr94/book-to-skill",
+      "originalPosts": [
+        {
+          "url": "https://discord.com/channels/892738558316662855/892738558996148236/1565479700816728236",
+          "platform": "Discord",
+          "author": "Luci666",
+          "publishedAt": "2026-10-29T21:37:00Z",
+          "foundOn": "2026-11-02",
+          "context": "Public README, chapter-reference output structure and document use cases; no install.",
+          "visibility": "public"
+        }
+      ],
+      "captureType": "source-walkthrough",
+      "capturedAt": "2026-11-02T14:43:21.210267+00:00",
+      "observedRevision": "Reviewed public page 2026-11-02",
+      "exportDimensions": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 800,
+        "pix_fmt": "yuv420p"
+      },
+      "durationSeconds": 21.192,
+      "publicMediaUrl": "https://lobby.tari.com/previews/community/resource-book-to-skill-20261102-f8d0575d58.mp4",
+      "publicPosterUrl": "https://lobby.tari.com/previews/community/resource-book-to-skill-20261102-f8d0575d58.jpg",
+      "sha256": "f8d0575d5830b750dcf4a1c5255eaf10be7282aa1a7892d203a38d9ed93d5b22",
+      "review": {
+        "reviewer": "Codex",
+        "reviewedAt": "2026-11-02T14:43:21.210267+00:00",
+        "sceneDescription": "Public README, chapter-reference output structure and document use cases; no install.",
+        "faithfulToSource": true,
+        "uniqueVisual": true,
+        "references": [
+          "https://github.com/virgiliojr94/book-to-skill",
+          "https://discord.com/channels/892738558316662855/892738558996148236/1565479700816728236"
+        ],
+        "note": "Inspected opening, middle and closing frames. Each clip records its own public source; website playback review recorded in release handoff."
+      }
+    },
+    {
+      "resourceId": "community:ghost-lantern",
+      "title": "Ghost Lantern",
+      "targetUrl": "https://github.com/penielgold-hub/Ghost-Lantern",
+      "originalPosts": [],
+      "captureType": "source-docs-walkthrough",
+      "capturedAt": "2026-11-02T14:47:46.922249+00:00",
+      "observedRevision": "Public README reviewed 2026-11-02",
+      "exportDimensions": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 800,
+        "pix_fmt": "yuv420p"
+      },
+      "durationSeconds": 21.289,
+      "publicMediaUrl": "https://lobby.tari.com/previews/community/resource-ghost-lantern-20261102-5138b45498.mp4",
+      "publicPosterUrl": "https://lobby.tari.com/previews/community/resource-ghost-lantern-20261102-5138b45498.jpg",
+      "sha256": "5138b454982cc5275c5674805654289e03c1c5780d4fc77e4b6c104210e0b7eb",
+      "review": {
+        "reviewer": "Codex",
+        "reviewedAt": "2026-11-02T14:47:46.922249+00:00",
+        "sceneDescription": "Public README: local Sender/Recipient examples, separate public indexer data, educational limitations and technology. Application not run.",
+        "faithfulToSource": true,
+        "uniqueVisual": true,
+        "references": [
+          "https://github.com/penielgold-hub/Ghost-Lantern"
+        ],
+        "note": "Opening, middle and closing frames inspected. Website playback acceptance belongs to release handoff."
       }
     }
   ],

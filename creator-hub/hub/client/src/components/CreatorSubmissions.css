@@ -1,0 +1,20 @@
+.creator-submissions{margin-top:2rem;border-top:1px solid #c9b6ff44;padding-top:1.25rem;scroll-margin-top:10rem}
+.creator-submissions-heading,.creator-submissions-footer{display:flex;align-items:center;justify-content:space-between;gap:.5rem 1.5rem;flex-wrap:wrap}
+.creator-submissions-heading h3{margin:0;font-size:clamp(1.5rem,2.5vw,2rem);letter-spacing:-.04em}
+.creator-submissions-heading h3 em{font-style:normal;color:var(--season-lime)}
+.creator-submissions-heading p,.creator-submissions-footer{font-size:.8125rem;color:var(--season-muted);line-height:1.6}
+.creator-submissions-heading p{margin:.25rem 0 .75rem}
+.creator-submissions a,.creator-submissions button{min-height:2.75rem;display:inline-flex;align-items:center}
+.creator-submissions a{color:var(--season-lavender)}
+.creator-submissions-list article{display:grid;grid-template-columns:minmax(9rem,1fr) minmax(0,4fr);gap:1.25rem;padding:.75rem 0;border-bottom:1px solid #c9b6ff22}
+.creator-submission-byline{display:flex;flex-direction:column;align-items:flex-start;font-size:.8125rem;line-height:1.4}
+.creator-submission-byline time{color:var(--season-muted)}
+.creator-submissions-list h4{margin:.5rem 0 .25rem;font-size:1rem}
+.creator-submissions-list ul{list-style:none;margin:0;padding:0}
+.creator-submissions-list li{display:flex;align-items:baseline;gap:.25rem .75rem;flex-wrap:wrap;font-size:.875rem;line-height:1.5}
+.creator-submissions-list li span{font-size:.75rem;color:var(--season-muted)}
+.creator-submissions-list p{font-size:.8125rem;color:var(--season-muted);line-height:1.6;margin:.25rem 0}
+.creator-submissions-footer{margin-top:.5rem}
+.creator-submissions-footer button{font:inherit;color:var(--season-lime);background:transparent;border:0;padding:.5rem 0;cursor:pointer}
+.creator-submissions :focus-visible{outline:2px solid var(--season-lime);outline-offset:4px}
+@media(max-width:640px){.creator-submissions-list article{grid-template-columns:1fr;gap:0}.creator-submission-byline{flex-direction:row;align-items:center;gap:1rem}.creator-submissions-heading>div{min-width:0}.creator-submissions-list li{display:block}.creator-submissions-list li span{display:block;margin-top:-.25rem}.creator-submissions-list a{overflow-wrap:anywhere}}

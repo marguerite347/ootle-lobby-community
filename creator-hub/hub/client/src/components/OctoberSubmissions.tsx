@@ -7,6 +7,7 @@ import {COMMUNITY_REPOSITORY} from './CommunityContent';
 import ProjectCard from './ProjectCard';
 import {useContestMetrics} from './ContestProjectMetrics';
 import CollapsibleProjects from './CollapsibleProjects';
+import CreatorSubmissions from './CreatorSubmissions';
 import './CommunityContent.css';
 
 type Entry={ecosystem?:'tari'|'tari-ootle';slug:string;title:string;summary:string;cardSummary?:string;cardStatus?:string;creator:string;sourceUrl:string;repoUrl:string;demoUrl?:string;publishedAt:string;updatedAt:string;technologies:{label:string;sourceUrl:string}[];recording?:{url:string;posterUrl?:string;capturedAt:string;sourceRevision:string;kind:string;credit:string}};
@@ -45,11 +46,17 @@ export function OctoberGallery({contest,hasWorkbenchEntries=false}:{contest:Octo
 export default function OctoberSubmissions(){
   const [workbenchCount,setWorkbenchCount]=useState(0);
   const [contest,setContest]=useState<OctoberContest|null>(null),[failed,setFailed]=useState(false);
+  useEffect(()=>{
+    if (!contest || window.location.hash !== '#creator-submissions') return;
+    const frame=requestAnimationFrame(()=>document.getElementById('creator-submissions')?.scrollIntoView({block:'start'}));
+    return ()=>cancelAnimationFrame(frame);
+  },[contest]);
   useEffect(()=>{const controller=new AbortController();fetch('/api/community-content',{signal:controller.signal}).then(response=>{if(!response.ok)throw new Error('Unavailable');return response.json();}).then(feed=>{const result=feed.contests?.find((item:OctoberContest)=>item.id==='october-2026');if(!result)throw new Error('Missing registry');setContest(result);}).catch(error=>{if(error.name!=='AbortError')setFailed(true);});return()=>controller.abort();},[]);
   return <section className="section october-submissions" id="october-submissions" aria-labelledby="october-submissions-title">
     <div className="section-head project-section-heading"><div><h2 id="october-submissions-title">October <em>Submissions</em></h2><p>Spooky Secrets · Entries closed. Explore the October builds.</p></div><div className="contest-community-links"><Link className="season-button" to="/submit?contest=october">List an October project</Link><a href={safeHref(THREAD)} target="_blank" rel="noreferrer">Official contest thread</a></div></div>
     <CollapsibleProjects label="October Submissions"><PublicationGallery destination="october-2026" excludeRepoUrls={contest?.entries.map(entry=>entry.repoUrl)} onCount={setWorkbenchCount}/>
     {contest?<OctoberGallery contest={contest} hasWorkbenchEntries={workbenchCount>0}/>:failed?<p role="status">The submission list could not load. <a href={safeHref(THREAD)} target="_blank" rel="noreferrer">View entries on the forum.</a></p>:<p role="status">Loading October submissions…</p>}
     </CollapsibleProjects>
+    <CreatorSubmissions/>
   </section>;
 }

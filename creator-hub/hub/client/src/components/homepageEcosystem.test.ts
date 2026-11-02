@@ -1,6 +1,14 @@
 import {expect, test} from 'vitest';
 import resources from '../../../shared/ecosystemResources.json';
 import {builderResourcesOnly, homepageResources} from './homepageEcosystem';
+import creatorSubmissions from '../../../../../content/creator-submissions/launch-2026.json';
+
+test('creator publications keep their catalog records without duplicate homepage cards', () => {
+  for (const entry of creatorSubmissions.entries) for (const id of entry.resourceIds) {
+    expect(resources.records.some(resource => resource.id === id)).toBe(true);
+    expect(homepageResources.some(resource => resource.id === id)).toBe(false);
+  }
+});
 
 test('contest and community projects appear in their galleries, while builder resources remain', () => {
   const keys = homepageResources.map(record => record.key);

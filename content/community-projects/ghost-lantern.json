@@ -1,0 +1,33 @@
+{
+  "slug": "ghost-lantern",
+  "title": "Ghost Lantern",
+  "summary": "Educational privacy demonstrator whose README separates browser-local Sender and Recipient examples from a read-only feed of public Esmeralda indexer transactions. The local examples do not create, sign or submit payments, and the Recipient view does not decrypt a real payment. The repository was discovered through a link in the public Tari Discord general channel. Although its README says it was prepared for Spooky Secrets, no official October submission permalink or hosted deployment was confirmed in this review, so it is listed as a community project. November 2 source review covered the MIT README only; the app was not installed or run.",
+  "cardSummary": "Compare local sender and recipient examples with public transaction metadata in an educational privacy demo.",
+  "cardStatus": "Educational prototype \u00b7 Source reviewed",
+  "creator": "penielgold-hub",
+  "sourceUrl": "https://github.com/penielgold-hub/Ghost-Lantern",
+  "sourceLabel": "Public repository",
+  "publishedAt": "2026-10-31T16:03:31Z",
+  "publicationBasis": "GitHub repository creation timestamp; no official contest submission permalink confirmed.",
+  "publicationLabel": "Repository published",
+  "publicationUrl": "https://github.com/penielgold-hub/Ghost-Lantern",
+  "repoUrl": "https://github.com/penielgold-hub/Ghost-Lantern",
+  "demoUrl": null,
+  "forum": null,
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "React \u00b7 TypeScript \u00b7 MIT",
+      "sourceUrl": "https://github.com/penielgold-hub/Ghost-Lantern"
+    }
+  ],
+  "media": {
+    "image": "/previews/community/resource-ghost-lantern-20261102-5138b45498.jpg",
+    "video": "/previews/community/resource-ghost-lantern-20261102-5138b45498.mp4",
+    "label": "Source/docs walkthrough \u2014 README; app not run",
+    "sourceUrl": "https://github.com/penielgold-hub/Ghost-Lantern",
+    "capturedAt": "2026-11-02T14:47:46.922249+00:00",
+    "reviewedAt": "2026-11-02T14:47:46.922249+00:00",
+    "sha256": "5138b454982cc5275c5674805654289e03c1c5780d4fc77e4b6c104210e0b7eb"
+  }
+}
