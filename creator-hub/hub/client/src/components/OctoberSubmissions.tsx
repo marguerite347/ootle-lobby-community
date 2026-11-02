@@ -2,37 +2,18 @@ import {safeHref} from '../../../shared/safeLinks.mjs';
 // INTEGRATION_GAP[WB-FEED] (build-required): see docs/DEVELOPMENT_GAPS.md#wb-feed.
 import PublicationGallery from '../workbench/PublicationGallery';
 import {useEffect,useState} from 'react';
-import {COMMUNITY_REPOSITORY} from './CommunityContent';
-import ProjectCard from './ProjectCard';
-import {useContestMetrics} from './ContestProjectMetrics';
 import CollapsibleProjects from './CollapsibleProjects';
-import CreatorSubmissions from './CreatorSubmissions';
 import './CommunityContent.css';
 
-type Entry={ecosystem?:'tari'|'tari-ootle';slug:string;title:string;summary:string;cardSummary?:string;cardStatus?:string;creator:string;sourceUrl:string;repoUrl:string;demoUrl?:string;publishedAt:string;updatedAt:string;technologies:{label:string;sourceUrl:string}[];recording?:{url:string;posterUrl?:string;capturedAt:string;sourceRevision:string;kind:string;credit:string}};
-export type OctoberContest={id:string;title:string;threadUrl:string;checkedAt:string;observedSubmissionPosts:number;entries:Entry[]};
-const THREAD='https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396';
-const date=(value:string)=>new Date(value).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'});
-export function OctoberGallery({contest,hasWorkbenchEntries=false}:{contest:OctoberContest;hasWorkbenchEntries?:boolean}){
-  const metrics=useContestMetrics('/api/community-projects/metrics');
-  const entries=[...contest.entries].sort((a,b)=>Date.parse(b.publishedAt)-Date.parse(a.publishedAt)||a.slug.localeCompare(b.slug));
-  return <>
-    {!entries.length ? (hasWorkbenchEntries?null:<p>October entries are closed. No archived projects are listed here yet.</p>) : <div className="grid">{entries.map(entry=><ProjectCard key={entry.slug} resource={{id:`october:${entry.slug}`,title:entry.title,ecosystem:entry.ecosystem||'tari-ootle',native:true,preview:entry.recording?{image:entry.recording.posterUrl||null,video:entry.recording.url,source:entry.recording.credit}:null}} sourceUrl={entry.sourceUrl} creator={entry.creator} summary={entry.summary} cardSummary={entry.cardSummary} cardStatus={entry.cardStatus} repoUrl={entry.repoUrl} metrics={metrics[`october:${entry.slug}`]} technologies={entry.technologies}
-      dates={<div className="contest-project-dates"><a href={safeHref(entry.sourceUrl)} target="_blank" rel="noreferrer">Submitted <time dateTime={entry.publishedAt}>{date(entry.publishedAt)}</time></a>{/^https:\/\/github\.com\//.test(entry.repoUrl)&&<a href={safeHref(`${entry.repoUrl.split('/').slice(0,5).join('/')}/activity`)} target="_blank" rel="noreferrer">GitHub activity {metrics[`october:${entry.slug}`]?.github?.pushedAt?date(metrics[`october:${entry.slug}`].github!.pushedAt!):'Unavailable'}</a>}</div>}
-      caption={entry.recording&&<a className="community-media-caption" href={safeHref(entry.recording.url)} target="_blank" rel="noreferrer">{entry.recording.kind.replaceAll('-',' ')} · Recorded {date(entry.recording.capturedAt)} · {entry.recording.credit}</a>}
-      actions={<><a href={safeHref(entry.sourceUrl)} target="_blank" rel="noreferrer">See the creator’s post</a><a href={safeHref(entry.repoUrl)} target="_blank" rel="noreferrer">Source code</a>{entry.demoUrl&&<a href={safeHref(entry.demoUrl)} target="_blank" rel="noreferrer">Open project</a>}<a href={safeHref(`${COMMUNITY_REPOSITORY}/edit/main/content/submissions/october-2026/${entry.slug}.json`)} target="_blank" rel="noreferrer">Suggest an edit</a></>}/>
-    )}</div>}
-    <p className="submission-check">Forum checked <time dateTime={contest.checkedAt}>{date(contest.checkedAt)} at {new Date(contest.checkedAt).toISOString().slice(11,16)} UTC</time>{contest.observedSubmissionPosts===0?' · No submission posts at that check.':` · ${contest.observedSubmissionPosts} submission posts at that check.`} <a href={safeHref(THREAD)} target="_blank" rel="noreferrer">Check the latest</a></p>
-  </>;
+export type {ReviewedContest as OctoberContest} from './ContestGallery';
+import {ContestGallery, type ReviewedContest as OctoberContest} from './ContestGallery';
+export function OctoberGallery(props:{contest:OctoberContest;hasWorkbenchEntries?:boolean}) {
+  return <ContestGallery {...props} emptyMessage="October entries are closed. No archived projects are listed here yet."/>;
 }
+const THREAD='https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396';
 export default function OctoberSubmissions(){
   const [workbenchCount,setWorkbenchCount]=useState(0);
   const [contest,setContest]=useState<OctoberContest|null>(null),[failed,setFailed]=useState(false);
-  useEffect(()=>{
-    if (!contest || window.location.hash !== '#creator-submissions') return;
-    const frame=requestAnimationFrame(()=>document.getElementById('creator-submissions')?.scrollIntoView({block:'start'}));
-    return ()=>cancelAnimationFrame(frame);
-  },[contest]);
   useEffect(()=>{const controller=new AbortController();fetch('/api/community-content',{signal:controller.signal}).then(response=>{if(!response.ok)throw new Error('Unavailable');return response.json();}).then(feed=>{const result=feed.contests?.find((item:OctoberContest)=>item.id==='october-2026');if(!result)throw new Error('Missing registry');setContest(result);}).catch(error=>{if(error.name!=='AbortError')setFailed(true);});return()=>controller.abort();},[]);
   return <section className="section october-submissions" id="october-submissions" aria-labelledby="october-submissions-title">
     <div className="section-head project-section-heading"><div><h2 id="october-submissions-title">October <em>Submissions</em></h2><p>Spooky Secrets · Entries closed. Explore the October builds.</p></div><div className="contest-community-links"><a href={safeHref(THREAD)} target="_blank" rel="noreferrer">Official contest thread</a></div></div>
@@ -40,6 +21,5 @@ export default function OctoberSubmissions(){
     <CollapsibleProjects label="October Submissions"><PublicationGallery destination="october-2026" excludeRepoUrls={contest?.entries.map(entry=>entry.repoUrl)} onCount={setWorkbenchCount}/>
     {contest?<OctoberGallery contest={contest} hasWorkbenchEntries={workbenchCount>0}/>:failed?<p role="status">The submission list could not load. <a href={safeHref(THREAD)} target="_blank" rel="noreferrer">View entries on the forum.</a></p>:<p role="status">Loading October submissions…</p>}
     </CollapsibleProjects>
-    <CreatorSubmissions/>
   </section>;
 }

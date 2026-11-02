@@ -22,6 +22,7 @@ describe('November contest routes and closing boundaries', () => {
       expect(cards).toContain(`href="/challenges/${contest.slug}"`);
       const detail = renderToStaticMarkup(<MemoryRouter><NovemberContestDetail contest={contest}/></MemoryRouter>);
       expect(detail).toContain(`href="${contest.threadUrl}"`);
+      expect(detail).toContain(`href="/#${contest.slug === 'launch-creator' ? 'creator-submissions' : `${contest.slug}-submissions`}"`);
       expect(detail).toContain('href="https://community.tari.com/signup"');
       expect(detail.includes('/submit?contest=november')).toBe(contest.slug === 'november-mvp');
       expect(detail).not.toContain('<form');

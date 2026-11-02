@@ -1,5 +1,10 @@
 import {requireLinkHost} from './safeLinks.mjs';
 export const OCTOBER_THREAD = 'https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396';
+export const CONTEST_THREADS = Object.freeze({
+  'october-2026': OCTOBER_THREAD,
+  'november-2026': 'https://community.tari.com/t/november-build-contest-thread-mvp/520',
+  'first-to-launch-2026': 'https://community.tari.com/t/november-bonus-contest-first-to-launch/521',
+});
 function plain(value, name, max = 1500) {
   if (typeof value !== 'string' || !value.trim() || value.length > max || /[<>\u0000-\u001f]/.test(value)) throw new Error(`Invalid ${name}.`);
 }
@@ -14,10 +19,12 @@ function date(value) {
   if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}T/.test(value) || !Number.isFinite(Date.parse(value))) throw new Error('Invalid timestamp.');
 }
 export function validateContests(contests) {
-  if (!Array.isArray(contests) || contests.length !== 1) throw new Error('Expected the October contest registry.');
-  const contest = contests[0];
+  if (!Array.isArray(contests) || !contests.length || contests.length > Object.keys(CONTEST_THREADS).length) throw new Error('Expected reviewed contest registries.');
+  const ids = new Set();
+  for (const contest of contests) {
   fields(contest, ['id','title','threadUrl','checkedAt','observedSubmissionPosts','entries']);
-  if (contest.id !== 'october-2026' || contest.threadUrl !== OCTOBER_THREAD) throw new Error('Unexpected contest identity.');
+  if (!Object.hasOwn(CONTEST_THREADS, contest.id) || contest.threadUrl !== CONTEST_THREADS[contest.id] || ids.has(contest.id)) throw new Error('Unexpected or duplicate contest identity.');
+  ids.add(contest.id);
   plain(contest.title,'contest title',100);date(contest.checkedAt);
   if (!Number.isInteger(contest.observedSubmissionPosts) || contest.observedSubmissionPosts < 0) throw new Error('Invalid observation count.');
   if (!Array.isArray(contest.entries) || contest.entries.length > 100) throw new Error('Expected up to 100 reviewed entries.');
@@ -29,7 +36,7 @@ export function validateContests(contests) {
     if(entry.cardSummary!==undefined)plain(entry.cardSummary,'card summary',160);if(entry.cardStatus!==undefined)plain(entry.cardStatus,'card status',80);
     slugs.add(entry.slug);plain(entry.title,'entry title',100);plain(entry.summary,'summary');plain(entry.creator,'creator',80);
     publicLink(entry.sourceUrl);
-    if (!entry.sourceUrl.startsWith(`${OCTOBER_THREAD}/`) || !/^[2-9]\d*$|^1\d+$/.test(entry.sourceUrl.slice(OCTOBER_THREAD.length+1)) || posts.has(entry.sourceUrl)) throw new Error('Expected a unique October submission post.');
+    if (!entry.sourceUrl.startsWith(`${contest.threadUrl}/`) || !/^[2-9]\d*$|^1\d+$/.test(entry.sourceUrl.slice(contest.threadUrl.length+1)) || posts.has(entry.sourceUrl)) throw new Error('Expected a unique submission post in the matching contest thread.');
     posts.add(entry.sourceUrl);publicLink(entry.repoUrl,'repository');if(entry.demoUrl)publicLink(entry.demoUrl,'demo');
     date(entry.publishedAt);date(entry.updatedAt);
     if(entry.sourceContentSha256!==undefined&&!/^[a-f0-9]{64}$/.test(entry.sourceContentSha256))throw new Error('Invalid reviewed source digest.');
@@ -42,6 +49,7 @@ export function validateContests(contests) {
       plain(entry.recording.sourceRevision,'source revision',120);plain(entry.recording.credit,'recording credit',200);
       if(!['public-page','walkthrough','gameplay'].includes(entry.recording.kind))throw new Error('Unknown recording kind.');
     }
+  }
   }
   return contests;
 }

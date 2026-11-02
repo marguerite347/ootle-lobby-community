@@ -6,17 +6,21 @@ import {useLocation} from 'react-router-dom';
 import {webImage} from '../imageVariants';
 import {NovemberHero, NovemberContestCards} from '../components/NovemberContests';
 import ContestProjects from '../components/ContestProjects';
+import NovemberSubmissions from '../components/NovemberSubmissions';
 import OctoberSubmissions from '../components/OctoberSubmissions';
 import {CreatorResources} from '../components/SeasonalLobby';
 
 export default function Home() {
   const {hash, search, key} = useLocation();
   useEffect(() => {
-    if (hash) document.getElementById(['#my-projects', '#build-ideas'].includes(hash) ? 'creator-toolkit' : hash.slice(1))?.scrollIntoView({block: 'start'});
+    const target = ['#my-projects', '#build-ideas'].includes(hash) ? 'creator-toolkit'
+      : ['#november-mvp-submissions', '#first-to-launch-submissions', '#creator-submissions'].includes(hash) ? 'november-submissions' : hash.slice(1);
+    if (hash) document.getElementById(target)?.scrollIntoView({block: 'start'});
   }, [hash, search, key]);
   return <div className="season-home creator-workspace">
     <NovemberHero/>
     <NovemberContestCards/>
+    <NovemberSubmissions/>
     <CreatorResources compact/>
     <OctoberSubmissions/>
     <div id="community-entries"><ContestProjects/></div>

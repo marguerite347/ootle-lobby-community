@@ -1,8 +1,10 @@
 import {readFileSync,readdirSync,lstatSync} from 'node:fs';
-import {validateContests} from './contestContentValidation.mjs';
+import {validateContests, CONTEST_THREADS} from './contestContentValidation.mjs';
 export function readContestContent(root) {
-  const contest=JSON.parse(readFileSync(new URL('content/contests/october-2026.json',root),'utf8'));
-  const directory=new URL('content/submissions/october-2026/',root);
+  const contests = Object.keys(CONTEST_THREADS).map(id => {
+  const contest=JSON.parse(readFileSync(new URL(`content/contests/${id}.json`,root),'utf8'));
+  if (contest.id !== id) throw new Error('Contest id must match its registry filename.');
+  const directory=new URL(`content/submissions/${id}/`,root);
   const entries=readdirSync(directory).filter(file=>file.endsWith('.json')).sort().map(file=>{
     if(!/^[a-z0-9]+(?:-[a-z0-9]+)*\.json$/.test(file))throw new Error('Invalid submission filename.');
     const path=new URL(file,directory), stat=lstatSync(path);
@@ -11,5 +13,7 @@ export function readContestContent(root) {
     if(`${entry.slug}.json`!==file)throw new Error('Submission slug must match filename.');
     return entry;
   });
-  return validateContests([{...contest,entries}]);
+  return {...contest,entries};
+  });
+  return validateContests(contests);
 }

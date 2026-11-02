@@ -13,7 +13,8 @@ export default function CreatorSubmissions() {
     setExpanded(value => !value);
     if (returnToHeading) requestAnimationFrame(() => section.current?.scrollIntoView({block:'start'}));
   }
-  const entries = expanded ? submissions.entries : submissions.entries.slice(0, 3);
+  const newest = [...submissions.entries].sort((a,b) => Date.parse(b.publishedAt)-Date.parse(a.publishedAt));
+  const entries = expanded ? newest : newest.slice(0, 3);
   return <section ref={section} className="creator-submissions" id="creator-submissions" aria-labelledby="creator-submissions-title">
     <div className="creator-submissions-heading"><div>
       <h3 id="creator-submissions-title">Creator <em>submissions.</em></h3>
