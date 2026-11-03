@@ -12161,6 +12161,185 @@
       "copyUpdated": true,
       "publicationStatus": "published-and-live-verified",
       "publicationEvidence": "work/daily-2026-10-31/rubic-release-acceptance-nov3.json"
+    },
+    "tari-ootle:component:tari-tracker": {
+      "id": "tari-ootle:component:tari-tracker",
+      "title": "Tari Tracker",
+      "sources": [
+        "https://taritracker.com/",
+        "https://x.com/WorldWarSquared/status/2112894915046993957",
+        "https://github.com/kstrycharz/azurestatictesting",
+        "https://t.me/taritracker"
+      ],
+      "lastAttemptAt": "2026-11-03T13:33:07.514Z",
+      "sourceReviews": {
+        "https://taritracker.com/": {
+          "url": "https://taritracker.com/",
+          "attemptedAt": "2026-11-03T13:33:07.514Z",
+          "hash": "55f490f944bb2debde9aa1bd875489ee112150798a7245a1453f856d092edc88",
+          "evidence": "work/daily-2026-10-31/tari-tracker-live-nov3.txt",
+          "method": "Public source/browser read; curated listing scope",
+          "lastAttemptAt": "2026-11-03T13:33:07.514Z",
+          "lastSuccessfulReadAt": "2026-11-03T13:33:07.514Z",
+          "status": "read",
+          "error": null
+        },
+        "https://x.com/WorldWarSquared/status/2112894915046993957": {
+          "url": "https://x.com/WorldWarSquared/status/2112894915046993957",
+          "attemptedAt": "2026-11-03T13:33:07.514Z",
+          "hash": "26658fceaa01c8c3b34ccd5b0e7c195fce3bce7c8db2e9ab4f0339215d410623",
+          "evidence": "work/daily-2026-10-31/discord-linked-x-tracker-sharing-nov3.txt",
+          "method": "Public source/browser read; curated listing scope",
+          "lastAttemptAt": "2026-11-03T13:33:07.514Z",
+          "lastSuccessfulReadAt": "2026-11-03T13:33:07.514Z",
+          "status": "read",
+          "error": null
+        },
+        "https://github.com/kstrycharz/azurestatictesting": {
+          "lastAttemptAt": "2026-11-03T13:33:07.514Z",
+          "status": "blocked",
+          "error": "GitHub metadata and browser both returned repository not found / 404.",
+          "failureKind": "http",
+          "evidence": "work/daily-2026-10-31/tari-tracker-source-repository-404-nov3.txt",
+          "nextAction": "Retry creator-linked repository; retain dashboard availability and failed URL."
+        },
+        "https://t.me/taritracker": {
+          "lastAttemptAt": "2026-11-03T13:33:07.514Z",
+          "status": "blocked",
+          "error": "Public Telegram landing page available; no message history exposed in authorized browser.",
+          "failureKind": "unavailable-content",
+          "evidence": "work/daily-2026-10-31/tari-tracker-telegram-landing-nov3.txt",
+          "nextAction": "Retry public history through existing authorized client; do not join or request new access."
+        }
+      },
+      "lastSuccessfulReviewAt": null,
+      "observedAvailability": null,
+      "outcome": "blocked",
+      "pendingReviewSources": [],
+      "blockedSources": [
+        "https://github.com/kstrycharz/azurestatictesting",
+        "https://t.me/taritracker"
+      ],
+      "changedSources": [
+        "https://taritracker.com/",
+        "https://x.com/WorldWarSquared/status/2112894915046993957"
+      ],
+      "reviewRequired": true,
+      "changedFields": [
+        "sourceEvidence"
+      ],
+      "reviewQueue": [
+        "copy",
+        "actions",
+        "details",
+        "recording",
+        "provenance"
+      ],
+      "nextReviewAt": "2026-11-04T10:00:00Z",
+      "copyUpdated": true,
+      "publicationStatus": "pending"
+    },
+    "tari-ootle:component:tari-block-tools": {
+      "id": "tari-ootle:component:tari-block-tools",
+      "title": "Tari Block Tools",
+      "sources": [
+        "https://github.com/kstrycharz/tariblocktools",
+        "https://github.com/kstrycharz/tariblocktools#readme",
+        "https://github.com/kstrycharz/tariblocktools/releases",
+        "https://github.com/kstrycharz/tariblocktools/blob/main/Python/tariblockexplorer.py",
+        "https://textexplore.tari.com/",
+        "https://taritracker.com/"
+      ],
+      "lastAttemptAt": "2026-11-03T13:33:07.514Z",
+      "sourceReviews": {
+        "https://github.com/kstrycharz/tariblocktools": {
+          "url": "https://github.com/kstrycharz/tariblocktools",
+          "attemptedAt": "2026-11-03T13:33:07.514Z",
+          "hash": "98d293c9f8ce3ef8454a562d5caa09abec122d8f3a6284e4ba1c8e07bcb39b01",
+          "evidence": "work/daily-2026-10-31/tari-block-tools-metadata-nov3.json",
+          "method": "Public source/browser read; curated listing scope",
+          "lastAttemptAt": "2026-11-03T13:33:07.514Z",
+          "lastSuccessfulReadAt": "2026-11-03T13:33:07.514Z",
+          "status": "read",
+          "error": null
+        },
+        "https://github.com/kstrycharz/tariblocktools#readme": {
+          "url": "https://github.com/kstrycharz/tariblocktools#readme",
+          "attemptedAt": "2026-11-03T13:33:07.514Z",
+          "hash": "edc856f62fd825aaf6a90865f7fdfa28cf4fc150d95d3099f79fff897fde77bd",
+          "evidence": "work/daily-2026-10-31/tari-block-tools-readme-nov3.json",
+          "method": "Public source/browser read; curated listing scope",
+          "lastAttemptAt": "2026-11-03T13:33:07.514Z",
+          "lastSuccessfulReadAt": "2026-11-03T13:33:07.514Z",
+          "status": "read",
+          "error": null
+        },
+        "https://github.com/kstrycharz/tariblocktools/releases": {
+          "url": "https://github.com/kstrycharz/tariblocktools/releases",
+          "attemptedAt": "2026-11-03T13:33:07.514Z",
+          "hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "evidence": "work/daily-2026-10-31/tari-block-tools-releases-nov3.json",
+          "method": "Public source/browser read; curated listing scope",
+          "lastAttemptAt": "2026-11-03T13:33:07.514Z",
+          "lastSuccessfulReadAt": "2026-11-03T13:33:07.514Z",
+          "status": "read",
+          "error": null
+        },
+        "https://github.com/kstrycharz/tariblocktools/blob/main/Python/tariblockexplorer.py": {
+          "url": "https://github.com/kstrycharz/tariblocktools/blob/main/Python/tariblockexplorer.py",
+          "attemptedAt": "2026-11-03T13:33:07.514Z",
+          "hash": "a2e6223b09580e5817be28bbcb0d1295fb0972defa2213259de72fc63fc7a696",
+          "evidence": "work/daily-2026-10-31/tari-block-tools-explorer-source-nov3.txt",
+          "method": "Public source/browser read; curated listing scope",
+          "lastAttemptAt": "2026-11-03T13:33:07.514Z",
+          "lastSuccessfulReadAt": "2026-11-03T13:33:07.514Z",
+          "status": "read",
+          "error": null
+        },
+        "https://textexplore.tari.com/": {
+          "url": "https://textexplore.tari.com/",
+          "attemptedAt": "2026-11-03T13:33:07.514Z",
+          "hash": "2da143fd23316f5a3a0c55478a7106871eb248c2faccfcb07875a44f85af3150",
+          "evidence": "work/daily-2026-10-31/tari-block-tools-explorer-destination-nov3.txt",
+          "method": "Public source/browser read; curated listing scope",
+          "lastAttemptAt": "2026-11-03T13:33:07.514Z",
+          "lastSuccessfulReadAt": "2026-11-03T13:33:07.514Z",
+          "status": "read",
+          "error": null
+        },
+        "https://taritracker.com/": {
+          "url": "https://taritracker.com/",
+          "attemptedAt": "2026-11-03T13:33:07.514Z",
+          "hash": "55f490f944bb2debde9aa1bd875489ee112150798a7245a1453f856d092edc88",
+          "evidence": "work/daily-2026-10-31/tari-tracker-live-nov3.txt",
+          "method": "Public source/browser read; curated listing scope",
+          "lastAttemptAt": "2026-11-03T13:33:07.514Z",
+          "lastSuccessfulReadAt": "2026-11-03T13:33:07.514Z",
+          "status": "read",
+          "error": null
+        }
+      },
+      "lastSuccessfulReviewAt": "2026-11-03T13:33:07.514Z",
+      "observedAvailability": "Repository/README/releases and current explorer destination reviewed. Source class targets main explorer despite older Nextnet wording in README/header; Python/Rust source only.",
+      "outcome": "reviewed",
+      "pendingReviewSources": [],
+      "blockedSources": [],
+      "changedSources": [
+        "https://github.com/kstrycharz/tariblocktools",
+        "https://github.com/kstrycharz/tariblocktools#readme",
+        "https://github.com/kstrycharz/tariblocktools/releases",
+        "https://github.com/kstrycharz/tariblocktools/blob/main/Python/tariblockexplorer.py",
+        "https://textexplore.tari.com/",
+        "https://taritracker.com/"
+      ],
+      "reviewRequired": false,
+      "changedFields": [
+        "sourceEvidence"
+      ],
+      "reviewQueue": [],
+      "nextReviewAt": "2026-11-04T10:00:00Z",
+      "copyUpdated": true,
+      "publicationStatus": "pending"
     }
   },
   "resourceReviewSummary": {
