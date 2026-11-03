@@ -1,7 +1,7 @@
 {
   "slug": "haunted-passport",
   "title": "Haunted Passport",
-  "summary": "Selective-disclosure credentials on Tari Ootle Esmeralda, with issuer, holder, verifier and public observer views. The issuer creates stealth outputs with a public tier floor and can freeze or revoke them; the holder answers a fresh ownership challenge. The issuer can read exact values, repeated presentations of the same output are linkable, and the verifier trusts its indexer. The hosted issuer desk is closed; issuance requires the separate local issuer service. October 31 review covered the creator’s forum and Bluesky announcements, MIT repository and public website. The recording shows public explanations and deployment links; no wallet connection, credential issuance or proof signing was performed.",
+  "summary": "Selective-disclosure credentials on Tari Ootle Esmeralda, with issuer, holder, verifier and public observer views. The issuer creates stealth outputs with a public tier floor and can freeze or revoke them; the holder answers a fresh ownership challenge. The issuer can read exact values, repeated presentations of the same output are linkable, and the verifier trusts its indexer. The hosted issuer desk is closed; issuance requires the separate local issuer service. October 31 review covered the creator’s forum and Bluesky announcements, MIT repository and public website. The recording shows public explanations and deployment links; no wallet connection, credential issuance or proof signing was performed. November 2 organizer notice: Esmeralda testnet was reset; entrants were asked to republish templates and update their submission versions where applicable. Earlier recordings document their capture dates.",
   "cardSummary": "Present age, membership or reputation credentials while revealing a qualifying threshold instead of the exact value.",
   "cardStatus": "Web app · Testnet · Local issuer required",
   "creator": "Chrisgold",
@@ -30,6 +30,10 @@
     {
       "url": "https://bsky.app/profile/chrisgoldog.bsky.social/post/3myzc45hcf22l",
       "platform": "Bluesky"
+    },
+    {
+      "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/44",
+      "platform": "Testnet reset notice"
     }
   ]
 }

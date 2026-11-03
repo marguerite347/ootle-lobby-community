@@ -28,8 +28,9 @@ export function assessMaintenance(run,{evidenceExists=()=>true,requiredScope={}}
    if(!item.evidence?.length||!item.evidence.every(e=>typeof e==='string'&&evidenceExists(e)))issues.push(`${label}: missing evidence`);
    if(!Number.isFinite(Date.parse(item.checkedAt))||item.checkedAt.slice(0,10)<run.date)issues.push(`${label}: stale or missing attempt`);
    if(item.status==='blocked'&&(!failureKinds.has(item.failureKind)||!item.reason||!item.nextAction||/not (read|checked|attempted)|unfinished|not yet/i.test(item.reason)))issues.push(`${label}: blocker requires observed failure and next action`);
-   if(item.status==='deferred'&&(name!=='dependencies'||!item.reason||!item.targetVersion||!item.nextAction))issues.push(`${label}: deferral needs assessed dependency risk, target version and follow-up`);
-   if(item.status==='complete'&&(item.pendingCount>0||item.coverageComplete!==true))issues.push(`${label}: declared coverage incomplete`);
+   if(item.status==='blocked'&&(!Number.isFinite(Date.parse(item.retryAt))||Date.parse(item.retryAt)<=Date.parse(item.checkedAt)))issues.push(`${label}: blocker requires a retry date after the recorded attempt`);
+   if(item.status==='deferred'&&(name!=='dependencies'||!item.reason||!item.targetVersion||!item.nextAction||/assessment required|outside the maintained|requires (assessment|review)|not (read|assessed)/i.test(item.reason)))issues.push(`${label}: deferral needs assessed dependency risk, target version and follow-up`);
+   if(item.status==='complete'&&(item.pendingCount>0||item.pending?.length>0||item.coverageComplete!==true))issues.push(`${label}: declared coverage incomplete`);
   }
   for(const id of section.expectedIds)if(!ids.has(id))issues.push(`${name}/${id}: omitted from results`);
   for(const id of ids)if(!section.expectedIds.includes(id))issues.push(`${name}/${id}: absent from declared scope`);

@@ -1,7 +1,7 @@
 {
   "slug": "moonmail",
   "title": "MoonMail",
-  "summary": "Browser mailbox for encrypted Ootle letters, recoverable Inbox/Sent and encrypted preferences; it does not send ordinary email. October 29 landing and privacy pages loaded. Sapient private-view access is a separate account-wide grant that can expose other resources’ private amounts and memos; spending still needs approval. Public postbox identities, signers, timing, fees and size buckets remain observable, and historical mailbox-key compromise has no forward-secrecy protection. Private payment requests use three approvals with non-atomic transfer and receipt delivery. Public/link gifts expose vault amounts and have no expiry or sender refund; complete private links grant bearer access. The README separates historical funded tests from current read-only recovery and local tests. The recording shows public privacy documentation, not mail delivery or a payment. MIT source; no wallet grant or transaction exercised.",
+  "summary": "Browser mailbox for encrypted Ootle letters, recoverable Inbox/Sent and encrypted preferences; it does not send ordinary email. October 29 landing and privacy pages loaded. Sapient private-view access is a separate account-wide grant that can expose other resources’ private amounts and memos; spending still needs approval. Public postbox identities, signers, timing, fees and size buckets remain observable, and historical mailbox-key compromise has no forward-secrecy protection. Private payment requests use three approvals with non-atomic transfer and receipt delivery. Public/link gifts expose vault amounts and have no expiry or sender refund; complete private links grant bearer access. The README separates historical funded tests from current read-only recovery and local tests. The recording shows public privacy documentation, not mail delivery or a payment. MIT source; no wallet grant or transaction exercised. November 2 organizer notice: Esmeralda testnet was reset; entrants were asked to republish templates and update their submission versions where applicable. Earlier recordings document their capture dates.",
   "cardSummary": "Exchange encrypted letters between Ootle postboxes and recover conversations, sent mail and saved settings through Sapient.",
   "cardStatus": "Web app · Testnet · Sapient",
   "creator": "SealClubber",
@@ -30,6 +30,10 @@
     {
       "url": "https://bsky.app/profile/seal-clubber.bsky.social/post/3myxwvhl5522s",
       "platform": "Bluesky"
+    },
+    {
+      "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/44",
+      "platform": "Testnet reset notice"
     }
   ]
 }

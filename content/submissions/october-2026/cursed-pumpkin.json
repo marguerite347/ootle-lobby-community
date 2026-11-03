@@ -1,7 +1,7 @@
 {
   "slug": "cursed-pumpkin",
   "title": "The Cursed Pumpkin",
-  "summary": "Stealth-resource hot-potato game with sealed guesses and an epoch-timed holder reveal. The public browser replays the creator’s October 28 four-player Esmeralda game and links each of 23 recorded transactions; October 29 inspection confirmed replay steps advance. A separate live view and Sapient ownership-check tab are provided. Playing new games uses the Python client and testnet bonds; the browser replay is not a new multiplayer match. Timing, pass counts, the host’s first hop, off-chain information and the final revealed holder remain observable. A holder who never reveals causes partial bond refunds. MIT source reviewed; no wallet access, ownership signing or payments were performed.",
+  "summary": "Stealth-resource hot-potato game with sealed guesses and an epoch-timed holder reveal. The public browser replays the creator’s October 28 four-player Esmeralda game and links each of 23 recorded transactions; October 29 inspection confirmed replay steps advance. A separate live view and Sapient ownership-check tab are provided. Playing new games uses the Python client and testnet bonds; the browser replay is not a new multiplayer match. Timing, pass counts, the host’s first hop, off-chain information and the final revealed holder remain observable. A holder who never reveals causes partial bond refunds. MIT source reviewed; no wallet access, ownership signing or payments were performed. November 2 organizer notice: Esmeralda testnet was reset; entrants were asked to republish templates and update their submission versions where applicable. Earlier recordings document their capture dates.",
   "cardSummary": "Replay a secret hot-potato game and compare public transaction clues with the hidden route of its single pumpkin.",
   "cardStatus": "Replay demo · Testnet",
   "creator": "iammzee",
@@ -30,6 +30,10 @@
     {
       "url": "https://bsky.app/profile/iammzee.bsky.social/post/3myvhysm5ss2y",
       "platform": "Bluesky"
+    },
+    {
+      "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/44",
+      "platform": "Testnet reset notice"
     }
   ]
 }

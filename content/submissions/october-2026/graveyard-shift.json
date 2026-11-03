@@ -1,7 +1,7 @@
 {
   "slug": "graveyard-shift",
   "title": "Graveyard Shift",
-  "summary": "Confidential payroll template and interactive browser replay. October 23 inspection showed Alice’s recorded 3000 SHIFT pay stub, an auditor reconciliation to the 10000 SHIFT budget, and hidden coworker amounts. The page replays an engine transcript; it does not decrypt or pay through the browser. The original post’s empty-faucet limitation was superseded by the creator’s October 22 update linking a published Esmeralda template and two-paycheck shift transaction. The browser replay has three paychecks and is separate from that deployment evidence. Roster, roles, paid status and total budget remain public; the auditor key is fixed per payroll. MIT source; no wallet or payroll transaction performed here.",
+  "summary": "Confidential payroll template and interactive browser replay. October 23 inspection showed Alice’s recorded 3000 SHIFT pay stub, an auditor reconciliation to the 10000 SHIFT budget, and hidden coworker amounts. The page replays an engine transcript; it does not decrypt or pay through the browser. The original post’s empty-faucet limitation was superseded by the creator’s October 22 update linking a published Esmeralda template and two-paycheck shift transaction. The browser replay has three paychecks and is separate from that deployment evidence. Roster, roles, paid status and total budget remain public; the auditor key is fixed per payroll. MIT source; no wallet or payroll transaction performed here. November 2 organizer notice: Esmeralda testnet was reset; entrants were asked to republish templates and update their submission versions where applicable. Earlier recordings document their capture dates.",
   "cardSummary": "Explore confidential payroll from employee, auditor and public perspectives, with selective disclosure of individual payslips.",
   "cardStatus": "Browser demo · Testnet",
   "creator": "XachP",
@@ -42,6 +42,10 @@
     {
       "url": "https://www.youtube.com/watch?v=1PeZwRiqKa0",
       "platform": "YouTube"
+    },
+    {
+      "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/44",
+      "platform": "Testnet reset notice"
     }
   ]
 }

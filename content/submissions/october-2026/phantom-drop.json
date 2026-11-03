@@ -1,7 +1,7 @@
 {
   "slug": "phantom-drop",
   "title": "Phantom Drop",
-  "summary": "Rust CLI and library for testnet gift envelopes using native stealth outputs and claim/refund branches, without a custom template. Links can include riddles and expiry. Anyone holding a plain link can claim it; riddle strength and public transaction timing limit privacy. The creator published October 12 Esmeralda seal/open/refund evidence; this listing reviews source and those links, without executing the CLI or a wallet transaction. October 20: the linked browser walkthrough offers a chain/link-holder toggle and five narrated acts. Real clicks changed the riddle, expiry and replay panels. These are a replay of the maintainer example, not new engine execution or network transactions.",
+  "summary": "Rust CLI and library for testnet gift envelopes using native stealth outputs and claim/refund branches, without a custom template. Links can include riddles and expiry. Anyone holding a plain link can claim it; riddle strength and public transaction timing limit privacy. The creator published October 12 Esmeralda seal/open/refund evidence; this listing reviews source and those links, without executing the CLI or a wallet transaction. October 20: the linked browser walkthrough offers a chain/link-holder toggle and five narrated acts. Real clicks changed the riddle, expiry and replay panels. These are a replay of the maintainer example, not new engine execution or network transactions. November 2 organizer notice: Esmeralda testnet was reset; entrants were asked to republish templates and update their submission versions where applicable. Earlier recordings document their capture dates.",
   "cardSummary": "Create expiring testnet gift links with a Rust CLI, optional riddles and refunds for unopened envelopes.",
   "cardStatus": "CLI · Interactive walkthrough · Testnet",
   "creator": "hycorange",
@@ -38,6 +38,10 @@
     {
       "url": "https://x.com/tari/status/2116153147538260441",
       "platform": "X"
+    },
+    {
+      "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/44",
+      "platform": "Testnet reset notice"
     }
   ]
 }

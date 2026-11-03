@@ -1,7 +1,7 @@
 {
   "slug": "grave-robber",
   "title": "Grave Robber",
-  "summary": "Gothic 2D crypt explorer with a riddle ledger and local sandbox balance. October 24 inspection switched between explorer and ledger views; the recording shows Sandbox Sim with no wallet or bounty claim. MIT React/TypeScript source stores tomb state in browser localStorage and checks answers with SHA-256. The reviewed wallet helper requests sendPrivately or shield, but can return generated transaction IDs after non-rejection errors and labels a request result confirmed without a finality check. Its claim request does not submit the riddle preimage to a bounty template. Treat the current experience as a sandbox prototype; the advertised on-chain bounty and front-running protection are not established by this implementation.",
+  "summary": "Gothic 2D crypt explorer with a riddle ledger and local sandbox balance. October 24 inspection switched between explorer and ledger views; the recording shows Sandbox Sim with no wallet or bounty claim. MIT React/TypeScript source stores tomb state in browser localStorage and checks answers with SHA-256. The reviewed wallet helper requests sendPrivately or shield, but can return generated transaction IDs after non-rejection errors and labels a request result confirmed without a finality check. Its claim request does not submit the riddle preimage to a bounty template. Treat the current experience as a sandbox prototype; the advertised on-chain bounty and front-running protection are not established by this implementation. November 2 organizer notice: Esmeralda testnet was reset; entrants were asked to republish templates and update their submission versions where applicable. Earlier recordings document their capture dates.",
   "cardSummary": "Explore candlelit catacombs and inspect crypt riddles in a browser sandbox with a simulated bounty ledger.",
   "cardStatus": "Sandbox game · Testnet prototype",
   "creator": "r4id3n",
@@ -38,6 +38,10 @@
     {
       "url": "https://www.reddit.com/r/tari/comments/1xbopnt/i_built_grave_robber_a_2d_gothic_crypt_heist_on/",
       "platform": "Reddit · r/tari"
+    },
+    {
+      "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/44",
+      "platform": "Testnet reset notice"
     }
   ]
 }
