@@ -1,7 +1,7 @@
 {
   "slug": "candy-summoner",
   "title": "Ootlejuice Candy Summoner",
-  "summary": "A privacy-themed candy-game entry for the October build contest. At our October 10, 2026 review, the linked GitHub repository contained a README, with no homepage or releases listed. No demo link was found in that repository or the complete contest thread checked; the creator’s post said a demo video was coming. This observation is limited to those sources and may change. November 2 organizer notice: Esmeralda testnet was reset; entrants were asked to republish templates and update their submission versions where applicable. Earlier recordings document their capture dates.",
+  "summary": "A privacy-themed candy-game entry for the October build contest. At our October 10, 2026 review, the linked GitHub repository contained a README, with no homepage or releases listed. No demo link was found in that repository or the complete contest thread checked; the creator’s post said a demo video was coming. This observation is limited to those sources and may change. November 2 organizer notice: Esmeralda testnet was reset; entrants were asked to republish templates and update their submission versions where applicable. Earlier recordings document their capture dates. November 3 source review: the creator’s October 8 Bluesky announcement includes a short animated concept illustration and an illustrated reply. Neither depicts application interaction; the existing concept walkthrough remains labeled accordingly.",
   "creator": "Ongchi",
   "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/5",
   "repoUrl": "https://github.com/ongwingchi-commits/ootlejuice-candy-summoner",
@@ -23,6 +23,14 @@
     {
       "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/44",
       "platform": "Testnet reset notice"
+    },
+    {
+      "url": "https://bsky.app/profile/ongwing.bsky.social/post/3mxdprpbaqs27",
+      "platform": "Bluesky · Original announcement"
+    },
+    {
+      "url": "https://bsky.app/profile/ongwing.bsky.social/post/3mxdprqg2ic27",
+      "platform": "Bluesky · Creator illustration"
     }
   ]
 }
