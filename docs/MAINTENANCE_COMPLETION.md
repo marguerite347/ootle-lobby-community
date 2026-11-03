@@ -36,3 +36,5 @@ Regression trial: `python3 -m unittest discover -s scripts -p 'test_source_evide
 ## Attachment acquisition is separate from review
 
 Follow the attachment reuse procedure in `DAILY_ECOSYSTEM_PLAN.md` before downloading or retrying. A tool timeout must trigger local-file and pending-dialog inspection, not another download. Save the stable attachment identity, verified local path, byte length and SHA-256 in private evidence; expiring URL signatures are not versions. Replace a recovered acquisition blocker with pending local-content review, preserving its failure history. Do not mark review complete solely because bytes are available, and do not let an elapsed retry date restart an unchanged failed acquisition. No new source-success timestamp or stream checkpoint is earned by finding a cached copy.
+
+The gate independently enumerates current catalog records, dated opportunities and tracked project/submission files. A missing review-ledger record cannot hide a listed resource from the required completion scope; explicit project resource aliases are resolved by the existing review-queue function.
