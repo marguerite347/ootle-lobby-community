@@ -1,0 +1,88 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {randomUUID,createHash} from 'node:crypto';
+import {PGlite} from '@electric-sql/pglite';
+import express from 'express';
+import {createCalendarMetricsRouter,createCalendarMetricsStore} from '../creator-hub/hub/server/calendarMetrics.mjs';
+import {createCommunityRouter} from '../creator-hub/hub/server/community/router.mjs';
+import {communityCalendar} from '../creator-hub/hub/server/communityCalendar.mjs';
+const origin='https://lobby.tari.com',secret='test-only-secret-'.repeat(4);
+const headers={'content-type':'application/json','x-lobby-calendar':'1',origin};
+const sha=value=>createHash('sha256').update(value).digest('hex');
+async function fixture(t) {
+  const db=new PGlite();t.after(()=>db.close());
+  await db.exec(readFileSync(new URL('../creator-hub/hub/server/calendarMetrics.sql',import.meta.url),'utf8'));
+  let clock=new Date('2026-11-03T16:00:00Z');
+  const store=createCalendarMetricsStore(db,{now:()=>clock});
+  const app=express();app.use(createCalendarMetricsRouter({store,origin,secret}));
+  const server=app.listen(0,'127.0.0.1');await new Promise(resolve=>server.once('listening',resolve));
+  t.after(()=>new Promise(resolve=>{server.closeAllConnections();server.close(resolve);}));
+  const base=`http://127.0.0.1:${server.address().port}`;
+  const post=(path,body,h=headers)=>fetch(base+'/api/calendar/'+path,{method:'POST',headers:h,body:JSON.stringify(body)});
+  const issue=async(clientId=randomUUID())=>{const r=await post('options',{clientId});assert.equal(r.status,200);return (await r.json()).options;};
+  return {db,store,app,base,post,issue,advance:ms=>clock=new Date(+clock+ms)};
+}
+test('durable choices are separate from observed and active feeds; retries, download prefetch and QA are excluded',async t=>{
+  const f=await fixture(t),clientId=randomUUID(),o=await f.issue(clientId);
+  assert.deepEqual(await f.issue(clientId),o,'one browser keeps stable provider-specific links');
+  assert.notEqual(o.google.token,o.apple.token);
+  assert.equal((await f.store.report()).totals.clicks,0,'opening options is not a click');
+  const action={provider:'google',token:o.google.token,id:randomUUID()};
+  assert.equal((await f.post('actions',action)).status,204);
+  await f.post('actions',action);
+  assert.equal((await f.store.report()).totals.clicks,1,'request retries are idempotent');
+  const feed=`${f.base}/community/calendar/google/${o.google.token}.ics`;
+  let r=await fetch(feed);assert.equal(await r.text(),communityCalendar());
+  assert.equal(r.headers.get('cache-control'),'private, no-store');assert.equal(r.headers.get('vercel-cdn-cache-control'),'no-store');
+  let report=await f.store.report();assert.equal(report.totals.observed_feed_links,1);assert.equal(report.totals.estimated_active_subscriptions,0);
+  await fetch(feed,{headers:{'if-none-match':r.headers.get('etag')}});assert.equal((await f.store.report()).totals.estimated_active_subscriptions,0);
+  f.advance(6*3600000);await fetch(feed);
+  assert.equal((await f.store.report()).totals.estimated_active_subscriptions,1);
+  const apple=`${f.base}/community/calendar/apple/${o.apple.token}.ics`;
+  await fetch(apple,{method:'HEAD'});await fetch(apple,{headers:{'user-agent':'SomeBot'}});await fetch(apple,{headers:{'Sec-Purpose':'prefetch'}});
+  assert.equal((await f.store.report()).totals.observed_feed_links,1);
+  const download=`${f.base}${new URL(o.download.href).pathname}`;
+  await fetch(download,{method:'HEAD'});assert.equal((await f.store.report()).totals.download_requests,0);
+  r=await fetch(download);assert.match(r.headers.get('content-disposition'),/^attachment/);assert.equal(await r.text(),communityCalendar());
+  await fetch(download);assert.equal((await f.store.report()).totals.download_requests,1,'one-minute download retries are deduplicated');
+  assert.equal((await f.store.report()).totals.estimated_active_subscriptions,1,'downloads do not become subscriptions');
+  await f.db.query('UPDATE lobby_calendar.links SET excluded=true WHERE token_hash=$1',[sha(o.google.token)]);
+  assert.equal((await f.store.report()).totals.clicks,0);assert.equal((await f.store.report()).totals.estimated_active_subscriptions,0);
+  await f.db.query('UPDATE lobby_calendar.links SET excluded=false');f.advance(15*86400000);
+  assert.equal((await f.store.report()).totals.estimated_active_subscriptions,0,'stale subscriptions age out');
+  assert.equal((await createCalendarMetricsStore(f.db).report()).totals.clicks,1,'a new store reads persisted activity');
+});
+test('CSRF, invalid tokens, opt-out, public reporting and bounded issuance',async t=>{
+  const f=await fixture(t);
+  assert.equal((await f.post('options',{clientId:randomUUID()},{...headers,origin:'https://attacker.example'})).status,403);
+  assert.equal((await f.post('options',{clientId:randomUUID()},{...headers,'sec-gpc':'1'})).status,403);
+  assert.equal((await f.post('options',{clientId:randomUUID()},{...headers,dnt:'1'})).status,403);
+  assert.equal((await f.post('options',{clientId:'invalid'})).status,400);
+  assert.equal((await f.post('actions',{provider:'google',token:'forged',id:randomUUID()})).status,400);
+  const o=await f.issue();
+  assert.equal((await f.post('actions',{provider:'apple',token:o.google.token,id:randomUUID()})).status,400);
+  await fetch(`${f.base}/community/calendar/google/${randomUUID()}.forged.ics`);
+  assert.equal((await f.store.report()).totals.observed_feed_links,0,'unissued/forged URLs cannot create observations');
+  await f.db.query("UPDATE lobby_calendar.limits SET count=120 WHERE key LIKE 'options:%' AND key<>'options:global'");
+  assert.equal((await f.post('options',{clientId:randomUUID()})).status,429);
+  assert.equal((await f.db.query('SELECT count(*)::int n FROM lobby_calendar.links')).rows[0].n,3,'rate-limited issuance creates no links');
+  for(const role of [null,'member','moderator','owner']) {
+    const app=express();app.use('/api/chat',createCommunityRouter({store:{session:async()=>role?{role}:null},origin,calendarMetrics:{store:f.store}}));
+    const server=app.listen(0,'127.0.0.1');await new Promise(resolve=>server.once('listening',resolve));
+    const result=await fetch(`http://127.0.0.1:${server.address().port}/api/chat/calendar-metrics`);
+    assert.equal(result.status,role==='owner'?200:403);assert.equal(result.headers.get('cache-control'),'no-store');
+    server.closeAllConnections();await new Promise(resolve=>server.close(resolve));
+  }
+});
+test('measurement outage does not prevent calendar delivery or alter existing ICS content',async t=>{
+  const app=express();app.use(createCalendarMetricsRouter({origin,secret,store:{fetched:async()=>{throw Error('unavailable');}}}));
+  app.get('/untouched',(_req,res)=>res.send('unchanged'));
+  const server=app.listen(0,'127.0.0.1');await new Promise(resolve=>server.once('listening',resolve));
+  t.after(()=>{server.closeAllConnections();server.close();});
+  const base=`http://127.0.0.1:${server.address().port}`;
+  const f=await fixture(t),o=await f.issue();
+  const r=await fetch(`${base}/community/calendar/apple/${o.apple.token}.ics`);
+  assert.equal(r.status,200);assert.equal(await r.text(),communityCalendar());
+  assert.equal((await fetch(base+'/untouched')).headers.get('cache-control'),null,'metrics middleware cannot change unrelated cache policy');
+});

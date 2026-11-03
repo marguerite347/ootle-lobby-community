@@ -11,6 +11,7 @@ const LearningLoop = lazy(() => import('./pages/LearningLoop'));
 const Challenges = lazy(() => import('./pages/Challenges'));
 const WeeklyChallenges = lazy(() => import('./pages/WeeklyChallenges'));
 const Insights = lazy(() => import('./pages/Insights'));
+const CalendarInsights = lazy(() => import('./pages/CalendarInsights'));
 const Growth = lazy(() => import('./pages/Growth'));
 import WorkbenchEntry, {WorkbenchBackup} from './pages/WorkbenchEntry';
 const GameKit = lazy(() => import('./pages/GameKit'));
@@ -60,6 +61,7 @@ const router = createBrowserRouter([
       { path: 'submit', element: <SubmitProject /> },
       { path: 'submit/review', element: <ReviewSubmissions /> },
       { path: 'insights', element: <Insights /> },
+      { path: 'calendar/insights', element: <CalendarInsights /> },
       { path: 'growth', element: <Growth /> },
       { path: 'challenges', element: <Challenges /> },
       { path: 'challenges/weekly', element: <WeeklyChallenges /> },

@@ -32,6 +32,7 @@ export function createCommunityRouter({
   privateEnabled = false,
   previewAccount = "github-1",
   projectSubmissions,
+  calendarMetrics,
   fetcher = fetch,
 } = {}) {
   const router = Router(),
@@ -132,6 +133,12 @@ export function createCommunityRouter({
     if(!projectSubmissions?.store)reject('Project review is not connected.',503);
     return account;
   }
+  router.get('/calendar-metrics',wrap(async(req,res)=>{
+    const account=await store.session(cookies(req)[cookieName]);
+    if(!account||account.role!=='owner')reject('Owner sign-in required.',403);
+    if(!calendarMetrics?.store)reject('Calendar measurement is unavailable.',503);
+    res.json(await calendarMetrics.store.report());
+  }));
   router.get('/project-submissions',wrap(async(req,res)=>{
     await submissionReviewer(req);
     res.json(await projectSubmissions.store.list(Number(req.query.offset||0)));
