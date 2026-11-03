@@ -3,7 +3,7 @@
   "title": "Testing and debugging",
   "description": "Run real Ootle template-engine tests and test authorization without injected privileges.",
   "version": "0.1.0",
-  "lifecycle": "review",
+  "lifecycle": "validated",
   "networks": [
     "local-engine"
   ],
@@ -13,11 +13,11 @@
     "rust": "1.99.1"
   },
   "sourceCheckedAt": "2026-09-19",
-  "technicalValidatedAt": null,
+  "technicalValidatedAt": "2026-11-03",
   "validation": {
-    "scope": "Updated example awaits its own Linux engine tests and release WASM build; prior September evidence is historical.",
+    "scope": "Two engine-backed counter tests and release WASM build on Linux with Rust 1.99.1; no live-network or whole-engine security certification.",
     "evidence": [
-      "evidence/validation.json"
+      "evidence/counter-validation-2026-11-03.json"
     ]
   },
   "sources": [
