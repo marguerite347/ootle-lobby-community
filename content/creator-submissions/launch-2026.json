@@ -156,7 +156,9 @@
       "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/13",
       "publishedAt": "2026-11-01T11:39:26.150Z",
       "updatedAt": "2026-11-01T11:39:26.150Z",
-      "resourceIds": [],
+      "resourceIds": [
+        "tari-ootle:learn:kurarmota-two-layer-architecture"
+      ],
       "works": [
         {
           "title": "Understanding Minotari and Ootle",
@@ -221,7 +223,9 @@
       "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/16",
       "publishedAt": "2026-11-02T16:22:02.898Z",
       "updatedAt": "2026-11-02T16:42:38.545Z",
-      "resourceIds": [],
+      "resourceIds": [
+        "tari-ootle:learn:habib-four-lanes"
+      ],
       "works": [
         {
           "title": "How Tari’s multi-lane mining works and why it matters",
