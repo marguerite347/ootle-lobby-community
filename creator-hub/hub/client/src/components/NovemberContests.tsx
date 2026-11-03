@@ -18,7 +18,7 @@ export function NovemberHero() {
       <p>Three contests. Your next MVP, mainnet debut or story about Tari starts here.</p>
       <a className="season-button" href="#contests">Find your contest</a>
     </div>
-    <img src={webImage('/seasonal/october-2026/witch-builder-scene.png').src} width="1536" height="1024" alt="Tari turtle and ghost building together with colorful code blocks" fetchPriority="high" decoding="async"/>
+    <img src={webImage('/community/agent-builder-scene-v1.webp').src} width="1152" height="768" alt="Tari turtle agent in sunglasses and a purple-trimmed suit, building with a friendly ghost" fetchPriority="high" decoding="async"/>
   </section>;
 }
 
