@@ -25,5 +25,31 @@
     "sourceRevision": "894b3ed3c41936a21d8ed3ea8d281b2e95d91fd4",
     "kind": "public-page",
     "credit": "App demo — Five simulated calls and separate archived chain evidence; no wallet or payment."
-  }
+  },
+  "discussionLinks": [
+    {
+      "url": "https://www.reddit.com/r/tari/comments/1x8m0xh/ghostline_private_paypercall_payments_for_ai/",
+      "platform": "Reddit · r/tari"
+    },
+    {
+      "url": "https://github.com/AduAkorful/ghostline/releases/tag/v0.3.2",
+      "platform": "GitHub release"
+    },
+    {
+      "url": "https://github.com/AduAkorful/ghostline/releases/tag/v0.4.0",
+      "platform": "GitHub release"
+    },
+    {
+      "url": "https://ghostline-ui.vercel.app/evidence.html",
+      "platform": "Project documentation"
+    },
+    {
+      "url": "https://bsky.app/profile/tariproject.bsky.social/post/3myzd2ybfnq2t",
+      "platform": "Bluesky"
+    },
+    {
+      "url": "https://x.com/tari/status/2115790755323134073",
+      "platform": "X"
+    }
+  ]
 }

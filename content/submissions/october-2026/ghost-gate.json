@@ -25,5 +25,11 @@
     "sourceRevision": "f960d1575c7175f98625d2ae0015a300980b0b68",
     "kind": "public-page",
     "credit": "Source/docs walkthrough — public Crypt threshold policy and privacy limits; no wallet or admission action."
-  }
+  },
+  "discussionLinks": [
+    {
+      "url": "https://bsky.app/profile/did:plc:cj5wzjmazjbonijxuueycyx5/post/3mz5fwrpt5f27",
+      "platform": "Bluesky"
+    }
+  ]
 }

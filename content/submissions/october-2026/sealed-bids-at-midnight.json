@@ -24,5 +24,11 @@
     "sourceRevision": "f8796ec7d95590d09c8ffa56cd3623b04740759b",
     "kind": "public-page",
     "credit": "Docs walkthrough — README and maintainer GIF; no auction executed here."
-  }
+  },
+  "discussionLinks": [
+    {
+      "url": "https://www.reddit.com/r/tari/comments/1xas9x4/sealed_bids_at_midnight_a_tari_auction_where/",
+      "platform": "Reddit · r/tari"
+    }
+  ]
 }

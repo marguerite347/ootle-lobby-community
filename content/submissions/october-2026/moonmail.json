@@ -25,5 +25,11 @@
     "sourceRevision": "dbf816853e811f7581151202192b952f4d40ad3b",
     "kind": "public-page",
     "credit": "Docs walkthrough — Public privacy page; no mailbox grant, letter delivery or payment."
-  }
+  },
+  "discussionLinks": [
+    {
+      "url": "https://bsky.app/profile/seal-clubber.bsky.social/post/3myxwvhl5522s",
+      "platform": "Bluesky"
+    }
+  ]
 }

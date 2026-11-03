@@ -25,5 +25,19 @@
     "sourceRevision": "b8c7bc8eb270433857fdc72778309ad09bf41cd2",
     "kind": "public-page",
     "credit": "Source/docs walkthrough — Transaction picker and request disclosure; no wallet or payment."
-  }
+  },
+  "discussionLinks": [
+    {
+      "url": "https://bsky.app/profile/kylne700.bsky.social/post/3myda5pbxgk22",
+      "platform": "Bluesky"
+    },
+    {
+      "url": "https://bsky.app/profile/tariproject.bsky.social/post/3mywsm2tpqm2b",
+      "platform": "Bluesky"
+    },
+    {
+      "url": "https://x.com/tari/status/2115428367486836872",
+      "platform": "X"
+    }
+  ]
 }

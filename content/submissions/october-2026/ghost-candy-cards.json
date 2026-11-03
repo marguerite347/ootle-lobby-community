@@ -25,5 +25,11 @@
     "sourceRevision": "d023958902a09b41f15ff5bb9cd4a1c5cc559ff4",
     "kind": "public-page",
     "credit": "Source/docs walkthrough — README, printable example cards and claim design; no card redemption."
-  }
+  },
+  "discussionLinks": [
+    {
+      "url": "https://bsky.app/profile/cgrabk7q2.bsky.social/post/3mz24lkjhdk2l",
+      "platform": "Bluesky"
+    }
+  ]
 }

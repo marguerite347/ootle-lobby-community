@@ -25,5 +25,11 @@
     "sourceRevision": "5858ddfd31e36ad961379aff379e1618240619bc",
     "kind": "public-page",
     "credit": "App demo — Interactive replay of the creator’s recorded October 28 testnet game; no new transactions."
-  }
+  },
+  "discussionLinks": [
+    {
+      "url": "https://bsky.app/profile/iammzee.bsky.social/post/3myvhysm5ss2y",
+      "platform": "Bluesky"
+    }
+  ]
 }

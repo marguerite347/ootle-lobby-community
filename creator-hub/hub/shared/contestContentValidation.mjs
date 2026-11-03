@@ -30,7 +30,7 @@ export function validateContests(contests) {
   if (!Array.isArray(contest.entries) || contest.entries.length > 100) throw new Error('Expected up to 100 reviewed entries.');
   const slugs=new Set(),posts=new Set();
   for (const entry of contest.entries) {
-    fields(entry,['ecosystem','slug','title','summary','cardSummary','cardStatus','creator','sourceUrl','repoUrl','demoUrl','publishedAt','updatedAt','sourceContentSha256','technologies','recording']);
+    fields(entry,['ecosystem','slug','title','summary','cardSummary','cardStatus','creator','sourceUrl','discussionLinks','repoUrl','demoUrl','publishedAt','updatedAt','sourceContentSha256','technologies','recording']);
     if (typeof entry.slug !== 'string' || entry.slug.length > 100 || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(entry.slug) || slugs.has(entry.slug)) throw new Error('Invalid or duplicate submission slug.');
     if(entry.ecosystem!==undefined&&!['tari','tari-ootle'].includes(entry.ecosystem))throw new Error('Invalid submission ecosystem.');
     if(entry.cardSummary!==undefined)plain(entry.cardSummary,'card summary',160);if(entry.cardStatus!==undefined)plain(entry.cardStatus,'card status',80);
@@ -38,6 +38,11 @@ export function validateContests(contests) {
     publicLink(entry.sourceUrl);
     if (!entry.sourceUrl.startsWith(`${contest.threadUrl}/`) || !/^[2-9]\d*$|^1\d+$/.test(entry.sourceUrl.slice(contest.threadUrl.length+1)) || posts.has(entry.sourceUrl)) throw new Error('Expected a unique submission post in the matching contest thread.');
     posts.add(entry.sourceUrl);publicLink(entry.repoUrl,'repository');if(entry.demoUrl)publicLink(entry.demoUrl,'demo');
+    if(entry.discussionLinks!==undefined){
+      if(!Array.isArray(entry.discussionLinks)||entry.discussionLinks.length>10)throw new Error('Expected up to ten public discussion links.');
+      const seen=new Set([entry.sourceUrl]);
+      for(const link of entry.discussionLinks){fields(link,['url','platform']);publicLink(link.url);plain(link.platform,'discussion platform',60);if(seen.has(link.url))throw new Error('Duplicate discussion link.');seen.add(link.url);}
+    }
     date(entry.publishedAt);date(entry.updatedAt);
     if(entry.sourceContentSha256!==undefined&&!/^[a-f0-9]{64}$/.test(entry.sourceContentSha256))throw new Error('Invalid reviewed source digest.');
     if (Date.parse(entry.updatedAt)<Date.parse(entry.publishedAt)) throw new Error('Update precedes submission.');

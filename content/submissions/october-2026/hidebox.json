@@ -25,5 +25,27 @@
     "sourceRevision": "c696c5466a1f6827fdc239a44a6c87bf0a93971c",
     "kind": "public-page",
     "credit": "Source/docs walkthrough — Public how-it-works page and illustrative UI; no drive, key, upload or payment created."
-  }
+  },
+  "discussionLinks": [
+    {
+      "url": "https://www.reddit.com/r/tari/comments/1xbv9r6/i_built_a_private_cloud_storage_on_the_tari_ootle/",
+      "platform": "Reddit · r/tari"
+    },
+    {
+      "url": "https://community.tari.com/t/467",
+      "platform": "Tari Community forum"
+    },
+    {
+      "url": "https://bsky.app/profile/tariproject.bsky.social/post/3mz2j2w7xax2c",
+      "platform": "Bluesky"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=1PeZwRiqKa0",
+      "platform": "YouTube"
+    },
+    {
+      "url": "https://x.com/tari/status/2115961883064762371",
+      "platform": "X"
+    }
+  ]
 }

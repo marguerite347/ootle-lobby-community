@@ -25,5 +25,15 @@
     "sourceRevision": "d927e586f4e0a8830a290a32096f2351e780fae5",
     "kind": "public-page",
     "credit": "App demo — Public landing and game rules only; no wallet or incubation."
-  }
+  },
+  "discussionLinks": [
+    {
+      "url": "https://www.reddit.com/r/tari/comments/1xfqeq2/arkimals_hatch_a_secret_canine_on_tari/",
+      "platform": "Reddit"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=1PeZwRiqKa0",
+      "platform": "YouTube"
+    }
+  ]
 }

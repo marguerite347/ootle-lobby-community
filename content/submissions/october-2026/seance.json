@@ -25,5 +25,15 @@
     "kind": "public-page",
     "credit": "App demo — Browser poll interface overview; local interactions and historical poll reads are separate from chain voting."
   },
-  "demoUrl": "https://seance.madebydevx.com"
+  "demoUrl": "https://seance.madebydevx.com",
+  "discussionLinks": [
+    {
+      "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/22",
+      "platform": "Tari Community forum"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=1PeZwRiqKa0",
+      "platform": "YouTube"
+    }
+  ]
 }

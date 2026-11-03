@@ -25,5 +25,11 @@
     "sourceRevision": "a9bd4612fb7d32f080d6e43278beeec10191f316",
     "kind": "public-page",
     "credit": "Docs walkthrough — Public README; no auction or payment execution."
-  }
+  },
+  "discussionLinks": [
+    {
+      "url": "https://www.reddit.com/r/tari/comments/1x6u7q5/i_built_sealed_coffin_a_private_sealedbid_auction/",
+      "platform": "Reddit · r/tari"
+    }
+  ]
 }

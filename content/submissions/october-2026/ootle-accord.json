@@ -25,5 +25,11 @@
     "sourceRevision": "622b71b73c4cf9038d8e60c183babb3be4d62326",
     "kind": "public-page",
     "credit": "App demo — read-only public completed accord and review screen; no funding, approval or payout submitted."
-  }
+  },
+  "discussionLinks": [
+    {
+      "url": "https://bsky.app/profile/seal-clubber.bsky.social/post/3mz4lj2h7zs2l",
+      "platform": "Bluesky"
+    }
+  ]
 }

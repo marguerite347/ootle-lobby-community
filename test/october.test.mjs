@@ -8,6 +8,11 @@ const root=new URL('../',import.meta.url);
 const contest={...readContestContent(root)[0],entries:[]};
 const entry={slug:'example',title:'Example',summary:'A new confidential game.',creator:'Example creator',sourceUrl:`${contest.threadUrl}/5`,repoUrl:'https://github.com/example/game',publishedAt:'2026-10-03T12:00:00Z',updatedAt:'2026-10-03T12:00:00Z',technologies:[{label:'Template',sourceUrl:'https://github.com/example/game/blob/main/template.rs'}]};
 const post={id:101,post_number:5,post_type:1,username:'creator',created_at:entry.publishedAt,updated_at:entry.updatedAt,cooked:'<p>Project with public address text.</p>'};
+test('retains public discussion history while rejecting unsafe and duplicate links',()=>{
+ const discussionLinks=[{url:'https://x.com/tari/status/2115066015264428033',platform:'X'}];
+ assert.deepEqual(validateContests([{...contest,entries:[{...entry,discussionLinks}]}])[0].entries[0].discussionLinks,discussionLinks);
+ for(const links of [[{url:'javascript:alert(1)',platform:'X'}],[{url:entry.sourceUrl,platform:'Forum'}],[...discussionLinks,...discussionLinks]])assert.throws(()=>validateContests([{...contest,entries:[{...entry,discussionLinks:links}]}]));
+});
 test('accepts an empty month, then a new shared entry with a credited recording',()=>{
  assert.equal(validateContests([contest])[0].entries.length,0);
  const recording={url:'https://raw.githubusercontent.com/example/reviewed/main/video.mp4',capturedAt:entry.updatedAt,sourceRevision:'commit abc123',kind:'public-page',credit:'Recorded by contributor'};
