@@ -72,3 +72,15 @@ test('standing game night upgrades the existing UID to a weekly Eastern series w
   assert.match(summer,/DTSTART;TZID=America\/New_York:20270704T180000/);
   assert.doesNotMatch(communityCalendar({...weekly,enabled:false},{enabled:false}),/BEGIN:VEVENT|BEGIN:VTIMEZONE/);
 });
+
+// The public Discord scheduled event fixes the UTC start, but has no end time.
+test('corrected Tari Show keeps its UID, advances sequence and does not publish banner expiry as an end',()=>{
+  const event=unfold(communityCalendar()).split('BEGIN:VEVENT\r\n').find(e=>e.includes('SUMMARY:The Tari Show'));
+  assert.ok(event);
+  assert.match(event,/UID:2026-11-03-tari-show@lobby.tari.com/);
+  assert.match(event,/DTSTART:20261103T170000Z/);
+  assert.match(event,/SEQUENCE:1/);
+  assert.match(event,/event=1516878863127281755/);
+  assert.doesNotMatch(event,/DTEND:|DURATION:/);
+  assert.match(event,/end time has not been announced/);
+});
