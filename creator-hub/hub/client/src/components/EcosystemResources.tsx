@@ -23,7 +23,7 @@ export default function EcosystemResources() {
       <div className="card-front-links">{record.demoUrl && <a href={record.demoUrl} target="_blank" rel="noreferrer">Open app</a>}<a href={record.repoUrl || record.sourceUrl} target="_blank" rel="noreferrer">Source</a>{record.discussionLinks?.map(post=><a key={post.url} href={post.url} target="_blank" rel="noreferrer">Discussion · {post.platform}</a>)}</div>
       <details className="card-details"><summary aria-label={`Details about ${record.title}`}>Details</summary>
        <p>{record.summary}</p><p>{record.status} · {record.network}</p>
-       <p>{record.license || 'License not established'} · Checked {record.lastCheckedAt.slice(0,10)}</p>
+       <p>{record.license || 'License not established'}{record.lastCheckedAt && <> · Checked {record.lastCheckedAt.slice(0,10)}</>}</p>
        <p>{record.preview?.source}</p>
        <Link to={`/resource/${encodeURIComponent(record.id)}`}>Full resource &amp; provenance</Link>
       </details>
