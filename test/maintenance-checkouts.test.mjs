@@ -4,7 +4,8 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import {execFileSync} from 'node:child_process';
-import {maintenanceCheckouts} from '../scripts/maintenance-checkouts.mjs';
+import {maintenanceCheckouts,rustManifestScope} from '../scripts/maintenance-checkouts.mjs';
+import {assessMaintenance,requiredSections} from '../scripts/maintenance-completion.mjs';
 
 test('migrated catalogs are read from identified code checkouts, never old evidence copies', t => {
   const root=fs.mkdtempSync(path.join(os.tmpdir(),'maintenance-checkouts-'));
@@ -28,4 +29,22 @@ test('migrated catalogs are read from identified code checkouts, never old evide
   assert.throws(()=>maintenanceCheckouts(locations.lobby,path.join(root,'missing')));
   execFileSync('git',['-C',locations.workbench,'remote','set-url','origin','https://github.com/other/ootle-workbench.git']);
   assert.throws(()=>maintenanceCheckouts(locations.lobby,locations.workbench),/origin does not identify/);
+});
+
+test('new bundled and vendored Cargo manifests cannot disappear from completion scope', t => {
+  const root=fs.mkdtempSync(path.join(os.tmpdir(),'maintenance-rust-scope-'));
+  t.after(()=>fs.rmSync(root,{recursive:true,force:true}));
+  execFileSync('git',['-C',root,'init'],{stdio:'pipe'});
+  for(const file of ['examples/counter/Cargo.toml','examples/counter/vendor/patch/Cargo.toml']) {
+    fs.mkdirSync(path.dirname(path.join(root,file)),{recursive:true});
+    fs.writeFileSync(path.join(root,file),'[package]\nname = "fixture"\nversion = "0.1.0"\n');
+  }
+  execFileSync('git',['-C',root,'add','.']);
+  const scope=rustManifestScope([{name:'lobby',checkout:root}]);
+  assert.equal(scope.length,2);
+  assert.ok(scope.includes('lobby/examples/counter/vendor/patch/Cargo.toml:manifest-review'));
+  const run={date:'2026-11-03',sections:Object.fromEntries(requiredSections.map(name=>[name,{expectedIds:['done'],items:[{id:'done',status:'complete',checkedAt:'2026-11-03',coverageComplete:true,evidence:['receipt.json']}]}]))};
+  const result=assessMaintenance(run,{requiredScope:{dependencies:scope}});
+  assert.equal(result.status,'incomplete');
+  assert.equal(result.issues.filter(s=>s.includes('missing from maintained scope')).length,2);
 });

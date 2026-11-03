@@ -7,6 +7,15 @@ const definitions = [
   ['workbench', 'ootle-workbench', 'apps/remix-ide/src/app/plugins/ootle/ecosystem-resources.json'],
 ];
 
+// Discover from Git rather than trusting the manually maintained package ledger.
+// Vendored manifests are included: they also need a dated integration disposition.
+export function rustManifestScope(checkouts) {
+  return checkouts.flatMap(({name, checkout}) => {
+    const files = execFileSync('git', ['-C', checkout, 'ls-files', '-z', '--', '*Cargo.toml'], {encoding: 'utf8'});
+    return files.split('\0').filter(Boolean).map(file => `${name}/${file}:manifest-review`);
+  });
+}
+
 // Evidence can remain in Documents while code and builds move to Developer.
 // Never silently fall back to the older evidence-root/work copies.
 export function maintenanceCheckouts(lobbyCheckout, workbenchCheckout) {

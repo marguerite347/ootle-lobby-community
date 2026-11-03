@@ -25,6 +25,8 @@ The CLI reads the Lobby catalog from the checkout containing the script and the 
 
 Public catalog `lastCheckedAt` must match the latest successful full source review for reviewed records in both catalogs. Preserve blocked records and all recording/publication dates. The completion gate rejects stale reviewed dates.
 
+The gate also enumerates every Git-tracked `Cargo.toml` in both checkouts, including vendored packages, independently of the package inventory. Each needs a dependency outcome named `repository/manifest-path:manifest-review`. Review each manifest and adjacent lockfile against upstream versions/advisories and its actual integration; include compatible-update tests/builds and publication evidence. A tested Workbench example does not establish that Lobby's separate bundled copy is current. Keep separate source hashes and outcomes for every copy.
+
 ## Immutable evidence storage
 
 Source readers must retain each representation and version separately. Use `scripts/source_evidence.py` (`store_source_evidence`) or an equivalent exclusive-write, content-addressed store: URL/key digest plus the complete SHA-256 content digest. Never use a URL-only filename for both HTML and API JSON, and never overwrite an earlier observation. Before accepting a source hash comparison or advancing coverage, recompute the file digest and check it against the observation manifest. A mismatch is evidence corruption, not a successful read; retain the failed manifest, reread through the supported source client, and record the new attempt separately. This storage guarantee does not establish that a stream or its replies were reviewed.
