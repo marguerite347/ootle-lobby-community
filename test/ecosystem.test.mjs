@@ -40,3 +40,14 @@ test("release announcement footage retains its scope through normalization", () 
  assert.equal(resource.verification,'source-attested');
  assert.equal(resource.demoUrl,null);
 });
+
+test('partial discussion review retains observation evidence without inventing a successful check', () => {
+ const entry=ecosystemResources.records.find(r=>r.key==='habib-four-lanes');
+ const resource=withEcosystemResources([], [entry])[0];
+ assert.equal(resource.lastVerifiedAt,null);
+ assert.equal(resource.provenance.fetchedAt,entry.lastAttemptAt);
+ assert.equal(resource.provenance.freshness,'provisional');
+ assert.match(resource.preview.source,/^Docs walkthrough/);
+ assert.throws(()=>withEcosystemResources([], [{...entry,lastAttemptAt:null}]), /Missing ecosystem source evidence/);
+ assert.throws(()=>withEcosystemResources([], [{...entry,lastCheckedAt:'not-a-date',lastAttemptAt:null}]), /Missing ecosystem source evidence/);
+});
