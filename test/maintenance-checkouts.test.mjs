@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import {execFileSync} from 'node:child_process';
-import {maintenanceCheckouts,rustManifestScope} from '../scripts/maintenance-checkouts.mjs';
+import {maintenanceCheckouts,rustManifestScope,catalogResourceScope} from '../scripts/maintenance-checkouts.mjs';
 import {assessMaintenance,requiredSections} from '../scripts/maintenance-completion.mjs';
 
 test('migrated catalogs are read from identified code checkouts, never old evidence copies', t => {
@@ -45,6 +45,24 @@ test('new bundled and vendored Cargo manifests cannot disappear from completion 
   assert.ok(scope.includes('lobby/examples/counter/vendor/patch/Cargo.toml:manifest-review'));
   const run={date:'2026-11-03',sections:Object.fromEntries(requiredSections.map(name=>[name,{expectedIds:['done'],items:[{id:'done',status:'complete',checkedAt:'2026-11-03',coverageComplete:true,evidence:['receipt.json']}]}]))};
   const result=assessMaintenance(run,{requiredScope:{dependencies:scope}});
+  assert.equal(result.status,'incomplete');
+  assert.equal(result.issues.filter(s=>s.includes('missing from maintained scope')).length,2);
+});
+
+
+test('unrecorded projects and opportunities cannot disappear from existing-resource scope', t => {
+  const root=fs.mkdtempSync(path.join(os.tmpdir(),'maintenance-catalog-scope-'));
+  t.after(()=>fs.rmSync(root,{recursive:true,force:true}));
+  execFileSync('git',['-C',root,'init'],{stdio:'pipe'});
+  const catalogPath=path.join(root,'catalog.json');
+  fs.writeFileSync(catalogPath,JSON.stringify({records:[{id:'sdk'}],opportunities:[{id:'new-opportunity'}]}));
+  fs.mkdirSync(path.join(root,'content/projects'),{recursive:true});
+  fs.writeFileSync(path.join(root,'content/projects/new-project.json'),JSON.stringify({slug:'new-project',resourceIds:['sdk']}));
+  execFileSync('git',['-C',root,'add','.']);
+  const scope=catalogResourceScope([{name:'lobby',checkout:root,catalogPath}]);
+  assert.deepEqual(new Set(scope),new Set(['project:new-project','new-opportunity']));
+  const run={date:'2026-11-03',sections:Object.fromEntries(requiredSections.map(name=>[name,{expectedIds:['done'],items:[{id:'done',status:'complete',checkedAt:'2026-11-03',coverageComplete:true,evidence:['receipt.json']}]}]))};
+  const result=assessMaintenance(run,{requiredScope:{existingResources:scope}});
   assert.equal(result.status,'incomplete');
   assert.equal(result.issues.filter(s=>s.includes('missing from maintained scope')).length,2);
 });
