@@ -32,5 +32,11 @@
     "capturedAt": "2026-11-02T14:39:31.649880+00:00",
     "reviewedAt": "2026-11-02T14:39:31.649880+00:00",
     "sha256": "f774b9116af62878f6b260f5b1c8ce8c15e1430db36b42cbbc988346d19791fe"
-  }
+  },
+  "discussionLinks": [
+    {
+      "url": "https://x.com/tari_zh/status/2117114726429999611",
+      "platform": "X"
+    }
+  ]
 }

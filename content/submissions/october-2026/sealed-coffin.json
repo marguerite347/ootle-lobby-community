@@ -1,7 +1,7 @@
 {
   "slug": "sealed-coffin",
   "title": "Sealed Coffin",
-  "summary": "Rust/WASM source for a second-price sealed-bid auction on Ootle. Equal deposits and salted commitments conceal bid amounts until reveal; payouts use stealth outputs. Revealed bids, deposit sizes and timing are public. Unrevealed bids forfeit their deposit; losing the one-time key loses access to the refund. The lot remains off-chain. On October 16, 2026, the README states that the template has in-process engine tests and is not yet deployed to Esmeralda. MIT; tari_template_lib 0.34.0 and test tooling 0.45.0 with a committed compatibility lock. Source/docs review only; no auction or transaction executed. The creator-linked Reddit announcement was marked removed by Reddit filters on October 16; the public forum submission remains readable.",
+  "summary": "Rust/WASM source for a second-price sealed-bid auction on Ootle. Equal deposits and salted commitments conceal bid amounts until reveal; payouts use stealth outputs. Revealed bids, deposit sizes and timing are public. Unrevealed bids forfeit their deposit; losing the one-time key loses access to the refund. The lot remains off-chain. On October 16, 2026, the README states that the template has in-process engine tests and is not yet deployed to Esmeralda. MIT; tari_template_lib 0.34.0 and test tooling 0.45.0 with a committed compatibility lock. Source/docs review only; no auction or transaction executed. The creator-linked Reddit announcement was marked removed by Reddit filters on October 16; the public forum submission remains readable. November 2 organizer notice: Esmeralda testnet was reset; entrants were asked to republish templates and update their submission versions where applicable. Earlier recordings document their capture dates.",
   "cardSummary": "Explore a sealed-bid auction template with equal deposits, timed reveals and stealth refunds.",
   "cardStatus": "Source code · Testnet · Unrevealed bids forfeit deposits",
   "creator": "sealedcoffin",
@@ -30,6 +30,10 @@
     {
       "url": "https://www.reddit.com/r/tari/comments/1x6u7q5/i_built_sealed_coffin_a_private_sealedbid_auction/",
       "platform": "Reddit · r/tari"
+    },
+    {
+      "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/44",
+      "platform": "Testnet reset notice"
     }
   ]
 }

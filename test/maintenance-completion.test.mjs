@@ -14,7 +14,7 @@ test('a shipped release cannot hide an unfinished source or omitted scope',()=>{
 });
 test('only evidenced external failures are exceptions; incomplete work stays pending',()=>{
  const r=fixture(),i=r.sections.discovery.items[0];Object.assign(i,{status:'blocked',reason:'Not read in this run'});assert.equal(assessMaintenance(r).status,'incomplete');
- Object.assign(i,{reason:'HTTP 401 requires source login',failureKind:'authentication',nextAction:'Owner can restore existing source session'});assert.equal(assessMaintenance(r).status,'completed-with-exceptions');
+ Object.assign(i,{reason:'HTTP 401 requires source login',failureKind:'authentication',nextAction:'Owner can restore existing source session',retryAt:'2026-10-30T10:00:00Z'});assert.equal(assessMaintenance(r).status,'completed-with-exceptions');
  assert.equal(assessMaintenance(r,{evidenceExists:()=>false}).status,'incomplete');
  i.checkedAt='2026-10-28T10:00:00Z';assert.equal(assessMaintenance(r).status,'incomplete');
 });
@@ -23,6 +23,17 @@ test('dependency deferrals need actual assessment and cannot excuse unread sourc
  r.sections.discovery.items[0].status='deferred';assert.equal(assessMaintenance(r).status,'incomplete');
 });
 test('all required evidence and coverage can complete the run',()=>{assert.equal(assessMaintenance(fixture()).status,'complete');});
+
+test('retry plans and concrete migration assessments cannot be replaced by bookkeeping',()=>{
+ const r=fixture(),i=r.sections.discovery.items[0];
+ Object.assign(i,{status:'blocked',reason:'HTTP 404 from original source',failureKind:'http',nextAction:'Retry original source'});
+ assert.match(assessMaintenance(r).issues.join(),/retry date/);
+ i.retryAt='2026-10-29T09:00:00Z';assert.match(assessMaintenance(r).issues.join(),/retry date/);
+ i.retryAt='2026-10-30T10:00:00Z';assert.equal(assessMaintenance(r).status,'completed-with-exceptions');
+ const d=r.sections.dependencies.items[0];Object.assign(d,{status:'deferred',reason:'Assessment required for this major',targetVersion:'9.0.0',nextAction:'Assess migration'});
+ assert.match(assessMaintenance(r).issues.join(),/assessed dependency risk/);
+ Object.assign(i,{status:'complete',pendingCount:0,pending:['Unread replies']});assert.match(assessMaintenance(r).issues.join(),/declared coverage incomplete/);
+});
 
 test('declared run scope cannot omit maintained catalog or dependency identities',()=>{
  const r=fixture();const result=assessMaintenance(r,{requiredScope:{existingResources:['a','missing-project'],dependencies:['missing-package']}});

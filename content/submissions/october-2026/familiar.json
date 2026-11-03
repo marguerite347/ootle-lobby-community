@@ -1,7 +1,7 @@
 {
   "slug": "familiar",
   "title": "Familiar",
-  "summary": "Rust template and CLI for agent allowances, approved payees, pause and recall. The public walkthrough presents 27 recorded Esmeralda transactions, with 17 accepted and 10 refused according to the creator. October 23 browser inspection advanced between recorded steps 19 and 20; no agent or wallet was connected. Amount mode exposes payment amounts; coupon mode hides denominations while coupon counts and transaction fees remain public. The live-read control did not complete during inspection. MIT prototype; the footage is a source walkthrough of recorded results, not a new on-chain run. Downloaded binaries were not installed.",
+  "summary": "Rust template and CLI for agent allowances, approved payees, pause and recall. The public walkthrough presents 27 recorded Esmeralda transactions, with 17 accepted and 10 refused according to the creator. October 23 browser inspection advanced between recorded steps 19 and 20; no agent or wallet was connected. Amount mode exposes payment amounts; coupon mode hides denominations while coupon counts and transaction fees remain public. The live-read control did not complete during inspection. MIT prototype; the footage is a source walkthrough of recorded results, not a new on-chain run. Downloaded binaries were not installed. November 2 organizer notice: Esmeralda testnet was reset; entrants were asked to republish templates and update their submission versions where applicable. Earlier recordings document their capture dates.",
   "cardSummary": "Give AI agents a revocable testnet allowance with network-enforced spending limits and approved payees.",
   "cardStatus": "Prototype · Testnet",
   "creator": "ArturBaranouski",
@@ -38,6 +38,10 @@
     {
       "url": "https://www.youtube.com/watch?v=1PeZwRiqKa0",
       "platform": "YouTube"
+    },
+    {
+      "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/44",
+      "platform": "Testnet reset notice"
     }
   ]
 }

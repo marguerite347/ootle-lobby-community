@@ -1,7 +1,7 @@
 {
   "slug": "ghostline",
   "title": "Ghostline",
-  "summary": "Private pay-per-call channels for AI agents, with cumulative vouchers and one settlement. The October 23 recording runs five simulated browser calls and shows separate archived evidence; these clicks created no transaction. October 24 review of the creator’s recorded-runs page found a hosted Sapient run dated October 23 and CLI run dated October 22, each reporting five calls and a final settlement. Call counts come from service ledgers, not chain proof; the explorer availability labels are dated October 23 creator observations. The Sapient relay controls the test deposit and refund; browser voucher keys do not remove that custody. Requests, timing and fees remain visible. No wallet, relay payment or CLI was run here.",
+  "summary": "Private pay-per-call channels for AI agents, with cumulative vouchers and one settlement. The October 23 recording runs five simulated browser calls and shows separate archived evidence; these clicks created no transaction. October 24 review of the creator’s recorded-runs page found a hosted Sapient run dated October 23 and CLI run dated October 22, each reporting five calls and a final settlement. Call counts come from service ledgers, not chain proof; the explorer availability labels are dated October 23 creator observations. The Sapient relay controls the test deposit and refund; browser voucher keys do not remove that custody. Requests, timing and fees remain visible. No wallet, relay payment or CLI was run here. November 2 organizer notice: Esmeralda testnet was reset; entrants were asked to republish templates and update their submission versions where applicable. Earlier recordings document their capture dates.",
   "cardSummary": "Explore payment channels that let AI agents pay per API call using cumulative vouchers and one settlement.",
   "cardStatus": "Browser demo · CLI · Testnet",
   "creator": "AduAkorful",
@@ -50,6 +50,10 @@
     {
       "url": "https://x.com/tari/status/2115790755323134073",
       "platform": "X"
+    },
+    {
+      "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/44",
+      "platform": "Testnet reset notice"
     }
   ]
 }

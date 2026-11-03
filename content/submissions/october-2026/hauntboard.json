@@ -1,7 +1,7 @@
 {
   "slug": "hauntboard",
   "title": "Hauntboard",
-  "summary": "Public message board on Ootle testnet with public threads and encrypted sealed rooms. October 31 inspection loaded six general threads, runtime 0.46.0 and a Sapient wallet option. The creator’s October 30 update adds Sapient posting alongside the browser wallet; funded extension posting remains outstanding in the creator’s evidence. Classic invitations share a key in the URL fragment; recipient invitations, a separate recovery vault and future-message rotation are also described. Old keys and plaintext cannot be revoked, wallet recovery does not restore room keys, and messages do not authenticate individual authors. Titles, fees, spent-output links, timing and network metadata remain public; accepted posts cannot be edited or deleted. The refreshed recording shows public pages and privacy documentation, with no wallet or private-room action.",
+  "summary": "Public message board on Ootle testnet with public threads and encrypted sealed rooms. October 31 inspection loaded six general threads, runtime 0.46.0 and a Sapient wallet option. The creator’s October 30 update adds Sapient posting alongside the browser wallet; funded extension posting remains outstanding in the creator’s evidence. Classic invitations share a key in the URL fragment; recipient invitations, a separate recovery vault and future-message rotation are also described. Old keys and plaintext cannot be revoked, wallet recovery does not restore room keys, and messages do not authenticate individual authors. Titles, fees, spent-output links, timing and network metadata remain public; accepted posts cannot be edited or deleted. The refreshed recording shows public pages and privacy documentation, with no wallet or private-room action. November 2 organizer notice: Esmeralda testnet was reset; entrants were asked to republish templates and update their submission versions where applicable. Earlier recordings document their capture dates.",
   "cardSummary": "Read public Ootle discussions or share encrypted room messages with invitations and separate room-key recovery.",
   "cardStatus": "Web app · Testnet · Permanent posts",
   "creator": "_squared",
@@ -25,5 +25,19 @@
     "sourceRevision": "b558b1cb56ddf0e0a06b7154248260a95a89d083",
     "kind": "public-page",
     "credit": "App demo — Public board and room-privacy explanation; no wallet, private-room access or posting."
-  }
+  },
+  "discussionLinks": [
+    {
+      "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/44",
+      "platform": "Testnet reset notice"
+    },
+    {
+      "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/9",
+      "platform": "Original announcement"
+    },
+    {
+      "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/31",
+      "platform": "Earlier recovery update"
+    }
+  ]
 }

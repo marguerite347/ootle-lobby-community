@@ -1,7 +1,7 @@
 {
   "slug": "hexcrow",
   "title": "Hexcrow",
-  "summary": "Milestone escrow held in a stealth output, with approval, timeout refund and two jointly signed mediator paths. A public invoice book records hashes, one-time keys, deadlines and status; role-specific copies disclose invoice text and amounts. The public website replays four recorded Esmeralda invoices and checks available book/output state through the indexer, using clearly archived transaction results where history is gone. October 31 inspection switched public and client copies and observed the displayed 250 tTARI invoice and Settled status. The recording switches public, client and accountant views; no new funding or transaction was submitted. Mediator judgment remains trusted, fees and timing remain visible, and published demo keys must not hold value.",
+  "summary": "Milestone escrow held in a stealth output, with approval, timeout refund and two jointly signed mediator paths. A public invoice book records hashes, one-time keys, deadlines and status; role-specific copies disclose invoice text and amounts. The public website replays four recorded Esmeralda invoices and checks available book/output state through the indexer, using clearly archived transaction results where history is gone. October 31 inspection switched public and client copies and observed the displayed 250 tTARI invoice and Settled status. The recording switches public, client and accountant views; no new funding or transaction was submitted. Mediator judgment remains trusted, fees and timing remain visible, and published demo keys must not hold value. November 2 organizer notice: Esmeralda testnet was reset; entrants were asked to republish templates and update their submission versions where applicable. Earlier recordings document their capture dates.",
   "cardSummary": "Replay confidential milestone invoices from public, client, contractor, mediator and accountant views to see who can read each detail.",
   "cardStatus": "Replay demo · Testnet",
   "creator": "kasbsquall",
@@ -34,6 +34,10 @@
     {
       "url": "https://www.reddit.com/r/tari/comments/1xiwfz4/what_stays_private_on_tari_ootle_notes_from/",
       "platform": "Reddit"
+    },
+    {
+      "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/44",
+      "platform": "Testnet reset notice"
     }
   ]
 }

@@ -25,6 +25,12 @@ The owner approved this simpler policy on October 10, 2026. Lobby and Workbench 
 3. Start with the October 10 discovery report and 15-record tracker. Reconfirm drift-prone facts before publishing. Preserve the selection receipt in the plan/PR handoff. The known source baseline was Lobby 6aec414818ba72752f3174a1e55bd7a8eadaa4a6; fetch current product heads and integrate later work rather than resetting them.
 4. Inventory which tool/dependency versions are actually used by each product and its build/deploy/test pipeline. Do not infer installed or callable status from a catalog listing.
 
+## Execution storage and checkout selection
+
+Owner storage correction, November 2: keep new code checkouts, package installations, builds, browser profiles and transient media under `/Users/marguerite/Developer/Codex`, created with `codex-workspace new`. Run `codex-workspace check` before installations/builds and use `codex-workspace run` for the command. Preserve active older jobs and original evidence; do not move them merely to enforce the new layout. Record storage and backup status in `/Users/marguerite/Developer/WORKFLOW.md` without claiming cloud synchronization from a local copy.
+
+The dedicated sibling `lobby` and `workbench` checkouts now live in the Developer maintenance workspace. The original Documents maintenance root remains the evidence/lock/provenance location. Run catalog enumeration and the completion gate from the active Lobby checkout. The gate resolves its own checkout and the sibling Workbench checkout (or an explicit third argument), verifies their repository origins, and reports their revisions. It must never silently inspect stale `work/` checkouts under the evidence root. See `MAINTENANCE_COMPLETION.md` for the command and acceptance boundaries. Existing run/deployment locks continue across this path change; migration does not start a competing run.
+
 ## Daily discovery coverage
 
 5. Maintain a concrete source registry, grouped by channel and scoped to Tari/Ootle:

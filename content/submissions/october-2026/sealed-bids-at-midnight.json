@@ -1,7 +1,7 @@
 {
   "slug": "sealed-bids-at-midnight",
   "title": "Sealed Bids at Midnight",
-  "summary": "Rust Ootle auction template and headless CLI using signer-bound, domain-separated commit/reveal bids and equal bonds. Consensus epochs define sealing, reveal and settlement; the highest qualifying revealed bid wins, with individual claims for the lot, proceeds and refunds. Unrevealed bids and bids revealed below the reserve permanently forfeit their bonds; these remain locked in the component. Revealed amounts and bidder public keys are public, and bidders with multiple commitments can choose what to reveal. October 20 review read the MIT source at f8796ec7d955. The maintainer reports 17 tests and an Esmeralda v2 lifecycle; this catalog did not execute bids, bridge funds or verify payouts. Source pins tari_template_lib 0.34. The README timeline still says forfeited bonds go to the seller; its detailed v2 description and announcement instead say they remain locked. No hosted browser demo was linked in the reviewed README; the recorded terminal animation is the maintainer’s embedded GIF. October 21: the creator’s October forum submission was read and the unchanged source revision confirmed.",
+  "summary": "Rust Ootle auction template and headless CLI using signer-bound, domain-separated commit/reveal bids and equal bonds. Consensus epochs define sealing, reveal and settlement; the highest qualifying revealed bid wins, with individual claims for the lot, proceeds and refunds. Unrevealed bids and bids revealed below the reserve permanently forfeit their bonds; these remain locked in the component. Revealed amounts and bidder public keys are public, and bidders with multiple commitments can choose what to reveal. October 20 review read the MIT source at f8796ec7d955. The maintainer reports 17 tests and an Esmeralda v2 lifecycle; this catalog did not execute bids, bridge funds or verify payouts. Source pins tari_template_lib 0.34. The README timeline still says forfeited bonds go to the seller; its detailed v2 description and announcement instead say they remain locked. No hosted browser demo was linked in the reviewed README; the recorded terminal animation is the maintainer’s embedded GIF. October 21: the creator’s October forum submission was read and the unchanged source revision confirmed. November 2 organizer notice: Esmeralda testnet was reset; entrants were asked to republish templates and update their submission versions where applicable. Earlier recordings document their capture dates.",
   "cardSummary": "Run sealed-bid auctions with equal entry bonds, timed reveals and separate claims for winners, sellers and losing bidders.",
   "cardStatus": "Source code · Testnet · Forfeited bonds locked forever",
   "creator": "xB0unty911",
@@ -29,6 +29,10 @@
     {
       "url": "https://www.reddit.com/r/tari/comments/1xas9x4/sealed_bids_at_midnight_a_tari_auction_where/",
       "platform": "Reddit · r/tari"
+    },
+    {
+      "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/44",
+      "platform": "Testnet reset notice"
     }
   ]
 }
