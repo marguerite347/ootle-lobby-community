@@ -154,6 +154,14 @@ Follow `MAINTENANCE_COMPLETION.md`. A release is a milestone, not the end of the
 
 Use the immutable, content-addressed evidence store described in `docs/MAINTENANCE_COMPLETION.md` and `scripts/source_evidence.py`. A page HTML read must not overwrite API JSON saved for the same URL. Verify each observation file against its recorded digest before reusing a comparison or advancing a checkpoint; preserve failed manifests and save actual rereads as new attempts.
 
+### Reuse attachments before downloading (November 3 correction)
+
+Before any attachment download or retry, inspect its acquisition record and existing local files. Reuse a complete saved copy after checking the original attachment identity, file type, byte length and SHA-256. Search the recorded destination first; on recovery from a browser timeout, also check the task's cache and matching files in Downloads/Desktop. A filename alone is not proof of identity. Retain the original message permalink and stable attachment ID in private evidence. Refreshed Discord signature/expiry query parameters do not create a new attachment version.
+
+A browser download timeout is an unknown acquisition outcome, not proof that no file was saved. Inspect any pending Save dialog and the existing files before another click. Cancel a task-owned duplicate Save dialog when a verified copy already exists. Never create numbered duplicate downloads to work around a timeout. If no usable copy exists and the cause is unresolved, retain the failure and defer acquisition until there is new evidence or an actionable recovery step; an expired retry date alone does not justify repeating the same failed action.
+
+Keep acquisition and review separate. Record a reusable attachment's local path, stable source identity, size, digest and acquisition status in the existing private queue. If its contents remain unread, leave review pending and direct the next action to the local file, replacing obsolete download retry instructions while preserving prior failures. Local availability does not establish a fresh source review or complete stream coverage. Download again only for an observed replacement/version change, a missing or corrupt saved copy, or an explicit user request. Recheck mutable source messages without redownloading unchanged attachment bytes. Do not delete existing user files or introduce a background downloader/cleanup process.
+
 
 ## Background browser verification and cleanup (owner correction, November 2, 2026)
 
