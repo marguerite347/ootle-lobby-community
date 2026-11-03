@@ -2,7 +2,7 @@
   "slug": "official-templates",
   "title": "Ootle WASM Templates",
   "creator": "Tari project",
-  "summary": "Official Rust/WASM starting points for games, tokens, NFTs, swaps and counters. The November 2, 2026 update uses tari_template_lib 0.37, test tooling 0.49 and template build 0.17.1. The guessing-game CLI uses ootle-rs 0.31. Stablecoin tests now authorize a proof explicitly before withdrawal. The recording shows the merged dependency-update discussion, not template execution. Earlier guide footage and sharing posts remain in the maintenance history.",
+  "summary": "Official Rust/WASM starting points for games, tokens, NFTs, swaps and counters. The November 2, 2026 update uses tari_template_lib 0.37, test tooling 0.49 and template build 0.17.1. The guessing-game CLI uses ootle-rs 0.31. Stablecoin tests now authorize a proof explicitly before withdrawal. The recording shows the merged dependency-update discussion, not template execution. Earlier guide footage and sharing posts remain in the maintenance history. Related tooling: Tari CLI v0.34.1, released November 2, 2026, uses Ootle 0.49.1 and ootle_serde 0.6.2. The v0.34 line uses wallet 0.51. Since v0.33, template validation is left to the network; since v0.30, publishing no longer reads wallet-daemon-url from project configuration.",
   "sourceUrl": "https://bsky.app/profile/tariproject.bsky.social/post/3mxbx4cmymf2h",
   "sourceLabel": "Original post",
   "repoUrl": "https://github.com/tari-project/wasm-template",
@@ -46,6 +46,10 @@
     {
       "url": "https://github.com/tari-project/wasm-template/pull/72",
       "platform": "GitHub"
+    },
+    {
+      "url": "https://github.com/tari-project/tari-cli/releases/tag/v0.34.1",
+      "platform": "GitHub release"
     }
   ]
 }

@@ -768,7 +768,8 @@ test('fresh chat visits hide history, receive new messages and preserve stored c
   assert.equal((await read()).hasMore,false);
   const first=await store.send(a.account.id,{channelId:'lobby',body:'New from me',clientId:'fresh-current-message-a'});
   const second=await store.send(b.account.id,{channelId:'lobby',body:'New from someone else',clientId:'fresh-current-message-b'});
-  assert.deepEqual((await read()).messages.map(m=>m.id),[first.id,second.id]);
+  // Sends may share a database timestamp; this check concerns membership, not UUID tie order.
+  assert.deepEqual((await read()).messages.map(m=>m.id).sort(),[first.id,second.id].sort());
   assert.deepEqual((await read('&q=Previous')).messages,[]);
   assert.equal((await fetch(base+'/channels/lobby/messages?parentId='+old.id+'&after='+encodeURIComponent(startedAt),{headers})).status,404);
   assert.equal((await fetch(base+'/channels/lobby/messages?after=invalid',{headers})).status,400);
