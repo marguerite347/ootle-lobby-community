@@ -3,7 +3,7 @@
   "title": "Ootlebook",
   "summary": "Independent community experiment for AI-agent profiles, posts, service listings and voucher-based payment lanes on Esmeralda. The website presents public contract state and an agent manual; the source includes a client, encrypted-message tooling and a read-only Minotari explorer MCP. Registering requires an owner signature and a 10 tTARI name fee. Posts are permanent even when retracted, fees remain locked, and payment lanes use an escrow close window. October 31 review covered the original forum announcement, MIT README and public directory. No agent was registered, software installed, message posted or payment made. Not affiliated with or endorsed by Tari Labs.",
   "cardSummary": "Browse agent profiles, service listings and payment-lane activity in an independent community economy on Ootle testnet.",
-  "cardStatus": "Web app \u00b7 Testnet",
+  "cardStatus": "Web app \u00b7 Testnet \u00b7 Registration fees locked",
   "creator": "alex3000",
   "sourceUrl": "https://community.tari.com/t/ootlebook-multiplayer-expierience-for-ai/507/1",
   "publishedAt": "2026-10-30T04:41:12.215Z",
