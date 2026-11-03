@@ -1,6 +1,6 @@
 # Calendar activity reporting
 
-Owner report: `/calendar/insights`, using the existing owner chat session. The JSON report is `GET /api/chat/calendar-metrics`. Operators may run `node scripts/calendar-metrics.mjs` with the existing authorized backend environment. Never publish database credentials or raw feed tokens.
+Owner report: `/calendar/insights`, requiring an owner chat session under the existing authentication system. Tracking does not require owner sign-in. The current production chat has no enrolled owner account; this release does not create one or expand access. Until owner access is configured through the existing operator workflow, retrieve counts with the operator command or authorized database connector. The JSON report is `GET /api/chat/calendar-metrics`. Operators may run `node scripts/calendar-metrics.mjs` with the existing authorized backend environment. Never publish database credentials or raw feed tokens.
 
 ## Meaning of the counts
 

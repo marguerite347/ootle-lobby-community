@@ -9,7 +9,7 @@ export default function CalendarInsights(){
   const [data,setData]=useState<Report|null>(null),[message,setMessage]=useState('Loading calendar activity…'),[busy,setBusy]=useState(false);
   const load=useCallback(async()=>{setBusy(true);try {
     const response=await fetch('/api/chat/calendar-metrics',{cache:'no-store',signal:AbortSignal.timeout(15000)});
-    if(response.status===403)throw Error('Sign in with your existing owner account in chat, then refresh this report.');
+    if(response.status===403)throw Error('This report requires an owner chat session. The site operator can also retrieve counts securely. Calendar tracking runs independently of sign-in.');
     if(!response.ok)throw Error('Calendar activity is unavailable. Try again shortly.');
     setData(await response.json());setMessage('');
   } catch(error){setData(null);setMessage(error instanceof Error?error.message:'Calendar activity is unavailable.');}finally{setBusy(false);}},[]);
