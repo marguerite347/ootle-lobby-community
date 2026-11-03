@@ -38,9 +38,9 @@ export function communityCalendar(gameNight=game,tariShow=show) {
     description:`Come play, chat, or just watch.${gameNight.game?`\n${gameNight.game}.`:''}\nJoin ${gameNight.channelName} and select Join Voice: ${gameNight.channelUrl}\nNew to Tari? ${gameNight.inviteUrl}\nThe end time has not been announced.`
   });
   if(tariShow.enabled && Number.isFinite(Date.parse(tariShow.startsAt)) && Date.parse(tariShow.endsAt)>Date.parse(tariShow.startsAt)) events.push({
-    id:tariShow.id,updatedAt:tariShow.calendarUpdatedAt,sequence:tariShow.calendarSequence,title:'The Tari Show',start:tariShow.startsAt,end:tariShow.endsAt,
+    id:tariShow.id,updatedAt:tariShow.calendarUpdatedAt,sequence:tariShow.calendarSequence,title:'The Tari Show',start:tariShow.startsAt,end:tariShow.endTimeConfirmed===false?undefined:tariShow.endsAt,
     location:`${tariShow.channelName} · Tari Discord`,url:tariShow.inviteUrl,
-    description:`Don't ghost the Tari Show. Bring your questions.\nJoin the Stage channel in Tari Discord: ${tariShow.inviteUrl}`
+    description:`Don't ghost the Tari Show. Bring your questions.\nJoin the Stage channel in Tari Discord: ${tariShow.inviteUrl}${tariShow.endTimeConfirmed===false?"\nThe end time has not been announced.":""}`
   });
   const lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Tari//Community Events//EN','CALSCALE:GREGORIAN','METHOD:PUBLISH','X-WR-CALNAME:Tari community','NAME:Tari community',`URL:${COMMUNITY_CALENDAR_URL}`];
   if(events.some(event=>event.recurring))lines.push(...easternZone);
