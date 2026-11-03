@@ -147,3 +147,8 @@ Follow `MAINTENANCE_COMPLETION.md`. A release is a milestone, not the end of the
 ### Preserve every source observation
 
 Use the immutable, content-addressed evidence store described in `docs/MAINTENANCE_COMPLETION.md` and `scripts/source_evidence.py`. A page HTML read must not overwrite API JSON saved for the same URL. Verify each observation file against its recorded digest before reusing a comparison or advancing a checkpoint; preserve failed manifests and save actual rereads as new attempts.
+
+
+## Background browser verification and cleanup (owner correction, November 2, 2026)
+
+Reuse one existing, agent-owned Workbench verification tab throughout a maintenance run. Keep routine checks in the background; do not repeatedly open or foreground Workbench tabs. Before consolidating duplicates, inspect their current UI for unsaved edits, an active build/capture or another active check. Close only tabs owned by this task whose checks have finished; preserve user-owned and unrelated tabs. Record the retained tab and actual cleanup actions in the run handoff. Close temporary verification tabs and owned preview servers when their checks finish, after preserving screenshots and recordings. Never stop another task's server or move an active checkout to enforce cleanup. A later verification should reuse the retained tab before creating a replacement.
