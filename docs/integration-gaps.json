@@ -324,6 +324,20 @@
         "creator-hub/hub/server/projectSubmissions.mjs",
         "creator-hub/hub/client/src/components/NovemberSubmissions.tsx"
       ]
+    },
+    {
+      "id": "COMMUNITY-CALENDAR-METRICS",
+      "status": "configuration-required",
+      "surface": "Calendar provider links; POST /api/calendar/options and /actions; GET /community/calendar/:provider/:token.ics; owner report /calendar/insights",
+      "current": "The existing backend database stores hashed random feed tokens, provider choice actions and first/last/repeat feed-fetch timestamps. Reports separate 30-day clicks and download requests from 14-day observed links and estimated active subscriptions (repeat fetch at least six hours after the first). Issuance is not a click. Existing shared-feed links remain available and uncounted; event UIDs, calendar content and timezone recurrence are unchanged. DNT/GPC clients use untracked links. Test tokens can be excluded. Owner reports use existing chat authentication; no public count endpoint or access to personal calendars.",
+      "required": "Apply the additive calendarMetrics.sql schema through the existing provider migration workflow with backend-only grants/RLS. Runtime reuses CHAT_DATABASE_URL, verified TLS, CHAT_GUEST_SECRET and PUBLIC_SITE_URL. Confirm deployed writes and report readback, exclude QA link hashes, and retain last-good calendar delivery if metrics fail. Do not claim retroactive totals, verified people, completed imports or guaranteed provider refresh.",
+      "verify": "Run calendar-metrics and calendar serializer tests, frontend tracking/banner tests, production build and real browser option/report checks. Verify live stable source SHA, click idempotency, no-store tracked feeds, retained event UIDs/times, backend row readback and unauthenticated report denial. Confirm RLS and no anon/authenticated grants.",
+      "files": [
+        "creator-hub/hub/server/calendarMetrics.mjs",
+        "creator-hub/hub/server/calendarMetrics.sql",
+        "creator-hub/hub/client/src/calendarTracking.ts",
+        "creator-hub/hub/client/src/pages/CalendarInsights.tsx"
+      ]
     }
   ]
 }

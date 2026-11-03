@@ -1,6 +1,7 @@
 import {useEffect,useRef,useState} from 'react';
 import event from '../../../content/game-night.json';
 import show from '../../../content/tari-show.json';
+import {prepareCalendarOptions,recordCalendarChoice,sharedCalendarOptions} from '../calendarTracking';
 
 export type GameNight = {
   id:string; enabled:boolean; game:string|null; startsAt:string|null; expiresAt:string|null;
@@ -44,12 +45,17 @@ function WeeklyTime({value}:{value:string}) {
   return <p className="community-event-time"><span>Every {day} · <strong>{time} ET</strong></span></p>;
 }
 // INTEGRATION_GAP[COMMUNITY-CALENDAR] (configuration-required): see docs/DEVELOPMENT_GAPS.md#community-calendar.
-const calendarUrl='https://lobby.tari.com/community/events.ics';
 export default function GameNightBanner() {
   const [now,setNow]=useState(Date.now);
   const key=`tari-community:${gameNightDismissalKey(event)}:${show.id}:${show.startsAt}:${show.endsAt}`;
   const [dismissed,setDismissed]=useState(()=>{try{return localStorage.getItem(key)==='dismissed';}catch{return false;}});
   const calendarDialog=useRef<HTMLDialogElement>(null);
+  const [calendarOptions,setCalendarOptions]=useState(sharedCalendarOptions);
+  const [calendarLoading,setCalendarLoading]=useState(false);
+  function openCalendar() {
+    calendarDialog.current?.showModal();setCalendarLoading(true);
+    void prepareCalendarOptions().then(setCalendarOptions).finally(()=>setCalendarLoading(false));
+  }
   useEffect(()=>{const timer=setInterval(()=>setNow(Date.now()),30000);return()=>clearInterval(timer);},[]);
   const {gameVisible,showVisible,count}=communityBannerState(now);
   const recurring=weeklyGameNight(event);
@@ -74,18 +80,21 @@ export default function GameNightBanner() {
     </div>
     <div className="community-banner-actions">
       <a className="community-discord" href={event.inviteUrl} target="_blank" rel="noreferrer">Join us on Discord</a>
-      <button className="community-calendar-button" type="button" onClick={()=>calendarDialog.current?.showModal()}>Add to calendar</button>
+      <button className="community-calendar-button" type="button" onClick={openCalendar}>Add to calendar</button>
     </div>
     <button type="button" className="community-dismiss" aria-label="Dismiss community events banner" onClick={()=>{setDismissed(true);try{localStorage.setItem(key,'dismissed');}catch{/* Dismiss for this visit when storage is blocked. */}}}><span aria-hidden="true">×</span></button>
     <dialog ref={calendarDialog} className="community-calendar-dialog" aria-labelledby="community-calendar-title" onClick={e=>{if(e.target===e.currentTarget)e.currentTarget.close();}}>
       <h2 id="community-calendar-title">Save your spot.</h2>
       <p>Game night + The Tari Show</p>
       <div className="community-calendar-options">
-        <a href={`https://calendar.google.com/calendar/r?cid=${encodeURIComponent(calendarUrl.replace('https:','webcal:'))}`} target="_blank" rel="noreferrer">Google Calendar</a>
-        <a href={calendarUrl.replace('https:','webcal:')}>Apple Calendar</a>
-        <a href="/community/events.ics" download="tari-community.ics">Download for any calendar</a>
+        {calendarLoading?<p role="status">Opening calendar options…</p>:<>
+          <a href={calendarOptions.google.href} onClick={()=>recordCalendarChoice('google',calendarOptions.google)} target="_blank" rel="noreferrer">Google Calendar</a>
+          <a href={calendarOptions.apple.href} onClick={()=>recordCalendarChoice('apple',calendarOptions.apple)}>Apple Calendar</a>
+          <a href={calendarOptions.download.href} onClick={()=>recordCalendarChoice('download',calendarOptions.download)} download="tari-community.ics">Download for any calendar</a>
+        </>}
       </div>
       <p className="community-calendar-note">Subscribe with Google or Apple for schedule updates. Downloads are a one-time copy.</p>
+      <p className="community-calendar-note">Random feed links help us measure calendar use. We can’t access your calendar.</p>
       <button className="community-dismiss" type="button" aria-label="Close calendar options" onClick={()=>calendarDialog.current?.close()}><span aria-hidden="true">×</span></button>
     </dialog>
   </aside>;

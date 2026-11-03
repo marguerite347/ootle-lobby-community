@@ -43,6 +43,7 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 | [WB-FORK](#wb-fork) | configuration-required | /workbench and Workbench navigation links |
 | [COMMUNITY-CALENDAR](#community-calendar) | configuration-required | GET /community/events.ics; shared community banner calendar options |
 | [LOBBY-SUBMISSIONS](#lobby-submissions) | configuration-required | /submit; POST /api/project-submissions; private /submit/review |
+| [COMMUNITY-CALENDAR-METRICS](#community-calendar-metrics) | configuration-required | Calendar provider links; POST /api/calendar/options and /actions; GET /community/calendar/:provider/:token.ics; owner report /calendar/insights |
 
 ## WB-RUNNER
 
@@ -343,3 +344,15 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 **Completion check:** A real hosted form returns a receipt only after saving; an independent database read matches it. Retrying returns the same receipt, including after restart. Guests cannot read/review; browser database roles have no grants. Closed contest destinations, rejected input, expired challenge, origin, quota and outage cases fail closed. Verify the October form has no submit path and a valid October POST is rejected without saving. Review before adding a public gallery record.
 
 **Source:** [creator-hub/hub/server/projectSubmissions.mjs](../creator-hub/hub/server/projectSubmissions.mjs), [creator-hub/hub/client/src/components/NovemberSubmissions.tsx](../creator-hub/hub/client/src/components/NovemberSubmissions.tsx)
+
+## COMMUNITY-CALENDAR-METRICS
+
+**configuration-required** — Calendar provider links; POST /api/calendar/options and /actions; GET /community/calendar/:provider/:token.ics; owner report /calendar/insights
+
+**Current:** The existing backend database stores hashed random feed tokens, provider choice actions and first/last/repeat feed-fetch timestamps. Reports separate 30-day clicks and download requests from 14-day observed links and estimated active subscriptions (repeat fetch at least six hours after the first). Issuance is not a click. Existing shared-feed links remain available and uncounted; event UIDs, calendar content and timezone recurrence are unchanged. DNT/GPC clients use untracked links. Test tokens can be excluded. Owner reports use existing chat authentication; no public count endpoint or access to personal calendars.
+
+**Remaining:** Apply the additive calendarMetrics.sql schema through the existing provider migration workflow with backend-only grants/RLS. Runtime reuses CHAT_DATABASE_URL, verified TLS, CHAT_GUEST_SECRET and PUBLIC_SITE_URL. Confirm deployed writes and report readback, exclude QA link hashes, and retain last-good calendar delivery if metrics fail. Do not claim retroactive totals, verified people, completed imports or guaranteed provider refresh.
+
+**Completion check:** Run calendar-metrics and calendar serializer tests, frontend tracking/banner tests, production build and real browser option/report checks. Verify live stable source SHA, click idempotency, no-store tracked feeds, retained event UIDs/times, backend row readback and unauthenticated report denial. Confirm RLS and no anon/authenticated grants.
+
+**Source:** [creator-hub/hub/server/calendarMetrics.mjs](../creator-hub/hub/server/calendarMetrics.mjs), [creator-hub/hub/server/calendarMetrics.sql](../creator-hub/hub/server/calendarMetrics.sql), [creator-hub/hub/client/src/calendarTracking.ts](../creator-hub/hub/client/src/calendarTracking.ts), [creator-hub/hub/client/src/pages/CalendarInsights.tsx](../creator-hub/hub/client/src/pages/CalendarInsights.tsx)
