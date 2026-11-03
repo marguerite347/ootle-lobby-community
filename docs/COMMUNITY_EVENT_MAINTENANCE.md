@@ -8,6 +8,12 @@ On November 2, 2026 the owner explicitly confirmed **every Sunday at 6 PM Easter
 
 The calendar upgrades the existing game-night UID to a weekly series anchored at its original November 1 start, with sequence 1. Keep that UID and local timezone recurrence stable so subscribers do not receive a duplicate. The master describes the standing hangout only: a single week’s game, cancellation or reschedule must use a tested `RECURRENCE-ID` exception with the same UID and the original occurrence time; do not overwrite the whole series with that week’s details or create a second overlapping event. Add exception support before publishing such a change. A cancelled occurrence needs `STATUS:CANCELLED`; a cancelled series needs an explicit series cancellation. Increment calendar metadata for revisions, and retain exceptions for subscriber refresh.
 
+## Owner-confirmed Tari Show local time
+
+On November 3, 2026 the owner corrected the show to **1 PM Eastern (America/New_York)**. For November 3 this is **18:00 UTC**, because Eastern is on standard time. The Discord scheduled event displayed noon after the daylight-saving change; that stale value must not override the owner correction or restore 17:00 UTC. Keep the November 3 event UID, increment its sequence for this revision, and preserve the unconfirmed end-time flag. The one-hour banner expiry is not a promised show duration.
+
+For later confirmed show dates, derive UTC from 13:00 in America/New_York on that date (18:00 UTC in standard time, 17:00 UTC in daylight time). This confirms the local time, not new recurring dates. An unexplained one-hour mismatch around a daylight-saving transition is conflicting evidence, not an automatic reschedule: preserve the owner-confirmed local time until an explicit new organizer reschedule resolves it. Apply the same date-aware conversion to the banner, feed, copy and artwork.
+
 ## Runtime and sources
 
 Use the existing `tari-community-event-updates` Codex heartbeat in the lobby chat at **09:00 America/New_York on Tuesdays and Thursdays only**, following daylight-saving changes. Do not retain an hourly duplicate or add weekend checks. This is a local scheduled check: the Mac must be awake and Codex running. It is not a Discord gateway listener or a 24/7 cloud process. Results announced after Thursday morning may remain unchecked until Tuesday; do not imply coverage between runs.
