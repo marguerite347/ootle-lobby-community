@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {execFileSync} from 'node:child_process';
+import {catalogReviewQueue} from '../creator-hub/hub/server/sourceMonitoring.mjs';
 
 const definitions = [
   ['lobby', 'ootle-lobby-community', 'creator-hub/hub/shared/ecosystemResources.json'],
@@ -38,4 +39,18 @@ export function maintenanceCheckouts(lobbyCheckout, workbenchCheckout) {
     return {name, checkout, repository: expected, revision: git('rev-parse', 'HEAD'),
       catalogPath, records: JSON.parse(fs.readFileSync(catalogPath, 'utf8')).records};
   });
+}
+
+// The ledger is evidence, not the authority for what is currently listed.
+// Include projects and dated opportunities even before they acquire a review record.
+export function catalogResourceScope(checkouts) {
+  const entries = checkouts.flatMap(({catalogPath}) => {
+    const catalog = JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
+    return [...catalog.records, ...(catalog.opportunities || [])];
+  });
+  const lobby = checkouts.find(checkout => checkout.name === 'lobby');
+  const files = execFileSync('git', ['-C', lobby.checkout, 'ls-files', '-z', '--',
+    'content/projects/*.json', 'content/community-projects/*.json', 'content/submissions/**/*.json'], {encoding: 'utf8'});
+  for (const file of files.split('\0').filter(Boolean)) entries.push(JSON.parse(fs.readFileSync(path.join(lobby.checkout, file), 'utf8')));
+  return catalogReviewQueue(entries).map(entry => entry.id);
 }
