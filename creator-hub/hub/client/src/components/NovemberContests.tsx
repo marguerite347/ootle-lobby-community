@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import {webImage} from '../imageVariants';
 import {NOVEMBER_CONTESTS, novemberContestPhase, novemberContestTiming, type NovemberContest} from '../novemberContests';
 import './NovemberContests.css';
+import './ContestHologram.css';
 
 function useContestClock() {
   const [now, setNow] = useState(() => new Date());
@@ -26,7 +27,7 @@ export function NovemberContestCards() {
   return <section className="november-contests" id="contests" aria-labelledby="november-contests-title">
     <div className="november-heading"><h2 id="november-contests-title">Pick your <em>play.</em></h2><span>November 2026</span></div>
     <div className="november-grid">{NOVEMBER_CONTESTS.map((contest, index) =>
-      <Link className={`november-card november-card-${index + 1}`} key={contest.slug} to={`/challenges/${contest.slug}`}>
+      <Link className={`november-card november-card-${index + 1} contest-hologram`} key={contest.slug} to={`/challenges/${contest.slug}`}>
         <span className="november-eyebrow">{contest.category}</span>
         <h3>{contest.title}<br/><em>{contest.accent}</em></h3>
         <p>{contest.description}</p>
@@ -35,7 +36,7 @@ export function NovemberContestCards() {
         <span className="november-card-action">{novemberContestPhase(contest, now) === 'closed' ? 'View contest & entries' : contest.action}</span>
       </Link>
     )}</div>
-    <aside className="ongoing-bounty" id="ongoing-bounty" aria-labelledby="ongoing-bounty-title">
+    <aside className="ongoing-bounty contest-hologram" id="ongoing-bounty" aria-labelledby="ongoing-bounty-title">
       <div><span className="november-eyebrow">Ongoing</span><h3 id="ongoing-bounty-title">Tari bug <em>bounty.</em></h3><p>Find a security issue? Report it privately.</p></div>
       <div className="ongoing-bounty-reward"><strong>15,000–250,000 XTM</strong><span>Guideline rewards · Eligibility and severity review apply.</span></div>
       <a className="season-button" href="https://github.com/tari-project/tari-ootle/security" target="_blank" rel="noreferrer">View scope &amp; report</a>

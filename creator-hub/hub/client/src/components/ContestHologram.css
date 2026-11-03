@@ -1,18 +1,22 @@
-/* Reuse the Daily Ritual's holographic palette and motion on both invitations. */
-.quest-option .quest-card {
+/* Shared Tari holographic finish for contest invitations and the bounty strip. */
+.quest-option .quest-card,.november-contests .contest-hologram {
   --contest-hologram: linear-gradient(115deg,rgba(169,108,255,.18),rgba(108,234,219,.13) 28%,rgba(218,246,109,.16) 49%,rgba(223,151,255,.20) 72%,rgba(123,151,255,.14));
   background:var(--contest-hologram),#10132f;
   background-size:240% 100%;
   animation:ritual-hologram 9s ease-in-out infinite alternate;
   isolation:isolate;
 }
+.contest-hologram { position:relative; overflow:hidden; }
 .quest-card.quest-security { animation-delay:-4.5s; }
-.quest-card::after,.quest-card .quest-link::after {
+.quest-card::after,.quest-card .quest-link::after,.contest-hologram::after {
   content:""; position:absolute; inset:-100% -45%; z-index:-1; pointer-events:none;
   background:linear-gradient(110deg,transparent 40%,rgba(205,171,255,.05) 44%,rgba(187,255,236,.22) 49%,rgba(248,220,255,.10) 52%,transparent 58%);
   transform:translateX(-35%); animation:ritual-sheen 7s ease-in-out infinite; opacity:.8;
 }
 .quest-card.quest-security::after { animation-delay:-3.5s; }
+.november-contests .november-card-2,.november-card-2::after { animation-delay:-3s; }
+.november-contests .november-card-3,.november-card-3::after { animation-delay:-6s; }
+.november-contests .ongoing-bounty,.ongoing-bounty.contest-hologram::after { animation-delay:-1.5s; }
 .quest-card .quest-link {
   position:relative; isolation:isolate; overflow:hidden;
   border:1px solid #d4d0f34d; border-radius:10px; padding:10px 14px; margin-top:14px; min-height:44px;
@@ -22,12 +26,13 @@
 }
 .quest-card:hover .quest-link,.quest-card:focus-visible .quest-link { border-color:#d7f581; filter:brightness(1.15); }
 @media(prefers-reduced-motion:reduce) {
-  .quest-card,.quest-card::after,.quest-card .quest-link,.quest-card .quest-link::after { animation:none; }
-  .quest-card,.quest-card .quest-link { background-position:50% 50%; }
-  .quest-card::after,.quest-card .quest-link::after { transform:none; opacity:.2; }
+  .quest-option .quest-card,.quest-card::after,.quest-card .quest-link,.quest-card .quest-link::after,
+  .november-contests .contest-hologram,.contest-hologram::after { animation:none; }
+  .quest-option .quest-card,.quest-card .quest-link,.november-contests .contest-hologram { background-position:50% 50%; }
+  .quest-card::after,.quest-card .quest-link::after,.contest-hologram::after { transform:none; opacity:.2; }
 }
-:root[data-hub-effects=off] .quest-card,:root[data-hub-effects=off] .quest-card .quest-link { animation:none; }
-:root[data-hub-effects=off] .quest-card::after,:root[data-hub-effects=off] .quest-card .quest-link::after { display:none; }
+:root[data-hub-effects=off] .quest-card,:root[data-hub-effects=off] .quest-card .quest-link,:root[data-hub-effects=off] .contest-hologram { animation:none; }
+:root[data-hub-effects=off] .quest-card::after,:root[data-hub-effects=off] .quest-card .quest-link::after,:root[data-hub-effects=off] .contest-hologram::after { display:none; }
 
 .quest-option { display:flex; flex-direction:column; min-width:0; container-type:inline-size; }
 .quest-option > .quest-number {
