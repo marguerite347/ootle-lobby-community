@@ -15,7 +15,7 @@ export function withEcosystemResources(records, additions = ecosystemResources.r
     if (entry.preview) {
       requireLinkHost(entry.preview.video, 'recording');
       requireLinkHost(entry.preview.image, 'recording');
-      if (!/^(Source\/docs walkthrough|App demo|Announcement walkthrough)\b/.test(entry.preview.source)) throw new Error('Reference media must disclose capture scope');
+      if (!/^(Source\/docs walkthrough|Docs walkthrough|Concept overview|App demo|Announcement walkthrough)\b/.test(entry.preview.source)) throw new Error('Reference media must disclose capture scope');
     }
     for (const post of entry.discussionLinks || []) {
       const url=new URL(post.url);
@@ -23,10 +23,13 @@ export function withEcosystemResources(records, additions = ecosystemResources.r
     }
     if (entry.demoUrl) requireLinkHost(entry.demoUrl, 'demo');
     if (entry.verification !== 'source-attested' || entry.readiness !== 'conceptual') throw new Error('Reference listings cannot imply runtime acceptance');
-    if (!entry.upstreamRevision || !Number.isFinite(Date.parse(entry.lastCheckedAt))) throw new Error('Missing ecosystem source evidence');
+    const checked = Number.isFinite(Date.parse(entry.lastCheckedAt));
+    const attempted = Number.isFinite(Date.parse(entry.lastAttemptAt));
+    if (!entry.upstreamRevision || (!checked && !(entry.lastCheckedAt === null && attempted))) throw new Error('Missing ecosystem source evidence');
     const resource = makeResource({...entry, summary: `${entry.summary}\n\n${entry.status}.`,
       sourceId: 'reviewed-ecosystem', sourceName: 'Reviewed Tari ecosystem sources',
-      upstreamId: entry.repoUrl || entry.sourceUrl, fetchedAt: entry.lastCheckedAt,
+      upstreamId: entry.repoUrl || entry.sourceUrl, fetchedAt: entry.lastAttemptAt || entry.lastCheckedAt,
+      freshness: checked ? 'current' : 'provisional',
       lastVerifiedAt: entry.lastCheckedAt, setupHint: 'Open the source or guide for setup steps and compatibility requirements.',
       prerequisites: entry.platform ? [entry.platform] : [], topic: entry.type === 'learn' ? 'understand' : null,
       format: entry.type === 'learn' ? 'reference' : null, level: entry.group === 'Advanced' ? 'advanced' : 'intermediate'});
