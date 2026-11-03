@@ -25,5 +25,15 @@
     "sourceRevision": "d54da6654ed0100405e9413cabc3738a418d1b99",
     "kind": "public-page",
     "credit": "Docs walkthrough — Public settlement guide; no Steam login, trade or payment."
-  }
+  },
+  "discussionLinks": [
+    {
+      "url": "https://bsky.app/profile/did:plc:wdihq3fssx5hiu67qrqvxjwr/post/3mysfpgcbx522",
+      "platform": "Bluesky"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=1PeZwRiqKa0",
+      "platform": "YouTube"
+    }
+  ]
 }

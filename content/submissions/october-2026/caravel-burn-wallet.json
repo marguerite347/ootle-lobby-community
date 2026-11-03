@@ -25,5 +25,23 @@
     "sourceRevision": "1f1b29765487cdd36aa58b92c0320551f4a0dfd3",
     "kind": "public-page",
     "credit": "Source/docs walkthrough — Original deposit-only template documentation; no deposit performed."
-  }
+  },
+  "discussionLinks": [
+    {
+      "url": "https://www.reddit.com/r/tari/comments/1x1pnzz/we_built_a_burn_wallet_on_the_ootle_that_nobody/",
+      "platform": "Reddit · r/tari"
+    },
+    {
+      "url": "https://x.com/Caravelxyz/status/2108591594236481966",
+      "platform": "X"
+    },
+    {
+      "url": "https://www.reddit.com/r/tari/comments/1xchqoz/caravel_burn_wallet_a_private_verifiable_burn/",
+      "platform": "Reddit · r/tari"
+    },
+    {
+      "url": "https://x.com/Caravelxyz/status/2113545415282855958",
+      "platform": "X"
+    }
+  ]
 }

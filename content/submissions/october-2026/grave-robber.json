@@ -25,5 +25,19 @@
     "sourceRevision": "a20bccb14085b9bbd6c6a1c89dcbffd6b7f34599",
     "kind": "public-page",
     "credit": "App demo — Sandbox explorer and riddle ledger; no wallet, bounty claim or transaction."
-  }
+  },
+  "discussionLinks": [
+    {
+      "url": "https://community.tari.com/t/spooky-secrets-community-bonus-contest/463/4",
+      "platform": "Tari Community forum"
+    },
+    {
+      "url": "https://www.reddit.com/r/tari/s/Z9ZhhA4BZ2",
+      "platform": "Reddit · r/tari"
+    },
+    {
+      "url": "https://www.reddit.com/r/tari/comments/1xbopnt/i_built_grave_robber_a_2d_gothic_crypt_heist_on/",
+      "platform": "Reddit · r/tari"
+    }
+  ]
 }

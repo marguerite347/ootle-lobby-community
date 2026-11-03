@@ -25,5 +25,19 @@
     "kind": "public-page",
     "credit": "Concept overview — Interactive narrated browser replay; no live transaction."
   },
-  "demoUrl": "https://hycorange.github.io/phantom-drop/"
+  "demoUrl": "https://hycorange.github.io/phantom-drop/",
+  "discussionLinks": [
+    {
+      "url": "https://bsky.app/profile/hycorange.bsky.social/post/3mxh4tpegms22",
+      "platform": "Bluesky"
+    },
+    {
+      "url": "https://bsky.app/profile/tariproject.bsky.social/post/3mz3tjwp34m2i",
+      "platform": "Bluesky"
+    },
+    {
+      "url": "https://x.com/tari/status/2116153147538260441",
+      "platform": "X"
+    }
+  ]
 }

@@ -25,5 +25,23 @@
     "credit": "Source/docs walkthrough — Updated README, implementation and deployment documentation; no wallet or trade."
   },
   "updatedAt": "2026-10-22T13:13:32.947Z",
-  "sourceContentSha256": "f5a7808538e8267db43fa6ad1df051efbd32307646448fc33be9a602a385dc00"
+  "sourceContentSha256": "f5a7808538e8267db43fa6ad1df051efbd32307646448fc33be9a602a385dc00",
+  "discussionLinks": [
+    {
+      "url": "https://www.reddit.com/r/tari/comments/1xci5og/caravel_trade_a_private_peer_to_peer_otc_platform/",
+      "platform": "Reddit · r/tari"
+    },
+    {
+      "url": "https://x.com/Caravelxyz/status/2113244021204131930",
+      "platform": "X"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=1PeZwRiqKa0",
+      "platform": "YouTube"
+    },
+    {
+      "url": "https://x.com/Caravelxyz/status/2113545415282855958",
+      "platform": "X"
+    }
+  ]
 }

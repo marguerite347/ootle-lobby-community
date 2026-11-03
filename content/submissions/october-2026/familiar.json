@@ -25,5 +25,19 @@
     "sourceRevision": "73b01af39b1f51f1713104ed4a557b48a4f9bda2",
     "kind": "public-page",
     "credit": "Source/docs walkthrough — Creator’s recorded transaction walkthrough; no agent, wallet or new transaction."
-  }
+  },
+  "discussionLinks": [
+    {
+      "url": "https://bsky.app/profile/zbignevich.bsky.social/post/3myg4lmvgn52f",
+      "platform": "Bluesky"
+    },
+    {
+      "url": "https://x.com/ArturZbignevich/status/2113023878524256561",
+      "platform": "X"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=1PeZwRiqKa0",
+      "platform": "YouTube"
+    }
+  ]
 }

@@ -25,5 +25,23 @@
     "sourceRevision": "a46223faac256a746a33671ff93b4c2b0c7e0d0d",
     "kind": "public-page",
     "credit": "App demo — Interactive replay of the creator’s engine transcript; four perspectives, no browser decryption or payment."
-  }
+  },
+  "discussionLinks": [
+    {
+      "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/23",
+      "platform": "Tari Community forum"
+    },
+    {
+      "url": "https://bsky.app/profile/zjpenterprises.bsky.social/post/3myfxphq3ps2u",
+      "platform": "Bluesky"
+    },
+    {
+      "url": "https://www.reddit.com/r/tari/comments/1xc4cdg/graveyard_shift_payroll_where_the_salaries_stay/",
+      "platform": "Reddit · r/tari"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=1PeZwRiqKa0",
+      "platform": "YouTube"
+    }
+  ]
 }

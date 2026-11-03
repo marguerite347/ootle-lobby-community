@@ -25,5 +25,11 @@
     "sourceRevision": "e68360ee7fb978d98573aa7861e2cb1bf5047532",
     "kind": "public-page",
     "credit": "Source/docs walkthrough — public landing page, privacy layers and timed hunt explanation; no wallet actions."
-  }
+  },
+  "discussionLinks": [
+    {
+      "url": "https://bsky.app/profile/davidj-builds.bsky.social/post/3mz3u2ogb3f2w",
+      "platform": "Bluesky"
+    }
+  ]
 }

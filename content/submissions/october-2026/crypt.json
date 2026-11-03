@@ -25,5 +25,31 @@
     "kind": "public-page",
     "credit": "App demo — Replacement mirror’s testnet payout warning and title screen; no wallet or transaction."
   },
-  "demoUrl": "https://tari-crypt.vercel.app/"
+  "demoUrl": "https://tari-crypt.vercel.app/",
+  "discussionLinks": [
+    {
+      "url": "https://bsky.app/profile/ogboy92.bsky.social/post/3mxoehhu2b22o",
+      "platform": "Bluesky"
+    },
+    {
+      "url": "https://bsky.app/profile/tariproject.bsky.social/post/3mxpffkqnsk2x",
+      "platform": "Bluesky"
+    },
+    {
+      "url": "https://bsky.app/profile/ogboy92.bsky.social/post/3my5n2j23ps2y",
+      "platform": "Bluesky"
+    },
+    {
+      "url": "https://bsky.app/profile/ogboy92.bsky.social/post/3my5p2qkhhs2l",
+      "platform": "Bluesky"
+    },
+    {
+      "url": "https://bsky.app/profile/tariproject.bsky.social/post/3myuc5jsyso2y",
+      "platform": "Bluesky"
+    },
+    {
+      "url": "https://x.com/tari/status/2115066015264428033",
+      "platform": "X"
+    }
+  ]
 }

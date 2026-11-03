@@ -25,5 +25,11 @@
     "sourceRevision": "3606ab2",
     "kind": "public-page",
     "credit": "App demo — Public HTTP test shop browsing only; no checkout or payment action."
-  }
+  },
+  "discussionLinks": [
+    {
+      "url": "https://bsky.app/profile/luci666-91.bsky.social/post/3mxv5ldyepc2y",
+      "platform": "Bluesky"
+    }
+  ]
 }

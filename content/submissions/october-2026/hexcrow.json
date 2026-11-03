@@ -25,5 +25,15 @@
     "sourceRevision": "d58ea442900f65859e536a08e02f353afdf85164",
     "kind": "public-page",
     "credit": "App demo — recorded-run replay with public, client and accountant disclosure views; no new transaction."
-  }
+  },
+  "discussionLinks": [
+    {
+      "url": "https://bsky.app/profile/artemita95.bsky.social/post/3myzqfug3nc2j",
+      "platform": "Bluesky"
+    },
+    {
+      "url": "https://www.reddit.com/r/tari/comments/1xiwfz4/what_stays_private_on_tari_ootle_notes_from/",
+      "platform": "Reddit"
+    }
+  ]
 }

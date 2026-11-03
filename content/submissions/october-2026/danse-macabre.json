@@ -25,5 +25,15 @@
     "sourceRevision": "2341dc39b67f2f3491699a079bdd0103f1efedb5",
     "kind": "public-page",
     "credit": "Source walkthrough — game design and privacy model; no gameplay or transaction performed."
-  }
+  },
+  "discussionLinks": [
+    {
+      "url": "https://bsky.app/profile/yasaswip012.bsky.social/post/3mz77r73oe52k",
+      "platform": "Bluesky"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Mh5FU2Hlr4Q",
+      "platform": "YouTube"
+    }
+  ]
 }

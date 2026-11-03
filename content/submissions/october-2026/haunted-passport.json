@@ -25,5 +25,11 @@
     "sourceRevision": "cb7627b663d6d3225f22d6d90a556cbb298a16f4",
     "kind": "public-page",
     "credit": "Source/docs walkthrough — Public credential roles, disclosure model and deployment links; no wallet actions."
-  }
+  },
+  "discussionLinks": [
+    {
+      "url": "https://bsky.app/profile/chrisgoldog.bsky.social/post/3myzc45hcf22l",
+      "platform": "Bluesky"
+    }
+  ]
 }
