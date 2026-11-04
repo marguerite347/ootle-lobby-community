@@ -27,8 +27,9 @@ export default function Detail() {
   if (err) return <div className="panel mt24">Resource not found. <Link to="/explore">Back to Explore</Link></div>;
   if (!r) return <Spinner />;
 
+  const sourceDiscussion = r.discussionLinks?.find(post => post.url === r.sourceUrl);
   const links: [string, string | null][] = [
-    [r.demoUrl ? 'Website / demo' : 'Source reference', r.demoUrl || r.sourceUrl],
+    [r.demoUrl ? 'Website / demo' : sourceDiscussion ? `Discussion · ${sourceDiscussion.platform}` : 'Source reference', r.demoUrl || r.sourceUrl],
     ...(r.discussionLinks || []).map(p => [`Discussion · ${p.platform}`, p.url] as [string,string]),
     ['Source repo', r.repoUrl],
     ['Docs / guide', r.docsUrl],
