@@ -21,14 +21,42 @@
     "capturedAt": "2026-10-10T12:48:40.537282+00:00",
     "sourceRevision": "abe3b49775f9ecb8508b4d40de60a8791b2ac249",
     "kind": "public-page",
-    "credit": "Source/docs walkthrough — application not demonstrated"
+    "credit": "Docs walkthrough"
   },
-  "cardSummary": "Inspect and convert Tari addresses with an offline Python toolkit.",
+  "cardSummary": "Inspect, validate and convert Tari addresses with an offline Python toolkit for developers.",
   "cardStatus": "Source code",
   "discussionLinks": [
     {
       "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/44",
       "platform": "Testnet reset notice"
+    },
+    {
+      "url": "https://bsky.app/profile/kata5.bsky.social/post/3mxhs52xtzi2b",
+      "platform": "Bluesky · Creator post"
+    },
+    {
+      "url": "https://bsky.app/profile/kata5.bsky.social/post/3mxhrqmydce2l",
+      "platform": "Bluesky · Creator post"
+    },
+    {
+      "url": "https://bsky.app/profile/kata5.bsky.social/post/3mxf63oiypy25",
+      "platform": "Bluesky · Creator post"
+    },
+    {
+      "url": "https://bsky.app/profile/kata5.bsky.social/post/3mxblf4ilwu2l",
+      "platform": "Bluesky · Creator post"
+    },
+    {
+      "url": "https://bsky.app/profile/kata5.bsky.social/post/3mxpd7yd4w22l",
+      "platform": "Bluesky · Creator post"
+    },
+    {
+      "url": "https://bsky.app/profile/kata5.bsky.social/post/3mxtjdlfbdj2w",
+      "platform": "Bluesky · Creator post"
+    },
+    {
+      "url": "https://bsky.app/profile/kata5.bsky.social/post/3mxtkgg6fwh2i",
+      "platform": "Bluesky · Creator post"
     }
   ]
 }
