@@ -1,6 +1,9 @@
 {
   "repository": "https://github.com/huggingface/skills",
-  "revision": "abc20ae526d8b4c0e4dff89f904adce28a4a0eb6",
+  "revision": "25910b3d0ba31a2ba102f901cdc9e008c278a69c",
   "path": "skills/hf-cli",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "previousRevision": "abc20ae526d8b4c0e4dff89f904adce28a4a0eb6",
+  "updatedAt": "2026-11-04T19:00:43.828331+00:00",
+  "updateScope": "Reviewed upstream documentation only; provider models, authentication and generation not executed."
 }

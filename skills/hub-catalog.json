@@ -1023,11 +1023,11 @@
   {
     "id": "hf-hf-cli",
     "title": "Hugging Face \u00b7 CLI",
-    "description": "Hugging Face Hub CLI (`hf`) for downloading, uploading, and managing models, datasets, spaces, buckets, repos, papers, jobs, and more on the Hugging Face Hub. Use when: handling authentication; managing local cache; managing Hugging Face Buckets; running or scheduling jobs on Hugging Face infrastructure; managing Hugging Face repos; discussions and pull requests; browsing models, datasets and spaces; reading, searching, or browsing academic papers; managing collections; querying datasets; configuring spaces; setting up webhooks; or deploying and managing HF Inference Endpoints. Make sure to use this skill whenever the user mentions 'hf', 'huggingface', 'Hugging Face', 'huggingface-cli', or 'hugging face cli', or wants to do anything related to the Hugging Face ecosystem and to AI and ML in general. Also use for cloud storage needs like training checkpoints, data pipelines, or agent traces. Use even if the user doesn't explicitly ask for a CLI command. Replaces the deprecated `huggingface-cli`.",
+    "description": "Reference Hugging Face Hub CLI 2.4 commands for repositories, downloads, jobs and services; inspect your installed version before use.",
     "directory": "skills/vendor/huggingface/hf-cli",
     "creatorId": "huggingface",
-    "version": "abc20ae526d8",
-    "sourceUrl": "https://github.com/huggingface/skills/blob/abc20ae526d8b4c0e4dff89f904adce28a4a0eb6/skills/hf-cli/SKILL.md",
+    "version": "25910b3d0ba3",
+    "sourceUrl": "https://github.com/huggingface/skills/blob/25910b3d0ba31a2ba102f901cdc9e008c278a69c/skills/hf-cli/SKILL.md",
     "files": [
       "LICENSE",
       "SKILL.md",
@@ -1492,11 +1492,11 @@
   {
     "id": "hf-trl-training",
     "title": "Hugging Face \u00b7 TRL Training",
-    "description": "Train and fine-tune transformer language models using TRL (Transformers Reinforcement Learning). Supports SFT, DPO, GRPO, KTO, RLOO and Reward Model training via CLI commands.",
+    "description": "Learn TRL Python trainers, dataset formats and CLI configuration for SFT, DPO, GRPO, KTO and reward-model training.",
     "directory": "skills/vendor/huggingface/trl-training",
     "creatorId": "huggingface",
-    "version": "abc20ae526d8",
-    "sourceUrl": "https://github.com/huggingface/skills/blob/abc20ae526d8b4c0e4dff89f904adce28a4a0eb6/skills/trl-training/SKILL.md",
+    "version": "25910b3d0ba3",
+    "sourceUrl": "https://github.com/huggingface/skills/blob/25910b3d0ba31a2ba102f901cdc9e008c278a69c/skills/trl-training/SKILL.md",
     "files": [
       "LICENSE",
       "SKILL.md",
@@ -1554,8 +1554,8 @@
     "directory": "skills/vendor/audio/elevenlabs-text-to-speech",
     "creatorId": "elevenlabs",
     "sourceKind": "upstream",
-    "version": "9edcbd4b80ed",
-    "sourceUrl": "https://github.com/elevenlabs/skills/blob/9edcbd4b80ed57b8e07a3f86ea520333969fbc3c/text-to-speech/SKILL.md",
+    "version": "503d4e9fda01",
+    "sourceUrl": "https://github.com/elevenlabs/skills/blob/503d4e9fda0190ab9357142f44e51de626f97f90/text-to-speech/SKILL.md",
     "files": [
       "LICENSE",
       "SKILL.md",
@@ -1572,8 +1572,8 @@
     "directory": "skills/vendor/audio/elevenlabs-sound-effects",
     "creatorId": "elevenlabs",
     "sourceKind": "upstream",
-    "version": "9edcbd4b80ed",
-    "sourceUrl": "https://github.com/elevenlabs/skills/blob/9edcbd4b80ed57b8e07a3f86ea520333969fbc3c/sound-effects/SKILL.md",
+    "version": "503d4e9fda01",
+    "sourceUrl": "https://github.com/elevenlabs/skills/blob/503d4e9fda0190ab9357142f44e51de626f97f90/sound-effects/SKILL.md",
     "files": [
       "LICENSE",
       "SKILL.md",
@@ -1588,8 +1588,8 @@
     "directory": "skills/vendor/audio/elevenlabs-music",
     "creatorId": "elevenlabs",
     "sourceKind": "upstream",
-    "version": "9edcbd4b80ed",
-    "sourceUrl": "https://github.com/elevenlabs/skills/blob/9edcbd4b80ed57b8e07a3f86ea520333969fbc3c/music/SKILL.md",
+    "version": "503d4e9fda01",
+    "sourceUrl": "https://github.com/elevenlabs/skills/blob/503d4e9fda0190ab9357142f44e51de626f97f90/music/SKILL.md",
     "files": [
       "LICENSE",
       "SKILL.md",
@@ -1605,13 +1605,14 @@
     "directory": "skills/vendor/marketing/copywriting",
     "creatorId": "coreyhaines31",
     "sourceKind": "upstream",
-    "version": "5b2c0007766c",
-    "sourceUrl": "https://github.com/coreyhaines31/marketingskills/blob/5b2c0007766c6a1cf1d53fd8fc73e979e0821022/skills/copywriting/SKILL.md",
+    "version": "88c79f6528a9",
+    "sourceUrl": "https://github.com/coreyhaines31/marketingskills/blob/88c79f6528a9347420e57ceb1fff9a60de651768/skills/copywriting/SKILL.md",
     "files": [
       "LICENSE",
       "SKILL.md",
       "UPSTREAM.json",
       "evals/evals.json",
+      "references/ai-tells.md",
       "references/copy-frameworks.md",
       "references/natural-transitions.md"
     ]
@@ -1623,8 +1624,8 @@
     "directory": "skills/vendor/marketing/copy-editing",
     "creatorId": "coreyhaines31",
     "sourceKind": "upstream",
-    "version": "5b2c0007766c",
-    "sourceUrl": "https://github.com/coreyhaines31/marketingskills/blob/5b2c0007766c6a1cf1d53fd8fc73e979e0821022/skills/copy-editing/SKILL.md",
+    "version": "88c79f6528a9",
+    "sourceUrl": "https://github.com/coreyhaines31/marketingskills/blob/88c79f6528a9347420e57ceb1fff9a60de651768/skills/copy-editing/SKILL.md",
     "files": [
       "LICENSE",
       "SKILL.md",
