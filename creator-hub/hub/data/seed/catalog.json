@@ -393950,8 +393950,8 @@
       "summary": "A self-custody browser wallet for Tari Ootle.",
       "audience": null,
       "sourceUrl": "https://wiki.tari.com/resources:app_directory:sapient",
-      "repoUrl": null,
-      "docsUrl": "https://wiki.tari.com/resources:app_directory:sapient",
+      "repoUrl": "https://github.com/chironbuilds/tari-wallet",
+      "docsUrl": "https://universe.tari.mw/integration",
       "demoUrl": "https://sapient.tari.mw/",
       "network": "Testnet",
       "readiness": "conceptual",
@@ -393994,7 +393994,11 @@
           "score": 618.8
         }
       },
-      "preview": null,
+      "preview": {
+        "video": "https://ootle-lobby-preview.vercel.app/previews/community/resource-sapient-20261104.mp4",
+        "image": "https://ootle-lobby-preview.vercel.app/previews/community/resource-sapient-20261104.png",
+        "source": "Docs walkthrough"
+      },
       "tariCompatible": null,
       "editorial": {
         "description": null,
