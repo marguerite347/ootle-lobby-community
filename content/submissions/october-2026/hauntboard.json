@@ -1,7 +1,7 @@
 {
   "slug": "hauntboard",
   "title": "Hauntboard",
-  "summary": "Public message board on Ootle testnet with public threads and encrypted sealed rooms. October 31 inspection loaded six general threads, runtime 0.46.0 and a Sapient wallet option. The creator’s October 30 update adds Sapient posting alongside the browser wallet; funded extension posting remains outstanding in the creator’s evidence. Classic invitations share a key in the URL fragment; recipient invitations, a separate recovery vault and future-message rotation are also described. Old keys and plaintext cannot be revoked, wallet recovery does not restore room keys, and messages do not authenticate individual authors. Titles, fees, spent-output links, timing and network metadata remain public; accepted posts cannot be edited or deleted. The refreshed recording shows public pages and privacy documentation, with no wallet or private-room action. November 2 organizer notice: Esmeralda testnet was reset; entrants were asked to republish templates and update their submission versions where applicable. Earlier recordings document their capture dates.",
+  "summary": "Public Ootle message board with public threads and encrypted sealed rooms. November 4 inspection loaded the fresh Esmeralda board on runtime 0.49.1 and read the creator’s reset notice: old threads, registries and test balances were removed by the November 2 network reset. New board and room-key registry contracts are now configured; rebuilding the website does not restore old posts. The refreshed recording reads the reset notice and privacy explanation without connecting a wallet or posting. Accepted posts cannot be edited or deleted through Hauntboard; testnet resets may remove history. Titles, fees, spent-output links, timing and network metadata remain public. Room invitations and recovery use separate keys; copied keys and plaintext cannot be revoked, and messages do not authenticate individual authors. The public board may contain unmoderated user content.",
   "cardSummary": "Read public Ootle discussions or share encrypted room messages with invitations and separate room-key recovery.",
   "cardStatus": "Web app · Testnet · Permanent posts",
   "creator": "_squared",
@@ -19,12 +19,12 @@
   ],
   "demoUrl": "https://hauntboard.taritracker.com/",
   "recording": {
-    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-hauntboard-update-20261031.mp4",
-    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-hauntboard-update-20261031.png",
-    "capturedAt": "2026-10-31T10:00:06.066Z",
-    "sourceRevision": "b558b1cb56ddf0e0a06b7154248260a95a89d083",
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-hauntboard-20261104.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-hauntboard-20261104.jpg",
+    "capturedAt": "2026-11-04T11:07:32.176749+00:00",
+    "sourceRevision": "dcf10331aea5b035d33497cd79737a480cb9fc2d",
     "kind": "public-page",
-    "credit": "App demo — Public board and room-privacy explanation; no wallet, private-room access or posting."
+    "credit": "App demo — read-only board walkthrough"
   },
   "discussionLinks": [
     {
@@ -38,6 +38,10 @@
     {
       "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/31",
       "platform": "Earlier recovery update"
+    },
+    {
+      "url": "https://hauntboard.taritracker.com/?category=general&thread=component_14ba1630afe627a87ac641b501fc74e5bbb6f505d0cc4148e2506a9eadcc58f0",
+      "platform": "Creator reset notice"
     }
   ]
 }

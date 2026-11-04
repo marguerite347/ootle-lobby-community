@@ -1,14 +1,14 @@
 {
   "slug": "ghostline",
   "title": "Ghostline",
-  "summary": "Private pay-per-call channels for AI agents, with cumulative vouchers and one settlement. The October 23 recording runs five simulated browser calls and shows separate archived evidence; these clicks created no transaction. October 24 review of the creator’s recorded-runs page found a hosted Sapient run dated October 23 and CLI run dated October 22, each reporting five calls and a final settlement. Call counts come from service ledgers, not chain proof; the explorer availability labels are dated October 23 creator observations. The Sapient relay controls the test deposit and refund; browser voucher keys do not remove that custody. Requests, timing and fees remain visible. No wallet, relay payment or CLI was run here. November 2 organizer notice: Esmeralda testnet was reset; entrants were asked to republish templates and update their submission versions where applicable. Earlier recordings document their capture dates.",
+  "summary": "Pay-per-call channels for AI agents using cumulative off-chain vouchers and one settlement. November 4 review of the public demo observed five simulated calls and an overspend rejection; the refreshed recording shows only that walletless browser flow. Its displayed transaction is separately labeled creator evidence. The creator updated the original submission on November 3 after the Esmeralda reset, replacing retired October transaction links with a new template and recorded Sapient run. The site evidence page lists a separate November 3 run; call counts are service-ledger claims, not chain proof. Optional live mode requires Sapient 0.7.1 or later and a custodial relay that holds a 51 µT test deposit through settlement or refund. Fees, timing and requests remain visible. No wallet action, relay deposit, CLI execution or independent chain validation was performed in this review. The v0.4.0 CLI binaries support Linux x86-64 with glibc. Earlier recordings and transaction URLs remain in the maintenance history.",
   "cardSummary": "Explore payment channels that let AI agents pay per API call using cumulative vouchers and one settlement.",
-  "cardStatus": "Browser demo · CLI · Testnet",
+  "cardStatus": "Browser demo · Linux CLI · Testnet",
   "creator": "AduAkorful",
   "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/14",
   "publishedAt": "2026-10-17T21:50:36.623Z",
-  "updatedAt": "2026-10-19T13:52:50.667Z",
-  "sourceContentSha256": "b498301534616a8c83fb4efd4992d7b3f6ca636f34df7d5ad1870780a9c21d08",
+  "updatedAt": "2026-11-03T16:20:39.772Z",
+  "sourceContentSha256": "f33dfb1cb59fcbbbc2e1b3c1bd7e155b4c89c5890fa916610c0c1047096d0da2",
   "repoUrl": "https://github.com/AduAkorful/ghostline",
   "ecosystem": "tari-ootle",
   "technologies": [
@@ -19,12 +19,12 @@
   ],
   "demoUrl": "https://ghostline-ui.vercel.app/play.html",
   "recording": {
-    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-ghostline-20261023.mp4",
-    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-ghostline-20261023.png",
-    "capturedAt": "2026-10-23T17:55:07.261Z",
-    "sourceRevision": "894b3ed3c41936a21d8ed3ea8d281b2e95d91fd4",
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-ghostline-20261104.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-ghostline-20261104.jpg",
+    "capturedAt": "2026-11-04T11:00:30.990743+00:00",
+    "sourceRevision": "5c31fa39e71185fa051ad888485a922256aa4fff",
     "kind": "public-page",
-    "credit": "App demo — Five simulated calls and separate archived chain evidence; no wallet or payment."
+    "credit": "App demo — walletless simulation"
   },
   "discussionLinks": [
     {
