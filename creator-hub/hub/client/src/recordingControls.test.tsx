@@ -2,6 +2,7 @@ import React from 'react';
 import {renderToStaticMarkup} from 'react-dom/server';
 import {describe,expect,it,vi} from 'vitest';
 import {ResourceCardMedia} from './ui';
+import ProjectCard from './components/ProjectCard';
 
 // Model a card whose IntersectionObserver has made the media ready. This checks
 // the actual video attributes after lazy loading, not only the initial poster.
@@ -33,4 +34,11 @@ describe('loaded recording controls',()=>{
     expect(html).toContain('loop=""');
     expect(html).not.toContain('controls=""');
   });
+});
+
+it.each(['Captured public page', 'Creator preview', undefined])('project recordings retain manual controls for legacy caption %s', source => {
+  const resource={id:'legacy',title:'Legacy recording',ecosystem:'tari',native:true,preview:{image:null,video:'/recording.mp4',source}};
+  const html=renderToStaticMarkup(<ProjectCard resource={resource} sourceUrl="https://community.tari.com/t/example/1" creator="Creator" summary="Source walkthrough" technologies={[]}/>);
+  expect(html).toContain('controls=""');
+  expect(html).not.toContain('loop=""');
 });

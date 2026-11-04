@@ -110,7 +110,7 @@ function hueOf(id: string) { let h = 0; for (let i = 0; i < id.length; i++) h = 
 // muted looping clip while visible when one exists (e.g. a live app-webpage capture), or
 // a styled animated placeholder. Never a fabricated screenshot.
 export type CardMediaResource = Pick<Resource,'id'|'ecosystem'|'native'|'title'|'preview'> & {popularity?:Resource['popularity']};
-export function ResourceCardMedia({ r, className, metrics, interactive = true }: { r: CardMediaResource; className?: string; metrics?: ReactNode; interactive?: boolean }) {
+export function ResourceCardMedia({ r, className, metrics, interactive = true, showControls = false }: { r: CardMediaResource; className?: string; metrics?: ReactNode; interactive?: boolean; showControls?: boolean }) {
   const [failed, setFailed] = useState(false);
   const [hover, setHover] = useState(false);
   const [visible, setVisible] = useState(false);
@@ -122,7 +122,7 @@ export function ResourceCardMedia({ r, className, metrics, interactive = true }:
   const thumbnail = image ? webImage(image) : null;
   const video = r.preview?.video || null;
   const h = hueOf(r.id);
-  const walkthrough = !!r.preview?.source && /^(Source(?:\/docs)? walkthrough|Docs walkthrough|Page walkthrough|App demo|Concept overview|Announcement(?: walkthrough)?|Public source walkthrough|Repository walkthrough|Official guide walkthrough)\b/i.test(r.preview.source);
+  const walkthrough = showControls || !!r.preview?.source && /^(Source(?:\/docs)? walkthrough|Docs walkthrough|Page walkthrough|App demo|Concept overview|Announcement(?: walkthrough)?|Public source walkthrough|Repository walkthrough|Official guide walkthrough)\b/i.test(r.preview.source);
 
   useEffect(() => {
     const el = container.current;

@@ -19,7 +19,7 @@ export default function ProjectCard({resource,sourceUrl,creator,summary,cardSumm
  const [detailsOpen,setDetailsOpen]=useState(false);
  const detailsId=useId();
  return <article id={`project-${resource.id.replaceAll(':','-')}`} className="card contest-project-card project-card">
-  <div className="contest-project-cover"><ResourceCardMedia r={resource} metrics={<ContestProjectMetrics value={metrics} repoUrl={repoUrl}/>}/></div>
+  <div className="contest-project-cover"><ResourceCardMedia r={resource} showControls metrics={<ContestProjectMetrics value={metrics} repoUrl={repoUrl}/>}/></div>
   <h3><a className="project-card-primary" href={safeHref(sourceUrl)} target="_blank" rel="noreferrer">{resource.title}</a></h3>
   <p className="card-front-summary">{cardSummary || summary}</p>
   <div className="card-front-status">{cardStatus&&<strong>{cardStatus}</strong>}{resource.preview?.video&&<span>{recordingLabel(resource.preview.source)}</span>}</div>
