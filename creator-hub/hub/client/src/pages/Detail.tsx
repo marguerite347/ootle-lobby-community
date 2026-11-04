@@ -117,7 +117,7 @@ export default function Detail() {
             <dl className="kv mt8">
               <dt>Ecosystem</dt><dd>{r.ecosystem}{r.native ? ' (native)' : ''}</dd>
               <dt>Network</dt><dd>{r.network || '—'}</dd>
-              <dt>Readiness</dt><dd style={{ textTransform: 'capitalize' }}>{readinessLabel(r.readiness)}</dd>
+              <dt>{r.cardStatus ? 'Type / availability' : 'Readiness'}</dt><dd>{r.cardStatus || readinessLabel(r.readiness)}</dd>
               <dt>License</dt><dd>{r.license || 'Not specified. Check with the creator before reuse.'}</dd>
               <dt>Creator</dt><dd>{r.creator?.url ? <ExternalLink href={safeHref(r.creator.url)}>{r.creator.name} ↗</ExternalLink> : (r.creator?.name || '—')}</dd>
             </dl>
