@@ -1,17 +1,17 @@
 {
   "id": "tari-ootle:app:sapient",
   "title": "Sapient",
-  "summary": "A self-custody browser wallet for Tari Ootle.",
+  "summary": "Self-custody Chrome extension wallet for Tari Ootle testnets, with on-device keys and direct network submission. On November 4, 2026 the Chrome Web Store lists version 0.7.2, updated November 3. Its source upgrades the Chiron Ootle SDK to 0.2.2 to correct private Privote ballot signing on Ootle 0.49. The public site remains testnet-only and says not to hold real value. The recording is a source-change walkthrough; no extension was installed and no wallet or transaction was used.",
   "technologies": [
     {
       "label": "Ootle SDK",
-      "sourceUrl": "https://github.com/chironbuilds/tari-wallet/blob/f2f48bf1ef9a938afc0eb5e92a04255eab7784a5/package.json"
+      "sourceUrl": "https://github.com/chironbuilds/tari-wallet/blob/06c56a9c358c9e744a32497887aab73009340ebb/package.json"
     },
     {
       "label": "CipherSeed",
-      "sourceUrl": "https://github.com/chironbuilds/tari-wallet/blob/f2f48bf1ef9a938afc0eb5e92a04255eab7784a5/README.md"
+      "sourceUrl": "https://github.com/chironbuilds/tari-wallet/blob/06c56a9c358c9e744a32497887aab73009340ebb/README.md"
     }
   ],
-  "cardSummary": "Manage Tari Ootle accounts through a self-custody browser wallet.",
-  "cardStatus": "Community wallet"
+  "cardSummary": "Manage Ootle testnet accounts, private transfers and dApp approvals through a self-custody Chrome extension.",
+  "cardStatus": "Chrome extension · Testnet"
 }
