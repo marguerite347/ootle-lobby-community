@@ -33,8 +33,9 @@ export function withEcosystemResources(records, additions = ecosystemResources.r
       lastVerifiedAt: entry.lastCheckedAt, setupHint: 'Open the source or guide for setup steps and compatibility requirements.',
       prerequisites: entry.platform ? [entry.platform] : [], topic: entry.type === 'learn' ? 'understand' : null,
       format: entry.type === 'learn' ? 'reference' : null, level: entry.group === 'Advanced' ? 'advanced' : 'intermediate'});
-    // Canonical source identity also catches an older connector record with another ID.
-    for (const [id, current] of result) if (id !== entry.id && (current.sourceUrl === entry.sourceUrl || (entry.repoUrl && current.repoUrl === entry.repoUrl))) result.delete(id);
+    // A repository overview can replace another overview, but its examples and
+    // guides remain distinct resources even when they share the same repository.
+    for (const [id, current] of result) if (id !== entry.id && (current.sourceUrl === entry.sourceUrl || (entry.repoUrl && current.repoUrl === entry.repoUrl && (!current.sourceUrl || current.sourceUrl === entry.repoUrl)))) result.delete(id);
     result.set(entry.id, resource);
   }
   return [...result.values()];

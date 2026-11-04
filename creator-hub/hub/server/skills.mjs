@@ -18,7 +18,7 @@ export function skillMarkdown(slug,root=skillsRoot) {
   return root===skillsRoot?verifyReviewedFile(`tari-${slug}`,'SKILL.md',text):text;
 }
 export function verifiedRouter(root=skillsRoot) {
-  const entries=skillCatalog(root).filter(m=>m.lifecycle==='verified' && m.technicalValidatedAt && m.validation?.evidence?.length);
+  const entries=skillCatalog(root).filter(m=>['verified','validated'].includes(m.lifecycle) && m.technicalValidatedAt && m.validation?.scope && m.validation?.evidence?.length);
   return readFileSync(path.join(skillsRoot,'router-header.md'),'utf8')+(entries.length ? entries.map(m=>`- [${m.title}](${m.id}/SKILL.md): ${m.validation.scope}`).join('\n')+'\n' : 'No verified skills are available yet.\n');
 }
 export function pinnedMarkdown(ref,slug) {

@@ -1,0 +1,35 @@
+{
+  "slug": "quiet-ticket",
+  "title": "QuietTicket",
+  "summary": "Community voting prototype with one-time claim tickets, sealed ballots and a reveal tally. November 4 source and public demo review: the browser simulation creates polls, mints and claims tickets, casts a ballot, rejects a repeated vote and reveals the tally. The Rust Ootle template scaffold is MIT-licensed; the creator describes a future Esmeralda/Sapient path, with no live deployment claimed in the reviewed submission. The threat model notes that the simulation reveal key is held in-page and ticket links are bearer credentials. The recording shows the browser simulation, not network transactions or a privacy/security certification.",
+  "cardSummary": "Model one-time voting tickets, sealed ballots and a reveal tally in a walletless browser simulation.",
+  "cardStatus": "Browser simulation · Rust source",
+  "creator": "hycorange",
+  "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/3",
+  "publishedAt": "2026-11-03T03:34:03.028Z",
+  "updatedAt": "2026-11-03T03:34:03.028Z",
+  "sourceContentSha256": "ce8a93b4d51446331e882b9f6a0608bce17134257e1e2fbdc3b83bf89a73a1f7",
+  "repoUrl": "https://github.com/hycorange/quiet-ticket",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust · MIT source",
+      "sourceUrl": "https://github.com/hycorange/quiet-ticket"
+    }
+  ],
+  "recording": {
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-quiet-ticket-20261104.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-quiet-ticket-20261104.jpg",
+    "capturedAt": "2026-11-04T10:19:56.895398+00:00",
+    "sourceRevision": "0396a481a73d8de3597e156ad03f3aba087c8fdd",
+    "kind": "public-page",
+    "credit": "App demo — walletless browser simulation"
+  },
+  "demoUrl": "https://hycorange.github.io/quiet-ticket/",
+  "discussionLinks": [
+    {
+      "url": "https://bsky.app/profile/hycorange.bsky.social/post/3mzevpzdthk2l",
+      "platform": "Bluesky"
+    }
+  ]
+}
