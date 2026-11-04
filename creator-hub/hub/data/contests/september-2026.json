@@ -113,7 +113,7 @@
           "updatedAt": "2026-10-12T01:23:43.613Z"
         }
       ],
-      "notes": "The result is reported in the linked official forum announcement. This records the announced placement; it does not establish prize payment or a security audit. On October 12 the creator reported two audit rounds, eight fixes and 29 passing tests; those are creator-reported results, not tests performed by this catalog.",
+      "notes": "The result is reported in the linked official forum announcement. This records the announced placement; it does not establish prize payment or a security audit. On October 12 the creator reported two audit rounds, eight fixes and 29 passing tests; those are creator-reported results, not tests performed by this catalog. November 4: the public repository returned 404 through GitHub API and browser. Original forum and X announcements remain readable; the original source URL and historical evidence are retained.",
       "publishedAt": "2026-09-08T00:30:37.966Z",
       "status": "2nd place, announced by Fox on October 11, 2026"
     },
@@ -325,7 +325,7 @@
           "updatedAt": "2026-10-11T23:59:13.578Z"
         }
       ],
-      "notes": "The result is reported in the linked official forum announcement. This records the announced placement; it does not establish prize payment or a security audit. October 12 source review found v0.5 Android APK, released October 1. The wunschswap.com page is a reference voucher provider using fictional testnet EUR, not the swap client. No APK installed.",
+      "notes": "The result is reported in the linked official forum announcement. This records the announced placement; it does not establish prize payment or a security audit. October 12 source review found v0.5 Android APK, released October 1. The wunschswap.com page is a reference voucher provider using fictional testnet EUR, not the swap client. No APK installed. November 4: the original forum project post and Nostr announcement remain readable. The public website timed out, and the repository host was unreachable through supported HTTP and browser checks. Current downloads and release changes could not be reviewed; the original URLs and previous evidence are retained. The creator states that absent a redemption proof, both traders can lose security deposits through burning.",
       "publishedAt": "2026-09-26T18:52:14.607Z",
       "status": "3rd place, announced by Fox on October 11, 2026"
     },

@@ -2,9 +2,9 @@
   "slug": "tari-agent-pay",
   "title": "Tari Agent Pay",
   "creator": "Zvovanz",
-  "summary": "An open-source payment gateway for AI agents with spending policies, approval queues and a web console. Uses Ootle cosigned transfers and a TypeScript SDK. Runtime deployment has not been verified.",
+  "summary": "A self-hosted Ootle payment gateway for AI agents with spending policies, approval queues and a web console. November 4 review: the README describes localnet testing on Ootle 0.41. The linked agent-pay-mcp package is unavailable on npm; source instructions remain accessible in the repository. No public hosted hub is linked in the reviewed README.",
   "sourceUrl": "https://community.tari.com/t/ootle-testnet-community-apps-directory/281/9",
-  "sourceLabel": "See the creator\u2019s post",
+  "sourceLabel": "See the creator’s post",
   "repoUrl": "https://github.com/zvovanz-a1/tari-agent-pay",
   "publishedAt": "2026-09-12T20:59:28.168Z",
   "publicationLabel": "Published on forum",
@@ -41,5 +41,5 @@
     "sha256": "0c36741d8be2c4c699a98bc382963056c0977b3105965824d4def046de2d48bf"
   },
   "cardSummary": "Explore payment policies, approval queues and a web console for AI agents using Ootle.",
-  "cardStatus": "Source code"
+  "cardStatus": "Source code · Localnet"
 }
