@@ -7,5 +7,5 @@ description: Route native Tari/Ootle tasks to locally validated skills with expl
 
 Current Tari knowledge for people and agents building together.
 
-Only verified entries appear here. Verification is limited to the stated scope; local engine tests do not establish testnet deployment. For researched drafts and outstanding network checks see [the catalog](catalog.json). Keep the directory layout when installing.
+Entries with recorded validation appear here. Validation is limited to the stated scope; local engine tests do not establish testnet deployment. For researched drafts and outstanding network checks see [the catalog](catalog.json). Keep the directory layout when installing.
 

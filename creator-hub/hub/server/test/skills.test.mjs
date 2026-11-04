@@ -17,6 +17,11 @@ test('stale and deprecated transitions remove guidance without hiding its histor
   try {mkdirSync(path.join(dir,'example'));const m={id:'example',title:'Example',lifecycle:'verified',technicalValidatedAt:'2026-09-19',validation:{scope:'local',evidence:['test.json']}};
     const file=path.join(dir,'example','metadata.json');writeFileSync(file,JSON.stringify(m));writeFileSync(path.join(dir,'example','SKILL.md'),'Original guide');
     assert.match(verifiedRouter(dir),/example\/SKILL.md/);
+    m.lifecycle='validated';writeFileSync(file,JSON.stringify(m));
+    assert.match(verifiedRouter(dir),/example\/SKILL.md/);
+    m.validation.evidence=[];writeFileSync(file,JSON.stringify(m));
+    assert.doesNotMatch(verifiedRouter(dir),/example\/SKILL.md/);
+    m.validation.evidence=['test.json'];
     for(const state of ['draft','stale','deprecated']){m.lifecycle=state;writeFileSync(file,JSON.stringify(m));assert.doesNotMatch(verifiedRouter(dir),/example\/SKILL.md/);assert.equal(skillMarkdown('example',dir),'Original guide');}
   }finally{rmSync(dir,{recursive:true,force:true});}
 });
