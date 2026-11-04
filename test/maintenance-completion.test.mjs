@@ -1,5 +1,5 @@
 import {test} from 'node:test';import assert from 'node:assert/strict';
-import {assessMaintenance,requiredSections,catalogReviewDateIssues} from '../scripts/maintenance-completion.mjs';
+import {assessMaintenance,requiredSections,catalogReviewDateIssues,discoveryScope} from '../scripts/maintenance-completion.mjs';
 const fixture=()=>({date:'2026-10-29',sections:Object.fromEntries(requiredSections.map(s=>[s,{expectedIds:['a'],items:[{id:'a',status:'complete',checkedAt:'2026-10-29T10:00:00Z',evidence:['read.json'],coverageComplete:true}]}]))});
 test('visible review dates track successful reads without refreshing blocked entries',()=>{
  const reviews={a:{outcome:'reviewed',lastSuccessfulReviewAt:'2026-10-29T10:00:00Z'},b:{outcome:'blocked'}};
@@ -38,4 +38,20 @@ test('retry plans and concrete migration assessments cannot be replaced by bookk
 test('declared run scope cannot omit maintained catalog or dependency identities',()=>{
  const r=fixture();const result=assessMaintenance(r,{requiredScope:{existingResources:['a','missing-project'],dependencies:['missing-package']}});
  assert.equal(result.status,'incomplete');assert.match(result.issues.join(),/missing-project: missing from maintained scope/);
+});
+
+
+test('held and deduplicated discoveries cannot disappear before catalog publication',()=>{
+ const ledger={sources:[{id:'a'}],newReviewQueue:[
+  {id:'held-announcement',status:'held-source-unavailable'},
+  {repository:'https://github.com/example/project.git',canonicalResource:'project:existing',status:'deduplicated'},
+  {id:'a'}
+ ]};
+ const scope=discoveryScope(ledger);
+ assert.deepEqual(scope,['a','held-announcement','github-candidate:example/project']);
+ const result=assessMaintenance(fixture(),{requiredScope:{discovery:scope}});
+ assert.equal(result.status,'incomplete');
+ assert.match(result.issues.join(),/held-announcement: missing from maintained scope/);
+ assert.match(result.issues.join(),/github-candidate:example\/project: missing from maintained scope/);
+ assert.throws(()=>discoveryScope({newReviewQueue:[{canonicalResource:'project:existing'}]}),/stable source identity/);
 });

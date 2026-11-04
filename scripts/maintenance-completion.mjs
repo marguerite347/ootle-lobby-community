@@ -11,6 +11,25 @@ export function catalogReviewDateIssues(records, reviews) {
    ? [] : [`${record.id}: visible checked date does not match successful source review`];
  });
 }
+// Discovery includes held and deduplicated candidates, even before they reach a catalog.
+// Keep their source identities separate from canonical resource identities.
+export function discoveryScope(ledger) {
+ const ids = (ledger.sources || []).map(source => source.id);
+ for (const item of ledger.newReviewQueue || []) {
+  let id = item.id;
+  if (!id && item.repository) {
+   const url = new URL(item.repository);
+   id = url.hostname === 'github.com'
+    ? `github-candidate:${url.pathname.replace(/^\/+|\/+$/g, '').replace(/\.git$/, '')}`
+    : `candidate:${url.href}`;
+  }
+  if (!id && item.originalPost) id = `candidate:${new URL(item.originalPost).href}`;
+  if (!id) throw new Error('Discovery queue item has no stable source identity');
+  ids.push(id);
+ }
+ if (ids.some(id => typeof id !== 'string' || !id)) throw new Error('Discovery source has no stable identity');
+ return [...new Set(ids)];
+}
 export function assessMaintenance(run,{evidenceExists=()=>true,requiredScope={}}={}) {
  const issues=[],counts={complete:0,blocked:0,deferred:0,pending:0};
  if(!run?.date || !/^\d{4}-\d{2}-\d{2}$/.test(run.date))issues.push('Dated run required');
