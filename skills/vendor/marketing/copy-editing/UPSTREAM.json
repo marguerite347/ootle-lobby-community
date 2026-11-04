@@ -1,8 +1,11 @@
 {
   "repository": "https://github.com/coreyhaines31/marketingskills",
-  "revision": "5b2c0007766c6a1cf1d53fd8fc73e979e0821022",
+  "revision": "88c79f6528a9347420e57ceb1fff9a60de651768",
   "path": "skills/copy-editing",
   "license": "MIT",
   "importedAt": "2026-09-22",
-  "executionStatus": "Applied to Creator Hub trailer copy; audience performance is not yet measured."
+  "executionStatus": "Applied to Creator Hub trailer copy; audience performance is not yet measured.",
+  "previousRevision": "5b2c0007766c6a1cf1d53fd8fc73e979e0821022",
+  "updatedAt": "2026-11-04T18:59:24.732837+00:00",
+  "updateScope": "Reviewed upstream documentation only; provider models, authentication and generation not executed."
 }

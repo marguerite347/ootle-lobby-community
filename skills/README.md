@@ -84,11 +84,11 @@ Includes **73 upstream topic skills plus their router**, pinned to `b105e1cf617a
 
 ## Agent onboarding
 
-The root AGENTS.md routes game tasks here. A repo-local `.agents/skills/tari-game-development/SKILL.md` exposes the entry point to compatible clients. Cursor and Claude entry files point to AGENTS.md. Other agents should read AGENTS.md at the start of work; no single configuration can force every agent client to load instructions. Existing sessions should reread it after pulling. No global installation is needed.
+The root AGENTS.md routes game tasks here. A repo-local `.agents/skills/tari-game-development/SKILL.md` exposes the entry point to compatible clients. Cursor and Claude entry files point to AGENTS.md. Other agents should read AGENTS.md at the start of work; no single configuration can force every agent client to load instructions. Existing sessions should reread it after pulling. No global installation is needed. Imported setup, onboarding and generation examples remain subject to the project and owner instructions; importing a bundle does not authorize credentials, service access, spending or execution.
 
 ## Updating
 
-Fetch upstream to a temporary checkout, inspect the diff against upstream-lock.json, then replace selected vendored files with their supporting references and preserve LICENSE/NOTICE. Refresh the lock hashes and run `python3 scripts/validate-game-skills.py`. Do not run a latest-version auto-installer on every agent start. Keep Tari-specific changes in the local entry point, not hidden vendor edits.
+Fetch upstream to a temporary checkout, inspect the diff against upstream-lock.json, then replace selected vendored files with their supporting references and preserve LICENSE/NOTICE. Refresh the lock hashes or each selected `UPSTREAM.json` and its `hub-catalog.json` version, source URL and supporting-file list. Run `node --test creator-hub/hub/server/test/skillMarket.test.mjs creator-hub/hub/server/test/agentDocs.test.mjs creator-hub/hub/server/test/huggingface.test.mjs` to check the actual downloadable bundles and public references. Do not run a latest-version auto-installer on every agent start. Keep Tari-specific changes in the local entry point, not hidden vendor edits.
 
 ## Relationship to TariSkills
 

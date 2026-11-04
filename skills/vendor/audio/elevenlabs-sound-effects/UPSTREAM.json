@@ -1,8 +1,11 @@
 {
   "repository": "https://github.com/elevenlabs/skills",
-  "revision": "9edcbd4b80ed57b8e07a3f86ea520333969fbc3c",
+  "revision": "503d4e9fda0190ab9357142f44e51de626f97f90",
   "path": "sound-effects",
   "license": "MIT",
   "importedAt": "2026-09-22",
-  "executionStatus": "Instructions imported; provider access and output quality require task-specific verification."
+  "executionStatus": "Instructions imported; provider access and output quality require task-specific verification.",
+  "previousRevision": "9edcbd4b80ed57b8e07a3f86ea520333969fbc3c",
+  "updatedAt": "2026-11-04T18:59:00.703956+00:00",
+  "updateScope": "Reviewed upstream documentation only; provider models, authentication and generation not executed."
 }
