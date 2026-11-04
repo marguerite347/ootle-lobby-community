@@ -1,5 +1,5 @@
 import {describe,it,expect} from 'vitest';
-import {gameNightStatus,gameNightDismissalKey,communityBannerState,weeklyGameNightTime,type GameNight} from './GameNightBanner';
+import {gameNightStatus,gameNightDismissalKey,communityDismissalKey,communityBannerState,weeklyEventTime,type GameNight} from './GameNightBanner';
 const event:GameNight={id:'test-event',enabled:true,game:'Test game',startsAt:'2026-11-01T23:00:00Z',expiresAt:'2026-11-02T00:30:00Z',channelName:'Game Streams',channelUrl:'https://discord.com/channels/892738558316662855/1558828371100573726',inviteUrl:'https://discord.gg/tari'};
 describe('game night announcement lifecycle',()=>{
  it('shows the scheduled session and retires the announcement at its configured expiry',()=>{
@@ -33,8 +33,8 @@ describe('standing weekly game night',()=>{
   expect(gameNightStatus({...weekly,enabled:false},now).visible).toBe(false);
  });
  it('uses the same Sunday evening label during standard and daylight time',()=>{
-  expect(weeklyGameNightTime('2026-11-08T23:00:00Z')).toEqual({day:'Sunday',time:'6 PM'});
-  expect(weeklyGameNightTime('2027-03-14T22:00:00Z')).toEqual({day:'Sunday',time:'6 PM'});
+  expect(weeklyEventTime('2026-11-08T23:00:00Z')).toEqual({day:'Sunday',time:'6 PM'});
+  expect(weeklyEventTime('2027-03-14T22:00:00Z')).toEqual({day:'Sunday',time:'6 PM'});
  });
  it('reappears when a dated announcement becomes a standing schedule',()=>{
   expect(gameNightDismissalKey({...event,recurrence:weekly.recurrence})).not.toBe(gameNightDismissalKey(event));
@@ -49,5 +49,29 @@ describe('shared banner expiry',()=>{
   expect(communityBannerState(Date.parse('2026-10-29T22:00Z'),game,show)).toEqual({gameVisible:true,showVisible:true,count:2});
   expect(communityBannerState(Date.parse('2026-11-02T05:00Z'),game,show)).toEqual({gameVisible:false,showVisible:true,count:1});
   expect(communityBannerState(Date.parse('2026-11-03T19:00Z'),game,show)).toEqual({gameVisible:false,showVisible:false,count:0});
+ });
+});
+
+
+describe('standing weekly Tari Show',()=>{
+ const show={id:'2026-11-03-tari-show',enabled:true,startsAt:'2026-11-03T13:00:00-05:00',endsAt:'2026-11-03T14:00:00-05:00'};
+ const weekly={...show,recurrence:{frequency:'weekly',timeZone:'America/New_York'}};
+ it('keeps the confirmed weekly show visible between sessions and across DST',()=>{
+  for(const date of ['2026-11-04T18:00Z','2026-11-10T19:00Z','2027-07-12T05:00Z']) {
+   expect(communityBannerState(Date.parse(date),event,weekly).showVisible).toBe(true);
+  }
+ });
+ it('does not extend disabled, one-off or invalid schedules',()=>{
+  const now=Date.parse('2026-11-04T18:00Z');
+  for(const input of [show,{...weekly,enabled:false},{...weekly,startsAt:'invalid'},{...weekly,recurrence:{frequency:'weekly',timeZone:'UTC'}}]) {
+   expect(communityBannerState(now,event,input).showVisible).toBe(false);
+  }
+ });
+ it('preserves Tuesday 1 PM in standard and daylight time',()=>{
+  expect(weeklyEventTime('2026-11-10T18:00:00Z')).toEqual({day:'Tuesday',time:'1 PM'});
+  expect(weeklyEventTime('2027-03-16T17:00:00Z')).toEqual({day:'Tuesday',time:'1 PM'});
+ });
+ it('shows the restored weekly schedule even after the one-off banner was dismissed',()=>{
+  expect(communityDismissalKey(event,weekly)).not.toBe(communityDismissalKey(event,show));
  });
 });

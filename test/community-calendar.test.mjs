@@ -78,9 +78,22 @@ test('corrected Tari Show keeps its UID, advances sequence and does not publish 
   const event=unfold(communityCalendar()).split('BEGIN:VEVENT\r\n').find(e=>e.includes('SUMMARY:The Tari Show'));
   assert.ok(event);
   assert.match(event,/UID:2026-11-03-tari-show@lobby.tari.com/);
-  assert.match(event,/DTSTART:20261103T180000Z/);
-  assert.match(event,/SEQUENCE:2/);
+  assert.match(event,/DTSTART;TZID=America\/New_York:20261103T130000\r\nRRULE:FREQ=WEEKLY/);
+  assert.match(event,/SEQUENCE:3/);
   assert.match(event,/event=1516878863127281755/);
   assert.doesNotMatch(event,/DTEND:|DURATION:/);
   assert.match(event,/end time has not been announced/);
+});
+
+
+test('explicit weekly Tari Show includes its timezone without game night and preserves the local start',()=>{
+ const weekly={...showFixture,endTimeConfirmed:false,recurrence:{frequency:'weekly',timeZone:'America/New_York'},calendarSequence:3};
+ const raw=unfold(communityCalendar({enabled:false},weekly));
+ assert.match(raw,/BEGIN:VTIMEZONE\r\nTZID:America\/New_York/);
+ assert.match(raw,/UID:2026-11-03-tari-show@lobby.tari.com/);
+ assert.match(raw,/DTSTART;TZID=America\/New_York:20261103T130000\r\nRRULE:FREQ=WEEKLY/);
+ assert.doesNotMatch(raw,/DTEND:|DURATION:/);
+ const summer=unfold(communityCalendar({enabled:false},{...weekly,startsAt:'2027-07-06T17:00:00Z',endsAt:'2027-07-06T18:00:00Z'}));
+ assert.match(summer,/DTSTART;TZID=America\/New_York:20270706T130000/);
+ assert.doesNotMatch(communityCalendar({enabled:false},{...weekly,enabled:false}),/BEGIN:VEVENT|BEGIN:VTIMEZONE/);
 });

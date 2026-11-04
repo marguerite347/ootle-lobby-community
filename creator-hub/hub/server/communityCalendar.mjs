@@ -10,7 +10,7 @@ const newYorkLocal=value=>{
   const parts=Object.fromEntries(new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'}).formatToParts(new Date(value)).map(({type,value})=>[type,value]));
   return `${parts.year}${parts.month}${parts.day}T${parts.hour}${parts.minute}${parts.second}`;
 };
-// US Eastern rules since 2007. A local DTSTART keeps weekly events at 6 PM
+// US Eastern rules since 2007. A local DTSTART preserves the weekly local hour
 // through DST; a UTC DTSTART would shift the local hour each spring/fall.
 const easternZone=[
   'BEGIN:VTIMEZONE','TZID:America/New_York',
@@ -39,6 +39,7 @@ export function communityCalendar(gameNight=game,tariShow=show) {
   });
   if(tariShow.enabled && Number.isFinite(Date.parse(tariShow.startsAt)) && Date.parse(tariShow.endsAt)>Date.parse(tariShow.startsAt)) events.push({
     id:tariShow.id,updatedAt:tariShow.calendarUpdatedAt,sequence:tariShow.calendarSequence,title:'The Tari Show',start:tariShow.startsAt,end:tariShow.endTimeConfirmed===false?undefined:tariShow.endsAt,
+    recurring:tariShow.recurrence?.frequency==='weekly' && tariShow.recurrence.timeZone==='America/New_York',
     location:`${tariShow.channelName} · Tari Discord`,url:tariShow.inviteUrl,
     description:`Don't ghost the Tari Show. Bring your questions.\nJoin the Stage channel in Tari Discord: ${tariShow.inviteUrl}${tariShow.endTimeConfirmed===false?"\nThe end time has not been announced.":""}`
   });
