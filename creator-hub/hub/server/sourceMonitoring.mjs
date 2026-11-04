@@ -76,7 +76,11 @@ export function catalogReviewQueue(entries, previous = {}) {
  const projectAliases=new Map(entries.filter(entry=>entry.slug).flatMap(entry=>(entry.resourceIds||[]).map(id=>[id,`project:${entry.slug}`])));
  for (const entry of entries) {
   const id = projectAliases.get(entry.id) || entry.id || `project:${entry.slug}`;
-  const sources = [...new Set([entry.sourceUrl,entry.repoUrl,entry.docsUrl,entry.demoUrl,entry.forum?.url,...(entry.discussionLinks||[]).map(post=>post.url)].filter(Boolean))];
+  // Removing a dead demo from a card must not remove it from freshness checks.
+  // Retain discovered destinations; recordCatalogReview handles evidenced replacements.
+  const retained = [previous[id], previous[entry.id]].filter(Boolean);
+  const sources = [...new Set([entry.sourceUrl,entry.repoUrl,entry.docsUrl,entry.demoUrl,entry.forum?.url,...(entry.discussionLinks||[]).map(post=>post.url),
+   ...retained.flatMap(review=>[...(review.sources||[]),...Object.keys(review.sourceReviews||{})])].filter(Boolean))];
   if (unique.has(id)) unique.get(id).sources=[...new Set([...unique.get(id).sources,...sources])];
   else unique.set(id,{...previous[id],id,title:entry.title,sources,lastSuccessfulReviewAt:previous[id]?.lastSuccessfulReviewAt||null,outcome:'pending',reviewRequired:true});
  }

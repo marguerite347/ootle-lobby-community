@@ -77,3 +77,26 @@ test('declared project aliases share one review while retaining all surface sour
   assert.equal(queue[0].outcome,'pending');
  }
 });
+
+test('retained demo destinations cannot disappear when a public card removes its dead link',async()=>{
+ const {catalogReviewQueue,recordCatalogReview}=await import('../sourceMonitoring.mjs');
+ const post='https://example.com/announcement',demo='https://old.example.com/demo';
+ const previous={'project:guide':{lastSuccessfulReviewAt:'2026-11-03T10:00:00Z',sourceReviews:{[demo]:{hash:'last-good',lastSuccessfulReadAt:'2026-11-03T10:00:00Z'}}}};
+ const [entry]=catalogReviewQueue([{slug:'guide',title:'Guide',sourceUrl:post,demoUrl:null}],previous);
+ assert.deepEqual(entry.sources,[post,demo]);
+ const incomplete=recordCatalogReview(entry,{attemptedAt:'2026-11-04T10:00:00Z',observations:[{url:post,hash:'post'}],reviewed:true,complete:true});
+ assert.equal(incomplete.outcome,'pending');assert.deepEqual(incomplete.pendingReviewSources,[demo]);
+ assert.equal(incomplete.lastSuccessfulReviewAt,previous['project:guide'].lastSuccessfulReviewAt);
+ const recovered=recordCatalogReview(entry,{attemptedAt:'2026-11-04T10:00:00Z',observations:[{url:post,hash:'post'},{url:demo,hash:'recovered-demo'}],complete:true});
+ assert.ok(recovered.changedSources.includes(demo));assert.ok(recovered.reviewQueue.includes('recording'));
+});
+
+test('canonical aliases retain previously discovered URLs and explicit replacement pairs',async()=>{
+ const {catalogReviewQueue,recordCatalogReview}=await import('../sourceMonitoring.mjs');
+ const old='https://old.example.com',current='https://new.example.com',alias='component:guide';
+ const previous={'project:guide':{sources:[old,current],supersededSources:{[old]:{replacementUrl:current,evidence:'creator-move.json',reason:'Creator moved the site'}},sourceReviews:{[old]:{error:'HTTP 404'}}},[alias]:{sourceReviews:{'https://example.com/readme':{hash:'readme'}}}};
+ const [entry]=catalogReviewQueue([{id:alias,title:'Guide',sourceUrl:current},{slug:'guide',title:'Guide',resourceIds:[alias],sourceUrl:current}],previous);
+ assert.deepEqual(new Set(entry.sources),new Set([old,current,'https://example.com/readme']));
+ const result=recordCatalogReview(entry,{attemptedAt:'2026-11-04T10:00:00Z',observations:[{url:current,hash:'current'},{url:'https://example.com/readme',hash:'readme'}],reviewed:true,complete:true});
+ assert.equal(result.outcome,'reviewed');assert.equal(result.sourceReviews[old].error,'HTTP 404');
+});
