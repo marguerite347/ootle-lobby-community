@@ -31,5 +31,8 @@
       "url": "https://bsky.app/profile/hycorange.bsky.social/post/3mzevpzdthk2l",
       "platform": "Bluesky"
     }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:quiet-ticket"
   ]
 }
