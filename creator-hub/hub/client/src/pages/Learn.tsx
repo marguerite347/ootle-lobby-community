@@ -2,7 +2,9 @@ import ShareLearning from './ShareLearning';
 import { useEffect, useState } from 'react';
 import { useSearchParams, Link, Navigate } from 'react-router-dom';
 import { api, type LearnView } from '../api';
-import { Spinner, ecoLabel } from '../ui';
+import { Spinner, ecoLabel, ResourceCardMedia, ExternalLink } from '../ui';
+import { recordingLabel } from '../components/ProjectCard';
+import { safeHref } from '../../../shared/safeLinks.mjs';
 import {guideLibrary, destinationLink} from './destinationLibrary';
 import { learningResults } from './learnLibrary';
 import './Learn.css';
@@ -10,6 +12,25 @@ import LobbyTrail from '../components/LobbyTrail';
 
 const labels: Record<string, string> = { q: 'Search', topic: 'Tari goal', category: 'Category', level: 'Level', format: 'Format', ecosystem: 'Ecosystem' };
 const pretty = (s: string) => s === 'guide' ? 'Guides & references' : s === 'playcanvas' ? 'PlayCanvas' : s.replace(/-/g, ' ').replace(/^./, c => c.toUpperCase());
+
+
+function LearningResourceRow({ r }: { r: ReturnType<typeof learningResults>[number] }) {
+  const href = r.learningHref || `/resource/${encodeURIComponent(r.id)}`;
+  if (!r.cardSummary || (!r.preview?.video && !r.discussionLinks?.length)) return <Link className="learn-row" to={r.learningHref || `/resource/${encodeURIComponent(r.id)}`}><div className={`learn-resource-icon ${r.native ? 'native' : ''}`} aria-hidden="true">{r.learningKind === 'skill' ? '≡' : r.native ? '✳' : '↗'}</div><div className="learn-row-body"><div className="learn-meta"><span>{pretty(ecoLabel(r.ecosystem))}</span><span>{pretty(r.format || 'resource')}</span>{r.level && <span>{pretty(r.level)}</span>}{r.lifecycle && <span>{r.lifecycle}</span>}</div><h3>{r.title}</h3><p>{r.cardSummary || r.summary}</p><small>{r.provenance.sourceName}{r.sharedBy ? ` · Shared by ${r.sharedBy.name}` : ''}{r.provenance.freshness === 'stale' ? ' · Last saved version, refresh pending' : ''}{r.learningKind === 'skill' ? ' · Read validation scope before use' : !r.native ? ' · External resource' : ''}</small></div><span className="learn-open">Read →</span></Link>;
+  const posts = (r.discussionLinks || []).filter((post, index, all) => all.findIndex(other => other.url === post.url) === index);
+  return <article className="learn-row learn-resource-card">
+    <div className="learn-card-media"><ResourceCardMedia r={r} showControls />{r.preview?.video && <span className="learn-card-caption">{recordingLabel(r.preview.source)}</span>}</div>
+    <div className="learn-row-body">
+      <div className="learn-meta"><span>{pretty(ecoLabel(r.ecosystem))}</span>{r.cardStatus && <span>{r.cardStatus}</span>}</div>
+      <Link to={href}><h3>{r.title}</h3></Link>
+      <p>{r.cardSummary}</p>
+      <div className="learn-card-creator">{r.creator?.name ? `by ${r.creator.name}` : r.sharedBy ? `Shared by ${r.sharedBy.name}` : r.provenance.sourceName}</div>
+      {!!posts.length && <div className="learn-card-sources">{posts.map(post => <ExternalLink key={post.url} href={safeHref(post.url)}>Discussion · {post.platform} ↗</ExternalLink>)}</div>}
+      <details className="learn-card-details"><summary>Details</summary><p>{r.summary}</p>{r.preview?.source && <p>{r.preview.source}</p>}</details>
+      <Link className="learn-card-read" to={href} aria-label={`Read ${r.title}`}>Read guide →</Link>
+    </div>
+  </article>;
+}
 
 export default function Learn() {
   const [params, setParams] = useSearchParams();
@@ -68,12 +89,12 @@ export default function Learn() {
           <div className="learn-selects">{(['ecosystem','level','format'] as const).map(key => <label key={key}>{labels[key]}<select value={params.get(key) || ''} onChange={e => change(key,e.target.value)}><option value="">All {key === 'ecosystem' ? 'ecosystems' : key + 's'}</option>{params.get(key) && !data?.facets[key]?.[params.get(key)!] && <option value={params.get(key)!}>{pretty(params.get(key)!)}</option>}{Object.keys(data?.facets[key] || {}).sort().map(v => <option key={v} value={v}>{key === 'ecosystem' ? pretty(ecoLabel(v)) : pretty(v)}</option>)}</select></label>)}</div>
           {!!selected.length && <div className="learn-active" aria-label="Active filters">{selected.map(key => <button key={key} onClick={() => change(key,'')} aria-label={`Remove ${labels[key]} filter`}>{labels[key]}: {key === 'category' ? category?.label || params.get(key) : key === 'topic' ? topic?.label || params.get(key) : pretty(params.get(key)!)} <span aria-hidden="true">×</span></button>)}<button className="learn-clear" onClick={reset}>Clear all</button></div>}
           <div className="learn-result-heading"><h2>{category?.label || topic?.label || 'Guides & references'}</h2><span role="status">{err ? 'Library unavailable' : data ? `${rows.length} resource${rows.length === 1 ? '' : 's'}` : 'Loading resources'}</span></div>
-          {err ? <div className="learn-empty"><h3>We couldn’t load the library.</h3><p>Your filters are saved. Try loading it again.</p><button className="btn" onClick={() => setRetry(n => n+1)}>Retry</button></div> : !data ? <Spinner /> : rows.length === 0 ? <div className="learn-empty"><h3>No matches for this combination.</h3><p>Remove a filter above, or browse the full library to find another starting point.</p><button className="btn" onClick={reset}>Browse all guides</button><p>Looking for a tool? <Link to={destinationLink('/explore', params, ['q','ecosystem'])}>Search Discover →</Link></p></div> : <div className="learn-rows">{rows.slice(0,limit).map(r => <Link className="learn-row" key={r.id} to={r.learningHref || `/resource/${encodeURIComponent(r.id)}`}><div className={`learn-resource-icon ${r.native ? 'native' : ''}`} aria-hidden="true">{r.learningKind === 'skill' ? '≡' : r.native ? '✳' : '↗'}</div><div className="learn-row-body"><div className="learn-meta"><span>{pretty(ecoLabel(r.ecosystem))}</span><span>{pretty(r.format || 'resource')}</span>{r.level && <span>{pretty(r.level)}</span>}{r.lifecycle && <span>{r.lifecycle}</span>}</div><h3>{r.title}</h3><p>{r.cardSummary || r.summary}</p><small>{r.provenance.sourceName}{r.sharedBy ? ` · Shared by ${r.sharedBy.name}` : ''}{r.provenance.freshness === 'stale' ? ' · Last saved version, refresh pending' : ''}{r.learningKind === 'skill' ? ' · Read validation scope before use' : !r.native ? ' · External resource' : ''}</small></div><span className="learn-open">Read →</span></Link>)}</div>}
+          {err ? <div className="learn-empty"><h3>We couldn’t load the library.</h3><p>Your filters are saved. Try loading it again.</p><button className="btn" onClick={() => setRetry(n => n+1)}>Retry</button></div> : !data ? <Spinner /> : rows.length === 0 ? <div className="learn-empty"><h3>No matches for this combination.</h3><p>Remove a filter above, or browse the full library to find another starting point.</p><button className="btn" onClick={reset}>Browse all guides</button><p>Looking for a tool? <Link to={destinationLink('/explore', params, ['q','ecosystem'])}>Search Discover →</Link></p></div> : <div className="learn-rows">{rows.slice(0,limit).map(r => <LearningResourceRow key={r.id} r={r} />)}</div>}
           {data && !err && rows.length > limit && <div className="learn-more"><p>Showing {Math.min(limit,rows.length)} of {rows.length.toLocaleString()}</p><button className="btn" onClick={()=>setLimit(n=>n+24)}>Show 24 more</button></div>}
         </div>
       </div>
     </section>
     <ShareLearning onShared={()=>setRetry(n=>n+1)}/>
-    <p className="learn-source-note">Guides explain concepts and techniques; reference collections point to further reading. For downloadable agent instructions, visit Skills. External guidance does not verify a Tari integration. <Link to="/sources">View sources and freshness →</Link></p>
+    <p className="learn-source-note">Guides explain concepts and techniques; reference collections point to further reading. For downloadable agent instructions, visit Skills. <Link to="/sources">View sources and freshness →</Link></p>
   </div>;
 }

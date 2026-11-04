@@ -18,4 +18,21 @@
 @media(max-width:1050px){.learn-paths{grid-template-columns:repeat(2,minmax(0,1fr))}.learn-selects{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:800px){.learn-tari-goals{width:100%}.learn-tari-goals[open]{display:block}.learn-tari-goals button{display:inline-flex}.learn-paths button{min-height:150px}}
 @media(max-width:520px){.learn-paths{grid-template-columns:1fr 1fr}.learn-paths button{display:flex;flex-direction:column;padding:16px;gap:12px;min-height:180px}.learn-paths strong{font-size:15px}.learn-paths button>span:last-child{font-size:12px}.learn-selects{grid-template-columns:1fr 1fr}.learn-result-heading h2{font-size:18px}.learn-meta{gap:8px}.learn-more{align-items:flex-start;flex-direction:column}}
-.learn-row p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+
+
+/* Curated guides keep the same independent media, source and disclosure controls as Discover. */
+.learn-row:is(:hover,:focus-within) h3{color:#c9eb00}
+.learn-row h3{transition:color .15s}
+.learn-resource-card{display:grid;grid-template-columns:minmax(180px,250px) minmax(0,1fr);gap:24px}
+.learn-card-media{min-width:0}
+.learn-card-media video,.learn-card-media img{max-width:100%}
+.learn-card-caption,.learn-card-creator{display:block;color:var(--muted);font-size:13px;line-height:1.6;margin-top:10px}
+.learn-resource-card .learn-meta{font-size:12px;text-transform:none;letter-spacing:normal;overflow-wrap:anywhere}
+.learn-resource-card p{font-size:16px;overflow-wrap:anywhere}
+.learn-card-sources{display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:8px}
+.learn-card-sources a,.learn-card-read{display:block;min-height:44px;padding:12px 0;color:var(--accent);font-size:14px;line-height:1.6;overflow-wrap:anywhere}.learn-card-sources a small{display:inline;font-size:11px}
+.learn-card-details{margin-top:8px;border-top:1px solid var(--border)}
+.learn-card-details summary{display:list-item;cursor:pointer;min-height:44px;padding:12px 0;font-size:14px}
+.learn-card-details p{font-size:14px;line-height:1.7}
+.learn-card-details summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+@media(max-width:1100px){.learn-resource-card{grid-template-columns:minmax(0,1fr);gap:16px}}
