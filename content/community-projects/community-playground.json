@@ -4,7 +4,7 @@
   "creator": "luci666",
   "summary": "Independent community guides for Ootle wallets, templates and transactions. Reviewed November 4, 2026: the advertised WordPress preview still redirects to the general WordPress developer homepage, as observed on October 11. The complete original forum thread remains available and unchanged; the recording is a walkthrough of that announcement, not the unavailable guide site.",
   "sourceUrl": "https://community.tari.com/t/ootle-testnet-community-apps-directory/281/5",
-  "sourceLabel": "Project source",
+  "sourceLabel": "Original post",
   "repoUrl": null,
   "publishedAt": "2026-09-05T16:02:58.285Z",
   "publicationLabel": "Listed on forum",
@@ -42,5 +42,5 @@
   },
   "demoUrl": null,
   "cardSummary": "Explore the original announcement of community guides for Ootle wallets, templates and transactions.",
-  "cardStatus": "Guides · Site unavailable"
+  "cardStatus": "Guides \u00b7 Site unavailable"
 }
