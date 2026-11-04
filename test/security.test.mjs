@@ -97,6 +97,20 @@ test('public bundled downloads are digest-bound and never accept a runtime-creat
  assert.throws(()=>verifyReviewedFiles('readable-code',{'SKILL.md':'replaced instructions'}),/review/);
 });
 
+test('every publicly listed skill serves its complete reviewed bundle',async t=>{
+ const base=await serve(t,createInspirationLobby());
+ const {listings}=await (await fetch(base+'/api/skill-market')).json();
+ const failures=[];
+ for(const listing of listings){
+  const response=await fetch(base+`/api/skill-market/${listing.id}/download`,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({visitor:'complete-download-regression'})});
+  if(response.status!==200){failures.push(`${listing.id}: HTTP ${response.status}`);continue;}
+  const bundle=await response.json();
+  assert.ok(Object.keys(bundle.files).length,listing.id);
+  for(const [name,body] of Object.entries(bundle.files))assert.equal(createHash('sha256').update(body).digest('hex'),bundle.sha256[name],`${listing.id}/${name}`);
+ }
+ assert.deepEqual(failures,[],'A visible skill must not advertise an unavailable bundle');
+});
+
 test('CSP permits only the exact inline import maps and bundled preview code used by the product',()=>{
  const {routes}=JSON.parse(readFileSync(new URL('../vercel.json',import.meta.url)));
  assert.deepEqual(routes[0].headers,SECURITY_HEADERS);
