@@ -93,7 +93,7 @@
     "references/three-d-pipeline.md": "8278baa203b7cd560d9fc5688c33489a9c478275c1795def119b7e024b27d03e",
     "scripts/asset_report.py": "93e364f095261b44f6fd0345f7132019af1af93e81ebd84d91fe2a5049918203",
     "scripts/build_preview_sheet.py": "002a550a7b5fac6d8815078a72afc249dd828c40d975b2323223fc770118c64b",
-    "scripts/requirements.txt": "1954ca940740c612a12e7abf0a307b7394715964d66dc8037d503fdd5c1b6424",
+    "scripts/requirements.txt": "ad6a234a33732fdad765666983beb5af8e11887bb59c07c6f8e3f02b95221f3b",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
@@ -531,8 +531,8 @@
   },
   "hf-hf-cli": {
     "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
-    "SKILL.md": "1115064fff1a79e8b67f71828fe9c1b6cbbbf85d893bda832dabeeb917f8702e",
-    "UPSTREAM.json": "1ef56f637191c0103f32d392b97ffe5903ca72f2ad0a656e33106fb31b1d7103"
+    "SKILL.md": "a60115f0ca8fa0468e2e7878730925fc4dbf2fffdbed15391d14429a9830c4c1",
+    "UPSTREAM.json": "4edb237e9c153b6d540df020f272e320157fafd70c892e066ac990e750b0d6a3"
   },
   "hf-hf-cloud-aws-context-discovery": {
     "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
@@ -774,8 +774,8 @@
   },
   "hf-trl-training": {
     "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
-    "SKILL.md": "2ec080bb13621036aeec8b11e0b1111843c42a9e5e7b1319136cac3772f28a76",
-    "UPSTREAM.json": "5c9330e96b77f3ddd6cdb0290356566c077162caf436ffbefa101a7abcdc6abf"
+    "SKILL.md": "42c855bdc6171390abc7413cdb19bd4fd8dddfb31094d519a874427de08ddc2a",
+    "UPSTREAM.json": "5e5b1fd303796e04a0c05528f542c3ff3fa58460f09197c2277b154c9632a629"
   },
   "hf-hf-mcp": {
     "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
@@ -795,40 +795,41 @@
   },
   "elevenlabs-text-to-speech": {
     "LICENSE": "4ab5e9af2296f748eefa6c0696667f83aa9c0edda7b6972785966b60644b3da6",
-    "SKILL.md": "c35d9afb18fd0acd5e4b35bc76e172dcd06b6ec3e845d6b3dd3ebafbf17dbeb3",
-    "UPSTREAM.json": "3153a40e237a2a7a756a4a85b5b1e51e442c74c20ba0e9dd7e13c77dfea828c8",
-    "references/installation.md": "052ada238eb61412db885a38079dc508a8b77c5a96fc2f3e80236f74fe4a9350",
-    "references/streaming.md": "62340c36b14dd4788a31a07c76aab954e5a2da6b54b752e11041cb0d3f30708b",
-    "references/voice-settings.md": "06f006e0e890244b39e5fbc101073bc1362d0c075b6282edea1866567226b5b3"
+    "SKILL.md": "fcc105566df403f5f77c25e73b63d9eef170f7326aaea6a8bbb977386ff56abe",
+    "UPSTREAM.json": "5ec132646063e327c2043096aa02d7355cdd1d7279b104ae63e9421e2af88136",
+    "references/installation.md": "d7c820c9f1173b48d743a8f3393f210b168b5e40c8d4b9dff8193c1f01c5b187",
+    "references/streaming.md": "226a078a275b5cc4fcab508d9c4c20c052c53122e98afe42bf38ff7184ad9f56",
+    "references/voice-settings.md": "35ec0e270a3d28bfe328de370216acd2fb1db32883faeda043d8ea3f23555457"
   },
   "elevenlabs-sound-effects": {
     "LICENSE": "4ab5e9af2296f748eefa6c0696667f83aa9c0edda7b6972785966b60644b3da6",
-    "SKILL.md": "e4b87f43220ef2992cc30a16b8f12500e2dbc613a0de814ca58dff946c25e966",
-    "UPSTREAM.json": "2f2c87efaaea42c0fbe267a99c1c00bc3c87253ecef7df327c123c87390ac5ef",
-    "references/installation.md": "58724eebca1477e889a13d8a5cb9956b95f6b0269b3ecb16e5a74b1a57034522"
+    "SKILL.md": "f032efd853426b15568a3e1f135f9c6ad8dd983e8c4f265aad58675d78e72ae3",
+    "UPSTREAM.json": "93c4e250defbaac691b8dab067e8201c35e50933586b81eacaf88bee7d5d82a3",
+    "references/installation.md": "40e28b7366308d7e22130b4688d1b9194b31567563e6cf0ecf6cd8cc5d957f0e"
   },
   "elevenlabs-music": {
     "LICENSE": "4ab5e9af2296f748eefa6c0696667f83aa9c0edda7b6972785966b60644b3da6",
-    "SKILL.md": "647dcdcc634277763d06e3d7697263b0e49c256f51f26da7bf3f989d9723085c",
-    "UPSTREAM.json": "5210385cde6644ee538dcbcd27b8a4b447b5f1e48b9c5ad7ec26de5463261ae9",
-    "references/api_reference.md": "feafd13ff2e20a1831b056b3d08a42c11439c04b126f8400a3557ef130a06af3",
-    "references/installation.md": "2ef32cf83d7f14131335621d88fcd816fba9746ae90b8deccb5865743239d59b"
+    "SKILL.md": "7d868f6f5a09131c11bbeccf9142cbb3cbdc27b5c47cd788c57cb5f35392763d",
+    "UPSTREAM.json": "c37af57137b2a60f91c7fe294ab7cb4a79d42045a8abc21317c5d805c4463557",
+    "references/api_reference.md": "98ea9a58aa989a1812747283ef16b629d5af434e301f0c8040b4b9b010075861",
+    "references/installation.md": "bc434123987153fc0eb96409f503cee37c84b53a6ae95873ae85b368b2986bb9"
   },
   "marketing-copywriting": {
     "LICENSE": "b70d71e24e40fce5da8f4b6f9cd862096a048e433db7f3c8cac5e348e6d34591",
-    "SKILL.md": "ce18137ae31ab37f261078501431649865ab6b403054d97490754e82acb002d8",
-    "UPSTREAM.json": "96c3697ed763a7d5720511176193c6694c26180df21eef51d327fa1577723653",
-    "evals/evals.json": "f062a21fea6ec6eff7157caf051142fa376fbfe6284c7d1d185371de6acedb9b",
-    "references/copy-frameworks.md": "d98818886525908bf17dd6412d0b72731b313d6eef3e1ab6b365828a3a342779",
-    "references/natural-transitions.md": "4ff23f8943af2f65b072f26f1c53ce55f19cc26d7be211c11cae8e34b43e859f"
+    "SKILL.md": "02f0ab1ddd41d95b3c230d4bcff3de6578c8f2e45776c8ef2e4b931636af5bee",
+    "UPSTREAM.json": "7380fc17849ee64734944367cc2988d5a8d87423638cb34cc4e8d85e71fad412",
+    "evals/evals.json": "ccec86052a0edd8646d0e50e63c08e0e971f443d8f6e9178843a1629f79efdb0",
+    "references/ai-tells.md": "b98c3a19b3a75c714d69e80a0076e4c07244b0e833c2ce81ff2631224fb7f7b2",
+    "references/copy-frameworks.md": "4db06c481a904be3e4571ad8f671532c97ec186ddf0fb8aee3e3a56ef8e3d441",
+    "references/natural-transitions.md": "9bd61b0de5be2c4de4ce130c68236b4f290b12737823827a458bb2b4c8584683"
   },
   "marketing-copy-editing": {
     "LICENSE": "b70d71e24e40fce5da8f4b6f9cd862096a048e433db7f3c8cac5e348e6d34591",
-    "SKILL.md": "9b5a20be3dc5513c8f0b4f4c4960857e4d28ed83698a5b33c8dde9dc75a47bf6",
-    "UPSTREAM.json": "1dcbf6b81d2641ca65a8f4f1b93c061852ec992cd488125e7f0ffb0c52ae9a7d",
-    "evals/evals.json": "49881baea09fd93a03da69ab249a7d37a93b1fa015debce320b5861c606593ef",
-    "references/checklist.md": "db143b969b45b0933fe6eb772992890d1472d036a6c887fc98665e4fb48da43c",
-    "references/content-refresh.md": "8a3a2d301bb2b8b2a780f5bef43093ab42295041b2fea2a9caeca2421ef3c79b",
+    "SKILL.md": "cec5a771ce37ade292f7f1f6b418e8a6ce6ec3f50163fa5e664afbcb03e085fc",
+    "UPSTREAM.json": "0f1252e53eb1db8a07b35aa5e153013fc2d2bfe578c7354a2eabd703a7834211",
+    "evals/evals.json": "cc18c9f51094058759267d465cfcc50da65f248f66b923326781aa642d622ca7",
+    "references/checklist.md": "4cf94c922286223681fc53721fcc65ae7299f1e36e797e7397d369d674580c60",
+    "references/content-refresh.md": "ba73cdf278fe6b552eee27eb1452494f11f9d17ef67d720657e0982f76fb961b",
     "references/plain-english-alternatives.md": "df4f820d4c63ae8a517c64a243c101658352cd07d002355bf3c97de0a00f3775"
   },
   "creator-learning-loop": {

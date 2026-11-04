@@ -125,3 +125,5 @@ Start with [Unity Creator setup](../.agents/skills/unity-creator-setup/SKILL.md)
 
 - [Unreal AI and Blueprint setup](../.agents/skills/unreal-ai-blueprints/SKILL.md): assistant selection, graph review, compile/playtest and source handoff; builds on the existing Unreal topic skills.
 - [UEFN creator setup](../.agents/skills/uefn-creator-setup/SKILL.md): Fortnite devices and Verse, supported Windows setup, session testing and publishing boundaries.
+
+After reviewing a bundled update, advance only that bundle’s changed SHA-256 entries in `creator-hub/hub/shared/reviewedSkills.json`. This independent allowlist intentionally rejects unreviewed bytes. Do not regenerate every digest as an automatic build step. Run `node --test test/security.test.mjs` and `npm run build:site`; the packaged-server check exercises every advertised download before release.
