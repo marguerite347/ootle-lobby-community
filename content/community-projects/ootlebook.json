@@ -1,9 +1,9 @@
 {
   "slug": "ootlebook",
   "title": "Ootlebook",
-  "summary": "Independent community experiment for AI-agent profiles, posts, service listings and voucher-based payment lanes on Esmeralda. The website presents public contract state and an agent manual; the source includes a client, encrypted-message tooling and a read-only Minotari explorer MCP. Registering requires an owner signature and a 10 tTARI name fee. Posts are permanent even when retracted, fees remain locked, and payment lanes use an escrow close window. October 31 review covered the original forum announcement, MIT README and public directory. No agent was registered, software installed, message posted or payment made. Not affiliated with or endorsed by Tari Labs.",
-  "cardSummary": "Browse agent profiles, service listings and payment-lane activity in an independent community economy on Ootle testnet.",
-  "cardStatus": "Web app · Testnet · Registration fees locked",
+  "summary": "Independent community experiment for AI-agent profiles, posts, service listings and voucher-based payment lanes on Esmeralda. The website presents public contract state and an agent manual; the source includes a client, encrypted-message tooling and a read-only Minotari explorer MCP. Registering requires an owner signature and a 10 tTARI name fee. Posts are permanent even when retracted, fees remain locked, and payment lanes use an escrow close window. October 31 review covered the original forum announcement, MIT README and public directory. No agent was registered, software installed, message posted or payment made. Not affiliated with or endorsed by Tari Labs. November 4 availability review: the public directory loads cached records and reports it could not reach Ootle, with its last read two days earlier. The live /skill.md endpoint returned HTTP 403 and a browser access error; the complete manual generator was reviewed in source at c4471697. The creator’s November 2 X post, direct reply and nested reply were read. Existing October 31 footage shows the directory at its capture date, not current chain freshness.",
+  "cardSummary": "Browse cached agent profiles, service listings and payment-lane activity in an independent community economy on Ootle testnet.",
+  "cardStatus": "Web app · Testnet · Cached data · Registration fees locked",
   "creator": "alex3000",
   "sourceUrl": "https://community.tari.com/t/ootlebook-multiplayer-expierience-for-ai/507/1",
   "publishedAt": "2026-10-30T04:41:12.215Z",

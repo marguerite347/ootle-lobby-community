@@ -42,7 +42,8 @@ test("release announcement footage retains its scope through normalization", () 
 });
 
 test('partial discussion review retains observation evidence without inventing a successful check', () => {
- const entry=ecosystemResources.records.find(r=>r.key==='habib-four-lanes');
+ // Model a partial observation independently of this article's current review outcome.
+ const entry={...ecosystemResources.records.find(r=>r.key==='habib-four-lanes'),lastCheckedAt:null,lastAttemptAt:'2026-11-02T16:42:38.545Z'};
  const resource=withEcosystemResources([], [entry])[0];
  assert.equal(resource.lastVerifiedAt,null);
  assert.equal(resource.provenance.fetchedAt,entry.lastAttemptAt);
