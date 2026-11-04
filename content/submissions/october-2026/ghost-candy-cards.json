@@ -1,7 +1,7 @@
 {
   "slug": "ghost-candy-cards",
   "title": "Ghost Candy Cards",
-  "summary": "A Rust template, claim client and Python SVG printer for one-time Halloween candy cards. Each printed QR carries a bearer secret; the public bowl stores its corresponding point and records redemption, while the treat is paid to a stealth output. Claims bind the proof to the exact output, and the host can sweep unused treats after the deadline. Anyone who copies a card secret can race its holder; published demo secrets must not be funded. October 31 review covered the creator announcement and MIT README. The recording is a source walkthrough, not a deployed claim demonstration. November 2 organizer notice: Esmeralda testnet was reset; entrants were asked to republish templates and update their submission versions where applicable. Earlier recordings document their capture dates.",
+  "summary": "A Rust template, claim client and Python SVG printer for one-time Halloween candy cards. Each printed QR carries a bearer secret; the public bowl stores its corresponding point and records redemption, while the treat is paid to a stealth output. Claims bind the proof to the exact output, and the host can sweep unused treats after the deadline. Anyone who copies a card secret can race its holder; published demo secrets must not be funded. November 4 review covered the creator announcements, thread replies and unchanged MIT README. The recording is a source walkthrough, not a deployed claim demonstration. November 2 organizer notice: Esmeralda testnet was reset; entrants were asked to republish templates and update their submission versions where applicable. Earlier recordings document their capture dates.",
   "cardSummary": "Print one-time QR candy cards that redeem private testnet treats while keeping the recipient off the public bowl.",
   "cardStatus": "Source code · Testnet",
   "creator": "cgrabk7q2",
@@ -24,7 +24,7 @@
     "capturedAt": "2026-10-31T09:53:05.942Z",
     "sourceRevision": "d023958902a09b41f15ff5bb9cd4a1c5cc559ff4",
     "kind": "public-page",
-    "credit": "Source/docs walkthrough — README, printable example cards and claim design; no card redemption."
+    "credit": "Docs walkthrough"
   },
   "discussionLinks": [
     {
