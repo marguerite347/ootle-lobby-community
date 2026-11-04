@@ -43,5 +43,8 @@
       "url": "https://community.tari.com/t/530",
       "platform": "Tari Community forum"
     }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:hexcrow"
   ]
 }

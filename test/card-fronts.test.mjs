@@ -4,7 +4,8 @@ import {readFileSync,readdirSync} from 'node:fs';
 const internalReviewWording=/\b(?:untested|unverified|not\s+(?:(?:independently|yet)\s+)?(?:tested|verified)|(?:runtime|hosting|availability)\s+(?:has\s+)?not\s+been\s+verified)\b/i;
 const read=path=>JSON.parse(readFileSync(new URL('../'+path,import.meta.url),'utf8'));
 test('every curated project and builder reference has distinct authored front copy',()=>{
- const entries=['projects','community-projects','submissions/october-2026'].flatMap(folder=>readdirSync(new URL('../content/'+folder+'/',import.meta.url)).filter(f=>f.endsWith('.json')).map(f=>read('content/'+folder+'/'+f)));
+ const submissionFolders=readdirSync(new URL('../content/submissions/',import.meta.url),{withFileTypes:true}).filter(x=>x.isDirectory()).map(x=>'submissions/'+x.name);
+ const entries=['projects','community-projects',...submissionFolders].flatMap(folder=>readdirSync(new URL('../content/'+folder+'/',import.meta.url)).filter(f=>f.endsWith('.json')).map(f=>read('content/'+folder+'/'+f)));
  const catalog=read('creator-hub/hub/shared/ecosystemResources.json');
  for(const entry of [...entries,...catalog.records,...catalog.opportunities]){
   assert.ok(entry.cardSummary?.trim(),`${entry.title}: missing card summary`);
@@ -18,6 +19,17 @@ test('every curated project and builder reference has distinct authored front co
  }
  // Availability labels may change after a real source review; do not freeze a project in its current state.
  assert.match(catalog.records.find(x=>x.key==='caravel-burn-wallet').cardStatus,/Testnet.*Irreversible/);
+});
+
+test('matching gallery and builder resources share explicit canonical review identities',()=>{
+ const folders=['community-projects',...readdirSync(new URL('../content/submissions/',import.meta.url),{withFileTypes:true}).filter(x=>x.isDirectory()).map(x=>'submissions/'+x.name)];
+ const entries=folders.flatMap(folder=>readdirSync(new URL('../content/'+folder+'/',import.meta.url)).filter(f=>f.endsWith('.json')).map(f=>read('content/'+folder+'/'+f)));
+ const catalog=read('creator-hub/hub/shared/ecosystemResources.json');
+ const normalize=value=>(value||'').replace(/\/$/,'').toLowerCase();
+ for(const entry of entries){
+  const matches=catalog.records.filter(resource=>resource.repoUrl&&normalize(resource.repoUrl)===normalize(entry.repoUrl)&&normalize(resource.title)===normalize(entry.title));
+  for(const resource of matches)assert.ok(entry.resourceIds?.includes(resource.id),`${entry.title}: declare ${resource.id} as a review alias so one project is not counted twice`);
+ }
 });
 
 test('catalog introduction uses discovery copy',()=>{

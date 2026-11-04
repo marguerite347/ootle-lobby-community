@@ -35,5 +35,8 @@
       "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/44",
       "platform": "Testnet reset notice"
     }
+  ],
+  "resourceIds": [
+    "tari-ootle:integration:ootle-payment-gateway"
   ]
 }

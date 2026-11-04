@@ -58,5 +58,8 @@
       "url": "https://github.com/ogboy92ii/crypt/pull/1",
       "platform": "GitHub"
     }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:crypt"
   ]
 }
