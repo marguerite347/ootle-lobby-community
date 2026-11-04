@@ -51,3 +51,16 @@ test('partial discussion review retains observation evidence without inventing a
  assert.throws(()=>withEcosystemResources([], [{...entry,lastAttemptAt:null}]), /Missing ecosystem source evidence/);
  assert.throws(()=>withEcosystemResources([], [{...entry,lastCheckedAt:'not-a-date',lastAttemptAt:null}]), /Missing ecosystem source evidence/);
 });
+
+
+test('concise announcement footage can accompany a held source without inventing a successful review',()=>{
+ const entry=ecosystemResources.records.find(r=>r.key==='witching-hour');
+ const resource=withEcosystemResources([], [entry])[0];
+ assert.equal(resource.preview.source,'Announcement');
+ assert.equal(resource.lastVerifiedAt,null);
+ assert.equal(resource.provenance.freshness,'provisional');
+ assert.equal(resource.demoUrl,null);
+ assert.equal(resource.verification,'source-attested');
+ assert.match(resource.summary,/repository returns 404/i);
+ assert.throws(()=>withEcosystemResources([], [{...entry,preview:{...entry.preview,source:'Certified application'}}]),/capture scope/);
+});

@@ -6,12 +6,12 @@ import ProjectCard from './ProjectCard';
 import ContestProjectMetrics from './ContestProjectMetrics';
 import {ContestGallery} from './ContestGallery';
 describe('project navigation',()=>{
- it('renders contest sharing links before Details while retaining the original and independent controls',()=>{
+ it('keeps the original visible and additional sharing history in Details with independent controls',()=>{
   const original='https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/7';
   const sharing='https://x.com/tari/status/2115066015264428033';
   const html=renderToStaticMarkup(<ContestGallery contest={{id:'october-2026',title:'October',threadUrl:original,checkedAt:'2026-11-02T00:00:00Z',observedSubmissionPosts:1,entries:[{slug:'crypt',title:'Crypt',summary:'Full source context.',cardSummary:'Explore escrow disputes.',creator:'Og.boy',sourceUrl:original,discussionLinks:[{url:sharing,platform:'X'}],repoUrl:'https://github.com/ogboy92ii/crypt',publishedAt:'2026-10-12T00:00:00Z',updatedAt:'2026-10-29T00:00:00Z',technologies:[]}]}}/>);
   const front=html.slice(0,html.indexOf('class="card-details project-card-details-content"'));
-  expect(front).toContain(`href="${original}"`);expect(front).toContain('Original post');expect(front).toContain(`href="${sharing}"`);expect(front).toContain('Discussion · X');expect(front).toContain('aria-label="Explore project: Crypt"');
+  expect(front).toContain(`href="${original}"`);expect(front).toContain('Original post');expect(front).not.toContain(`href="${sharing}"`);const details=html.slice(front.length);expect(details).toContain(`href="${sharing}"`);expect(details).toContain('Discussion · X');expect(front).toContain('aria-label="Explore project: Crypt"');
  });
  it('uses a native creator-post link alongside independent controls',()=>{
   const html=renderToStaticMarkup(<ProjectCard resource={{id:'example',title:'Example',ecosystem:'tari-ootle',native:true,preview:null}} sourceUrl="https://community.tari.com/t/example/396/5" creator="Creator" summary="Project" repoUrl="https://github.com/example/project" technologies={[]} actions={<a href="https://example.com/demo">Open project</a>}/>);
