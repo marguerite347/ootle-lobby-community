@@ -2,7 +2,7 @@
   "slug": "community-playground",
   "title": "Tari Ootle Playground",
   "creator": "luci666",
-  "summary": "Independent community guides for Ootle wallets, templates and transactions. At the October 11, 2026 review, the previously advertised WordPress preview redirected to the general WordPress developer homepage. The original forum announcement remains available; the recording is a walkthrough of that announcement.",
+  "summary": "Independent community guides for Ootle wallets, templates and transactions. Reviewed November 4, 2026: the advertised WordPress preview still redirects to the general WordPress developer homepage, as observed on October 11. The complete original forum thread remains available and unchanged; the recording is a walkthrough of that announcement, not the unavailable guide site.",
   "sourceUrl": "https://community.tari.com/t/ootle-testnet-community-apps-directory/281/5",
   "sourceLabel": "Project source",
   "repoUrl": null,
@@ -34,7 +34,7 @@
   "media": {
     "image": "/previews/community/community-playground.jpg",
     "video": "/previews/community/community-playground.mp4",
-    "label": "Public source walkthrough",
+    "label": "Announcement",
     "sourceUrl": "https://community.tari.com/t/ootle-testnet-community-apps-directory/281/5",
     "capturedAt": "2026-10-04T16:02:52.616125Z",
     "reviewedAt": "2026-10-04T16:02:52.616125Z",
