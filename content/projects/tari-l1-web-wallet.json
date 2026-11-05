@@ -1,17 +1,17 @@
 {
   "id": "tari-ootle:app:tari-l1-web-wallet",
   "title": "Tari L1 Web Wallet",
-  "summary": "Browser-based Tari L1 wallet with Ootle accounts and a burn-and-claim workflow.",
+  "summary": "Browser wallet for Tari L1 and Ootle accounts. November 4, 2026: the public page offers mainnet and Esmeralda wallet creation or import. The current README says mainnet burns are allowed but cannot yet be claimed because Ootle mainnet is not running. Burning XTM is irreversible; the automatic claim workflow described by the creator applies to Esmeralda testnet. Keys and signing are described as local WebAssembly operations. The source is CPAL-1.0. This review inspected the public landing page and source documentation without creating or importing a wallet or making a transaction.",
   "technologies": [
     {
       "label": "Tari L1 WASM",
-      "sourceUrl": "https://github.com/chironbuilds/tari-l1-wallet-ui/blob/935ffe4696f366cd63ee805e410a5c623c7f2e50/README.md"
+      "sourceUrl": "https://github.com/chironbuilds/tari-l1-wallet-ui/blob/e3f02136e6d031a305995023976153514b6dbb52/README.md"
     },
     {
       "label": "Ootle SDK",
-      "sourceUrl": "https://github.com/chironbuilds/tari-l1-wallet-ui/blob/935ffe4696f366cd63ee805e410a5c623c7f2e50/README.md"
+      "sourceUrl": "https://github.com/chironbuilds/tari-l1-wallet-ui/blob/e3f02136e6d031a305995023976153514b6dbb52/README.md"
     }
   ],
-  "cardSummary": "Manage Tari L1 and Ootle accounts in a browser wallet with a burn-and-claim workflow.",
+  "cardSummary": "Manage Tari L1 and Ootle accounts; irreversible mainnet burns cannot yet be claimed on Ootle.",
   "cardStatus": "Web app"
 }
