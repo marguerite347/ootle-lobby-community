@@ -1,7 +1,7 @@
 {
   "slug": "seance",
   "title": "Séance",
-  "summary": "Sealed group polls with anonymous eligibility, replaceable ballots and scheduled reveal. October 23 browser inspection cast a local Treat ballot, rejected an outsider and revealed a 0/1/0 tally; the page also read two historical Esmeralda polls and displayed matching recomputed hashes. The local browser exercise creates no chain transaction. The recorded clip tours this public interface. October 29 Radicle review identified current source a1ef9667b34ba8a009ee850ecd23df22bbf2565e and Made by DevX branding; earlier recording remains dated to its original source revision. Fee-pot contributions cannot be withdrawn. Receipt loss prevents counting; revealed choices and timing/funding links can expose information. MIT source, Esmeralda testnet. November 2 organizer notice: Esmeralda testnet was reset; entrants were asked to republish templates and update their submission versions where applicable. Earlier recordings document their capture dates.",
+  "summary": "Sealed group polls with anonymous eligibility, replaceable ballots and scheduled reveal. November 5 review: the public browser interface loads, while both historical Esmeralda polls fall back to explicitly labeled recorded snapshots; their component addresses are not found in the current explorer after the testnet reset. Radicle source a1ef9667 remains available with no published releases; its README pins template library 0.34.0 and test tooling 0.46.1. The creator’s October proof and test counts describe historical runs. The November 5 recording tours the browser interface and its explicit historical snapshot fallback, separately from chain voting; earlier October footage is preserved in the media history. Fee-pot contributions cannot be withdrawn. Lost receipts prevent counting, revealed choices become public, and timing or funding links can expose information. MIT source; Esmeralda testnet.",
   "cardSummary": "Create sealed group polls with anonymous eligibility, replaceable ballots and a scheduled reveal of choices.",
   "cardStatus": "Browser demo · Testnet · Fee-pot deposits irreversible",
   "creator": "DevXTools",
@@ -18,12 +18,12 @@
     }
   ],
   "recording": {
-    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-seance-20261023.mp4",
-    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-seance-20261023.png",
-    "capturedAt": "2026-10-23T17:54:33.632Z",
-    "sourceRevision": "4e0dde7758593b58087bbd4d045d6d3c6f87a836",
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-seance-20261105.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-seance-20261105.jpg",
+    "capturedAt": "2026-11-05T17:00:53.746Z",
+    "sourceRevision": "a1ef9667b34ba8a009ee850ecd23df22bbf2565e",
     "kind": "public-page",
-    "credit": "App demo — Browser poll interface overview; local interactions and historical poll reads are separate from chain voting."
+    "credit": "App demo"
   },
   "demoUrl": "https://seance.madebydevx.com",
   "discussionLinks": [
@@ -38,6 +38,10 @@
     {
       "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/44",
       "platform": "Testnet reset notice"
+    },
+    {
+      "url": "https://bsky.app/profile/devxtools.margin.cafe/post/3mygcr27mwn22",
+      "platform": "Bluesky"
     }
   ],
   "resourceIds": [
