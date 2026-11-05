@@ -1,3 +1,4 @@
+import {createLaunchReader} from './launchConfig.mjs';
 import {publicError} from './publicSecurity.mjs';
 import {createCommunityProjectMetrics} from './communityProjectMetrics.mjs';
 // INTEGRATION_GAP[CFG-DATA] (configuration-required): see docs/DEVELOPMENT_GAPS.md#cfg-data.
@@ -13,7 +14,7 @@ import {dailyTriviaRouter} from './dailyTrivia.mjs';
 import {createBlobDailyTrivia} from './dailyTriviaBlob.mjs';
 import {buildToolkit} from './buildToolkit.mjs';
 import {editions as journalEditions} from './challenges.mjs';
-import {publishedArticles,launch,journalHtml,journalFeed} from './journal.mjs';
+import {publishedArticles,journalHtml,journalFeed} from './journal.mjs';
 import {subscriptionConfiguration,createSubscriptionHandler} from './subscriptions.mjs';
 import {weeklyIdeas} from './creatorIdeas.mjs';
 import {monitoringStatus} from './sourceMonitoring.mjs';
@@ -99,7 +100,12 @@ export function createApp({publicReadOnly=false, calendarDraftDir=new URL('../..
   }));
   api.use('/growth', createGrowthRouter());
   api.get('/journal', (req,res)=>res.json({articles:publishedArticles(),origin:publicOrigin,calendar:journalEditions().filter(item=>item.phase!=='archive').slice(0,2)}));
-  api.get('/launch', (req,res)=>res.json(launch));
+  const readLaunch=createLaunchReader();
+  api.get('/launch', async (_req,res)=>{
+    res.set('Cache-Control','no-store');
+    try {res.json(await readLaunch());}
+    catch {res.status(503).json({error:'Launch date unavailable'});}
+  });
   api.get('/subscriptions/config', (req,res)=>res.set('Cache-Control','no-store').json(publicReadOnly?{available:false,privacyUrl:null}:subscriptionConfiguration()));
   api.post('/subscriptions', createSubscriptionHandler());
   const publicOrigin = process.env.PUBLIC_SITE_URL?.replace(/\/$/,'') || '';

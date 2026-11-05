@@ -29,3 +29,5 @@
 @media(max-width:520px){.launch-ticket-live{gap:10px;padding:8px 10px}.launch-ticket-live .launch-ticket-digits{min-width:0}.launch-digit{width:29px}.launch-ticket-label b{font-size:10px}}
 @media(prefers-reduced-motion:reduce){.launch-ticket-live *,.launch-ticket-live::after{animation:none!important;transition:none!important}}
 :root[data-hub-effects=off] .launch-ticket-live *,:root[data-hub-effects=off] .launch-ticket-live::after{animation:none!important;transition:none!important}
+
+.launch-soon{font-size:12px;color:#e0fc78;white-space:nowrap}

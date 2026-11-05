@@ -35,7 +35,7 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 | [LOBBY-RECIPE-ADAPTER](#lobby-recipe-adapter) | design-only | Recipe composition adapters |
 | [CFG-SUBSCRIPTIONS](#cfg-subscriptions) | configuration-required | GET /api/subscriptions/config; POST /api/subscriptions |
 | [CFG-AI-DRAFT](#cfg-ai-draft) | configuration-required | POST /api/video/templates/:id/draft |
-| [CFG-DATA](#cfg-data) | configuration-required | /api/growth/summary; /api/marketing-calendar; /blog/feed.xml; /blog/sitemap.xml; source refresh |
+| [CFG-DATA](#cfg-data) | configuration-required | /api/growth/summary; /api/marketing-calendar; /blog/feed.xml; /blog/sitemap.xml; source refresh; GET /api/launch |
 | [OPS-OCTOBER-CHANNEL](#ops-october-channel) | build-required | Once-daily October monitor notification delivery |
 | [OPS-DEPLOY](#ops-deploy) | configuration-required | GitHub main to Vercel deployment |
 | [RETIRED-HOSTING](#retired-hosting) | retired | Writes to /api/projects*, /api/assets*, /api/recipes/:id/projects, /api/challenges/submissions |
@@ -251,15 +251,15 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 
 ## CFG-DATA
 
-**configuration-required** — /api/growth/summary; /api/marketing-calendar; /blog/feed.xml; /blog/sitemap.xml; source refresh
+**configuration-required** — /api/growth/summary; /api/marketing-calendar; /blog/feed.xml; /blog/sitemap.xml; source refresh; GET /api/launch
 
-**Current:** Public growth API and growth-export paths are disabled even if GROWTH_GITHUB_TOKEN is present. Calendar remains local-only. Monitoring reports enabled:false when no scheduler starts. Public content uses the deployment snapshot; remote refresh requires exact COMMUNITY_CONTENT_REVISION and COMMUNITY_CONTENT_SHA256.
+**Current:** Public growth API and growth-export paths are disabled even if GROWTH_GITHUB_TOKEN is present. Calendar remains local-only. Monitoring reports enabled:false when no scheduler starts. Public content uses the deployment snapshot; remote refresh requires exact COMMUNITY_CONTENT_REVISION and COMMUNITY_CONTENT_SHA256. The public launch route reads only ootle-mainnet-launch-at from the official wallet public config at https://ut.tari.com/config with a 60-second server cache. The countdown polls once a minute and on tab return, preserves its last verified date during transient errors, and has no bundled date fallback. Reaching zero shows Launching soon; it does not assert network availability.
 
 **Remaining:** Any public private-repository metrics require an explicit reviewed public projection and authentication; never return raw private bundles.
 
-**Completion check:** Configured adapter returns current authorized data; missing/stale/error state is explicit; restricted routes stay restricted.
+**Completion check:** Configured adapter returns current authorized data; missing/stale/error state is explicit; restricted routes stay restricted. Compare /api/launch with the official wallet configuration and exercise changed dates, outages, invalid responses and the zero boundary.
 
-**Source:** [creator-hub/hub/server/growthCloud.mjs](../creator-hub/hub/server/growthCloud.mjs), [creator-hub/hub/server/marketingCalendar.mjs](../creator-hub/hub/server/marketingCalendar.mjs), [creator-hub/hub/server/app.mjs](../creator-hub/hub/server/app.mjs), [creator-hub/hub/server/sourceMonitoring.mjs](../creator-hub/hub/server/sourceMonitoring.mjs), [creator-hub/hub/server/sourceRefresh.mjs](../creator-hub/hub/server/sourceRefresh.mjs)
+**Source:** [creator-hub/hub/server/growthCloud.mjs](../creator-hub/hub/server/growthCloud.mjs), [creator-hub/hub/server/marketingCalendar.mjs](../creator-hub/hub/server/marketingCalendar.mjs), [creator-hub/hub/server/app.mjs](../creator-hub/hub/server/app.mjs), [creator-hub/hub/server/sourceMonitoring.mjs](../creator-hub/hub/server/sourceMonitoring.mjs), [creator-hub/hub/server/sourceRefresh.mjs](../creator-hub/hub/server/sourceRefresh.mjs), [creator-hub/hub/server/launchConfig.mjs](../creator-hub/hub/server/launchConfig.mjs)
 
 ## OPS-OCTOBER-CHANNEL
 

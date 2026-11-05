@@ -37,7 +37,7 @@ export const INTERNAL_ROUTES = [
   { method: 'POST', path: '/api/community-chat/messages/:messageId/moderate', category: 'moderation', reason: 'Hide, restore or delete a message; moderator token only.' },
 
   { method: 'GET', path: '/api/journal', category: 'journal', reason: 'Journal articles for the web client.' },
-  { method: 'GET', path: '/api/launch', category: 'journal', reason: 'Launch announcement copy for the web client.' },
+  { method: 'GET', path: '/api/launch', category: 'journal', reason: 'Official wallet launch timestamp for the web client.' },
   { method: 'GET', path: '/blog', category: 'journal', reason: 'Journal index page (HTML).' },
   { method: 'GET', path: '/blog/:slug', category: 'journal', reason: 'Journal article page (HTML).' },
   { method: 'GET', path: '/blog/feed.xml', category: 'journal', reason: 'RSS feed for feed readers.' },

@@ -1,7 +1,6 @@
 import {safeHref} from '../shared/safeLinks.mjs';
 import {readFileSync,readdirSync} from 'node:fs';
 const blogDirectory = new URL('../content/blog/', import.meta.url);
-export const launch = JSON.parse(readFileSync(new URL('../content/launch.json',import.meta.url),'utf8'));
 export function publishedArticles(now = new Date()) {
   return readdirSync(blogDirectory).filter(name=>name.endsWith('.json')).map(name=>JSON.parse(readFileSync(new URL(name,blogDirectory),'utf8')))
     .filter(article=>/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(article.slug) && article.status==='published' && article.reviewedAt && new Date(article.publishedAt)<=now)

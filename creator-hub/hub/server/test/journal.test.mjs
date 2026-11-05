@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {publishedArticles,journalHtml,journalFeed,launch} from '../journal.mjs';
+import {publishedArticles,journalHtml,journalFeed} from '../journal.mjs';
 import {createSubscriptionHandler,subscriptionConfiguration,validateSubscription} from '../subscriptions.mjs';
 const fixture={email:' Test@Example.com ',topics:['launch','journal','journal'],consent:true};
 const environment={SUBSCRIPTION_WEBHOOK_URL:'https://provider.example/signup',SUBSCRIPTION_WEBHOOK_TOKEN:'test-only',SUBSCRIPTION_PRIVACY_URL:'https://provider.example/privacy'};
@@ -8,7 +8,6 @@ function response(){return {code:200,data:null,set(){return this;},status(code){
 test('published articles contain sources and review metadata, future posts stay hidden',()=>{
  const articles=publishedArticles(new Date('2026-09-24'));assert.equal(articles.length,3);assert.equal(publishedArticles(new Date('2026-09-01')).length,0);
  for(const article of articles){assert.ok(article.sources.length);assert.ok(article.sections.length>=4);assert.ok(article.reviewedAt);assert.ok(article.description.length<200);}
- assert.equal(Date.parse(launch.target),Date.UTC(2026,10,11,11,11));
 });
 test('article HTML includes crawlable copy, canonical metadata and escaped JSON-LD',()=>{
  const article=publishedArticles(new Date('2026-09-24'))[0];
