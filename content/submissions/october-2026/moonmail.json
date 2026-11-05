@@ -1,9 +1,9 @@
 {
   "slug": "moonmail",
   "title": "MoonMail",
-  "summary": "Browser mailbox for encrypted Ootle letters, recoverable Inbox/Sent and encrypted preferences; it does not send ordinary email. October 29 landing and privacy pages loaded. Sapient private-view access is a separate account-wide grant that can expose other resources’ private amounts and memos; spending still needs approval. Public postbox identities, signers, timing, fees and size buckets remain observable, and historical mailbox-key compromise has no forward-secrecy protection. Private payment requests use three approvals with non-atomic transfer and receipt delivery. Public/link gifts expose vault amounts and have no expiry or sender refund; complete private links grant bearer access. The README separates historical funded tests from current read-only recovery and local tests. The recording shows public privacy documentation, not mail delivery or a payment. MIT source; no wallet grant or transaction exercised. November 2 organizer notice: Esmeralda testnet was reset; entrants were asked to republish templates and update their submission versions where applicable. Earlier recordings document their capture dates.",
+  "summary": "Browser mailbox for encrypted Ootle letters, recoverable Inbox/Sent and preferences; it does not send ordinary email. November 4, 2026: the landing and privacy pages load, but the public hall cannot reach its post office and no live mail loaded. The cause is not established. Sapient private-view access is a separate account-wide grant exposing other resources’ private amounts and memos; spending needs separate approval. Public postbox identities, signers, timing, fees and size buckets remain observable. Historical mailbox-key compromise has no forward-secrecy protection. Private payments require three approvals with non-atomic transfer and receipt delivery. Public/link gifts expose vault amounts and have no expiry or sender refund; complete private links grant bearer access. The README targets Ootle 0.47 and Sapient 0.6.14, separating historical funded tests from dated read-only recovery and local tests. The November 2 organizer notice asked entrants to republish templates after the Esmeralda reset. The retained October 29 recording shows public privacy documentation, not current mail delivery or payment. MIT source; no wallet grant or transaction exercised.",
   "cardSummary": "Exchange encrypted letters between Ootle postboxes and recover conversations, sent mail and saved settings through Sapient.",
-  "cardStatus": "Web app · Testnet · Sapient",
+  "cardStatus": "Testnet · Sapient · Live mail unavailable",
   "creator": "SealClubber",
   "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/33",
   "publishedAt": "2026-10-29T00:03:01.603Z",
@@ -24,7 +24,7 @@
     "capturedAt": "2026-10-29T10:10:08.751Z",
     "sourceRevision": "dbf816853e811f7581151202192b952f4d40ad3b",
     "kind": "public-page",
-    "credit": "Docs walkthrough — Public privacy page; no mailbox grant, letter delivery or payment."
+    "credit": "Docs walkthrough — Public privacy page."
   },
   "discussionLinks": [
     {
