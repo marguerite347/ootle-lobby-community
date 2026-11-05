@@ -35,7 +35,9 @@ test('recording and discussion provenance survive catalog normalization without 
 test("release announcement footage retains its scope through normalization", () => {
  const entry=ecosystemResources.records.find(r=>r.key==='minotari-cli-release');
  const resource=withEcosystemResources([], [entry])[0];
- assert.match(resource.preview.source,/^Announcement walkthrough/);
+ assert.equal(resource.preview.source,'Announcement');
+ assert.match(resource.summary,/Footage is an announcement walkthrough/);
+ assert.match(resource.summary,/no keys, wallet, daemon or transaction was operated/);
  assert.equal(resource.ecosystem,'tari');
  assert.equal(resource.verification,'source-attested');
  assert.equal(resource.demoUrl,null);
