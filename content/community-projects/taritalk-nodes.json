@@ -1,13 +1,13 @@
 {
   "slug": "taritalk-nodes",
   "title": "TariTalk Nodes",
-  "summary": "Independent community map of voluntarily registered, manually reviewed Minotari mainnet full nodes, with approximate locations, sync status and a deployment guide. Includes separately labeled anonymous Tari Netmap locations; it is not a complete network map. The site credits TariTalk; the forum announcement credits Zhao Xi with the website. November 2 review covered the map, regional filtering, deployment guide and privacy notes. The deployment-tool repository linked by the guide returned 404, so installation was not verified. No node was registered, software installed or query endpoint exposed. Base nodes are not miners or seed nodes; no rewards are implied.",
+  "summary": "Independent community map of voluntarily registered, manually reviewed Minotari mainnet full nodes, with approximate locations, sync status and a deployment guide. The November 4 review covered all 42 directory entries, the guide, privacy notes and original discussion; the directory is not a complete network map. The deployment-tool repository that returned 404 on November 2 is now public, with MIT-licensed v0.1.0 source released November 4. Its guide requires a clean Debian 12/13 or Ubuntu 24.04/26.04 VPS, AMD64/ARM64, root access and public IPv4. Optional wallet-query and gRPC exposure are described in the source. The retained November 2 recording shows the map and guide; no software was installed, node registered or query endpoint exposed. Base nodes are not miners or seed nodes; no rewards are implied.",
   "cardSummary": "Explore a community map of Tari full nodes and a guide to running your own.",
   "cardStatus": "Node map · Mainnet · Community guide",
   "creator": "TariTalk · Zhao Xi",
   "sourceUrl": "https://community.tari.com/t/introducing-taritalk-nodes-a-community-map-and-deployment-guide-for-tari-full-nodes/522/1",
   "publishedAt": "2026-11-02T04:36:55.562Z",
-  "repoUrl": null,
+  "repoUrl": "https://github.com/xt1085/taritalk-node-deploy",
   "demoUrl": "https://nodes.taritalk.xyz/",
   "ecosystem": "tari",
   "technologies": [],
@@ -27,16 +27,20 @@
   "media": {
     "image": "/previews/community/resource-taritalk-nodes-20261102-f774b9116a.jpg",
     "video": "/previews/community/resource-taritalk-nodes-20261102-f774b9116a.mp4",
-    "label": "Source walkthrough — node map, deployment guide and privacy notes",
+    "label": "Docs walkthrough",
     "sourceUrl": "https://nodes.taritalk.xyz/",
     "capturedAt": "2026-11-02T14:39:31.649880+00:00",
-    "reviewedAt": "2026-11-02T14:39:31.649880+00:00",
+    "reviewedAt": "2026-11-05T00:06:08.835Z",
     "sha256": "f774b9116af62878f6b260f5b1c8ce8c15e1430db36b42cbbc988346d19791fe"
   },
   "discussionLinks": [
     {
       "url": "https://x.com/tari_zh/status/2117114726429999611",
       "platform": "X"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=dxpNwx0bskI",
+      "platform": "YouTube"
     }
   ]
 }
