@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-05T00:37:59.984660+00:00",
+  "updatedAt": "2026-11-05T00:54:36.180500+00:00",
   "records": [
     {
       "resourceId": "candy-summoner",
@@ -8139,15 +8139,22 @@
       "caption": "Docs walkthrough",
       "method": "Reused capture-apps.mjs SHA256 59ae4af16acdd34e0284aca7df71ef5a3a0da7c459eac048eea3e3fc9700c2c7 and installed playwright-core in Developer lobby checkout, anonymous browser with genuine scrolling. Earlier same-run Figma production playback was the representative pipeline trial. Opening 0.5s, middle 6s and closing 11.2s visually reviewed; public source guidance only.",
       "sha256": "67a2971618041d44f4070f1a79fd33d73543b02cff80c183cc4a044a56f9458e",
-      "status": "frames-reviewed-playback-pending",
+      "status": "published-playback-verified",
       "verification": {
         "framesReviewed": [
           0.5,
           6,
           11.2
         ],
-        "localPlayback": "pending",
-        "livePlayback": "pending"
+        "localPlayback": "Representative Ebitengine clip played through; all four verified on production.",
+        "livePlayback": "Desktop and phone playback reached 12 seconds; tablet layout checked.",
+        "checkedAt": "2026-11-05T00:53:07.972866+00:00",
+        "evidence": "work/daily-2026-11-04/gamedev-release-acceptance.json"
+      },
+      "publication": {
+        "revision": "f1144099ce9fa0fc66055cc71926a8bf158c0f2a",
+        "deploymentId": "dpl_FGFT4UW79xmkAKa1hQHMwdWeZPaF",
+        "checkedAt": "2026-11-05T00:53:07.972866+00:00"
       }
     },
     {
@@ -8169,15 +8176,22 @@
       "caption": "Docs walkthrough",
       "method": "Reused capture-apps.mjs SHA256 59ae4af16acdd34e0284aca7df71ef5a3a0da7c459eac048eea3e3fc9700c2c7 and installed playwright-core in Developer lobby checkout, anonymous browser with genuine scrolling. Earlier same-run Figma production playback was the representative pipeline trial. Opening 0.5s, middle 6s and closing 11.2s visually reviewed; public source guidance only.",
       "sha256": "cb4632f97be99ed9a98773f59cf8c7adaa22050345bf7d3bd3ddfe665e4706af",
-      "status": "frames-reviewed-playback-pending",
+      "status": "published-playback-verified",
       "verification": {
         "framesReviewed": [
           0.5,
           6,
           11.2
         ],
-        "localPlayback": "pending",
-        "livePlayback": "pending"
+        "localPlayback": "Representative Ebitengine clip played through; all four verified on production.",
+        "livePlayback": "Desktop and phone playback reached 12 seconds; tablet layout checked.",
+        "checkedAt": "2026-11-05T00:53:07.972866+00:00",
+        "evidence": "work/daily-2026-11-04/gamedev-release-acceptance.json"
+      },
+      "publication": {
+        "revision": "f1144099ce9fa0fc66055cc71926a8bf158c0f2a",
+        "deploymentId": "dpl_FGFT4UW79xmkAKa1hQHMwdWeZPaF",
+        "checkedAt": "2026-11-05T00:53:07.972866+00:00"
       }
     },
     {
@@ -8199,15 +8213,22 @@
       "caption": "Docs walkthrough",
       "method": "Reused capture-apps.mjs SHA256 59ae4af16acdd34e0284aca7df71ef5a3a0da7c459eac048eea3e3fc9700c2c7 and installed playwright-core in Developer lobby checkout, anonymous browser with genuine scrolling. Earlier same-run Figma production playback was the representative pipeline trial. Opening 0.5s, middle 6s and closing 11.2s visually reviewed; public source guidance only.",
       "sha256": "0a94abfe2a8819794b623a37ad275437927990dc0dce134a4c0d1ee9d9bce3db",
-      "status": "frames-reviewed-playback-pending",
+      "status": "published-playback-verified",
       "verification": {
         "framesReviewed": [
           0.5,
           6,
           11.2
         ],
-        "localPlayback": "pending",
-        "livePlayback": "pending"
+        "localPlayback": "Representative Ebitengine clip played through; all four verified on production.",
+        "livePlayback": "Desktop and phone playback reached 12 seconds; tablet layout checked.",
+        "checkedAt": "2026-11-05T00:53:07.972866+00:00",
+        "evidence": "work/daily-2026-11-04/gamedev-release-acceptance.json"
+      },
+      "publication": {
+        "revision": "f1144099ce9fa0fc66055cc71926a8bf158c0f2a",
+        "deploymentId": "dpl_FGFT4UW79xmkAKa1hQHMwdWeZPaF",
+        "checkedAt": "2026-11-05T00:53:07.972866+00:00"
       }
     },
     {
@@ -8229,15 +8250,22 @@
       "caption": "Docs walkthrough",
       "method": "Reused capture-apps.mjs SHA256 59ae4af16acdd34e0284aca7df71ef5a3a0da7c459eac048eea3e3fc9700c2c7 and installed playwright-core in Developer lobby checkout, anonymous browser with genuine scrolling. Earlier same-run Figma production playback was the representative pipeline trial. Opening 0.5s, middle 6s and closing 11.2s visually reviewed; public source guidance only.",
       "sha256": "f90ed94d9d8ac0d04141d28c3bdf7b32cf8d84d37a4cdb48c2868f2824f70fdb",
-      "status": "frames-reviewed-playback-pending",
+      "status": "published-playback-verified",
       "verification": {
         "framesReviewed": [
           0.5,
           6,
           11.2
         ],
-        "localPlayback": "pending",
-        "livePlayback": "pending"
+        "localPlayback": "Representative Ebitengine clip played through; all four verified on production.",
+        "livePlayback": "Desktop and phone playback reached 12 seconds; tablet layout checked.",
+        "checkedAt": "2026-11-05T00:53:07.972866+00:00",
+        "evidence": "work/daily-2026-11-04/gamedev-release-acceptance.json"
+      },
+      "publication": {
+        "revision": "f1144099ce9fa0fc66055cc71926a8bf158c0f2a",
+        "deploymentId": "dpl_FGFT4UW79xmkAKa1hQHMwdWeZPaF",
+        "checkedAt": "2026-11-05T00:53:07.972866+00:00"
       }
     }
   ],
