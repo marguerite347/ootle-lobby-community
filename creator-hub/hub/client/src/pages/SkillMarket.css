@@ -107,7 +107,7 @@
 
 /* Source-backed summaries remain readable without clipping; the full guide stays in Details. */
 .skill-tile-summary>p{display:block;overflow:visible;-webkit-line-clamp:unset}
-.skill-tile:hover>h2,.skill-tile:focus-within>h2{color:var(--accent)}
-.skill-tile>.resource-card-media{width:100%;min-width:0}
+.skill-tile:hover>h2,.skill-tile:focus-within>h2{color:var(--game-lime,#c9eb00)}
+.skill-tile>.media{width:100%;min-width:0}
 .skill-recording-label{font-size:13px;color:var(--muted)}
 .skill-discovery-note{margin:12px 0!important;font-size:14px}
