@@ -46,3 +46,8 @@ Acceptance before publication: server tests cover the field projection, timezone
 November 5 local acceptance: PASS — 100 root tests, 9 targeted server/journal tests, 5 countdown client tests, content/integration validation, TypeScript/Vite production build and packaged runtime/download checks. The local `/api/launch` exactly matched the official config (`2026-11-11T11:11:11Z`). Desktop and 390px mobile screenshots show the existing countdown ticket and no horizontal overflow; mobile retains its existing compact minutes-only layout. The testnet staging config (`https://rwa.yat.fyi/config`) returned 403, so equivalence to a specific testnet build is not claimed. Live publication is recorded in the task handoff after verification.
 
 Follow-up acceptance: four server adapter tests and seven countdown client tests pass, including explicit target clearing and hung-request timeout/recovery. The first Git-source deployment failed before building (`git_info_fail`); production remained unchanged. Deployment uses the established authenticated CLI/source workflow next.
+
+
+### Source correction: testnet wallet
+
+The exact user-requested source is `https://rwa.yat.fyi/config`, selected by Universe's `src-tauri/env.esmeralda`. Browser and Node native fetch both returned HTTP 200 and `ootle-mainnet-launch-at: 2026-11-11T00:00:00Z` on November 5. The earlier Python 403 did not establish that the service was inaccessible. The production wallet config differs (11:11:11Z), so it is not an interchangeable authority. The Lobby adapter now follows the testnet endpoint exactly. No authentication headers, copied timestamp, proxy fallback or user-agent spoofing is needed. The preceding production-source deployment is superseded by this correction.
