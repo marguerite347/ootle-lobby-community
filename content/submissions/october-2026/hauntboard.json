@@ -1,14 +1,14 @@
 {
   "slug": "hauntboard",
   "title": "Hauntboard",
-  "summary": "Public Ootle message board with public threads and encrypted sealed rooms. November 4 inspection loaded the fresh Esmeralda board on runtime 0.49.1 and read the creator’s reset notice: old threads, registries and test balances were removed by the November 2 network reset. New board and room-key registry contracts are now configured; rebuilding the website does not restore old posts. The refreshed recording reads the reset notice and privacy explanation without connecting a wallet or posting. Accepted posts cannot be edited or deleted through Hauntboard; testnet resets may remove history. Titles, fees, spent-output links, timing and network metadata remain public. Room invitations and recovery use separate keys; copied keys and plaintext cannot be revoked, and messages do not authenticate individual authors. The public board may contain unmoderated user content.",
+  "summary": "Public Ootle message board with public threads and encrypted sealed rooms. November 5 review loaded the fresh Esmeralda board on runtime 0.49.1 and read the creator’s November 4 reset proof: eight creator-recorded transactions cover registry publication, invitations, key rotation and a post after rotation. Four linked receipt pages were reachable; this review did not replay those transactions. The public proof page reports an active room-key registry, generation 1, revision 2. The creator still lists a funded Sapient extension post and a new Veil replay as outstanding. The November 2 network reset removed old threads, registries and balances; rebuilding the website cannot restore them. The November 4 recording remains a read-only reset-notice and privacy walkthrough, not a recording of the new proof. Accepted posts cannot be edited or deleted through Hauntboard; resets may remove history. Titles, fees, spent-output links, timing and network metadata remain public. Room invitations and recovery use separate keys; copied keys and plaintext cannot be revoked, and messages do not authenticate individual authors. The public board may contain unmoderated content. Earlier forum posts 9, 13 and 31 remain unavailable in the public thread; their original links are retained.",
   "cardSummary": "Read public Ootle discussions or share encrypted room messages with invitations and separate room-key recovery.",
   "cardStatus": "Web app · Testnet · Permanent posts",
   "creator": "_squared",
   "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/39",
   "publishedAt": "2026-10-12T22:16:52.102Z",
-  "updatedAt": "2026-10-31T04:10:21.702Z",
-  "sourceContentSha256": "dbced832c6c739758344cc2f0176cefbca6d9e73a7a16cfa8b14c96d27b681ec",
+  "updatedAt": "2026-11-05T00:44:06.837Z",
+  "sourceContentSha256": "05454a19310961741fdb8298b4d4eb3a954ca3298447920f26d3a75c303487fa",
   "repoUrl": "https://github.com/kstrycharz/hauntboard",
   "ecosystem": "tari-ootle",
   "technologies": [
@@ -24,7 +24,7 @@
     "capturedAt": "2026-11-04T11:07:32.176749+00:00",
     "sourceRevision": "dcf10331aea5b035d33497cd79737a480cb9fc2d",
     "kind": "public-page",
-    "credit": "App demo — read-only board walkthrough"
+    "credit": "App demo"
   },
   "discussionLinks": [
     {
@@ -50,6 +50,10 @@
     {
       "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/13",
       "platform": "Tari Community forum"
+    },
+    {
+      "url": "https://hauntboard.taritracker.com/proof",
+      "platform": "Creator proof walkthrough"
     }
   ]
 }

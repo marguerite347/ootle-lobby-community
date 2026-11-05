@@ -1,14 +1,14 @@
 {
   "slug": "seance-privacy",
   "title": "Seance — privacy demo",
-  "summary": "Compare what strangers, recipients and auditors can learn from private Esmeralda payments. The creator’s v2 searches the latest 40 indexer transactions locally before asking for a user-entered ID; an explicit Ask for it anyway action can disclose that ID. The initial example remains a labeled saved October 20 copy. October 31 Summon inspection returned a current Commit receipt through a public indexer read. The page reported six requests to two hosts and zero ID requests; this is its own report, not an independent network audit. An optional Sapient transfer goes to a demonstration recipient whose view key is public. Timing, fees and spend links remain visible. Old transaction bodies are unavailable from the indexers; receipts alone cannot reverify their encrypted bytes. The recording covers the picker and request explanation without a wallet or payment. v1 remains at its earlier URL; this is distinct from DevXTools’ sealed polls. November 2 organizer notice: Esmeralda testnet was reset; entrants were asked to republish templates and update their submission versions where applicable. Earlier recordings document their capture dates.",
+  "summary": "Compare what strangers, recipients and auditors can learn from private Esmeralda payments. The creator’s v2 searches the latest 40 indexer transactions locally before asking for a user-entered ID; an explicit Ask for it anyway action can disclose that ID. November 5 review read both live versions, the original announcements and creator videos. The initial example remains a labeled saved October 20 copy. A read-only Summon inspection during this review returned a current Commit receipt; request counters are the page’s own report. The creator’s November 4 update identifies a republished SeanceAuditorToken template after the November 2 reset; its indexer ABI page was reachable. Old token state and payments were removed, while the saved ledger remains available. Receipts alone cannot reverify missing encrypted transaction bodies. Optional Sapient payments go to a demonstration recipient whose view key is public. Timing, fees and spend links remain visible; the quantum discussion is a simulation using published demo keys. The unchanged October 31 recording covers the transaction picker and request disclosure, with no wallet or payment. Historical creator wallet footage is not a new transaction test. v1 remains available at its earlier URL; this project is distinct from DevXTools’ sealed polls.",
   "cardSummary": "Compare what strangers, recipients and auditors can read from private testnet payments, including the metadata that remains public.",
   "cardStatus": "Web app · Testnet",
   "creator": "Kylne700",
   "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/17",
   "publishedAt": "2026-10-20T18:35:07.259Z",
-  "updatedAt": "2026-10-31T03:34:14.888Z",
-  "sourceContentSha256": "5383089a018a99a6e386a8d00b9c00aa657f07a96332c18393680c8874270690",
+  "updatedAt": "2026-11-04T10:53:56.487Z",
+  "sourceContentSha256": "2812204e19442e149f6a62e8316f4dd20b0af92bc3757de2e85bd071a9668048",
   "repoUrl": "https://github.com/Kylne700/seance-v2",
   "demoUrl": "https://kylne700.github.io/seance-v2/",
   "ecosystem": "tari-ootle",
@@ -24,7 +24,7 @@
     "capturedAt": "2026-10-31T10:16:48.676Z",
     "sourceRevision": "b8c7bc8eb270433857fdc72778309ad09bf41cd2",
     "kind": "public-page",
-    "credit": "Source/docs walkthrough — Transaction picker and request disclosure; no wallet or payment."
+    "credit": "Docs walkthrough"
   },
   "discussionLinks": [
     {
