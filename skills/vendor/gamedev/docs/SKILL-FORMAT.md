@@ -1,7 +1,8 @@
 # Skill authoring standard
 
 This repository follows the current [Agent Skills specification](https://agentskills.io/specification)
-and intentionally uses its smallest portable subset. Checked **2026-08-08**.
+and intentionally uses its smallest portable subset. Checked **2026-10-24**; the specification's
+last change was the 2026-08-04 clarification of the `metadata` field.
 
 ## Directory contract
 
@@ -63,8 +64,9 @@ A useful skill is an operational playbook, not an encyclopedia. Prefer this shap
 5. Pitfalls written as symptom → likely cause → remedy.
 6. Links to bundled resources and related skills.
 
-Keep `SKILL.md` under 500 lines. If material is not needed on every activation, move it to one
-directly linked reference. Avoid deep reference chains.
+Keep `SKILL.md` under 500 lines; the specification also recommends keeping the body under about
+5,000 tokens, because agents load the whole file on activation. If material is not needed on every
+activation, move it to one directly linked reference. Avoid deep reference chains.
 
 ## Version-aware guidance
 
@@ -94,6 +96,27 @@ normalization, conversion, reports, or preview generation. Scripts must:
 - write only to explicit output paths;
 - be exercised locally before merge.
 
+Check scripts that read a user's project (for example
+`skills/godot/godot-nodes-scenes/scripts/check_godot_project.py`) also follow one shared shape so
+they behave the same in every skill:
+
+- Python 3.10+ standard library only, one file, read-only, no network and no subprocesses;
+- `script.py TARGET [--json] [--strict] [--max-issues N]`;
+- exit 0 when there are no errors, 1 when there are errors (or warnings with `--strict`), 2 when
+  the target is missing or is the wrong kind of project;
+- text output of one `ERROR`/`WARNING path:line: message` line plus a `fix:` line per issue,
+  then a `Summary:` line; `--json` prints one object with `tool`, `schema`, `root`,
+  `files_checked`, `error_count`, `warning_count`, `errors`, `warnings` and `truncated`;
+- an `ERROR` only for something that really breaks the project; anything that might be fine is a
+  `WARNING`;
+- purely informational, untyped matches may be `NOTE`s that never affect exit status;
+  checkers that emit them add `note_count` and `notes` to JSON. `--max-issues` limits the
+  combined report, warnings/errors before notes, without changing totals;
+- end-to-end tests in `tests/test_<script>.py` that build their fixtures in a temporary folder.
+
+The SKILL.md step that runs the script says when to run it and what to do with the result, and
+notes that script paths are relative to the skill directory.
+
 ### `assets/`
 
 Use assets for templates, schemas, starter files, palettes, or other inputs intended to be copied
@@ -112,7 +135,10 @@ interface:
 ```
 
 Keep `short_description` between 25 and 64 characters. The default prompt should mention the
-skill as `$skill-name`.
+skill as `$skill-name`. Codex also accepts optional `icon_small`, `icon_large` and `brand_color`
+under `interface`, `policy.allow_implicit_invocation`, and MCP tool `dependencies`; this catalog
+does not use them, and the validator checks only the three fields above. See the
+[Codex skills docs](https://learn.chatgpt.com/docs/build-skills) for the full schema.
 
 ## Router and distribution wiring
 

@@ -2,7 +2,7 @@
 
 Repo-local game-development instructions for humans and agents. Begin with [the Tari game-development entry point](../.agents/skills/tari-game-development/SKILL.md). Read only the skills relevant to the current engine and task.
 
-Includes **73 upstream topic skills plus their router**, pinned to `b105e1cf617adf0b68ed98790a716bbb60993179` under Apache-2.0. [License](vendor/gamedev/LICENSE) · [Notice](vendor/gamedev/NOTICE) · [upstream lock](upstream-lock.json). These are imported engine/workflow references, not 73 independently runtime-tested Tari integrations.
+Includes **77 upstream topic skills plus their router**, pinned to `19d93f97c9c1ea0f8b306e77aa81e0d3e352d3e9` under Apache-2.0. [License](vendor/gamedev/LICENSE) · [Notice](vendor/gamedev/NOTICE) · [upstream lock](upstream-lock.json). These are imported engine/workflow references, not 77 independently runtime-tested Tari integrations.
 
 ## Catalog
 
@@ -23,6 +23,7 @@ Includes **73 upstream topic skills plus their router**, pinned to `b105e1cf617a
 | disciplines | [procedural-gen](vendor/gamedev/skills/disciplines/procedural-gen/SKILL.md) |
 | disciplines | [save-systems](vendor/gamedev/skills/disciplines/save-systems/SKILL.md) |
 | disciplines | [shader-programming](vendor/gamedev/skills/disciplines/shader-programming/SKILL.md) |
+| ebitengine | [ebitengine-game](vendor/gamedev/skills/ebitengine/ebitengine-game/SKILL.md) |
 | genres | [card-game](vendor/gamedev/skills/genres/card-game/SKILL.md) |
 | genres | [fps-shooter](vendor/gamedev/skills/genres/fps-shooter/SKILL.md) |
 | genres | [platformer](vendor/gamedev/skills/genres/platformer/SKILL.md) |
@@ -38,6 +39,7 @@ Includes **73 upstream topic skills plus their router**, pinned to `b105e1cf617a
 | godot | [godot-audio](vendor/gamedev/skills/godot/godot-audio/SKILL.md) |
 | godot | [godot-csharp](vendor/gamedev/skills/godot/godot-csharp/SKILL.md) |
 | godot | [godot-export](vendor/gamedev/skills/godot/godot-export/SKILL.md) |
+| godot | [godot-gdscript-headless-testing](vendor/gamedev/skills/godot/godot-gdscript-headless-testing/SKILL.md) |
 | godot | [godot-gdscript](vendor/gamedev/skills/godot/godot-gdscript/SKILL.md) |
 | godot | [godot-multiplayer](vendor/gamedev/skills/godot/godot-multiplayer/SKILL.md) |
 | godot | [godot-nodes-scenes](vendor/gamedev/skills/godot/godot-nodes-scenes/SKILL.md) |
@@ -48,6 +50,7 @@ Includes **73 upstream topic skills plus their router**, pinned to `b105e1cf617a
 | godot | [godot-tilemap](vendor/gamedev/skills/godot/godot-tilemap/SKILL.md) |
 | godot | [godot-ui-control](vendor/gamedev/skills/godot/godot-ui-control/SKILL.md) |
 | other-engines | [bevy-ecs](vendor/gamedev/skills/other-engines/bevy-ecs/SKILL.md) |
+| other-engines | [defold-core](vendor/gamedev/skills/other-engines/defold-core/SKILL.md) |
 | other-engines | [love2d-core](vendor/gamedev/skills/other-engines/love2d-core/SKILL.md) |
 | other-engines | [pygame-core](vendor/gamedev/skills/other-engines/pygame-core/SKILL.md) |
 | other-engines | [roblox-characters](vendor/gamedev/skills/other-engines/roblox-characters/SKILL.md) |
@@ -55,6 +58,7 @@ Includes **73 upstream topic skills plus their router**, pinned to `b105e1cf617a
 | other-engines | [roblox-luau](vendor/gamedev/skills/other-engines/roblox-luau/SKILL.md) |
 | other-engines | [roblox-networking](vendor/gamedev/skills/other-engines/roblox-networking/SKILL.md) |
 | other-engines | [roblox-physics](vendor/gamedev/skills/other-engines/roblox-physics/SKILL.md) |
+| other-engines | [roblox-simulator-economy](vendor/gamedev/skills/other-engines/roblox-simulator-economy/SKILL.md) |
 | other-engines | [roblox-studio-workflow](vendor/gamedev/skills/other-engines/roblox-studio-workflow/SKILL.md) |
 | other-engines | [roblox-ui](vendor/gamedev/skills/other-engines/roblox-ui/SKILL.md) |
 | unity | [unity-animation](vendor/gamedev/skills/unity/unity-animation/SKILL.md) |
@@ -104,7 +108,7 @@ All source-code work uses [readable-code](../.agents/skills/readable-code/SKILL.
 
 ## Ootle Lobby marketplace
 
-`hub-catalog.json` exposes the 73 pinned game topics, their upstream router, the Tari game entry point, Ootle Lobby demo capture and Creator Workflow Improvement through `/api/skill-market` and `/skills`. Native protocol topics remain in their separate validated catalog. Downloads preserve the selected skill's local supporting files and upstream LICENSE/NOTICE; repository-relative links still require the matching checkout. Personal machine-installed skills are not automatically published. Add reviewed, redistributable repository skills to this manifest and validate the marketplace tests.
+`hub-catalog.json` exposes the 77 pinned game topics, their upstream router, the Tari game entry point, Ootle Lobby demo capture and Creator Workflow Improvement through `/api/skill-market` and `/skills`. Native protocol topics remain in their separate validated catalog. Downloads preserve the selected skill's local supporting files and upstream LICENSE/NOTICE; repository-relative links still require the matching checkout. Personal machine-installed skills are not automatically published. Add reviewed, redistributable repository skills to this manifest and validate the marketplace tests.
 
 ## Audio production
 

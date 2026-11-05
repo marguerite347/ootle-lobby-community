@@ -17,18 +17,20 @@ For step-by-step install commands, see [`INSTALLATION.md`](INSTALLATION.md).
   CLI, GitHub Copilot, Kiro, Antigravity, VS Code, Roo Code, Junie, Trae, Factory, Tabnine, OpenCode, Goose and
   [many others](https://agentskills.io/clients) load the standard directly. Oh My Pi (omp) does
   too, though it is not yet listed in that client showcase.
-- **One installer covers all of them.** `npx skills add gamedev-skills/awesome-gamedev-agent-skills`
-  detects the agents you have installed and copies the skills (router included) to the right place.
+- **One installer covers most of them.** `npx skills add gamedev-skills/awesome-gamedev-agent-skills`
+  detects the agents you have installed and installs the skills (router included) in the right
+  place. Claude.ai uploads and Oh My Pi use their own routes (see [`INSTALLATION.md`](INSTALLATION.md)).
 - **The skills here use only the portable core**, so a single tree works in every agent — no
   per-tool variants.
 
 ## Install in one line
 
 The [`skills` CLI](https://www.npmjs.com/package/skills) is the package manager for the Agent
-Skills ecosystem. It auto-detects your agent(s) and writes skills to each one's directory:
+Skills ecosystem. It needs Node.js 22.20 or later, auto-detects your agent(s), and by default
+symlinks each agent's skills directory to one shared copy (`--copy` writes independent copies):
 
 ```bash
-# install the router + all 68 skills into whatever agent(s) you have
+# install the router + all 77 skills into whatever agent(s) you have
 npx skills add gamedev-skills/awesome-gamedev-agent-skills
 
 # preview without installing
@@ -38,10 +40,10 @@ npx skills add gamedev-skills/awesome-gamedev-agent-skills --list
 npx skills add gamedev-skills/awesome-gamedev-agent-skills -a cursor -g
 ```
 
-This repo ships a Claude marketplace manifest. The master [`router/`](../router) skill is
-discovered alongside the catalog under `skills/`. Claude Code users can alternatively use the
-native plugin commands (see [`INSTALLATION.md`](INSTALLATION.md)); Codex is supported through the
-standard `.agents/skills/` layout and universal installer.
+The `skills` CLI finds the catalog under `skills/` and the master [`router/`](../router) skill
+through this repo's Claude plugin marketplace manifest (`.claude-plugin/marketplace.json`). Claude
+Code users can alternatively use the native plugin commands (see [`INSTALLATION.md`](INSTALLATION.md));
+Codex is supported through the standard `.agents/skills/` layout and universal installer.
 
 ## Where each agent looks for skills
 
@@ -52,29 +54,32 @@ own skills documentation.
 
 | Agent | Project skills directory | How it triggers | Docs |
 |-------|--------------------------|-----------------|------|
-| **Claude Code** | `.claude/skills/` | auto by description · `/skills` | [docs](https://code.claude.com/docs/en/skills) |
-| **Claude** (claude.ai) | upload the skill as a `.zip` | auto in chat | [docs](https://support.claude.com/) |
-| **Cursor** | `.agents/skills/` or `.cursor/skills/` | auto by description · `/skill-name` | [docs](https://cursor.com/docs/skills) |
-| **Windsurf** (Cascade) | `.windsurf/skills/` | auto by description · `/skill-name` | [docs](https://docs.windsurf.com/) |
-| **Cline** | `.cline/skills/` (also reads `.claude/skills/`) | auto (`use_skill`) · `/skill-name` · *enable in Settings* | [docs](https://docs.cline.bot/customization/skills) |
-| **OpenAI Codex** | `.agents/skills/` | `$skill` · `/skills` · implicit | [docs](https://developers.openai.com/codex/skills) |
+| **Claude Code** | `.claude/skills/` | auto by description · `/skill-name` · `/skills` menu | [docs](https://code.claude.com/docs/en/skills) |
+| **Claude** (claude.ai) | upload the skill as a `.zip` | auto in chat | [docs](https://claude.com/docs/skills/how-to) |
+| **Cursor** | `.agents/skills/` or `.cursor/skills/` (also reads `.claude/skills/`, `.codex/skills/`) | auto by description · `/skill-name` | [docs](https://cursor.com/docs/skills) |
+| **Windsurf / Devin Desktop** (Cascade) | `.devin/skills/` (preferred) or `.windsurf/skills/` (legacy, still read); also `.agents/skills/` | auto by description · `@skill-name` | [docs](https://docs.devin.ai/desktop/cascade/skills) |
+| **Cline** | `.cline/skills/` (also `.clinerules/skills/`, `.claude/skills/`) | auto by description · `/skill-name` | [docs](https://docs.cline.bot/customization/skills) |
+| **OpenAI Codex** | `.agents/skills/` | `$skill` · `/skills` · implicit | [docs](https://learn.chatgpt.com/docs/build-skills) |
 | **Gemini CLI** | `.agents/skills/` or `.gemini/skills/` | activation + consent · `/skills` | [docs](https://geminicli.com/docs/cli/skills/) |
-| **GitHub Copilot** | `.agents/skills/` | auto by description | [docs](https://docs.github.com/en/copilot/concepts/agents/about-agent-skills) |
-| **Antigravity** (Google) | `.agents/skills/` (default; also global `~/.gemini/config/skills/`) | auto by description | [docs](https://antigravity.google/docs/skills) |
-| **Kiro** | `.kiro/skills/` (+ `~/.kiro/skills/`) | auto by description · `/skill-name` | [docs](https://kiro.dev/docs/cli/skills/) |
+| **GitHub Copilot** | `.github/skills/`, `.claude/skills/`, or `.agents/skills/` | auto by description | [docs](https://docs.github.com/en/copilot/concepts/customizations/agent-skills) |
+| **Antigravity** (Google) | `.agents/skills/` (global `~/.gemini/config/skills/`) | auto by description · `/skill-name` | [docs](https://antigravity.google/docs/skills) |
+| **Kiro** | `.kiro/skills/` (+ `~/.kiro/skills/`) | auto by description · `/skill-name` | [docs](https://kiro.dev/docs/skills/) |
+| **OpenCode** | `.opencode/skills/` (also `.agents/skills/`, `.claude/skills/`) | auto by description | [docs](https://opencode.ai/docs/skills) |
 | **Oh My Pi** (omp) | `.omp/skills/` (project; walks up) · `~/.omp/agent/skills/` (global) | auto by description · `/skill:<name>` | [docs](https://github.com/can1357/oh-my-pi/blob/main/docs/skills.md) |
-| **Others** (VS Code, Roo Code, Junie, Trae, Factory, Tabnine, OpenCode, Goose, …) | see each tool | varies | [client list](https://agentskills.io/clients) |
+| **Others** (VS Code, Roo Code, Junie, Trae, Factory, Tabnine, Goose, …) | see each tool | varies | [client list](https://agentskills.io/clients) |
 
 `.agents/skills/` is the shared, cross-agent convention that many tools read, which is why one copy
-there can serve several agents at once. The `skills` CLI maps each agent to its correct location
-automatically, so you rarely need to track these by hand.
+there can serve several agents at once. The `skills` CLI maps each agent to its own location
+automatically. One mismatch to know about: for `-a cline` the CLI writes to `.agents/skills/`, a
+path Cline's skills page does not list, so if Cline does not show the skills, copy them into
+`.cline/skills/` instead.
 
 > **Kiro note.** The default Kiro agent auto-loads skills from `.kiro/skills/` and
 > `~/.kiro/skills/` with no extra setup. A **custom** agent must opt in via its `resources`, e.g.
-> `"resources": ["skill://.kiro/skills/**/SKILL.md"]`.
+> `"resources": ["skill://.kiro/skills/*/SKILL.md"]`.
 
-> **Cline note.** Skills are an experimental feature — enable them under
-> **Settings → Features → Enable Skills** before they appear.
+> **Cline note.** Discovered skills are enabled by default; each skill has its own on/off toggle
+> in Cline's skills panel.
 
 ## Compatibility boundary
 
@@ -110,9 +115,7 @@ adoption above is what turns "write it once" into "runs everywhere."
 
 ---
 
-*Sources (checked 2026-08-08): the Agent Skills [specification](https://agentskills.io/specification)
-and [client list](https://agentskills.io/clients); the [`skills` CLI](https://www.npmjs.com/package/skills);
-and the official skills docs for [Cursor](https://cursor.com/docs/skills),
-[Cline](https://docs.cline.bot/customization/skills), [Codex](https://developers.openai.com/codex/skills),
-[Kiro](https://kiro.dev/docs/cli/skills/), and [Antigravity](https://antigravity.google/docs/skills).
-Content was rephrased for compliance with licensing restrictions.*
+*Sources (checked 2026-10-24): the Agent Skills [specification](https://agentskills.io/specification)
+and [client list](https://agentskills.io/clients); the [`skills` CLI](https://www.npmjs.com/package/skills)
+and its [supported-agents list](https://github.com/vercel-labs/skills/blob/main/docs/agents.md);
+and each agent's skills docs linked in the table above.*

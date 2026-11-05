@@ -54,454 +54,457 @@
     "SKILL.md": "a784646c43a43b8a32090c4cdf83fd3a93a89c51bd7ee66338a8878c6dc47957"
   },
   "gamedev-router": {
-    "SKILL.md": "0a2f60cf0df90d3fcd94c1d5be4fcda69c35de3db6c05cc4074c6fdb5cf77c56",
+    "SKILL.md": "69c1167073530655dac859e33c4b8893903b94f13326ef1c85f152b8008418ba",
     "agents/openai.yaml": "1304cad1da9611f8cf73ffb122bf7628b0fd6f0cce5a9f9072cd3fbdbe9ce128",
-    "references/engine-detection.md": "bec78e9d9366f0d30ba4dae228da12d42e4e5cf09f8824ba3d572a6eb49dd448",
-    "references/routing-table.md": "a72448d96f004b8a19bf1468ef173c513eeb74ab8a7780644af587a603c80eca",
+    "references/custom-engines.md": "0880a19b3e150e064751af2890573a47652dffcd7586809c2135d14f47dc151a",
+    "references/engine-detection.md": "914b3fa795eca0df8842b632e3ee09aabc9c6a81884ece29ac6a67f4907f5f68",
+    "references/routing-table.md": "2048329d5c29e2d09de7de130a99de44a8a63c7fe27212bea02d53cc59c73a5b",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-ai-behavior-trees-utility-ai": {
-    "SKILL.md": "185960eddb169cb81490e0d01efb9240663b8a465ca34ec34e0f015a727f06e4",
-    "references/behavior-tree-core.md": "df96b3faf1b7107240ed9c5f3bed793733dd9bdd25c05577abb7a69edd95521b",
+    "SKILL.md": "64936e8a9177931945cdabb2f04fccd3266f273cd6bffa2eaceef9f30c28396e",
+    "references/behavior-tree-core.md": "ba72c1400780af5f634eee083c23f1976ec77146d4acf48ec73786e758049143",
     "references/best-practices-and-pitfalls.md": "8ff83984ad998bc949d7524bae38c4d5b1acec34ff24587fdc9a9e9952c23c53",
-    "references/practical-examples.md": "9be856be9e5375fa218e927125dfca3f4f1c7b2ecd9089e5fa8b86d76b07cf1e",
-    "references/utility-ai-system.md": "a414ecd074e467d598664cde01305be054387fd3dc3e0045525ea3673d33309b",
+    "references/practical-examples.md": "2b32bdd643a47d319d7a2b3a9d7c9fa25401f09774d6fe674c1bcf90eaea7248",
+    "references/utility-ai-system.md": "156ee87846a4c319be358d2ced18dbcdeeccc31d1ea96f0019867db19c53ef47",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-audio-design": {
-    "SKILL.md": "4d8418660c0423164a0319d4429a196ee0ec86b4f05f764bae1a212f73e287e1",
-    "references/adaptive-music.md": "ca6fd287054294004acd85d9acd773d7b52c327911116c9c02344bab5e61df13",
+    "SKILL.md": "6644943d62dc49b29e142259c54e27d0cca68f404de3f4ade58778b663f7ca02",
+    "references/adaptive-music.md": "1aa1a14bc163f248583f7385c27cb36aa8748014df2b1d499c77c2b0846365ba",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-camera-systems": {
-    "SKILL.md": "cec5e9ef16aaf8d42a7b86e3b17678d57920ab7692bbbfe710a34ac0d09b32c7",
-    "references/follow-and-framing.md": "daf21e0079ed86580f670c3f503a4dd835511534dc0dcecda9750b6eda3ceeec",
+    "SKILL.md": "419dc9912b1ab007b17df615fc2347158255b63f93000b43b4c4ed1b5605d01e",
+    "references/follow-and-framing.md": "7664d4ab898e183a41bfe2ded1c71c5e16704575545a711830707df60e3a88fa",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-create-game-assets": {
-    "SKILL.md": "c178cde20316f7d326f2a853a76522b375b325346b5b8797ef52aa98740aff18",
+    "SKILL.md": "36cd246a434fefe1e36feff066597a6268d9f63364bee387ee65a22f03838b5d",
     "agents/openai.yaml": "b5ff9e75ab8a845324d28745aa97af0a3cd4fccc56067a6494947e12e40f1990",
     "assets/art-direction-brief.md": "6d5dc4f9f5fcb24300bab9ce7dbd56d5c948ba41da3cca2d3b3d235fee5fb72c",
     "assets/asset-manifest.json": "6cce05638c11b80eb5c8f776cf187f479a2579f1a1729b0970b1cc8e5fab4c8e",
     "references/art-direction.md": "19b2ccb827eae0c6c4cd3648ab7febb82e44706bef8515f2e8912de23dec0a5c",
-    "references/provenance.md": "2c2b30c69dec5c006c91ecbf506fce2ae3f857b5cc82bda9a10ddb5b769c7586",
-    "references/raster-pipeline.md": "834ecaeb35e61fc50ed5fbd518942f767f0717d1ab641822234a1f9cbe5eeb6f",
-    "references/three-d-pipeline.md": "8278baa203b7cd560d9fc5688c33489a9c478275c1795def119b7e024b27d03e",
-    "scripts/asset_report.py": "93e364f095261b44f6fd0345f7132019af1af93e81ebd84d91fe2a5049918203",
+    "references/provenance.md": "098d3cf915cd66e8ff0ad3a639964167edf2280f9e23efbae3ea6242d5bea3db",
+    "references/raster-pipeline.md": "d7a5714628fd8f4b66d03e060488e353b163b811112b164af218beb2b6450a02",
+    "references/three-d-pipeline.md": "ee6ed7c373e15ffeb8e6b275618482f028279a8146f01b6cfe6a8411cb8a3db4",
+    "scripts/asset_report.py": "99f4b38f9c4fe036f97ab1d4effd7f6931b62d24a90330a5a2f5ae71e7d1a77c",
     "scripts/build_preview_sheet.py": "002a550a7b5fac6d8815078a72afc249dd828c40d975b2323223fc770118c64b",
     "scripts/requirements.txt": "ad6a234a33732fdad765666983beb5af8e11887bb59c07c6f8e3f02b95221f3b",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-dialogue-systems": {
-    "SKILL.md": "58282d44a4eb9e33595c04ef5f016b865322d95da8efc1100ee81e80383b3f5f",
-    "references/ink-and-yarn.md": "1e17ffabcea0c9edd4c3a3304d66e616edf3d63473919c5617deaea02cd8ede2",
-    "references/runner.md": "e03929dcab2ab514f29ed97847334360edd795ea0387d6bf2597a3a6c502744d",
+    "SKILL.md": "8d7576b4d702cc3c3db0abc90b2e5375b73e63d72479ffef73b5797237bde30b",
+    "references/ink-and-yarn.md": "c43275e04428ad8edb374f83477046a12d525b1535cc286d3f4c8e8e159c991e",
+    "references/runner.md": "9d70ca1cb7a518170300c06bfb88984230e71ee23ff0b7b225f3355a22cb4fe4",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-game-ai": {
-    "SKILL.md": "ef23a6440743b3583d1072c92f6b0b45f3d11df33b3b77db53bce8b82c2f8940",
-    "references/behavior-trees.md": "2b69a6ae71a1034c049889fb4b0ccbc8697db9ad9f177f07c1053379cb0ef1fc",
-    "references/pathfinding.md": "3f1ce44462b4d1789245758b72d0b20e8053df458df1f743455dcd5d7319bba3",
+    "SKILL.md": "5c193ac1debc8ec9ed8f44be7a05d12d817ac390e1fa82018bcae4f2ff53fbd8",
+    "references/behavior-trees.md": "eed3fdb943801a7696f2ca03a54d60fc9111a63c5c817e567516b5e2df2c04a9",
+    "references/pathfinding.md": "75d6c8397fc5ff2fb8ac3dd74e7b4f881331f2531f40b6f8db451f14adb6534d",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-game-feel": {
-    "SKILL.md": "68fc818ad939151be2db9e358e4295a71830c19d61f3aff849f1599307f39f9d",
-    "references/feedback-recipes.md": "c1d0c4d9480bf4cd729ca99f2b36ebc1f3f264a873b408f2145898841e5d6685",
+    "SKILL.md": "48971c7ad1fbb39069cb165f0e45f88c13776585870d69d5de8a04bbe0988e28",
+    "references/feedback-recipes.md": "f8cca962733b0b1f5d1db75fe966f6e13bf11015e39a04a849d6ff5c3e0e835e",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-game-ui-ux": {
-    "SKILL.md": "8a094c84a377503aa8f4c40df676d1c6b6fc07d36ff95554ce06467f1614397e",
-    "references/layout-and-flow.md": "000d944db77155ebf97fde035a3d4fbe69ef0ae348e9dbcaff48c5ea134d7d69",
+    "SKILL.md": "54816447c4d07f9ab65782ebb7138dd0927c9cd84a3647e8806f2a86a3a094ff",
+    "references/layout-and-flow.md": "961fc8c8e45a1ee5120e1deef9f6aef932ae3949e6f1ce26548b9d7616775d73",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-input-systems": {
-    "SKILL.md": "4cb79ad13d54b5b7412efc978d8c5bc3dab529182feb531f304d7d75879f2308",
-    "references/buffering-and-accessibility.md": "4ddc70151a9d72fdc7e0a310f242834ab55c2f7f1133f44e4a51ecda95b4f563",
+    "SKILL.md": "638bd3c07746a09e3945e81c0b9a2ca90c75d2f8a63c0be3c285d75475790b1f",
+    "references/buffering-and-accessibility.md": "dadd5fc9f7bbe88daeeb506e4e1b447267e232273a08ca32095a78f31aea0d84",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-level-design": {
-    "SKILL.md": "f1656cb00b9af8dc625a9655448b410b37ce6f1e523048a5abf09fda25cbfd32",
+    "SKILL.md": "9dd60fec5dc09957f7836739da96b5a2bcff2b46ecaab020f0a9ccff7463ba3a",
     "references/pacing-and-flow.md": "e8e3940f585e376f353aefea009befe8199a1871f99d34d7b2340cb35cb61872",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-performance-optimization": {
-    "SKILL.md": "ddfc68c927f9a482d78cc0e103edb2e2711bc876a5965ff53eabd9a7d308dfab",
-    "references/profiling-and-budgets.md": "fb161af3797b364c5a9032dc3836bc25f05762508f2831f6a19a6aa416811dd8",
+    "SKILL.md": "287161d2ed49670a051271c8fade5a7265fda5109d39c218c02598dca7983e2a",
+    "references/profiling-and-budgets.md": "e68c43d5e66ec0f2fe60e0c0121c85360144ab7da5876ce6e2e3f26a2244e284",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-physics-tuning": {
-    "SKILL.md": "faa9a50d465c16d0060af8c8e20533efb829e07616ec01de4cbdb8d536a7d986",
-    "references/timestep-and-ccd.md": "8091f77b848fa2e9e0eaa267f7b3ad06c1af6e8af5965d6d9c1a66076f9380ef",
+    "SKILL.md": "3e0f3d9ad049e552235cb98612381c82361fff582391c4d5584438309a14c35f",
+    "references/timestep-and-ccd.md": "de507b0bee47cfa3ca5d051d0c4100f99736186e26cdb9488c252d6cc8d6f9ab",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-procedural-gen": {
-    "SKILL.md": "709ccd2dd1e02177f45ccc903bb11d20d3c57365761fb2c9a784880e7b2c9270",
-    "references/dungeon-generation.md": "e743e7fa562b93eec3793acc76b40e276a385215844ca2783c0ca572225c9e51",
-    "references/noise.md": "067b4430cfc5121ac2f94e071492c910692fd10a295cedec0f25ae212fee769e",
+    "SKILL.md": "4bd422eff2c28dbb12e0edf7ef68f3e98bcbbdf4d430815ba6da2d0692630cc4",
+    "references/dungeon-generation.md": "808451354e49b779111383827dba7c97964ce34647bbb3e33e21ae53728ca43c",
+    "references/noise.md": "4f4da0458cdebcd4323ee36da9e25032d5f3a52b3cf8b46177eced6cf79597ab",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-save-systems": {
-    "SKILL.md": "bf9184965b3eb4bc0b20be00681d08ef1af63fd85ca5b7afb7453ca09e80e490",
-    "references/versioning-and-migration.md": "a0127a2443049a801f01f950ec6f0581ca3d74f6b20e309af4e5095b162175ae",
+    "SKILL.md": "17a7e580cdb8ee2fe654fe1b2d9ba3066c57ef1ea6a8cd9cc69141ebaea16224",
+    "references/versioning-and-migration.md": "a95ee265936b5bb332934ae19a90c02c70f927adb3898e5a95ce1877abe9873c",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-shader-programming": {
-    "SKILL.md": "e89558b15691c891e12cece81d4bafd4d61159bd4de2ae580ac109aecadca7ad",
-    "references/effects.md": "bf0665485e8b12d42d4bd6cfe5d1ebd93fbcef315b703e4657f0d40a23224975",
+    "SKILL.md": "a13ed34325b8c18f0c6982edb1a5aede99497a26b9e00fc19e9ce01e566f9923",
+    "references/effects.md": "af47d6efff3741f587e8f7a5338fce251b91a1a4b7fe514742edae8b5a84f71b",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-card-game": {
-    "SKILL.md": "1d972929333201a552087505cb26386569c844f092a51fd0dfe073f69d0e8556",
-    "references/effect-resolution.md": "62185a36e4221b8fdc605b734d66b6464765bc2fdb13c53ca6dc3a8ca528d4f9",
+    "SKILL.md": "cc9b25b66e7100fe0e3d31703d8d54aed383d69a7eedf5f63b3ab9e632ee0b2a",
+    "references/effect-resolution.md": "b2a3aed03a9e557cce5ee3e8faf4f2aedd83e6e9fc3677d4b4ed30ab509ab405",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-fps-shooter": {
-    "SKILL.md": "b4772d548c9f8645c099d32014ba4c5eda11b09495881a8c257b419149ed4bff",
-    "references/shooting-and-feel.md": "22e17ddc59995918de3134b5bd4159400f815f18f8a2eb8f67bc5cd72a2bf698",
+    "SKILL.md": "86aadd96a3bb8817087846cac895691c28872d99ac5c80f746b95457e60d4072",
+    "references/shooting-and-feel.md": "9396a7b964b5f4e39576190b94b4e5ea31f36ed7e6ee6ee755edfb2da1fc0d3f",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-platformer": {
-    "SKILL.md": "ffa6800e26702c371543ebafc721593ba7d19eb9864b6e28dec3c3155b15f1a7",
-    "references/feel-tuning.md": "6235edcda24b8447d19269138e5e6406af490991dc96172d140166f2698bb061",
+    "SKILL.md": "4a6f3887d6e3f8ed03fc3aec3d3a76aeb859b72ed7a4b70f4e83cc706e6a2e15",
+    "references/feel-tuning.md": "6873494513777bda6f77dfa4d825acabab61c415127c7cc3c22a7069af322598",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-puzzle": {
-    "SKILL.md": "a2f40c5c684b0d0f09d0b1db1cfcb04ca7e4e6e8bca946022f8318f5fbc44b4c",
-    "references/board-and-resolution.md": "111151fe725f98b2c679f708c7dff11f0eb4d08189a0c41b02782e9a7c37a3d7",
+    "SKILL.md": "3f8d3031042af66633e97a4a3172c36914f9c5dde145179fecab047f907c2518",
+    "references/board-and-resolution.md": "d04fa5ba786e9a8a5c5c9a84e61dc32bccbd0d3b3b2ac8932ba28954167a2a12",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-roguelike": {
-    "SKILL.md": "05dc641b7360ade29331f87262aedf2e1d9449812c95cad24decee652450b6ca",
-    "references/generation-fov-loot.md": "795f66262d5260bf2222c62924b34cac810c05875b8cb0c7d65f5321e7597935",
+    "SKILL.md": "d842c30ef0ee9bb8477c9545f557bfbe8f43d7d02b6bdf922db6db0f38c37b0c",
+    "references/generation-fov-loot.md": "7fdb0f50e96f47bad548fe2f4475929bbd82091489ee7031865cf4a8d21a52d4",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-rpg": {
-    "SKILL.md": "f33ea8698049050be589c50c532e06adeab52fbeacff81eafb909f230a38745b",
-    "references/stats-combat-quests.md": "3b5b7504ffe2fe23fb73c12e225b7422faedb5e9a7abae69d2c98344f224d066",
+    "SKILL.md": "023d5305787c1c56b1e2be31aa9a2e4be48aac7e3d828198d4745fd1fabcb807",
+    "references/stats-combat-quests.md": "f48f556a5108a12c1c96990e379ab517c663f147d42d0f1831dd81644947d748",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-survival-crafting": {
-    "SKILL.md": "cbf1981c1a446ba7e3edbc18b3ff92e11d872386f889f9316bab0deb240df5bb",
+    "SKILL.md": "8eaf5290a82da5d5f8513b2bc145a8831bd6b2f80628cdc940fe4435695816dc",
     "references/needs-and-crafting.md": "c944e77ed6c2f7ba2e2c3213228b5387ea15a672092f46d98c44666f0945bb3b",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-tower-defense": {
-    "SKILL.md": "27f35ea5defd81bbb81d61984b4394a11c2c6f7ce141ca8e70b7f55e97485e25",
-    "references/balancing.md": "75e775207bcc9bd90a5ca1d4e8253e25e9c57bb01eead960462a88ef08a46461",
+    "SKILL.md": "5b918ecfc6ed1c797fc1570c5f41c84a816d218589e867723f10af493bcc365c",
+    "references/balancing.md": "eeb9ae73ae988b11db2186d92ee3ecd2de9f186ea23eec90efd0d25eeebf818f",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-visual-novel": {
-    "SKILL.md": "081f25d30ca70219e54496a4b19f3d8568488e3e32d51af6b743ca4d67a6cf03",
-    "references/script-and-flow.md": "0b30fcf3f047363194cb95facf668ae3dd6f330124e2f1cd960d9f48605a5df1",
+    "SKILL.md": "57f703ceaa5f9b3d2741415c1854d1fb00db2d0a92fc1757a279a3b089888086",
+    "references/script-and-flow.md": "96460289165b387ddd13ab532dde58d8d47709b0afdcb9fc9183fb58cffdac76",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-godot-2d-movement": {
-    "SKILL.md": "e8089e2a10ef2e836d6a1c858a716697a23f1060b6243e50b526da27fc653fb4",
-    "references/controller-recipes.md": "d6418b2c84f45263e01df3410f65c57100249d9aef2ca47fc760fd24fff402da",
+    "SKILL.md": "ea396576540acb85f0ca2050a96cfa6399a03668971bb320ef612e52a32c8f0a",
+    "references/controller-recipes.md": "bcf89d3e8a820d75a78ed32eaa8eaf20c01ea1a8154791f58a8e3546d6fb0fba",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-godot-3d-essentials": {
-    "SKILL.md": "e2358689bf656964f3a388baf1c224dc3be2b8de460db8ac8bb1e5bf0b0a4fe8",
-    "references/scene-and-environment.md": "b4de6267588f540baa7e4fa149fd4653ace4324e1b17b7655d0f6551a735b428",
+    "SKILL.md": "6164f02300775b7db62a79ca9f65f8dc2232efa64268fb330621cf898bbec73d",
+    "references/scene-and-environment.md": "94d016b194b9d2a5d5ffa3b9cef531b639b15413740f0132ba9f4cc0cba03c34",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-godot-animation": {
-    "SKILL.md": "9d32ef721eaa227494180b6ffb0208624a76e93217a2e39c2286eb0b5701e8e5",
-    "references/animation-tree-and-tween.md": "455ef0e15357428f250035fd5b0c587500b9d565f3bbcc33f95f378a986380a6",
+    "SKILL.md": "43a339c8445b804ba84c32889ec9e4ca80e323003df74a35bcf4d3a7c8e9e99b",
+    "references/animation-tree-and-tween.md": "488900f895505dc6190b6e3626a4367c841dfda6ed288de8cf68a9891775c159",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-godot-audio": {
-    "SKILL.md": "b75829c3c47539f4e1fa2b623ebfce6fa4f5eef2ddc950d00265c27cfae2e0db",
-    "references/buses-and-effects.md": "da6a33ae46b21f3526e74c5e383781e02f1f6ca0bd755475b21e14f124a52526",
+    "SKILL.md": "9ed39d72403eef39e2cbedb1015262ee8413f4f71c91734ba25f82eece839b5b",
+    "references/buses-and-effects.md": "f84f5c91fc78631670315b4c63643603841ad1ca1f211a7891c8bc408f8c3e80",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-godot-csharp": {
-    "SKILL.md": "c6d30a274621c63ab20ce2153807fd173987d1eccd06acfbe6a8a9f26a28c819",
-    "references/csharp-setup-and-interop.md": "086f7bc8549d61ae96190643e9a574f666fd7ed3b04eb18ec10430f89984211d",
+    "SKILL.md": "3b8d85099d5014d640858bed2d18fd5901b20803492e466b3fb5a82f079486c5",
+    "references/csharp-setup-and-interop.md": "e15d5d5f8f6019d627e7d01818a4004d8229e039975387497466346073f3a1d5",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-godot-export": {
-    "SKILL.md": "e97f0a889b8e06934aced7fdcee667d5bb848e33bc44d500c92f580e60295305",
-    "references/presets-and-cli.md": "ddb73ed10a107d806e883a1d13c6a78377226223d57b536201dda9c97505ae62",
+    "SKILL.md": "473552185df50d5ab4a2ef874f47e08ffd7f6f552e191a7a5922c288b29800a6",
+    "references/presets-and-cli.md": "ab2388a1870a0b813d110066bb54bad9f3787d067d13043d10944baec5b13dc1",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-godot-gdscript": {
-    "SKILL.md": "b2625f5651fc9373e057ea47b5e2372319c4ed027fffc958f8a91d25cdea5a39",
-    "references/annotations-and-typing.md": "f1cea898e0346be3fac816093b577b30ef0f112d83cc2c1472c44d4a936700b3",
+    "SKILL.md": "9039fb6de0980495fbc77fb87aae22256d92e7b5cca558b9e318b53dbf557459",
+    "references/annotations-and-typing.md": "b905cae5114ecbbba2cac14ad49b05a2c252535a670f5a1d701b41def3a90f78",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-godot-multiplayer": {
-    "SKILL.md": "43b2f2725ab1f0565dfc132a203de75fc99f6e722f2a0dad78ca5026f0fdae44",
-    "references/replication-and-rpc.md": "51e58312b2532f5bbb8223e0bc1e1a5bdc145f6b3140c393a263cdbdc323b34c",
+    "SKILL.md": "353319ed255916977fa21de4888496b404f400ee63b823db3ff743f5023b9cb6",
+    "references/replication-and-rpc.md": "05908f3ea13f0ceb21ddc561e7cc8c62e0f71e1b88cbb25cd7c13e8b7f3f6f39",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-godot-nodes-scenes": {
-    "SKILL.md": "27beea0d3994e6bc502f9dc3fb6089afcdc083e41790a4cf6a7d32314e079e3d",
+    "SKILL.md": "fc0096a774a8581678180ed0e71039eea52533411b4b45dee708ebad10c920af",
     "references/tree-and-instancing.md": "be3c86180bd18dd46bfdfd7a47317bdb50fc6942cfc3e3d7342b4d0f7834b7a4",
+    "scripts/check_godot_project.py": "779b2130ce00c9566b6a1972dc49916bc270922e1df7fb705a93cc0d5053ef85",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-godot-physics": {
-    "SKILL.md": "04babff5594de194f5ae92fb2e918c905fab89fa837fc83f309da72c7d471139",
-    "references/bodies-and-queries.md": "64f6bdd613b92607cfbf0d3be0b88172d2e6c5b9cfd353706740833fd1343160",
+    "SKILL.md": "e318719b45091bc2731eb2ebd256027f23f7f50a39b06eb7047608cf8426b297",
+    "references/bodies-and-queries.md": "5d1616f73d9f0161df501cbcb1bdbbc3c4b8c2abb687172e1d02a5d5e7907223",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-godot-resources": {
-    "SKILL.md": "c44678e5ce98171d21fb6899f8e7e3983f5599a98e45b3c24bb80a19468e44ab",
-    "references/resource-patterns.md": "f0474f71c843c4c9cfd05609129984a4facf3444a764b2c71f24f066a51dbbb9",
+    "SKILL.md": "1c89eb8eaef4ac889c21640822d454d41a9017e4ca205d4044b73d5fd017aa13",
+    "references/resource-patterns.md": "a848b0be5d5d78307ffa8a91152ffb3b03204cd742a3edd289e03873aab77425",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-godot-shaders": {
-    "SKILL.md": "15bf46f7b0af586f026c1bb58beaeba2579009b70398f43859b7ab286a45e63e",
-    "references/shading-language.md": "582b146d8d47b61d80eb8def8e48923d87ef1c7964542f0a12e9e05645c517e9",
+    "SKILL.md": "e96ac075c0d85f14af8de2a3f92bc4f0389a9bb9e9ac32bc1519f2aa4679d6be",
+    "references/shading-language.md": "406987a5728ac06e5a93b878d390387545a0f118a014b65a65d0e003bf3a64c9",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-godot-signals-groups": {
-    "SKILL.md": "bf1ff3e6b84b63da7ee1749d296722d416f9bb6436b6c2ee9418d33fbfc135c0",
-    "references/signal-patterns.md": "837c192a07fbd0239ed30a68570ef6a1782f6ad03fe7298c7cbe580b34fb3c17",
+    "SKILL.md": "eccc8d79a708eff3ff2b1f108baaf8bf3bf3c39e73e396973ea605a6a1190784",
+    "references/signal-patterns.md": "7f28a8fccf5aef6029e85d2ee8817dcb4d58c0344744f1a421f059ed61fbab4d",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-godot-tilemap": {
-    "SKILL.md": "2b29349a728e0b708b5090d99372892597bfe37df6d071211ca8fb1cd15c46d5",
+    "SKILL.md": "c92a7103c764963a4d065a637941bb537f2409e54277d05aa05ea2bf8fc75971",
     "references/tileset-and-terrains.md": "c2486c7bacdd3f099d981f50b1aa881a7647bb14112b343370f76e1753d12ed8",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-godot-ui-control": {
-    "SKILL.md": "9ac89920e74bbf8d939b4d565e350d53b07c9afbe0970345c97d4122f590cfd5",
-    "references/layout-and-theming.md": "2b5a7d64f00709640385adda215aa3f9a839c2d461c53c886ba9c320723a9f3d",
+    "SKILL.md": "0b2cc92d670cc2274f6579748a1703ec6a2bf70dc3d2875985deea1018f05bdc",
+    "references/layout-and-theming.md": "5f54eed206cd7d7f5fecffd2ce1c189739eba5b5e18b2d1773f9ba7202427f66",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-bevy-ecs": {
-    "SKILL.md": "2dd313c81fb1f15d835d426d4b0213588b6db013438eda8cc0ac88dacbb76916",
-    "references/queries-and-scheduling.md": "8ca8761c0ac5b8638818ebf7269be2de06fa9bf02007462685c5d14bba4597e2",
+    "SKILL.md": "a1bd86a8c26a1399cb63cf408400db2ff861675b4dedc8a7c2ba7e47b9faa9f7",
+    "references/queries-and-scheduling.md": "9c635bc38294a07ed887fc6f8d1adefb902d055ee03bcb3876de1652ae83cc69",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-love2d-core": {
-    "SKILL.md": "874fed1fd611024df5c69aeb2ae4798d2923ea61d76c3e196029195cbcf10ee1",
+    "SKILL.md": "a5d585c884e2bdcea2f37822e45bba31964ee27130b972a3d1f8be68a5cd8d8a",
     "references/state-stack.md": "848e3d1957e3ab6e83bd403323aec21b4516ce761d552813f7ebce3c76d8fbd6",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-pygame-core": {
-    "SKILL.md": "97ab7a07ff5fe1f9b64e64a81258197461c1a674f07b49f8988184408588a352",
+    "SKILL.md": "61fa5550b8989b985721af6fcc33c630297a2da81c52e1164244ccbc89e073b3",
     "references/sprites-and-collision.md": "3d3233ea2bfa6e646426b038b20288841b3f657c9961f587ca5a355b75a1152c",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-roblox-characters": {
-    "SKILL.md": "a23c010f2ba58224ecf07194fde3ca2b534f36922a35445e6fd12c390fbecb18",
+    "SKILL.md": "e5ca39a32a1fd83ba887d7c52a1f02775bc7278847ecf1c66844daec325537e0",
     "agents/openai.yaml": "d206f4538baeb195e01d29cc53ea712948e6820c3c6539f7f2e2cce6656b8885",
     "references/lifecycle-and-animation.md": "ecee2fe0dc55245ef94861d68852bbdb5c7de09eb2cb2c60e5e37295c3cfbed0",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-roblox-datastores": {
-    "SKILL.md": "b64a11db8cee8b03c59a86ee197a152c4b0a368148db1fdf474bd10eb6890c52",
-    "references/sessions-and-limits.md": "9a5a30417f2ad57f2a5ff08b2865626732d27ee1180902def8df2ffff5b584db",
+    "SKILL.md": "8fd15365225d7e5428040ed2d09872f7d5547cb0010576ce39fda1880c74b439",
+    "references/sessions-and-limits.md": "4f2cbb7da7273b3aab86ca124f8391684d1c1771a9735c7785bbfd6961bb0e7c",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-roblox-luau": {
-    "SKILL.md": "9adbf1d8d626e877addab291a4496f68d67bdb8752357639b4bcb5ab91b19566",
-    "references/client-server.md": "cbb013ca65789073687cb2ded9fb4045b5dc4a92af9afd1d535dcb2a46327c05",
+    "SKILL.md": "3b9310d54cd5d4b390e79e97157c6224ceb7676a5087352928ad84f8ea8218cb",
+    "references/client-server.md": "6ff67b85345105480af3a6dbdbfff7c240e7a15eaf5c84d8079307993f72bdc7",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-roblox-networking": {
-    "SKILL.md": "4bf929dab25bde30851ddb1eb1831ee881c1491a871248c45351a513fa453849",
+    "SKILL.md": "4ceb603d88d8e26303c7efc33ead1241f6eba88f5c5039636ec95e31d60ed1db",
     "agents/openai.yaml": "b3f530519ed19704b115584ded1842ca430fef1650fa873694c4d9cfc7e29401",
-    "references/validation-and-testing.md": "b76848087b7adf6b68da7feb01a522515f909bd062cf9247cf44aafaab93225b",
+    "references/validation-and-testing.md": "c75e0bb08c7b0515ab503ae00b86674a194b28371ee3a493769ba8b1f5b7b9ba",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-roblox-physics": {
-    "SKILL.md": "b91d88793183b61eb80b60baa07f42c504fbbc21de344f372e85eb448e9f3044",
+    "SKILL.md": "93b8879bb9a7b631cfa7a3d0ed8c8dd4ef7b839d89b93365ed637bd98f7c18fa",
     "agents/openai.yaml": "55b06a72b4e88c5ec5a4c9d7c3a9684849b6362545d97c8703e79a22120500bf",
-    "references/queries-and-ownership.md": "67eca1dd85cc27b3443f409c10458c7157e9bb9428378126f8a784e875b66408",
+    "references/queries-and-ownership.md": "04c07117f22e7af7c74ee9b5150d9dbd41763b116753def52b2043a88493a459",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-roblox-studio-workflow": {
-    "SKILL.md": "e6b865515bb8891b09774cef36d05f170091330f124e4b30960efc95629934f8",
+    "SKILL.md": "d49e1a1e075eba99c89c85f0a576605d970569e027059b3288eaea6e11782042",
     "agents/openai.yaml": "34f2fe7716ef36610d0a577e05bdcfb36cbaaa25da23a159ee9c02a2d248c7d3",
-    "references/studio-verification.md": "f30c99960d0c505684ae9aa81d3039aa6f1ae5c7442015343d1d6b6ca0fd1244",
+    "references/studio-verification.md": "c476e8180ce27d6e0f7798b92741523e8c3550c433b7495340aec72bbecbeab0",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-roblox-ui": {
-    "SKILL.md": "4b927aff5c48d48bfcefa5afffaa08bdfc4af6dc9ce6765c52a1cd361475c174",
+    "SKILL.md": "f3875cccdb75523c0cc90c55f911d5b267ad9f6566bd5d552b565c329e8ab71c",
     "agents/openai.yaml": "4c67a26a3054126e21db6fb6f893135944a8ca0fac9d619506e867b989073ded",
-    "assets/inventory-quality-test.model.json": "8f503559cc63a6620cf0fcf3fcf8ab434a5cabde90367c85d7dc50ed748ee11c",
+    "assets/inventory-quality-test.model.json": "cf9b4953a17bf85709aff48ff0da8acfb3a4ed2760c79e30534878820fb06d38",
     "assets/inventory-quality-test.project.json": "ab2388eefb502d3e9e165aadc55aba09841940c757ad6d06048e4a8fcdfa0348",
-    "references/input-navigation.md": "b2b5818ba4a1b048fb4d0c0bfa69311a14aa82541ca8633809ce74e2669a249e",
-    "references/responsive-layout.md": "d9b38d5ce44f11e5c944755a6d2417ee63ad70f821769e382680a44a244b8c59",
+    "references/input-navigation.md": "a31a6379911db1827ef00b70a2eeeb56996f3e757526305bc661a5d46a38137b",
+    "references/responsive-layout.md": "99572066781c1705c06acfc693d36e8eaf60643df16ae14d7fbfda29cd908ecc",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-unity-animation": {
-    "SKILL.md": "ba4d4d1c165f46fb06b609c432e21cda8ed8b8316d047863a694e1b6fd3420dd",
-    "references/blend-trees-and-ik.md": "8f4a1c88ef4d40efc32de5584a11f80d378c64de16920b7ca0ed6b91a15d87d6",
+    "SKILL.md": "5062042bbe8ceb255239909890f7950b2d39896cc160a6d542879e4018edc099",
+    "references/blend-trees-and-ik.md": "34ab71c124ae0c6798394d5a14a7571f82f78de6f8cb7687ec975cb5c1d2a423",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-unity-build-pipeline": {
-    "SKILL.md": "a73673eec1803a22b2776697566832c639330835b40b83507ba9ce46a28a2f07",
-    "references/ci-build-script.md": "f3e14d7d17a695c9a25a2ad3b162de195899f56dbd9291dcd9cc592c37e69c83",
+    "SKILL.md": "96975bb7573a6a8b6672fac1ea8090178631d6c7dda4c455cb80e4205acefe9d",
+    "references/ci-build-script.md": "3290166f3eaee3080ff73c3c44583a71414dbe7ff8e57e885be7eb25875e9eb0",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-unity-csharp-scripting": {
-    "SKILL.md": "cb5b08995bc2df8152e3767aec375ebdd1bd3f625a9016958a5466edc942e56f",
-    "references/lifecycle-and-coroutines.md": "e3cf97c13031ab26b53c4cbec6f479a0d91725b22c397e30042591983c47af84",
+    "SKILL.md": "e49d3fed5f65c2d126600ea5d80b859ecb4be241726ae022aa3acd65caf10df4",
+    "references/lifecycle-and-coroutines.md": "c9b1dc7779fc7c840dd4f461fce78f61dfc23638d2ff37bb7010c42d8f5fd9ae",
+    "scripts/check_unity_project.py": "ab26d4e5eabd54524a53c12bf1d03cc9fbe496a509acdd5f5de9165c5c30c724",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-unity-input-system": {
-    "SKILL.md": "e24e667db00642b97e331193d43620df632d4461a7377f847678b1060267da9a",
-    "references/rebinding.md": "58670e9ec483f1f0b1dc7b0e77a8206950cc7fc58943123fa735b6ef584097ae",
+    "SKILL.md": "e8ed83bbdb8e9c7cb21022005fd2fd6088465240373742111977a47a07b577d1",
+    "references/rebinding.md": "a2ce5f56bb27058527323298f4a72fa364afd47fd7d410a9b6bc1c0ce52cb691",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-unity-navmesh": {
-    "SKILL.md": "81d8ccc768c091ab518fc30b96f99698080e5d00d751b7af8a8001823b74291a",
+    "SKILL.md": "38e5e27602ae12a54452205f0ba8b789d70e34b19f6bbfe5395cd7ddafc5d65c",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-unity-physics": {
-    "SKILL.md": "93b3578753e097231f9932b5bfab99547d319dfee923f82954fef27ceb1fbc6f",
-    "references/raycasting-and-joints.md": "29b79da86d8afe75dc8ea88655dc9e2b6f20fffeeeeb51f4786ffcb10c852b8c",
+    "SKILL.md": "9bdf714987d6596756c52fade88cdc3f4276865042d7065fba6b1601d6f02e6f",
+    "references/raycasting-and-joints.md": "544e608f005f37848fa3d3aa4adb9467a0da467e1a35dc5c9be3bb44d51dfedf",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-unity-scriptableobjects": {
-    "SKILL.md": "b23bd2057d67955b03e5b810eb0e08e749ace2d835d6731b5dc4f372ada614db",
-    "references/event-channels.md": "2964fa8e29670196ce4caa64e33a521be9db82259af7ef69e6c10937155a7cb8",
+    "SKILL.md": "72d1e13c6a6878f525e531da3f1cdea86215623c309226c790aa8f3ffb93e8f0",
+    "references/event-channels.md": "e5515ebbf5c3406ad72f1bce45d1b9bf4bc36cf69e8f5bbaf682880f7942d0eb",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-unity-tilemap-2d": {
-    "SKILL.md": "f83a172057a3a03a883387c9a9499382baf4eae64ecf7a9c9c8b1099ff95d287",
+    "SKILL.md": "443785c00dc42338f88251b9210e1ad0308afeb0377c5297ae37f7edc97af137",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-unreal-behavior-trees": {
-    "SKILL.md": "0c8ca83b7edbe3c6485a04f65e2fdc246d7200141a45951ba0b6670af6185142",
-    "references/custom-bttask.md": "16373ab4c158239528905f24f3c1132d643ea34a31a0a97e7942dd346de2d1c8",
+    "SKILL.md": "f7e7d8afc54d4c2577d2fb5db887a4ab610fda6e9cc483a6cadef3fe3915138c",
+    "references/custom-bttask.md": "8e0eb8b3b0dc4b66f4b8628890533d620fae9197b39c2acefca4b9283431d138",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-unreal-blueprints": {
-    "SKILL.md": "27b764d0fff7dcd7f2e872dddc7a05767cce41b741012067eb6c7389dd15ac92",
-    "references/communication.md": "c8b17d129042a90c69a16c11d429b5df9be361d6f6f8cbc9c769c514a715a75f",
+    "SKILL.md": "19ff3dca49fc486a58389c5ff0e086ce12a397430c1dffc403a840049562f42b",
+    "references/communication.md": "bc6f6eb3f82a173430645d8522e536f68765e937216f5c93a9bf646ad257c808",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-unreal-cpp-gameplay": {
-    "SKILL.md": "3151aa85f2fd64f9d38d61b5e4b051f50ad536f686f451ec160af089af34e112",
-    "references/components-and-gc.md": "1151ac0b344c8ae9b7095071f55150fe05d24762c979ff447faef53ec39685d7",
+    "SKILL.md": "f2acfd6ae0b17b1613e79418e77bec3d524aad7711115c62d48e1aefe5ef7f09",
+    "references/components-and-gc.md": "d7d8b2193db2c0fc374617755b6491a536953f1e3f634ed6ad510dfa466a6507",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-unreal-enhanced-input": {
-    "SKILL.md": "84d4f7982d812b131f71e2c40ec6f89594eef08ce8bde589bfb789606c9492b1",
-    "references/cpp-setup.md": "d0eeec41bf316c48a0a629e02eafb51a74e9ff7e2a24a68baad2ff044bb34b4e",
+    "SKILL.md": "3d33571a1b0170ed2c01776c0039f3d3f980319c20f36d16fe6cdc1e26815dfb",
+    "references/cpp-setup.md": "4fb9c7afd89afe5f0e7f103b18203f43fde54cdce03eb9de43976a9f4af51022",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-unreal-niagara": {
-    "SKILL.md": "c2b2f88f2071365b406413a96907f83a3ff04a32e46ab75fd9ea93f2213b19c2",
+    "SKILL.md": "d99f9810049526e509a4fef010495c52efd43782a8ca4879a52d1fabf8b85c5e",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-unreal-packaging": {
-    "SKILL.md": "c132c6ca6bab6fd186646c454fe1502fd2fb3ca62fa606c689a27a574f0f45aa",
+    "SKILL.md": "adb8fd8cec1d095c88c15083334718263b92f7d39746937516d82b7cda9011fa",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-phaser-arcade-physics": {
-    "SKILL.md": "4b7186f03c236bbe83dfd8f24467cc4429ff47cb870e04ef939320165b6bcd04",
-    "references/bodies-and-collision.md": "3ea38f74ac01e0c9f872407acd219104e1a729cb5a14b95498cc5b1aaa145b05",
+    "SKILL.md": "2e9780da9067323f5e06fcf4d1c90df03814bbbead7dffbb4fb9d5db0e63a7f7",
+    "references/bodies-and-collision.md": "7d6f323fe7ffd5e23de60897b2dba757e7fac04615612591816889e7549f515c",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-phaser-core": {
-    "SKILL.md": "101c9382dd8a68f2573ef83d978bd19432f61512c5aa83e8c2a5cf7e7e3e38b4",
-    "references/scene-flow.md": "355c1553a116351d7088e4f15b2dd08976e2241f576dcef50a61f92d4540d143",
+    "SKILL.md": "0df9ed5e32bdb576375730c21917dc80a02f54e8bb95c17521208f92d2baad0f",
+    "references/scene-flow.md": "0ac4da3794ad12c90e2365b417b0983b3f2329636234dca1a231e78ffe51b01a",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-pixijs-rendering": {
-    "SKILL.md": "15fe1d79780a94b8082e18245581cd0ea4e125bb5576b930d97f1ac4acdda7b9",
-    "references/assets-and-display.md": "bc54b64926b41f49a421f308e45fc4282ffee5b91b0e0ebb0176b733b3ec5f4c",
+    "SKILL.md": "da832dcbaa5a281af15d784c8dff87e52c44556355cb92cf03d46016885a3e9d",
+    "references/assets-and-display.md": "57ca4b6f457f5c5dd6350cc5c33e029841608e3c3df61610a8021f45a0c42f11",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-threejs-gltf-loading": {
-    "SKILL.md": "53a581e2451843638eae5f511738fc008cdba213fd9192051284f9dbe3124b7a",
-    "references/loaders-and-animation.md": "05e7a3c177d3b05b635324d0e4012f67edf9a2e537066d489e4e1b2b5c6eb46c",
+    "SKILL.md": "6ead2c9e21cff45ebf244f16bc1b815771f95f14d6479f5aae21d4ee3702a3f6",
+    "references/loaders-and-animation.md": "733d9df9b6a9f5ef9af5826ba80bdff14f6627c123db86abae0ddb41c2ee1f4a",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-threejs-materials-lighting": {
-    "SKILL.md": "39de0912bb8afda118e06f8ce5311327b03206df87161d43a7cde806bf06af2b",
-    "references/materials-lights-table.md": "9a04de2094d8a8d7f5c0632625c8622b53b77261130f7a6e7c0aef30211dd8b3",
+    "SKILL.md": "51451f53c44b9bb3ee87b8f12fcc0d8c8f5b44d9426686cec4090636d7580784",
+    "references/materials-lights-table.md": "b35eb1e9f194e871f9f79965f947928efa9b5626d41facac1b53fcf539113909",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-threejs-scene-setup": {
-    "SKILL.md": "1c931f9bffc7c14d87eb72ab4bc15ebde4ca6c36f498d549664287be7cc74a57",
-    "references/scene-graph.md": "9799dac6fb092c91bc3897336e8407063d6dc6bf7f21cf00c4e609ad223319c4",
+    "SKILL.md": "4f229f27bc84eba0ba9197a775245cf8ddc1ba9959798d6caf9a9f59b4706c17",
+    "references/scene-graph.md": "ab2f19b3f2425d3e6f67ba26faa6e76fd67290fff977b410feef8aaab088c82e",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-game-jam": {
-    "SKILL.md": "5d47346146fb777ac7a1541283e95cecd4b01d65e16505cfd01eb6a714a5bd31",
+    "SKILL.md": "bf166b82872f5a9d04e61d01d8efa3159a7d1291af22010c8d0e002467b98655",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-itch-publish": {
-    "SKILL.md": "bcee8af7090e732b8168a5f3ac79493203d0688a038faafa509f9c468020dc3f",
-    "references/butler-ci.md": "4da37faa452595ef7915c9f99ff513fd16b900c6cdb28c19f7111290b4106e4f",
+    "SKILL.md": "4ff24ed7a790b74162f6d9af14ce22452a3bccaaed0f8063bb64feada2d11713",
+    "references/butler-ci.md": "72bfb7dcb55e7af10160938bb6a19ce8766be93003bb13a66d458807c63faf45",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
@@ -511,8 +514,9 @@
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
   "gamedev-steam-publish": {
-    "SKILL.md": "d0d1237a5f79657693a2ab915644da5764a551bc04756c28247721ecf0377510",
-    "references/steampipe-build-scripts.md": "a0a5afed4deef5e478ea6ea25d32b51bd2fadcee60f0ddb67fca0cfc557568d2",
+    "SKILL.md": "6af10062f431dd3019230d4f034455b8c877b9dd41f87666d723062bc07b8a8d",
+    "references/steampipe-build-scripts.md": "9ccb95deea6fd094febda2cf16fef3f219f00c9612addb7620762384c7d5fabb",
+    "scripts/check_steam_build.py": "56c6e8a7b17bf35181fce3424c663c91a65720b8dd34f3115e6f5cc3a21f3e90",
     "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
     "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   },
@@ -1284,5 +1288,65 @@
   },
   "readable-code": {
     "SKILL.md": "c00a1dd7ff55ea3e6fbbd64c83b34e285be43b02b10dedeba1cff9af9bc6e3ce"
+  },
+  "gamedev-ebitengine-game": {
+    "SKILL.md": "4a0538670587bea6976be87b1b7b02051e5be81a291add67a68d86c12e0f2e21",
+    "agents/openai.yaml": "1b3c9903dd08c124c2f1d659189802128494b2a2c682be7aa84c904c00fb47b8",
+    "assets/ci/github-actions.yml": "759948dfac5d43c19e44e1d993714522f1dd8197016804fc13dc9908abe79fa4",
+    "assets/starter/assets.go": "b8e8170085bb85dd9d98791ace3648d576ffc5065cc9141e3b29e5231a9a55a8",
+    "assets/starter/game.go": "32bb9374c39eaf914475cde7e0d7d10bfeb45d1b6b9c0b633bb49c72e1372f6b",
+    "assets/starter/input.go": "be015487ae644a97d442a979b8e328eb983191f7205633495f2b8cbec7278e98",
+    "assets/starter/licenses/Go-Fonts.txt": "dc588a7ba9130043b67c2380cc03cc6644ed3557f6d5e8589b96acba1c64e343",
+    "assets/starter/main.go": "dd420999d7cd96e749f9c2f81a258441502e908714bf0b51482573855bfbe62c",
+    "assets/starter/scenes.go": "34a9db373491e51d5dfd62e0bc1051173d6afe73d64aa344eef36293d375475e",
+    "assets/starter/sound.go": "d4013f1ff7b95a9ad1f890e517cf3e6b9643b12312725cbf238ef159ad3eb42d",
+    "assets/starter/web/index.html": "a9276acdfc11a9f5db6d4a73e7aebf6d98beea5cde092aec83ec28af58de009e",
+    "assets/starter/world/world.go": "f990e6f5e19dddb448eee34713fe61fc8eafdc5d469da529fae700ddc0b48e47",
+    "assets/starter/world/world_test.go": "2fce979264ac184467b7bfe57bc74cfb0537c709d50c39c7a085b4ced0c74405",
+    "references/architecture-and-testing.md": "3801668a31456adb2cb1ba718d5b34d96efc8c5ee8f20ee9d3cf999da00ae020",
+    "references/assets-and-animation.md": "ff2d9201b9706598ec790b34b5daa950b2efebc255e814a59fdc6d8c0081511f",
+    "references/audio.md": "fe897bd8369fd9c4ae7156044998068da0b3856155f97820d5563aa3ac90928f",
+    "references/ci-and-release.md": "9e81d4418ec023a1b9546d86acd488dc4c0970bc54488f1934c9828dfaf5ab97",
+    "references/design-and-quality.md": "59c80b7f3ce2c6cefb7551495d5ef6f76ab5407e73372843f370060542d070fa",
+    "references/gameplay-systems.md": "766d575eaa23c043e8a3ea1305ef3d6d8c914dd05b78c101c83042664985b997",
+    "references/input.md": "91b6b31aad46a9777ba73aadee954c1904961dab6d56126ad4398cf94eb8b27d",
+    "references/monetization.md": "90739998dc982d88e304df1320f8039282d09c14353c71a50e558b8f0aeb3097",
+    "references/networking.md": "9c63aa126439cf631ff71fb25df171347cdf4deb5a83a6e19c4a3095a80f9c30",
+    "references/playtest-diagnostics.md": "9f16a1cdff69ba97cb6a97d8c3e37d9fce64825abc80238d2c2151ae58dab14d",
+    "references/project-and-builds.md": "19ed8b8c5eb0b389842f18639d652ce49517c5a081fdf11543c584b075b72276",
+    "references/publishing-and-platforms.md": "e10058a81c173fce0497abfb44a28ae024afaf51d207d1b2c6d75f9655337d56",
+    "references/rendering.md": "8713c34df4ddbf2502c230a198eafef185e75a5836f20738249ab12e1d329241",
+    "references/text-and-ui.md": "f7254c1f14ef504a3b3cd6e5a1f3be2aacee4d324ba21fe0984b4e59797840c4",
+    "references/tilemaps.md": "e1c9acee8d0055c5539e456f598113518f56aba1f3851e7dcf24638f6d44fd9e",
+    "scripts/check_ebitengine.py": "a1fa813343bd3fa5941146464bde391f8c5eca8639b29b30e8411a3e1375080e",
+    "scripts/new_game.py": "333f715ab0571902797a128cd2333e94198dba24b11e1357afea8b4eb086fc11",
+    "scripts/package_macos_app.py": "5300047a6daf1698ff31fcc6477179f5b64b4cc0961cabe70cfae732f9398270",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-godot-gdscript-headless-testing": {
+    "SKILL.md": "980ecf1815cb179bc92749e419e3d5c87cc998413c57ed87035e34dc45e87034",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-defold-core": {
+    "SKILL.md": "339b91b141406ee256527ccc27f692d191bb62f235f9e08d6ea1d2b4b66b2b9d",
+    "agents/openai.yaml": "bec4e62bd3244bb27c98112170bd7084df88c85312379d62fc0fdb2a361c4cf9",
+    "references/build-and-run.md": "dc78b9632774fdcdad6a559555ac0dbc37d602743d765432ffde3dc4e5df218a",
+    "references/file-formats.md": "3ccedb010786a479600801711f8b910a3c2e38382e65e70052f90b6bf01b2d69",
+    "scripts/check_defold_project.py": "8ebb0d60f0fc9494e92b0e4da341184e7c82a3e4b0c666bdaecbe2d32ae43a34",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+  },
+  "gamedev-roblox-simulator-economy": {
+    "SKILL.md": "e6b5431ca22cf452f50c2ac2d7db93df390defacd04790509159ede978ffcd4d",
+    "agents/openai.yaml": "c33b5eae57bb578820ae29208d61242c420bc475704da94c4dda023a69b33f48",
+    "references/formulas.md": "735b39089d134d78cec1f77b32d219d6d1253afd0c5fedf2ac35219ceba46567",
+    "references/server-patterns.md": "dcb892979613ca29e8ec1ef56176123b8d5df9a4871b32070e621e095873885c",
+    "scripts/balance.luau": "e8ec84664e9a168d23ff4d254eb8cf7b42360ced173e261a1cab377d5df53976",
+    "scripts/economy_math.luau": "9e2dd83e1852a896b7bfd8d6d6d71f342afa860e924d30a54e6c253a4f1b50b8",
+    "scripts/test_economy_math.luau": "0cec72e142254bd7737bdc29331fdaa12fa1f8bba218a194761ff1eea82af108",
+    "LICENSE": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c",
+    "NOTICE": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
   }
 }
