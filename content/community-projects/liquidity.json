@@ -1,7 +1,7 @@
 {
   "slug": "liquidity",
   "title": "Shadow Swap",
-  "summary": "Experimental public-asset AMM pools, liquidity provision and NFT marketplace templates on Esmeralda testnet. Formerly Tari/Ootle Liquidity Protocol. On October 14, 2026, the creator documented migration to Ootle 0.46 / Protocol V2 and CLI-based on-chain settlements; live browser-wallet approval remains unproven in the creator\u2019s record. Mainnet is disabled. The reviewed README names a Cloudflare hosting project but supplies no public demo URL. October 19 review found the MIT license text committed at revision 49d3d26. Newly added UI screenshots use illustrative fixture data and do not demonstrate live execution.",
+  "summary": "Experimental public-asset AMM pools, liquidity provision and NFT marketplace templates for Ootle testnet, formerly Tari/Ootle Liquidity Protocol. November5 review of revision 1d65d87 found the v0.48 reset cohort6a25dbc and no live public deployment. The README preserves v0.46 settlements and four template publications as historical pre-reset evidence; no Shadow Swap templates are published on the reset network. Mainnet is disabled. Public pools exclude confidential and stealth assets; the separate revealed-asset design exposes amounts and timing. MIT-licensed source and illustrative UI fixtures remain available. The November5 recording walks through current deployment documentation, not a running exchange.",
   "creator": "GSXRspartan",
   "sourceUrl": "https://community.tari.com/t/tari-local-opensource-swap-platform/182/15",
   "sourceLabel": "Discussion",
@@ -34,18 +34,18 @@
     }
   ],
   "media": {
-    "image": "/previews/community/resource-shadow-swap-20261014.jpg",
-    "video": "/previews/community/resource-shadow-swap-20261014.mp4",
+    "image": "/previews/community/resource-shadow-swap-20261105.jpg",
+    "video": "/previews/community/resource-shadow-swap-20261105.mp4",
     "label": "Docs walkthrough",
-    "sourceUrl": "https://github.com/GSXRspartan/shadow-swap#readme",
-    "capturedAt": "2026-10-14T13:29:58.354Z",
-    "reviewedAt": "2026-10-14T13:30:50.584125+00:00",
-    "sha256": "e54320d1417813ca01fcba9ad327b7c010aff845aaf460090defcbdc31b289ad"
+    "sourceUrl": "https://github.com/GSXRspartan/shadow-swap#testnet-deployments",
+    "capturedAt": "2026-11-05T13:31:50.329Z",
+    "reviewedAt": "2026-11-05T13:38:43.869Z",
+    "sha256": "255620a59bffe057fe55c4cfee5cb305c3c92c67687b9905ec010d3a66a5ebdc"
   },
   "publicationLabel": "Repository created",
   "publicationUrl": "https://github.com/GSXRspartan/tari-ootle-liquidity-protocol#readme",
   "cardSummary": "Explore public-asset AMM pools, liquidity provision and NFT marketplace templates for Ootle testnet.",
-  "cardStatus": "Source code \u00b7 Testnet",
+  "cardStatus": "Source code · Testnet",
   "discussionLinks": [
     {
       "url": "https://x.com/phillip_d33221/status/2114140382430961761",
