@@ -1,7 +1,7 @@
 {
   "slug": "ootle-steam-kit",
   "title": "Ootle Steam Kit",
-  "summary": "Steam-linked Ootle integration kit with wallet, trade, games and prediction modules. The October 29 public guide loaded; Games, Trade and Predict were disabled before Steam sign-in. The guide says the site currently watches deliveries and settles holds itself, while template-enforced trade escrow is a future destination. Source supports optional wallet-daemon integration and a local ledger mode. Do not interpret the guide or its recording as a completed Steam trade or independently enforced settlement. MIT source reviewed; no Steam login, wallet connection, payment or gameplay was exercised. November 2 organizer notice: Esmeralda testnet was reset; entrants were asked to republish templates and update their submission versions where applicable. Earlier recordings document their capture dates.",
+  "summary": "Steam-linked Ootle integration kit with wallet, trading, games and prediction modules. November 5 public guide: Games, Trade and Predict are disabled before Steam sign-in. The site currently watches deliveries and settles holds itself; template-enforced trade escrow is a future destination. On Esmeralda, the site escrow signs the on-chain leg, with in-wallet signing described as planned for mainnet. Stealth hides amounts but not the account; voucher deposits and fees remain public. MIT source revision d54da665 remains unchanged and supports optional wallet-daemon integration and local ledger mode. The October 29 recording remains a Docs walkthrough of the settlement guide, not a completed trade or payment. No Steam login, wallet action or gameplay was performed. November 2 organizer notice records the Esmeralda reset; historical screenshots and footage retain their original dates.",
   "cardSummary": "Explore Steam-linked wallet, trading and game modules with private testnet payments and an operator-managed settlement flow.",
   "cardStatus": "Alpha · Testnet · Steam account",
   "creator": "iGaming",
@@ -24,7 +24,7 @@
     "capturedAt": "2026-10-29T10:09:18.570Z",
     "sourceRevision": "d54da6654ed0100405e9413cabc3738a418d1b99",
     "kind": "public-page",
-    "credit": "Docs walkthrough — Public settlement guide; no Steam login, trade or payment."
+    "credit": "Docs walkthrough"
   },
   "discussionLinks": [
     {
