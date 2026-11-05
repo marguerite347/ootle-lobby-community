@@ -1,7 +1,7 @@
 {
   "slug": "familiar",
   "title": "Familiar",
-  "summary": "Rust template and CLI for agent allowances, approved payees, pause and recall. The public walkthrough presents 27 recorded Esmeralda transactions, with 17 accepted and 10 refused according to the creator. October 23 browser inspection advanced between recorded steps 19 and 20; no agent or wallet was connected. Amount mode exposes payment amounts; coupon mode hides denominations while coupon counts and transaction fees remain public. The live-read control did not complete during inspection. MIT prototype; the footage is a source walkthrough of recorded results, not a new on-chain run. Downloaded binaries were not installed. November 2 organizer notice: Esmeralda testnet was reset; entrants were asked to republish templates and update their submission versions where applicable. Earlier recordings document their capture dates.",
+  "summary": "Rust template and CLI for agent allowances, approved payees, pause and recall. November 5 review: repository revision 73b01af and its October 21 release remain unchanged. The public page and both creator videos remain accessible; its 27-transaction walkthrough is historical October 21 evidence. The read-only indexer control now fails for both leashes with a missing up field. The original X announcement is readable, but one reply is unavailable. Amount mode exposes payment amounts; coupon mode hides denominations while coupon counts, linked accounts and transaction fees remain public. The retained October 23 clip walks through creator-recorded results, not a new agent or wallet run. MIT prototype; the available CLI binaries were not executed. Esmeralda was reset November 2, so the historical deployment and recordings do not establish current network availability.",
   "cardSummary": "Give AI agents a revocable testnet allowance with network-enforced spending limits and approved payees.",
   "cardStatus": "Prototype · Testnet",
   "creator": "ArturBaranouski",
@@ -24,7 +24,7 @@
     "capturedAt": "2026-10-23T17:55:53.011Z",
     "sourceRevision": "73b01af39b1f51f1713104ed4a557b48a4f9bda2",
     "kind": "public-page",
-    "credit": "Source/docs walkthrough — Creator’s recorded transaction walkthrough; no agent, wallet or new transaction."
+    "credit": "Docs walkthrough"
   },
   "discussionLinks": [
     {

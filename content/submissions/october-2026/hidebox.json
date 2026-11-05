@@ -1,7 +1,7 @@
 {
   "slug": "hidebox",
   "title": "HideBox",
-  "summary": "Browser-encrypted file drive with link, word, address and pay-to-open sharing. The October 23 public how-it-works page describes browser-held keys, encrypted uploads and a SealLog record when a file leaves the drive. Losing the saved key loses access. The creator says the server observes padded sizes, timing and sharing rules; this is not a claim that all metadata is hidden. The public site and documentation were inspected without creating a drive, keys or wallet, uploading files, or making payments. MIT source; Esmeralda testnet. Recording shows the documentation and its illustrative UI, not an uploaded file. November 2 organizer notice: Esmeralda testnet was reset; entrants were asked to republish templates and update their submission versions where applicable. Earlier recordings document their capture dates.",
+  "summary": "Browser-encrypted file drive with link, word, address and pay-to-open sharing. November 5 review: creator revision 0b7e341 updates Ootle libraries to 0.49.2 after the November 2 Esmeralda reset. The public site reports that revision, and the creator-documented replacement SealLog component resolves in Veil with recent events. The public status endpoint reports green checks with a budget-reservation attention flag; this is the service’s own status report. Losing the saved browser key loses access. The server sees padded sizes, timing and sharing rules; sponsored sends can be linked, and a deletion receipt cannot prove no copy was kept. Refund-backed payments remain roadmap work. Original forum, Reddit and Bluesky discussions are readable; X exposes one of three counted replies. The retained October 23 recording shows the unchanged how-it-works page and illustrative UI, not a file upload or payment. No drive, keys, wallet, uploads or payments were created. MIT source; Esmeralda testnet only.",
   "cardSummary": "Store encrypted files and share them through links, recipient addresses or paid access on Ootle testnet.",
   "cardStatus": "Web app · Testnet · Save your browser key",
   "creator": "c7b",
@@ -24,7 +24,7 @@
     "capturedAt": "2026-10-23T17:53:42.965Z",
     "sourceRevision": "c696c5466a1f6827fdc239a44a6c87bf0a93971c",
     "kind": "public-page",
-    "credit": "Source/docs walkthrough — Public how-it-works page and illustrative UI; no drive, key, upload or payment created."
+    "credit": "Docs walkthrough"
   },
   "discussionLinks": [
     {

@@ -1,9 +1,9 @@
 {
   "slug": "graveyard-shift",
   "title": "Graveyard Shift",
-  "summary": "Confidential payroll template and interactive browser replay. October 23 inspection showed Alice’s recorded 3000 SHIFT pay stub, an auditor reconciliation to the 10000 SHIFT budget, and hidden coworker amounts. The page replays an engine transcript; it does not decrypt or pay through the browser. The original post’s empty-faucet limitation was superseded by the creator’s October 22 update linking a published Esmeralda template and two-paycheck shift transaction. The browser replay has three paychecks and is separate from that deployment evidence. Roster, roles, paid status and total budget remain public; the auditor key is fixed per payroll. MIT source; no wallet or payroll transaction performed here. November 2 organizer notice: Esmeralda testnet was reset; entrants were asked to republish templates and update their submission versions where applicable. Earlier recordings document their capture dates.",
-  "cardSummary": "Explore confidential payroll from employee, auditor and public perspectives, with selective disclosure of individual payslips.",
-  "cardStatus": "Browser demo · Testnet",
+  "summary": "Confidential payroll template with an interactive browser explanation of public, employee, auditor and coworker views. November 5 review: the page still replays creator-generated engine results; switching views and the recorded payslip examples worked without a wallet. It does not decrypt or submit payroll in the browser. Repository revision a46223f is unchanged with no published releases. The October 22 creator reply documents an historical Esmeralda payroll, but that component now returns not found after the November 2 reset. The roster, role labels, payment status and total budget remain public; the fixed auditor key reveals amounts but cannot spend or read employee memos. Retained October footage is a concept overview of this replay, not a new payroll run. MIT source, testnet only.",
+  "cardSummary": "Explore recorded payroll results from employee, auditor and public perspectives, with selective disclosure of individual payslips.",
+  "cardStatus": "Interactive walkthrough · Testnet",
   "creator": "XachP",
   "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/20",
   "publishedAt": "2026-10-21T23:23:34.426Z",
@@ -24,7 +24,7 @@
     "capturedAt": "2026-10-23T17:44:32.845Z",
     "sourceRevision": "a46223faac256a746a33671ff93b4c2b0c7e0d0d",
     "kind": "public-page",
-    "credit": "App demo — Interactive replay of the creator’s engine transcript; four perspectives, no browser decryption or payment."
+    "credit": "Concept overview"
   },
   "discussionLinks": [
     {
