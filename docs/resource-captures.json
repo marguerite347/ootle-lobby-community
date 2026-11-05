@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-05T00:54:36.180500+00:00",
+  "updatedAt": "2026-11-05T01:20:14.470627+00:00",
   "records": [
     {
       "resourceId": "candy-summoner",
@@ -8266,6 +8266,45 @@
         "revision": "f1144099ce9fa0fc66055cc71926a8bf158c0f2a",
         "deploymentId": "dpl_FGFT4UW79xmkAKa1hQHMwdWeZPaF",
         "checkedAt": "2026-11-05T00:53:07.972866+00:00"
+      }
+    },
+    {
+      "resourceId": "dnode-make-me-laugh-november",
+      "title": "DNode Make Me Laugh contest",
+      "targetUrl": "https://x.com/DNodeCapital/status/2117932964285730872",
+      "originalPosts": [
+        {
+          "url": "https://x.com/DNodeCapital/status/2117932964285730872",
+          "platform": "X",
+          "author": "DNodeCapital",
+          "publishedAt": "2026-11-04",
+          "foundOn": "2026-11-04",
+          "context": "Make Me Laugh: 75,000 XTM community meme contest; submissions until November18.",
+          "visibility": "public"
+        }
+      ],
+      "captureType": "announcement",
+      "capturedAt": "2026-11-05T01:06:26.487Z",
+      "observedRevision": "Announcement November4,2026; source evidence SHA256 a714ffe98ff0e7df6f2130240da7d8a1f553b3e946b6f7c1e625076ddf63887a",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "durationSeconds": 12,
+      "publicMediaUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-dnode-make-me-laugh-20261104.mp4",
+      "publicPosterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-dnode-make-me-laugh-20261104.png",
+      "caption": "Announcement",
+      "sha256": "a2e091b3d7c37c0081d076ab96511c7d39f715e88306f316121d9dc6834c5018",
+      "method": "Existing creator-hub-demo-capture capture-apps.mjs pipeline with installed browser dependencies; genuine continuous public announcement scrolling. Real poster; opening/middle/closing frames and full local playback reviewed. Login sidebar does not obscure announcement; no social write.",
+      "status": "recording-reviewed-publication-pending",
+      "verification": {
+        "framesReviewed": [
+          0.5,
+          6,
+          11.2
+        ],
+        "localPlaybackEvidence": "work/daily-2026-11-04/dnode-contest-local-playback.json",
+        "livePlayback": "pending desktop and phone acceptance"
       }
     }
   ],
