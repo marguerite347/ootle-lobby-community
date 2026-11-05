@@ -19,16 +19,28 @@ describe('wallet-sourced Ootle countdown',()=>{
  });
  it('polls changed official dates and preserves the previous value through outages and invalid responses',async()=>{
   vi.useFakeTimers();
-  const changed=Date.parse('2026-11-12T14:00:00Z');let latest=target;
+  const changed=Date.parse('2026-11-12T14:00:00Z');let latest:number|null=target;
   const fetcher=vi.fn<typeof fetch>().mockImplementationOnce(()=>ok({target:new Date(target).toISOString()}))
    .mockRejectedValueOnce(Error('offline')).mockImplementationOnce(()=>ok({target:'invalid'}))
    .mockImplementation(()=>ok({target:new Date(changed).toISOString()}));
-  const update=vi.fn((value:number)=>{latest=value;});const poller=pollLaunchTarget(update,fetcher);
+  const update=vi.fn((value:number|null)=>{latest=value;});const poller=pollLaunchTarget(update,fetcher);
   await vi.advanceTimersByTimeAsync(0);expect(update).toHaveBeenCalledTimes(1);
   await vi.advanceTimersByTimeAsync(120000);expect(latest).toBe(target);expect(update).toHaveBeenCalledTimes(1);
   await vi.advanceTimersByTimeAsync(60000);expect(latest).toBe(changed);expect(update).toHaveBeenCalledTimes(2);
   expect(fetcher.mock.calls[0][0]).toBe('/api/launch');poller.stop();
   await vi.advanceTimersByTimeAsync(60000);expect(fetcher).toHaveBeenCalledTimes(4);
+ });
+ it('clears a previously verified date when the official endpoint removes it',async()=>{
+  vi.useFakeTimers();const update=vi.fn();const fetcher=vi.fn<typeof fetch>().mockImplementationOnce(()=>ok({target:new Date(target).toISOString()})).mockImplementation(()=>ok({target:null}));
+  const poller=pollLaunchTarget(update,fetcher);await vi.advanceTimersByTimeAsync(60000);
+  expect(update.mock.calls.map(call=>call[0])).toEqual([target,null]);poller.stop();
+ });
+ it('aborts a hung request after eight seconds and can refresh again',async()=>{
+  vi.useFakeTimers();const update=vi.fn();
+  const fetcher=vi.fn<typeof fetch>().mockImplementationOnce((_url,options)=>new Promise((_resolve,reject)=>{options?.signal?.addEventListener('abort',()=>reject(Error('timeout')));})).mockImplementation(()=>ok({target:new Date(target).toISOString()}));
+  const poller=pollLaunchTarget(update,fetcher);await vi.advanceTimersByTimeAsync(8000);expect(update).not.toHaveBeenCalled();
+  await vi.advanceTimersByTimeAsync(52000);expect(update).toHaveBeenCalledWith(target);poller.stop();
+  expect(vi.getTimerCount()).toBe(0);
  });
  it('does not populate a countdown when no valid source has ever been returned',async()=>{
   vi.useFakeTimers();const update=vi.fn();const poller=pollLaunchTarget(update,vi.fn<typeof fetch>().mockRejectedValue(Error('offline')));

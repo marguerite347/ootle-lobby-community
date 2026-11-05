@@ -17,8 +17,15 @@ test('refreshes changed dates after a minute and deduplicates in-flight calls',a
  clock++;assert.equal((await read()).target,'2026-11-12T15:20:30.000Z');assert.equal(calls,2);
 });
 test('invalid, missing and failed sources never manufacture a launch time; retry recovers',async()=>{
- for(const value of [null,{},config(123),config('tomorrow'),config('2026-11-11T11:11:11'),config('2026-13-11T11:11:11Z')])assert.throws(()=>launchTarget(value));
+ for(const value of [null,[],42])assert.throws(()=>launchTarget(value));
+ for(const value of [{},config(123),config('tomorrow'),config('2026-11-11T11:11:11'),config('2026-13-11T11:11:11Z')])assert.equal(launchTarget(value),null);
  let fail=true;
  const read=createLaunchReader({fetcher:async()=>fail?{ok:false}:response(config('2026-11-11T11:11:11Z'))});
  await assert.rejects(read());fail=false;assert.equal((await read()).target,'2026-11-11T11:11:11.000Z');
+});
+
+test('a removed or invalid official date clears the cached target on the next refresh',async()=>{
+ let clock=1,data=config('2026-11-11T11:11:11Z');
+ const read=createLaunchReader({now:()=>clock,fetcher:async()=>response(data)});
+ assert.ok((await read()).target);data={};clock+=60000;assert.deepEqual(await read(),{target:null});
 });

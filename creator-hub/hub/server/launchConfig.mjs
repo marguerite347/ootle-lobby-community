@@ -4,9 +4,10 @@ export const LAUNCH_CONFIG_KEY = 'ootle-mainnet-launch-at';
 const WITH_ZONE = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,3})?(?:Z|[+-]\d{2}:\d{2})$/;
 
 export function launchTarget(config) {
-  const value = config?.[LAUNCH_CONFIG_KEY];
+  if (!config || typeof config!=='object' || Array.isArray(config)) throw new Error('Invalid wallet configuration');
+  const value = config[LAUNCH_CONFIG_KEY];
   if (typeof value !== 'string' || !WITH_ZONE.test(value) || !Number.isFinite(Date.parse(value))) {
-    throw new Error('Wallet launch date unavailable');
+    return null;
   }
   return new Date(value).toISOString();
 }
