@@ -47,7 +47,8 @@ test('all pinned game topics and creator skills are discoverable with complete l
   const manifest=JSON.parse(readFileSync(new URL('../../../../skills/hub-catalog.json',import.meta.url),'utf8'));
   const lock=JSON.parse(readFileSync(new URL('../../../../skills/upstream-lock.json',import.meta.url),'utf8'));
   const gamePaths=Object.keys(lock.files).filter(p=>p.endsWith('/SKILL.md'));
-  assert.equal(gamePaths.length,74);
+  assert.equal(gamePaths.length,78);
+  assert.equal(gamePaths.length,lock.skill_count + 1);
   for(const relative of gamePaths) assert.ok(manifest.some(e=>e.directory===`skills/vendor/gamedev/${relative.slice(0,-9)}`));
   const market=createSkillMarket(root), catalog=market.catalog();
   assert.equal(new Set(catalog.listings.map(l=>l.id)).size,catalog.listings.length);

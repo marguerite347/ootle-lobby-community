@@ -29,8 +29,10 @@ is the dispatcher). Copy it in alongside the others so the agent can route reque
 ## Universal installer (any agent)
 
 The [`skills` CLI](https://www.npmjs.com/package/skills) is the package manager for the Agent
-Skills ecosystem. It detects the agents installed on your machine and copies the skills (the
-router plus all 68) into each one's skills directory — no clone required:
+Skills ecosystem. It detects the agents installed on your machine and installs the skills (the
+router plus all 77) into each one's skills directory — no clone required. It needs Node.js 22.20
+or later. Interactive runs ask which skills and agents to use; by default each agent directory is
+a symlink to one shared copy (add `--copy` for independent copies, `-y` to skip the prompts):
 
 ```bash
 # install into whatever agent(s) you have
@@ -45,10 +47,12 @@ npx skills add gamedev-skills/awesome-gamedev-agent-skills -g
 npx skills add gamedev-skills/awesome-gamedev-agent-skills --skill godot-tilemap --skill platformer
 ```
 
-Companions: `npx skills list` (what's installed), `npx skills update` (pull latest), and
-`npx skills remove` (uninstall). This is the recommended path for Cursor, Windsurf, Cline, Codex,
-Gemini CLI, GitHub Copilot, Kiro, and most other agents. The sections below cover each agent's
-native or manual route if you'd rather not use the CLI.
+Companions: `npx skills list` (what's installed), `npx skills check` (look for updates),
+`npx skills update` (pull latest), and `npx skills remove` (uninstall). This is the recommended
+path for Cursor, Windsurf, Codex, Gemini CLI, GitHub Copilot, Kiro, and most other agents. For
+Cline, check that the skills appear afterwards: the CLI writes Cline installs to `.agents/skills/`,
+which Cline's own docs do not list (see [Cline](#cursor--windsurf--cline-native-skills) below).
+The sections below cover each agent's native or manual route if you'd rather not use the CLI.
 
 ## Claude Code (plugin — recommended)
 
@@ -59,7 +63,7 @@ so you can install it without cloning or copying files. Add the marketplace once
 claude plugin marketplace add gamedev-skills/awesome-gamedev-agent-skills
 ```
 
-Easiest — install the router and all 68 skills in one command:
+Easiest — install the router and all 77 skills in one command:
 
 ```bash
 claude plugin install gamedev@awesome-gamedev-agent-skills
@@ -69,13 +73,20 @@ Or install just what you use (each engine and category is its own plugin):
 
 ```bash
 claude plugin install router@awesome-gamedev-agent-skills        # always install this
-claude plugin install godot@awesome-gamedev-agent-skills         # engine: godot | unity | unreal | web-engines | other-engines
+claude plugin install godot@awesome-gamedev-agent-skills         # engine: godot | unity | unreal | ebitengine | web-engines | other-engines
 claude plugin install disciplines@awesome-gamedev-agent-skills   # cross-engine concepts
 claude plugin install genres@awesome-gamedev-agent-skills        # genre templates
 claude plugin install workflows@awesome-gamedev-agent-skills     # jam / prototype / shipping
 ```
 
-Verify with `/plugin` or `/skills` inside Claude Code.
+Verify with `/plugin` or `/skills` inside Claude Code, or `claude plugin list` in your shell. Plugin
+skills are namespaced by plugin, so to invoke one directly type `/<plugin>:<skill>`, for example
+`/gamedev:router` or `/godot:godot-tilemap`; automatic selection by description works as usual.
+
+Add `--scope project` to `claude plugin marketplace add` and `claude plugin install` to record
+them in the project's settings and share them with your team. To pick up a new release, run
+`claude plugin marketplace update awesome-gamedev-agent-skills`, then
+`claude plugin update gamedev@awesome-gamedev-agent-skills` (or the plugin you installed).
 
 ## Claude Code (manual copy)
 
@@ -158,26 +169,31 @@ npx skills add gamedev-skills/awesome-gamedev-agent-skills -a gemini-cli   # or:
 
 ## Claude Agent SDK (Python)
 
-Skills are filesystem artifacts under `.claude/skills/`; load them by setting
-`setting_sources`:
+Skills are filesystem artifacts under `.claude/skills/` (project) or `~/.claude/skills/` (user).
+Default `query()` options already load both sources; if you set `setting_sources` yourself, keep
+`"user"` and `"project"` in it or no skills are discovered:
 
 ```python
 from claude_agent_sdk import ClaudeAgentOptions
 
 options = ClaudeAgentOptions(
     cwd="/path/to/project",                 # contains .claude/skills/
-    setting_sources=["user", "project"],    # REQUIRED, or no skills are discovered
-    skills="all",                           # or ["godot-tilemap", ...]
-    allowed_tools=["Read", "Write", "Bash", "Skill"],
+    setting_sources=["user", "project"],    # only needed when overriding the default sources
+    skills="all",                           # or ["godot-tilemap", ...]; adds the Skill tool for you
+    allowed_tools=["Read", "Write", "Bash"],
 )
 ```
 
 ## Claude.ai
 
-1. Settings → Capabilities → enable **Code execution**.
-2. Zip the skill folder so that the folder (named exactly like `name`) is the zip root and
-   `SKILL.md` sits inside it.
-3. Customize → Skills → **Upload**.
+Skills run in Claude's code sandbox and are available on Pro, Max, Team, and Enterprise plans
+([Claude skills docs](https://claude.com/docs/skills/how-to)).
+
+1. Settings → Capabilities → turn on **Code execution and file creation** (on Team and Enterprise,
+   an Owner turns it on under Organization settings → Capabilities).
+2. Zip the skill folder from its parent directory so that the folder (named exactly like `name`)
+   is the zip root and `SKILL.md` sits inside it: `zip -r godot-tilemap.zip godot-tilemap/`.
+3. Customize → Skills → upload the ZIP, then turn the skill on.
 
 Upload the complete skill folder so bundled references, scripts, and assets remain available.
 
@@ -191,16 +207,33 @@ the universal CLI (`npx skills add gamedev-skills/awesome-gamedev-agent-skills -
 # Cursor — project; use ~/.cursor/skills for global. Cursor also reads .agents/skills and .claude/skills
 mkdir -p .cursor/skills && cp -R skills/godot/godot-tilemap .cursor/skills/
 
-# Windsurf (Cascade) — global lives at ~/.codeium/windsurf/skills/
+# Windsurf / Devin Desktop (Cascade) — .devin/skills is preferred in current releases;
+# .windsurf/skills is still read. Global: ~/.codeium/windsurf/skills/ or ~/.config/devin/skills/
 mkdir -p .windsurf/skills && cp -R skills/godot/godot-tilemap .windsurf/skills/
 
-# Cline — also reads .claude/skills/ ; enable via Settings → Features → Enable Skills
+# Cline — also reads .clinerules/skills/ and .claude/skills/ ; global: ~/.cline/skills/
 mkdir -p .cline/skills && cp -R skills/godot/godot-tilemap .cline/skills/
 ```
 
-Copy `router` into the same directory so the agent can route requests. Each editor surfaces skills
-by description and via `/skill-name`; the per-agent paths are in
+Copy `router` into the same directory so the agent can route requests. Cursor and Cline also
+accept `/skill-name`; Cascade uses `@skill-name` to force a skill. The per-agent paths are in
 [`COMPATIBILITY.md`](COMPATIBILITY.md).
+
+## GitHub Copilot
+
+Copilot reads project skills from `.github/skills/`, `.claude/skills/`, or `.agents/skills/`, and
+personal skills from `~/.copilot/skills/` or `~/.agents/skills/`
+([docs](https://docs.github.com/en/copilot/concepts/customizations/agent-skills)). Copy the
+skills into one of those directories as above, or use GitHub CLI 2.90.0 or later, whose
+`gh skill` command is in public preview:
+
+```bash
+gh skill install gamedev-skills/awesome-gamedev-agent-skills --all           # every skill + router
+gh skill install gamedev-skills/awesome-gamedev-agent-skills godot-tilemap   # one skill
+```
+
+`gh skill` writes source-tracking metadata into each installed `SKILL.md` so `gh skill update`
+can find newer versions; `--agent` and `--scope project|user` choose where the files go.
 
 ## Verify after installing
 

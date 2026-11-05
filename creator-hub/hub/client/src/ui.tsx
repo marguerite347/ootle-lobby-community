@@ -110,7 +110,7 @@ function hueOf(id: string) { let h = 0; for (let i = 0; i < id.length; i++) h = 
 // muted looping clip while visible when one exists (e.g. a live app-webpage capture), or
 // a styled animated placeholder. Never a fabricated screenshot.
 export type CardMediaResource = Pick<Resource,'id'|'ecosystem'|'native'|'title'|'preview'> & {popularity?:Resource['popularity']};
-export function ResourceCardMedia({ r, className, metrics, interactive = true, showControls = false }: { r: CardMediaResource; className?: string; metrics?: ReactNode; interactive?: boolean; showControls?: boolean }) {
+export function ResourceCardMedia({ r, className, metrics, interactive = true, showControls = false, showEcosystem = true }: { r: CardMediaResource; className?: string; metrics?: ReactNode; interactive?: boolean; showControls?: boolean; showEcosystem?: boolean }) {
   const [failed, setFailed] = useState(false);
   const [hover, setHover] = useState(false);
   const [visible, setVisible] = useState(false);
@@ -163,7 +163,7 @@ export function ResourceCardMedia({ r, className, metrics, interactive = true, s
         </div>
       )}
       {video && mediaReady && (!walkthrough || interactive) && <video ref={vref} className={`media-video ${playing || (walkthrough && mediaReady) ? 'on' : ''} ${walkthrough ? 'recorded-walkthrough' : ''}`} src={video} poster={thumbnail?.src} aria-label={`${r.title} recording`} controls={walkthrough} muted loop={!walkthrough} playsInline preload="none" onClick={event => { if(walkthrough) {event.stopPropagation();} }} onPlaying={() => setPlaying(true)} onPause={() => setPlaying(false)} onError={() => setPlaying(false)} />}
-      <div className="media-badges"><EcosystemBadge r={r} /></div>
+      {showEcosystem && <div className="media-badges"><EcosystemBadge r={r} /></div>}
       <div className="media-pop">{metrics ?? (r.popularity ? <PopularityChip p={r.popularity} compact /> : null)}</div>
     </div>
   );

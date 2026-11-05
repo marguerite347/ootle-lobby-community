@@ -118,6 +118,17 @@ deprecated convenience path as a substitute for owning the actual Animator and t
 - Prefer `Humanoid:Move()`/standard controls for ordinary avatar locomotion. Directly changing
   `AssemblyLinearVelocity` is an instantaneous physical action; use forces/constraints or impulses
   when continuous or instantaneous physics is the real intent.
+- To rebind movement/jump or add actions like sprint, prefer the Input Action System
+  (`InputContext`/`InputAction`/`InputBinding`, defined at edit time and cross-device)
+  over hooking `UserInputService` directly. Default player and character control scripts
+  run on this system when `Workspace.PlayerScriptsUseInputActionSystem` is enabled,
+  exposing default `PlayerScripts` contexts; give your own `InputContext` a higher
+  `Priority` (and `Sink`) to take precedence over the default bindings. See the
+  `roblox-ui` input and navigation reference for the UI-focus side of this.
+- Check whether the place opted into the Character Controller Library (beta; Avatar Settings ⟩
+  Movement ⟩ Abilities) or a `ControllerManager` setup. Those replace `HumanoidStateType`-driven
+  logic with abilities/controllers, so extend that system instead of layering Humanoid state
+  changes on top of it.
 - Never grant damage or movement authority because a client owns its character physics. Validate
   cross-player consequences on the server.
 - Tools move between Backpack and Character during equip; listen to lifecycle/state rather than
@@ -154,3 +165,4 @@ deprecated convenience path as a substitute for owning the actual Animator and t
 - `https://create.roblox.com/docs/characters`
 - `https://create.roblox.com/docs/animation/using`
 - `https://create.roblox.com/docs/characters/appearance`
+- `https://create.roblox.com/docs/characters/character-controller-library`

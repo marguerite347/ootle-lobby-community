@@ -13,12 +13,17 @@ author's primary monitor. This reference targets Roblox's rolling platform APIs.
    layouts instead of manually positioning each child.
 4. Use offsets for bounded component dimensions and spacing; use scale for proportional placement
    and flexible region size. Inspect `AbsoluteSize`, not device names, for layout breakpoints.
+   In a styled project, a `StyleQuery` (`MinSize`/`MaxSize`/`AspectRatioRange`, or
+   `PreferredInput`) can switch `@`-selector rules at a breakpoint without a resize script.
 
 ## Roblox layout primitives
 
 | Need | Primitive | Check |
 |---|---|---|
 | vertical/horizontal flow | `UIListLayout` | `Padding`, alignment, flex behavior, content size |
+| distribute a row/column's spare space | `UIListLayout` `HorizontalFlex`/`VerticalFlex` | set fill direction first; `UIFlexAlignment` Fill/SpaceBetween/SpaceAround/SpaceEvenly |
+| align or stretch items across their line | `UIListLayout` `ItemLineAlignment` | Stretch fills the cross-axis; aligns uneven item heights/widths |
+| make one item absorb the variable space | `UIFlexItem` (`FlexMode`) | child of the flexing item; `UIFlexMode` Fill/Grow/Shrink/Custom |
 | uniform collection | `UIGridLayout` | cell size at narrow/wide bounds; scroll canvas |
 | true rows and columns | `UITableLayout` | headers and cell alignment; avoid for card collections |
 | inner spacing | `UIPadding` | use one spacing scale; include it in width calculations |
@@ -28,6 +33,30 @@ author's primary monitor. This reference targets Roblox's rolling platform APIs.
 | min/max component size | `UISizeConstraint` | test both limits, not only preferred width |
 | bounded text scaling | `UITextSizeConstraint` | still test localization and TV distance |
 | deliberate subtree zoom | `UIScale` | avoid using one scale as the entire responsive system |
+
+### Flex distribution
+
+Flex lets a `UIListLayout` share a row or column's spare space without manual
+`AbsoluteSize` math. Set the fill direction, then set `HorizontalFlex` (or `VerticalFlex`)
+to a `UIFlexAlignment` value to distribute space along that axis, and `ItemLineAlignment`
+to align or stretch items across the line. To make one specific item absorb the variable
+space (fixed labels at both ends, a flexible bar between), parent a `UIFlexItem` to that
+item and set its `FlexMode`.
+
+```lua
+-- Tab bar whose tabs share the width equally, whatever the count:
+tabBar.UIListLayout.FillDirection = Enum.FillDirection.Horizontal
+tabBar.UIListLayout.HorizontalFlex = Enum.UIFlexAlignment.Fill
+
+-- Slider row: the labels keep their size, the track fills the gap between them.
+local grow = Instance.new("UIFlexItem")
+grow.FlexMode = Enum.UIFlexMode.Fill
+grow.Parent = sliderTrack -- a sibling under the row's UIListLayout
+```
+
+Prefer a `UIGridLayout` when cells must align strictly in both axes; reach for flex only
+where a row/column genuinely needs variable distribution, since it adds a small layout
+cost when resizing or adding/removing items.
 
 ## Safe areas and reserved controls
 
@@ -83,4 +112,6 @@ fixture unchanged.
 - `https://create.roblox.com/docs/ui/on-screen-containers`
 - `https://create.roblox.com/docs/ui/position-and-size`
 - `https://create.roblox.com/docs/ui/size-modifiers`
+- `https://create.roblox.com/docs/ui/list-flex-layouts`
+- `https://create.roblox.com/docs/ui/styling`
 - `https://create.roblox.com/docs/production/publishing/adaptive-design`

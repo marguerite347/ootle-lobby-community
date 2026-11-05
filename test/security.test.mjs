@@ -86,7 +86,7 @@ test('navigation rejects script schemes, credential URLs and protocol-relative t
 });
 test('public bundled downloads are digest-bound and never accept a runtime-created skill',async t=>{
  const base=await serve(t,createInspirationLobby());
- const catalog=await (await fetch(base+'/api/skill-market')).json();assert.equal(catalog.listings.length,196);
+ const catalog=await (await fetch(base+'/api/skill-market')).json();assert.equal(catalog.listings.length,200);
  const response=await fetch(base+'/api/skill-market/readable-code/download',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({visitor:'security-regression-fixture'})});
  assert.equal(response.status,200);const bundle=await response.json();
  for(const [name,body] of Object.entries(bundle.files))assert.equal(createHash('sha256').update(body).digest('hex'),bundle.sha256[name]);

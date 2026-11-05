@@ -3,6 +3,25 @@ import assert from 'node:assert/strict';
 import {readFileSync,readdirSync} from 'node:fs';
 const internalReviewWording=/\b(?:untested|unverified|not\s+(?:(?:independently|yet)\s+)?(?:tested|verified)|(?:runtime|hosting|availability)\s+(?:has\s+)?not\s+been\s+verified)\b/i;
 const read=path=>JSON.parse(readFileSync(new URL('../'+path,import.meta.url),'utf8'));
+test('game skill cards keep concise summaries and preserve complete instructions',()=>{
+ const entries=read('skills/hub-catalog.json').filter(entry=>entry.creatorId==='gamedev-skills');
+ const summaries=new Set();
+ for(const entry of entries){
+  assert.ok(entry.shortSummary?.trim(),`${entry.id}: missing authored summary`);
+  assert.ok(entry.shortSummary.length<=160,`${entry.id}: summary too long`);
+  assert.doesNotMatch(entry.shortSummary,internalReviewWording);
+  assert.ok(!summaries.has(entry.shortSummary),`${entry.id}: duplicate summary`);
+  summaries.add(entry.shortSummary);
+  assert.ok(entry.description?.trim(),`${entry.id}: preserve detailed description`);
+  if(entry.discoveryUrl){
+   assert.match(entry.discoveryUrl,/^https:\/\/github\.com\//);
+   assert.ok(entry.discoveryNote?.includes('No separate public original announcement'));
+   assert.equal(entry.preview?.source,'Docs walkthrough');
+   assert.match(entry.preview?.video||'',/\.mp4$/);
+   assert.match(entry.preview?.image||'',/\.png$/);
+  }
+ }
+});
 test('every curated project and builder reference has distinct authored front copy',()=>{
  const submissionFolders=readdirSync(new URL('../content/submissions/',import.meta.url),{withFileTypes:true}).filter(x=>x.isDirectory()).map(x=>'submissions/'+x.name);
  const entries=['projects','community-projects',...submissionFolders].flatMap(folder=>readdirSync(new URL('../content/'+folder+'/',import.meta.url)).filter(f=>f.endsWith('.json')).map(f=>read('content/'+folder+'/'+f)));
