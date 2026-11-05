@@ -1,9 +1,9 @@
 {
   "slug": "hearth",
   "title": "Hearth",
-  "summary": "Confidential humanitarian cash-aid prototype with household enrollment, duplicate-entitlement checks and replacement wallets. The browser replays the creator’s recorded Esmeralda verifier results; it decrypts nothing itself. October 23 inspection showed Household A’s 3000 HEARTH grant and the auditor’s different view of all amounts, with public household counts and total funding. MIT source, template and transaction links are provided by the creator. No grant or wallet transaction was performed. Cohorts, timing and public counts remain visible; privacy and duplicate-enrollment claims depend on the documented registration model. Shared for Web3 for Social Good, not presented as an October contest entry.",
+  "summary": "Humanitarian cash-aid template with household enrollment, duplicate-tag checks and wallet replacement. November 5 review: the public page replays the creator’s recorded Esmeralda verifier results and decrypts nothing itself; all five viewpoints remain accessible. The historical programme component is not found after the testnet reset. MIT source cfcc3324 is unchanged with no releases. The public sees household counts, cohorts and total funding; the auditor sees grant amounts without spending power, while households see their own notices. Registration uniqueness depends on trustworthy field registration and salt handling; it does not prove that a person is real. The six-page pitch and creator entry describe merchant voucher mode, governance changes, feature-phone access and an NGO pilot as future work. The October recording is retained as a concept overview of these recorded results. Creator-video narration remains unavailable to this review because no transcript or supported media download is provided. No enrollment, aid payment or wallet action was performed.",
   "cardSummary": "Explore confidential aid grants from household, donor and auditor perspectives while keeping individual amounts selectively visible.",
-  "cardStatus": "Browser demo · Testnet",
+  "cardStatus": "Interactive walkthrough · Testnet",
   "creator": "deeznertsz / XachP",
   "sourceUrl": "https://www.reddit.com/r/tari/comments/1xc689n/hearth_confidential_humanitarian_cash_aid_built/",
   "publishedAt": "2026-10-22T02:09:38.621Z",
@@ -24,7 +24,7 @@
   "media": {
     "image": "/previews/community/resource-hearth-20261023.jpg",
     "video": "/previews/community/resource-hearth-20261023.mp4",
-    "label": "App demo",
+    "label": "Concept overview",
     "sourceUrl": "https://www.reddit.com/r/tari/comments/1xc689n/hearth_confidential_humanitarian_cash_aid_built/",
     "capturedAt": "2026-10-23T17:54:15.146Z",
     "reviewedAt": "2026-10-23T17:58:45.654756+00:00",
@@ -32,5 +32,19 @@
   },
   "resourceIds": [
     "tari-ootle:component:hearth"
+  ],
+  "discussionLinks": [
+    {
+      "url": "https://dorahacks.io/build/50120",
+      "platform": "DoraHacks"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Ye-5upF1rfM",
+      "platform": "YouTube"
+    },
+    {
+      "url": "https://x.com/LUNNTHEDEV/status/2113090097620906275",
+      "platform": "X"
+    }
   ]
 }

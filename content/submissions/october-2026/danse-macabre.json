@@ -1,7 +1,7 @@
 {
   "slug": "danse-macabre",
   "title": "Danse Macabre",
-  "summary": "Werewolf without a game master: five players jointly shuffle one wolf into a hidden deck, then submit sealed night actions whose total reveals the victim. The public site offers a solo browser session with four ghosts and an invite-link group mode on Esmeralda testnet. The creator notes that solo ghosts share the host tab, so privacy matters between separate players; table existence, seats, timing and fees remain public. November 2 review covered the MIT repository, public explanation and linked proof/threat-model pages. The recording is a website walkthrough, not a completed game or an independent cryptographic audit. The November 2 Ootle testnet reset may require creator redeployment. Optional stakes can be forfeited by a seat that stalls the table; the creator documents a 48–96 minute closure window. No game, stake or transaction was started during this review. November 2 organizer notice: Esmeralda testnet was reset; entrants were asked to republish templates and update their submission versions where applicable. Earlier recordings document their capture dates.",
+  "summary": "Werewolf without a game master: five players jointly shuffle hidden roles, then submit sealed night actions whose total reveals the victim. November 5 review: the public explanation and solo/group entry points load, while the historical game component linked in PROOF.md is not found after the testnet reset. MIT source 2341dc3 has no new releases. The creator’s October 31 video explains the design; its narration describes 33 engine tests, while the repository specifies 25 engine tests plus eight prover tests. These are creator-reported results. Solo ghosts share the host tab, so privacy matters between separate people; table existence, seat keys, posting, timing, fees and dead players’ roles remain public. A stalled seat can forfeit optional stakes, with a documented 48–96 minute closure window. The November 2 recording remains a walkthrough of the public explanation and privacy model. No game, stake or transaction was started during this review.",
   "cardSummary": "Play five-seat Werewolf with jointly shuffled hidden roles and sealed night actions on Tari Ootle.",
   "cardStatus": "Web game · Testnet · Optional stakes can be forfeited",
   "creator": "yasaswip012",
@@ -24,7 +24,7 @@
     "capturedAt": "2026-11-02T14:39:31.649880+00:00",
     "sourceRevision": "2341dc39b67f2f3491699a079bdd0103f1efedb5",
     "kind": "public-page",
-    "credit": "Source walkthrough — game design and privacy model; no gameplay or transaction performed."
+    "credit": "Docs walkthrough"
   },
   "discussionLinks": [
     {
