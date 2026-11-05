@@ -1,7 +1,7 @@
 {
   "slug": "dead-drop-davidjsourcing",
   "title": "Dead Drop",
-  "summary": "November 4 availability: the public landing page loads, but the Hunt screen stays at “reading the stones” and its contract read returns HTTP 404. The documented epoch-13031 target and October 31 walkthrough are historical; they do not establish a working post-reset hunt. No wallet, funding or claim action was performed. David J’s riddle-and-stealth-output app combines an encrypted memo, answer-derived signing key and time conditions. Correct answers decrypt locally; claiming and returning funds require transactions. Public riddles can be guessed offline, first valid claim wins, and browser-stored keys need a backup. The Midnight Grave uses epoch 13031; the creator revised its estimated opening to early November rather than a fixed Halloween time. October 31 review covered the source, original announcement and public landing page. The recording shows the public explanation only; no funding, claim or return was attempted. This is a separate community project from the Workbench Dead Drop social-deduction game. November 2 organizer notice: Esmeralda testnet was reset; entrants were asked to republish templates and update their submission versions where applicable. Earlier recordings document their capture dates.",
+  "summary": "November 5 availability: the public landing page loads, but the Hunt screen stays at “reading the stones” and its contract read returns HTTP 404. The documented epoch-13031 target and October 31 walkthrough are historical; they do not establish a working post-reset hunt. No wallet, funding or claim action was performed. David J’s riddle-and-stealth-output app combines an encrypted memo, answer-derived signing key and time conditions. Correct answers decrypt locally; claiming and returning funds require transactions. Public riddles can be guessed offline, first valid claim wins, and browser-stored keys need a backup. The Midnight Grave uses epoch 13031; the creator revised its estimated opening to early November rather than a fixed Halloween time. October 31 review covered the source, original announcement and public landing page. The recording shows the public explanation only; no funding, claim or return was attempted. This is a separate community project from the Workbench Dead Drop social-deduction game. November 2 organizer notice: Esmeralda testnet was reset; entrants were asked to republish templates and update their submission versions where applicable. Earlier recordings document their capture dates. The full creator video was reviewed November 5; its claims and Halloween timing document an earlier deployment. The retained October 31 recording shows the landing page and explanatory text.",
   "cardSummary": "Explore riddle-locked messages and testnet tokens with timed claims and refunds for unclaimed drops.",
   "cardStatus": "Web app · Testnet · Hunt unavailable",
   "creator": "davidj_builds",
@@ -24,7 +24,7 @@
     "capturedAt": "2026-10-31T09:53:29.349Z",
     "sourceRevision": "e68360ee7fb978d98573aa7861e2cb1bf5047532",
     "kind": "public-page",
-    "credit": "Source/docs walkthrough — public landing page, privacy layers and timed hunt explanation; no wallet actions."
+    "credit": "Docs walkthrough"
   },
   "discussionLinks": [
     {
