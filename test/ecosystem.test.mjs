@@ -6,7 +6,9 @@ test('source references deduplicate canonical repositories without granting runt
   const result=withEcosystemResources([{id:'old-connector-id',repoUrl:entry.repoUrl}], [entry]);
   assert.equal(result.length,1);assert.equal(result[0].id,entry.id);
   assert.equal(result[0].demoUrl,null);assert.equal(result[0].verification,'source-attested');
-  assert.match(result[0].summary,/claim untested/);
+  assert.match(result[0].summary,/no wallet was created or claim submitted/);
+  assert.equal(entry.cardStatus,'Testnet only');
+  assert.doesNotMatch(entry.status,/claim untested/i);
   assert.throws(()=>withEcosystemResources([], [{...entry,demoUrl:'https://example.com'}]));
   assert.throws(()=>withEcosystemResources([], [{...entry,sourceUrl:'http://localhost'}]));
 });
