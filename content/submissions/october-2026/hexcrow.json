@@ -1,14 +1,14 @@
 {
   "slug": "hexcrow",
   "title": "Hexcrow",
-  "summary": "Milestone escrow using a stealth output, an approval path, a timeout refund and jointly signed mediator paths. The public invoice book records hashes, one-time keys, deadlines and status; role-specific copies disclose invoice text and amounts. November 4 review found that the website explicitly replays the archived October 29 run: the November 2 Esmeralda reset removed its template, book and transactions. The creator reports updated source using ootle-rs 0.31 and tari_template_lib 0.37 with 19 engine tests, while a replacement deployment is waiting for test funds. The refreshed recording switches public, client and accountant copies of the archived invoice; it performs no funding, wallet action or new transaction. Mediator judgment remains trusted, fees and timing remain visible, and the demo’s published throwaway keys must not hold value.",
+  "summary": "Milestone escrow with confidential invoice amounts, approval, timeout refunds and jointly signed mediator paths. November 5 review found a public replay of the creator’s November 4 run on the reset Esmeralda network, replacing the earlier waiting-for-test-funds state. The creator reports four invoices and ten refused attacks using the same v4 rules, ootle-rs 0.31 and tari_template_lib 0.37. The public invoice book exposes hashes, one-time keys, deadlines and status; client and accountant copies show invoice details. The recording switches those public replay views without a wallet or new transaction. Mediator judgment remains trusted; fees and timing remain visible. The browser reads an indexer without verifying its proofs, and demo throwaway keys must not hold value. The October 29 run and prior recordings remain historical evidence.",
   "cardSummary": "Replay confidential milestone invoices from public, client, contractor, mediator and accountant views to see who can read each detail.",
-  "cardStatus": "Archived replay · Testnet",
+  "cardStatus": "Web app · Testnet",
   "creator": "kasbsquall",
   "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/35",
   "publishedAt": "2026-10-29T17:51:40.929Z",
-  "updatedAt": "2026-10-30T00:10:36.713Z",
-  "sourceContentSha256": "003f96a0287c134dc201c5d567b48b24c2e5f8bdac79b213fec6ec3750743663",
+  "updatedAt": "2026-11-05T04:02:01.833Z",
+  "sourceContentSha256": "07b362759660c836c83ce83aab6624da4e6ba98aea8f463f82001c80f9e5058c",
   "repoUrl": "https://github.com/kasbsquall/hexcrow",
   "demoUrl": "https://kasbsquall.github.io/hexcrow/",
   "ecosystem": "tari-ootle",
@@ -19,12 +19,12 @@
     }
   ],
   "recording": {
-    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-hexcrow-20261104.mp4",
-    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-hexcrow-20261104.jpg",
-    "capturedAt": "2026-11-04T11:07:32.176749+00:00",
-    "sourceRevision": "f7e939eebb5ad19206f2b3ed17b035c21a8b2e03",
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-hexcrow-republished-20261105.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-hexcrow-republished-20261105.png",
+    "capturedAt": "2026-11-05T10:56:14.089Z",
+    "sourceRevision": "c1986a3a95dff9a745aba42c0154ae0bf0babde4",
     "kind": "public-page",
-    "credit": "App demo — archived testnet replay"
+    "credit": "App demo"
   },
   "discussionLinks": [
     {
