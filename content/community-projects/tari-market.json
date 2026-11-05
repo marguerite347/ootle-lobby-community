@@ -2,7 +2,7 @@
   "slug": "tari-market",
   "title": "Tari Market",
   "creator": "AllGasNoBrakes",
-  "summary": "A community marketplace concept with testnet escrow and seller ratings. The published site currently requires sign-in and its previously listed GitHub repository is unavailable. The cover documents the public directory listing.",
+  "summary": "A community marketplace concept with Ootle testnet escrow and seller ratings. November5 review found the public wiki description available, while the app required sign-in and its creator-linked GitHub repository returned404 in both API and signed-in browser. The recording walks through the public directory description. No public original announcement was found in retained evidence; the actual wiki discovery page is preserved.",
   "sourceUrl": "https://wiki.tari.com/resources:app_directory:tari_market",
   "sourceLabel": "Project source",
   "repoUrl": null,
@@ -25,13 +25,13 @@
   "media": {
     "image": "/previews/community/tari-market.jpg",
     "video": "/previews/community/tari-market.mp4",
-    "label": "Public source walkthrough",
+    "label": "Docs walkthrough",
     "sourceUrl": "https://wiki.tari.com/resources:app_directory:tari_market",
     "capturedAt": "2026-10-04T16:02:52.616125Z",
     "reviewedAt": "2026-10-04T16:02:52.616125Z",
     "sha256": "c169022b4cf24ef35b9f87d9560ec020c6785e85cd73222216c3436dbb20558e"
   },
   "demoUrl": "https://tari-market.johnnytsunami14.chatgpt.site/",
-  "cardSummary": "A marketplace concept pairing Ootle testnet escrow with seller ratings.",
-  "cardStatus": "Concept \u00b7 Sign-in required"
+  "cardSummary": "Explore a marketplace concept pairing Ootle testnet escrow with community seller ratings.",
+  "cardStatus": "Concept · Sign-in required"
 }
