@@ -1,7 +1,7 @@
 {
   "slug": "grave-robber",
   "title": "Grave Robber",
-  "summary": "Gothic 2D crypt explorer with a riddle ledger and local sandbox balance. October 24 inspection switched between explorer and ledger views; the recording shows Sandbox Sim with no wallet or bounty claim. MIT React/TypeScript source stores tomb state in browser localStorage and checks answers with SHA-256. The reviewed wallet helper requests sendPrivately or shield, but can return generated transaction IDs after non-rejection errors and labels a request result confirmed without a finality check. Its claim request does not submit the riddle preimage to a bounty template. Treat the current experience as a sandbox prototype; the advertised on-chain bounty and front-running protection are not established by this implementation. November 2 organizer notice: Esmeralda testnet was reset; entrants were asked to republish templates and update their submission versions where applicable. Earlier recordings document their capture dates.",
+  "summary": "Browser sandbox pairing a 2D catacomb explorer with a crypt-riddle ledger. November 5 review: the public page loads with a demo address, four sample crypts and a simulated balance; the Crypt Ledger and privacy explanation remain reachable. MIT source revision a20bccb is unchanged with no published releases. Creator documentation describes a separate Sapient wallet flow, but this review did not connect a wallet, create a crypt or claim a bounty. The retained October recording demonstrates the sandbox only. The original Reddit announcement remains removed by Reddit filters; its permalink, creator forum submissions and earlier evidence are preserved.",
   "cardSummary": "Explore candlelit catacombs and inspect crypt riddles in a browser sandbox with a simulated bounty ledger.",
   "cardStatus": "Sandbox game · Testnet prototype",
   "creator": "r4id3n",
@@ -24,7 +24,7 @@
     "capturedAt": "2026-10-24T14:19:18.812Z",
     "sourceRevision": "a20bccb14085b9bbd6c6a1c89dcbffd6b7f34599",
     "kind": "public-page",
-    "credit": "App demo — Sandbox explorer and riddle ledger; no wallet, bounty claim or transaction."
+    "credit": "App demo"
   },
   "discussionLinks": [
     {
