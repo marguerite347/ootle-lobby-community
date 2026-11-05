@@ -1,9 +1,9 @@
 {
   "slug": "caravel-burn-wallet",
   "title": "Caravel Burn Wallet",
-  "summary": "Deposit-only Ootle burn template with no withdrawal method. Funds sent into it cannot be recovered. October 23 source and creator submission describe the integrated Caravel Burn page, public totals and private transfers. The public app reaches wallet setup before the Burn page; no wallet or deposit was created. Esmeralda testnet only. Existing footage is a source walkthrough, not a burn transaction. November 2 organizer notice: Esmeralda testnet was reset; entrants were asked to republish templates and update their submission versions where applicable. Earlier recordings document their capture dates.",
+  "summary": "Deposit-only Ootle template with no owner or withdrawal method; deposits cannot be recovered. November 5 source review: README revision a1d156b documents SDK 0.11 and WASM 0.47 integration examples. Its published October component returned “not found” in Veil at epoch 12,882, following the November 2 testnet reset notice. The public Caravel entry reaches wallet creation or recovery before Burn. The new recording is a walkthrough of the current README, including its historical deployment claims; it does not demonstrate a deposit or establish a replacement deployment. October bounty amounts and burned totals remain dated creator statements in the original discussions.",
   "cardSummary": "Explore a deposit-only Ootle template with public burn totals and private transfers into an irreversible vault.",
-  "cardStatus": "Testnet · Irreversible deposits",
+  "cardStatus": "Source code · Testnet · Irreversible deposits",
   "creator": "Okz",
   "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/24",
   "publishedAt": "2026-10-22T12:56:44.709Z",
@@ -19,12 +19,12 @@
     }
   ],
   "recording": {
-    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-caravel-burn-wallet-20261010.mp4",
-    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-caravel-burn-wallet-20261010.jpg",
-    "capturedAt": "2026-10-10T12:50:04.551362+00:00",
-    "sourceRevision": "1f1b29765487cdd36aa58b92c0320551f4a0dfd3",
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-caravel-burn-wallet-20261105.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-caravel-burn-wallet-20261105.jpg",
+    "capturedAt": "2026-11-05T15:24:02.713Z",
+    "sourceRevision": "a1d156b5332f0b11fe87403bedfb6c38c14b22b8",
     "kind": "public-page",
-    "credit": "Source/docs walkthrough — Original deposit-only template documentation; no deposit performed."
+    "credit": "Docs walkthrough"
   },
   "discussionLinks": [
     {
