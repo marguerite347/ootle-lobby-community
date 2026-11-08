@@ -21,7 +21,7 @@ export function createSkillMarket(root=runtimeDir,{readOnly=false}={}){
  const file=path.join(root,'skill-market.json');
  const read=()=>{if(readOnly)return {profiles:[],listings:[],events:[]};try{return JSON.parse(readFileSync(file,'utf8'));}catch(e){if(e.code==='ENOENT')return {profiles:[],listings:[],events:[]};throw e;}};
  const save=d=>{if(readOnly)fail('Community publishing is read-only.',410);mkdirSync(root,{recursive:true});writeFileSync(file+'.tmp',JSON.stringify(d,null,2),{mode:0o600});renameSync(file+'.tmp',file);};
- const native=()=>skillCatalog().map(s=>({id:`tari-${s.id}`,kind:'skill',title:s.title,description:s.description,version:s.version,creatorId:'tari',price:0,currency:'USD',publishedAt:null,lifecycle:s.lifecycle,nativeSlug:s.id,validation:s.validation.scope}));
+ const native=()=>skillCatalog().map(s=>({id:`tari-${s.id}`,kind:'skill',title:s.title,description:s.description,version:s.version,creatorId:'tari',price:0,currency:'USD',publishedAt:null,lifecycle:s.lifecycle,nativeSlug:s.id,sourceUrl:`https://github.com/marguerite347/ootle-lobby-community/tree/main/creator-hub/skills/${s.id}`,validation:s.validation.scope}));
  const publicProfile=p=>({id:p.id,name:p.name,bio:p.bio,showWork:p.showWork,showActivity:p.showActivity,projects:p.showWork?p.projects:[]});
  const secretMatches=(token,digest)=>typeof digest==='string'&&/^[a-f0-9]{64}$/.test(digest)&&timingSafeEqual(Buffer.from(hash(token)),Buffer.from(digest));
  const authorize=(d,id,token)=>{const p=d.profiles.find(x=>x.id===id);if(!p||typeof token!=='string'||!secretMatches(token,p.keyHash))fail('Profile edit key required',403);return p;};
@@ -47,6 +47,6 @@ export function createSkillMarket(root=runtimeDir,{readOnly=false}={}){
  const markdown=bundledSkillMarkdown(l.id)??(l.nativeSlug?skillMarkdown(l.nativeSlug):`---\nname: ${l.id}\ndescription: ${JSON.stringify(l.description)}\n---\n\n# ${l.title}\n\n`+sections.map(k=>`## ${k[0].toUpperCase()+k.slice(1)}\n\n${l[k]}\n`).join('\n'));
  const files=(readOnly?null:learning.bundle(l.id)?.files)??bundledSkillFiles(l.id)??{[l.kind==='skill'?'SKILL.md':'WORKFLOW.md']:markdown};
  const sha256=readOnly?verifyReviewedFiles(l.id,files):Object.fromEntries(Object.entries(files).map(([name,body])=>[name,hash(body)]));
- return {schemaVersion:1,sha256,kind:l.kind,metadata:l,files,installation:'Review instructions before use. Save the Markdown in a dedicated project skill/workflow folder; ask your agent to read it. Never overwrite existing project instructions. Native TariSkills may reference supporting files: use the matching repository checkout.',source:l.sourceUrl||(l.nativeSlug?`https://github.com/marguerite347/ootle-lobby/tree/main/creator-hub/skills/${l.nativeSlug}`:null)};}
+ return {schemaVersion:1,sha256,kind:l.kind,metadata:l,files,installation:'Review instructions before use. Save the Markdown in a dedicated project skill/workflow folder; ask your agent to read it. Never overwrite existing project instructions. Native TariSkills may reference supporting files: use the matching repository checkout.',source:l.sourceUrl||(l.nativeSlug?`https://github.com/marguerite347/ootle-lobby-community/tree/main/creator-hub/skills/${l.nativeSlug}`:null)};}
  };
 }

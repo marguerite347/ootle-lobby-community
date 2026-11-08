@@ -38,7 +38,7 @@ export default function LearningProgress({ slug }: { slug: string }) {
             ? "Mark as completed"
             : "Completed ✓"}
       </button>
-      <Link to="/insights">Insights & privacy →</Link>
+      <Link to="/insights">Insights & privacy</Link>
     </div>
   );
 }
