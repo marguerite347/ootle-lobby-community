@@ -59,10 +59,10 @@ export default function SkillMarket(){
      </div>
      <aside className="skill-detail-actions" aria-label="Use this skill">
        <p className="skill-detail-label">ADD IT TO YOUR LOADOUT</p><h3>Use it with your agent.</h3>
-       <p>Take the full bundle into your project, then give your agent a clear starting point.</p>
-       <button className="btn primary" disabled={busy||selected.price>0} onClick={()=>download(selected)}>{selected.price?'Paid download unavailable':busy?'Preparing bundle…':'Download bundle ↓'}</button>
+       <p>{selected.nativeSlug?'This download contains the Markdown guide. Use the source repository for its metadata, examples and supporting files.':'Take the full bundle into your project, then give your agent a clear starting point.'}</p>
+       <button className="btn primary" disabled={busy||selected.price>0} onClick={()=>download(selected)}>{selected.price?'Paid download unavailable':busy?'Preparing bundle…':selected.nativeSlug?'Download guide':'Download bundle'}</button>
        <button className="btn" onClick={async()=>{try{await navigator.clipboard.writeText(`Read the ${selected.kind==='skill'?'SKILL.md':'WORKFLOW.md'} I downloaded for ${selected.title}, version ${selected.version}. Review requirements and source links, preserve existing project instructions, then guide me through setup and verification. Ask before installing dependencies or making external changes. Do not claim success without checking the result.`);setNotice('Agent setup prompt copied.');}catch{setError('Clipboard unavailable. Follow the setup steps below.');}}}>Copy agent setup prompt</button>
-       <ol><li><strong>Unpack</strong><span>Extract the ZIP and keep its supporting files together.</span></li><li><strong>Add to your project</strong><span>Save the folder in your agent’s supported skills directory.</span></li><li><strong>Put it to work</strong><span>Paste the setup prompt. Review the steps and verify the result.</span></li></ol>
+       <ol><li><strong>Unpack</strong><span>{selected.nativeSlug?'Extract the guide ZIP. Keep the repository’s supporting files in their documented relative locations.':'Extract the ZIP and keep its supporting files together.'}</span></li><li><strong>Add to your project</strong><span>Save the folder in your agent’s supported skills directory.</span></li><li><strong>Put it to work</strong><span>Paste the setup prompt. Review the steps and verify the result.</span></li></ol>
        <small>{selected.price?'Checkout is not connected.':'Free bundle · Nothing runs automatically.'}</small>
        {notice&&<p className="skill-detail-feedback" role="status">{notice}</p>}{error&&<p role="alert">{error}</p>}
      </aside>

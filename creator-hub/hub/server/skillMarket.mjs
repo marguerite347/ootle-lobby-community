@@ -21,7 +21,7 @@ export function createSkillMarket(root=runtimeDir,{readOnly=false}={}){
  const file=path.join(root,'skill-market.json');
  const read=()=>{if(readOnly)return {profiles:[],listings:[],events:[]};try{return JSON.parse(readFileSync(file,'utf8'));}catch(e){if(e.code==='ENOENT')return {profiles:[],listings:[],events:[]};throw e;}};
  const save=d=>{if(readOnly)fail('Community publishing is read-only.',410);mkdirSync(root,{recursive:true});writeFileSync(file+'.tmp',JSON.stringify(d,null,2),{mode:0o600});renameSync(file+'.tmp',file);};
- const native=()=>skillCatalog().map(s=>({id:`tari-${s.id}`,kind:'skill',title:s.title,description:s.description,version:s.version,creatorId:'tari',price:0,currency:'USD',publishedAt:null,lifecycle:s.lifecycle,nativeSlug:s.id,validation:s.validation.scope}));
+ const native=()=>skillCatalog().map(s=>({id:`tari-${s.id}`,kind:'skill',title:s.title,description:s.description,version:s.version,creatorId:'tari',price:0,currency:'USD',publishedAt:null,lifecycle:s.lifecycle,nativeSlug:s.id,sourceUrl:`https://github.com/marguerite347/ootle-lobby-community/tree/main/creator-hub/skills/${s.id}`,validation:s.validation.scope}));
  const publicProfile=p=>({id:p.id,name:p.name,bio:p.bio,showWork:p.showWork,showActivity:p.showActivity,projects:p.showWork?p.projects:[]});
  const secretMatches=(token,digest)=>typeof digest==='string'&&/^[a-f0-9]{64}$/.test(digest)&&timingSafeEqual(Buffer.from(hash(token)),Buffer.from(digest));
  const authorize=(d,id,token)=>{const p=d.profiles.find(x=>x.id===id);if(!p||typeof token!=='string'||!secretMatches(token,p.keyHash))fail('Profile edit key required',403);return p;};
