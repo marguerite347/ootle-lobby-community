@@ -16,7 +16,7 @@ const pretty = (s: string) => s === 'guide' ? 'Guides & references' : s === 'pla
 
 function LearningResourceRow({ r }: { r: ReturnType<typeof learningResults>[number] }) {
   const href = r.learningHref || `/resource/${encodeURIComponent(r.id)}`;
-  if (!r.cardSummary || (!r.preview?.video && !r.discussionLinks?.length)) return <Link className="learn-row" to={r.learningHref || `/resource/${encodeURIComponent(r.id)}`}><div className={`learn-resource-icon ${r.native ? 'native' : ''}`} aria-hidden="true">{r.learningKind === 'skill' ? '≡' : r.native ? '✳' : '↗'}</div><div className="learn-row-body"><div className="learn-meta"><span>{pretty(ecoLabel(r.ecosystem))}</span><span>{pretty(r.format || 'resource')}</span>{r.level && <span>{pretty(r.level)}</span>}{r.lifecycle && <span>{r.lifecycle}</span>}</div><h3>{r.title}</h3><p>{r.cardSummary || r.summary}</p><small>{r.provenance.sourceName}{r.sharedBy ? ` · Shared by ${r.sharedBy.name}` : ''}{r.provenance.freshness === 'stale' ? ' · Last saved version, refresh pending' : ''}{r.learningKind === 'skill' ? ' · Read validation scope before use' : !r.native ? ' · External resource' : ''}</small></div><span className="learn-open">Read →</span></Link>;
+  if (!r.cardSummary || (!r.preview?.video && !r.discussionLinks?.length)) return <Link className="learn-row" to={r.learningHref || `/resource/${encodeURIComponent(r.id)}`}><div className={`learn-resource-icon ${r.native ? 'native' : ''}`} aria-hidden="true">{r.learningKind === 'skill' ? '≡' : r.native ? '✳' : '≡'}</div><div className="learn-row-body"><div className="learn-meta"><span>{pretty(ecoLabel(r.ecosystem))}</span><span>{pretty(r.format || 'resource')}</span>{r.level && <span>{pretty(r.level)}</span>}{r.lifecycle && <span>{r.lifecycle}</span>}</div><h3>{r.title}</h3><p>{r.cardSummary || r.summary}</p><small>{r.provenance.sourceName}{r.sharedBy ? ` · Shared by ${r.sharedBy.name}` : ''}{r.provenance.freshness === 'stale' ? ' · Last saved version, refresh pending' : ''}{r.learningKind === 'skill' ? ' · Read validation scope before use' : !r.native ? ' · External resource' : ''}</small></div><span className="learn-open">Read</span></Link>;
   const posts = (r.discussionLinks || []).filter((post, index, all) => all.findIndex(other => other.url === post.url) === index);
   return <article className="learn-row learn-resource-card">
     <div className="learn-card-media"><ResourceCardMedia r={r} showControls />{r.preview?.video && <span className="learn-card-caption">{recordingLabel(r.preview.source)}</span>}</div>
@@ -25,9 +25,9 @@ function LearningResourceRow({ r }: { r: ReturnType<typeof learningResults>[numb
       <Link to={href}><h3>{r.title}</h3></Link>
       <p>{r.cardSummary}</p>
       <div className="learn-card-creator">{r.creator?.name ? `by ${r.creator.name}` : r.sharedBy ? `Shared by ${r.sharedBy.name}` : r.provenance.sourceName}</div>
-      {!!posts.length && <div className="learn-card-sources">{posts.map(post => <ExternalLink key={post.url} href={safeHref(post.url)}>Discussion · {post.platform} ↗</ExternalLink>)}</div>}
+      {!!posts.length && <div className="learn-card-sources">{posts.map(post => <ExternalLink key={post.url} href={safeHref(post.url)}>Discussion · {post.platform}</ExternalLink>)}</div>}
       <details className="learn-card-details"><summary>Details</summary><p>{r.summary}</p>{r.preview?.source && <p>{r.preview.source}</p>}</details>
-      <Link className="learn-card-read" to={href} aria-label={`Read ${r.title}`}>Read guide →</Link>
+      <Link className="learn-card-read" to={href} aria-label={`Read ${r.title}`}>Read guide</Link>
     </div>
   </article>;
 }
@@ -74,10 +74,10 @@ export default function Learn() {
     <LobbyTrail section="Learn" />
     <header className="learn-intro">
       <div><p className="learn-eyebrow">LEARN / GUIDES & EXPLANATIONS</p><h1>Figure it out. Then go off.</h1><p className="learn-lede">Read tutorials, study examples and solve a specific problem. Choose a topic, then narrow by experience level or format.</p></div>
-      <Link to={destinationLink('/skills', params, ['q','category'])} className="learn-skills"><span>Want your agent to do the work?</span><strong>Get reusable instructions<br />in Skills →</strong><small>Download bundles and setup prompts</small></Link>
+      <Link to={destinationLink('/skills', params, ['q','category'])} className="learn-skills"><span>Want your agent to do the work?</span><strong>Get reusable instructions<br />in Skills</strong><small>Download bundles and setup prompts</small></Link>
     </header>
     {!selected.length && data && <section className="learn-paths" aria-label="Creator categories">
-      {data.categories?.filter(t => t.id !== 'references').map((t,i) => <button key={t.id} onClick={() => change('category',t.id)}><span className="learn-step">{String(i+1).padStart(2,'0')} / {t.items.length} resources</span><strong>{t.label} <span aria-hidden="true">↗</span></strong><span>{t.description}</span></button>)}
+      {data.categories?.filter(t => t.id !== 'references').map((t,i) => <button key={t.id} onClick={() => change('category',t.id)}><span className="learn-step">{String(i+1).padStart(2,'0')} / {t.items.length} resources</span><strong>{t.label}</strong><span>{t.description}</span></button>)}
     </section>}
     <section className="learn-browser" aria-label="Browse learning resources">
       <form className="learn-search" onSubmit={e => {e.preventDefault(); change('q',q.trim());}}>
@@ -89,12 +89,12 @@ export default function Learn() {
           <div className="learn-selects">{(['ecosystem','level','format'] as const).map(key => <label key={key}>{labels[key]}<select value={params.get(key) || ''} onChange={e => change(key,e.target.value)}><option value="">All {key === 'ecosystem' ? 'ecosystems' : key + 's'}</option>{params.get(key) && !data?.facets[key]?.[params.get(key)!] && <option value={params.get(key)!}>{pretty(params.get(key)!)}</option>}{Object.keys(data?.facets[key] || {}).sort().map(v => <option key={v} value={v}>{key === 'ecosystem' ? pretty(ecoLabel(v)) : pretty(v)}</option>)}</select></label>)}</div>
           {!!selected.length && <div className="learn-active" aria-label="Active filters">{selected.map(key => <button key={key} onClick={() => change(key,'')} aria-label={`Remove ${labels[key]} filter`}>{labels[key]}: {key === 'category' ? category?.label || params.get(key) : key === 'topic' ? topic?.label || params.get(key) : pretty(params.get(key)!)} <span aria-hidden="true">×</span></button>)}<button className="learn-clear" onClick={reset}>Clear all</button></div>}
           <div className="learn-result-heading"><h2>{category?.label || topic?.label || 'Guides & references'}</h2><span role="status">{err ? 'Library unavailable' : data ? `${rows.length} resource${rows.length === 1 ? '' : 's'}` : 'Loading resources'}</span></div>
-          {err ? <div className="learn-empty"><h3>We couldn’t load the library.</h3><p>Your filters are saved. Try loading it again.</p><button className="btn" onClick={() => setRetry(n => n+1)}>Retry</button></div> : !data ? <Spinner /> : rows.length === 0 ? <div className="learn-empty"><h3>No matches for this combination.</h3><p>Remove a filter above, or browse the full library to find another starting point.</p><button className="btn" onClick={reset}>Browse all guides</button><p>Looking for a tool? <Link to={destinationLink('/explore', params, ['q','ecosystem'])}>Search Discover →</Link></p></div> : <div className="learn-rows">{rows.slice(0,limit).map(r => <LearningResourceRow key={r.id} r={r} />)}</div>}
+          {err ? <div className="learn-empty"><h3>We couldn’t load the library.</h3><p>Your filters are saved. Try loading it again.</p><button className="btn" onClick={() => setRetry(n => n+1)}>Retry</button></div> : !data ? <Spinner /> : rows.length === 0 ? <div className="learn-empty"><h3>No matches for this combination.</h3><p>Remove a filter above, or browse the full library to find another starting point.</p><button className="btn" onClick={reset}>Browse all guides</button><p>Looking for a tool? <Link to={destinationLink('/explore', params, ['q','ecosystem'])}>Search Discover</Link></p></div> : <div className="learn-rows">{rows.slice(0,limit).map(r => <LearningResourceRow key={r.id} r={r} />)}</div>}
           {data && !err && rows.length > limit && <div className="learn-more"><p>Showing {Math.min(limit,rows.length)} of {rows.length.toLocaleString()}</p><button className="btn" onClick={()=>setLimit(n=>n+24)}>Show 24 more</button></div>}
         </div>
       </div>
     </section>
     <ShareLearning onShared={()=>setRetry(n=>n+1)}/>
-    <p className="learn-source-note">Guides explain concepts and techniques; reference collections point to further reading. For downloadable agent instructions, visit Skills. <Link to="/sources">View sources and freshness →</Link></p>
+    <p className="learn-source-note">Guides explain concepts and techniques; reference collections point to further reading. For downloadable agent instructions, visit Skills. <Link to="/sources">View sources and freshness</Link></p>
   </div>;
 }

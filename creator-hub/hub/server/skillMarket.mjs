@@ -47,6 +47,6 @@ export function createSkillMarket(root=runtimeDir,{readOnly=false}={}){
  const markdown=bundledSkillMarkdown(l.id)??(l.nativeSlug?skillMarkdown(l.nativeSlug):`---\nname: ${l.id}\ndescription: ${JSON.stringify(l.description)}\n---\n\n# ${l.title}\n\n`+sections.map(k=>`## ${k[0].toUpperCase()+k.slice(1)}\n\n${l[k]}\n`).join('\n'));
  const files=(readOnly?null:learning.bundle(l.id)?.files)??bundledSkillFiles(l.id)??{[l.kind==='skill'?'SKILL.md':'WORKFLOW.md']:markdown};
  const sha256=readOnly?verifyReviewedFiles(l.id,files):Object.fromEntries(Object.entries(files).map(([name,body])=>[name,hash(body)]));
- return {schemaVersion:1,sha256,kind:l.kind,metadata:l,files,installation:'Review instructions before use. Save the Markdown in a dedicated project skill/workflow folder; ask your agent to read it. Never overwrite existing project instructions. Native TariSkills may reference supporting files: use the matching repository checkout.',source:l.sourceUrl||(l.nativeSlug?`https://github.com/marguerite347/ootle-lobby/tree/main/creator-hub/skills/${l.nativeSlug}`:null)};}
+ return {schemaVersion:1,sha256,kind:l.kind,metadata:l,files,installation:'Review instructions before use. Save the Markdown in a dedicated project skill/workflow folder; ask your agent to read it. Never overwrite existing project instructions. Native TariSkills may reference supporting files: use the matching repository checkout.',source:l.sourceUrl||(l.nativeSlug?`https://github.com/marguerite347/ootle-lobby-community/tree/main/creator-hub/skills/${l.nativeSlug}`:null)};}
  };
 }
