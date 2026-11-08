@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-08",
+  "environment": "macOS arm64, Rust 1.99.1, wasm32-unknown-unknown",
+  "tools": {
+    "tari_template_lib": "0.38.0",
+    "tari_template_test_tooling": "0.50.1",
+    "rust": "1.99.1"
+  },
+  "scope": "Two engine-backed counter tests and release WASM build on macOS arm64 with Rust 1.99.1; no live-network or whole-engine security certification.",
+  "tests": [
+    "public_read_and_denied_write",
+    "later_failure_rolls_back_earlier_mutation"
+  ],
+  "results": {
+    "passed": 2,
+    "failed": 0,
+    "wasmBuild": "passed"
+  },
+  "lockSha256": "c6f9b459a12412abc4bae9996bdb3f5cf1c790775c34306ec65260f218538763",
+  "wasmSha256": "9d6962b20e52e220b09dc73b456e2d964872908835740df88a41ac1303a30a6a",
+  "commands": [
+    "cargo +1.99.1 test --locked --manifest-path templates/tari-counter/Cargo.toml",
+    "cargo +1.99.1 build --locked --release --target wasm32-unknown-unknown --manifest-path templates/tari-counter/Cargo.toml"
+  ],
+  "sourceRelease": "https://github.com/tari-project/tari-ootle/releases/tag/v0.50.1",
+  "networkActions": "None; local first-party counter engine tests only."
+}
