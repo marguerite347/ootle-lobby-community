@@ -8,16 +8,16 @@
     "local-engine"
   ],
   "tools": {
-    "tari_template_lib": "0.37.0",
-    "tari_template_test_tooling": "0.49.2",
+    "tari_template_lib": "0.38.0",
+    "tari_template_test_tooling": "0.50.1",
     "rust": "1.99.1"
   },
   "sourceCheckedAt": "2026-09-19",
-  "technicalValidatedAt": "2026-11-03",
+  "technicalValidatedAt": "2026-11-08",
   "validation": {
-    "scope": "Two engine-backed counter tests and release WASM build on Linux with Rust 1.99.1; no live-network or whole-engine security certification.",
+    "scope": "Two engine-backed counter tests and release WASM build on macOS arm64 with Rust 1.99.1; no live-network or whole-engine security certification.",
     "evidence": [
-      "evidence/counter-validation-2026-11-03.json"
+      "evidence/counter-validation-2026-11-08.json"
     ]
   },
   "sources": [
@@ -49,5 +49,21 @@
         "evidence/validation.json"
       ]
     }
-  }
+  },
+  "validationHistory": [
+    {
+      "tools": {
+        "tari_template_lib": "0.38.0",
+        "tari_template_test_tooling": "0.50.1",
+        "rust": "1.99.1"
+      },
+      "technicalValidatedAt": "2026-11-03",
+      "validation": {
+        "scope": "Two engine-backed counter tests and release WASM build on Linux with Rust 1.99.1; no live-network or whole-engine security certification.",
+        "evidence": [
+          "evidence/counter-validation-2026-11-03.json"
+        ]
+      }
+    }
+  ]
 }
