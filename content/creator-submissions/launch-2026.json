@@ -1,6 +1,6 @@
 {
   "threadUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503",
-  "checkedAt": "2026-11-02T23:12:51Z",
+  "checkedAt": "2026-11-09T13:46:29.767015+00:00",
   "entries": [
     {
       "id": "creator-503-3",
@@ -22,13 +22,15 @@
     {
       "id": "creator-503-4",
       "creator": "rajeshmullippa",
-      "title": "Privacy, fees & validator committees",
+      "title": "Privacy, fees and building on Ootle",
       "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/4",
       "publishedAt": "2026-10-30T07:00:47.718Z",
-      "updatedAt": "2026-10-30T08:41:33.572Z",
+      "updatedAt": "2026-11-05T02:06:48.734Z",
       "resourceIds": [
         "tari-ootle:learn:turbine-explainer",
-        "tari-ootle:learn:sharding-explainer"
+        "tari-ootle:learn:sharding-explainer",
+        "tari-ootle:learn:template-line-by-line",
+        "tari-ootle:learn:rajesh-confidential-stealth"
       ],
       "works": [
         {
@@ -40,9 +42,24 @@
           "title": "How Ootle splits the work",
           "format": "Reddit",
           "url": "https://www.reddit.com/r/tari/comments/1xj9tss/how_ootle_splits_the_work_256_shards_40validator/"
+        },
+        {
+          "title": "Choosing an Ootle resource type",
+          "format": "Reddit",
+          "url": "https://www.reddit.com/r/tari/comments/1xj93wa/confidential_or_stealth_a_builders_cheat_sheet/"
+        },
+        {
+          "title": "A first template, explained",
+          "format": "Article",
+          "url": "https://rajeshmullippa-collab.github.io/2026/11/03/first-ootle-template-line-by-line.html"
+        },
+        {
+          "title": "Confidential versus stealth",
+          "format": "Article",
+          "url": "https://rajeshmullippa-collab.github.io/2026/10/30/tari-ootle-confidential-vs-stealth.html"
         }
       ],
-      "note": "The forum post also names a privacy article and resource-type cheat sheet; direct links were not provided."
+      "note": null
     },
     {
       "id": "creator-503-5",
@@ -236,6 +253,270 @@
           "title": "Why does Tari need four mining algorithms?",
           "format": "Reddit",
           "url": "https://www.reddit.com/r/tari/s/LyXnbmcK9p"
+        }
+      ],
+      "note": null
+    },
+    {
+      "id": "creator-503-18",
+      "creator": "Terence",
+      "title": "Mining Tari on an iPhone",
+      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/18",
+      "publishedAt": "2026-11-03T13:51:16.019Z",
+      "updatedAt": "2026-11-04T03:57:27.984Z",
+      "resourceIds": [],
+      "works": [
+        {
+          "title": "Phone mining diary",
+          "format": "Reddit",
+          "url": "https://www.reddit.com/r/tari/comments/1xmt6vd/one_iphone_straight_into_the_tari_world_mining/"
+        },
+        {
+          "title": "Mining results poster",
+          "format": "Bluesky",
+          "url": "https://bsky.app/profile/terencelim.bsky.social/post/3mzfxwzbax22d"
+        },
+        {
+          "title": "iPhone mining walkthrough",
+          "format": "YouTube",
+          "url": "https://www.youtube.com/watch?v=hxtN9cWoPis"
+        },
+        {
+          "title": "Phone mining in a minute",
+          "format": "YouTube Short",
+          "url": "https://www.youtube.com/watch?v=pHWt2QRzRzc"
+        }
+      ],
+      "note": null
+    },
+    {
+      "id": "creator-503-19",
+      "creator": "starayush",
+      "title": "Bridges and the one-way burn",
+      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/19",
+      "publishedAt": "2026-11-03T17:13:19.201Z",
+      "updatedAt": "2026-11-06T17:53:12.815Z",
+      "resourceIds": [],
+      "works": [
+        {
+          "title": "Bridge design explained",
+          "format": "YouTube",
+          "url": "https://www.youtube.com/watch?v=FnsLMJfUanU"
+        },
+        {
+          "title": "Bridge comparison",
+          "format": "Reddit",
+          "url": "https://www.reddit.com/r/tari/comments/1xn0fp5/four_bridges_lost_over_2_billion_why_the_ootle/"
+        },
+        {
+          "title": "The creator’s short post",
+          "format": "Bluesky",
+          "url": "https://bsky.app/profile/starayush.bsky.social/post/3mzgfmdgwzs2l"
+        },
+        {
+          "title": "Understanding the Turbine",
+          "format": "Medium",
+          "url": "https://medium.com/@starayush/i-finally-understood-taris-turbine-model-and-it-changed-how-i-look-at-bridges-737d551424ab"
+        }
+      ],
+      "note": null
+    },
+    {
+      "id": "creator-503-20",
+      "creator": "CoinPower",
+      "title": "Home mining and Tari’s two layers",
+      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/20",
+      "publishedAt": "2026-11-04T02:46:57.108Z",
+      "updatedAt": "2026-11-04T02:46:57.108Z",
+      "resourceIds": [],
+      "works": [
+        {
+          "title": "Mining, privacy and the burn",
+          "format": "Medium",
+          "url": "https://coinpower.medium.com/tari-explained-a-privacy-coin-you-can-mine-at-home-and-the-one-way-burn-behind-it-e5b7c257926f"
+        }
+      ],
+      "note": null
+    },
+    {
+      "id": "creator-503-22",
+      "creator": "Musaddiq_0x",
+      "title": "Choosing a privacy model",
+      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/22",
+      "publishedAt": "2026-11-04T13:53:23.366Z",
+      "updatedAt": "2026-11-04T16:37:01.804Z",
+      "resourceIds": [],
+      "works": [
+        {
+          "title": "Confidential and stealth resources",
+          "format": "Medium",
+          "url": "https://medium.com/@musaddiq677/confidential-vs-stealth-understanding-tari-ootles-privacy-model-d797446b4cd3"
+        }
+      ],
+      "note": null
+    },
+    {
+      "id": "creator-503-24",
+      "creator": "yezo4",
+      "title": "A community view of launch week",
+      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/24",
+      "publishedAt": "2026-11-05T16:28:26.011Z",
+      "updatedAt": "2026-11-05T16:28:26.011Z",
+      "resourceIds": [],
+      "works": [
+        {
+          "title": "November 3 Tari Show recap",
+          "format": "Medium",
+          "url": "https://medium.com/@yezirhasan/taris-ootle-launch-is-a-week-away-the-real-test-is-what-people-can-use-4eae8972f7dd"
+        }
+      ],
+      "note": null
+    },
+    {
+      "id": "creator-503-25",
+      "creator": "iammzee",
+      "title": "Privacy lessons from Cursed Pumpkin",
+      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/25",
+      "publishedAt": "2026-11-06T14:09:54.108Z",
+      "updatedAt": "2026-11-07T21:46:22.881Z",
+      "resourceIds": [],
+      "works": [
+        {
+          "title": "The game’s privacy model",
+          "format": "YouTube",
+          "url": "https://youtu.be/Beat4kBH7Lk"
+        },
+        {
+          "title": "The ghost-key bug",
+          "format": "YouTube Short",
+          "url": "https://youtube.com/shorts/yYT8gvsEBjk"
+        },
+        {
+          "title": "What the client exposed",
+          "format": "Medium",
+          "url": "https://medium.com/@allahumuhyy767/i-built-a-secret-passing-game-on-tari-then-my-client-exposed-the-passers-299180e58871"
+        },
+        {
+          "title": "The creator’s project post",
+          "format": "Bluesky",
+          "url": "https://bsky.app/profile/iammzee.bsky.social/post/3mznq6mn3lk25"
+        },
+        {
+          "title": "Wallet registration lessons",
+          "format": "Reddit",
+          "url": "https://www.reddit.com/r/tari/comments/1xpfmq8/a_wallet_registration_mistake_exposed_ghost_keys/"
+        }
+      ],
+      "note": null
+    },
+    {
+      "id": "creator-503-26",
+      "creator": "shelley",
+      "title": "Privacy and moving value",
+      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/26",
+      "publishedAt": "2026-11-07T01:11:24.844Z",
+      "updatedAt": "2026-11-07T01:11:45.856Z",
+      "resourceIds": [
+        "tari-ootle:learn:shelley-privacy"
+      ],
+      "works": [
+        {
+          "title": "What a blockchain can hide",
+          "format": "Medium",
+          "url": "https://medium.com/@shelleymae/i-looked-into-taris-privacy-architecture-here-s-what-a-blockchain-can-actually-hide-6493f18c6fd2"
+        },
+        {
+          "title": "Moving value without a bridge vault",
+          "format": "Medium",
+          "url": "https://medium.com/@shelleymae/how-tari-moves-millions-in-value-without-a-traditional-bridge-vault-8ac1c1cf32a1"
+        }
+      ],
+      "note": null
+    },
+    {
+      "id": "creator-503-27",
+      "creator": "lestermorgan702",
+      "title": "Inside the Turbine model",
+      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/27",
+      "publishedAt": "2026-11-07T03:01:17.235Z",
+      "updatedAt": "2026-11-07T03:01:17.235Z",
+      "resourceIds": [],
+      "works": [
+        {
+          "title": "How the one-way valve works",
+          "format": "Medium",
+          "url": "https://medium.com/@lestermorgan702/the-one-way-valve-what-taris-turbine-model-actually-does-b077eb650965"
+        }
+      ],
+      "note": null
+    },
+    {
+      "id": "creator-503-28",
+      "creator": "kenichi",
+      "title": "Receiving payments while offline",
+      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/28",
+      "publishedAt": "2026-11-07T19:02:48.998Z",
+      "updatedAt": "2026-11-07T19:02:48.998Z",
+      "resourceIds": [],
+      "works": [
+        {
+          "title": "One-sided payments explained",
+          "format": "YouTube",
+          "url": "https://www.youtube.com/watch?v=CM1ZThyZr08"
+        },
+        {
+          "title": "Offline payments in 50 seconds",
+          "format": "YouTube Short",
+          "url": "https://www.youtube.com/watch?v=vwWb30V9VVw"
+        },
+        {
+          "title": "The written explainer",
+          "format": "Medium",
+          "url": "https://medium.com/@0xkenichi/how-tari-lets-you-get-paid-while-youre-offline-6537df9f54b5"
+        }
+      ],
+      "note": null
+    },
+    {
+      "id": "creator-503-30",
+      "creator": "blipege",
+      "title": "The bridge and the Turbine",
+      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/30",
+      "publishedAt": "2026-11-08T13:47:43.604Z",
+      "updatedAt": "2026-11-08T13:47:43.604Z",
+      "resourceIds": [],
+      "works": [
+        {
+          "title": "The one-way bridge explained",
+          "format": "YouTube",
+          "url": "https://youtu.be/yrXfiXHeXC0"
+        },
+        {
+          "title": "A short bridge explainer",
+          "format": "YouTube Short",
+          "url": "https://youtube.com/shorts/4s6ILKe7R9k"
+        },
+        {
+          "title": "Burning, fees and the Throttle",
+          "format": "Medium",
+          "url": "https://medium.com/@blipege/why-taris-xtm-tari-bridge-is-one-way-and-why-that-s-the-point-f8c495f1677d"
+        }
+      ],
+      "note": null
+    },
+    {
+      "id": "creator-503-31",
+      "creator": "prasadreddy",
+      "title": "Between Tari’s two layers",
+      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/31",
+      "publishedAt": "2026-11-08T17:20:45.862Z",
+      "updatedAt": "2026-11-08T17:20:45.862Z",
+      "resourceIds": [],
+      "works": [
+        {
+          "title": "The one-way claim-burn peg",
+          "format": "Medium",
+          "url": "https://medium.com/@prasad.kalyanreddy/tari-vs-xtm-the-one-way-door-between-taris-two-layers-adfde1a5062f"
         }
       ],
       "note": null

@@ -2,6 +2,8 @@
 
 A deployed catalog update is a publication milestone. It does not complete the daily maintenance run.
 
+Apply the November 9 publication priority in `DAILY_ECOSYSTEM_PLAN.md`: reconcile and publish new submissions and material event changes before routine unchanged-resource and dependency rechecks. The full-run gate must not block a validated, bounded publication. Keep its remaining scope incomplete and report the live publication milestone separately; never discard pending work to pass the gate.
+
 ## Required scope and outcome
 
 Before checking sources, save `outputs/completion-YYYY-MM-DD/completion.json` with a dated run and seven sections: `discovery`, `existingResources`, `dependencies`, `editorial`, `recordings`, `validation`, and `publication`. Each section declares `expectedIds` and has one item per ID. Derive the scope from the source registry, catalog review queue, maintained manifest inventory, changed entries, recording manifest and release acceptance requirements. Do not shrink the scope to whatever was convenient to finish. Report canonical resources separately from duplicated product surfaces.

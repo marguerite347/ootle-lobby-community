@@ -1,0 +1,36 @@
+{
+  "slug": "ootle-pass",
+  "title": "Ootle Pass",
+  "summary": "Membership prototype for creators and communities, with tiered passes, expiry, renewals, gifting and referral rewards. The creator provides an MIT-licensed Rust Ootle template and a walletless browser simulation. The November 9 source review confirms the README explicitly says the template has not been published to Esmeralda or mainnet. The recording walks through the public documentation, including these limits; it does not demonstrate deployed transactions. Built by Hark under Rajesh Mullippa’s direction.",
+  "cardSummary": "Explore membership tiers, expiring passes, renewals and referrals in a walletless browser simulation.",
+  "cardStatus": "Browser simulation · Rust source",
+  "creator": "rajeshmullippa",
+  "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/4",
+  "publishedAt": "2026-11-05T18:39:06.640Z",
+  "updatedAt": "2026-11-05T18:39:06.640Z",
+  "sourceContentSha256": "de39f5e57a69f7b6ac33e7c7000dbcb2de2155d351efb323ef8de2344416ac61",
+  "repoUrl": "https://github.com/rajeshmullippa-collab/ootle-pass",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust · JavaScript · MIT",
+      "sourceUrl": "https://github.com/rajeshmullippa-collab/ootle-pass"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-ootle-pass-20261109.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-ootle-pass-20261109.jpg",
+    "capturedAt": "2026-11-09T13:44:39.380Z",
+    "sourceRevision": "629900c95aaf3a3a539b719852f94f4491bf23e3",
+    "kind": "public-page",
+    "credit": "Docs walkthrough — membership design and simulation limits"
+  },
+  "demoUrl": "https://rajeshmullippa-collab.github.io/ootle-pass/",
+  "discussionLinks": [
+    {
+      "url": "https://www.youtube.com/watch?v=4BTttXANndE",
+      "platform": "YouTube"
+    }
+  ],
+  "resourceIds": []
+}

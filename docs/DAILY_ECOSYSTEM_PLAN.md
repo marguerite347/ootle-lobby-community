@@ -14,6 +14,14 @@ Run ecosystem upkeep and `COMMUNITY_EVENT_MAINTENANCE.md` together at 09:00 Amer
 
 Resume the unfinished queue under its existing lock during the next authorized daily invocation. Do not restart it in an unrelated turn, schedule extra retries or additional Lobby updates later the same day, or treat an instruction edit as authorization to run. Preserve active work until a safe stopping point and serialize through existing run/deployment locks. Carry unfinished work forward accurately marked incomplete for the next daily run; explicit manual owner requests remain separate authorization.
 
+## Publish new submissions first (November 9 owner correction)
+
+Each daily invocation starts with the current contest threads and the existing held-discovery queue. Reconcile new projects, new creator posts and material event changes, deduplicate them, then publish source-backed changes before routine rechecks of unchanged listings or dependency inventory. An urgent security or production failure may take precedence; record the specific reason. The observable outcome is current submissions on the live Lobby, not a growing discovery report.
+
+Use the existing curation and recording workflow. A public source walkthrough can accompany a clearly labeled simulation or source listing without executing the submission. Creator posts can be attributed links to their original works; listing them is not contest judging or factual endorsement. Carry exact missing review/media scope forward without concealing a publishable listing. Preserve all safety boundaries and the existing once-daily schedule.
+
+The full completion ledger remains authoritative for unfinished maintenance, but its larger inventory must not prevent a verified, bounded publication. Report new submissions found, published and held with concrete reasons separately from that remaining scope. Save the next pending item in the existing handoff rather than restarting routine checks before the new-submission queue is reconciled.
+
 ## Curation and testing scope
 
 The owner approved this simpler policy on October 10, 2026. Lobby and Workbench resource listings are curated discovery. Routine maintenance checks descriptions against primary sources, real availability, creator/original-post links, accurately labeled recordings, and our own product UI. It does not require a full functional or security test of every third-party project before listing it.
