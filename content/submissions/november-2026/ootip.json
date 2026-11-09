@@ -1,0 +1,36 @@
+{
+  "slug": "ootip",
+  "title": "Ootip",
+  "summary": "Ootip links a GitHub repository to a Tari Ootle tip jar, with split payouts for up to 16 maintainers. The jar owner sets the shares; anyone can tip or distribute its balance. The creator reports testing on Esmeralda with Sapient 0.9.4. Tips use a public balance: the jar balance, amounts, split, note and signing account are public. Direct private tips are not implemented, and the mainnet template address is pending. The November 9 recording shows the public documentation and these limits; no wallet connection or transaction was performed.",
+  "cardSummary": "Support open-source maintainers with a shared tip jar and split payouts on Tari’s Esmeralda testnet.",
+  "cardStatus": "Web app · Testnet · Public tips",
+  "creator": "GeiserX",
+  "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/5",
+  "publishedAt": "2026-11-09T16:36:49.563Z",
+  "updatedAt": "2026-11-09T16:36:49.563Z",
+  "sourceContentSha256": "8aa2cf7969cb9eef75a58924af44cd84d376caa75b1c37eebb6dc10f9da4238f",
+  "repoUrl": "https://github.com/GeiserX/ootip",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust · TypeScript · MIT",
+      "sourceUrl": "https://github.com/GeiserX/ootip"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-ootip-20261109.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-ootip-20261109.jpg",
+    "capturedAt": "2026-11-09T23:02:30.049Z",
+    "sourceRevision": "5d7d07b7edf89e00aeca399cad4df250c9487720",
+    "kind": "public-page",
+    "credit": "Docs walkthrough — tip jars and public-payment limits"
+  },
+  "demoUrl": "https://geiserx.github.io/ootip/",
+  "discussionLinks": [
+    {
+      "url": "https://bsky.app/profile/geiserx.bsky.social/post/3mzv75ti2ws2l",
+      "platform": "Bluesky"
+    }
+  ],
+  "resourceIds": []
+}

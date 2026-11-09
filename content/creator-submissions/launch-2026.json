@@ -1,6 +1,6 @@
 {
   "threadUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503",
-  "checkedAt": "2026-11-09T13:46:29.767015+00:00",
+  "checkedAt": "2026-11-09T23:05:07.399928Z",
   "entries": [
     {
       "id": "creator-503-3",
@@ -517,6 +517,70 @@
           "title": "The one-way claim-burn peg",
           "format": "Medium",
           "url": "https://medium.com/@prasad.kalyanreddy/tari-vs-xtm-the-one-way-door-between-taris-two-layers-adfde1a5062f"
+        }
+      ],
+      "note": null
+    },
+    {
+      "id": "creator-503-32",
+      "creator": "darkernity",
+      "title": "Bridges, vaults and burn-to-mint",
+      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/32",
+      "publishedAt": "2026-11-09T14:02:53.600Z",
+      "updatedAt": "2026-11-09T14:02:53.600Z",
+      "resourceIds": [],
+      "works": [
+        {
+          "title": "Lock-and-mint bridges keep a vault. Ootle burns instead",
+          "format": "Medium",
+          "url": "https://medium.com/@elliottharris139/lock-and-mint-bridges-keep-a-vault-taris-ootle-burns-instead-748d1a91c0ed"
+        },
+        {
+          "title": "Burn-to-mint in three posts",
+          "format": "Bluesky thread",
+          "url": "https://bsky.app/profile/darkernity.bsky.social/post/3mzuz3uemqc2y"
+        }
+      ],
+      "note": null
+    },
+    {
+      "id": "creator-503-33",
+      "creator": "davidj_builds",
+      "title": "Privacy and template building, illustrated",
+      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/33",
+      "publishedAt": "2026-11-09T15:42:52.556Z",
+      "updatedAt": "2026-11-09T15:42:52.556Z",
+      "resourceIds": [],
+      "works": [
+        {
+          "title": "Confidential vs. stealth",
+          "format": "Bluesky",
+          "url": "https://bsky.app/profile/davidj-builds.bsky.social/post/3mzvazh34s526"
+        },
+        {
+          "title": "Pedersen commitments",
+          "format": "Bluesky",
+          "url": "https://bsky.app/profile/davidj-builds.bsky.social/post/3mzvb2ub2xp2o"
+        },
+        {
+          "title": "How stealth addresses are built",
+          "format": "Bluesky",
+          "url": "https://bsky.app/profile/davidj-builds.bsky.social/post/3mzvb4bfwmr2t"
+        },
+        {
+          "title": "Template access rules",
+          "format": "Bluesky",
+          "url": "https://bsky.app/profile/davidj-builds.bsky.social/post/3mzvb5onufn2j"
+        },
+        {
+          "title": "What privacy leaves public",
+          "format": "Bluesky",
+          "url": "https://bsky.app/profile/davidj-builds.bsky.social/post/3mzvb73y4iy2o"
+        },
+        {
+          "title": "Spend scripts and the switching hour",
+          "format": "Bluesky",
+          "url": "https://bsky.app/profile/davidj-builds.bsky.social/post/3mzvbajdjqv2h"
         }
       ],
       "note": null
