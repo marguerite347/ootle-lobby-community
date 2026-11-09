@@ -36,7 +36,7 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 | [CFG-SUBSCRIPTIONS](#cfg-subscriptions) | configuration-required | GET /api/subscriptions/config; POST /api/subscriptions |
 | [CFG-AI-DRAFT](#cfg-ai-draft) | configuration-required | POST /api/video/templates/:id/draft |
 | [CFG-DATA](#cfg-data) | configuration-required | /api/growth/summary; /api/marketing-calendar; /blog/feed.xml; /blog/sitemap.xml; source refresh; GET /api/launch |
-| [OPS-OCTOBER-CHANNEL](#ops-october-channel) | build-required | Once-daily October monitor notification delivery |
+| [OPS-OCTOBER-CHANNEL](#ops-october-channel) | retired | Separate October scheduler and notification adapter |
 | [OPS-DEPLOY](#ops-deploy) | configuration-required | GitHub main to Vercel deployment |
 | [RETIRED-HOSTING](#retired-hosting) | retired | Writes to /api/projects*, /api/assets*, /api/recipes/:id/projects, /api/challenges/submissions |
 | [COMMUNITY-METRICS](#community-metrics) | build-required | GET /api/community-projects/metrics |
@@ -263,13 +263,13 @@ Existing catalog/search/resources/collections/onboarding/learn/skills/agent-docu
 
 ## OPS-OCTOBER-CHANNEL
 
-**build-required** — Once-daily October monitor notification delivery
+**retired** — Separate October scheduler and notification adapter
 
-**Current:** Repository workflow checks at 09:17 UTC and saves Actions summary/artifact. It has no dedicated-channel delivery adapter. External automations are outside this source audit.
+**Current:** The October-only Actions schedule is retired. The workflow is manual-only and reads every registered build contest and creator feed through monitor-submissions.mjs. The existing owner Codex daily automation performs curation, PR publication and production verification; source scanning alone does not publish.
 
-**Remaining:** Connect the existing daily workflow to the approved dedicated channel using a server-side secret, deduplicated notifications and retry/failure reporting. Keep one scheduled daily check; no auto-publication.
+**Remaining:** Keep a single owner automation at 09:00 America/New_York. Do not add a separate scheduled Actions publisher or notification adapter. Preserve failed-read evidence and reconcile all new or edited posts before routine maintenance.
 
-**Completion check:** One daily run delivers to the intended channel; retries do not duplicate; errors are visible and candidates remain review-only.
+**Completion check:** The metadata reader detects new and edited posts in build and creator threads, paginates each topic and reports incomplete reads without replacing a complete snapshot. Verify owner automation configuration separately; a manual diagnostic is not a scheduled publication.
 
 **Source:** [.github/workflows/october-monitor.yml](../.github/workflows/october-monitor.yml), [scripts/monitor-contest.mjs](../scripts/monitor-contest.mjs)
 

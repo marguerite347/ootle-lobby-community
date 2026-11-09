@@ -243,11 +243,11 @@
     },
     {
       "id": "OPS-OCTOBER-CHANNEL",
-      "status": "build-required",
-      "surface": "Once-daily October monitor notification delivery",
-      "current": "Repository workflow checks at 09:17 UTC and saves Actions summary/artifact. It has no dedicated-channel delivery adapter. External automations are outside this source audit.",
-      "required": "Connect the existing daily workflow to the approved dedicated channel using a server-side secret, deduplicated notifications and retry/failure reporting. Keep one scheduled daily check; no auto-publication.",
-      "verify": "One daily run delivers to the intended channel; retries do not duplicate; errors are visible and candidates remain review-only.",
+      "status": "retired",
+      "surface": "Separate October scheduler and notification adapter",
+      "current": "The October-only Actions schedule is retired. The workflow is manual-only and reads every registered build contest and creator feed through monitor-submissions.mjs. The existing owner Codex daily automation performs curation, PR publication and production verification; source scanning alone does not publish.",
+      "required": "Keep a single owner automation at 09:00 America/New_York. Do not add a separate scheduled Actions publisher or notification adapter. Preserve failed-read evidence and reconcile all new or edited posts before routine maintenance.",
+      "verify": "The metadata reader detects new and edited posts in build and creator threads, paginates each topic and reports incomplete reads without replacing a complete snapshot. Verify owner automation configuration separately; a manual diagnostic is not a scheduled publication.",
       "files": [
         ".github/workflows/october-monitor.yml",
         "scripts/monitor-contest.mjs"
