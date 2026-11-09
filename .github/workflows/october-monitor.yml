@@ -1,13 +1,11 @@
-# INTEGRATION_GAP[OPS-OCTOBER-CHANNEL] (build-required): see docs/DEVELOPMENT_GAPS.md#ops-october-channel.
-name: Monitor October submissions
+# INTEGRATION_GAP[OPS-OCTOBER-CHANNEL] (retired): use the single consolidated daily owner automation.
+name: Inspect contest submissions (manual)
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '17 9 * * *' # Once daily at 09:17 UTC
 permissions:
   contents: read
 concurrency:
-  group: october-submission-monitor
+  group: submission-monitor-manual
   cancel-in-progress: false
 jobs:
   monitor:
@@ -21,18 +19,18 @@ jobs:
         with:
           node-version: '22'
           package-manager-cache: false
-      - run: npm run monitor:october -- --output work/october-monitor.json
+      - run: npm run monitor:submissions -- --output work/submissions-monitor.json
       - name: Summarize public review queue
         run: |
           node --input-type=module <<'JS'
           import {readFileSync,appendFileSync} from 'node:fs';
-          const report=JSON.parse(readFileSync('work/october-monitor.json','utf8'));
-          const pending=report.candidates.filter(post=>post.review!=='listed');
-          appendFileSync(process.env.GITHUB_STEP_SUMMARY, `October forum checked: ${report.checkedAt}\n\n${report.observedSubmissionPosts} submission posts; ${pending.length} new or edited posts need review.\n\nDownload the report artifact and follow docs/COMMUNITY_WORKFLOW.md. No entries were published automatically.\n`);
+          const report=JSON.parse(readFileSync('work/submissions-monitor.json','utf8'));
+          appendFileSync(process.env.GITHUB_STEP_SUMMARY, `Submission sources checked: ${report.checkedAt}\n\n${report.summary.sourcesChecked} topics; ${report.summary.newPosts} new and ${report.summary.editedPosts} edited posts need review.\n\nDownload the report artifact and follow docs/DAILY_ECOSYSTEM_PLAN.md. This manual diagnostic does not publish; the consolidated owner automation handles daily curation and publication.\n`);
           JS
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: ${{ always() }}
         with:
-          name: october-submission-report
-          path: work/october-monitor.json
+          name: submissions-report
+          path: work/submissions-monitor.json*
           retention-days: 30
           if-no-files-found: error
