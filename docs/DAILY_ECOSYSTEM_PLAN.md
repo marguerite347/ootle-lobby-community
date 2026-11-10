@@ -10,6 +10,8 @@ Maintain a source coverage ledger and resource review queue. Every resource must
 
 ## One consolidated scheduled invocation (November 5 owner correction)
 
+**November 11 launch-day exception (owner request November 10):** the same daily automation starts at 08:00 Eastern to target verified Mainnet/Testnet listings by 09:00, then restores its ordinary 09:00 cadence. This replaces that date's normal run. Follow [MAINNET_MAINTENANCE.md](MAINNET_MAINTENANCE.md) for network classification of existing and newly discovered projects, launch evidence, and the near-top directory. Continue that classification in subsequent daily runs.
+
 Run ecosystem upkeep and `COMMUNITY_EVENT_MAINTENANCE.md` together at 09:00 America/New_York, once per local calendar date, allowing normal scheduler delay. This supersedes the former 05:00 ecosystem and Tuesday/Thursday event schedules. Keep the separate `tari-community-event-updates` automation paused; do not create a duplicate. The owner's November 9 notification correction keeps successful daily runs quiet. The existing automation uses failed-runs-only notifications; do not add separate success messages or a notification adapter.
 
 Resume the unfinished queue under its existing lock during the next authorized daily invocation. Do not restart it in an unrelated turn, schedule extra retries or additional Lobby updates later the same day, or treat an instruction edit as authorization to run. Preserve active work until a safe stopping point and serialize through existing run/deployment locks. Carry unfinished work forward accurately marked incomplete for the next daily run; explicit manual owner requests remain separate authorization.

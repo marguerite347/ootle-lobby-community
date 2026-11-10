@@ -4,6 +4,7 @@ import {execFileSync} from 'node:child_process';
 import {validateProjects, validateFeed} from '../lib/content.mjs';
 
 import {readContestContent} from '../creator-hub/hub/shared/readContestContent.mjs';
+import {validateNetworkStatus} from '../creator-hub/hub/shared/networkStatus.mjs';
 
 const root = new URL('../', import.meta.url);
 const manifest = JSON.parse(readFileSync(new URL('content/manifest.json', root), 'utf8'));
@@ -20,8 +21,15 @@ const projects = files.map(file => {
 validateProjects(projects);
 const contests=readContestContent(root);
 const communityProjects=readCommunityProjects(root);
-const contestRepos=new Set(contests.flatMap(c=>c.entries).map(p=>p.repoUrl?.toLowerCase()).filter(Boolean));
+const resources=JSON.parse(readFileSync(new URL('creator-hub/hub/shared/ecosystemResources.json',root),'utf8'));
 const september=JSON.parse(readFileSync(new URL('creator-hub/hub/data/contests/september-2026.json',root),'utf8'));
+validateNetworkStatus(JSON.parse(readFileSync(new URL('content/network-status.json',root),'utf8')),new Set([
+  ...resources.records.map(record=>record.id),
+  ...september.entries.map(record=>record.id),
+  ...communityProjects.map(record=>`community:${record.slug}`),
+  ...contests.flatMap(contest=>contest.entries.map(entry=>`${contest.id}:${entry.slug}`)),
+]));
+const contestRepos=new Set(contests.flatMap(c=>c.entries).map(p=>p.repoUrl?.toLowerCase()).filter(Boolean));
 for(const p of september.entries)if(p.repoUrl)contestRepos.add(p.repoUrl.toLowerCase());
 if(communityProjects.some(p=>p.repoUrl&&contestRepos.has(p.repoUrl.toLowerCase())))throw new Error('Community projects must not duplicate contest entries.');
 console.log(`Validated ${projects.length} project records.`);
