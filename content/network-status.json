@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "ref": "tari-ootle:integration:veil",
+      "state": "testnet",
+      "testnetUrl": "https://explorer.tari.mw/",
+      "checkedAt": "2026-11-10T14:11:00Z",
+      "evidenceUrl": "https://explorer.tari.mw/",
+      "evidence": "The current explorer shows tTARI and announces a future mainnet switch. Its announcement names testnet-explorer.tari.mw as the future testnet destination; that destination has not been independently checked.",
+      "mainnetPlan": "Mainnet switch announced. Deployment confirmation pending."
+    },
+    {
+      "ref": "tari-ootle:learn:atproto-identity",
+      "state": "testnet",
+      "testnetUrl": "https://atproto.tari.mw/",
+      "checkedAt": "2026-11-10T14:11:00Z",
+      "evidenceUrl": "https://atproto.tari.mw/",
+      "evidence": "The current integration guide labels the verifier and escrow examples Esmeralda testnet. This is a documentation listing, not proof of a mainnet contract deployment."
+    },
+    {
+      "ref": "community:skydrop",
+      "state": "testnet",
+      "testnetUrl": "https://skydrop.tari.mw/",
+      "checkedAt": "2026-11-10T14:11:30Z",
+      "evidenceUrl": "https://community.tari.com/t/skydrop-send-tari-to-anyone-on-bluesky-no-wallet-needed-on-their-side-esmeralda-testnet/429/1",
+      "evidence": "The creator announcement and replies identify testnet-only tTARI and did:plc accounts. The app text extractor returned no content on this check; retain the creator-confirmed testnet classification without claiming a fresh app-runtime check."
+    }
+  ]
+}

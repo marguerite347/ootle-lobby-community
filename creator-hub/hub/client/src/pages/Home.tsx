@@ -9,6 +9,7 @@ import ContestProjects from '../components/ContestProjects';
 import NovemberSubmissions from '../components/NovemberSubmissions';
 import OctoberSubmissions from '../components/OctoberSubmissions';
 import {CreatorResources} from '../components/SeasonalLobby';
+import NetworkProjects from '../components/NetworkProjects';
 
 export default function Home() {
   const {hash, search, key} = useLocation();
@@ -19,6 +20,7 @@ export default function Home() {
   }, [hash, search, key]);
   return <div className="season-home creator-workspace">
     <NovemberHero/>
+    <NetworkProjects/>
     <NovemberContestCards/>
     <NovemberSubmissions/>
     <CreatorResources compact/>
