@@ -1,6 +1,6 @@
 {
   "threadUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503",
-  "checkedAt": "2026-11-09T23:05:07.399928Z",
+  "checkedAt": "2026-11-10T14:05:20.572020+00:00",
   "entries": [
     {
       "id": "creator-503-3",
@@ -25,7 +25,7 @@
       "title": "Privacy, fees and building on Ootle",
       "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/4",
       "publishedAt": "2026-10-30T07:00:47.718Z",
-      "updatedAt": "2026-11-05T02:06:48.734Z",
+      "updatedAt": "2026-11-07T03:01:00.862Z",
       "resourceIds": [
         "tari-ootle:learn:turbine-explainer",
         "tari-ootle:learn:sharding-explainer",
@@ -57,9 +57,15 @@
           "title": "Confidential versus stealth",
           "format": "Article",
           "url": "https://rajeshmullippa-collab.github.io/2026/10/30/tari-ootle-confidential-vs-stealth.html"
+        },
+        {
+          "title": "Confidential versus stealth, explained",
+          "format": "YouTube",
+          "url": "https://youtu.be/CZVnuigbOFQ"
         }
       ],
-      "note": null
+      "note": "The creator’s follow-up video is linked from forum post 23; its title and channel were confirmed on November 10.",
+      "sourceContentSha256": "a8cd7d544e887053b775ffaa39ab03cbc762f0ad345f5d82cd832e09fc2870e6"
     },
     {
       "id": "creator-503-5",
@@ -549,7 +555,7 @@
       "title": "Privacy and template building, illustrated",
       "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/33",
       "publishedAt": "2026-11-09T15:42:52.556Z",
-      "updatedAt": "2026-11-09T15:42:52.556Z",
+      "updatedAt": "2026-11-10T09:10:30.156Z",
       "resourceIds": [],
       "works": [
         {
@@ -578,12 +584,51 @@
           "url": "https://bsky.app/profile/davidj-builds.bsky.social/post/3mzvb73y4iy2o"
         },
         {
-          "title": "Spend scripts and the switching hour",
+          "title": "Spend scripts and the witching hour",
           "format": "Bluesky",
           "url": "https://bsky.app/profile/davidj-builds.bsky.social/post/3mzvbajdjqv2h"
+        },
+        {
+          "title": "Confidential versus stealth, with a contract",
+          "format": "YouTube",
+          "url": "https://www.youtube.com/watch?v=98xvOnBNphk"
+        },
+        {
+          "title": "Functions, methods, vaults and access rules",
+          "format": "YouTube",
+          "url": "https://www.youtube.com/watch?v=ytAymjD57RM"
+        },
+        {
+          "title": "Pedersen commitments in 40 seconds",
+          "format": "YouTube Short",
+          "url": "https://www.youtube.com/shorts/KDJKSiNfg14"
         }
       ],
-      "note": null
+      "note": null,
+      "sourceContentSha256": "7c4e6b282acf9a7dbf4d16fdd09481c69a664c5612497b7cf6f99555a930a185"
+    },
+    {
+      "id": "creator-503-34",
+      "creator": "Anayani",
+      "title": "Token permissions and the owner bypass",
+      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/34",
+      "publishedAt": "2026-11-10T02:25:54.109Z",
+      "updatedAt": "2026-11-10T02:25:54.109Z",
+      "sourceContentSha256": "9bf9b3f5e115722ebf2ac310eef7f529ec6479eaf504f0a986b7c6fd558e52d6",
+      "resourceIds": [],
+      "works": [
+        {
+          "title": "Token access rules, updaters and the owner bypass",
+          "format": "YouTube",
+          "url": "https://youtu.be/bpNdL8ki9po"
+        },
+        {
+          "title": "Locked mint rules and the owner bypass",
+          "format": "YouTube Short",
+          "url": "https://youtube.com/shorts/8dFfSDCjrYg"
+        }
+      ],
+      "note": "Titles follow the creator’s submission. The long-form video is listed as Untitled video on YouTube; its channel identity was confirmed on November 10."
     }
   ]
 }
