@@ -9,3 +9,6 @@
 .network-projects a:focus-visible,.network-projects button:focus-visible{outline:2px solid var(--season-lime,#d5ed3b);outline-offset:3px}
 @media(min-width:768px){.network-projects{padding:1.5rem}.network-project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(min-width:1024px){.network-project-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+.network-showcase-intro{max-width:65ch;margin:0 0 1.25rem;color:var(--season-muted,#aaa5bd);font-size:1rem;line-height:1.5}
+.network-project-links .network-project-open{font-weight:700;color:var(--season-lime,#d5ed3b)}

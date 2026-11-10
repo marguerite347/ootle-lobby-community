@@ -18,6 +18,10 @@ export function validateNetworkStatus(data,knownRefs){
       if(!https(entry.mainnetUrl)||!https(entry.deploymentEvidence?.url)||!Number.isFinite(Date.parse(entry.deploymentEvidence?.observedAt))||!entry.deploymentEvidence?.detail?.trim())throw Error('Mainnet requires current deployment evidence and a mainnet URL; an announcement is insufficient.');
     }
     if(entry.mainnetPlan!==undefined&&(typeof entry.mainnetPlan!=='string'||entry.mainnetPlan.length>180))throw Error('Mainnet plan must be concise.');
+    if(entry.showcase!==undefined){
+      if(!entry.showcase||typeof entry.showcase!=='object'||!https(entry.showcase.url))throw Error('Showcase needs a public HTTPS destination.');
+      for(const [key,max] of [['label',60],['summary',160]])if(typeof entry.showcase[key]!=='string'||!entry.showcase[key].trim()||entry.showcase[key].length>max||/[<>\u0000-\u001f]/.test(entry.showcase[key]))throw Error('Showcase needs concise plain-text labels and summaries.');
+    }
   }
   return data;
 }

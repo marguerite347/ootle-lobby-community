@@ -8,7 +8,116 @@
       "checkedAt": "2026-11-10T17:09:36.896508+00:00",
       "evidenceUrl": "https://community.tari.com/t/veil-explorer-is-ready-for-ootle-mainnet/568",
       "evidence": "The creator announces the separate testnet explorer as available now. A November 10 trusted text read of testnet-explorer.tari.mw returned tTARI supply, receipts and recent transactions. Keep Testnet links on that hostname while explorer.tari.mw awaits its announced mainnet switch; no mainnet deployment is confirmed.",
-      "mainnetPlan": "Mainnet switch announced. Deployment confirmation pending."
+      "mainnetPlan": "Mainnet switch announced. Deployment confirmation pending.",
+      "showcase": {
+        "url": "https://explorer.tari.mw/",
+        "label": "Mainnet launch planned",
+        "summary": "Explore Ootle transactions, templates and network activity. The explorer is preparing to switch to mainnet."
+      }
+    },
+    {
+      "ref": "tari-ootle:app:sapient",
+      "state": "testnet",
+      "checkedAt": "2026-11-10T20:16:58.739361+00:00",
+      "evidenceUrl": "https://sapient.tari.mw/",
+      "evidence": "November 10 public site describes Esmeralda and Igor network switching and testnet experimentation. No extension installed or mainnet transaction verified.",
+      "testnetUrl": "https://sapient.tari.mw/",
+      "showcase": {
+        "url": "https://sapient.tari.mw/",
+        "label": "Testnet · Browser wallet",
+        "summary": "Connect to tapplets, manage Ootle accounts and explore private transfers with a self-custody browser wallet."
+      }
+    },
+    {
+      "ref": "tari-ootle:app:caravel",
+      "state": "testnet",
+      "checkedAt": "2026-11-10T20:16:58.739361+00:00",
+      "evidenceUrl": "https://community.tari.com/t/introducing-caravel/276",
+      "evidence": "November 10 read of the creator thread describes testnet wallet, encrypted messaging and Caravel Trade using placeholder cUSD. No mainnet deployment verified.",
+      "testnetUrl": "https://caravellabs.net/",
+      "showcase": {
+        "url": "https://caravellabs.net/",
+        "label": "Testnet · Wallet and chat",
+        "summary": "Private messaging, payments and peer-to-peer trading in one browser app."
+      }
+    },
+    {
+      "ref": "community:skydrop",
+      "state": "testnet",
+      "testnetUrl": "https://skydrop.tari.mw/",
+      "checkedAt": "2026-11-10T14:11:30Z",
+      "evidenceUrl": "https://community.tari.com/t/skydrop-send-tari-to-anyone-on-bluesky-no-wallet-needed-on-their-side-esmeralda-testnet/429/1",
+      "evidence": "The creator announcement and replies identify testnet-only tTARI and did:plc accounts. The app text extractor returned no content on this check; retain the creator-confirmed testnet classification without claiming a fresh app-runtime check.",
+      "showcase": {
+        "url": "https://skydrop.tari.mw/",
+        "label": "Testnet · Social gifts",
+        "summary": "Send a Tari gift to a Bluesky account and explore the recipient claim flow."
+      }
+    },
+    {
+      "ref": "tari-ootle:integration:ghostline",
+      "state": "testnet",
+      "checkedAt": "2026-11-10T20:16:58.739361+00:00",
+      "evidenceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/14",
+      "evidence": "Creator submission read November 10 documents simulation versus live Esmeralda modes, and a November 3 post-reset Sapient run. No mainnet deployment verified.",
+      "testnetUrl": "https://ghostline-ui.vercel.app/play.html",
+      "showcase": {
+        "url": "https://ghostline-ui.vercel.app/play.html",
+        "label": "Simulation + Testnet",
+        "summary": "Explore AI pay-per-call payments: several calls, signed vouchers and one settlement. Choose simulation or Sapient testnet mode."
+      }
+    },
+    {
+      "ref": "november-2026:ootle-lockbox",
+      "state": "testnet",
+      "checkedAt": "2026-11-10T20:16:58.739361+00:00",
+      "evidenceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/7",
+      "evidence": "Original November 10 submission reports Esmeralda deployment and tested Sapient creation/claims. Mainnet publication is a future plan, not a confirmed deployment.",
+      "testnetUrl": "https://manishmodak.github.io/ootle-lockbox/",
+      "showcase": {
+        "url": "https://manishmodak.github.io/ootle-lockbox/",
+        "label": "Testnet · Mainnet planned",
+        "summary": "Time-lock tokens and inspect public proof pages for release conditions and token issuer powers."
+      },
+      "mainnetPlan": "Creator plans to publish when mainnet is live. Deployment confirmation pending."
+    },
+    {
+      "ref": "tari-ootle:component:grave-robber",
+      "state": "unconfirmed",
+      "checkedAt": "2026-11-10T20:16:58.739361+00:00",
+      "evidenceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/18",
+      "evidence": "November 10 browser check completed movement and a riddle/reward interaction using the demo address and simulated balance. No live wallet or on-chain payout verified.",
+      "showcase": {
+        "url": "https://grave-robber.netlify.app/",
+        "label": "Sandbox game",
+        "summary": "Explore a 2D crypt, solve riddles and collect simulated rewards. Play the browser sandbox without a wallet."
+      }
+    },
+    {
+      "ref": "tari-ootle:component:arkimals",
+      "state": "testnet",
+      "checkedAt": "2026-11-10T20:16:58.739361+00:00",
+      "evidenceUrl": "https://tari.staging.arkimals-game.com/#rules",
+      "evidence": "November 10 browser checked landing, game rules and rankings. Site explicitly labels Esmeralda testnet; rankings displayed one collector and five game NFTs. No hatch, reveal or mint performed.",
+      "testnetUrl": "https://tari.staging.arkimals-game.com/",
+      "showcase": {
+        "url": "https://tari.staging.arkimals-game.com/",
+        "label": "Testnet · Collectible game",
+        "summary": "Discover secret creatures through encrypted wallet memos, then choose when to reveal and mint them. Sapient required."
+      }
+    },
+    {
+      "ref": "tari-ootle:component:hidebox",
+      "state": "testnet",
+      "checkedAt": "2026-11-10T20:16:58.739361+00:00",
+      "evidenceUrl": "https://hidebox.app/judges",
+      "evidence": "November 10 browser checked the landing page and guided demonstration instructions. Site explicitly labels Esmeralda testnet; no drive created, file uploaded or payment performed.",
+      "testnetUrl": "https://hidebox.app/",
+      "showcase": {
+        "url": "https://hidebox.app/",
+        "label": "Testnet · Creative tools",
+        "summary": "Store encrypted files and explore one-time sharing links and pay-to-open content."
+      }
     },
     {
       "ref": "tari-ootle:learn:atproto-identity",
@@ -17,14 +126,6 @@
       "checkedAt": "2026-11-10T14:11:00Z",
       "evidenceUrl": "https://atproto.tari.mw/",
       "evidence": "The current integration guide labels the verifier and escrow examples Esmeralda testnet. This is a documentation listing, not proof of a mainnet contract deployment."
-    },
-    {
-      "ref": "community:skydrop",
-      "state": "testnet",
-      "testnetUrl": "https://skydrop.tari.mw/",
-      "checkedAt": "2026-11-10T14:11:30Z",
-      "evidenceUrl": "https://community.tari.com/t/skydrop-send-tari-to-anyone-on-bluesky-no-wallet-needed-on-their-side-esmeralda-testnet/429/1",
-      "evidence": "The creator announcement and replies identify testnet-only tTARI and did:plc accounts. The app text extractor returned no content on this check; retain the creator-confirmed testnet classification without claiming a fresh app-runtime check."
     }
   ]
 }
