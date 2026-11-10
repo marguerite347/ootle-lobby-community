@@ -4,10 +4,10 @@
     {
       "ref": "tari-ootle:integration:veil",
       "state": "testnet",
-      "testnetUrl": "https://explorer.tari.mw/",
-      "checkedAt": "2026-11-10T14:11:00Z",
-      "evidenceUrl": "https://explorer.tari.mw/",
-      "evidence": "The current explorer shows tTARI and announces a future mainnet switch. Its announcement names testnet-explorer.tari.mw as the future testnet destination; that destination has not been independently checked.",
+      "testnetUrl": "https://testnet-explorer.tari.mw/",
+      "checkedAt": "2026-11-10T17:09:36.896508+00:00",
+      "evidenceUrl": "https://community.tari.com/t/veil-explorer-is-ready-for-ootle-mainnet/568",
+      "evidence": "The creator announces the separate testnet explorer as available now. A November 10 trusted text read of testnet-explorer.tari.mw returned tTARI supply, receipts and recent transactions. Keep Testnet links on that hostname while explorer.tari.mw awaits its announced mainnet switch; no mainnet deployment is confirmed.",
       "mainnetPlan": "Mainnet switch announced. Deployment confirmation pending."
     },
     {
