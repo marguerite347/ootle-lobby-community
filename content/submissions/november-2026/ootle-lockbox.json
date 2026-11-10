@@ -1,0 +1,16 @@
+{
+  "slug": "ootle-lockbox",
+  "title": "Ootle Lockbox",
+  "summary": "Time-lock tokens for a beneficiary and inspect public proof pages that check both lock conditions and token issuer powers. The creator reports creation and claims on Esmeralda using Sapient and plans to publish when Ootle mainnet is live. November 10 review read the original submission; no wallet connection, token lock, claim or mainnet deployment was independently verified.",
+  "cardSummary": "Time-lock tokens and inspect public proof pages for release conditions and token issuer powers.",
+  "cardStatus": "Testnet · Mainnet deployment planned",
+  "creator": "Zein",
+  "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/7",
+  "repoUrl": "https://github.com/ManishModak/ootle-lockbox",
+  "demoUrl": "https://manishmodak.github.io/ootle-lockbox/",
+  "publishedAt": "2026-11-10T18:26:47.401Z",
+  "updatedAt": "2026-11-10T18:26:47.401Z",
+  "ecosystem": "tari-ootle",
+  "technologies": [],
+  "resourceIds": []
+}
