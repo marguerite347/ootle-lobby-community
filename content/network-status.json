@@ -10,7 +10,7 @@
       "evidence": "Two successful mainnet fund calls match the app SapientEscrow component. Live app reads 3.5 of 10 TARI funded. New payout and refund execution were not tested.",
       "showcase": {
         "url": "https://seal-clubber.github.io/ootle-accord/#explore",
-        "label": "Confirmed mainnet · Funding",
+        "label": "Confirmed mainnet \u00b7 Funding",
         "summary": "Fund milestone escrows and inspect public approvals. Mainnet funding is confirmed; payout and refund flows remain unverified."
       },
       "deploymentEvidence": {
@@ -28,7 +28,7 @@
       "evidence": "November 11 live explorer shows mainnet transactions and components matching both official indexers, network byte 0. The separate testnet explorer remains available.",
       "showcase": {
         "url": "https://explorer.tari.mw/",
-        "label": "Confirmed mainnet · Explorer",
+        "label": "Confirmed mainnet \u00b7 Explorer",
         "summary": "Explore live Ootle mainnet transactions, templates and network activity."
       },
       "mainnetUrl": "https://explorer.tari.mw/",
@@ -46,7 +46,7 @@
       "evidence": "User confirmed Sapient is live on mainnet. Official Chrome Web Store version 0.9.6 matches current package.json, and published source includes mainnet support and the November 11 default-network transition. This verifies an available mainnet wallet; this audit did not install it or submit a transfer. Public transfers do not independently identify which wallet client submitted them.",
       "showcase": {
         "url": "https://chromewebstore.google.com/detail/tari-ootle-wallet/demkeckolenopkgnfbnpflkpbbdhpgkl",
-        "label": "Mainnet · Browser wallet",
+        "label": "Mainnet \u00b7 Browser wallet",
         "summary": "Manage Ootle mainnet accounts, private transfers and app approvals. Get the current Sapient extension from the official Chrome Web Store.",
         "actionLabel": "Get latest extension",
         "version": "Chrome Web Store: 0.9.6"
@@ -68,7 +68,7 @@
       "mainnetUrl": "https://signal-desk-ootle.vercel.app/",
       "showcase": {
         "url": "https://signal-desk-ootle.vercel.app/",
-        "label": "Mainnet live · Sealed calls",
+        "label": "Mainnet live \u00b7 Sealed calls",
         "summary": "Browse sealed crypto calls on Ootle mainnet. Three sealed calls are verified; purchases, reveals and settlement remain unverified."
       },
       "deploymentEvidence": {
@@ -86,7 +86,7 @@
       "testnetUrl": "https://caravellabs.net/",
       "showcase": {
         "url": "https://caravellabs.net/",
-        "label": "Testnet · Wallet and chat",
+        "label": "Testnet \u00b7 Wallet and chat",
         "summary": "Private messaging, payments and peer-to-peer trading in one browser app."
       },
       "mainnetPlan": "The current browser wallet still targets Esmeralda testnet."
@@ -99,7 +99,7 @@
       "evidence": "Live app mainnet Escrow matches successful open_account and deposit transaction on both official network-byte-0 indexers. Link binding also committed. Recipient gift collection was not independently verified.",
       "showcase": {
         "url": "https://skydrop.tari.mw/",
-        "label": "Confirmed mainnet · Deposits",
+        "label": "Confirmed mainnet \u00b7 Deposits",
         "summary": "Send Tari gifts to Bluesky accounts. Mainnet deposits and account linking are confirmed; recipient collection is still unverified."
       },
       "mainnetUrl": "https://skydrop.tari.mw/",
@@ -132,7 +132,7 @@
       "testnetUrl": "https://manishmodak.github.io/ootle-lockbox/",
       "showcase": {
         "url": "https://manishmodak.github.io/ootle-lockbox/",
-        "label": "Testnet · Mainnet pending",
+        "label": "Testnet \u00b7 Mainnet pending",
         "summary": "Time-lock tokens and inspect public proof pages for release conditions and token issuer powers."
       },
       "mainnetPlan": "Mainnet contracts are not yet configured. Testnet app is available."
@@ -159,7 +159,7 @@
       "testnetUrl": "https://tari.staging.arkimals-game.com/",
       "showcase": {
         "url": "https://tari.staging.arkimals-game.com/",
-        "label": "Testnet · Collectible game",
+        "label": "Testnet \u00b7 Collectible game",
         "summary": "Discover secret creatures through encrypted wallet memos, then choose when to reveal and mint them. Sapient required."
       },
       "mainnetPlan": "The current game requires Sapient on Esmeralda testnet."
@@ -173,7 +173,7 @@
       "testnetUrl": "https://hidebox.app/",
       "showcase": {
         "url": "https://hidebox.app/",
-        "label": "Testnet · Private storage",
+        "label": "Testnet \u00b7 Private storage",
         "summary": "Store encrypted files and explore one-time sharing links and pay-to-open content."
       },
       "mainnetPlan": "Live service remains on Esmeralda testnet."
@@ -184,7 +184,8 @@
       "testnetUrl": "https://atproto.tari.mw/",
       "checkedAt": "2026-11-11T13:14:18.567933+00:00",
       "evidenceUrl": "https://atproto.tari.mw/",
-      "evidence": "The November 11 integration guide still labels its verifier and escrow examples Esmeralda testnet. A current source-text read confirms this documentation scope; it does not establish a mainnet deployment."
+      "evidence": "The November 11 integration guide still labels its verifier and escrow examples Esmeralda testnet. A current source-text read confirms this documentation scope; it does not establish a mainnet deployment.",
+      "actionLabel": "Read guide"
     },
     {
       "ref": "tari-ootle:component:moonmail",
@@ -194,7 +195,7 @@
       "evidence": "MoonMail template exists on mainnet. November 11 live app reports Mainnet office pending and post office unavailable. No successful mail operation was verified.",
       "showcase": {
         "url": "https://seal-clubber.github.io/MoonMail/",
-        "label": "Mainnet template · Office pending",
+        "label": "Mainnet template \u00b7 Office pending",
         "summary": "Explore the encrypted-mail app and documentation. The mainnet post office is pending; live mail is unavailable."
       }
     },
@@ -206,7 +207,7 @@
       "evidence": "Deployed client has an Esmeralda template and a null mainnet template. No mainnet jar operation verified.",
       "showcase": {
         "url": "https://geiserx.github.io/ootip/",
-        "label": "Testnet · Mainnet pending",
+        "label": "Testnet \u00b7 Mainnet pending",
         "summary": "Create a repository tip jar and split public tips among maintainers on testnet. Mainnet deployment is pending."
       },
       "testnetUrl": "https://geiserx.github.io/ootip/"
@@ -217,7 +218,8 @@
       "checkedAt": "2026-11-11T13:16:51.196914+00:00",
       "evidenceUrl": "https://github.com/GSXRspartan/private-ballot/blob/main/README.md",
       "evidence": "The current README identifies its governance pilot as Esmeralda testnet.",
-      "testnetUrl": "https://github.com/GSXRspartan/private-ballot"
+      "testnetUrl": "https://github.com/GSXRspartan/private-ballot",
+      "actionLabel": "Open source"
     },
     {
       "ref": "tari-ootle:app:ootle-surveys",
@@ -225,7 +227,8 @@
       "checkedAt": "2026-11-11T13:16:51.196914+00:00",
       "evidenceUrl": "https://github.com/JustAResearcher/ootle-surveys/blob/main/README.md",
       "evidence": "The current README describes a local prototype using Esmeralda test tokens and explicitly excludes a hosted public service and mainnet support.",
-      "testnetUrl": "https://github.com/JustAResearcher/ootle-surveys"
+      "testnetUrl": "https://github.com/JustAResearcher/ootle-surveys",
+      "actionLabel": "Open source"
     },
     {
       "ref": "community:ootlebook",
