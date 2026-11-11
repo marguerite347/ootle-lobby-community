@@ -1,9 +1,9 @@
 {
   "slug": "signal-desk",
   "title": "Signal Desk",
-  "summary": "Sealed crypto calls on Ootle mainnet. Three successful seal transactions match the live app component and the BTC, ETH and SOL calls displayed in its public interface. SignalDesk, SignalForecasts and SignalFollows templates are published. Purchases, reveals, settlement and the forecasts/follows workflows were not independently verified. This is a separate project from Signal Vault. No wallet connection or transaction was submitted during the review.",
+  "summary": "Sealed crypto calls on Ootle mainnet. Three successful seal transactions match the live app component and the BTC, ETH and SOL calls displayed in its public interface. SignalDesk, SignalForecasts and SignalFollows templates are published. Purchases, reveals, settlement and the forecasts/follows workflows were not independently verified. This is a separate project from Signal Vault. No wallet connection or transaction was submitted during the review. The November 11 recording shows its public README and documented call types; it does not demonstrate purchases, reveals or settlement.",
   "cardSummary": "Browse sealed crypto calls with public pairs and horizons, private directions and levels, and records on Ootle mainnet.",
-  "cardStatus": "Mainnet live · Sealed calls",
+  "cardStatus": "Mainnet live \u00b7 Sealed calls",
   "creator": "OgBoy92",
   "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/6",
   "sourceLabel": "Original post",
@@ -21,7 +21,15 @@
   },
   "ecosystem": "tari-ootle",
   "technologies": [],
-  "media": null,
+  "media": {
+    "image": "/previews/community/resource-signal-desk-20261111.jpg",
+    "video": "/previews/community/resource-signal-desk-20261111.mp4",
+    "label": "Docs walkthrough",
+    "sourceUrl": "https://github.com/ogboy92ii/signal-desk#signal-desk",
+    "capturedAt": "2026-11-11T13:32:50.298Z",
+    "reviewedAt": "2026-11-11T13:34:13.725341+00:00",
+    "sha256": "b4cf4a992fd10fd312427ec57a36917546fc891bf0ac716bb0fccd708ae75160"
+  },
   "discussionLinks": [
     {
       "url": "https://bsky.app/profile/ogboy92.bsky.social/post/3mzxz4gd7e22q",
