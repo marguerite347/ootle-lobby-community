@@ -32,7 +32,7 @@ export default function NetworkProjects({initialNetwork='showcase',entries=revie
   ]:[{id:network,title:labels[network],description:network==='watch'?'Mainnet activity is not yet independently confirmed for these apps.':'',items:visible}];
   return <section className="network-projects" id="mainnet" aria-labelledby="network-projects-title">
     <div className="network-projects-heading"><h2 id="network-projects-title">Explore <em>Ootle apps.</em></h2><div className="network-filters" aria-label="Project network">{filters.map(value=><button key={value} type="button" aria-pressed={network===value} onClick={()=>setNetwork(value)}>{labels[value]} <span>{entries.filter(entry=>inView(entry,value)).length}</span></button>)}</div></div>
-    <p className="network-showcase-intro">Open the current hosted apps below. For Sapient, use the official store to get the latest available extension.</p>
+    <p className="network-showcase-intro">Explore apps, source projects and guides below. For Sapient, use the official store to get the latest available extension.</p>
     {groups.map(group=><section className="network-group" key={group.id} aria-labelledby={`network-${group.id}-title`}>
       <h3 id={`network-${group.id}-title`}>{group.title} <span>{group.items.length}</span></h3>
       {group.description&&<p className="network-group-description">{group.description}</p>}
@@ -51,7 +51,7 @@ export default function NetworkProjects({initialNetwork='showcase',entries=revie
           <h4><a href={href} target="_blank" rel="noreferrer">{item.title}</a></h4>
           <p>{network==='testnet'?item.cardSummary||item.summary:showcase?.summary||item.cardSummary||item.summary}</p>
           {!confirmed&&entry.mainnetPlan&&<p className="network-plan">{entry.mainnetPlan}</p>}
-          <div className="network-project-links"><a className="network-project-open" href={href} target="_blank" rel="noreferrer" aria-label={`${showcase?.actionLabel||'Open app'}: ${item.title}`}>{showcase?.actionLabel||'Open app'}</a>{isCatalog?<Link to={details}>Project details</Link>:<a href={details} target="_blank" rel="noreferrer">Original post</a>}{evidenceUrl!==href&&<a href={evidenceUrl} target="_blank" rel="noreferrer">{confirmed?'Mainnet evidence':'Network source'}</a>}</div>
+          <div className="network-project-links"><a className="network-project-open" href={href} target="_blank" rel="noreferrer" aria-label={`${entry.actionLabel||showcase?.actionLabel||'Open app'}: ${item.title}`}>{entry.actionLabel||showcase?.actionLabel||'Open app'}</a>{isCatalog?<Link to={details}>Project details</Link>:<a href={details} target="_blank" rel="noreferrer">Original post</a>}{evidenceUrl!==href&&<a href={evidenceUrl} target="_blank" rel="noreferrer">{confirmed?'Mainnet evidence':'Network source'}</a>}</div>
           <small>{typeof item.creator==='string'?item.creator:item.creator.name} · Checked {new Date(entry.checkedAt).toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:'UTC'})}{showcase?.version&&` · ${showcase.version}`}</small>
         </article>;
       })}</div>}
