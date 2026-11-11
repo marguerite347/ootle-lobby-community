@@ -20,6 +20,7 @@ export function validateNetworkStatus(data,knownRefs){
     if(entry.mainnetPlan!==undefined&&(typeof entry.mainnetPlan!=='string'||entry.mainnetPlan.length>180))throw Error('Mainnet plan must be concise.');
     if(entry.showcase!==undefined){
       if(!entry.showcase||typeof entry.showcase!=='object'||!https(entry.showcase.url))throw Error('Showcase needs a public HTTPS destination.');
+      for(const [key,max] of [['actionLabel',40],['version',80]])if(entry.showcase[key]!==undefined&&(typeof entry.showcase[key]!=='string'||!entry.showcase[key].trim()||entry.showcase[key].length>max||/[<>\u0000-\u001f]/.test(entry.showcase[key])))throw Error('Showcase download labels must be concise plain text.');
       for(const [key,max] of [['label',60],['summary',160]])if(typeof entry.showcase[key]!=='string'||!entry.showcase[key].trim()||entry.showcase[key].length>max||/[<>\u0000-\u001f]/.test(entry.showcase[key]))throw Error('Showcase needs concise plain-text labels and summaries.');
     }
   }

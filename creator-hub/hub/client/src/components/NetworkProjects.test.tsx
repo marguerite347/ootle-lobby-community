@@ -34,21 +34,27 @@ test('existing September projects use their catalog identity and current card co
  expect(html).toContain('Combine an Ootle wallet');
 });
 
-test('the default launch showcase exposes all nine destinations without calling them live mainnet',()=>{
+test('the default view puts confirmed apps before the mainnet watch without hiding available apps',()=>{
  const html=renderToStaticMarkup(<MemoryRouter><NetworkProjects/></MemoryRouter>);
- for(const url of ['https://explorer.tari.mw/','https://sapient.tari.mw/','https://caravellabs.net/','https://skydrop.tari.mw/','https://ghostline-ui.vercel.app/play.html','https://manishmodak.github.io/ootle-lockbox/','https://grave-robber.netlify.app/','https://tari.staging.arkimals-game.com/','https://hidebox.app/'])expect(html).toContain(`href="${url}"`);
- expect(html.match(/class="network-project"/g)).toHaveLength(9);
- expect(html.match(/>Open app</g)).toHaveLength(9);
- expect(html).toContain('Sandbox game');expect(html).toContain('Simulation + Testnet');expect(html).toContain('Mainnet launch planned');
- expect(html).not.toContain('href="https://atproto.tari.mw/"');
+ expect(html.indexOf('Confirmed on mainnet')).toBeLessThan(html.indexOf('id="network-watch-title"'));
+ const confirmed=html.slice(html.indexOf('id="network-confirmed-title"'),html.indexOf('id="network-watch-title"'));
+ for(const name of ['OotleAccord','Skydrop','Veil Ootle Explorer'])expect(confirmed).toContain(name);
+ for(const name of ['Sapient','MoonMail','HideBox','Grave Robber'])expect(confirmed).not.toContain(`>${name}</a>`);
+ expect(html.match(/class="network-project"/g)).toHaveLength(12);
+ expect(html).toContain('Sandbox game');expect(html).toContain('Office pending');
+ expect(html).toContain('Get latest extension');expect(html).toContain('Chrome Web Store: 0.9.6');
+ expect(html).toContain('href="https://chromewebstore.google.com/detail/tari-ootle-wallet/demkeckolenopkgnfbnpflkpbbdhpgkl"');
+ expect(html).not.toContain('releases/download/');
 });
-test('curation never promotes launch candidates into the verified mainnet filter',()=>{
- const html=renderToStaticMarkup(<MemoryRouter><NetworkProjects initialNetwork="mainnet"/></MemoryRouter>);
- expect(html).toContain('once deployments are confirmed');
- expect(html).not.toContain('class="network-project"');
- expect(html).toContain('Explore the launch lineup');
+test('network filters keep pending apps out of confirmed mainnet and preserve testnet destinations',()=>{
+ const mainnet=renderToStaticMarkup(<MemoryRouter><NetworkProjects initialNetwork="mainnet"/></MemoryRouter>);
+ expect(mainnet.match(/class="network-project"/g)).toHaveLength(3);
+ expect(mainnet).toContain('On-chain evidence');expect(mainnet).not.toContain('>MoonMail</a>');
+ const watch=renderToStaticMarkup(<MemoryRouter><NetworkProjects initialNetwork="watch"/></MemoryRouter>);
+ expect(watch.match(/class="network-project"/g)).toHaveLength(9);
+ expect(watch).toContain('>MoonMail</a>');expect(watch).not.toContain('>OotleAccord</a>');
  const testnet=renderToStaticMarkup(<MemoryRouter><NetworkProjects initialNetwork="testnet"/></MemoryRouter>);
  expect(testnet).toContain('href="https://testnet-explorer.tari.mw/"');
  expect(testnet).not.toContain('href="https://explorer.tari.mw/"');
- expect(testnet).not.toContain('Grave Robber');
+ expect(testnet).not.toContain('>Skydrop</a>');expect(testnet).not.toContain('Grave Robber');
 });
