@@ -17,32 +17,43 @@ const resourceRefs=new Set(catalog.keys());
 for(const item of Object.values(community))catalog.set(`community:${item.slug}`,item);
 for(const [path,item] of Object.entries(submissions))catalog.set(`${path.split('/').at(-2)}:${item.slug}`,item);
 const reviewedEntries=status.entries as NetworkEntry[];
-type ProjectView='showcase'|Exclude<NetworkState,'both'>;
-const labels:Record<ProjectView,string>={showcase:'Launch showcase',mainnet:'Mainnet',testnet:'Testnet',unconfirmed:'Not confirmed'};
-const inView=(entry:NetworkEntry,view:ProjectView)=>view==='showcase'?Boolean(entry.showcase):inNetwork(entry,view);
+type ProjectView='showcase'|'watch'|Exclude<NetworkState,'both'>;
+const labels:Record<ProjectView,string>={showcase:'All apps',mainnet:'Confirmed mainnet',watch:'Mainnet watch',testnet:'Testnet',unconfirmed:'Not confirmed'};
+const inView=(entry:NetworkEntry,view:ProjectView)=>view==='showcase'?Boolean(entry.showcase):view==='watch'?Boolean(entry.showcase)&&!inNetwork(entry,'mainnet'):inNetwork(entry,view);
 
 export default function NetworkProjects({initialNetwork='showcase',entries=reviewedEntries}:{initialNetwork?:ProjectView;entries?:NetworkEntry[]}){
   const [network,setNetwork]=useState<ProjectView>(initialNetwork);
   const visible=entries.filter(entry=>inView(entry,network));
-  const filters:ProjectView[]=[...(entries.some(entry=>entry.showcase)?['showcase' as const]:[]),'mainnet','testnet',...(entries.some(entry=>entry.state==='unconfirmed')?['unconfirmed' as const]:[])];
+  const filters:ProjectView[]=[...(entries.some(entry=>entry.showcase)?['showcase' as const]:[]),'mainnet',...(entries.some(entry=>inView(entry,'watch'))?['watch' as const]:[]),'testnet'];
+  const groups=network==='showcase'?[
+    {id:'confirmed',title:'Confirmed on mainnet',description:'Live apps with verified mainnet activity. Each card describes what has been checked.',items:visible.filter(entry=>inNetwork(entry,'mainnet'))},
+    {id:'watch',title:'Mainnet watch',description:'Apps to explore while mainnet verification is pending. Testnet, sandbox and unavailable features are labelled below.',items:visible.filter(entry=>!inNetwork(entry,'mainnet'))},
+  ]:[{id:network,title:labels[network],description:network==='watch'?'Mainnet activity is not yet independently confirmed for these apps.':'',items:visible}];
   return <section className="network-projects" id="mainnet" aria-labelledby="network-projects-title">
-    <div className="network-projects-heading"><h2 id="network-projects-title">{network==='showcase'?<>Explore the <em>launch lineup.</em></>:<>On <em>{network==='mainnet'?'mainnet.':network==='testnet'?'testnet.':'the radar.'}</em></>}</h2><div className="network-filters" aria-label="Project network">{filters.map(value=><button key={value} type="button" aria-pressed={network===value} onClick={()=>setNetwork(value)}>{labels[value]} <span>{entries.filter(entry=>inView(entry,value)).length}</span></button>)}</div></div>
-    {network==='showcase'&&<p className="network-showcase-intro">Wallets, payments, games and creative apps to explore for the Ootle launch. Check each card for its current network or demo mode.</p>}
-    {!visible.length?<p className="network-empty">{network==='mainnet'?'Mainnet listings appear here once deployments are confirmed.':'No reviewed projects in this group yet.'} {network==='mainnet'&&entries.some(entry=>entry.showcase)&&<button type="button" onClick={()=>setNetwork('showcase')}>Explore the launch lineup</button>} {network==='mainnet'&&entries.some(entry=>inNetwork(entry,'testnet'))&&<button type="button" onClick={()=>setNetwork('testnet')}>Browse testnet tools</button>}</p>:<div className="network-project-grid">{visible.map(entry=>{
-      const item=catalog.get(entry.ref);if(!item)return null;
-      const showcase=network==='showcase'?entry.showcase:undefined;
-      const href=showcase?.url||(network==='mainnet'?entry.mainnetUrl:entry.testnetUrl)||entry.evidenceUrl;
-      const isCatalog=resourceRefs.has(entry.ref);
-      const details=isCatalog?`/resource/${encodeURIComponent(entry.ref)}`:item.sourceUrl;
-      const networkLabel=entry.state==='both'?'Mainnet + Testnet':entry.state==='testnet'?'Testnet only':labels[entry.state];
-      return <article className="network-project" key={entry.ref}>
-        <div className="network-project-status"><span>{showcase?.label||networkLabel}</span>{item.type==='learn'&&<span>Guide</span>}</div>
-        <h3><a href={href} target="_blank" rel="noreferrer">{item.title}</a></h3>
-        <p>{showcase?.summary||item.cardSummary||item.summary}</p>
-        {network!=='mainnet'&&entry.mainnetPlan&&<p className="network-plan">{entry.mainnetPlan}</p>}
-        <div className="network-project-links">{showcase&&<a className="network-project-open" href={href} target="_blank" rel="noreferrer" aria-label={`Open ${item.title}`}>Open app</a>}{isCatalog?<Link to={details}>Project details</Link>:<a href={details} target="_blank" rel="noreferrer">Original post</a>}{details!==entry.evidenceUrl&&href!==entry.evidenceUrl&&<a href={entry.evidenceUrl} target="_blank" rel="noreferrer">Network source</a>}</div>
-        <small>{typeof item.creator==='string'?item.creator:item.creator.name} · Checked {new Date(entry.checkedAt).toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:'UTC'})}</small>
-      </article>;
-    })}</div>}
+    <div className="network-projects-heading"><h2 id="network-projects-title">Explore <em>Ootle apps.</em></h2><div className="network-filters" aria-label="Project network">{filters.map(value=><button key={value} type="button" aria-pressed={network===value} onClick={()=>setNetwork(value)}>{labels[value]} <span>{entries.filter(entry=>inView(entry,value)).length}</span></button>)}</div></div>
+    <p className="network-showcase-intro">Open the current hosted apps below. For Sapient, use the official store to get the latest available extension.</p>
+    {groups.map(group=><section className="network-group" key={group.id} aria-labelledby={`network-${group.id}-title`}>
+      <h3 id={`network-${group.id}-title`}>{group.title} <span>{group.items.length}</span></h3>
+      {group.description&&<p className="network-group-description">{group.description}</p>}
+      {!group.items.length?<p className="network-empty">{network==='mainnet'||group.id==='confirmed'?'Mainnet listings appear here once deployments are confirmed.':'No reviewed projects in this group yet.'}</p>:<div className="network-project-grid">{group.items.map(entry=>{
+        const item=catalog.get(entry.ref);if(!item)return null;
+        const showcase=entry.showcase;
+        const href=network==='testnet'?entry.testnetUrl||entry.evidenceUrl:showcase?.url||entry.mainnetUrl||entry.testnetUrl||entry.evidenceUrl;
+        const isCatalog=resourceRefs.has(entry.ref);
+        const details=isCatalog?`/resource/${encodeURIComponent(entry.ref)}`:item.sourceUrl;
+        const networkLabel=entry.state==='both'?'Mainnet + Testnet':entry.state==='testnet'?'Testnet only':labels[entry.state];
+        const confirmed=inNetwork(entry,'mainnet')&&network!=='testnet';
+        const evidenceUrl=confirmed?entry.deploymentEvidence?.url||entry.evidenceUrl:entry.evidenceUrl;
+        const label=network==='testnet'?networkLabel:showcase?.label||networkLabel;
+        return <article className="network-project" key={entry.ref}>
+          <div className="network-project-status"><span>{label}</span>{item.type==='learn'&&<span>Guide</span>}</div>
+          <h4><a href={href} target="_blank" rel="noreferrer">{item.title}</a></h4>
+          <p>{network==='testnet'?item.cardSummary||item.summary:showcase?.summary||item.cardSummary||item.summary}</p>
+          {!confirmed&&entry.mainnetPlan&&<p className="network-plan">{entry.mainnetPlan}</p>}
+          <div className="network-project-links"><a className="network-project-open" href={href} target="_blank" rel="noreferrer" aria-label={`${showcase?.actionLabel||'Open app'}: ${item.title}`}>{showcase?.actionLabel||'Open app'}</a>{isCatalog?<Link to={details}>Project details</Link>:<a href={details} target="_blank" rel="noreferrer">Original post</a>}{evidenceUrl!==href&&<a href={evidenceUrl} target="_blank" rel="noreferrer">{confirmed?'On-chain evidence':'Network source'}</a>}</div>
+          <small>{typeof item.creator==='string'?item.creator:item.creator.name} · Checked {new Date(entry.checkedAt).toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:'UTC'})}{showcase?.version&&` · ${showcase.version}`}</small>
+        </article>;
+      })}</div>}
+    </section>)}
   </section>;
 }

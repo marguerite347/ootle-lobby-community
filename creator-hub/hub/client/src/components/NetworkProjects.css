@@ -4,7 +4,7 @@
 .network-filters{display:flex;flex-wrap:wrap;gap:.5rem}.network-filters button,.network-empty button{font:inherit;min-height:2.75rem;cursor:pointer;border-radius:.6rem}
 .network-filters button{padding:.6rem 1rem;color:inherit;border:1px solid var(--border-strong,#51416e);background:transparent;font-weight:600}.network-filters button span{font-size:.875rem;margin-left:.5rem}.network-filters button[aria-pressed=true]{color:#0c0923;background:var(--season-lime,#d5ed3b);border-color:transparent}
 .network-empty{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem;font-size:1rem;line-height:1.5;color:var(--season-muted,#aaa5bd);margin:0}.network-empty button{border:0;background:none;color:var(--season-lime,#d5ed3b);padding:.5rem 0}
-.network-project-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem}.network-project{padding:1rem;border-top:1px solid var(--border-strong,#51416e);min-width:0}.network-project h3{font-size:1.25rem;line-height:1.3;margin:.75rem 0}.network-project h3 a{color:inherit}.network-project:hover h3 a,.network-project:focus-within h3 a{color:var(--season-lime,#d5ed3b)}
+.network-project-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem}.network-project{padding:1rem;border-top:1px solid var(--border-strong,#51416e);min-width:0}.network-project h4{font-size:1.25rem;line-height:1.3;margin:.75rem 0}.network-project h4 a{color:inherit}.network-project:hover h4 a,.network-project:focus-within h4 a{color:var(--season-lime,#d5ed3b)}
 .network-project p{font-size:1rem;line-height:1.5;margin:.5rem 0}.network-project-status{display:flex;flex-wrap:wrap;gap:.5rem;color:var(--season-lavender,#c6b4ef);font-size:.875rem;font-weight:600}.network-project .network-plan{color:var(--season-muted,#aaa5bd);font-size:.875rem}.network-project-links{display:flex;flex-wrap:wrap;gap:.5rem 1rem}.network-project-links a{min-height:2.75rem;display:inline-flex;align-items:center;font-size:.875rem}.network-project small{color:var(--season-muted,#aaa5bd);font-size:.875rem}
 .network-projects a:focus-visible,.network-projects button:focus-visible{outline:2px solid var(--season-lime,#d5ed3b);outline-offset:3px}
 @media(min-width:768px){.network-projects{padding:1.5rem}.network-project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -12,3 +12,6 @@
 
 .network-showcase-intro{max-width:65ch;margin:0 0 1.25rem;color:var(--season-muted,#aaa5bd);font-size:1rem;line-height:1.5}
 .network-project-links .network-project-open{font-weight:700;color:var(--season-lime,#d5ed3b)}
+
+.network-group + .network-group{margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border-strong,#51416e)}
+.network-group>h3{font-size:1.4rem;margin:0 0 .5rem}.network-group>h3 span{color:var(--season-muted,#aaa5bd);font-size:1rem;margin-left:.5rem}.network-group-description{max-width:70ch;line-height:1.5;color:var(--season-muted,#aaa5bd);margin:0 0 1rem}

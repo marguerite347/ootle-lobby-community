@@ -1,9 +1,9 @@
 {
   "slug": "moonmail",
   "title": "MoonMail",
-  "summary": "Browser mailbox for encrypted Ootle letters, recoverable Inbox/Sent and preferences; it does not send ordinary email. November 4, 2026: the landing and privacy pages load, but the public hall cannot reach its post office and no live mail loaded. The cause is not established. Sapient private-view access is a separate account-wide grant exposing other resources’ private amounts and memos; spending needs separate approval. Public postbox identities, signers, timing, fees and size buckets remain observable. Historical mailbox-key compromise has no forward-secrecy protection. Private payments require three approvals with non-atomic transfer and receipt delivery. Public/link gifts expose vault amounts and have no expiry or sender refund; complete private links grant bearer access. The README targets Ootle 0.47 and Sapient 0.6.14, separating historical funded tests from dated read-only recovery and local tests. The November 2 organizer notice asked entrants to republish templates after the Esmeralda reset. The retained October 29 recording shows public privacy documentation, not current mail delivery or payment. MIT source; no wallet grant or transaction exercised.",
-  "cardSummary": "Exchange encrypted letters between Ootle postboxes and recover conversations, sent mail and saved settings through Sapient.",
-  "cardStatus": "Testnet · Sapient · Live mail unavailable",
+  "summary": "Encrypted Ootle letters and postboxes. November 11, 2026: the MoonMail template is published on mainnet, but the current app reports Mainnet office pending and the public post office unavailable. No live mail operation was verified. Wallet private-view access is an account-wide permission; spending requires separate approval. Public postbox identities, timing and fees remain observable. The retained October recording covers documentation, not current delivery.",
+  "cardSummary": "Explore encrypted Ootle letters and postboxes. The mainnet post office is pending; live mail is unavailable.",
+  "cardStatus": "Mainnet watch · Office pending",
   "creator": "SealClubber",
   "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/33",
   "publishedAt": "2026-10-29T00:03:01.603Z",
