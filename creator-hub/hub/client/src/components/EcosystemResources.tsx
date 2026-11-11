@@ -12,7 +12,7 @@ export default function EcosystemResources() {
   const opportunities = resources.opportunities.filter(item => (!item.expiresAt || Date.now() < Date.parse(item.expiresAt)));
   return <section className="section ecosystem-resources" id="ecosystem-resources" aria-labelledby="ecosystem-title">
     <div className="section-head"><div><h2 id="ecosystem-title">Build with the <em>ecosystem.</em></h2><p>Official guides, language SDKs and reusable community sources.</p></div></div>
-    <p>Start with the docs, choose an SDK, then explore testnet tools and templates.</p>
+    <p>Start with the docs, choose an SDK, then explore network tools and community faucets.</p>
     <label className="ecosystem-search">Find a builder resource<input type="search" value={query} onChange={event => setQuery(event.target.value)} placeholder="Python, faucet, templates…" /></label>
     <div className="ecosystem-grid">{records.map(record => <article key={record.id} id={`resource-${record.key}`} className="ecosystem-card">
       <ResourceCardMedia r={{...record,native:true}}/>
