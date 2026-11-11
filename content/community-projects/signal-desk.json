@@ -5,16 +5,27 @@
   "cardSummary": "Browse sealed crypto calls with public pairs and horizons, private directions and levels, and records on Ootle mainnet.",
   "cardStatus": "Mainnet live · Sealed calls",
   "creator": "OgBoy92",
-  "sourceUrl": "https://github.com/ogboy92ii/signal-desk",
-  "sourceLabel": "Project repository",
+  "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/6",
+  "sourceLabel": "Original post",
   "publishedAt": "2026-11-11T12:58:55.140605+00:00",
   "publicationBasis": "First verified for this Lobby listing from the live mainnet interface and committed contract activity; not the original launch date.",
   "publicationLabel": "Verified",
   "publicationUrl": "https://explorer.tari.mw/tx/76db72a097bd506d96eb9af187f2f224df15a36bd43fc341a77916648966f9e3",
   "demoUrl": "https://signal-desk-ootle.vercel.app/",
   "repoUrl": "https://github.com/ogboy92ii/signal-desk",
-  "forum": null,
+  "forum": {
+    "url": "https://community.tari.com/t/november-bonus-contest-first-to-launch/521/3",
+    "topicId": 521,
+    "postNumber": 3,
+    "scope": "replies"
+  },
   "ecosystem": "tari-ootle",
   "technologies": [],
-  "media": null
+  "media": null,
+  "discussionLinks": [
+    {
+      "url": "https://bsky.app/profile/ogboy92.bsky.social/post/3mzxz4gd7e22q",
+      "platform": "Bluesky"
+    }
+  ]
 }

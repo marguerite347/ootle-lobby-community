@@ -15,6 +15,12 @@ test('creator entries retain unique forum identities and distinct public work li
     assert.ok(!posts.has(entry.sourceUrl)); posts.add(entry.sourceUrl);
     assert.ok(!ids.has(entry.id)); ids.add(entry.id);
     assert.ok(Date.parse(entry.updatedAt) >= Date.parse(entry.publishedAt));
+    for (const link of entry.discussionLinks ?? []) {
+      assert.ok(link.url.startsWith(`${registry.threadUrl}/`));
+      assert.ok(safeHref(link.url));
+      assert.ok(link.label.length > 0);
+      assert.notEqual(link.url, entry.sourceUrl);
+    }
     for (const work of entry.works) {
       assert.ok(safeHref(work.url)?.startsWith('https://'));
       const url = new URL(work.url); url.hash = '';
