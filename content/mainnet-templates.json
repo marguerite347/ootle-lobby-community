@@ -1,0 +1,122 @@
+{
+  "network": "mainnet",
+  "checkedAt": "2026-11-11T12:58:55.140605+00:00",
+  "sources": [
+    "https://indexer-a.ootle.tari.com/templates/catalogue?limit=100",
+    "https://indexer-b.ootle.tari.com/templates/catalogue?limit=100"
+  ],
+  "entries": [
+    {
+      "name": "Account",
+      "address": "0000000000000000000000000000000000000000000000000000000000000000",
+      "epoch": 0,
+      "kind": "builtin",
+      "project": "Ootle protocol"
+    },
+    {
+      "name": "NftFaucet",
+      "address": "0000000000000000000000000000000000000000000000000000000000000001",
+      "epoch": 0,
+      "kind": "builtin",
+      "project": "Ootle protocol"
+    },
+    {
+      "name": "XtrFaucet",
+      "address": "0102030000000000000000000000000000000000000000000000000000000000",
+      "epoch": 0,
+      "kind": "builtin",
+      "project": "Ootle protocol"
+    },
+    {
+      "name": "TwoResourceLiquidityPool",
+      "address": "0000000000000000000000000000000000000000000000000000000000000002",
+      "epoch": 0,
+      "kind": "builtin",
+      "project": "Ootle protocol"
+    },
+    {
+      "name": "BurnRateGovernance",
+      "address": "0000000000000000000000000000000000000000000000000000000000000003",
+      "epoch": 0,
+      "kind": "builtin",
+      "project": "Ootle protocol"
+    },
+    {
+      "name": "SapientEscrow",
+      "address": "151ae04f4b80eda9a45d37f0ae8c2c8b005eb6df6715c2a9eb14df68b6e4bbf3",
+      "epoch": 38434,
+      "kind": "community",
+      "project": "OotleAccord"
+    },
+    {
+      "name": "MoonMail",
+      "address": "d4ed44d36e79e85ea7a8705170d0227a34b9fb3afba556b00112ff785b6da8c8",
+      "epoch": 38434,
+      "kind": "community",
+      "project": "MoonMail"
+    },
+    {
+      "name": "LinkRegistry",
+      "address": "e4aaf6455091f76c5521fff8e0bf83cbbe05a5301ab46811bd6af9d0b7402794",
+      "epoch": 38434,
+      "kind": "community",
+      "project": "Skydrop"
+    },
+    {
+      "name": "Campaign",
+      "address": "280624a46133dd0391663a07736319f63c650240a404933443a276253e2a40c5",
+      "epoch": 38434,
+      "kind": "community",
+      "project": "Skydrop"
+    },
+    {
+      "name": "Verifier",
+      "address": "8e7168dd2ed24e1f0b6344fc92ac00f8da6fbd7ee801cc3a7713f85b229cadc6",
+      "epoch": 38434,
+      "kind": "community",
+      "project": "Skydrop"
+    },
+    {
+      "name": "Escrow",
+      "address": "00cc4485c31cf1d31de2da7d5acc23613a75d16aa4b6f8d461713c23a22b9898",
+      "epoch": 38434,
+      "kind": "community",
+      "project": "Skydrop"
+    },
+    {
+      "name": "ClaimPolicy",
+      "address": "e2796315dc2ce765b991ef73e47a4fe9729b731768000cbf5ac5bcf44d471335",
+      "epoch": 38434,
+      "kind": "community",
+      "project": "Skydrop"
+    },
+    {
+      "name": "SignalDesk",
+      "address": "65d9bbc931d306d2de9b235d7a0272f0dae05d061ed38f3c09467b972289b455",
+      "epoch": 38434,
+      "kind": "community",
+      "project": "Signal Desk"
+    },
+    {
+      "name": "SignalForecasts",
+      "address": "4e58dcb438e1d69b99b6991d61f33cd26bd9866c59cdf86ef23e9f493f170f49",
+      "epoch": 38434,
+      "kind": "community",
+      "project": "Signal Desk"
+    },
+    {
+      "name": "SignalFollows",
+      "address": "b622b0ada7ee233eabe33d7111c641ebdbd281e877bb217c6f32d287e250eecf",
+      "epoch": 38434,
+      "kind": "community",
+      "project": "Signal Desk"
+    },
+    {
+      "name": "TipPolicy",
+      "address": "67e6664cbd21e90afabc126840ec383720a38f9e98c3fd160594d1e1662f20ad",
+      "epoch": 38435,
+      "kind": "community",
+      "project": "Skydrop"
+    }
+  ]
+}

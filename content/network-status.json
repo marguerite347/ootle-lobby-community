@@ -60,6 +60,24 @@
       }
     },
     {
+      "ref": "community:signal-desk",
+      "state": "mainnet",
+      "checkedAt": "2026-11-11T12:58:55.140605+00:00",
+      "evidenceUrl": "https://explorer.tari.mw/tx/76db72a097bd506d96eb9af187f2f224df15a36bd43fc341a77916648966f9e3",
+      "evidence": "Three committed seal calls match the live mainnet component and the three BTC, ETH and SOL calls displayed in the app. Purchases, reveals, settlement and forecasts/follows workflows remain unverified.",
+      "mainnetUrl": "https://signal-desk-ootle.vercel.app/",
+      "showcase": {
+        "url": "https://signal-desk-ootle.vercel.app/",
+        "label": "Mainnet live \u00b7 Sealed calls",
+        "summary": "Browse sealed crypto calls on Ootle mainnet. Three sealed calls are verified; purchases, reveals and settlement remain unverified."
+      },
+      "deploymentEvidence": {
+        "url": "https://explorer.tari.mw/tx/76db72a097bd506d96eb9af187f2f224df15a36bd43fc341a77916648966f9e3",
+        "observedAt": "2026-11-11T12:58:55.140605+00:00",
+        "detail": "Three committed seal calls match the live mainnet component and the three BTC, ETH and SOL calls displayed in the app. Purchases, reveals, settlement and forecasts/follows workflows remain unverified."
+      }
+    },
+    {
       "ref": "tari-ootle:app:caravel",
       "state": "testnet",
       "checkedAt": "2026-11-11T12:16:00Z",

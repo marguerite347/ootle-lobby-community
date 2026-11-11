@@ -27,3 +27,11 @@ Added the user-supplied https://faucet-ootle.supportxtm.com/ as a separate commu
 ### Sapient classification correction
 
 The user confirmed Sapient is live on mainnet. Treating the absence of an auditor-performed wallet send as a deployment blocker was too strict for a wallet client. The available Chrome Web Store version 0.9.6 matches package.json; its published source supports mainnet and the default-network transition. Sapient is now in the mainnet group with the current store destination, while the detailed evidence retains that no transfer was submitted by this audit. The UI now says Mainnet evidence rather than labelling every evidence link on-chain. Final group totals: four mainnet apps/wallets, eight watch apps. Header retains only OOTLE and Mainnet live per user correction. Root tests 111, client tests 249, validation and frontend build passed.
+
+## November 11: Signal Desk and published templates
+
+Outcome: visitors can open Signal Desk from Mainnet live and inspect all 11 community templates plus five built-ins in a distinct Published mainnet templates section. The template list is a dated snapshot, never an app-availability signal. MoonMail remains on watch; Signal Desk sealing is verified, while purchases, reveals, settlement and forecasts/follows workflows remain unverified. Signal Desk has its own identity, separate from Signal Vault.
+
+Reuse: existing NetworkProjects cards, community-project schema and evidence registry, current dependencies and established Vercel deployment. Both official catalogues were fetched again and agree exactly with the reviewed 16-template inventory. Links preserve the exact returned addresses. Acceptance: five live entries, eight watch entries, separate 16-template list, readable phone layout, working public links and verified production revision.
+
+Prepublication validation: 111 root tests and 250 client tests passed, content validation and production build/package/runtime checks passed. All 16 template-definition links, the Signal Desk app and repository returned HTTP 200. Browser confirmed five live apps, eight watch apps and 16 separate templates; 390px viewport reported 390px page width. Production revision and live verification follow publication.

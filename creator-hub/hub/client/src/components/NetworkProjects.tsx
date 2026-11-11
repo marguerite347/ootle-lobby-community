@@ -5,6 +5,7 @@ import september from '../../../data/contests/september-2026.json';
 import status from '../../../../../content/network-status.json';
 import {inNetwork, type NetworkEntry, type NetworkState} from '../../../shared/networkStatus.mjs';
 import './NetworkProjects.css';
+import PublishedMainnetTemplates from './PublishedMainnetTemplates';
 
 type CatalogItem={id?:string;slug?:string;title:string;cardSummary?:string;summary:string;type?:string;sourceUrl:string;discussionLinks?:{url:string}[];creator:string|{name:string};};
 const community=import.meta.glob<CatalogItem>('../../../../../content/community-projects/*.json',{eager:true,import:'default'});
@@ -18,7 +19,7 @@ for(const item of Object.values(community))catalog.set(`community:${item.slug}`,
 for(const [path,item] of Object.entries(submissions))catalog.set(`${path.split('/').at(-2)}:${item.slug}`,item);
 const reviewedEntries=status.entries as NetworkEntry[];
 type ProjectView='showcase'|'watch'|Exclude<NetworkState,'both'>;
-const labels:Record<ProjectView,string>={showcase:'All apps',mainnet:'Confirmed mainnet',watch:'Mainnet watch',testnet:'Testnet',unconfirmed:'Not confirmed'};
+const labels:Record<ProjectView,string>={showcase:'All apps',mainnet:'Mainnet live',watch:'Mainnet watch',testnet:'Testnet',unconfirmed:'Not confirmed'};
 const inView=(entry:NetworkEntry,view:ProjectView)=>view==='showcase'?Boolean(entry.showcase):view==='watch'?Boolean(entry.showcase)&&!inNetwork(entry,'mainnet'):inNetwork(entry,view);
 
 export default function NetworkProjects({initialNetwork='showcase',entries=reviewedEntries}:{initialNetwork?:ProjectView;entries?:NetworkEntry[]}){
@@ -26,7 +27,7 @@ export default function NetworkProjects({initialNetwork='showcase',entries=revie
   const visible=entries.filter(entry=>inView(entry,network));
   const filters:ProjectView[]=[...(entries.some(entry=>entry.showcase)?['showcase' as const]:[]),'mainnet',...(entries.some(entry=>inView(entry,'watch'))?['watch' as const]:[]),'testnet'];
   const groups=network==='showcase'?[
-    {id:'confirmed',title:'Confirmed on mainnet',description:'Apps and wallets available on Ootle mainnet. Each card describes what has been checked.',items:visible.filter(entry=>inNetwork(entry,'mainnet'))},
+    {id:'confirmed',title:'Mainnet live',description:'Apps and wallets available on Ootle mainnet. Each card describes what has been checked.',items:visible.filter(entry=>inNetwork(entry,'mainnet'))},
     {id:'watch',title:'Mainnet watch',description:'Apps to explore while mainnet verification is pending. Testnet, sandbox and unavailable features are labelled below.',items:visible.filter(entry=>!inNetwork(entry,'mainnet'))},
   ]:[{id:network,title:labels[network],description:network==='watch'?'Mainnet activity is not yet independently confirmed for these apps.':'',items:visible}];
   return <section className="network-projects" id="mainnet" aria-labelledby="network-projects-title">
@@ -55,5 +56,6 @@ export default function NetworkProjects({initialNetwork='showcase',entries=revie
         </article>;
       })}</div>}
     </section>)}
+    {(network==='showcase'||network==='mainnet')&&<PublishedMainnetTemplates/>}
   </section>;
 }
