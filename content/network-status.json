@@ -40,18 +40,24 @@
     },
     {
       "ref": "tari-ootle:app:sapient",
-      "state": "unconfirmed",
-      "checkedAt": "2026-11-11T12:16:00Z",
-      "evidenceUrl": "https://chromewebstore.google.com/detail/tari-ootle-wallet/demkeckolenopkgnfbnpflkpbbdhpgkl",
-      "evidence": "Official Chrome Web Store observed November 11: version 0.9.6, updated November 10. Current source includes mainnet support, but this audit did not install the extension or independently execute a wallet send. GitHub latest release v0.4.2 is older than the store version.",
+      "state": "both",
+      "checkedAt": "2026-11-11T12:41:26.863665+00:00",
+      "evidenceUrl": "https://github.com/chironbuilds/tari-wallet/blob/master/src/lib/networkDefault.ts",
+      "evidence": "User confirmed Sapient is live on mainnet. Official Chrome Web Store version 0.9.6 matches current package.json, and published source includes mainnet support and the November 11 default-network transition. This verifies an available mainnet wallet; this audit did not install it or submit a transfer. Public transfers do not independently identify which wallet client submitted them.",
       "showcase": {
         "url": "https://chromewebstore.google.com/detail/tari-ootle-wallet/demkeckolenopkgnfbnpflkpbbdhpgkl",
-        "label": "Mainnet watch \u00b7 Wallet",
-        "summary": "Get the current Sapient extension from the official Chrome Web Store to manage accounts and connect to Ootle apps.",
+        "label": "Mainnet \u00b7 Browser wallet",
+        "summary": "Manage Ootle mainnet accounts, private transfers and app approvals. Get the current Sapient extension from the official Chrome Web Store.",
         "actionLabel": "Get latest extension",
         "version": "Chrome Web Store: 0.9.6"
       },
-      "mainnetPlan": "Mainnet support available; an independent wallet-send check is pending."
+      "mainnetUrl": "https://sapient.tari.mw/",
+      "testnetUrl": "https://chromewebstore.google.com/detail/tari-ootle-wallet/demkeckolenopkgnfbnpflkpbbdhpgkl",
+      "deploymentEvidence": {
+        "url": "https://sapient.tari.mw/",
+        "observedAt": "2026-11-11T12:41:26.863665+00:00",
+        "detail": "User confirmed Sapient is live on mainnet. Official Chrome Web Store version 0.9.6 matches current package.json, and published source includes mainnet support and the November 11 default-network transition. This verifies an available mainnet wallet; this audit did not install it or submit a transfer. Public transfers do not independently identify which wallet client submitted them."
+      }
     },
     {
       "ref": "tari-ootle:app:caravel",
