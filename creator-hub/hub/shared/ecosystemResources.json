@@ -998,6 +998,40 @@
       }
     },
     {
+      "id": "tari-ootle:integration:supportxtm-mainnet-faucet",
+      "key": "supportxtm-mainnet-faucet",
+      "type": "integration",
+      "ecosystem": "tari-ootle",
+      "group": "Developer tools",
+      "title": "SupportXTM Ootle mainnet faucet",
+      "summary": "Community faucet offering a random 1–10 TARI to a mainnet Ootle (L2) address. The public form and displayed spendable balance were reachable on November 11, 2026. This is separate from SupportXTM’s L1 XTM faucets. The page links the official burn guide to explain how its Ootle funds originate from L1. No address was submitted and no payout was independently verified during this read-only check. A source repository and license are not published on the inspected page.",
+      "status": "Web faucet · Ootle mainnet",
+      "sourceUrl": "https://faucet-ootle.supportxtm.com/",
+      "repoUrl": null,
+      "docsUrl": "https://ootle.tari.com/guides/burn-minotari/",
+      "demoUrl": "https://faucet-ootle.supportxtm.com/",
+      "creator": {
+        "name": "SupportXTM",
+        "url": "https://faucet-ootle.supportxtm.com/"
+      },
+      "license": "Not stated",
+      "network": "Ootle L2 mainnet (site-labelled)",
+      "platform": "Web",
+      "upstreamRevision": "f5f1eca69e71a5248fbd3671ef9f1c20417388245ffe55f08965e80e27275a96",
+      "sourceUpdatedAt": null,
+      "lastCheckedAt": "2026-11-11T12:37:57.536833+00:00",
+      "verification": "source-attested",
+      "readiness": "conceptual",
+      "tags": [
+        "ecosystem-resources",
+        "faucet",
+        "mainnet",
+        "l2"
+      ],
+      "cardSummary": "Request 1–10 TARI for an Ootle mainnet address from this community faucet.",
+      "cardStatus": "Web faucet · Ootle mainnet"
+    },
+    {
       "id": "tari:component:supportxtm-testnet-faucet",
       "key": "supportxtm-testnet-faucet",
       "type": "component",

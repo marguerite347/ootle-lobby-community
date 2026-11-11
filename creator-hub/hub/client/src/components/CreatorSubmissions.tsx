@@ -31,8 +31,8 @@ export default function CreatorSubmissions() {
       {entry.resourceIds.map(id => resources.records.find(record => record.id === id)).filter(record => !!record).map(record => <div key={record!.id} className="creator-resource" aria-label={record!.title}>
         <ResourceCardMedia r={{...record!,native:record!.ecosystem === 'tari-ootle'}}/>
         <div><h5><Link to={`/resource/${encodeURIComponent(record!.id)}`}>{record!.title}</Link></h5>
-          <p>{record!.cardSummary}</p><strong>{record!.cardStatus}</strong> · <span>{recordingLabel(record!.preview.source)}</span>
-          <details><summary aria-label={`Details about ${record!.title}`}>Details</summary><p>{record!.summary}</p><p>{record!.preview.source}</p><Link to={`/resource/${encodeURIComponent(record!.id)}`}>Full resource &amp; provenance</Link></details>
+          <p>{record!.cardSummary}</p><strong>{record!.cardStatus}</strong>{record!.preview && <> · <span>{recordingLabel(record!.preview.source)}</span></>}
+          <details><summary aria-label={`Details about ${record!.title}`}>Details</summary><p>{record!.summary}</p>{record!.preview && <p>{record!.preview.source}</p>}<Link to={`/resource/${encodeURIComponent(record!.id)}`}>Full resource &amp; provenance</Link></details>
         </div>
       </div>)}
       </div>
