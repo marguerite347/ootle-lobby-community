@@ -3,6 +3,7 @@ import {renderToStaticMarkup} from 'react-dom/server';
 import {MemoryRouter} from 'react-router-dom';
 import {expect,test} from 'vitest';
 import NetworkProjects from './NetworkProjects';
+import LaunchCountdown from './LaunchCountdown';
 import type {NetworkEntry} from '../../../shared/networkStatus.mjs';
 const entries:NetworkEntry[]=[
  {ref:'tari-ootle:integration:veil',testnetUrl:'https://explorer.tari.mw/',mainnetPlan:'Deployment confirmation pending'},
@@ -57,4 +58,10 @@ test('network filters keep pending apps out of confirmed mainnet and preserve te
  expect(testnet).toContain('href="https://testnet-explorer.tari.mw/"');
  expect(testnet).not.toContain('href="https://explorer.tari.mw/"');
  expect(testnet).not.toContain('>Skydrop</a>');expect(testnet).not.toContain('Grave Robber');
+});
+
+test('the header reflects reviewed mainnet evidence instead of the expired launch countdown',()=>{
+ const html=renderToStaticMarkup(<LaunchCountdown/>);
+ expect(html).toContain('Mainnet live');expect(html).toContain('href="#mainnet"');
+ expect(html).not.toContain('Launching soon');expect(html).not.toContain('planned launch');
 });
