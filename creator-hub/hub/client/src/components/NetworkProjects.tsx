@@ -26,7 +26,7 @@ export default function NetworkProjects({initialNetwork='showcase',entries=revie
   const visible=entries.filter(entry=>inView(entry,network));
   const filters:ProjectView[]=[...(entries.some(entry=>entry.showcase)?['showcase' as const]:[]),'mainnet',...(entries.some(entry=>inView(entry,'watch'))?['watch' as const]:[]),'testnet'];
   const groups=network==='showcase'?[
-    {id:'confirmed',title:'Confirmed on mainnet',description:'Live apps with verified mainnet activity. Each card describes what has been checked.',items:visible.filter(entry=>inNetwork(entry,'mainnet'))},
+    {id:'confirmed',title:'Confirmed on mainnet',description:'Apps and wallets available on Ootle mainnet. Each card describes what has been checked.',items:visible.filter(entry=>inNetwork(entry,'mainnet'))},
     {id:'watch',title:'Mainnet watch',description:'Apps to explore while mainnet verification is pending. Testnet, sandbox and unavailable features are labelled below.',items:visible.filter(entry=>!inNetwork(entry,'mainnet'))},
   ]:[{id:network,title:labels[network],description:network==='watch'?'Mainnet activity is not yet independently confirmed for these apps.':'',items:visible}];
   return <section className="network-projects" id="mainnet" aria-labelledby="network-projects-title">
@@ -50,7 +50,7 @@ export default function NetworkProjects({initialNetwork='showcase',entries=revie
           <h4><a href={href} target="_blank" rel="noreferrer">{item.title}</a></h4>
           <p>{network==='testnet'?item.cardSummary||item.summary:showcase?.summary||item.cardSummary||item.summary}</p>
           {!confirmed&&entry.mainnetPlan&&<p className="network-plan">{entry.mainnetPlan}</p>}
-          <div className="network-project-links"><a className="network-project-open" href={href} target="_blank" rel="noreferrer" aria-label={`${showcase?.actionLabel||'Open app'}: ${item.title}`}>{showcase?.actionLabel||'Open app'}</a>{isCatalog?<Link to={details}>Project details</Link>:<a href={details} target="_blank" rel="noreferrer">Original post</a>}{evidenceUrl!==href&&<a href={evidenceUrl} target="_blank" rel="noreferrer">{confirmed?'On-chain evidence':'Network source'}</a>}</div>
+          <div className="network-project-links"><a className="network-project-open" href={href} target="_blank" rel="noreferrer" aria-label={`${showcase?.actionLabel||'Open app'}: ${item.title}`}>{showcase?.actionLabel||'Open app'}</a>{isCatalog?<Link to={details}>Project details</Link>:<a href={details} target="_blank" rel="noreferrer">Original post</a>}{evidenceUrl!==href&&<a href={evidenceUrl} target="_blank" rel="noreferrer">{confirmed?'Mainnet evidence':'Network source'}</a>}</div>
           <small>{typeof item.creator==='string'?item.creator:item.creator.name} · Checked {new Date(entry.checkedAt).toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:'UTC'})}{showcase?.version&&` · ${showcase.version}`}</small>
         </article>;
       })}</div>}
