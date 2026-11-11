@@ -28,6 +28,7 @@ export default function CreatorSubmissions() {
       <div className="creator-submission-byline"><a href={entry.sourceUrl} target="_blank" rel="noreferrer">{entry.creator}</a><time dateTime={entry.publishedAt}>{date(entry.publishedAt)}</time></div>
       <div><h4>{entry.title}</h4>{entry.works.length > 0 && <ul>{entry.works.map(work => <li key={work.url}><a href={safeHref(work.url)} target="_blank" rel="noreferrer">{work.title}</a><span>{work.format}</span></li>)}</ul>}{entry.note && <p>{entry.note}</p>}
       <a href={entry.sourceUrl} target="_blank" rel="noreferrer">Original post</a>
+      {'discussionLinks' in entry && entry.discussionLinks?.map(link => <span key={link.url}> · <a href={safeHref(link.url)} target="_blank" rel="noreferrer">{link.label}</a></span>)}
       {entry.resourceIds.map(id => resources.records.find(record => record.id === id)).filter(record => !!record).map(record => <div key={record!.id} className="creator-resource" aria-label={record!.title}>
         <ResourceCardMedia r={{...record!,native:record!.ecosystem === 'tari-ootle'}}/>
         <div><h5><Link to={`/resource/${encodeURIComponent(record!.id)}`}>{record!.title}</Link></h5>

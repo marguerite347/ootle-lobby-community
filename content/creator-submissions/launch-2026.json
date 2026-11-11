@@ -1,6 +1,6 @@
 {
   "threadUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503",
-  "checkedAt": "2026-11-10T14:05:20.572020+00:00",
+  "checkedAt": "2026-11-11T13:13:25.462355+00:00",
   "entries": [
     {
       "id": "creator-503-3",
@@ -65,7 +65,13 @@
         }
       ],
       "note": "The creator’s follow-up video is linked from forum post 23; its title and channel were confirmed on November 10.",
-      "sourceContentSha256": "a8cd7d544e887053b775ffaa39ab03cbc762f0ad345f5d82cd832e09fc2870e6"
+      "sourceContentSha256": "a8cd7d544e887053b775ffaa39ab03cbc762f0ad345f5d82cd832e09fc2870e6",
+      "discussionLinks": [
+        {
+          "label": "Follow-up post",
+          "url": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/23"
+        }
+      ]
     },
     {
       "id": "creator-503-5",
@@ -266,7 +272,7 @@
     {
       "id": "creator-503-18",
       "creator": "Terence",
-      "title": "Mining Tari on an iPhone",
+      "title": "Mining diaries and community comics",
       "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/18",
       "publishedAt": "2026-11-03T13:51:16.019Z",
       "updatedAt": "2026-11-04T03:57:27.984Z",
@@ -291,6 +297,11 @@
           "title": "Phone mining in a minute",
           "format": "YouTube Short",
           "url": "https://www.youtube.com/watch?v=pHWt2QRzRzc"
+        },
+        {
+          "title": "The Little Boss: Tari community stories",
+          "format": "Forum comics",
+          "url": "https://community.tari.com/t/564"
         }
       ],
       "note": null
@@ -462,7 +473,7 @@
       "title": "Receiving payments while offline",
       "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/28",
       "publishedAt": "2026-11-07T19:02:48.998Z",
-      "updatedAt": "2026-11-07T19:02:48.998Z",
+      "updatedAt": "2026-11-10T22:06:10.342Z",
       "resourceIds": [],
       "works": [
         {
@@ -481,7 +492,13 @@
           "url": "https://medium.com/@0xkenichi/how-tari-lets-you-get-paid-while-youre-offline-6537df9f54b5"
         }
       ],
-      "note": null
+      "note": null,
+      "discussionLinks": [
+        {
+          "label": "Updated submission",
+          "url": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/36"
+        }
+      ]
     },
     {
       "id": "creator-503-30",
@@ -555,7 +572,7 @@
       "title": "Privacy and template building, illustrated",
       "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/33",
       "publishedAt": "2026-11-09T15:42:52.556Z",
-      "updatedAt": "2026-11-10T09:10:30.156Z",
+      "updatedAt": "2026-11-11T08:05:30.365Z",
       "resourceIds": [],
       "works": [
         {
@@ -602,10 +619,31 @@
           "title": "Pedersen commitments in 40 seconds",
           "format": "YouTube Short",
           "url": "https://www.youtube.com/shorts/KDJKSiNfg14"
+        },
+        {
+          "title": "A crypto lock that opens every night",
+          "format": "YouTube Short",
+          "url": "https://www.youtube.com/shorts/bn2vo6GOfF8"
+        },
+        {
+          "title": "How a stealth address is made",
+          "format": "YouTube Short",
+          "url": "https://www.youtube.com/shorts/l7WIykopgGI"
+        },
+        {
+          "title": "Building a faucet without a user list",
+          "format": "YouTube Short",
+          "url": "https://www.youtube.com/shorts/vglZJ1VAPVI"
         }
       ],
       "note": null,
-      "sourceContentSha256": "7c4e6b282acf9a7dbf4d16fdd09481c69a664c5612497b7cf6f99555a930a185"
+      "sourceContentSha256": "7c4e6b282acf9a7dbf4d16fdd09481c69a664c5612497b7cf6f99555a930a185",
+      "discussionLinks": [
+        {
+          "label": "Follow-up post",
+          "url": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/40"
+        }
+      ]
     },
     {
       "id": "creator-503-34",
@@ -629,6 +667,153 @@
         }
       ],
       "note": "Titles follow the creator’s submission. The long-form video is listed as Untitled video on YouTube; its channel identity was confirmed on November 10."
+    },
+    {
+      "id": "creator-503-35",
+      "creator": "c7b",
+      "title": "Privacy and payments, explained",
+      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/35",
+      "publishedAt": "2026-11-10T20:27:44.435Z",
+      "updatedAt": "2026-11-10T20:27:44.435Z",
+      "resourceIds": [],
+      "works": [
+        {
+          "title": "What is Tari? Private smart contracts, explained simply",
+          "format": "YouTube",
+          "url": "https://www.youtube.com/watch?v=5GJJaFRKPdQ"
+        },
+        {
+          "title": "Your bank statement, pinned to a public board",
+          "format": "YouTube Short",
+          "url": "https://www.youtube.com/shorts/rqCP3UcyPQY"
+        },
+        {
+          "title": "Flagged for where you were born",
+          "format": "YouTube Short",
+          "url": "https://www.youtube.com/shorts/DKEJ6yKHpQI"
+        },
+        {
+          "title": "Money with no memory",
+          "format": "YouTube Short",
+          "url": "https://www.youtube.com/shorts/xkmAZZTRg_Y"
+        },
+        {
+          "title": "From XTM to TARI: the one-way burn and claim keys",
+          "format": "Medium",
+          "url": "https://medium.com/p/101df4f342e7"
+        },
+        {
+          "title": "Private smart contracts, explained",
+          "format": "Reddit",
+          "url": "https://www.reddit.com/r/tari/comments/1xs4jal/what_is_tari_private_smart_contracts_explained/"
+        },
+        {
+          "title": "Who sent what to whom and when",
+          "format": "Bluesky",
+          "url": "https://bsky.app/profile/leckam.bsky.social/post/3mztuzh5jlc2o"
+        },
+        {
+          "title": "Who gets to read your money trail",
+          "format": "Bluesky",
+          "url": "https://bsky.app/profile/leckam.bsky.social/post/3mztv65xnwk2x"
+        },
+        {
+          "title": "A complete history, or fungible",
+          "format": "Bluesky",
+          "url": "https://bsky.app/profile/leckam.bsky.social/post/3mztyqvmr3e2f"
+        },
+        {
+          "title": "Flagged one hop away",
+          "format": "Bluesky",
+          "url": "https://bsky.app/profile/leckam.bsky.social/post/3mzvwbp4sh62q"
+        },
+        {
+          "title": "A view key does not prove ownership",
+          "format": "Bluesky",
+          "url": "https://bsky.app/profile/leckam.bsky.social/post/3mzvt4voqxv2w"
+        },
+        {
+          "title": "Tari explained for people outside crypto",
+          "format": "Bluesky",
+          "url": "https://bsky.app/profile/leckam.bsky.social/post/3mzy6bw6y3c22"
+        }
+      ],
+      "note": null,
+      "sourceContentSha256": "312c990b98197f24ab164fe0bb9d86d626fbee567c268837025b804682821feb"
+    },
+    {
+      "id": "creator-503-37",
+      "creator": "startupcompliancekit",
+      "title": "Transaction flow and privacy boundaries",
+      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/37",
+      "publishedAt": "2026-11-10T23:23:32.984Z",
+      "updatedAt": "2026-11-10T23:23:32.984Z",
+      "resourceIds": [],
+      "works": [
+        {
+          "title": "Following a transaction through Tari Ootle",
+          "format": "Article",
+          "url": "https://startupcompliance.surge.sh/articles/tari-ootle-transaction-flow/"
+        },
+        {
+          "title": "Where Ootle privacy begins and ends",
+          "format": "Article",
+          "url": "https://startupcompliance.surge.sh/articles/tari-ootle-privacy-boundaries/"
+        }
+      ],
+      "note": null,
+      "sourceContentSha256": "2e89636f5738e9c0b5b3836da880fc6cd3e70f8c9e15f4a0102f573024c12259"
+    },
+    {
+      "id": "creator-503-39",
+      "creator": "Silvlaia",
+      "title": "Mining lanes and the Ootle burn",
+      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/39",
+      "publishedAt": "2026-11-11T03:50:59.021Z",
+      "updatedAt": "2026-11-11T03:50:59.021Z",
+      "resourceIds": [],
+      "works": [
+        {
+          "title": "Four lanes, one furnace",
+          "format": "Medium",
+          "url": "https://medium.com/@petrussilvester98/four-lanes-one-furnace-how-tari-mines-xtm-and-why-the-ootle-launch-turns-mining-into-fuel-cba117b70f1d"
+        },
+        {
+          "title": "Tari’s four mining lanes",
+          "format": "Reddit",
+          "url": "https://www.reddit.com/r/tari/comments/1xsut41/tari_splits_mining_into_four_lanes_at_25_each/"
+        },
+        {
+          "title": "Burning XTM to create TARI",
+          "format": "Bluesky",
+          "url": "https://bsky.app/profile/silvlaia.bsky.social/post/3mzy3xdizcw2g"
+        },
+        {
+          "title": "Four mining lanes in a minute",
+          "format": "YouTube Short",
+          "url": "https://www.youtube.com/shorts/ulmmSrLKI48"
+        }
+      ],
+      "note": null,
+      "sourceContentSha256": "82f286446d33e319e8cb1aa0fb8b357bf6bdc813ebac099c970f4e447888d9cb"
+    },
+    {
+      "id": "creator-503-42",
+      "creator": "Zein",
+      "title": "Reading a token creator’s permissions",
+      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/42",
+      "publishedAt": "2026-11-11T09:47:22.791Z",
+      "updatedAt": "2026-11-11T09:47:22.791Z",
+      "resourceIds": [],
+      "works": [
+        {
+          "title": "What a token’s creator can still change",
+          "format": "Reddit",
+          "url": "https://www.reddit.com/r/tari/comments/1xtdq2q/locked_doesnt_always_mean_locked_on_tari_ootle/"
+        }
+      ],
+      "note": null,
+      "sourceContentSha256": "54d63b54b3b1f1308ddf110800634598a9753b27825f0cb4132e15f8b5dc9600"
     }
   ]
 }
