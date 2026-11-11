@@ -1,0 +1,20 @@
+{
+  "slug": "signal-desk",
+  "title": "Signal Desk",
+  "summary": "Sealed crypto calls on Ootle mainnet. Three successful seal transactions match the live app component and the BTC, ETH and SOL calls displayed in its public interface. SignalDesk, SignalForecasts and SignalFollows templates are published. Purchases, reveals, settlement and the forecasts/follows workflows were not independently verified. This is a separate project from Signal Vault. No wallet connection or transaction was submitted during the review.",
+  "cardSummary": "Browse sealed crypto calls with public pairs and horizons, private directions and levels, and records on Ootle mainnet.",
+  "cardStatus": "Mainnet live · Sealed calls",
+  "creator": "OgBoy92",
+  "sourceUrl": "https://github.com/ogboy92ii/signal-desk",
+  "sourceLabel": "Project repository",
+  "publishedAt": "2026-11-11T12:58:55.140605+00:00",
+  "publicationBasis": "First verified for this Lobby listing from the live mainnet interface and committed contract activity; not the original launch date.",
+  "publicationLabel": "Verified",
+  "publicationUrl": "https://explorer.tari.mw/tx/76db72a097bd506d96eb9af187f2f224df15a36bd43fc341a77916648966f9e3",
+  "demoUrl": "https://signal-desk-ootle.vercel.app/",
+  "repoUrl": "https://github.com/ogboy92ii/signal-desk",
+  "forum": null,
+  "ecosystem": "tari-ootle",
+  "technologies": [],
+  "media": null
+}
