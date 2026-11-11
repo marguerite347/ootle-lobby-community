@@ -17,7 +17,7 @@ export default function LaunchCountdown(){
   return()=>{poller.stop();clearInterval(tick);document.removeEventListener('visibilitychange',resume);};
  },[]);
  if(confirmed)return <a className="launch-ticket launch-ticket-live" href="#mainnet" aria-label="Ootle mainnet is live. Explore confirmed apps.">
-  <span className="launch-ticket-label"><span className="launch-dot"/><b>OOTLE</b><small>Confirmed on-chain</small></span>
+  <span className="launch-ticket-label"><span className="launch-dot"/><b>OOTLE</b></span>
   <span className="launch-soon">Mainnet live</span>
  </a>;
  if(target===null)return null;
