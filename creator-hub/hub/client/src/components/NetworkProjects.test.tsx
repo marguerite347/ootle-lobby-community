@@ -39,9 +39,9 @@ test('the default view puts confirmed apps before the mainnet watch without hidi
  const html=renderToStaticMarkup(<MemoryRouter><NetworkProjects/></MemoryRouter>);
  expect(html.indexOf('id="network-confirmed-title"')).toBeLessThan(html.indexOf('id="network-watch-title"'));
  const confirmed=html.slice(html.indexOf('id="network-confirmed-title"'),html.indexOf('id="network-watch-title"'));
- for(const name of ['OotleAccord','Skydrop','Veil Ootle Explorer','Sapient','Signal Desk'])expect(confirmed).toContain(name);
+ for(const name of ['OotleAccord','Skydrop','Veil Ootle Explorer','Sapient','Signal Desk','Sealed Bids at Midnight'])expect(confirmed).toContain(name);
  for(const name of ['MoonMail','HideBox','Grave Robber'])expect(confirmed).not.toContain(`>${name}</a>`);
- expect(html.match(/class="network-project"/g)).toHaveLength(13);
+ expect(html.match(/class="network-project"/g)).toHaveLength(14);
  expect(html).toContain('Sandbox game');expect(html).toContain('Office pending');
  expect(html).toContain('Get latest extension');expect(html).toContain('Chrome Web Store: 0.9.6');
  expect(html).toContain('href="https://chromewebstore.google.com/detail/tari-ootle-wallet/demkeckolenopkgnfbnpflkpbbdhpgkl"');
@@ -49,8 +49,8 @@ test('the default view puts confirmed apps before the mainnet watch without hidi
 });
 test('network filters keep pending apps out of confirmed mainnet and preserve testnet destinations',()=>{
  const mainnet=renderToStaticMarkup(<MemoryRouter><NetworkProjects initialNetwork="mainnet"/></MemoryRouter>);
- expect(mainnet.match(/class="network-project"/g)).toHaveLength(5);
- expect(mainnet).toContain('Mainnet evidence');expect(mainnet.slice(0,mainnet.indexOf('id="mainnet-templates"'))).not.toContain('>MoonMail</a>');
+ expect(mainnet.match(/class="network-project"/g)).toHaveLength(6);
+ expect(mainnet).toContain('Open source');expect(mainnet).toContain('unrevealed bids forfeit bonds permanently');expect(mainnet).toContain('Mainnet evidence');expect(mainnet.slice(0,mainnet.indexOf('id="mainnet-templates"'))).not.toContain('>MoonMail</a>');
  const watch=renderToStaticMarkup(<MemoryRouter><NetworkProjects initialNetwork="watch"/></MemoryRouter>);
  expect(watch.match(/class="network-project"/g)).toHaveLength(8);
  expect(watch).toContain('>MoonMail</a>');expect(watch).not.toContain('>OotleAccord</a>');
