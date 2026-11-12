@@ -56,6 +56,7 @@ export function NovemberContestDetail({contest}: {contest: NovemberContest}) {
       </aside>
     </header>
     {contest.slug === 'first-to-launch' && <p className="november-cutoff-note">The organizer’s announcement contains conflicting cutoff dates and times. The final deadline is awaiting clarification; check the official thread for updates.</p>}
+    {contest.slug === 'launch-creator' && <p className="november-cutoff-note">The organizer extended submissions to Monday, November 16 at 10 AM EST. <a href="https://community.tari.com/t/ootle-launch-event-creator-contest/503/49" target="_blank" rel="noreferrer">Read the deadline update</a>.</p>}
     <div className="november-detail-body">
       <section aria-labelledby="november-entry-title"><h2 id="november-entry-title">{closed ? 'How entries worked' : 'How to enter'}</h2><ol>{contest.steps.map(step => <li key={step}>{step}</li>)}</ol>
         <p className="november-forum-help">New to the forum? <a href="https://community.tari.com/signup" target="_blank" rel="noreferrer">Create an account</a>, then reply in the contest thread.</p>
@@ -66,6 +67,6 @@ export function NovemberContestDetail({contest}: {contest: NovemberContest}) {
         {contest.slug === 'launch-creator' && <><h2>What earns points?</h2><table aria-label="Creator contest points by platform and format"><thead><tr><th scope="col">Format</th><th scope="col">Points</th></tr></thead><tbody><tr><td>YouTube long-form</td><td>30</td></tr><tr><td>YouTube Shorts</td><td>15</td></tr><tr><td>Reddit, Medium or eligible blog</td><td>10</td></tr><tr><td>Bluesky short-form</td><td>3</td></tr></tbody></table><p>For the blog tier, use your own established blog or a dedicated Tari site. Otherwise, publish long-form on Reddit or Medium.</p><p>Memes and graphics qualify as short-form. X alone earns no points; there is no speed bonus.</p></>}
       </aside>
     </div>
-    <p className="november-source-note">Checked November 2, 2026. <a href={contest.threadUrl} target="_blank" rel="noreferrer">Official organizer rules</a> govern eligibility, judging and rewards.</p>
+    <p className="november-source-note">{contest.slug === 'launch-creator' ? 'Deadline updated November 12, 2026.' : 'Checked November 2, 2026.'} <a href={contest.threadUrl} target="_blank" rel="noreferrer">Official organizer rules</a> govern eligibility, judging and rewards.</p>
   </article>;
 }

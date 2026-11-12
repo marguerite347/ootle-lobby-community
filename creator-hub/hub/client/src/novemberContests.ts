@@ -39,7 +39,8 @@ export const NOVEMBER_CONTESTS: NovemberContest[] = [
     slug: 'launch-creator', category: 'Launch creator contest', title: 'Make some', accent: 'noise.',
     description: 'Teach, film or tell a Tari story. Original articles, videos and short-form posts earn points.',
     prize: '1,000,000 XTM', prizeNote: '10 winners · 100,000 XTM each',
-    deadline: 'Closes Nov 12 · 00:00 UTC', closesAt: '2026-11-12T00:00:00Z', opensAt: '2026-10-29T19:34:15Z',
+    // Organizer extension: forum topic 503, post 49, November 12.
+    deadline: 'Closes Nov 16 · 10 AM EST', closesAt: '2026-11-16T15:00:00Z', opensAt: '2026-10-29T19:34:15Z',
     threadUrl: 'https://community.tari.com/t/ootle-launch-event-creator-contest/503', action: 'Enter the creator contest',
     steps: [
       'Create original Tari content and publish it on a qualifying platform. Research, education and tutorials are encouraged.',

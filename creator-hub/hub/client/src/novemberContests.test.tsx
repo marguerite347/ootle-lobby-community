@@ -12,7 +12,9 @@ describe('November contest routes and closing boundaries', () => {
     expect(novemberContestPhase(mvp, new Date('2026-11-30T23:59:59Z'))).toBe('open');
     expect(novemberContestPhase(mvp, new Date('2026-12-01T00:00:00Z'))).toBe('closed');
     expect(novemberContestPhase(creator, new Date('2026-11-11T23:59:59Z'))).toBe('open');
-    expect(novemberContestTiming(creator, new Date('2026-11-12T00:00:00Z'))).toBe('Entries closed');
+    expect(novemberContestPhase(creator, new Date('2026-11-12T00:00:00Z'))).toBe('open');
+    expect(novemberContestPhase(creator, new Date('2026-11-16T14:59:59Z'))).toBe('open');
+    expect(novemberContestTiming(creator, new Date('2026-11-16T15:00:00Z'))).toBe('Entries closed');
     expect(bonus.closesAt).toBeNull();
     expect(novemberContestPhase(bonus, new Date('2026-11-21T12:00:00Z'))).toBe('unconfirmed');
   });
