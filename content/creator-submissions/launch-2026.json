@@ -947,6 +947,26 @@
         }
       ],
       "note": null
+    },
+    {
+      "id": "creator-503-41",
+      "creator": "r4id3n",
+      "title": "Grave Robber launch announcement",
+      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/41",
+      "publishedAt": "2026-11-11T08:37:59.993Z",
+      "updatedAt": "2026-11-11T08:37:59.993Z",
+      "sourceContentSha256": "673b2cb904467580577d363113bee6f0dba7d608ef8132c76a2624d14c439080",
+      "resourceIds": [
+        "tari-ootle:component:grave-robber"
+      ],
+      "works": [
+        {
+          "title": "Grave Robber launch showcase",
+          "format": "X",
+          "url": "https://x.com/3sentry5/status/2120435413907325363"
+        }
+      ],
+      "note": "Creator announcement, linked as submitted. This listing does not establish a mainnet deployment or contest eligibility."
     }
   ]
 }
