@@ -1,14 +1,14 @@
 {
   "slug": "crypt",
   "title": "Crypt",
-  "summary": "Secret-trading template and documented browser simulation. The creator’s November 3, 2026 forum edit reports republishing after the Ootle 0.49 Esmeralda reset. The updated README is in open pull request #1 at revision 432249f; the default-branch README still describes the earlier version. Veil’s public explorer displayed the new Crypt template ed8116a0633c05c27ec588ca2fcaa7b2b105c5caca52a77fc7b3453003496c82, its 23 functions and publication epoch 12815. The README links creator-reported honest and disputed sales, funded from one demo wallet. On November 3 the Vercel demo remained on its loading screen in two browsers, with its referenced script and stylesheet returning 404; the README’s GitHub Pages demo also returned 404. Use the source and documentation links while those services are unavailable. The new clip is a walkthrough of that README, including its embedded creator animation; it does not demonstrate an application session or transaction. Disputes reveal the secret. Earlier October 29 browser footage warned that 15 testnet XTM remained in settled escrow because that browser path could not sign stealth payouts; that historical warning and footage are retained, separately from the new CLI sale reports. BSD-3-Clause source. No wallet or transaction was used for this review.",
+  "summary": "Encrypted secret sales with escrow and delivery disputes. The November 7 creator edit points to the open draft PR #1 README at abce0fe; the default branch still documents an older version. On November 12, Veil’s Esmeralda explorer displayed Crypt template 466c4da9…6deacbb, 23 functions and publication epoch 12934. The current README identifies template library 0.38 and Ootle 0.50.1. Its reported honest and disputed sales belong to the earlier November 3 template ed8116a0…03496c82 and used one demo wallet, not independent users. Disputes expose the secret; losing the sale key can prevent payouts. On November 12, server-side text extraction returned only a loading screen for the Vercel demo and could not retrieve the GitHub Pages demo; this does not establish their current interactive behavior. The November 3 browser checks found missing demo assets and a GitHub Pages 404. Earlier October 29 footage recorded a browser payout-signing limitation with 15 testnet XTM left in settled escrow. Those dated failures and prior recordings remain in maintenance history. This November 12 clip walks through the current README and its embedded creator animation; it is not a live application or transaction demonstration. BSD-3-Clause source. No wallet, executable download or local third-party code was used.",
   "cardSummary": "Explore encrypted secret sales, escrow and delivery disputes through a Rust template and its documented browser game.",
-  "cardStatus": "Source code · Testnet · Demo unavailable",
+  "cardStatus": "Source code · Testnet · Disputes reveal secrets",
   "creator": "Og.boy",
   "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/7",
   "publishedAt": "2026-10-12T11:07:25.452Z",
-  "updatedAt": "2026-11-03T01:30:07.869Z",
-  "sourceContentSha256": "2211f7b705372457e5f8a1d6fc0f97bf3c7d6ba40d67a591ffcb07302f2bc9a2",
+  "updatedAt": "2026-11-07T14:26:38.431Z",
+  "sourceContentSha256": "b8459f2ec9e4de4a07be7f18b097e6dbb2572bb4c3dd8398af6ee2852d37f2d4",
   "repoUrl": "https://github.com/ogboy92ii/crypt",
   "ecosystem": "tari-ootle",
   "technologies": [
@@ -18,10 +18,10 @@
     }
   ],
   "recording": {
-    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-crypt-20261103-952605ab1c.mp4",
-    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-crypt-20261103-952605ab1c.png",
-    "capturedAt": "2026-11-03T15:11:16.353Z",
-    "sourceRevision": "432249f119e73a4606ffdb9cf2f0088885f7378f",
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-crypt-20261112.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-crypt-20261112.jpg",
+    "capturedAt": "2026-11-12T16:37:30.033000+00:00",
+    "sourceRevision": "abce0fedd2ab883f94cf1dc4ca9a8a7e5ad48eff",
     "kind": "walkthrough",
     "credit": "Docs walkthrough"
   },
@@ -57,6 +57,14 @@
     {
       "url": "https://github.com/ogboy92ii/crypt/pull/1",
       "platform": "GitHub"
+    },
+    {
+      "url": "https://github.com/ogboy92ii/crypt/blob/abce0fedd2ab883f94cf1dc4ca9a8a7e5ad48eff/README.md",
+      "platform": "Source README"
+    },
+    {
+      "url": "https://testnet-explorer.tari.mw/template/466c4da9938489b61b66ae0abbc39e850f162b540b76a29e88941c4d96deacbb",
+      "platform": "Esmeralda template"
     }
   ],
   "resourceIds": [
