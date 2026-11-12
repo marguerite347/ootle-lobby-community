@@ -186,11 +186,22 @@
     },
     {
       "ref": "tari-ootle:learn:atproto-identity",
-      "state": "testnet",
-      "testnetUrl": "https://atproto.tari.mw/",
-      "checkedAt": "2026-11-11T13:14:18.567933+00:00",
-      "evidenceUrl": "https://atproto.tari.mw/",
-      "evidence": "The November 11 integration guide still labels its verifier and escrow examples Esmeralda testnet. A current source-text read confirms this documentation scope; it does not establish a mainnet deployment.",
+      "state": "both",
+      "testnetUrl": "https://testnet-atproto.tari.mw/",
+      "checkedAt": "2026-11-12T17:29:51.553414+00:00",
+      "evidenceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/10",
+      "evidence": "Current network endpoints distinguish mainnet and Esmeralda. Pinned deployment configuration matches the mainnet Campaign v3 template shown on Veil at epoch 38471. Old extracted guide/README content predates this deployment; no campaign funding or payout was exercised.",
+      "mainnetUrl": "https://atproto.tari.mw/",
+      "deploymentEvidence": {
+        "url": "https://explorer.tari.mw/template/fea387ae896b72b9be93426ffa34da7498336f81c023fc2a65e556cfc13fba75",
+        "observedAt": "2026-11-12T17:29:51.553414+00:00",
+        "detail": "Matching Campaign v3 template fea387ae896b72b9be93426ffa34da7498336f81c023fc2a65e556cfc13fba75 exists on the mainnet explorer at epoch 38471; live network endpoint reports mainnet."
+      },
+      "showcase": {
+        "url": "https://atproto.tari.mw/",
+        "label": "Mainnet templates · Testnet",
+        "summary": "Verify Bluesky identities and signed posts in Ootle contracts, and define rewards for provable social actions."
+      },
       "actionLabel": "Read guide"
     },
     {
