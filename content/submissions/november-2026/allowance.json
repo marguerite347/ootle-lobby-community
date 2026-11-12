@@ -1,0 +1,38 @@
+{
+  "slug": "allowance",
+  "title": "Allowance",
+  "summary": "Spend-limited AI-agent account template with per-payment caps, per-epoch budgets and payment counts, approved payees, owner-reviewed requests and a panic freeze. The MIT repository includes Rust template source, an Esmeralda status page and a Python MCP server. The November 12 README describes a testnet deployment and creator-run tests using a freely mintable demo token with no value. Budgets reset by network epoch, not wall-clock hour; protecting the agent key remains necessary. The recording shows the README and its Esmeralda scope. No wallet, MCP server or third-party code was installed or run for this listing.",
+  "cardSummary": "Set payment caps, epoch budgets and approved payees for AI agents, with owner-reviewed requests and a panic freeze.",
+  "cardStatus": "Source code · Testnet",
+  "creator": "boowenchen",
+  "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/9",
+  "publishedAt": "2026-11-12T11:58:13.504Z",
+  "updatedAt": "2026-11-12T11:58:13.504Z",
+  "sourceContentSha256": "52cdcdb63fc2466485c31184c2ccfd79eefc536580408739b2eadc2df5feb982",
+  "repoUrl": "https://github.com/boowenchen/ootle-allowance",
+  "demoUrl": "https://boowenchen.github.io/ootle-allowance/",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust · Python · MIT",
+      "sourceUrl": "https://github.com/boowenchen/ootle-allowance"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-allowance-20261112.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-allowance-20261112.jpg",
+    "capturedAt": "2026-11-12T14:25:58.946725+00:00",
+    "sourceRevision": "Public README reviewed November 12, 2026",
+    "kind": "public-page",
+    "credit": "Docs walkthrough — agent policies and Esmeralda scope"
+  },
+  "discussionLinks": [
+    {
+      "url": "https://medium.com/@boowenchen.tw/allowance-spend-limited-accounts-for-ai-agents-on-tari-ootle-1af4f547afa2",
+      "platform": "Medium"
+    }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:allowance"
+  ]
+}

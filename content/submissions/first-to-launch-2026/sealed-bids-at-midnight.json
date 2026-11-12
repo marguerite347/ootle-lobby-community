@@ -1,0 +1,45 @@
+{
+  "slug": "sealed-bids-at-midnight",
+  "title": "Sealed Bids at Midnight",
+  "summary": "Rust Ootle auction template and headless CLI with signer-bound sealed bids, equal bonds, timed reveals and separate claims. November 12 review: Veil returned a committed mainnet template publication at 08:01:23 UTC and a committed settlement at 11:02:28 UTC, network byte 0, matching the creator’s published template and auction component. The settlement event reports a winning bid of 20 and one locked ghost bond. Unrevealed bids and bids below reserve permanently forfeit bonds. Revealed amounts and bidder keys are public. The README also documents a republished Esmeralda deployment and pins tari_template_lib 0.40. The new recording is a mainnet documentation walkthrough, not an auction performed here. The October testnet recording and failed component lookup remain in maintenance history.",
+  "cardSummary": "Run sealed-bid auctions with equal entry bonds, timed reveals and separate claims for winners, sellers and losing bidders.",
+  "cardStatus": "Mainnet template · Forfeited bonds locked forever",
+  "creator": "xB0unty911",
+  "repoUrl": "https://github.com/xB0unty911/sealed-bid-auction",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust · MIT",
+      "sourceUrl": "https://github.com/xB0unty911/sealed-bid-auction"
+    }
+  ],
+  "sourceUrl": "https://community.tari.com/t/november-bonus-contest-first-to-launch/521/8",
+  "publishedAt": "2026-11-12T14:00:24.251Z",
+  "updatedAt": "2026-11-12T14:00:24.251Z",
+  "sourceContentSha256": "179b9f1286a641993475ae1460afaf262e234c73ddaee063b1d17c6a272c12d6",
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-sealed-bids-at-midnight-20261112.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-sealed-bids-at-midnight-20261112.jpg",
+    "capturedAt": "2026-11-12T14:25:58.946725+00:00",
+    "sourceRevision": "Public README reviewed November 12, 2026",
+    "kind": "public-page",
+    "credit": "Docs walkthrough — mainnet deployment and locked-bond limits"
+  },
+  "discussionLinks": [
+    {
+      "url": "https://www.reddit.com/r/tari/comments/1xas9x4/sealed_bids_at_midnight_a_tari_auction_where/",
+      "platform": "Reddit · r/tari"
+    },
+    {
+      "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/44",
+      "platform": "Testnet reset notice"
+    },
+    {
+      "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/16",
+      "platform": "Original October submission"
+    }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:sealed-bids-at-midnight"
+  ]
+}
