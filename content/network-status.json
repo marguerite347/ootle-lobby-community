@@ -112,9 +112,9 @@
     {
       "ref": "tari-ootle:integration:ghostline",
       "state": "testnet",
-      "checkedAt": "2026-11-11T12:16:00Z",
-      "evidenceUrl": "https://ghostline-ui.vercel.app/play.html",
-      "evidence": "Deployed play page and client offer simulation or Esmeralda payment channels. No mainnet contract activity established.",
+      "checkedAt": "2026-11-12T16:44:40.637999+00:00",
+      "evidenceUrl": "https://testnet-explorer.tari.mw/template/21a4b9991eecbe50edfc72fd874b4d072b2fc5e44767dad83fa9dfef3131ac05",
+      "evidence": "November 12 read-only Esmeralda explorer displays template 21a4b9991eecbe50edfc72fd874b4d072b2fc5e44767dad83fa9dfef3131ac05 at epoch 12938. Current creator source documents testnet use. No current mainnet deployment evidence established.",
       "testnetUrl": "https://ghostline-ui.vercel.app/play.html",
       "showcase": {
         "url": "https://ghostline-ui.vercel.app/play.html",
@@ -315,6 +315,14 @@
         "summary": "Follow a stealth hot-potato game with sealed guesses, epoch-timed reveals and bonds shared among successful guessers.",
         "actionLabel": "Open source"
       }
+    },
+    {
+      "ref": "tari-ootle:component:crypt",
+      "state": "testnet",
+      "testnetUrl": "https://github.com/ogboy92ii/crypt/blob/abce0fedd2ab883f94cf1dc4ca9a8a7e5ad48eff/README.md",
+      "checkedAt": "2026-11-12T16:44:40.637999+00:00",
+      "evidenceUrl": "https://testnet-explorer.tari.mw/template/466c4da9938489b61b66ae0abbc39e850f162b540b76a29e88941c4d96deacbb",
+      "evidence": "November 12 read-only Esmeralda explorer displays template 466c4da9938489b61b66ae0abbc39e850f162b540b76a29e88941c4d96deacbb at epoch 12934. Current creator source documents testnet use. No current mainnet deployment evidence established."
     }
   ]
 }
