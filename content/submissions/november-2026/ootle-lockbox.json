@@ -1,16 +1,54 @@
 {
   "slug": "ootle-lockbox",
   "title": "Ootle Lockbox",
-  "summary": "Time-lock tokens for a beneficiary and inspect public proof pages that check both lock conditions and token issuer powers. The creator reports creation and claims on Esmeralda using Sapient and plans to publish when Ootle mainnet is live. November 10 review read the original submission; no wallet connection, token lock, claim or mainnet deployment was independently verified.",
+  "summary": "Time-lock tokens for a beneficiary and inspect public proof pages for release conditions and token issuer powers. On November 12, the creator’s First-to-Launch post linked a mainnet publish receipt that Veil displayed as RevealedCommit with network byte 0, epoch 38500, finalized at 04:37:12 UTC, and the matching Lockbox template 968740ec…b20ec72. The current web configuration at ed3ff37 contains that template, a mainnet indexer and a mainnet default; it also retains a separate Esmeralda configuration. These checks establish template publication, not an independently exercised lock or claim. Tokens remain locked until their unlock epoch, and token issuer recall, freeze or withdrawal powers can still apply. Calendar dates are estimates derived from block epochs. Public fungible tokens, NFTs and LP tokens are supported by the documented template; blinded commitments are refused. The creator reports Esmeralda creation and claims through Sapient and the CLI. The README deployment tables lag behind the current configuration and creator receipts, including an outdated Launch Commitments testnet-only statement. This November 12 recording shows the pinned README introduction and limitations, not a running app. MIT source; template library 0.38 and Ootle 0.50.1. No wallet, funds, downloaded submission artifact or third-party code execution was used.",
   "cardSummary": "Time-lock tokens and inspect public proof pages for release conditions and token issuer powers.",
-  "cardStatus": "Testnet · Mainnet deployment planned",
+  "cardStatus": "Mainnet template · Testnet · Epoch locks",
   "creator": "Zein",
   "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/7",
   "repoUrl": "https://github.com/ManishModak/ootle-lockbox",
   "demoUrl": "https://manishmodak.github.io/ootle-lockbox/",
   "publishedAt": "2026-11-10T18:26:47.401Z",
-  "updatedAt": "2026-11-10T18:26:47.401Z",
+  "updatedAt": "2026-11-12T06:24:37.738Z",
   "ecosystem": "tari-ootle",
-  "technologies": [],
-  "resourceIds": []
+  "technologies": [
+    {
+      "label": "Rust · MIT",
+      "sourceUrl": "https://github.com/ManishModak/ootle-lockbox"
+    }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:ootle-lockbox"
+  ],
+  "sourceContentSha256": "9ba899fb858e6d5517cff17b43028376dc861ac93953fafa9f24d3902b7fb540",
+  "discussionLinks": [
+    {
+      "url": "https://community.tari.com/t/november-bonus-contest-first-to-launch/521/6",
+      "platform": "Tari Community forum"
+    },
+    {
+      "url": "https://explorer.tari.mw/tx/33f102de036d354ce4a7ee4090fea35af3bd946d15d8cf038783b60b2edcecc5",
+      "platform": "Mainnet publish receipt"
+    },
+    {
+      "url": "https://github.com/ManishModak/ootle-lockbox/blob/ed3ff374ac3e9d8794e96357240aa6b8ecce5f37/README.md",
+      "platform": "Source README"
+    },
+    {
+      "url": "https://github.com/ManishModak/ootle-lockbox/blob/ed3ff374ac3e9d8794e96357240aa6b8ecce5f37/web/src/config.ts",
+      "platform": "Network configuration"
+    },
+    {
+      "url": "https://www.reddit.com/r/tari/comments/1xsufvb/ootle_lockbox_timelock_tokens_on_tari_ootle_with/",
+      "platform": "Reddit · r/tari"
+    }
+  ],
+  "recording": {
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-ootle-lockbox-20261112.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-ootle-lockbox-20261112.jpg",
+    "capturedAt": "2026-11-12T17:04:19.825000+00:00",
+    "sourceRevision": "ed3ff374ac3e9d8794e96357240aa6b8ecce5f37",
+    "kind": "walkthrough",
+    "credit": "Docs walkthrough"
+  }
 }

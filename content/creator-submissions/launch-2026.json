@@ -1,6 +1,6 @@
 {
   "threadUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503",
-  "checkedAt": "2026-11-12T14:15:16.776633+00:00",
+  "checkedAt": "2026-11-12T17:06:48.505452+00:00",
   "entries": [
     {
       "id": "creator-503-3",
@@ -862,17 +862,24 @@
       "title": "Reading a token creator’s permissions",
       "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/42",
       "publishedAt": "2026-11-11T09:47:22.791Z",
-      "updatedAt": "2026-11-11T09:47:22.791Z",
-      "resourceIds": [],
+      "updatedAt": "2026-11-12T06:24:38.094Z",
+      "resourceIds": [
+        "tari-ootle:component:ootle-lockbox"
+      ],
       "works": [
         {
           "title": "What a token’s creator can still change",
           "format": "Reddit",
           "url": "https://www.reddit.com/r/tari/comments/1xtdq2q/locked_doesnt_always_mean_locked_on_tari_ootle/"
+        },
+        {
+          "title": "I tried to break my own unchangeable token on Tari Ootle",
+          "format": "Medium",
+          "url": "https://medium.com/@airdropknight00/i-tried-to-break-my-own-unchangeable-token-on-tari-ootle-heres-what-the-test-showed-01a2ebabc7dc"
         }
       ],
-      "note": null,
-      "sourceContentSha256": "54d63b54b3b1f1308ddf110800634598a9753b27825f0cb4132e15f8b5dc9600"
+      "note": "Creator-authored explanation and attributed engine-test account. Linked as submitted; not an independent test, endorsement or judging decision.",
+      "sourceContentSha256": "2fca25f7a3ee02133a9c7cc7c8042de50583736a607ac05fad3e2bab561c3bf7"
     },
     {
       "id": "creator-503-43",

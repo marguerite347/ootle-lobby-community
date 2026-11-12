@@ -125,17 +125,23 @@
     },
     {
       "ref": "november-2026:ootle-lockbox",
-      "state": "testnet",
-      "checkedAt": "2026-11-11T13:16:51.196914+00:00",
-      "evidenceUrl": "https://github.com/ManishModak/ootle-lockbox/blob/main/web/src/config.ts",
-      "evidence": "On November 11 the README says a mainnet publication occurred, but the current network configuration still sets both mainnet template addresses to null and defaults to Esmeralda. Mainnet deployment remains unconfirmed; the testnet classification is retained.",
-      "testnetUrl": "https://manishmodak.github.io/ootle-lockbox/",
+      "state": "both",
+      "checkedAt": "2026-11-12T17:06:48.505452+00:00",
+      "evidenceUrl": "https://community.tari.com/t/november-bonus-contest-first-to-launch/521/6",
+      "evidence": "November12 current read-only Veil receipt reports RevealedCommit, network byte0 and matching PublishTemplate event for 968740ec9a0f3d368af2ba48d18af68bbb5c73a30ec582fbf9b00f90cb20ec72, epoch38500, finalized2026-11-12T04:37:12Z. Pinned creator config selects this mainnet template and retains separate Esmeralda configuration. Template publication only; no app transaction performed.",
+      "testnetUrl": "https://testnet-explorer.tari.mw/template/3f77a82e2eecb1795bc250ce919706519ea8feacc283d25f9e9740edc81b12b3",
       "showcase": {
-        "url": "https://manishmodak.github.io/ootle-lockbox/",
-        "label": "Testnet · Mainnet pending",
-        "summary": "Time-lock tokens and inspect public proof pages for release conditions and token issuer powers."
+        "url": "https://explorer.tari.mw/template/968740ec9a0f3d368af2ba48d18af68bbb5c73a30ec582fbf9b00f90cb20ec72",
+        "label": "Mainnet template · Testnet",
+        "summary": "Time-lock tokens and inspect public proof pages for release conditions and token issuer powers.",
+        "actionLabel": "View template"
       },
-      "mainnetPlan": "Mainnet contracts are not yet configured. Testnet app is available."
+      "mainnetUrl": "https://explorer.tari.mw/template/968740ec9a0f3d368af2ba48d18af68bbb5c73a30ec582fbf9b00f90cb20ec72",
+      "deploymentEvidence": {
+        "url": "https://explorer.tari.mw/tx/33f102de036d354ce4a7ee4090fea35af3bd946d15d8cf038783b60b2edcecc5",
+        "observedAt": "2026-11-12T17:06:48.505452+00:00",
+        "detail": "RevealedCommit mainnet PublishTemplate event matches 968740ec9a0f3d368af2ba48d18af68bbb5c73a30ec582fbf9b00f90cb20ec72; network byte0, epoch38500, finalized2026-11-12T04:37:12Z."
+      }
     },
     {
       "ref": "tari-ootle:component:grave-robber",
@@ -290,10 +296,23 @@
     },
     {
       "ref": "tari-ootle:component:launch-commitments",
-      "state": "unconfirmed",
-      "checkedAt": "2026-11-12T15:42:19.796816+00:00",
-      "evidenceUrl": "https://www.reddit.com/r/tari/comments/1xu5frf/launch_commitments_launch_a_token_on_tari_ootle/",
-      "evidence": "Creator announces a mainnet app. The reviewed README at bd8cf1f supplies template source and CLI usage but no current deployment receipt; keep outside the live-mainnet list until deployment evidence is reviewed."
+      "state": "both",
+      "checkedAt": "2026-11-12T17:06:48.505452+00:00",
+      "evidenceUrl": "https://community.tari.com/t/november-bonus-contest-first-to-launch/521/6",
+      "evidence": "November12 current read-only Veil receipt reports RevealedCommit, network byte0 and matching PublishTemplate event for b18fc1ae9195b569362311b6719896aa84078aedf4cf70a4aba19d516bcc9963, epoch38501, finalized2026-11-12T04:48:44Z. Pinned creator config selects this mainnet template and retains separate Esmeralda configuration. Template publication only; no app transaction performed.",
+      "mainnetUrl": "https://explorer.tari.mw/template/b18fc1ae9195b569362311b6719896aa84078aedf4cf70a4aba19d516bcc9963",
+      "testnetUrl": "https://testnet-explorer.tari.mw/template/ec0b8e8bf1ad8e05e0745e66868929070358da5dd975d72cd1031befa5141a8a",
+      "deploymentEvidence": {
+        "url": "https://explorer.tari.mw/tx/6930fcd46f6f3de375c30521c9a832a6c31d95cc993a6c2273426460168fa80b",
+        "observedAt": "2026-11-12T17:06:48.505452+00:00",
+        "detail": "RevealedCommit mainnet PublishTemplate event matches b18fc1ae9195b569362311b6719896aa84078aedf4cf70a4aba19d516bcc9963; network byte0, epoch38501, finalized2026-11-12T04:48:44Z."
+      },
+      "showcase": {
+        "url": "https://explorer.tari.mw/template/b18fc1ae9195b569362311b6719896aa84078aedf4cf70a4aba19d516bcc9963",
+        "label": "Mainnet template · 2,500 TARI launch fee",
+        "summary": "Explore fixed-supply token launches that combine immutable issuer rules with epoch-based allocation locks through Ootle Lockbox.",
+        "actionLabel": "View template"
+      }
     },
     {
       "ref": "tari-ootle:component:cursed-pumpkin",
