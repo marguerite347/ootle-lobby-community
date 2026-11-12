@@ -265,12 +265,12 @@
         "observedAt": "2026-11-12T14:26:24.919494+00:00",
         "detail": "Committed settle call on component f6112421…660dc5ca at 2026-11-12 11:02:28 UTC; network byte 0. AuctionSettled event reports winning_bid 20.000000 and ghost_bonds_locked 1."
       },
-      "actionLabel": "Read source",
+      "actionLabel": "Open source",
       "showcase": {
         "url": "https://github.com/xB0unty911/sealed-bid-auction#live-on-ootle-mainnet-november-2026",
         "label": "Mainnet template · Testnet",
         "summary": "Build sealed-bid auctions with timed reveals and separate claims; unrevealed bids forfeit bonds permanently.",
-        "actionLabel": "Read source"
+        "actionLabel": "Open source"
       }
     },
     {
