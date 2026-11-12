@@ -20,11 +20,11 @@
   "dependencies": {
     "@vercel/blob": "2.9.0",
     "express": "4.22.3",
-    "nostr-tools": "2.25.5",
+    "nostr-tools": "2.26.0",
     "pg": "8.23.1"
   },
   "devDependencies": {
-    "@electric-sql/pglite": "0.5.15"
+    "@electric-sql/pglite": "0.5.16"
   },
   "overrides": {
     "@vercel/cli-config": {
