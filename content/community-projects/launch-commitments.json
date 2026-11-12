@@ -1,0 +1,37 @@
+{
+  "slug": "launch-commitments",
+  "title": "Launch Commitments",
+  "creator": "ManishModak / Outside_Taro_9886",
+  "summary": "Rust token-factory template and CLI for fixed-supply, ownerless tokens with allocations locked through Ootle Lockbox until a chosen epoch. The November 12 creator announcement links a mainnet launch page; the reviewed README does not include a deployment receipt, so this listing documents the source without placing it in the live-mainnet collection. The template fixes its fee and destinations at build time; the README gives a 2,500 TARI mainnet fee example. Allocation labels are creator-declared: locks do not establish team identity or ownership of the remaining supply. The recording is a README walkthrough at revision bd8cf1f, not a token launch. MIT source; tari_template_lib 0.38. No wallet, transaction or third-party code was used for this review.",
+  "cardSummary": "Explore fixed-supply token launches that combine immutable issuer rules with epoch-based allocation locks through Ootle Lockbox.",
+  "cardStatus": "Source code · Allocations locked until epoch",
+  "sourceUrl": "https://www.reddit.com/r/tari/comments/1xu5frf/launch_commitments_launch_a_token_on_tari_ootle/",
+  "sourceLabel": "Original post",
+  "repoUrl": "https://github.com/ManishModak/ootle-launch-commitments",
+  "demoUrl": "https://manishmodak.github.io/ootle-lockbox/#/mainnet/launch",
+  "publishedAt": "2026-11-12T06:23:23.430Z",
+  "publicationLabel": "Shared on Reddit",
+  "publicationBasis": "Public creator announcement in r/tari; creator describes a November MVP entry. Listing is not a contest eligibility or judging decision.",
+  "publicationUrl": "https://www.reddit.com/r/tari/comments/1xu5frf/launch_commitments_launch_a_token_on_tari_ootle/",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust · MIT",
+      "sourceUrl": "https://github.com/ManishModak/ootle-launch-commitments"
+    }
+  ],
+  "forum": null,
+  "resourceIds": [
+    "tari-ootle:component:launch-commitments"
+  ],
+  "section": "community",
+  "media": {
+    "image": "/previews/community/resource-launch-commitments-20261112.jpg",
+    "video": "/previews/community/resource-launch-commitments-20261112.mp4",
+    "label": "Docs walkthrough",
+    "sourceUrl": "https://github.com/ManishModak/ootle-launch-commitments",
+    "capturedAt": "2026-11-12T15:42:19.796816+00:00",
+    "reviewedAt": "2026-11-12T15:42:19.796816+00:00",
+    "sha256": "7865e73b0407f0a0b894c791dd4ae9aa65e6c7dd11fa020c7ec1956206ea18e1"
+  }
+}
