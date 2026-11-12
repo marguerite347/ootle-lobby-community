@@ -39,9 +39,9 @@ test('the default view puts confirmed apps before the mainnet watch without hidi
  const html=renderToStaticMarkup(<MemoryRouter><NetworkProjects/></MemoryRouter>);
  expect(html.indexOf('id="network-confirmed-title"')).toBeLessThan(html.indexOf('id="network-watch-title"'));
  const confirmed=html.slice(html.indexOf('id="network-confirmed-title"'),html.indexOf('id="network-watch-title"'));
- for(const name of ['OotleAccord','Skydrop','Veil Ootle Explorer','Sapient','Signal Desk','Sealed Bids at Midnight'])expect(confirmed).toContain(name);
+ for(const name of ['OotleAccord','Skydrop','Veil Ootle Explorer','Sapient','Signal Desk','Sealed Bids at Midnight','Ootle Lockbox','Launch Commitments','The Cursed Pumpkin','AT Protocol identity on Ootle'])expect(confirmed).toContain(name);
  for(const name of ['MoonMail','HideBox','Grave Robber'])expect(confirmed).not.toContain(`>${name}</a>`);
- expect(html.match(/class="network-project"/g)).toHaveLength(14);
+ expect(html.match(/class="network-project"/g)).toHaveLength(17);
  expect(html).toContain('Sandbox game');expect(html).toContain('Office pending');
  expect(html).toContain('Get latest extension');expect(html).toContain('Chrome Web Store: 0.9.6');
  expect(html).toContain('href="https://chromewebstore.google.com/detail/tari-ootle-wallet/demkeckolenopkgnfbnpflkpbbdhpgkl"');
@@ -49,14 +49,16 @@ test('the default view puts confirmed apps before the mainnet watch without hidi
 });
 test('network filters keep pending apps out of confirmed mainnet and preserve testnet destinations',()=>{
  const mainnet=renderToStaticMarkup(<MemoryRouter><NetworkProjects initialNetwork="mainnet"/></MemoryRouter>);
- expect(mainnet.match(/class="network-project"/g)).toHaveLength(6);
+ expect(mainnet.match(/class="network-project"/g)).toHaveLength(10);
  expect(mainnet).toContain('Open source');expect(mainnet).toContain('unrevealed bids forfeit bonds permanently');expect(mainnet).toContain('Mainnet evidence');expect(mainnet.slice(0,mainnet.indexOf('id="mainnet-templates"'))).not.toContain('>MoonMail</a>');
  const watch=renderToStaticMarkup(<MemoryRouter><NetworkProjects initialNetwork="watch"/></MemoryRouter>);
- expect(watch.match(/class="network-project"/g)).toHaveLength(8);
+ expect(watch.match(/class="network-project"/g)).toHaveLength(7);
  expect(watch).toContain('>MoonMail</a>');expect(watch).not.toContain('>OotleAccord</a>');
  const testnet=renderToStaticMarkup(<MemoryRouter><NetworkProjects initialNetwork="testnet"/></MemoryRouter>);
  expect(testnet).toContain('href="https://testnet-explorer.tari.mw/"');
  expect(testnet).not.toContain('href="https://explorer.tari.mw/"');
+ expect(testnet).toContain('href="https://testnet-atproto.tari.mw/"');
+ expect(testnet).not.toContain('href="https://atproto.tari.mw/"');
  expect(testnet).not.toContain('>Skydrop</a>');expect(testnet).not.toContain('Grave Robber');
 });
 
