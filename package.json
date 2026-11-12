@@ -18,7 +18,7 @@
     "monitor:submissions": "node scripts/monitor-submissions.mjs"
   },
   "dependencies": {
-    "@vercel/blob": "2.8.2",
+    "@vercel/blob": "2.9.0",
     "express": "4.22.3",
     "nostr-tools": "2.25.5",
     "pg": "8.23.1"
