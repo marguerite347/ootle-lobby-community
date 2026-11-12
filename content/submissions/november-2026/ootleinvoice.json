@@ -1,0 +1,36 @@
+{
+  "slug": "ootleinvoice",
+  "title": "OotleInvoice",
+  "summary": "Pay-by-link invoice prototype with exact amounts, expiry and receipt NFTs. The creator publishes an MIT-licensed Rust template and a walletless browser simulation. The November 12 README explicitly states that the browser demo does not connect to a Tari network or process real payments, and the template has not been deployed to testnet or mainnet. This recording walks through the public README, its simulation limits and template API; it does not demonstrate on-chain payments.",
+  "cardSummary": "Explore pay-by-link invoices, exact payment amounts and receipt checks in a walletless browser simulation.",
+  "cardStatus": "Browser simulation · Rust source",
+  "creator": "GenieBuilds",
+  "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/8",
+  "publishedAt": "2026-11-12T04:02:53.568Z",
+  "updatedAt": "2026-11-12T04:02:53.568Z",
+  "sourceContentSha256": "a56ae5fc747502f97e15f81e17b996f8d99887f806731ffa9d05854e550c47ff",
+  "repoUrl": "https://github.com/lisaaai200/ootleinvoice",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust · JavaScript · MIT",
+      "sourceUrl": "https://github.com/lisaaai200/ootleinvoice"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-ootleinvoice-20261112.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-ootleinvoice-20261112.jpg",
+    "capturedAt": "2026-11-12T14:15:16.775014+00:00",
+    "sourceRevision": "README master, reviewed November 12, 2026",
+    "kind": "public-page",
+    "credit": "Docs walkthrough — invoice design and simulation limits"
+  },
+  "demoUrl": "https://lisaaai200.github.io/ootleinvoice/",
+  "discussionLinks": [
+    {
+      "url": "https://www.youtube.com/watch?v=4teqJk-69Yo",
+      "platform": "YouTube"
+    }
+  ],
+  "resourceIds": []
+}

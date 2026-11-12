@@ -1,6 +1,6 @@
 {
   "threadUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503",
-  "checkedAt": "2026-11-11T13:13:25.462355+00:00",
+  "checkedAt": "2026-11-12T14:15:16.776633+00:00",
   "entries": [
     {
       "id": "creator-503-3",
@@ -358,36 +358,74 @@
     {
       "id": "creator-503-22",
       "creator": "Musaddiq_0x",
-      "title": "Choosing a privacy model",
+      "title": "Privacy models and Tari’s two tokens",
       "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/22",
       "publishedAt": "2026-11-04T13:53:23.366Z",
-      "updatedAt": "2026-11-04T16:37:01.804Z",
+      "updatedAt": "2026-11-12T11:42:25.752Z",
       "resourceIds": [],
       "works": [
         {
           "title": "Confidential and stealth resources",
           "format": "Medium",
           "url": "https://medium.com/@musaddiq677/confidential-vs-stealth-understanding-tari-ootles-privacy-model-d797446b4cd3"
+        },
+        {
+          "title": "A community view of launch day",
+          "format": "Bluesky",
+          "url": "https://bsky.app/profile/musaddiq0x.bsky.social/post/3n24dzstqis2g"
+        },
+        {
+          "title": "How Tari connects XTM and TARI",
+          "format": "Medium",
+          "url": "https://medium.com/@musaddiq677/how-tari-connects-xtm-and-tari-62361c1ec89c"
         }
       ],
-      "note": null
+      "note": null,
+      "discussionLinks": [
+        {
+          "label": "Follow-up post",
+          "url": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/47"
+        },
+        {
+          "label": "Follow-up post",
+          "url": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/48"
+        }
+      ],
+      "sourceContentSha256": "ea9fdff151e958dfbc0432125f5151b1346fb06827b4f63939cfc9bdaef3f73e"
     },
     {
       "id": "creator-503-24",
       "creator": "yezo4",
-      "title": "A community view of launch week",
+      "title": "Launch week and wallet tutorials",
       "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/24",
       "publishedAt": "2026-11-05T16:28:26.011Z",
-      "updatedAt": "2026-11-05T16:28:26.011Z",
+      "updatedAt": "2026-11-12T11:58:21.584Z",
       "resourceIds": [],
       "works": [
         {
           "title": "November 3 Tari Show recap",
           "format": "Medium",
           "url": "https://medium.com/@yezirhasan/taris-ootle-launch-is-a-week-away-the-real-test-is-what-people-can-use-4eae8972f7dd"
+        },
+        {
+          "title": "Before you approve: three checks",
+          "format": "YouTube",
+          "url": "https://www.youtube.com/watch?v=NawnhJKDhkw"
+        },
+        {
+          "title": "Claude and Tari Universe MCP",
+          "format": "YouTube",
+          "url": "https://www.youtube.com/watch?v=wf0WJSW_Zmw"
         }
       ],
-      "note": null
+      "note": null,
+      "discussionLinks": [
+        {
+          "label": "Follow-up post",
+          "url": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/46"
+        }
+      ],
+      "sourceContentSha256": "e42e24d556f56203029eb6ac55c16b666daaa01207b5c38f8211bc9853c5b67f"
     },
     {
       "id": "creator-503-25",
@@ -470,10 +508,10 @@
     {
       "id": "creator-503-28",
       "creator": "kenichi",
-      "title": "Receiving payments while offline",
-      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/28",
+      "title": "Offline payments and a wallet incident",
+      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/36",
       "publishedAt": "2026-11-07T19:02:48.998Z",
-      "updatedAt": "2026-11-10T22:06:10.342Z",
+      "updatedAt": "2026-11-11T20:44:07.621Z",
       "resourceIds": [],
       "works": [
         {
@@ -490,15 +528,21 @@
           "title": "The written explainer",
           "format": "Medium",
           "url": "https://medium.com/@0xkenichi/how-tari-lets-you-get-paid-while-youre-offline-6537df9f54b5"
+        },
+        {
+          "title": "A wallet incident, explained",
+          "format": "YouTube Short",
+          "url": "https://youtube.com/shorts/CRw9K_Whid8"
         }
       ],
       "note": null,
       "discussionLinks": [
         {
-          "label": "Updated submission",
-          "url": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/36"
+          "label": "Earlier submission",
+          "url": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/28"
         }
-      ]
+      ],
+      "sourceContentSha256": "856c72cc8dc349c675761c29577afecce8e85d88013498a235da7b7960374c91"
     },
     {
       "id": "creator-503-30",
@@ -814,6 +858,80 @@
       ],
       "note": null,
       "sourceContentSha256": "54d63b54b3b1f1308ddf110800634598a9753b27825f0cb4132e15f8b5dc9600"
+    },
+    {
+      "id": "creator-503-43",
+      "creator": "HannahKrypt",
+      "title": "Mining, Tari and XTM, explained",
+      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/43",
+      "publishedAt": "2026-11-11T20:57:48.160Z",
+      "updatedAt": "2026-11-11T21:06:41.934Z",
+      "sourceContentSha256": "ac22353a9d0c8ba2dfd124ca42fff1af04585f3e0936a8665c94861726d4d14d",
+      "resourceIds": [],
+      "works": [
+        {
+          "title": "How Tari’s multi-lane mining works",
+          "format": "YouTube",
+          "url": "https://www.youtube.com/watch?v=OrasEyhDANk"
+        },
+        {
+          "title": "Tari versus XTM",
+          "format": "YouTube",
+          "url": "https://www.youtube.com/watch?v=gOaLYuzfZ54"
+        },
+        {
+          "title": "What is Tari?",
+          "format": "YouTube",
+          "url": "https://www.youtube.com/watch?v=ECZfg_PypGM"
+        },
+        {
+          "title": "Multi-lane mining explained",
+          "format": "Medium",
+          "url": "https://medium.com/@omolayoyetunde04/taris-multi-lane-mining-explained-how-four-algorithms-keep-mining-open-to-everyone-cba172690c6a"
+        }
+      ],
+      "note": null
+    },
+    {
+      "id": "creator-503-44",
+      "creator": "madz",
+      "title": "Privacy and Turbine, explained",
+      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/44",
+      "publishedAt": "2026-11-11T20:58:16.765Z",
+      "updatedAt": "2026-11-11T20:58:16.765Z",
+      "sourceContentSha256": "d2d046fe5c8c818e2553c8369639125457eaaee5a16997d83fb947b0b78d0fe4",
+      "resourceIds": [],
+      "works": [
+        {
+          "title": "Turbine explained",
+          "format": "YouTube",
+          "url": "https://www.youtube.com/watch?v=w3mLPvQSrXU"
+        },
+        {
+          "title": "Privacy by default",
+          "format": "Medium",
+          "url": "https://medium.com/@maderzlast/private-by-default-how-tari-and-ootle-hide-what-other-blockchains-shout-f5438f91bc5a"
+        }
+      ],
+      "note": null
+    },
+    {
+      "id": "creator-503-45",
+      "creator": "andrearya1999",
+      "title": "Privacy on Ootle",
+      "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/45",
+      "publishedAt": "2026-11-12T04:02:42.695Z",
+      "updatedAt": "2026-11-12T04:02:42.695Z",
+      "sourceContentSha256": "a6305e1d0e4403c9b17dc1ba294695f30769f44e509374210adfd1c04dc2efe3",
+      "resourceIds": [],
+      "works": [
+        {
+          "title": "Privacy and resource types on Ootle",
+          "format": "Medium",
+          "url": "https://medium.com/@andrearya1999/your-bank-balance-is-public-tari-ootle-is-the-first-smart-contract-layer-that-fixes-that-bcdaf7121009"
+        }
+      ],
+      "note": null
     }
   ]
 }
