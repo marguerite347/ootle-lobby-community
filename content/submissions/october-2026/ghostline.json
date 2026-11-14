@@ -1,9 +1,9 @@
 {
   "slug": "ghostline",
   "title": "Ghostline",
-  "summary": "Pay-per-call channels for AI agents using cumulative off-chain vouchers and one settlement. On November 12, Veil’s Esmeralda explorer displayed GhostlineChannel template 21a4b999…3131ac05, three functions and publication epoch 12938. The current source evidence identifies its November 7 publication with template library 0.38. In the November 9 original-post edit, the creator reports a 51 µT deposit, five paid calls, an overspend rejection and one settlement; those counts are attributed service-ledger evidence, not independent chain proof. The README explicitly limits current payments to Esmeralda testnet; mainnet remains a future goal. Optional browser live mode requires Sapient 0.7.1 or later and a custodial relay that holds the test deposit through settlement or refund. Fees, timing, channel metadata and requests remain observable; the batch prototype is not coordinator-private. The v0.4.0 CLI requires Linux x86-64 with glibc. The new November 12 recording is a README walkthrough. The November 4 walletless simulation recording, its observed five calls and rejection, and earlier transaction URLs remain in maintenance history. No wallet action, deposit, CLI execution or active application review was performed for this source refresh. MIT source.",
-  "cardSummary": "Explore payment channels that let AI agents pay per API call using cumulative vouchers and one settlement.",
-  "cardStatus": "Testnet · Linux CLI · Custodial relay",
+  "summary": "Pay-per-call channels for AI agents using cumulative off-chain vouchers and one settlement. November 14 source review: the current v0.5.0 README and November 13 creator posts identify Ootle mainnet. Veil displays GhostlineChannel template ae13cead…3cef9c at epoch 38576 with new, settle and settle_batch functions. Settlement pays the service, returns payer change and directs a 1% protocol fee to the treasury. The CLI/MCP route requires Linux x86-64 and a separately configured wallet; the archived October Esmeralda demo targets a retired template. The service sees requests, vouchers and deposit limits. Fees, timing, open/close links and the three-output settlement shape remain public; call counts come from service ledgers rather than chain proof. The batch coordinator is an SDK prototype, not coordinator-private or demonstrated on mainnet. MIT source. The November 14 recording is a README walkthrough, with no CLI, wallet or payment execution; prior testnet footage and receipts remain in maintenance history.",
+  "cardSummary": "Let AI agents pay per API call using cumulative off-chain vouchers and a single channel settlement.",
+  "cardStatus": "Mainnet · Linux CLI/MCP · 1% protocol fee",
   "creator": "AduAkorful",
   "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/14",
   "publishedAt": "2026-10-17T21:50:36.623Z",
@@ -17,12 +17,12 @@
       "sourceUrl": "https://github.com/AduAkorful/ghostline"
     }
   ],
-  "demoUrl": "https://ghostline-ui.vercel.app/play.html",
+  "demoUrl": "https://ghostline-ui.vercel.app/docs/",
   "recording": {
-    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-ghostline-20261112.mp4",
-    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-ghostline-20261112.jpg",
-    "capturedAt": "2026-11-12T16:39:28.885000+00:00",
-    "sourceRevision": "a9e41e3423be935b08370f717f15970efe3aae0e",
+    "url": "https://lobby.tari.com/previews/community/resource-ghostline-20261114.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-ghostline-20261114.jpg",
+    "capturedAt": "2026-11-14T15:34:48.664803+00:00",
+    "sourceRevision": "71abd68b1be7b5bfef590d578c8e1b8039cf6f31",
     "kind": "walkthrough",
     "credit": "Docs walkthrough"
   },
@@ -30,14 +30,6 @@
     {
       "url": "https://www.reddit.com/r/tari/comments/1x8m0xh/ghostline_private_paypercall_payments_for_ai/",
       "platform": "Reddit · r/tari"
-    },
-    {
-      "url": "https://github.com/AduAkorful/ghostline/releases/tag/v0.3.2",
-      "platform": "GitHub release"
-    },
-    {
-      "url": "https://github.com/AduAkorful/ghostline/releases/tag/v0.4.0",
-      "platform": "GitHub release"
     },
     {
       "url": "https://ghostline-ui.vercel.app/evidence.html",
@@ -62,6 +54,18 @@
     {
       "url": "https://testnet-explorer.tari.mw/template/21a4b9991eecbe50edfc72fd874b4d072b2fc5e44767dad83fa9dfef3131ac05",
       "platform": "Esmeralda template"
+    },
+    {
+      "url": "https://community.tari.com/t/november-build-contest-thread-mvp/520/15",
+      "platform": "Tari Community forum"
+    },
+    {
+      "url": "https://community.tari.com/t/november-bonus-contest-first-to-launch/521/14",
+      "platform": "Mainnet announcement"
+    },
+    {
+      "url": "https://explorer.tari.mw/template/ae13cead3c34052116c49fc09e4645f3a62edf55857c0e2e45226dd7093cef9c",
+      "platform": "Ootle mainnet template"
     }
   ],
   "resourceIds": [
