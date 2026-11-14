@@ -360,6 +360,13 @@
       "checkedAt": "2026-11-14T14:42:23.776640+00:00",
       "evidenceUrl": "https://github.com/Mzee04/stake#readme",
       "evidence": "November14 creator submission and current README identify a walletless simulation and unpublished template. No network deployment established."
+    },
+    {
+      "ref": "tari-ootle:integration:specter",
+      "state": "unconfirmed",
+      "checkedAt": "2026-11-14T15:24:11.123353+00:00",
+      "evidenceUrl": "https://yezir4.github.io/specter-tari/sapient-proof.html",
+      "evidence": "Current creator proof describes a mainnet receipt, but the linked release note reflects an earlier no-contract stage and current explorer extraction did not expose deployment details. Retain outside the live-mainnet list pending reconciliation."
     }
   ]
 }
