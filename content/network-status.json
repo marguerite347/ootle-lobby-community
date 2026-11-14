@@ -111,17 +111,21 @@
     },
     {
       "ref": "tari-ootle:integration:ghostline",
-      "state": "testnet",
-      "checkedAt": "2026-11-12T16:44:40.637999+00:00",
-      "evidenceUrl": "https://testnet-explorer.tari.mw/template/21a4b9991eecbe50edfc72fd874b4d072b2fc5e44767dad83fa9dfef3131ac05",
-      "evidence": "November 12 read-only Esmeralda explorer displays template 21a4b9991eecbe50edfc72fd874b4d072b2fc5e44767dad83fa9dfef3131ac05 at epoch 12938. Current creator source documents testnet use. No current mainnet deployment evidence established.",
-      "testnetUrl": "https://ghostline-ui.vercel.app/play.html",
+      "state": "mainnet",
+      "checkedAt": "2026-11-14T15:34:48.664803+00:00",
+      "evidenceUrl": "https://explorer.tari.mw/template/ae13cead3c34052116c49fc09e4645f3a62edf55857c0e2e45226dd7093cef9c",
+      "evidence": "November 14 read-only explorer text displays GhostlineChannel, 127.2 KB, publication epoch 38576 and new/settle/settle_batch functions, matching the current creator mainnet source. The archived October testnet demo uses a retired template.",
       "showcase": {
-        "url": "https://ghostline-ui.vercel.app/play.html",
-        "label": "Simulation + Testnet",
-        "summary": "Explore AI pay-per-call payments: several calls, signed vouchers and one settlement. Choose simulation or Sapient testnet mode."
+        "url": "https://ghostline-ui.vercel.app/docs/",
+        "label": "Mainnet · Linux CLI/MCP · 1% protocol fee",
+        "summary": "Let AI agents pay per API call using cumulative off-chain vouchers and a single channel settlement."
       },
-      "mainnetPlan": "Live payment channels still target Esmeralda testnet."
+      "mainnetUrl": "https://ghostline-ui.vercel.app/docs/",
+      "deploymentEvidence": {
+        "url": "https://explorer.tari.mw/template/ae13cead3c34052116c49fc09e4645f3a62edf55857c0e2e45226dd7093cef9c",
+        "observedAt": "2026-11-14T15:34:48.664803+00:00",
+        "detail": "November 14 read-only explorer text displays GhostlineChannel, 127.2 KB, publication epoch 38576 and new/settle/settle_batch functions, matching the current creator mainnet source. The archived October testnet demo uses a retired template."
+      }
     },
     {
       "ref": "november-2026:ootle-lockbox",
@@ -172,17 +176,22 @@
     },
     {
       "ref": "tari-ootle:component:hidebox",
-      "state": "testnet",
-      "checkedAt": "2026-11-11T12:16:00Z",
-      "evidenceUrl": "https://hidebox.app/api/v1/config",
-      "evidence": "Live /api/v1/config reports network esmeralda, network_byte 38 and testnet true despite date-triggered mainnet-beta footer.",
-      "testnetUrl": "https://hidebox.app/",
+      "state": "both",
+      "checkedAt": "2026-11-14T15:34:48.664803+00:00",
+      "evidenceUrl": "https://explorer.tari.mw/template/494d34a5f55bcef614655c9f8b7fdcb672f1d086467fc96816c0a93a4a5c8472",
+      "evidence": "November 14 service configuration reports mainnet, network byte 0 and testnet false; separate testnet.hidebox.app configuration reports Esmeralda, byte 38 and testnet true. Veil displays SealLog, 104.5 KB, publication epoch 38542, matching the creator deployment.",
+      "testnetUrl": "https://testnet.hidebox.app/",
       "showcase": {
         "url": "https://hidebox.app/",
-        "label": "Testnet · Private storage",
-        "summary": "Store encrypted files and explore one-time sharing links and pay-to-open content."
+        "label": "Mainnet beta · No refunds · Save your key",
+        "summary": "Store encrypted files and share access through links, recipient addresses, paid unlocks and digital shops."
       },
-      "mainnetPlan": "Live service remains on Esmeralda testnet."
+      "mainnetUrl": "https://hidebox.app/",
+      "deploymentEvidence": {
+        "url": "https://explorer.tari.mw/template/494d34a5f55bcef614655c9f8b7fdcb672f1d086467fc96816c0a93a4a5c8472",
+        "observedAt": "2026-11-14T15:34:48.664803+00:00",
+        "detail": "November 14 service configuration reports mainnet, network byte 0 and testnet false; separate testnet.hidebox.app configuration reports Esmeralda, byte 38 and testnet true. Veil displays SealLog, 104.5 KB, publication epoch 38542, matching the creator deployment."
+      }
     },
     {
       "ref": "tari-ootle:learn:atproto-identity",
@@ -231,12 +240,17 @@
     },
     {
       "ref": "tari-ootle:app:private-ballot",
-      "state": "testnet",
-      "checkedAt": "2026-11-11T13:16:51.196914+00:00",
-      "evidenceUrl": "https://github.com/GSXRspartan/private-ballot/blob/main/README.md",
-      "evidence": "The current README identifies its governance pilot as Esmeralda testnet.",
-      "testnetUrl": "https://github.com/GSXRspartan/private-ballot",
-      "actionLabel": "Open source"
+      "state": "mainnet",
+      "checkedAt": "2026-11-14T15:34:48.664803+00:00",
+      "evidenceUrl": "https://community.tari.com/t/november-bonus-contest-first-to-launch/521/11",
+      "evidence": "November 14 explorer text displays TariPrivateBallotAnchorV2, 43 KB and publish_anchor_v2, matching the November 12 creator announcement. Anchor template only; the hosted website and browser-wallet integration remain in configuration.",
+      "actionLabel": "Open source",
+      "mainnetUrl": "https://explorer.tari.mw/template/ef4d7f348a4c3db7b6f9a9c30ac4fcbfdfb73e8bec59a808258861fcbbdc6cdb",
+      "deploymentEvidence": {
+        "url": "https://explorer.tari.mw/template/ef4d7f348a4c3db7b6f9a9c30ac4fcbfdfb73e8bec59a808258861fcbbdc6cdb",
+        "observedAt": "2026-11-14T15:34:48.664803+00:00",
+        "detail": "November 14 explorer text displays TariPrivateBallotAnchorV2, 43 KB and publish_anchor_v2, matching the November 12 creator announcement. Anchor template only; the hosted website and browser-wallet integration remain in configuration."
+      }
     },
     {
       "ref": "tari-ootle:app:ootle-surveys",
