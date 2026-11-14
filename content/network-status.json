@@ -125,7 +125,8 @@
         "url": "https://explorer.tari.mw/template/ae13cead3c34052116c49fc09e4645f3a62edf55857c0e2e45226dd7093cef9c",
         "observedAt": "2026-11-14T15:34:48.664803+00:00",
         "detail": "November 14 read-only explorer text displays GhostlineChannel, 127.2 KB, publication epoch 38576 and new/settle/settle_batch functions, matching the current creator mainnet source. The archived October testnet demo uses a retired template."
-      }
+      },
+      "actionLabel": "Read guide"
     },
     {
       "ref": "november-2026:ootle-lockbox",
@@ -250,6 +251,11 @@
         "url": "https://explorer.tari.mw/template/ef4d7f348a4c3db7b6f9a9c30ac4fcbfdfb73e8bec59a808258861fcbbdc6cdb",
         "observedAt": "2026-11-14T15:34:48.664803+00:00",
         "detail": "November 14 explorer text displays TariPrivateBallotAnchorV2, 43 KB and publish_anchor_v2, matching the November 12 creator announcement. Anchor template only; the hosted website and browser-wallet integration remain in configuration."
+      },
+      "showcase": {
+        "url": "https://explorer.tari.mw/template/ef4d7f348a4c3db7b6f9a9c30ac4fcbfdfb73e8bec59a808258861fcbbdc6cdb",
+        "label": "Mainnet anchor template · Non-binding pilots",
+        "summary": "Inspect the deployed voting-anchor template. The hosted website and browser-wallet integration are still being configured."
       }
     },
     {
