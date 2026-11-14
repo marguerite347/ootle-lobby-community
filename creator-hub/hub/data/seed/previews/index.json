@@ -2,15 +2,15 @@
   {
     "id": "tari-ootle:app:private-ballot",
     "slug": "private-ballot",
-    "url": "https://community.tari.com/t/november-bonus-contest-first-to-launch/521/11",
+    "url": "https://github.com/GSXRspartan/private-ballot",
     "source": "capture",
-    "video": "/previews/community/resource-private-ballot-20261114.mp4",
-    "image": "/previews/community/resource-private-ballot-20261114.jpg",
+    "video": "/previews/media-29069caef9c888d6f786f9a2c878cc04b802d284a413abde8a06a890b225d5d0.mp4",
+    "image": "/previews/media-9a465cd12268fd5ed8c9b25a8f1024ced058fb9f3152639dd0fe4e6c64c641f7.poster.png",
     "review": {
-      "reviewedAt": "2026-11-14T15:34:48.664803+00:00",
-      "scope": "Public creator announcement",
-      "notes": "Opening, middle and closing frames inspected; genuine browser capture of the announced anchor deployment and pending hosted-app scope. No wallet or app execution.",
-      "videoSha256": "c353b4e2d56e253c4a8c8c932a906278ca02d0b740291231f1d2cd70dec33ef6"
+      "reviewedAt": "2026-09-22",
+      "videoSha256": "29069caef9c888d6f786f9a2c878cc04b802d284a413abde8a06a890b225d5d0",
+      "scope": "Public repository and README",
+      "notes": "Reviewed four spaced frames for correct project, readable content and scroll movement. No wallet operations, functionality verification or gameplay claim."
     }
   },
   {

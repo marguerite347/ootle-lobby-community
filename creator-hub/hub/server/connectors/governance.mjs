@@ -28,7 +28,7 @@ const ENTRIES = [
     title: 'Private Ballot',
     repo: 'https://github.com/GSXRspartan/private-ballot',
     revision: '5f88f1892ff9c20af2fc55a0d756c22c76ed48af',
-    summary: 'Independent open-source privacy-preserving desktop voting app (Tor transport, Tari Triptych eligibility proofs, independently verifiable offline archives) with OPTIONAL Tari Ootle anchoring. Alpha for non-binding governance pilots on the Esmeralda testnet — indexed for education, community-app discovery and game-balancing workflows.',
+    summary: 'Privacy-preserving voting pilots with independently verifiable offline archives and optional Ootle anchoring. November 14 review: Veil displays TariPrivateBallotAnchorV2 (43 KB) with publish_anchor_v2, matching the creator’s November 12 mainnet publication announcement. This establishes the anchor template deployment. The creator says the hosted website and browser-wallet integration are still being configured and will provide the final website link and completed live-anchor evidence later. The older README describes an Esmeralda desktop alpha for non-binding governance pilots; no production election or working hosted mainnet app is claimed here. The new recording is the creator announcement walkthrough. Original repository, earlier testnet observations and media are retained in maintenance history.',
     docsUrl: 'https://github.com/GSXRspartan/private-ballot/blob/main/docs/OPERATOR_SETUP.md',
     license: 'MIT OR Apache-2.0',
     tags: ['governance', 'voting', 'privacy', 'tor', 'triptych', 'ootle-anchor', 'balancing', 'game-design'],
@@ -46,7 +46,7 @@ export async function fetchLive() {
     sourceUrl: e.repo,
     repoUrl: e.repo,
     docsUrl: e.docsUrl,
-    network: 'Ootle testnet (Esmeralda) — optional anchoring',
+    network: "Ootle mainnet anchor template; Esmeralda desktop alpha",
     readiness: 'runnable-example',
     license: e.license,
     prerequisites: ['Independent project (not Tari Labs)', 'Optional Ootle anchoring'],
@@ -66,7 +66,9 @@ export async function fetchLive() {
     freshness: 'provisional',
     verification: 'source-attested',
     tariCompatible: null, // optional anchoring only; integration not verified by the hub
-    setupHint: 'See the operator setup guide; anchoring on Ootle testnet is optional. No local execution/audit performed by the hub.',
+    setupHint: "Inspect the mainnet anchor template and creator announcement. Hosted website and browser-wallet configuration remain pending; desktop pilots are non-binding.",
+    preview: {"video": "https://lobby.tari.com/previews/community/resource-private-ballot-20261114.mp4", "image": "https://lobby.tari.com/previews/community/resource-private-ballot-20261114.jpg", "source": "Announcement"},
+    discussionLinks: [{"url": "https://community.tari.com/t/september-contest-thread/324/3", "platform": "Original contest post"}, {"url": "https://community.tari.com/t/november-bonus-contest-first-to-launch/521/11", "platform": "Mainnet anchor announcement"}],
   }));
   return { records };
 }
