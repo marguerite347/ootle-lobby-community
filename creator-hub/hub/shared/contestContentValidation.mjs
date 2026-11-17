@@ -38,7 +38,9 @@ export function validateContests(contests) {
     slugs.add(entry.slug);plain(entry.title,'entry title',100);plain(entry.summary,'summary');plain(entry.creator,'creator',80);
     publicLink(entry.sourceUrl);
     if (!entry.sourceUrl.startsWith(`${contest.threadUrl}/`) || !/^[2-9]\d*$|^1\d+$/.test(entry.sourceUrl.slice(contest.threadUrl.length+1)) || posts.has(entry.sourceUrl)) throw new Error('Expected a unique submission post in the matching contest thread.');
-    posts.add(entry.sourceUrl);publicLink(entry.repoUrl,'repository');if(entry.demoUrl)publicLink(entry.demoUrl,'demo');
+    posts.add(entry.sourceUrl);
+    if(!entry.repoUrl&&!entry.demoUrl)throw new Error('Expected a source repository or reviewed project destination.');
+    if(entry.repoUrl!==undefined)publicLink(entry.repoUrl,'repository');if(entry.demoUrl)publicLink(entry.demoUrl,'demo');
     if(entry.discussionLinks!==undefined){
       if(!Array.isArray(entry.discussionLinks)||entry.discussionLinks.length>10)throw new Error('Expected up to ten public discussion links.');
       const seen=new Set([entry.sourceUrl]);

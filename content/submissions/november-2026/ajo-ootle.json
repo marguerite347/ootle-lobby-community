@@ -1,0 +1,38 @@
+{
+  "slug": "ajo-ootle",
+  "title": "Ajo on Ootle",
+  "creator": "greatojies",
+  "summary": "MIT-licensed rotating savings-circle template, CLI and walletless browser simulation. Every member contributes each round and receives one pot; a one-round deposit can cover a missed contribution. The creator documents template 3519aefd3d17e2bb88f061e1490a8107925381cf7c4af3f5911c4c1668e01b11 and the Uselu circle on Esmeralda. A November 17 read of the linked official testnet indexer returned the circle substate. The hosted browser page is explicitly a simulation. This is testnet evidence, not Ootle mainnet deployment. The recording shows the README and network-specific documentation.",
+  "cardSummary": "Explore rotating savings circles, member deposits and scheduled payouts through an Esmeralda template and walletless browser simulation.",
+  "cardStatus": "Testnet · Browser simulation",
+  "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/21",
+  "publishedAt": "2026-11-15T00:49:04.697Z",
+  "updatedAt": "2026-11-15T05:53:57.432Z",
+  "sourceContentSha256": "b256adb737c7051beb241cc79c5e62b2d9061db579baa00d8a43d4ea939acce6",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust · Browser simulation · MIT",
+      "sourceUrl": "https://github.com/G-ojies/ajo-ootle"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-ajo-ootle-20261117.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-ajo-ootle-20261117.jpg",
+    "capturedAt": "2026-11-17T13:48:44.250Z",
+    "sourceRevision": "6d85b94df434fa2e15d32bbbbaeb44ad5dc1d911",
+    "kind": "public-page",
+    "credit": "Docs walkthrough"
+  },
+  "discussionLinks": [
+    {
+      "url": "https://medium.com/@greatojies/ajo-on-ootle-savings-circles-where-nobody-has-to-hold-the-money-3e2a2dbf6430",
+      "platform": "Medium"
+    }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:ajo-ootle"
+  ],
+  "repoUrl": "https://github.com/G-ojies/ajo-ootle",
+  "demoUrl": "https://g-ojies.github.io/ajo-ootle/"
+}

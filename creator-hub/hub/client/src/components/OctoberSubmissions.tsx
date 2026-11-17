@@ -18,7 +18,7 @@ export default function OctoberSubmissions(){
   return <section className="section october-submissions" id="october-submissions" aria-labelledby="october-submissions-title">
     <div className="section-head project-section-heading"><div><h2 id="october-submissions-title">October <em>Submissions</em></h2><p>Spooky Secrets · Entries closed. Explore the October builds.</p></div><div className="contest-community-links"><a href={safeHref(THREAD)} target="_blank" rel="noreferrer">Official contest thread</a></div></div>
     <p className="submission-check">Nov 2 testnet reset: the contest organizer asked builders to republish templates and update their submitted versions. <a href={`${THREAD}/44`} target="_blank" rel="noreferrer">Read the organizer’s update</a></p>
-    <CollapsibleProjects label="October Submissions"><PublicationGallery destination="october-2026" excludeRepoUrls={contest?.entries.map(entry=>entry.repoUrl)} onCount={setWorkbenchCount}/>
+    <CollapsibleProjects label="October Submissions"><PublicationGallery destination="october-2026" excludeRepoUrls={contest?.entries.flatMap(entry=>entry.repoUrl?[entry.repoUrl]:[])} onCount={setWorkbenchCount}/>
     {contest?<OctoberGallery contest={contest} hasWorkbenchEntries={workbenchCount>0}/>:failed?<p role="status">The submission list could not load. <a href={safeHref(THREAD)} target="_blank" rel="noreferrer">View entries on the forum.</a></p>:<p role="status">Loading October submissions…</p>}
     </CollapsibleProjects>
   </section>;

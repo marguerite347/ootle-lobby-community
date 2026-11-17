@@ -17,3 +17,13 @@ test('each build gallery accepts only entries from its own official thread', () 
   assert.throws(() => validateContests([mvp,mvp]), /duplicate contest identity/);
   assert.throws(() => validateContests([{...mvp,threadUrl:launch.threadUrl}]), /contest identity/);
 });
+
+test('a reviewed hosted project can be listed without inventing a repository', () => {
+  const contest = contests.find(item => item.id === 'november-2026');
+  const entry = structuredClone(contest.entries.find(item => item.slug === 'ootle-fee-check'));
+  assert.ok(entry && !entry.repoUrl);
+  assert.doesNotThrow(() => validateContests([{...contest, entries:[entry]}]));
+  assert.throws(() => validateContests([{...contest, entries:[{...entry, demoUrl:undefined}]}]), /source repository or reviewed project destination/);
+  assert.throws(() => validateContests([{...contest, entries:[{...entry, demoUrl:'https://unreviewed.invalid/app'}]}]), /maintainer review/);
+  assert.throws(() => validateContests([{...contest, entries:[{...entry, repoUrl:'javascript:alert(1)'}]}]), /reviewed public link/);
+});

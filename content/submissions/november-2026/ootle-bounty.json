@@ -1,0 +1,38 @@
+{
+  "slug": "ootle-bounty",
+  "title": "Ootle Bounty",
+  "creator": "Cape",
+  "summary": "MIT-licensed bug-bounty escrow template source with a walletless browser simulation. Researchers submit report commitments and sponsors decide validity; accepted findings draw from a proposed locked pool. The model cannot force honest sponsor triage or detect reworded duplicate reports. The browser uses a temporary demo encryption key, not a production key-management system, and sends no real funds. The recording shows the README and documented template methods. No deployed network contract is established by these sources.",
+  "cardSummary": "Explore bug-bounty pools, report commitments, sponsor triage and payouts through Rust source and a walletless browser simulation.",
+  "cardStatus": "Browser simulation · Rust source",
+  "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/20",
+  "publishedAt": "2026-11-14T21:22:17.469Z",
+  "updatedAt": "2026-11-14T21:22:17.469Z",
+  "sourceContentSha256": "f3ec97431584b1580683a966c4347ebc1f116a4e3dfb255025c98ea69a96322f",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust · Browser simulation · MIT",
+      "sourceUrl": "https://github.com/taufik52/ootle-bounty"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-ootle-bounty-20261117.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-ootle-bounty-20261117.jpg",
+    "capturedAt": "2026-11-17T13:48:04.566Z",
+    "sourceRevision": "4a4601d0a8ee7b66f893ae44eae692e7429fd848",
+    "kind": "public-page",
+    "credit": "Docs walkthrough"
+  },
+  "discussionLinks": [
+    {
+      "url": "https://medium.com/@capedong6/tari-web3-bug-bounty-blockchain-ootle-95ffb991428c",
+      "platform": "Medium"
+    }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:ootle-bounty"
+  ],
+  "repoUrl": "https://github.com/taufik52/ootle-bounty",
+  "demoUrl": "https://taufik52.github.io/ootle-bounty/"
+}

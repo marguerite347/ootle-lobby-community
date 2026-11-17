@@ -1,0 +1,38 @@
+{
+  "slug": "taribill",
+  "title": "TariBill",
+  "creator": "kingklowor",
+  "summary": "MIT-licensed merchant payment-link and invoice prototype with a browser simulation and Rust template design. The hosted page labels payments as simulation and identifies its merchant and transactions as fictional seed data. Payments are recorded locally; real wallet signing and mainnet settlement are future work in the README. The recording walks through documentation and its labeled interface diagrams, not a working payment transaction.",
+  "cardSummary": "Explore merchant payment links, invoice checkout and receipt tracking through a walletless browser simulation and Rust template source.",
+  "cardStatus": "Browser simulation · Rust source",
+  "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/19",
+  "publishedAt": "2026-11-14T21:22:12.751Z",
+  "updatedAt": "2026-11-14T21:22:12.751Z",
+  "sourceContentSha256": "f69889ee49c60e1703e7806dc20b1c4f97f37c9222821fa7363e3aafe4b4fc9e",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust · Browser simulation · MIT",
+      "sourceUrl": "https://github.com/Klowor2002/taribill"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-taribill-20261117.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-taribill-20261117.jpg",
+    "capturedAt": "2026-11-17T13:47:25.309Z",
+    "sourceRevision": "e48d4c5280c91a6e86e59f9a374e70405b769bc8",
+    "kind": "public-page",
+    "credit": "Docs walkthrough"
+  },
+  "discussionLinks": [
+    {
+      "url": "https://bsky.app/profile/kingklowor.bsky.social/post/3n2cc7n373n27",
+      "platform": "Bluesky"
+    }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:taribill"
+  ],
+  "repoUrl": "https://github.com/Klowor2002/taribill",
+  "demoUrl": "https://klowor2002.github.io/taribill/"
+}

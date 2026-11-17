@@ -1,0 +1,37 @@
+{
+  "slug": "ootle-fee-check",
+  "title": "Ootle Fee Check",
+  "creator": "HarbourRelay",
+  "summary": "MIT-licensed fee-reconciliation tool by HarbourRelay. The current hosted description offers a mainnet browser tool for up to 20 public transaction IDs and a PowerShell 7 CLI supporting mainnet and Esmeralda. Missing or conflicting replies leave the amount blank for review. Both indexers are operated by Tari, so their agreement is an operational comparison, not independent settlement proof. The browser sends entered transaction IDs and normal connection metadata to those public indexers. This recording shows the creator announcement. The source archive and JavaScript attachment were not downloaded or executed.",
+  "cardSummary": "Compare transaction fees from two Tari indexers and export a dated CSV, leaving conflicting or missing amounts blank.",
+  "cardStatus": "Web app · PowerShell CLI",
+  "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/16",
+  "publishedAt": "2026-11-14T19:21:32.711Z",
+  "updatedAt": "2026-11-14T19:21:32.711Z",
+  "sourceContentSha256": "ae9e26f11b08a2f96d3e8e5b1cdf9269e99f01b0f8787af87c87aa5a74a9669d",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "JavaScript · PowerShell · MIT",
+      "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/16"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-ootle-fee-check-20261117.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-ootle-fee-check-20261117.jpg",
+    "capturedAt": "2026-11-17T13:49:37.999Z",
+    "sourceRevision": "ae9e26f11b08a2f96d3e8e5b1cdf9269e99f01b0f8787af87c87aa5a74a9669d",
+    "kind": "public-page",
+    "credit": "Announcement"
+  },
+  "discussionLinks": [
+    {
+      "url": "https://www.reddit.com/r/tari/comments/1xv7dzb/i_built_a_csv_fee_checker_for_tari_ootles_two/",
+      "platform": "Reddit"
+    }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:ootle-fee-check"
+  ],
+  "demoUrl": "https://harbourrelay.itch.io/ootle-fee-check"
+}
