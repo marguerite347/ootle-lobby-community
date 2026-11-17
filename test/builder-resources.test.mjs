@@ -4,7 +4,7 @@ import {BUILDER_SOURCES,monitorBuilderResources,observationReader,builderMainten
 const address='a'.repeat(64),doc='docs/developer-docs/src/content/docs/guides/new.mdx';
 const item={template_name:'Example',template_address:address,author_public_key:'b'.repeat(64),binary_hash:'c'.repeat(64),at_epoch:1};
 const release={tag_name:'v0.54.0',body:'Reviewed release notes',published_at:'2026-11-17T09:00:00Z',html_url:'https://github.com/tari-project/tari-ootle/releases/tag/v0.54.0'};
-const sources={indexerA:{entries:[item]},indexerB:{entries:[item]},release,guides:{truncated:false,sha:'revision',tree:[{type:'blob',path:doc,sha:'first'}]}};
+const sources={indexerA:{entries:[item]},indexerB:{entries:[item]},release,guides:{truncated:false,sha:'revision',tree:[{type:'blob',path:doc,sha:'first'}]},communityGuides:{topic_list:{topics:[]}}};
 const now=()=>new Date('2026-11-17T18:00:00Z');
 const readFor=values=>async url=>{const id=Object.keys(BUILDER_SOURCES).find(id=>BUILDER_SOURCES[id]===url);if(values[id] instanceof Error)throw values[id];return structuredClone(values[id]);};
 const run=overrides=>monitorBuilderResources({catalogue:{entries:[]},read:readFor(sources),now,...overrides});
@@ -49,4 +49,14 @@ test('template discovery follows the official address cursor and rejects repeate
  assert.equal(data.entries.length,101);assert.equal(data.complete,true);
  assert.equal(urls[1],`${BUILDER_SOURCES.indexerA}&after=${entries.at(-1).template_address}`);
  await assert.rejects(readCatalogue(async()=>({entries}),BUILDER_SOURCES.indexerA),/Duplicate/);
+});
+test('new community guide topics outside contests are queued and unchanged topics are not repeated',async()=>{
+ const topic={id:643,title:'Guide: wXTM on Uniswap',slug:'wxtm-guide',last_posted_at:'2026-11-16T00:00:00Z'};
+ const values={...sources,communityGuides:{topic_list:{topics:[topic]}}};
+ const first=await run({read:readFor(values)});assert.equal(first.complete,true);
+ assert.ok(first.candidates.some(c=>c.id==='forum-guide:643'));
+ const second=await run({read:readFor(values),baseline:first.checkpoint});
+ assert.equal(second.candidates.filter(c=>c.kind==='community-guide').length,0);
+ values.communityGuides.topic_list.topics[0]={...topic,last_posted_at:'2026-11-17T10:00:00Z'};
+ assert.ok((await run({read:readFor(values),baseline:first.checkpoint})).candidates.some(c=>c.id==='forum-guide:643'));
 });

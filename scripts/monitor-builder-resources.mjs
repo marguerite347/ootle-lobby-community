@@ -10,6 +10,7 @@ export const BUILDER_SOURCES = {
   indexerB:'https://indexer-b.ootle.tari.com/templates/catalogue?limit=100',
   release:'https://api.github.com/repos/tari-project/tari-ootle/releases/latest',
   guides:'https://api.github.com/repos/tari-project/tari-ootle/git/trees/development?recursive=1',
+  communityGuides:'https://community.tari.com/latest.json',
 };
 const sha=value=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
 const hex=/^[a-f0-9]{64}$/;
@@ -50,12 +51,32 @@ export async function readCatalogue(read,url){
   }
   throw Error('Catalogue pagination limit reached; preserve the last-good snapshot.');
 }
+export async function readCommunityGuides(read,since){
+  const topics=new Map(),pages=[],seen=new Set();let url=BUILDER_SOURCES.communityGuides;
+  for(let i=0;i<100;i++){
+    if(seen.has(url))throw Error('Repeated forum discovery page.');seen.add(url);
+    const data=await read(url);pages.push(url);
+    if(!Array.isArray(data.topic_list?.topics))throw Error('Incomplete forum discovery response.');
+    const rows=data.topic_list.topics;
+    for(const t of rows){
+      if(!Number.isInteger(t.id)||!t.slug||!t.title||!Number.isFinite(Date.parse(t.last_posted_at||t.created_at)))throw Error('Invalid forum topic metadata.');
+      if(Date.parse(t.last_posted_at||t.created_at)>=since&&/\b(guide|tutorial|walkthrough|documentation|how[ -]to)\b/i.test(`${t.title} ${(t.tags||[]).join(' ')}`))topics.set(t.id,{id:t.id,title:t.title,url:`https://community.tari.com/t/${t.slug}/${t.id}`,updatedAt:t.last_posted_at||t.created_at});
+    }
+    const ordinary=rows.filter(t=>!t.pinned),more=data.topic_list.more_topics_url;
+    if(!more||!rows.length||(ordinary.length&&ordinary.every(t=>Date.parse(t.last_posted_at||t.created_at)<since)))return {topics:[...topics.values()],pages,complete:true,since:new Date(since).toISOString()};
+    const next=new URL(more,'https://community.tari.com');
+    if(next.origin!=='https://community.tari.com'||!/^\/latest(?:\.json)?$/.test(next.pathname))throw Error('Unexpected forum discovery pagination URL.');
+    next.pathname='/latest.json';url=next.href;
+  }
+  throw Error('Forum discovery pagination incomplete.');
+}
 export async function monitorBuilderResources({read=readRemote,catalogue,baseline={},records=[],now=()=>new Date()}={}){
   const checkedAt=now().toISOString(),observations={},failures=[],candidates=[];
   // Independent sources continue after a failed read; no last-good file is changed here.
   for(const [id,url] of Object.entries(BUILDER_SOURCES)){
     try{
-      const data=id.startsWith('indexer')?await readCatalogue(read,url):await read(url);
+      const since=Math.min(Date.parse(checkedAt)-7*86400000,Date.parse(baseline.communityGuidesCheckedAt)||Infinity);
+      const data=id.startsWith('indexer')?await readCatalogue(read,url):id==='communityGuides'?await readCommunityGuides(read,since):await read(url);
       observations[id]={url,data,checkedAt:read.observations?.[url]?.checkedAt||checkedAt};
     }
     catch(error){failures.push({id,url,error:error.message});}
@@ -93,6 +114,15 @@ export async function monitorBuilderResources({read=readRemote,catalogue,baselin
       for(const [path,guide] of Object.entries(baseline.guides||{}))if(!guides[path])candidates.push({id:`guide:${path}`,kind:'guide',review:'removed',path,...guide});
       checkpoint.guides=guides;
     }catch(error){failures.push({id:'guides',error:error.message});}
+  }
+  if(observations.communityGuides){
+    checkpoint.communityGuides={...baseline.communityGuides};
+    for(const topic of observations.communityGuides.data.topics){
+      const digest=sha(topic);
+      if(baseline.communityGuides?.[topic.id]!==digest)candidates.push({...topic,id:`forum-guide:${topic.id}`,kind:'community-guide',topicId:topic.id,sourceContentSha256:digest});
+      checkpoint.communityGuides[topic.id]=digest;
+    }
+    checkpoint.communityGuidesCheckedAt=checkedAt;
   }
   return {schemaVersion:1,checkedAt,complete:failures.length===0,expectedSourceIds:Object.keys(BUILDER_SOURCES),failures,candidates,nextCatalogue,checkpoint,observations};
 }
