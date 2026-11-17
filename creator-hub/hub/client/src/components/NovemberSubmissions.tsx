@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react';
 import {Link, useLocation} from 'react-router-dom';
 import creatorSubmissions from '../../../../../content/creator-submissions/launch-2026.json';
+import dnodeSubmissions from '../../../../../content/creator-submissions/dnode-memes-2026.json';
 import {NOVEMBER_CONTESTS} from '../novemberContests';
 import {ContestGallery, type ReviewedContest} from './ContestGallery';
 import CollapsibleProjects from './CollapsibleProjects';
@@ -37,11 +38,11 @@ export default function NovemberSubmissions() {
     <div className="section-head"><div><h2 id="november-submissions-title">November <em>submissions.</em></h2></div></div>
     <nav className="submission-switcher" aria-label="Contest submission galleries">
       {galleries.map(gallery => {
-        const count = gallery.id === 'launch-creator' ? creatorSubmissions.entries.length : contests?.find(contest => contest.id === gallery.id)?.entries.length;
+        const count = gallery.id === 'launch-creator' ? creatorSubmissions.entries.length + dnodeSubmissions.entries.length : contests?.find(contest => contest.id === gallery.id)?.entries.length;
         return <Link key={gallery.id} to={`/#${gallery.anchor}`} aria-current={active.id === gallery.id ? 'true' : undefined}>{gallery.label}{count !== undefined && <span>{count}</span>}</Link>;
       })}
     </nav>
-    {active.id === 'launch-creator' ? <CreatorSubmissions/> : <div id={active.anchor} className="november-submission-panel">
+    {active.id === 'launch-creator' ? <><CreatorSubmissions feed={dnodeSubmissions} id="dnode-creator-submissions" title="DNode meme contest" description="Creator posts from DNC’s Make Me Laugh contest. Read each entry at its original source." judging="Selection stays with the contest organizers."/><CreatorSubmissions/></> : <div id={active.anchor} className="november-submission-panel">
       {failed ? <p role="status">Submissions couldn’t load. <a href={brief.threadUrl} target="_blank" rel="noreferrer">View the forum thread</a>.</p> : !contest ? <p role="status">Loading submissions…</p> : contest.entries.length ? <>
         <div className="november-gallery-heading"><h3>{active.title}</h3><a href={brief.threadUrl} target="_blank" rel="noreferrer">Contest thread</a></div>
         <CollapsibleProjects label={active.title}><ContestGallery contest={contest}/></CollapsibleProjects>

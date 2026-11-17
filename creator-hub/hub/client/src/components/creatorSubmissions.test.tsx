@@ -18,3 +18,14 @@ test('new creator articles expose their reviewed poster, summary, details and or
  expect(html).toContain('Docs walkthrough');
  expect(html).toContain('protocol instead targets a share of blocks');
 });
+
+import dnodeSubmissions from '../../../../../content/creator-submissions/dnode-memes-2026.json';
+test('DNode source posts keep a separate heading, original links and organizer attribution', () => {
+ const html=renderToStaticMarkup(<MemoryRouter><CreatorSubmissions feed={dnodeSubmissions} id="dnode-creator-submissions" title="DNode meme contest" description="Read creator entries at the source." judging="Selection stays with the contest organizers."/></MemoryRouter>);
+ expect(html).toContain('DNode meme contest');
+ for (const n of [12,13,14]) expect(html).toContain(`/531/${n}`);
+ expect(html).toContain('Original post');
+ expect(html).not.toContain('Judging stays with the Council.');
+ expect(html).not.toContain('<video');
+ expect(html).not.toContain('drive.google.com');
+});

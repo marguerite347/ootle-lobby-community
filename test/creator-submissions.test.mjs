@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
+import {readFileSync,readdirSync} from 'node:fs';
 import {safeHref} from '../creator-hub/hub/shared/safeLinks.mjs';
 
 const registry = JSON.parse(readFileSync(new URL('../content/creator-submissions/launch-2026.json', import.meta.url)));
@@ -34,4 +34,20 @@ test('creator entries retain unique forum identities and distinct public work li
   // A moved article/update stays in the original creator's entry, not a second submission.
   assert.equal(registry.entries.filter(entry => entry.creator === 'hycorange').length, 1);
   assert.ok(!posts.has(`${registry.threadUrl}/9`));
+});
+
+// Each registered creator feed owns its thread; future discovery uses these same files.
+test('all registered creator feeds preserve their own source thread and unique post identities', () => {
+  const dir = new URL('../content/creator-submissions/', import.meta.url);
+  for (const name of readdirSync(dir).filter(name => name.endsWith('.json'))) {
+    const feed = JSON.parse(readFileSync(new URL(name,dir)));
+    const ids = new Set(), posts = new Set();
+    for (const entry of feed.entries) {
+      assert.ok(entry.sourceUrl.startsWith(`${feed.threadUrl}/`));
+      assert.ok(!ids.has(entry.id)); ids.add(entry.id);
+      assert.ok(!posts.has(entry.sourceUrl)); posts.add(entry.sourceUrl);
+      assert.ok(Date.parse(entry.updatedAt) >= Date.parse(entry.publishedAt));
+      for (const link of [...entry.works,...(entry.discussionLinks ?? [])]) assert.ok(safeHref(link.url)?.startsWith('https://'));
+    }
+  }
 });
