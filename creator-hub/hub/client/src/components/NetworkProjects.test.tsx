@@ -4,6 +4,7 @@ import {MemoryRouter} from 'react-router-dom';
 import {expect,test} from 'vitest';
 import NetworkProjects from './NetworkProjects';
 import LaunchCountdown from './LaunchCountdown';
+import templateCatalogue from '../../../../../content/mainnet-templates.json';
 import type {NetworkEntry} from '../../../shared/networkStatus.mjs';
 const entries:NetworkEntry[]=[
  {ref:'tari-ootle:integration:veil',testnetUrl:'https://explorer.tari.mw/',mainnetPlan:'Deployment confirmation pending'},
@@ -69,7 +70,7 @@ test('the header reflects reviewed mainnet evidence instead of the expired launc
  expect(templateStart).toBeGreaterThan(html.indexOf('class="grid network-project-grid"'));
  const templates=html.slice(templateStart);
  expect(templates).toContain('Published mainnet templates');
- expect(templates.match(/aria-label="View .*? template definition"/g)).toHaveLength(16);
+ expect(templates.match(/aria-label="View .*? template definition"/g)).toHaveLength(templateCatalogue.entries.length);
  for(const name of ['MoonMail','SignalDesk','SignalForecasts','SignalFollows','SapientEscrow','TipPolicy','BurnRateGovernance'])expect(templates).toContain(name);
  expect(templates).toContain('does not confirm that an app or every feature is working');
  expect(templates).not.toContain('class="network-project contest-hologram"');

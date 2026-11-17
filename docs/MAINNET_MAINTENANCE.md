@@ -29,4 +29,6 @@ Run content/network validation and relevant tests, publish through the owner PR/
 
 ## Mainnet gallery presentation (owner correction, November 17)
 
+Refresh the adjacent published-template catalogue every daily run using the required builder-resource reconciliation in `DAILY_ECOSYSTEM_PLAN.md`. Compare the two official indexers; preserve every template's full address, binary hash and author key as metadata. A new address is a template deployment, not a new verified app. Retain the checked timestamp on a failed or conflicting read. Refresh current release notes and newly added/edited official and community guides during the same bounded publication.
+
 The near-top section defaults to Mainnet and includes every reviewed `mainnet`/`both` record, including records without a `showcase` override. Keep the separate Testnet filter. The owner removed Mainnet watch; do not restore the watch section or its filter. Unconfirmed projects remain in their original catalogue/contest sections without being promoted. Reuse the shared preview player, compact expandable gallery and Tari holographic card finish. Preserve source recording context; an older recording is not a new mainnet runtime test.

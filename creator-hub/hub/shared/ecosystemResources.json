@@ -3,6 +3,267 @@
   "reviewedAt": "2026-11-04T23:25:59.355615+00:00",
   "records": [
     {
+      "id": "tari-ootle:learn:ootle-releases",
+      "key": "ootle-releases",
+      "type": "learn",
+      "ecosystem": "tari-ootle",
+      "group": "Releases",
+      "title": "Ootle v0.54.0 release notes",
+      "summary": "Ootle v0.54.0, published November 17, removes in-place component template changes. Validators and indexers must upgrade together; UpdateComponentTemplate is rejected without an activation epoch. In tari_template_lib 0.41.0, remove ComponentBuilder::with_upgrade_rule when compiling. Previously deployed templates run unchanged. Review the full release notes before upgrading. No software was installed during this source review. The November 17 recording walks through the original source page, with page scripts and downloads disabled.",
+      "status": "Official stable release",
+      "sourceUrl": "https://github.com/tari-project/tari-ootle/releases/tag/v0.54.0",
+      "repoUrl": null,
+      "docsUrl": "https://github.com/tari-project/tari-ootle/releases/tag/v0.54.0",
+      "demoUrl": null,
+      "creator": {
+        "name": "Tari contributors",
+        "url": "https://github.com/tari-project"
+      },
+      "license": "BSD-3-Clause",
+      "network": "Ootle mainnet and Esmeralda",
+      "platform": "Documentation",
+      "upstreamRevision": "v0.54.0",
+      "sourceUpdatedAt": "2026-11-17T09:32:16Z",
+      "lastCheckedAt": "2026-11-17T19:04:56.458Z",
+      "verification": "source-attested",
+      "readiness": "conceptual",
+      "tags": [
+        "ecosystem-resources",
+        "official",
+        "guide"
+      ],
+      "discussionLinks": [
+        {
+          "url": "https://github.com/tari-project/tari-ootle/pull/3824",
+          "platform": "GitHub",
+          "context": "Release change: disable in-place component template updates"
+        }
+      ],
+      "cardSummary": "Check the latest Ootle upgrade requirements and changes affecting validators, indexers and template authors.",
+      "cardStatus": "Stable release · v0.54.0",
+      "sourceContentSha256": "9ae8f5780e234d0e15fdfed1fafd66231c72719e90cf6efec30c560186f08bfd",
+      "preview": {
+        "video": "https://lobby.tari.com/previews/community/resource-ootle-releases-20261117.mp4",
+        "image": "https://lobby.tari.com/previews/community/resource-ootle-releases-20261117.jpg",
+        "source": "Docs walkthrough"
+      }
+    },
+    {
+      "id": "tari-ootle:learn:fungible-tokens",
+      "key": "fungible-tokens",
+      "type": "learn",
+      "ecosystem": "tari-ootle",
+      "group": "Guides",
+      "title": "Create a token on Ootle",
+      "summary": "The official guide maps ERC-20 concepts to native Ootle resources and provides a reusable Rust token template. It covers fixed supply, minting, transfers, allowances and owner/access rules. Read the guide’s owner-rule qualifications before choosing a token policy. This is documentation, not a deployed token or a transaction service. The November 17 recording walks through the original source page, with page scripts and downloads disabled.",
+      "status": "Official documentation",
+      "sourceUrl": "https://ootle.tari.com/guides/fungible-tokens/",
+      "repoUrl": null,
+      "docsUrl": "https://ootle.tari.com/guides/fungible-tokens/",
+      "demoUrl": null,
+      "creator": {
+        "name": "Tari contributors",
+        "url": "https://github.com/tari-project"
+      },
+      "license": "BSD-3-Clause",
+      "network": "Ootle mainnet and Esmeralda",
+      "platform": "Documentation",
+      "upstreamRevision": "30a1b70aa61fd82506cb62356238da3a3ee2dc4c",
+      "lastCheckedAt": "2026-11-17T19:04:56.458Z",
+      "verification": "source-attested",
+      "readiness": "conceptual",
+      "tags": [
+        "ecosystem-resources",
+        "official",
+        "guide"
+      ],
+      "discussionLinks": [
+        {
+          "url": "https://github.com/tari-project/tari-ootle/pull/3756",
+          "platform": "GitHub",
+          "context": "Original guide announcement"
+        }
+      ],
+      "cardSummary": "Create fixed-supply or mintable tokens, then learn how transfers and allowances work on Ootle.",
+      "cardStatus": "Official guide",
+      "preview": {
+        "video": "https://lobby.tari.com/previews/community/resource-fungible-tokens-20261117.mp4",
+        "image": "https://lobby.tari.com/previews/community/resource-fungible-tokens-20261117.jpg",
+        "source": "Docs walkthrough"
+      }
+    },
+    {
+      "id": "tari-ootle:learn:run-validator",
+      "key": "run-validator",
+      "type": "learn",
+      "ecosystem": "tari-ootle",
+      "group": "Guides",
+      "title": "Run an Ootle validator",
+      "summary": "Official installation and configuration guide for an Ootle validator, including identity backups, a Minotari base-node connection and a separate fee wallet. Starting a node does not automatically enroll it: its public key must be included in the network’s configured validator set. The guide covers mainnet and Esmeralda; no node was installed or started during this review. The November 17 recording walks through the original source page, with page scripts and downloads disabled.",
+      "status": "Official documentation",
+      "sourceUrl": "https://ootle.tari.com/validators/run-a-validator-node/",
+      "repoUrl": null,
+      "docsUrl": "https://ootle.tari.com/validators/run-a-validator-node/",
+      "demoUrl": null,
+      "creator": {
+        "name": "Tari contributors",
+        "url": "https://github.com/tari-project"
+      },
+      "license": "BSD-3-Clause",
+      "network": "Ootle mainnet and Esmeralda",
+      "platform": "Documentation",
+      "upstreamRevision": "df9631d4c570ff2b62208dc58199ffbce222734e",
+      "lastCheckedAt": "2026-11-17T19:04:56.458Z",
+      "verification": "source-attested",
+      "readiness": "conceptual",
+      "tags": [
+        "ecosystem-resources",
+        "official",
+        "guide"
+      ],
+      "discussionLinks": [
+        {
+          "url": "https://github.com/tari-project/tari-ootle/pull/3756",
+          "platform": "GitHub",
+          "context": "Original guide announcement"
+        }
+      ],
+      "cardSummary": "Set up a validator identity, choose your network, and understand the requirements for joining the validator set.",
+      "cardStatus": "Official guide",
+      "preview": {
+        "video": "https://lobby.tari.com/previews/community/resource-run-validator-20261117.mp4",
+        "image": "https://lobby.tari.com/previews/community/resource-run-validator-20261117.jpg",
+        "source": "Docs walkthrough"
+      }
+    },
+    {
+      "id": "tari-ootle:learn:validator-networking",
+      "key": "validator-networking",
+      "type": "learn",
+      "ecosystem": "tari-ootle",
+      "group": "Guides",
+      "title": "Validator networking and ports",
+      "summary": "Official guide to validator P2P, firewall rules, private operator endpoints and Docker networking. JSON-RPC exposes privileged operator functions and must remain private; the guide distinguishes it from the public peer port. Reviewed as documentation, without changing a node or firewall. The November 17 recording walks through the original source page, with page scripts and downloads disabled.",
+      "status": "Official documentation",
+      "sourceUrl": "https://ootle.tari.com/validators/networking-and-ports/",
+      "repoUrl": null,
+      "docsUrl": "https://ootle.tari.com/validators/networking-and-ports/",
+      "demoUrl": null,
+      "creator": {
+        "name": "Tari contributors",
+        "url": "https://github.com/tari-project"
+      },
+      "license": "BSD-3-Clause",
+      "network": "Ootle mainnet and Esmeralda",
+      "platform": "Documentation",
+      "upstreamRevision": "6ba38693efb97cb49d406f9f5e20cf706c97f422",
+      "lastCheckedAt": "2026-11-17T19:04:56.458Z",
+      "verification": "source-attested",
+      "readiness": "conceptual",
+      "tags": [
+        "ecosystem-resources",
+        "official",
+        "guide"
+      ],
+      "discussionLinks": [
+        {
+          "url": "https://github.com/tari-project/tari-ootle/pull/3756",
+          "platform": "GitHub",
+          "context": "Original guide announcement"
+        }
+      ],
+      "cardSummary": "Configure public peer connections while keeping your validator’s operator API and metrics private.",
+      "cardStatus": "Official guide",
+      "preview": {
+        "video": "https://lobby.tari.com/previews/community/resource-validator-networking-20261117.mp4",
+        "image": "https://lobby.tari.com/previews/community/resource-validator-networking-20261117.jpg",
+        "source": "Docs walkthrough"
+      }
+    },
+    {
+      "id": "tari-ootle:learn:validator-operations",
+      "key": "validator-operations",
+      "type": "learn",
+      "ecosystem": "tari-ootle",
+      "group": "Guides",
+      "title": "Operate an Ootle validator",
+      "summary": "Official operating guide covering identity and state backups, restoration, release upgrades, health checks, logs and fee claims. Fee availability depends on the network burn rate. For version-specific activation behavior, consult the current release notes; v0.54.0 requires validators and indexers to upgrade together. No validator, wallet or claim was operated. The November 17 recording walks through the original source page, with page scripts and downloads disabled.",
+      "status": "Official documentation",
+      "sourceUrl": "https://ootle.tari.com/validators/operating-a-validator/",
+      "repoUrl": null,
+      "docsUrl": "https://ootle.tari.com/validators/operating-a-validator/",
+      "demoUrl": null,
+      "creator": {
+        "name": "Tari contributors",
+        "url": "https://github.com/tari-project"
+      },
+      "license": "BSD-3-Clause",
+      "network": "Ootle mainnet and Esmeralda",
+      "platform": "Documentation",
+      "upstreamRevision": "b499478030f2194705e201dc179d29486d54b014",
+      "lastCheckedAt": "2026-11-17T19:04:56.458Z",
+      "verification": "source-attested",
+      "readiness": "conceptual",
+      "tags": [
+        "ecosystem-resources",
+        "official",
+        "guide"
+      ],
+      "discussionLinks": [
+        {
+          "url": "https://github.com/tari-project/tari-ootle/pull/3756",
+          "platform": "GitHub",
+          "context": "Original guide announcement"
+        }
+      ],
+      "cardSummary": "Plan validator backups, upgrades and health checks, with guidance on state recovery and fee claims.",
+      "cardStatus": "Official guide",
+      "preview": {
+        "video": "https://lobby.tari.com/previews/community/resource-validator-operations-20261117.mp4",
+        "image": "https://lobby.tari.com/previews/community/resource-validator-operations-20261117.jpg",
+        "source": "Docs walkthrough"
+      }
+    },
+    {
+      "id": "tari:learn:wxtm-uniswap-guide",
+      "key": "wxtm-uniswap-guide",
+      "type": "learn",
+      "ecosystem": "tari",
+      "group": "Community guides",
+      "title": "Buy wXTM on Uniswap: video guide",
+      "summary": "Okz shared Digital Node Capital’s step-by-step video on November 15. It covers an Ethereum wallet, ETH for the swap and gas, and verifying the official WrappedXTM contract. The forum follow-up distinguishes Ethereum wXTM from native XTM and Ootle TARI and discusses price impact and minimum received. This is a community tutorial, not an endorsement of a trade. No wallet was connected or transaction submitted. The November 17 recording walks through the original source page, with page scripts and downloads disabled.",
+      "status": "Community guide",
+      "sourceUrl": "https://community.tari.com/t/guide-how-to-buy-wxtm-on-uniswap-ethereum-step-by-step/643/1",
+      "repoUrl": null,
+      "docsUrl": "https://community.tari.com/t/guide-how-to-buy-wxtm-on-uniswap-ethereum-step-by-step/643/1",
+      "demoUrl": null,
+      "creator": {
+        "name": "Okz / Digital Node Capital",
+        "url": "https://community.tari.com/u/Okz"
+      },
+      "license": null,
+      "network": "Ethereum · wrapped XTM",
+      "platform": "Documentation",
+      "upstreamRevision": "forum-643-post-1-reviewed-2026-11-17",
+      "sourceUpdatedAt": "2026-11-16T01:22:09.669Z",
+      "lastCheckedAt": "2026-11-17T19:04:56.458Z",
+      "verification": "source-attested",
+      "readiness": "conceptual",
+      "tags": [
+        "ecosystem-resources",
+        "community",
+        "guide"
+      ],
+      "discussionLinks": [],
+      "cardSummary": "Follow Okz’s video introduction to swapping for wrapped XTM on Ethereum with Uniswap.",
+      "cardStatus": "Video guide · Ethereum wXTM",
+      "preview": {
+        "video": "https://lobby.tari.com/previews/community/resource-wxtm-uniswap-guide-20261117.mp4",
+        "image": "https://lobby.tari.com/previews/community/resource-wxtm-uniswap-guide-20261117.jpg",
+        "source": "Docs walkthrough"
+      }
+    },
+    {
       "id": "tari-ootle:learn:official-agent-docs",
       "key": "official-agent-docs",
       "type": "learn",
@@ -3150,7 +3411,8 @@
         "video": "https://ootle-lobby-preview.vercel.app/previews/community/resource-ootle-release-0492-20261102-7270ccff9a.mp4",
         "image": "https://ootle-lobby-preview.vercel.app/previews/community/resource-ootle-release-0492-20261102-7270ccff9a.jpg",
         "source": "Docs walkthrough"
-      }
+      },
+      "archived": true
     },
     {
       "repoUrl": "https://github.com/xt1085/taritalk-node-deploy",

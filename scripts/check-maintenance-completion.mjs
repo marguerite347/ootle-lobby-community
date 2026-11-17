@@ -3,6 +3,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {assessMaintenance,catalogReviewDateIssues,discoveryScope} from './maintenance-completion.mjs';
 import {maintenanceCheckouts,rustManifestScope,catalogResourceScope} from './maintenance-checkouts.mjs';
+import {builderMaintenanceIssues} from './monitor-builder-resources.mjs';
 const [file,root=process.cwd(),workbenchOverride]=process.argv.slice(2);
 if(!file){console.error('Usage: node scripts/check-maintenance-completion.mjs RUN.json [evidence-root] [workbench-checkout]');process.exit(2);}
 try{
@@ -12,7 +13,12 @@ try{
  const inventory=JSON.parse(fs.readFileSync(path.resolve(root,'outputs/dependency-inventory.json'),'utf8'));
  const requiredScope={discovery:discoveryScope(ledger),existingResources:[...new Set([...Object.keys(ledger.resourceReviews),...catalogResourceScope(checkouts)])],dependencies:inventory.records.map(r=>`${r.repo}/${r.manifest}:${r.name}`)};
  requiredScope.dependencies.push(...rustManifestScope(checkouts));
- const result=assessMaintenance(JSON.parse(fs.readFileSync(file,'utf8')),{requiredScope,evidenceExists:p=>!path.isAbsolute(p)&&!p.split(/[\\/]/).includes('..')&&fs.existsSync(path.resolve(root,p))});
+ const run=JSON.parse(fs.readFileSync(file,'utf8'));
+ const result=assessMaintenance(run,{requiredScope,evidenceExists:p=>!path.isAbsolute(p)&&!p.split(/[\\/]/).includes('..')&&fs.existsSync(path.resolve(root,p))});
+ const reportPath=run.builderResourcesReport;
+ const safeReport=typeof reportPath==='string'&&!path.isAbsolute(reportPath)&&!reportPath.split(/[\\/]/).includes('..')&&fs.existsSync(path.resolve(root,reportPath));
+ const invocationDate=Number.isFinite(Date.parse(run.checkedAt))?new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(run.checkedAt)):run.date;
+ result.issues.push(...builderMaintenanceIssues(safeReport?JSON.parse(fs.readFileSync(path.resolve(root,reportPath),'utf8')):null,run.builderResourceDispositions,invocationDate));
  const contest=JSON.parse(fs.readFileSync(new URL('../content/contests/october-2026.json',import.meta.url),'utf8'));
  const topic=ledger.sources.find(s=>s.id==='396');
  if(topic?.status==='complete'&&Date.parse(contest.checkedAt)<Date.parse(topic.lastAttemptAt)){result.issues.push('publication: visible contest checkpoint is older than the successful source read');result.status='incomplete';}

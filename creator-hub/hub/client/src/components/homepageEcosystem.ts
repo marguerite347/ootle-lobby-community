@@ -3,7 +3,7 @@ import resources from '../../../shared/ecosystemResources.json';
 import september from '../../../data/contests/september-2026.json';
 import creatorSubmissions from '../../../../../content/creator-submissions/launch-2026.json';
 
-type ProjectReference = {id?: string; resourceIds?: string[]; repoUrl?: string | null; sourceUrl?: string | null};
+type ProjectReference = {id?: string; resourceIds?: string[]; repoUrl?: string | null; sourceUrl?: string | null; archived?: boolean};
 
 function sourceIdentity(value?: string | null, repository = false): string | null {
   if (!value) return null;
@@ -24,7 +24,7 @@ function sourceIdentity(value?: string | null, repository = false): string | nul
 export function builderResourcesOnly<T extends ProjectReference>(records: T[], showcased: ProjectReference[]): T[] {
   const ids = new Set(showcased.flatMap(project => [project.id, ...(project.resourceIds || [])]).filter(Boolean));
   const sources = new Set(showcased.flatMap(project => [sourceIdentity(project.repoUrl, true), sourceIdentity(project.sourceUrl)]).filter(Boolean));
-  return records.filter(record => !ids.has(record.id) &&
+  return records.filter(record => !record.archived && !ids.has(record.id) &&
     ![sourceIdentity(record.repoUrl, true), sourceIdentity(record.sourceUrl)].some(source => source && sources.has(source)));
 }
 
