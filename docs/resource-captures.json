@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-05T16:34:09.496874+00:00",
+  "updatedAt": "2026-11-17T19:10:27.896Z",
   "records": [
     {
       "resourceId": "candy-summoner",
@@ -9041,6 +9041,108 @@
         "localPlayback": "work/daily-2026-11-04/taritracker-faucet-local-playback-nov5.json",
         "liveAcceptance": "work/daily-2026-11-04/faucet-release-acceptance-nov5.json"
       }
+    },
+    {
+      "resourceId": "tari-ootle:learn:fungible-tokens",
+      "title": "Create a token on Ootle",
+      "targetUrl": "https://ootle.tari.com/guides/fungible-tokens/",
+      "captureType": "docs-walkthrough",
+      "capturedAt": "2026-11-17T19:08:50.942Z",
+      "observedRevision": "30a1b70aa61fd82506cb62356238da3a3ee2dc4c",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "videoUrl": "https://lobby.tari.com/previews/community/resource-fungible-tokens-20261117.mp4",
+      "imageUrl": "https://lobby.tari.com/previews/community/resource-fungible-tokens-20261117.jpg",
+      "durationSeconds": 12.0,
+      "sha256": "f85ae487bab02b1c91dcbba1a58287597f55b9d999cdc6b51cebda893ab234a8",
+      "scope": "Static source-page walkthrough; JavaScript and downloads disabled; no wallet or commands operated."
+    },
+    {
+      "resourceId": "tari-ootle:learn:ootle-releases",
+      "title": "Ootle v0.54.0 release notes",
+      "targetUrl": "https://github.com/tari-project/tari-ootle/releases/tag/v0.54.0",
+      "captureType": "docs-walkthrough",
+      "capturedAt": "2026-11-17T19:09:19.120Z",
+      "observedRevision": "v0.54.0",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "videoUrl": "https://lobby.tari.com/previews/community/resource-ootle-releases-20261117.mp4",
+      "imageUrl": "https://lobby.tari.com/previews/community/resource-ootle-releases-20261117.jpg",
+      "durationSeconds": 12.0,
+      "sha256": "830a3b1589761001cf237bbba4bd3a8310f38af8bc931259a64fb346c2a58f5d",
+      "scope": "Static source-page walkthrough; JavaScript and downloads disabled; no wallet or commands operated."
+    },
+    {
+      "resourceId": "tari-ootle:learn:run-validator",
+      "title": "Run an Ootle validator",
+      "targetUrl": "https://ootle.tari.com/validators/run-a-validator-node/",
+      "captureType": "docs-walkthrough",
+      "capturedAt": "2026-11-17T19:09:36.056Z",
+      "observedRevision": "df9631d4c570ff2b62208dc58199ffbce222734e",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "videoUrl": "https://lobby.tari.com/previews/community/resource-run-validator-20261117.mp4",
+      "imageUrl": "https://lobby.tari.com/previews/community/resource-run-validator-20261117.jpg",
+      "durationSeconds": 12.0,
+      "sha256": "385eec13c79be745bf926586424179f2de0467b77f52f83ccbf82ecc49791c31",
+      "scope": "Static source-page walkthrough; JavaScript and downloads disabled; no wallet or commands operated."
+    },
+    {
+      "resourceId": "tari-ootle:learn:validator-networking",
+      "title": "Validator networking and ports",
+      "targetUrl": "https://ootle.tari.com/validators/networking-and-ports/",
+      "captureType": "docs-walkthrough",
+      "capturedAt": "2026-11-17T19:09:52.743Z",
+      "observedRevision": "6ba38693efb97cb49d406f9f5e20cf706c97f422",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "videoUrl": "https://lobby.tari.com/previews/community/resource-validator-networking-20261117.mp4",
+      "imageUrl": "https://lobby.tari.com/previews/community/resource-validator-networking-20261117.jpg",
+      "durationSeconds": 12.0,
+      "sha256": "6be5bd7aa8228134caf6c7c0784edd285383dc4fdd7550dbed9bcb7a900baa4d",
+      "scope": "Static source-page walkthrough; JavaScript and downloads disabled; no wallet or commands operated."
+    },
+    {
+      "resourceId": "tari-ootle:learn:validator-operations",
+      "title": "Operate an Ootle validator",
+      "targetUrl": "https://ootle.tari.com/validators/operating-a-validator/",
+      "captureType": "docs-walkthrough",
+      "capturedAt": "2026-11-17T19:10:09.543Z",
+      "observedRevision": "b499478030f2194705e201dc179d29486d54b014",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "videoUrl": "https://lobby.tari.com/previews/community/resource-validator-operations-20261117.mp4",
+      "imageUrl": "https://lobby.tari.com/previews/community/resource-validator-operations-20261117.jpg",
+      "durationSeconds": 12.0,
+      "sha256": "6442d4836f05bdcb5bd363df52f997eeb1b088121d50d8447fc3934356cad0a3",
+      "scope": "Static source-page walkthrough; JavaScript and downloads disabled; no wallet or commands operated."
+    },
+    {
+      "resourceId": "tari:learn:wxtm-uniswap-guide",
+      "title": "Buy wXTM on Uniswap: video guide",
+      "targetUrl": "https://community.tari.com/t/guide-how-to-buy-wxtm-on-uniswap-ethereum-step-by-step/643/1",
+      "captureType": "docs-walkthrough",
+      "capturedAt": "2026-11-17T19:10:27.896Z",
+      "observedRevision": "forum-643-post-1-reviewed-2026-11-17",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "videoUrl": "https://lobby.tari.com/previews/community/resource-wxtm-uniswap-guide-20261117.mp4",
+      "imageUrl": "https://lobby.tari.com/previews/community/resource-wxtm-uniswap-guide-20261117.jpg",
+      "durationSeconds": 12.0,
+      "sha256": "dfdee7aae4bfe1fae1c075a821e09b009ce1be6252fde1e1049770e9330fb3f6",
+      "scope": "Static source-page walkthrough; JavaScript and downloads disabled; no wallet or commands operated."
     }
   ],
   "release": {

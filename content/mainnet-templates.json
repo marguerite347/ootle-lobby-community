@@ -1,6 +1,6 @@
 {
   "network": "mainnet",
-  "checkedAt": "2026-11-11T12:58:55.140605+00:00",
+  "checkedAt": "2026-11-17T19:04:56.458Z",
   "sources": [
     "https://indexer-a.ootle.tari.com/templates/catalogue?limit=100",
     "https://indexer-b.ootle.tari.com/templates/catalogue?limit=100"
@@ -11,6 +11,8 @@
       "address": "0000000000000000000000000000000000000000000000000000000000000000",
       "epoch": 0,
       "kind": "builtin",
+      "binaryHash": "886fdbf1c6b9458f9ce5a16802390d64ae216d1af99176772211c05190c9de61",
+      "authorPublicKey": "0000000000000000000000000000000000000000000000000000000000000000",
       "project": "Ootle protocol"
     },
     {
@@ -18,13 +20,8 @@
       "address": "0000000000000000000000000000000000000000000000000000000000000001",
       "epoch": 0,
       "kind": "builtin",
-      "project": "Ootle protocol"
-    },
-    {
-      "name": "XtrFaucet",
-      "address": "0102030000000000000000000000000000000000000000000000000000000000",
-      "epoch": 0,
-      "kind": "builtin",
+      "binaryHash": "6f93b3f6dbc0c3ca938b08c1c3dd605f168f0b10fa770dc78b199c0c217b9c0c",
+      "authorPublicKey": "0000000000000000000000000000000000000000000000000000000000000000",
       "project": "Ootle protocol"
     },
     {
@@ -32,6 +29,8 @@
       "address": "0000000000000000000000000000000000000000000000000000000000000002",
       "epoch": 0,
       "kind": "builtin",
+      "binaryHash": "6744c7298cd117efd88c51a29065d4b6b66f6bd773bea97932a67b62ab4faa65",
+      "authorPublicKey": "0000000000000000000000000000000000000000000000000000000000000000",
       "project": "Ootle protocol"
     },
     {
@@ -39,6 +38,26 @@
       "address": "0000000000000000000000000000000000000000000000000000000000000003",
       "epoch": 0,
       "kind": "builtin",
+      "binaryHash": "8f2d1c6242a2a7621ed72e981aa420443e781f4a8943a0b4335790723c31e2d9",
+      "authorPublicKey": "0000000000000000000000000000000000000000000000000000000000000000",
+      "project": "Ootle protocol"
+    },
+    {
+      "name": "Escrow",
+      "address": "00cc4485c31cf1d31de2da7d5acc23613a75d16aa4b6f8d461713c23a22b9898",
+      "epoch": 38434,
+      "kind": "community",
+      "binaryHash": "b78c67d0eeee6a2958ecec411ba9e9f23ec3c625f3dcf9d629763bad7da65d7a",
+      "authorPublicKey": "9a90acbfa24944d81721074bb8bfb1f500c93b12f94bfa9350b9e694d993293a",
+      "project": "Skydrop"
+    },
+    {
+      "name": "XtrFaucet",
+      "address": "0102030000000000000000000000000000000000000000000000000000000000",
+      "epoch": 0,
+      "kind": "builtin",
+      "binaryHash": "f86dcd7a75c8bded2c62e1ad0ebdd26b37f2b5b60349e25c1530d4c329a4e7ba",
+      "authorPublicKey": "0000000000000000000000000000000000000000000000000000000000000000",
       "project": "Ootle protocol"
     },
     {
@@ -46,77 +65,270 @@
       "address": "151ae04f4b80eda9a45d37f0ae8c2c8b005eb6df6715c2a9eb14df68b6e4bbf3",
       "epoch": 38434,
       "kind": "community",
+      "binaryHash": "998d3371e19a73d0c4bdacb4ffe0cac1c48bc95646b13dc5a01ece9ff285c130",
+      "authorPublicKey": "5226aff1b60ae773ff4d7d1c44060176c73d6b80acd10ea2e2eb1cfdb9ff7128",
       "project": "OotleAccord"
     },
     {
-      "name": "MoonMail",
-      "address": "d4ed44d36e79e85ea7a8705170d0227a34b9fb3afba556b00112ff785b6da8c8",
-      "epoch": 38434,
+      "name": "SealedEscrow",
+      "address": "16fbf9e3b4bd8fe252a5957019ed5d5d0eabb4b62391320f26a96eb925dc8487",
+      "epoch": 38565,
       "kind": "community",
-      "project": "MoonMail"
+      "binaryHash": "6c955c2f9a826c4e919ec9d7498e902e8e348f7c5e96a52e6319ac07b287212c",
+      "authorPublicKey": "561844e9b304e08903a51bce4b24e41296ff56b9658982f93d634755e9d3e234",
+      "project": "Community template"
     },
     {
-      "name": "LinkRegistry",
-      "address": "e4aaf6455091f76c5521fff8e0bf83cbbe05a5301ab46811bd6af9d0b7402794",
-      "epoch": 38434,
+      "name": "PredictionMarketV7",
+      "address": "25ef5046cd8419001430c8e0b80c4d7eccad7a815cd470bb5993b9663edfdbd1",
+      "epoch": 38472,
       "kind": "community",
-      "project": "Skydrop"
+      "binaryHash": "83f1b5e092d235e48f6a33f516c9ba59de4559fff9cbacaa7dc80a99e33e9018",
+      "authorPublicKey": "dc8b5ed935991d43ca987ad626764a9c6f2fe6539dfe459d331d797ed49c2721",
+      "project": "Community template"
     },
     {
       "name": "Campaign",
       "address": "280624a46133dd0391663a07736319f63c650240a404933443a276253e2a40c5",
       "epoch": 38434,
       "kind": "community",
+      "binaryHash": "d2f6e53a0aa58bbdfcce1aacc743cf25f68c31b2de5eecc702c846396e53a94a",
+      "authorPublicKey": "9a90acbfa24944d81721074bb8bfb1f500c93b12f94bfa9350b9e694d993293a",
       "project": "Skydrop"
     },
     {
-      "name": "Verifier",
-      "address": "8e7168dd2ed24e1f0b6344fc92ac00f8da6fbd7ee801cc3a7713f85b229cadc6",
-      "epoch": 38434,
+      "name": "ChainBook",
+      "address": "28234cf1e3a5789e4305340ea9cd14d001aca63bb2e0e2679eba1ca8272782f0",
+      "epoch": 38471,
       "kind": "community",
-      "project": "Skydrop"
+      "binaryHash": "75985640dd992408779ae88401065116f2ea18a82a499f68713dbc09477d66d2",
+      "authorPublicKey": "9a90acbfa24944d81721074bb8bfb1f500c93b12f94bfa9350b9e694d993293a",
+      "project": "Community template"
     },
     {
-      "name": "Escrow",
-      "address": "00cc4485c31cf1d31de2da7d5acc23613a75d16aa4b6f8d461713c23a22b9898",
-      "epoch": 38434,
+      "name": "SealLog",
+      "address": "494d34a5f55bcef614655c9f8b7fdcb672f1d086467fc96816c0a93a4a5c8472",
+      "epoch": 38542,
       "kind": "community",
-      "project": "Skydrop"
-    },
-    {
-      "name": "ClaimPolicy",
-      "address": "e2796315dc2ce765b991ef73e47a4fe9729b731768000cbf5ac5bcf44d471335",
-      "epoch": 38434,
-      "kind": "community",
-      "project": "Skydrop"
-    },
-    {
-      "name": "SignalDesk",
-      "address": "65d9bbc931d306d2de9b235d7a0272f0dae05d061ed38f3c09467b972289b455",
-      "epoch": 38434,
-      "kind": "community",
-      "project": "Signal Desk"
+      "binaryHash": "1162a2b0d79bb31f1139ea9e73ea4463e207a71a403deec67ebebf799d6f8455",
+      "authorPublicKey": "9250fcabd52d7319996904b64ea494c0b077a8b2c8c39d94eb2e06a9c7294762",
+      "project": "Community template"
     },
     {
       "name": "SignalForecasts",
       "address": "4e58dcb438e1d69b99b6991d61f33cd26bd9866c59cdf86ef23e9f493f170f49",
       "epoch": 38434,
       "kind": "community",
+      "binaryHash": "4fea70153289af616e6d86ede012f57e9e0a22873434785c64e9099cadab83fa",
+      "authorPublicKey": "66fb73201ee4eb423cf5e5c1c31e6520c576f1e6d1041e72ccd026593025e354",
       "project": "Signal Desk"
     },
     {
-      "name": "SignalFollows",
-      "address": "b622b0ada7ee233eabe33d7111c641ebdbd281e877bb217c6f32d287e250eecf",
+      "name": "SooonTokenV1",
+      "address": "57567fcbba92012fa39c9a479ca0ffe8995eeac58f123b6e901129b4f84b0285",
+      "epoch": 38472,
+      "kind": "community",
+      "binaryHash": "7143c69c2f4dad401a917581c72bec58ff90260afc3eca23074fafe76526b8d7",
+      "authorPublicKey": "dc8b5ed935991d43ca987ad626764a9c6f2fe6539dfe459d331d797ed49c2721",
+      "project": "Community template"
+    },
+    {
+      "name": "SignalDesk",
+      "address": "65d9bbc931d306d2de9b235d7a0272f0dae05d061ed38f3c09467b972289b455",
       "epoch": 38434,
       "kind": "community",
+      "binaryHash": "df891e41446a97daf3f709cc52526bef6a167b3cc21c4196ed72ec56b5e2bc54",
+      "authorPublicKey": "66fb73201ee4eb423cf5e5c1c31e6520c576f1e6d1041e72ccd026593025e354",
       "project": "Signal Desk"
+    },
+    {
+      "name": "SealedBidAuction",
+      "address": "67a658cc6c9e1c3564871e378f0a60d0b4f8682222460c34aa852caa961df309",
+      "epoch": 38512,
+      "kind": "community",
+      "binaryHash": "c800eea85a5dabccfb484ccc1ea02c92155eefd8b30b8a2f0d3a43c7ac439ad3",
+      "authorPublicKey": "4c8f96e9f794fbc217a1879348616e088ef8cb529dbaa26aa872a3d426c1b535",
+      "project": "Community template"
     },
     {
       "name": "TipPolicy",
       "address": "67e6664cbd21e90afabc126840ec383720a38f9e98c3fd160594d1e1662f20ad",
       "epoch": 38435,
       "kind": "community",
+      "binaryHash": "7b3893eeca07e2f8ef28c1a92e71479c460f7aa747704a0122f7efa58ac26519",
+      "authorPublicKey": "9a90acbfa24944d81721074bb8bfb1f500c93b12f94bfa9350b9e694d993293a",
       "project": "Skydrop"
+    },
+    {
+      "name": "GhostItems",
+      "address": "6c01842eaff712ff8f61e7d710a6ba6b62406919b81830bdd2af9982f118dedc",
+      "epoch": 38565,
+      "kind": "community",
+      "binaryHash": "af3cf219f825f8b1ab4edf4ce762cfda494cee8fead5dcacb63a2235590f6c78",
+      "authorPublicKey": "561844e9b304e08903a51bce4b24e41296ff56b9658982f93d634755e9d3e234",
+      "project": "Community template"
+    },
+    {
+      "name": "Verifier",
+      "address": "8e7168dd2ed24e1f0b6344fc92ac00f8da6fbd7ee801cc3a7713f85b229cadc6",
+      "epoch": 38434,
+      "kind": "community",
+      "binaryHash": "83fe543be637691366ea31db2c1a84320f8215c440c09d821632e0bb3f5acda6",
+      "authorPublicKey": "9a90acbfa24944d81721074bb8bfb1f500c93b12f94bfa9350b9e694d993293a",
+      "project": "Skydrop"
+    },
+    {
+      "name": "Lockbox",
+      "address": "968740ec9a0f3d368af2ba48d18af68bbb5c73a30ec582fbf9b00f90cb20ec72",
+      "epoch": 38500,
+      "kind": "community",
+      "binaryHash": "769c5cef6a4b5cbaa4947f6522cbf6c681ef1dac09e3c82c70cbb013eff4013e",
+      "authorPublicKey": "1acc86fb7551e278a16f9560801946f0699a672d3b249890d2b56ba3ff029245",
+      "project": "Community template"
+    },
+    {
+      "name": "SpecterReportReceipt",
+      "address": "9b41600aec8aaefb3c66e00567a060cafbb1e51fb4a904074f4faaabff6cb725",
+      "epoch": 38460,
+      "kind": "community",
+      "binaryHash": "27c16be6367eabd4b314eeedbb22349bc1be8fba248cac678a68e1971bc3161c",
+      "authorPublicKey": "da8b317049487cc2097430891b3d6761c6d693e61bdd7ee3ccc2e0f3c17f222c",
+      "project": "Community template"
+    },
+    {
+      "name": "SooonCurveV13",
+      "address": "9f6ca31db9b1d053fe9b1eee626c9d02a583aea1220a35f67eaaa076a3332223",
+      "epoch": 38472,
+      "kind": "community",
+      "binaryHash": "2ba4c24b9bcc0f358a4bd15b9ac5ff0e10210a4f4a0e435fbe111e71712f4f53",
+      "authorPublicKey": "dc8b5ed935991d43ca987ad626764a9c6f2fe6539dfe459d331d797ed49c2721",
+      "project": "Community template"
+    },
+    {
+      "name": "SooonAmmV1",
+      "address": "a0926fe15ec9d55bc0e3afb522827b16f0b4f327d127134cd08184b4ef5fa044",
+      "epoch": 38472,
+      "kind": "community",
+      "binaryHash": "1b0d42e09a2a9d8564b5856c9ecdec8b18f3eb8bfa2a876398f9ee1e0376bff8",
+      "authorPublicKey": "dc8b5ed935991d43ca987ad626764a9c6f2fe6539dfe459d331d797ed49c2721",
+      "project": "Community template"
+    },
+    {
+      "name": "GhostlineChannel",
+      "address": "ae13cead3c34052116c49fc09e4645f3a62edf55857c0e2e45226dd7093cef9c",
+      "epoch": 38576,
+      "kind": "community",
+      "binaryHash": "eda28edb56ed5a0af30f269095377bf97bb9d87376bc24d07302415f30d03e84",
+      "authorPublicKey": "728870aee9b9fb66e69fcf45510440e54b59387a7efe3816713e054014d3b230",
+      "project": "Community template"
+    },
+    {
+      "name": "LaunchRecord",
+      "address": "b18fc1ae9195b569362311b6719896aa84078aedf4cf70a4aba19d516bcc9963",
+      "epoch": 38501,
+      "kind": "community",
+      "binaryHash": "7c67e15f2f2acc713432b59331b1fe33c3b0843f7bb370ea1ded9de99d3cbbf3",
+      "authorPublicKey": "1acc86fb7551e278a16f9560801946f0699a672d3b249890d2b56ba3ff029245",
+      "project": "Community template"
+    },
+    {
+      "name": "GhostlineFeeConfig",
+      "address": "b3628ed057f88c73b88f3c5653b494a10258067c43cf0c667d1dcf17e85e9f45",
+      "epoch": 38576,
+      "kind": "community",
+      "binaryHash": "18f00e9b493f0ebfc8c7579ae4a309811aa1003f43661a6a70cf0e11d55626e8",
+      "authorPublicKey": "728870aee9b9fb66e69fcf45510440e54b59387a7efe3816713e054014d3b230",
+      "project": "Community template"
+    },
+    {
+      "name": "SignalFollows",
+      "address": "b622b0ada7ee233eabe33d7111c641ebdbd281e877bb217c6f32d287e250eecf",
+      "epoch": 38434,
+      "kind": "community",
+      "binaryHash": "7bc0832ea40b235eb01a0e5ad0e22aa472de5d97c92e25055555099fc888791d",
+      "authorPublicKey": "66fb73201ee4eb423cf5e5c1c31e6520c576f1e6d1041e72ccd026593025e354",
+      "project": "Signal Desk"
+    },
+    {
+      "name": "MoonMail",
+      "address": "d4ed44d36e79e85ea7a8705170d0227a34b9fb3afba556b00112ff785b6da8c8",
+      "epoch": 38434,
+      "kind": "community",
+      "binaryHash": "c7f55071aec16b4368941689bc197dbf552c77da2b2f2555ffc3874aa34c0610",
+      "authorPublicKey": "5226aff1b60ae773ff4d7d1c44060176c73d6b80acd10ea2e2eb1cfdb9ff7128",
+      "project": "MoonMail"
+    },
+    {
+      "name": "CursedPumpkin",
+      "address": "dc7d2ed8f763ce291a0c27b466ed706005279f85831d2d3c9610b4aaabe56b44",
+      "epoch": 38504,
+      "kind": "community",
+      "binaryHash": "de22118b0b442b384708ccccd52e98e6c57506f417bfc13cb3c97f1d660fadc7",
+      "authorPublicKey": "66ff4b83d0c720c1e309d1fd385335a9f28605a033f67e767546db0536dbf22b",
+      "project": "Community template"
+    },
+    {
+      "name": "ClaimPolicy",
+      "address": "e2796315dc2ce765b991ef73e47a4fe9729b731768000cbf5ac5bcf44d471335",
+      "epoch": 38434,
+      "kind": "community",
+      "binaryHash": "53b2695ee7479c506e76750c86206cc493b2aab3e1d4a65b385832215a96c914",
+      "authorPublicKey": "9a90acbfa24944d81721074bb8bfb1f500c93b12f94bfa9350b9e694d993293a",
+      "project": "Skydrop"
+    },
+    {
+      "name": "LinkRegistry",
+      "address": "e4aaf6455091f76c5521fff8e0bf83cbbe05a5301ab46811bd6af9d0b7402794",
+      "epoch": 38434,
+      "kind": "community",
+      "binaryHash": "5c97243290dd4f703ab7d31dfecfe8a6e0c91e6e06170df71107da62ad0c05a6",
+      "authorPublicKey": "9a90acbfa24944d81721074bb8bfb1f500c93b12f94bfa9350b9e694d993293a",
+      "project": "Skydrop"
+    },
+    {
+      "name": "TariPrivateBallotAnchorV2",
+      "address": "ef4d7f348a4c3db7b6f9a9c30ac4fcbfdfb73e8bec59a808258861fcbbdc6cdb",
+      "epoch": 38551,
+      "kind": "community",
+      "binaryHash": "f2e1ba76bbd7485ccf54263be387fe3d2fff39b5a187f73cb3a5226aab212f25",
+      "authorPublicKey": "4ca4d4129dd47457caf0c5aea184a6eddcacaea3923b491467a0de7959711a7c",
+      "project": "Community template"
+    },
+    {
+      "name": "TipPolicyV2",
+      "address": "f13e9a90e9922ffd3edad2faeb8db74359ac3e36f55b1d2252411f47f39dbfe2",
+      "epoch": 38471,
+      "kind": "community",
+      "binaryHash": "6b79bfba0b8a725231562ffe17b5314cfa77d36c1b1ef5bc877331d5254178b7",
+      "authorPublicKey": "9a90acbfa24944d81721074bb8bfb1f500c93b12f94bfa9350b9e694d993293a",
+      "project": "Community template"
+    },
+    {
+      "name": "SooonAmmV2",
+      "address": "f48706cfecb13a56ab390582d344409b922b71af51ad252e983c927eba9c96ee",
+      "epoch": 38488,
+      "kind": "community",
+      "binaryHash": "8ec7fbdbb7d7621373d05124ad2e11647a5521e88c40a60e4856419d171bf8d9",
+      "authorPublicKey": "3a16518803c51e8ceff24d26dc8d2d1b252f61e4d13a06487e5e3ed3d7725772",
+      "project": "Community template"
+    },
+    {
+      "name": "ClaimPolicyV2",
+      "address": "f674b027c7c6bc5c1e0397487ed234939777d1a4e53040f809cab987d169fd38",
+      "epoch": 38471,
+      "kind": "community",
+      "binaryHash": "872c5abac3df2d4424b2656630a4563ccbf2fffeaee0491de55202c5b98698a2",
+      "authorPublicKey": "9a90acbfa24944d81721074bb8bfb1f500c93b12f94bfa9350b9e694d993293a",
+      "project": "Community template"
+    },
+    {
+      "name": "Campaign",
+      "address": "fea387ae896b72b9be93426ffa34da7498336f81c023fc2a65e556cfc13fba75",
+      "epoch": 38471,
+      "kind": "community",
+      "binaryHash": "c7ef96dceb25fbfd04ca0b7c864335c7e5848fd31be7790bf2a9a297506eed6d",
+      "authorPublicKey": "9a90acbfa24944d81721074bb8bfb1f500c93b12f94bfa9350b9e694d993293a",
+      "project": "Community template"
     }
   ]
 }

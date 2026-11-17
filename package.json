@@ -15,7 +15,8 @@
     "start:site": "node scripts/start-site.mjs",
     "monitor:october": "node scripts/monitor-contest.mjs",
     "check:maintenance": "node scripts/check-maintenance-completion.mjs",
-    "monitor:submissions": "node scripts/monitor-submissions.mjs"
+    "monitor:submissions": "node scripts/monitor-submissions.mjs",
+    "monitor:builder-resources": "node scripts/monitor-builder-resources.mjs"
   },
   "dependencies": {
     "@vercel/blob": "2.9.0",

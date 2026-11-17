@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-17T19:04:56.458Z",
+  "guides": {
+    "docs/developer-docs/src/content/docs/guides/agent-api-keys.mdx": {
+      "sha": "458bd24f1cb0eb420049226331161de1df5987db",
+      "url": "https://ootle.tari.com/guides/agent-api-keys/"
+    },
+    "docs/developer-docs/src/content/docs/guides/authorization-and-access.mdx": {
+      "sha": "94428c34bf9b0a9891049199471acfb892f8c394",
+      "url": "https://ootle.tari.com/guides/authorization-and-access/"
+    },
+    "docs/developer-docs/src/content/docs/guides/build-a-guessing-game.mdx": {
+      "sha": "6141a8a5ccb247ac482db5bdd06494d70c81c50c",
+      "url": "https://ootle.tari.com/guides/build-a-guessing-game/"
+    },
+    "docs/developer-docs/src/content/docs/guides/burn-minotari.mdx": {
+      "sha": "a8cf3662d3a04a90ee516a682696b72f63575056",
+      "url": "https://ootle.tari.com/guides/burn-minotari/"
+    },
+    "docs/developer-docs/src/content/docs/guides/claim-burn.mdx": {
+      "sha": "d822ee43d71c4dba8e71bf39da5b5638ecb5355b",
+      "url": "https://ootle.tari.com/guides/claim-burn/"
+    },
+    "docs/developer-docs/src/content/docs/guides/cli.mdx": {
+      "sha": "1af674466429440745c3c5d523762d8456b31426",
+      "url": "https://ootle.tari.com/guides/cli/"
+    },
+    "docs/developer-docs/src/content/docs/guides/exchange-integration.mdx": {
+      "sha": "43b712326140e3237fe6c758e80b5793b99e688b",
+      "url": "https://ootle.tari.com/guides/exchange-integration/"
+    },
+    "docs/developer-docs/src/content/docs/guides/fungible-tokens.mdx": {
+      "sha": "30a1b70aa61fd82506cb62356238da3a3ee2dc4c",
+      "url": "https://ootle.tari.com/guides/fungible-tokens/"
+    },
+    "docs/developer-docs/src/content/docs/guides/getting-started.mdx": {
+      "sha": "2f522ce95090aaf5c8f1b3949b99a4af3547a758",
+      "url": "https://ootle.tari.com/guides/getting-started/"
+    },
+    "docs/developer-docs/src/content/docs/guides/play-the-guessing-game.mdx": {
+      "sha": "dfa9e73dba89d2917bac82c974c36661e2f908e2",
+      "url": "https://ootle.tari.com/guides/play-the-guessing-game/"
+    },
+    "docs/developer-docs/src/content/docs/guides/publishing-templates.mdx": {
+      "sha": "c252ed0bb386b2f97e31a81bafd2f383b15600d6",
+      "url": "https://ootle.tari.com/guides/publishing-templates/"
+    },
+    "docs/developer-docs/src/content/docs/guides/randomness.mdx": {
+      "sha": "85c11e762b2415f9a842081d37143939a0182d3a",
+      "url": "https://ootle.tari.com/guides/randomness/"
+    },
+    "docs/developer-docs/src/content/docs/guides/resources.mdx": {
+      "sha": "1723843e021e5793b0b6434ed9cf748aabf8ce69",
+      "url": "https://ootle.tari.com/guides/resources/"
+    },
+    "docs/developer-docs/src/content/docs/guides/setup-a-wallet.mdx": {
+      "sha": "3fe715cb445876e42b67ab77496494c60b7926e8",
+      "url": "https://ootle.tari.com/guides/setup-a-wallet/"
+    },
+    "docs/developer-docs/src/content/docs/guides/stealth-resources.mdx": {
+      "sha": "a64bb218d3e8d1dbf3a83e53da9bcb2710999f09",
+      "url": "https://ootle.tari.com/guides/stealth-resources/"
+    },
+    "docs/developer-docs/src/content/docs/guides/template-overview.mdx": {
+      "sha": "17660a6492a6813f9ef60cb9682b7e933cf6e98c",
+      "url": "https://ootle.tari.com/guides/template-overview/"
+    },
+    "docs/developer-docs/src/content/docs/guides/testing-templates.mdx": {
+      "sha": "fae2ef7392485cba2595195cb395a6b89e55b3dc",
+      "url": "https://ootle.tari.com/guides/testing-templates/"
+    },
+    "docs/developer-docs/src/content/docs/guides/transaction-overview.mdx": {
+      "sha": "3842d4086a5ecf5f4e06e607f39bdad6f8fea86c",
+      "url": "https://ootle.tari.com/guides/transaction-overview/"
+    },
+    "docs/developer-docs/src/content/docs/guides/watch-only-accounts.mdx": {
+      "sha": "50d32dd2a0b869a1c5500f4aa8beb7feec4cbe60",
+      "url": "https://ootle.tari.com/guides/watch-only-accounts/"
+    },
+    "docs/developer-docs/src/content/docs/validators/networking-and-ports.mdx": {
+      "sha": "6ba38693efb97cb49d406f9f5e20cf706c97f422",
+      "url": "https://ootle.tari.com/validators/networking-and-ports/"
+    },
+    "docs/developer-docs/src/content/docs/validators/operating-a-validator.mdx": {
+      "sha": "b499478030f2194705e201dc179d29486d54b014",
+      "url": "https://ootle.tari.com/validators/operating-a-validator/"
+    },
+    "docs/developer-docs/src/content/docs/validators/run-a-validator-node.mdx": {
+      "sha": "df9631d4c570ff2b62208dc58199ffbce222734e",
+      "url": "https://ootle.tari.com/validators/run-a-validator-node/"
+    }
+  },
+  "release": {
+    "tag": "v0.54.0",
+    "sourceContentSha256": "9ae8f5780e234d0e15fdfed1fafd66231c72719e90cf6efec30c560186f08bfd"
+  }
+}
