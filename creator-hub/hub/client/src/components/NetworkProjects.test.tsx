@@ -41,19 +41,19 @@ test('the default view puts confirmed apps before the mainnet watch without hidi
  const confirmed=html.slice(html.indexOf('id="network-confirmed-title"'),html.indexOf('id="network-watch-title"'));
  for(const name of ['OotleAccord','Skydrop','Veil Ootle Explorer','Sapient','Signal Desk','Sealed Bids at Midnight','Ootle Lockbox','Launch Commitments','The Cursed Pumpkin','AT Protocol identity on Ootle','Ghostline','HideBox','Private Ballot'])expect(confirmed).toContain(name);
  for(const name of ['MoonMail','Grave Robber','Specter'])expect(confirmed).not.toContain(`>${name}</a>`);
- expect(html.match(/class="network-project"/g)).toHaveLength(18);
- expect(html).toContain('Sandbox game');expect(html).toContain('Office pending');
+ expect(html.match(/class="network-project"/g)).toHaveLength(17);
+ expect(html).toContain('Sandbox game');expect(html).toContain('Mainnet / Testnet · Campaign tools');expect(html).not.toContain('Office pending');
  expect(html).toContain('Get latest extension');expect(html).toContain('Chrome Web Store: 0.9.6');
  expect(html).toContain('href="https://chromewebstore.google.com/detail/tari-ootle-wallet/demkeckolenopkgnfbnpflkpbbdhpgkl"');
  expect(html).not.toContain('releases/download/');
 });
 test('network filters keep pending apps out of confirmed mainnet and preserve testnet destinations',()=>{
  const mainnet=renderToStaticMarkup(<MemoryRouter><NetworkProjects initialNetwork="mainnet"/></MemoryRouter>);
- expect(mainnet.match(/class="network-project"/g)).toHaveLength(13);
- expect(mainnet).toContain('Mainnet anchor template · Non-binding pilots');expect(mainnet).toContain('hosted website and browser-wallet integration are still being configured');expect(mainnet).toContain('Read guide');expect(mainnet).toContain('Open source');expect(mainnet).toContain('unrevealed bids forfeit bonds permanently');expect(mainnet).toContain('Mainnet evidence');expect(mainnet.slice(0,mainnet.indexOf('id="mainnet-templates"'))).not.toContain('>MoonMail</a>');
+ expect(mainnet.match(/class="network-project"/g)).toHaveLength(15);
+ expect(mainnet).toContain('Mainnet anchor template · Non-binding pilots');expect(mainnet).toContain('hosted website and browser-wallet integration are still being configured');expect(mainnet).toContain('Read guide');expect(mainnet).toContain('Open source');expect(mainnet).toContain('unrevealed bids forfeit bonds permanently');expect(mainnet).toContain('Mainnet evidence');expect(mainnet.slice(0,mainnet.indexOf('id="mainnet-templates"'))).toContain('>MoonMail</a>');
  const watch=renderToStaticMarkup(<MemoryRouter><NetworkProjects initialNetwork="watch"/></MemoryRouter>);
- expect(watch.match(/class="network-project"/g)).toHaveLength(5);
- expect(watch).toContain('>MoonMail</a>');expect(watch).not.toContain('>OotleAccord</a>');
+ expect(watch.match(/class="network-project"/g)).toHaveLength(4);
+ expect(watch).not.toContain('>MoonMail</a>');expect(watch).not.toContain('>OotleAccord</a>');
  const testnet=renderToStaticMarkup(<MemoryRouter><NetworkProjects initialNetwork="testnet"/></MemoryRouter>);
  expect(testnet).toContain('href="https://testnet-explorer.tari.mw/"');
  expect(testnet).not.toContain('href="https://explorer.tari.mw/"');
@@ -68,7 +68,7 @@ test('the header reflects reviewed mainnet evidence instead of the expired launc
  expect(html).not.toContain('Launching soon');expect(html).not.toContain('planned launch');
 });
 
- test('published templates stay separate from live apps and never promote MoonMail',()=>{
+ test('published templates stay separate from apps with current deployment evidence',()=>{
  const html=renderToStaticMarkup(<MemoryRouter><NetworkProjects/></MemoryRouter>);
  const templateStart=html.indexOf('id="mainnet-templates"');
  expect(templateStart).toBeGreaterThan(html.indexOf('id="network-watch-title"'));
@@ -82,7 +82,9 @@ test('the header reflects reviewed mainnet evidence instead of the expired launc
  const mainnet=renderToStaticMarkup(<MemoryRouter><NetworkProjects initialNetwork="mainnet"/></MemoryRouter>);
  const apps=mainnet.slice(0,mainnet.indexOf('id="mainnet-templates"'));
  expect(apps).toContain('>Signal Desk</a>');
- expect(apps).not.toContain('>MoonMail</a>');
+ expect(apps).toContain('>MoonMail</a>');
+ expect(apps).not.toContain('>Grave Robber</a>');
+ expect(apps).toContain('Mainnet evidence');
  const testnet=renderToStaticMarkup(<MemoryRouter><NetworkProjects initialNetwork="testnet"/></MemoryRouter>);
  expect(testnet).not.toContain('Published mainnet templates');
  });
