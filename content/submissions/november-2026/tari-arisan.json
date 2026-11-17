@@ -1,0 +1,38 @@
+{
+  "slug": "tari-arisan",
+  "title": "Tari Arisan",
+  "creator": "gmXBT",
+  "summary": "MIT-licensed rotating savings-circle source with a walletless simulation and a documented Esmeralda deployment. Fixed members contribute each round; unpaid contributions become arrears, and a recipient in arrears misses that round's payout. The creator documents template f230b6fbe6409c10c8f3d9dbf47a722a0b7ab956d32ed5b57a1fd35e9e8399a5 and circle component_fe42c4e6f21f2066cac7acdabb5fabcd9bd365af8aadd154ece22dd0d2f601e8. November 17, 2026: the official Esmeralda indexer returned that circle as an up substate at version 3. The hosted page opens in simulation mode and its extracted live-mode instructions still contain older Phase 3 setup text; use the dated creator proof for deployment scope. No mainnet deployment is claimed. This README walkthrough does not demonstrate wallet interaction or independently replay the creator's payout tests.",
+  "cardSummary": "Explore rotating savings contributions, missed-payment arrears and scheduled pot payouts through an Esmeralda contract and browser simulation.",
+  "cardStatus": "Testnet · Browser simulation",
+  "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/26",
+  "publishedAt": "2026-11-17T14:23:03.636Z",
+  "updatedAt": "2026-11-17T14:23:03.636Z",
+  "sourceContentSha256": "f051d813f4cad8e5270b4799f51826901232f879c07a91ab5f362c397c3afc4f",
+  "repoUrl": "https://github.com/itaro9110/tari-arisan",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust template · JavaScript simulation · MIT",
+      "sourceUrl": "https://github.com/itaro9110/tari-arisan"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-tari-arisan-20261117.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-tari-arisan-20261117.jpg",
+    "capturedAt": "2026-11-17T14:30:53.565Z",
+    "sourceRevision": "c09a0140184780a9ecb0dcb69640c7f2ea2b246e",
+    "kind": "public-page",
+    "credit": "Docs walkthrough"
+  },
+  "discussionLinks": [
+    {
+      "url": "https://www.reddit.com/r/tari/comments/1xwpfq5/tari_arisan_a_rotating_savings_circle_arisan/",
+      "platform": "Reddit"
+    }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:tari-arisan"
+  ],
+  "demoUrl": "https://itaro9110.github.io/tari-arisan/"
+}
