@@ -10,7 +10,7 @@ const stamp='2026-11-09T14:00:00Z';
 const source=id=>({id:`topic-${id}`,threadUrl:`https://community.tari.com/t/contest/${id}`,entries:[]});
 const post=(id,number=2)=>({id,post_number:number,post_type:1,username:'builder',created_at:stamp,updated_at:stamp,cooked:'<p>New work and <code>https://example.com/article</code></p>'});
 test('daily source inventory includes every build contest and creator registry',()=>{
-  assert.deepEqual(submissionSources().map(s=>s.id).sort(),['creator-launch-2026','first-to-launch-2026','november-2026','october-2026']);
+  assert.deepEqual(submissionSources().map(s=>s.id).sort(),['creator-dnode-memes-2026','creator-launch-2026','first-to-launch-2026','november-2026','october-2026']);
 });
 test('November pagination follows its own topic and discovers a new project',async()=>{
   const calls=[];

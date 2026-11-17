@@ -9,7 +9,7 @@ import './CreatorSubmissions.css';
 
 const date = (value: string) => new Date(value).toLocaleDateString('en-US', {month:'short', day:'numeric', timeZone:'UTC'});
 
-export default function CreatorSubmissions() {
+export default function CreatorSubmissions({feed = submissions, id = 'creator-submissions', title = 'Creator submissions.', description = 'Articles, videos and explainers from the launch contest · Oct 29–Nov 12', judging = 'Judging stays with the Council.'}: {feed?: typeof submissions; id?: string; title?: string; description?: string; judging?: string} = {}) {
   const [expanded, setExpanded] = useState(false);
   const section = useRef<HTMLElement>(null);
   function toggle() {
@@ -17,14 +17,14 @@ export default function CreatorSubmissions() {
     setExpanded(value => !value);
     if (returnToHeading) requestAnimationFrame(() => section.current?.scrollIntoView({block:'start'}));
   }
-  const newest = [...submissions.entries].sort((a,b) => Date.parse(b.publishedAt)-Date.parse(a.publishedAt));
+  const newest = [...feed.entries].sort((a,b) => Date.parse(b.publishedAt)-Date.parse(a.publishedAt));
   const entries = expanded ? newest : newest.slice(0, 3);
-  return <section ref={section} className="creator-submissions" id="creator-submissions" aria-labelledby="creator-submissions-title">
+  return <section ref={section} className="creator-submissions" id={id} aria-labelledby={`${id}-title`}>
     <div className="creator-submissions-heading"><div>
-      <h3 id="creator-submissions-title">Creator <em>submissions.</em></h3>
-      <p>Articles, videos and explainers from the launch contest · Oct 29–Nov 12</p>
-    </div><a href={submissions.threadUrl} target="_blank" rel="noreferrer">Contest thread</a></div>
-    <div className="creator-submissions-list" id="creator-submissions-list">{entries.map(entry => <article key={entry.id}>
+      <h3 id={`${id}-title`}>{title === 'Creator submissions.' ? <>Creator <em>submissions.</em></> : title}</h3>
+      <p>{description}</p>
+    </div><a href={feed.threadUrl} target="_blank" rel="noreferrer">Contest thread</a></div>
+    <div className="creator-submissions-list" id={`${id}-list`}>{entries.map(entry => <article key={entry.id}>
       <div className="creator-submission-byline"><a href={entry.sourceUrl} target="_blank" rel="noreferrer">{entry.creator}</a><time dateTime={entry.publishedAt}>{date(entry.publishedAt)}</time></div>
       <div><h4>{entry.title}</h4>{entry.works.length > 0 && <ul>{entry.works.map(work => <li key={work.url}><a href={safeHref(work.url)} target="_blank" rel="noreferrer">{work.title}</a><span>{work.format}</span></li>)}</ul>}{entry.note && <p>{entry.note}</p>}
       <a href={entry.sourceUrl} target="_blank" rel="noreferrer">Original post</a>
@@ -38,6 +38,6 @@ export default function CreatorSubmissions() {
       </div>)}
       </div>
     </article>)}</div>
-    <div className="creator-submissions-footer"><span>Checked {date(submissions.checkedAt)} · Judging stays with the Council.</span><button type="button" aria-expanded={expanded} aria-controls="creator-submissions-list" onClick={toggle}>{expanded ? 'Show less' : `Show all ${submissions.entries.length} creators`}</button></div>
+    <div className="creator-submissions-footer"><span>Checked {date(feed.checkedAt)} · {judging}</span><button type="button" aria-expanded={expanded} aria-controls={`${id}-list`} onClick={toggle}>{expanded ? 'Show less' : `Show all ${feed.entries.length} creators`}</button></div>
   </section>;
 }
