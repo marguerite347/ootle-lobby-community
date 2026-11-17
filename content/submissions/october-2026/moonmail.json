@@ -1,9 +1,9 @@
 {
   "slug": "moonmail",
   "title": "MoonMail",
-  "summary": "Encrypted Ootle letters and postboxes. November 11, 2026: the MoonMail template is published on mainnet, but the current app reports Mainnet office pending and the public post office unavailable. No live mail operation was verified. Wallet private-view access is an account-wide permission; spending requires separate approval. Public postbox identities, timing and fees remain observable. The retained October recording covers documentation, not current delivery.",
-  "cardSummary": "Explore encrypted Ootle letters and postboxes. The mainnet post office is pending; live mail is unavailable.",
-  "cardStatus": "Mainnet watch · Office pending",
+  "summary": "Encrypted Ootle letters, recoverable postboxes and native private-payment requests using Sapient. November 17, 2026: the current deployment manifest selects mainnet and names the registry and template; the official mainnet indexer returned the registry substate at version 7, and Veil displayed the matching MoonMail template. The README makes mainnet the default and offers Esmeralda in Settings. Mainnet transactions use real TARI. Private-view access is account-wide and can reveal amounts and memos for other resources; spending requires separate approval. Public signers, postbox registrations, timing and fees remain observable. This source review supersedes the November 11 office-pending observation; earlier evidence is retained. The new recording shows current documentation, not a demonstrated delivery or payment.",
+  "cardSummary": "Send encrypted Ootle letters and recover your mailbox with Sapient, with mainnet and Esmeralda network options.",
+  "cardStatus": "Mainnet and Testnet · Sapient",
   "creator": "SealClubber",
   "sourceUrl": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/33",
   "publishedAt": "2026-10-29T00:03:01.603Z",
@@ -19,12 +19,12 @@
     }
   ],
   "recording": {
-    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-moonmail-20261029.mp4",
-    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-moonmail-20261029.png",
-    "capturedAt": "2026-10-29T10:10:08.751Z",
-    "sourceRevision": "dbf816853e811f7581151202192b952f4d40ad3b",
+    "url": "https://lobby.tari.com/previews/community/resource-moonmail-20261117.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-moonmail-20261117.jpg",
+    "capturedAt": "2026-11-17T13:50:11.255Z",
+    "sourceRevision": "df0da950b471d780ef49b268ce8d814f3b40b9b0",
     "kind": "public-page",
-    "credit": "Docs walkthrough — Public privacy page."
+    "credit": "Docs walkthrough"
   },
   "discussionLinks": [
     {
@@ -34,6 +34,10 @@
     {
       "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/44",
       "platform": "Testnet reset notice"
+    },
+    {
+      "url": "https://community.tari.com/t/november-bonus-contest-first-to-launch/521/16",
+      "platform": "Mainnet creator update"
     }
   ],
   "resourceIds": [

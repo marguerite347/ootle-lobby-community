@@ -216,14 +216,16 @@
     },
     {
       "ref": "tari-ootle:component:moonmail",
-      "state": "unconfirmed",
-      "checkedAt": "2026-11-11T12:16:00Z",
-      "evidenceUrl": "https://seal-clubber.github.io/MoonMail/",
-      "evidence": "MoonMail template exists on mainnet. November 11 live app reports Mainnet office pending and post office unavailable. No successful mail operation was verified.",
-      "showcase": {
-        "url": "https://seal-clubber.github.io/MoonMail/",
-        "label": "Mainnet template · Office pending",
-        "summary": "Explore the encrypted-mail app and documentation. The mainnet post office is pending; live mail is unavailable."
+      "state": "both",
+      "checkedAt": "2026-11-17T13:54:27.899727+00:00",
+      "evidenceUrl": "https://github.com/Seal-Clubber/MoonMail/blob/main/public/deployment.json",
+      "evidence": "Current manifest selects mainnet; official mainnet indexer returned registry version 7, and Veil shows the matching template. README documents mainnet default and Esmeralda in Settings. No wallet or transaction was performed.",
+      "mainnetUrl": "https://seal-clubber.github.io/MoonMail/",
+      "testnetUrl": "https://seal-clubber.github.io/MoonMail/",
+      "deploymentEvidence": {
+        "url": "https://indexer-a.ootle.tari.com/substates/component_49d9c95a147daaa8c3d93fa61ffad38b027be6de67dcbd217de72904e1a0f1d4",
+        "observedAt": "2026-11-17T13:54:27.899727+00:00",
+        "detail": "Official mainnet indexer returned the configured MoonMail registry as an up substate, version 7; template matches the current deployment manifest and Veil template page."
       }
     },
     {
@@ -394,6 +396,49 @@
       "checkedAt": "2026-11-16T21:37:22.262213+00:00",
       "evidenceUrl": "https://github.com/Yogii123-qw/ootle-crowdfund#readme",
       "evidence": "November15 creator submission and current README identify a walletless simulation and unpublished template. No network deployment established."
+    },
+    {
+      "ref": "tari-ootle:component:tarifund",
+      "state": "unconfirmed",
+      "checkedAt": "2026-11-17T13:54:27.899727+00:00",
+      "evidenceUrl": "https://github.com/0xfats/tarifund#readme",
+      "evidence": "MIT-licensed Rust crowdfunding template source and a walletless browser simulation. The documented rules pay the creator after a reached goal or return each contribution after a missed goal. There is no milestone release or partial-funding payout. The current README explicitly says the template has not been published to Esmeralda or mainnet. The linked creator video is retained through the original submission. This recording shows the public README; no template or simulation was executed."
+    },
+    {
+      "ref": "tari-ootle:component:taribill",
+      "state": "unconfirmed",
+      "checkedAt": "2026-11-17T13:54:27.899727+00:00",
+      "evidenceUrl": "https://github.com/Klowor2002/taribill#readme",
+      "evidence": "MIT-licensed merchant payment-link and invoice prototype with a browser simulation and Rust template design. The hosted page labels payments as simulation and identifies its merchant and transactions as fictional seed data. Payments are recorded locally; real wallet signing and mainnet settlement are future work in the README. The recording walks through documentation and its labeled interface diagrams, not a working payment transaction."
+    },
+    {
+      "ref": "tari-ootle:component:ootle-bounty",
+      "state": "unconfirmed",
+      "checkedAt": "2026-11-17T13:54:27.899727+00:00",
+      "evidenceUrl": "https://github.com/taufik52/ootle-bounty#readme",
+      "evidence": "MIT-licensed bug-bounty escrow template source with a walletless browser simulation. Researchers submit report commitments and sponsors decide validity; accepted findings draw from a proposed locked pool. The model cannot force honest sponsor triage or detect reworded duplicate reports. The browser uses a temporary demo encryption key, not a production key-management system, and sends no real funds. The recording shows the README and documented template methods. No deployed network contract is established by these sources."
+    },
+    {
+      "ref": "tari-ootle:component:ajo-ootle",
+      "state": "testnet",
+      "checkedAt": "2026-11-17T13:54:27.899727+00:00",
+      "evidenceUrl": "https://github.com/G-ojies/ajo-ootle#readme",
+      "evidence": "MIT-licensed rotating savings-circle template, CLI and walletless browser simulation. Every member contributes each round and receives one pot; a one-round deposit can cover a missed contribution. The creator documents template 3519aefd3d17e2bb88f061e1490a8107925381cf7c4af3f5911c4c1668e01b11 and the Uselu circle on Esmeralda. A November 17 read of the linked official testnet indexer returned the circle substate. The hosted browser page is explicitly a simulation. This is testnet evidence, not Ootle mainnet deployment. The recording shows the README and network-specific documentation.",
+      "testnetUrl": "https://g-ojies.github.io/ajo-ootle/"
+    },
+    {
+      "ref": "tari-ootle:component:ootle-fee-check",
+      "state": "both",
+      "checkedAt": "2026-11-17T13:54:27.899727+00:00",
+      "evidenceUrl": "https://harbourrelay.itch.io/ootle-fee-check",
+      "evidence": "MIT-licensed fee-reconciliation tool by HarbourRelay. The current hosted description offers a mainnet browser tool for up to 20 public transaction IDs and a PowerShell 7 CLI supporting mainnet and Esmeralda. Missing or conflicting replies leave the amount blank for review. Both indexers are operated by Tari, so their agreement is an operational comparison, not independent settlement proof. The browser sends entered transaction IDs and normal connection metadata to those public indexers. This recording shows the creator announcement. The source archive and JavaScript attachment were not downloaded or executed.",
+      "mainnetUrl": "https://harbourrelay.itch.io/ootle-fee-check",
+      "testnetUrl": "https://harbourrelay.itch.io/ootle-fee-check",
+      "deploymentEvidence": {
+        "url": "https://harbourrelay.itch.io/ootle-fee-check",
+        "observedAt": "2026-11-17T13:54:27.899727+00:00",
+        "detail": "Current released hosted tool description offers mainnet browser fee comparisons and a PowerShell 7 CLI supporting mainnet and Esmeralda. This is a read-only utility, not a deployed smart-contract claim."
+      }
     }
   ]
 }
