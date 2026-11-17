@@ -1,5 +1,5 @@
 /* Shared Tari holographic finish for contest invitations and the bounty strip. */
-.quest-option .quest-card,.november-contests .contest-hologram {
+.quest-option .quest-card,.november-contests .contest-hologram,.network-projects .contest-hologram {
   --contest-hologram: linear-gradient(115deg,rgba(169,108,255,.18),rgba(108,234,219,.13) 28%,rgba(218,246,109,.16) 49%,rgba(223,151,255,.20) 72%,rgba(123,151,255,.14));
   background:var(--contest-hologram),#10132f;
   background-size:240% 100%;
@@ -27,8 +27,8 @@
 .quest-card:hover .quest-link,.quest-card:focus-visible .quest-link { border-color:#d7f581; filter:brightness(1.15); }
 @media(prefers-reduced-motion:reduce) {
   .quest-option .quest-card,.quest-card::after,.quest-card .quest-link,.quest-card .quest-link::after,
-  .november-contests .contest-hologram,.contest-hologram::after { animation:none; }
-  .quest-option .quest-card,.quest-card .quest-link,.november-contests .contest-hologram { background-position:50% 50%; }
+  .november-contests .contest-hologram,.network-projects .contest-hologram,.contest-hologram::after { animation:none; }
+  .quest-option .quest-card,.quest-card .quest-link,.november-contests .contest-hologram,.network-projects .contest-hologram { background-position:50% 50%; }
   .quest-card::after,.quest-card .quest-link::after,.contest-hologram::after { transform:none; opacity:.2; }
 }
 :root[data-hub-effects=off] .quest-card,:root[data-hub-effects=off] .quest-card .quest-link,:root[data-hub-effects=off] .contest-hologram { animation:none; }

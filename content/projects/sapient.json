@@ -1,7 +1,7 @@
 {
   "id": "tari-ootle:app:sapient",
   "title": "Sapient",
-  "summary": "Self-custody Chrome extension wallet for Tari Ootle mainnet and testnets. November 11, 2026: the official Chrome Web Store offers version 0.9.6, matching the current source package, with mainnet network support and default transition. The user confirmed the wallet is live on mainnet. Use the official store for the current available extension; GitHub latest release still points to the older 0.4.2 ZIP. This audit did not install the extension or submit a wallet transfer. The retained recording is historical source footage.",
+  "summary": "Self-custody Chrome extension wallet for Tari Ootle mainnet and testnets. November 17, 2026: the official Chrome Web Store lists version 0.10.0, updated today. The creator website confirms mainnet support and network switching; the store overview still contains older testnet-only copy. The owner previously confirmed the wallet is live on mainnet. Use the official store for the currently available extension. This review did not install the extension or submit a wallet transfer. The retained recording is historical source footage.",
   "technologies": [
     {
       "label": "Ootle SDK",
@@ -13,5 +13,5 @@
     }
   ],
   "cardSummary": "Manage Ootle mainnet accounts, private transfers and app approvals with the Sapient browser extension.",
-  "cardStatus": "Mainnet · Chrome extension · 0.9.6"
+  "cardStatus": "Mainnet · Chrome extension · 0.10.0"
 }
