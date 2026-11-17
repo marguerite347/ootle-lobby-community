@@ -387,6 +387,13 @@
       "checkedAt": "2026-11-14T15:24:11.123353+00:00",
       "evidenceUrl": "https://yezir4.github.io/specter-tari/sapient-proof.html",
       "evidence": "Current creator proof describes a mainnet receipt, but the linked release note reflects an earlier no-contract stage and current explorer extraction did not expose deployment details. Retain outside the live-mainnet list pending reconciliation."
+    },
+    {
+      "ref": "tari-ootle:component:ootle-crowdfund",
+      "state": "unconfirmed",
+      "checkedAt": "2026-11-16T21:37:22.262213+00:00",
+      "evidenceUrl": "https://github.com/Yogii123-qw/ootle-crowdfund#readme",
+      "evidence": "November15 creator submission and current README identify a walletless simulation and unpublished template. No network deployment established."
     }
   ]
 }

@@ -1,0 +1,38 @@
+{
+  "slug": "ootle-crowdfund",
+  "title": "Ootle Crowdfund",
+  "creator": "Monch / Yogii123-qw",
+  "summary": "MIT-licensed Rust crowdfunding template source and walletless browser simulation. The documented mechanism combines all-or-nothing funding with a creator bond, three release tranches and a pledge-weighted veto. Released funds cannot be clawed back, creator promises are not enforced, and minority backers depend on majority action. The current README explicitly states that no template is published to Esmeralda or mainnet and live wallet mode is a stub. This November 15 recording shows the public README and simulation instructions; no submission code or contract was executed.",
+  "cardSummary": "Explore crowdfunding goals, creator bonds, staged payouts and backer vetoes through Rust source and a walletless simulation.",
+  "cardStatus": "Browser simulation · Rust source",
+  "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/17",
+  "publishedAt": "2026-11-14T19:21:41.220Z",
+  "updatedAt": "2026-11-15T04:00:24.376Z",
+  "sourceContentSha256": "351ee819c31b1bbf904a61f38d26ab1d53acc5e938610b93ca0b741c5d7dbabe",
+  "repoUrl": "https://github.com/Yogii123-qw/ootle-crowdfund",
+  "demoUrl": "https://yogii123-qw.github.io/ootle-crowdfund/",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust · JavaScript · MIT",
+      "sourceUrl": "https://github.com/Yogii123-qw/ootle-crowdfund"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-ootle-crowdfund-20261115.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-ootle-crowdfund-20261115.jpg",
+    "capturedAt": "2026-11-15T15:15:07.456Z",
+    "sourceRevision": "README blob e5fee0dfdb847eee251977ede446b09152d975ce; source rechecked November 16, 2026",
+    "kind": "public-page",
+    "credit": "Docs walkthrough"
+  },
+  "discussionLinks": [
+    {
+      "url": "https://www.reddit.com/r/tari/comments/1xwaouw/ootle_crowdfund_my_entry_for_the_tari_november/",
+      "platform": "Reddit"
+    }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:ootle-crowdfund"
+  ]
+}
