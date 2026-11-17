@@ -1,0 +1,38 @@
+{
+  "slug": "public-grant-ledger",
+  "title": "Public Grant Ledger",
+  "creator": "feitianbf",
+  "summary": "BSD-3-Clause Rust reconciliation tool with a hosted read-only review page. It compares payment outcomes, assets, integer amounts and payees, keeping receipt provenance in CSV output. Its samples distinguish local-engine grant payments from archived Ootle mainnet auction proceeds and escrow funding; those archives do not establish a deployed grant contract. The README explicitly excludes wallet signing and on-chain deployment. November 17, 2026: server-side extraction returned the hosted review interface and its offline/read-only boundary. The recording is a walkthrough of the Chinese-language README, not an application run or independent verification of the archived receipts.",
+  "cardSummary": "Compare approved payments with archived transaction receipts, flag discrepancies and duplicate entries, and export evidence-linked reconciliation rows.",
+  "cardStatus": "Read-only web app · Rust CLI",
+  "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/24",
+  "publishedAt": "2026-11-17T14:09:10.045Z",
+  "updatedAt": "2026-11-17T14:09:10.045Z",
+  "sourceContentSha256": "f0542c2ec72d5042bbcd125c2abd4ccf79f851a89f48582a9e2ca0e5feaa6351",
+  "repoUrl": "https://github.com/feitianbf751026-dotcom/tari-ootle-public-grant-ledger",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust CLI · Read-only web interface · BSD-3-Clause",
+      "sourceUrl": "https://github.com/feitianbf751026-dotcom/tari-ootle-public-grant-ledger"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-public-grant-ledger-20261117.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-public-grant-ledger-20261117.jpg",
+    "capturedAt": "2026-11-17T14:31:24.322Z",
+    "sourceRevision": "3af533b6bf3c14a9a9a5cc277f1d930e2e1b26b9",
+    "kind": "public-page",
+    "credit": "Docs walkthrough"
+  },
+  "discussionLinks": [
+    {
+      "url": "https://www.reddit.com/r/tari/comments/1xyhxfk/public_grant_ledger_tari_ootle_november_mvp_entry/",
+      "platform": "Reddit"
+    }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:public-grant-ledger"
+  ],
+  "demoUrl": "https://tari-ootle-dao-grant-audit.onrender.com/"
+}

@@ -1,0 +1,38 @@
+{
+  "slug": "ootle-forge",
+  "title": "Ootle Forge",
+  "creator": "Mystiy",
+  "summary": "MIT-licensed collectible-crafting game source and walletless simulation. The proposed Rust template burns EMBER and a forge fee to mint tiered relics, combines three matching relics into a higher tier, and melts duplicates into materials. The admin-badge holder controls fee withdrawals. The README and hosted page explicitly say the template is unpublished on Esmeralda and mainnet. Simulation amounts and NFTs have no real value; creator engine-test claims remain attributed source statements. The source warns that its randomness is game-grade. This recording shows the README and deployment limits; no game or template was executed.",
+  "cardSummary": "Gather crafting materials, forge collectible relics, combine matching tiers and recycle duplicates in a walletless browser simulation.",
+  "cardStatus": "Browser simulation · Rust source",
+  "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/25",
+  "publishedAt": "2026-11-17T14:22:24.853Z",
+  "updatedAt": "2026-11-17T14:22:24.853Z",
+  "sourceContentSha256": "199b0aedc61fdd0a6f008ab8e86f7fd0b3b31f166fe794534418fdd2082137bf",
+  "repoUrl": "https://github.com/Rismahamja04/ootle-forge",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust template · JavaScript simulation · MIT",
+      "sourceUrl": "https://github.com/Rismahamja04/ootle-forge"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-ootle-forge-20261117.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-ootle-forge-20261117.jpg",
+    "capturedAt": "2026-11-17T14:30:11.634Z",
+    "sourceRevision": "9abf20fb0b42b5d168fa04719f0b6572fba95702",
+    "kind": "public-page",
+    "credit": "Docs walkthrough"
+  },
+  "discussionLinks": [
+    {
+      "url": "https://medium.com/@rismahamja01/ootle-forge-a-collectible-crafting-game-on-tari-ootle-november-build-contest-entry-3e6d3d9cd8f6",
+      "platform": "Medium"
+    }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:ootle-forge"
+  ],
+  "demoUrl": "https://rismahamja04.github.io/ootle-forge/"
+}

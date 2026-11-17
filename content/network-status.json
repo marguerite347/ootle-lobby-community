@@ -453,6 +453,28 @@
       "checkedAt": "2026-11-17T14:10:40.323938+00:00",
       "evidenceUrl": "https://github.com/zxuan001/tari-bounty-vault#readme",
       "evidence": "MIT-licensed bug-bounty escrow template source and walletless browser simulation. The proposed flow records report hashes, lets sponsors approve or reopen a bounty, and lets a fixed trusted referee resolve disputes; timeout refunds the sponsor. The referee still judges report validity. The current README explicitly says the template is unpublished on Esmeralda and mainnet, and its Live tab is a placeholder. November 17, 2026: server-side extraction of the linked demo returned empty content; the creator-provided simulation destination is retained, with the README as the source walkthrough. No wallet or template was executed."
+    },
+    {
+      "ref": "tari-ootle:component:public-grant-ledger",
+      "state": "unconfirmed",
+      "checkedAt": "2026-11-17T14:35:57.771225+00:00",
+      "evidenceUrl": "https://github.com/feitianbf751026-dotcom/tari-ootle-public-grant-ledger#readme",
+      "evidence": "BSD-3-Clause Rust reconciliation tool with a hosted read-only review page. It compares payment outcomes, assets, integer amounts and payees, keeping receipt provenance in CSV output. Its samples distinguish local-engine grant payments from archived Ootle mainnet auction proceeds and escrow funding; those archives do not establish a deployed grant contract. The README explicitly excludes wallet signing and on-chain deployment. November 17, 2026: server-side extraction returned the hosted review interface and its offline/read-only boundary. The recording is a walkthrough of the Chinese-language README, not an application run or independent verification of the archived receipts."
+    },
+    {
+      "ref": "tari-ootle:component:ootle-forge",
+      "state": "unconfirmed",
+      "checkedAt": "2026-11-17T14:35:57.771225+00:00",
+      "evidenceUrl": "https://github.com/Rismahamja04/ootle-forge#readme",
+      "evidence": "MIT-licensed collectible-crafting game source and walletless simulation. The proposed Rust template burns EMBER and a forge fee to mint tiered relics, combines three matching relics into a higher tier, and melts duplicates into materials. The admin-badge holder controls fee withdrawals. The README and hosted page explicitly say the template is unpublished on Esmeralda and mainnet. Simulation amounts and NFTs have no real value; creator engine-test claims remain attributed source statements. The source warns that its randomness is game-grade. This recording shows the README and deployment limits; no game or template was executed."
+    },
+    {
+      "ref": "tari-ootle:component:tari-arisan",
+      "state": "testnet",
+      "checkedAt": "2026-11-17T14:35:57.771225+00:00",
+      "evidenceUrl": "https://esme-indexer-a.ootle.tari.com/substates/component_fe42c4e6f21f2066cac7acdabb5fabcd9bd365af8aadd154ece22dd0d2f601e8",
+      "evidence": "MIT-licensed rotating savings-circle source with a walletless simulation and a documented Esmeralda deployment. Fixed members contribute each round; unpaid contributions become arrears, and a recipient in arrears misses that round's payout. The creator documents template f230b6fbe6409c10c8f3d9dbf47a722a0b7ab956d32ed5b57a1fd35e9e8399a5 and circle component_fe42c4e6f21f2066cac7acdabb5fabcd9bd365af8aadd154ece22dd0d2f601e8. November 17, 2026: the official Esmeralda indexer returned that circle as an up substate at version 3. The hosted page opens in simulation mode and its extracted live-mode instructions still contain older Phase 3 setup text; use the dated creator proof for deployment scope. No mainnet deployment is claimed. This README walkthrough does not demonstrate wallet interaction or independently replay the creator's payout tests.",
+      "testnetUrl": "https://itaro9110.github.io/tari-arisan/"
     }
   ]
 }
