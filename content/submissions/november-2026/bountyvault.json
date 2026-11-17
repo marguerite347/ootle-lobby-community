@@ -1,0 +1,38 @@
+{
+  "slug": "bountyvault",
+  "title": "BountyVault",
+  "creator": "notz",
+  "summary": "MIT-licensed bug-bounty escrow template source and walletless browser simulation. The proposed flow records report hashes, lets sponsors approve or reopen a bounty, and lets a fixed trusted referee resolve disputes; timeout refunds the sponsor. The referee still judges report validity. The current README explicitly says the template is unpublished on Esmeralda and mainnet, and its Live tab is a placeholder. November 17, 2026: server-side extraction of the linked demo returned empty content; the creator-provided simulation destination is retained, with the README as the source walkthrough. No wallet or template was executed.",
+  "cardSummary": "Explore bug-bounty escrow, sponsor decisions, fixed-referee disputes and timeout refunds through Rust source and a walletless browser simulation.",
+  "cardStatus": "Browser simulation · Rust source",
+  "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/23",
+  "publishedAt": "2026-11-15T22:10:26.571Z",
+  "updatedAt": "2026-11-15T22:10:26.571Z",
+  "sourceContentSha256": "f8bcaf4c3ad0b251caf51afbcaf7ef4da03bae9cab87e77eab092333ab027caa",
+  "repoUrl": "https://github.com/zxuan001/tari-bounty-vault",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust · Browser simulation · MIT",
+      "sourceUrl": "https://github.com/zxuan001/tari-bounty-vault"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-bountyvault-20261117.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-bountyvault-20261117.jpg",
+    "capturedAt": "2026-11-17T14:08:27.992Z",
+    "sourceRevision": "3e4e4e2f4ce1a98c6180a25b0c68ffa5d6b32530",
+    "kind": "public-page",
+    "credit": "Docs walkthrough"
+  },
+  "discussionLinks": [
+    {
+      "url": "https://medium.com/@Notzyou/bountyvault-bug-bounty-escrow-on-tari-ootle-november-build-contest-entry-6eed385c9700",
+      "platform": "Medium"
+    }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:bountyvault"
+  ],
+  "demoUrl": "https://zxuan001.github.io/tari-bounty-vault/"
+}

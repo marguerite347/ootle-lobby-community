@@ -1,0 +1,38 @@
+{
+  "slug": "arisan-circle",
+  "title": "Arisan Circle",
+  "creator": "buahrasa",
+  "summary": "MIT-licensed rotating savings-circle template source and walletless browser simulation. The creator describes fixed contributions and a full pot paid in member order after everyone contributes; late recipients wait until they pay. The hosted Indonesian-language page identifies itself as a simulation, and the README says it is disconnected from wallets and networks. No current Ootle deployment is established by these sources. The recording shows the README, including simulation scope. Creator test claims are attributed source statements; no template was executed here.",
+  "cardSummary": "Explore rotating savings contributions, late-member rules and sequential pot payouts through Rust source and a walletless browser simulation.",
+  "cardStatus": "Browser simulation · Rust source",
+  "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/22",
+  "publishedAt": "2026-11-15T22:10:14.409Z",
+  "updatedAt": "2026-11-15T22:10:14.409Z",
+  "sourceContentSha256": "b8433a772d5ffc644a01af516c2325538824ba0089ffeb4abf636741f3ef410c",
+  "repoUrl": "https://github.com/buahrasa01-hub/tari-arisan-circle",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust · Browser simulation · MIT",
+      "sourceUrl": "https://github.com/buahrasa01-hub/tari-arisan-circle"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-arisan-circle-20261117.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-arisan-circle-20261117.jpg",
+    "capturedAt": "2026-11-17T14:07:52.128Z",
+    "sourceRevision": "363ae2d7768d4b8154add60d83b9ac5de3238909",
+    "kind": "public-page",
+    "credit": "Docs walkthrough"
+  },
+  "discussionLinks": [
+    {
+      "url": "https://medium.com/@buahrasa01/arisan-circle-a-rotating-savings-circle-where-nobody-holds-the-money-c91d562d1e78",
+      "platform": "Medium"
+    }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:arisan-circle"
+  ],
+  "demoUrl": "https://buahrasa01-hub.github.io/tari-arisan-circle/"
+}
