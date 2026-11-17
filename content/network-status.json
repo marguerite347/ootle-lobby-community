@@ -439,6 +439,20 @@
         "observedAt": "2026-11-17T13:54:27.899727+00:00",
         "detail": "Current released hosted tool description offers mainnet browser fee comparisons and a PowerShell 7 CLI supporting mainnet and Esmeralda. This is a read-only utility, not a deployed smart-contract claim."
       }
+    },
+    {
+      "ref": "tari-ootle:component:arisan-circle",
+      "state": "unconfirmed",
+      "checkedAt": "2026-11-17T14:10:40.323938+00:00",
+      "evidenceUrl": "https://github.com/buahrasa01-hub/tari-arisan-circle#readme",
+      "evidence": "MIT-licensed rotating savings-circle template source and walletless browser simulation. The creator describes fixed contributions and a full pot paid in member order after everyone contributes; late recipients wait until they pay. The hosted Indonesian-language page identifies itself as a simulation, and the README says it is disconnected from wallets and networks. No current Ootle deployment is established by these sources. The recording shows the README, including simulation scope. Creator test claims are attributed source statements; no template was executed here."
+    },
+    {
+      "ref": "tari-ootle:component:bountyvault",
+      "state": "unconfirmed",
+      "checkedAt": "2026-11-17T14:10:40.323938+00:00",
+      "evidenceUrl": "https://github.com/zxuan001/tari-bounty-vault#readme",
+      "evidence": "MIT-licensed bug-bounty escrow template source and walletless browser simulation. The proposed flow records report hashes, lets sponsors approve or reopen a bounty, and lets a fixed trusted referee resolve disputes; timeout refunds the sponsor. The referee still judges report validity. The current README explicitly says the template is unpublished on Esmeralda and mainnet, and its Live tab is a placeholder. November 17, 2026: server-side extraction of the linked demo returned empty content; the creator-provided simulation destination is retained, with the README as the source walkthrough. No wallet or template was executed."
     }
   ]
 }
