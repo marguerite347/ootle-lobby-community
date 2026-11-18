@@ -1,0 +1,50 @@
+{
+  "slug": "public-grant-ledger",
+  "title": "Public Grant Ledger",
+  "creator": "feitianbf",
+  "summary": "BSD-3-Clause Rust reconciliation tool and hosted read-only reviewer. It compares approved payments with archived receipts, flags discrepancies and duplicate payments, and exports evidence-linked CSV rows. November 18, 2026: both official Ootle mainnet catalogues list its PublicGrant template at 098accfc8e69ea08ea14e676ad0973fc1ccd6f3d8f677d5bb4cfc144049562b0, epoch 38890, with matching binary hash and author key. This confirms published template code, not an executed grant payment. The creator’s demo distinguishes archived mainnet auction/escrow receipts from local-engine grant samples labeled local_demo. The transaction-proof endpoint returned HTTP 403 in this review; that receipt was not independently verified. The refreshed recording shows the current Chinese-language README and its deployment/sample boundaries. No wallet, signing or template execution was performed.",
+  "cardSummary": "Compare approved payments with archived transaction receipts, flag discrepancies and duplicate entries, and export evidence-linked reconciliation rows.",
+  "cardStatus": "Mainnet template · Read-only app",
+  "sourceUrl": "https://community.tari.com/t/november-bonus-contest-first-to-launch/521/17",
+  "publishedAt": "2026-11-18T00:55:34.286Z",
+  "updatedAt": "2026-11-18T00:55:34.286Z",
+  "sourceContentSha256": "04100123cd207b35457b53bb5af6e343cdcf98d423f2a1048170bacf836d907c",
+  "repoUrl": "https://github.com/feitianbf751026-dotcom/tari-ootle-public-grant-ledger",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust CLI · Read-only web interface · BSD-3-Clause",
+      "sourceUrl": "https://github.com/feitianbf751026-dotcom/tari-ootle-public-grant-ledger"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-public-grant-ledger-20261118.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-public-grant-ledger-20261118.png",
+    "capturedAt": "2026-11-18T14:13:33.056Z",
+    "sourceRevision": "18f0914eacc787de1832d763f1a565af7d2c831d",
+    "kind": "public-page",
+    "credit": "Docs walkthrough"
+  },
+  "discussionLinks": [
+    {
+      "url": "https://community.tari.com/t/november-build-contest-thread-mvp/520/24",
+      "platform": "Original November MVP submission"
+    },
+    {
+      "url": "https://www.reddit.com/r/tari/comments/1xyhxfk/public_grant_ledger_tari_ootle_november_mvp_entry/",
+      "platform": "Reddit"
+    },
+    {
+      "url": "https://bsky.app/profile/did:plc:ku2k2bt7z5lmacl5mrmfg7xk/post/3n2kcgohowv2q",
+      "platform": "Bluesky"
+    },
+    {
+      "url": "https://explorer.tari.mw/template/098accfc8e69ea08ea14e676ad0973fc1ccd6f3d8f677d5bb4cfc144049562b0",
+      "platform": "Mainnet template"
+    }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:public-grant-ledger"
+  ],
+  "demoUrl": "https://tari-ootle-dao-grant-audit.onrender.com/"
+}
