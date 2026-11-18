@@ -11,7 +11,7 @@
       "showcase": {
         "url": "https://seal-clubber.github.io/ootle-accord/#explore",
         "label": "Confirmed mainnet · Funding",
-        "summary": "Fund milestone escrows and inspect public approvals. Mainnet funding is confirmed; payout and refund flows remain unverified."
+        "summary": "Fund milestone escrows on Ootle mainnet and inspect the public approvals attached to each agreement."
       },
       "deploymentEvidence": {
         "url": "https://explorer.tari.mw/tx/f5d8b2dc047a6ddbb9f82801448e1128996812a2d97e0eec236ffdd5e3bc0745",
@@ -69,7 +69,7 @@
       "showcase": {
         "url": "https://signal-desk-ootle.vercel.app/",
         "label": "Mainnet live · Sealed calls",
-        "summary": "Browse sealed crypto calls on Ootle mainnet. Three sealed calls are verified; purchases, reveals and settlement remain unverified."
+        "summary": "Browse sealed crypto calls for Bitcoin, Ethereum and Solana, with public commitments recorded on Ootle mainnet."
       },
       "deploymentEvidence": {
         "url": "https://explorer.tari.mw/tx/76db72a097bd506d96eb9af187f2f224df15a36bd43fc341a77916648966f9e3",
@@ -100,7 +100,7 @@
       "showcase": {
         "url": "https://skydrop.tari.mw/",
         "label": "Confirmed mainnet · Deposits",
-        "summary": "Send Tari gifts to Bluesky accounts. Mainnet deposits and account linking are confirmed; recipient collection is still unverified."
+        "summary": "Create Tari gift deposits linked to Bluesky accounts and inspect their account bindings on Ootle mainnet."
       },
       "mainnetUrl": "https://skydrop.tari.mw/",
       "deploymentEvidence": {

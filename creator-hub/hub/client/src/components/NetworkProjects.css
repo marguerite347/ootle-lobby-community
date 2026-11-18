@@ -15,7 +15,7 @@
 .network-project-cover .media{border-radius:0;aspect-ratio:16/9}
 .network-project h3{font-size:1.4rem;line-height:1.25;letter-spacing:-.035em;margin:.65rem 0 .4rem}
 .network-project h3 a{color:var(--season-cloud)}
-.network-project h3 a:hover{color:var(--season-lime)}
+.network-project:is(:hover,:focus-within) h3,.network-project:is(:hover,:focus-within) h3 a{color:var(--season-lime)}
 .network-project>p{font-size:1rem;line-height:1.55;margin:.5rem 0 1rem;color:var(--season-muted)}
 .network-project-status{display:flex;flex-wrap:wrap;gap:.5rem;color:var(--season-lavender);font-size:.875rem;font-weight:600;line-height:1.5}
 .network-project .network-plan{font-size:.875rem}
