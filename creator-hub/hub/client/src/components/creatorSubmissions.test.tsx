@@ -23,7 +23,7 @@ import dnodeSubmissions from '../../../../../content/creator-submissions/dnode-m
 test('DNode source posts keep a separate heading, original links and organizer attribution', () => {
  const html=renderToStaticMarkup(<MemoryRouter><CreatorSubmissions feed={dnodeSubmissions} id="dnode-creator-submissions" title="DNode meme contest" description="Read creator entries at the source." judging="Selection stays with the contest organizers."/></MemoryRouter>);
  expect(html).toContain('DNode meme contest');
- for (const n of [13,14,15]) expect(html).toContain(`/531/${n}`);
+ for (const n of [14,15,16]) expect(html).toContain(`/531/${n}`);
  expect(html).toContain('Original post');
  expect(html).not.toContain('Judging stays with the Council.');
  expect(html).not.toContain('<video');
