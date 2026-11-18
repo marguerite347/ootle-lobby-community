@@ -8,6 +8,7 @@ import { readinessLabel, Spinner, EcosystemBadge, ReadinessBadge, VerificationBa
 import { MediaThumb } from '../media';
 import { recordingLabel } from '../components/ProjectCard';
 import './Detail.css';
+import networkStatus from '../../../../../content/network-status.json';
 
 export default function Detail() {
   const { id } = useParams();
@@ -27,6 +28,8 @@ export default function Detail() {
   if (err) return <div className="panel mt24">Resource not found. <Link to="/explore">Back to Explore</Link></div>;
   if (!r) return <Spinner />;
 
+  const reviewedNetwork = networkStatus.entries.find(entry => entry.ref === r.id);
+  const networkLabel = reviewedNetwork ? ({mainnet:'Ootle mainnet',testnet:'Esmeralda testnet',both:'Ootle mainnet / Esmeralda testnet',unconfirmed:'Unconfirmed'})[reviewedNetwork.state] : r.network;
   const sourceDiscussion = r.discussionLinks?.find(post => post.url === r.sourceUrl);
   const links: [string, string | null][] = [
     [r.demoUrl ? 'Website / demo' : sourceDiscussion ? `Discussion · ${sourceDiscussion.platform}` : 'Source reference', r.demoUrl || r.sourceUrl],
@@ -53,7 +56,7 @@ export default function Detail() {
           {r.sharedBy && <p className="resource-byline">Shared by <Link to={r.sharedBy.url || '/learn'}>{r.sharedBy.name}</Link></p>}
           {r.creator?.name && <p className="resource-byline">Created by {r.creator.url ? <ExternalLink href={safeHref(r.creator.url)}>{r.creator.name}</ExternalLink> : r.creator.name}</p>}
           <div className="resource-actions">
-            {r.type === 'starter' && <button className="btn primary" onClick={() => nav(`/create/project?template=${encodeURIComponent(r.id)}`)}>Use as a starting point →</button>}
+            {r.type === 'starter' && <button className="btn primary" onClick={() => nav(`/create/project?template=${encodeURIComponent(r.id)}`)}>Use as a starting point</button>}
             {links.filter(([, href], i, all) => href && all.findIndex(([, url]) => url === href) === i).map(([label, href]) => <ExternalLink key={label} href={safeHref(href!)}><span className="btn">{label}</span></ExternalLink>)}
           </div>
         </div>
@@ -103,7 +106,7 @@ export default function Detail() {
                   <h3>Start a project from this</h3>
                   <p className="muted mt8">Create a composable project seeded with this template. Save versions in Git and fork any saved revision (project configuration only — not a compiled or deployed game).</p>
                 </div>
-                <button className="btn primary" onClick={() => nav(`/create/project?template=${encodeURIComponent(r.id)}`)}>Use as base →</button>
+                <button className="btn primary" onClick={() => nav(`/create/project?template=${encodeURIComponent(r.id)}`)}>Use as base</button>
               </div>
             </div>
           )}
@@ -117,7 +120,7 @@ export default function Detail() {
             <h3>At a glance</h3>
             <dl className="kv mt8">
               <dt>Ecosystem</dt><dd>{r.ecosystem}{r.native ? ' (native)' : ''}</dd>
-              <dt>Network</dt><dd>{r.network || '—'}</dd>
+              <dt>Network</dt><dd>{networkLabel || '—'}</dd>
               <dt>{r.cardStatus ? 'Type / availability' : 'Readiness'}</dt><dd>{r.cardStatus || readinessLabel(r.readiness)}</dd>
               <dt>License</dt><dd>{r.license || 'Not specified. Check with the creator before reuse.'}</dd>
               <dt>Creator</dt><dd>{r.creator?.url ? <ExternalLink href={safeHref(r.creator.url)}>{r.creator.name}</ExternalLink> : (r.creator?.name || '—')}</dd>
