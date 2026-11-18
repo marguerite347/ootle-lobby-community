@@ -209,6 +209,10 @@
           "postNumber": 38,
           "url": "https://community.tari.com/t/september-contest-thread/324/38",
           "updatedAt": "2026-10-11T23:59:13.578Z"
+        },
+        {
+          "url": "https://github.com/chironbuilds/tari-wallet/releases/tag/android-v0.10.1",
+          "updatedAt": "2026-11-18T14:43:24Z"
         }
       ],
       "notes": "The result is reported in the linked official forum announcement. This records the announced placement; it does not establish prize payment or a security audit.",
