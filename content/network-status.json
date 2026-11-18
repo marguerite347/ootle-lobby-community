@@ -453,10 +453,16 @@
     },
     {
       "ref": "tari-ootle:component:public-grant-ledger",
-      "state": "unconfirmed",
-      "checkedAt": "2026-11-17T14:35:57.771225+00:00",
-      "evidenceUrl": "https://github.com/feitianbf751026-dotcom/tari-ootle-public-grant-ledger#readme",
-      "evidence": "BSD-3-Clause Rust reconciliation tool with a hosted read-only review page. It compares payment outcomes, assets, integer amounts and payees, keeping receipt provenance in CSV output. Its samples distinguish local-engine grant payments from archived Ootle mainnet auction proceeds and escrow funding; those archives do not establish a deployed grant contract. The README explicitly excludes wallet signing and on-chain deployment. November 17, 2026: server-side extraction returned the hosted review interface and its offline/read-only boundary. The recording is a walkthrough of the Chinese-language README, not an application run or independent verification of the archived receipts."
+      "state": "mainnet",
+      "checkedAt": "2026-11-18T14:14:59.581988+00:00",
+      "evidenceUrl": "https://community.tari.com/t/november-bonus-contest-first-to-launch/521/17",
+      "evidence": "BSD-3-Clause Rust reconciliation tool and hosted read-only reviewer. It compares approved payments with archived receipts, flags discrepancies and duplicate payments, and exports evidence-linked CSV rows. November 18, 2026: both official Ootle mainnet catalogues list its PublicGrant template at 098accfc8e69ea08ea14e676ad0973fc1ccd6f3d8f677d5bb4cfc144049562b0, epoch 38890, with matching binary hash and author key. This confirms published template code, not an executed grant payment. The creator’s demo distinguishes archived mainnet auction/escrow receipts from local-engine grant samples labeled local_demo. The transaction-proof endpoint returned HTTP 403 in this review; that receipt was not independently verified. The refreshed recording shows the current Chinese-language README and its deployment/sample boundaries. No wallet, signing or template execution was performed.",
+      "mainnetUrl": "https://explorer.tari.mw/template/098accfc8e69ea08ea14e676ad0973fc1ccd6f3d8f677d5bb4cfc144049562b0",
+      "deploymentEvidence": {
+        "url": "https://indexer-a.ootle.tari.com/templates/catalogue?limit=100",
+        "observedAt": "2026-11-18T14:01:34.363Z",
+        "detail": "Both official mainnet indexer catalogues list PublicGrant 098accfc8e69ea08ea14e676ad0973fc1ccd6f3d8f677d5bb4cfc144049562b0 at epoch 38890 with matching binary hash 9fcc4eb7e337aeac3f3f70161fc322a56d9bb7504ca4b819486d3795b3fedc3e and author key. Template publication only; demo grant execution remains local."
+      }
     },
     {
       "ref": "tari-ootle:component:ootle-forge",

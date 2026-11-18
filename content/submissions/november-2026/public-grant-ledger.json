@@ -2,13 +2,13 @@
   "slug": "public-grant-ledger",
   "title": "Public Grant Ledger",
   "creator": "feitianbf",
-  "summary": "BSD-3-Clause Rust reconciliation tool with a hosted read-only review page. It compares payment outcomes, assets, integer amounts and payees, keeping receipt provenance in CSV output. Its samples distinguish local-engine grant payments from archived Ootle mainnet auction proceeds and escrow funding; those archives do not establish a deployed grant contract. The README explicitly excludes wallet signing and on-chain deployment. November 17, 2026: server-side extraction returned the hosted review interface and its offline/read-only boundary. The recording is a walkthrough of the Chinese-language README, not an application run or independent verification of the archived receipts.",
+  "summary": "BSD-3-Clause Rust reconciliation tool and hosted read-only reviewer. It compares approved payments with archived receipts, flags discrepancies and duplicate payments, and exports evidence-linked CSV rows. November 18, 2026: both official Ootle mainnet catalogues list its PublicGrant template at 098accfc8e69ea08ea14e676ad0973fc1ccd6f3d8f677d5bb4cfc144049562b0, epoch 38890, with matching binary hash and author key. This confirms published template code, not an executed grant payment. The creator’s demo distinguishes archived mainnet auction/escrow receipts from local-engine grant samples labeled local_demo. The transaction-proof endpoint returned HTTP 403 in this review; that receipt was not independently verified. The refreshed recording shows the current Chinese-language README and its deployment/sample boundaries. No wallet, signing or template execution was performed.",
   "cardSummary": "Compare approved payments with archived transaction receipts, flag discrepancies and duplicate entries, and export evidence-linked reconciliation rows.",
-  "cardStatus": "Read-only web app · Rust CLI",
+  "cardStatus": "Mainnet template · Read-only app",
   "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/24",
   "publishedAt": "2026-11-17T14:09:10.045Z",
-  "updatedAt": "2026-11-17T14:09:10.045Z",
-  "sourceContentSha256": "f0542c2ec72d5042bbcd125c2abd4ccf79f851a89f48582a9e2ca0e5feaa6351",
+  "updatedAt": "2026-11-18T00:49:10.858Z",
+  "sourceContentSha256": "f602e24901ef1a02253544801281550e47d5b5013b71d8cdbb8991d3a06192b5",
   "repoUrl": "https://github.com/feitianbf751026-dotcom/tari-ootle-public-grant-ledger",
   "ecosystem": "tari-ootle",
   "technologies": [
@@ -18,10 +18,10 @@
     }
   ],
   "recording": {
-    "url": "https://lobby.tari.com/previews/community/resource-public-grant-ledger-20261117.mp4",
-    "posterUrl": "https://lobby.tari.com/previews/community/resource-public-grant-ledger-20261117.jpg",
-    "capturedAt": "2026-11-17T14:31:24.322Z",
-    "sourceRevision": "3af533b6bf3c14a9a9a5cc277f1d930e2e1b26b9",
+    "url": "https://lobby.tari.com/previews/community/resource-public-grant-ledger-20261118.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-public-grant-ledger-20261118.png",
+    "capturedAt": "2026-11-18T14:13:33.056Z",
+    "sourceRevision": "18f0914eacc787de1832d763f1a565af7d2c831d",
     "kind": "public-page",
     "credit": "Docs walkthrough"
   },
@@ -29,6 +29,18 @@
     {
       "url": "https://www.reddit.com/r/tari/comments/1xyhxfk/public_grant_ledger_tari_ootle_november_mvp_entry/",
       "platform": "Reddit"
+    },
+    {
+      "url": "https://community.tari.com/t/november-bonus-contest-first-to-launch/521/17",
+      "platform": "First to Launch announcement"
+    },
+    {
+      "url": "https://bsky.app/profile/did:plc:ku2k2bt7z5lmacl5mrmfg7xk/post/3n2kcgohowv2q",
+      "platform": "Bluesky"
+    },
+    {
+      "url": "https://explorer.tari.mw/template/098accfc8e69ea08ea14e676ad0973fc1ccd6f3d8f677d5bb4cfc144049562b0",
+      "platform": "Mainnet template"
     }
   ],
   "resourceIds": [
