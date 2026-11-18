@@ -62,6 +62,10 @@
     {
       "url": "https://explorer.tari.mw/template/494d34a5f55bcef614655c9f8b7fdcb672f1d086467fc96816c0a93a4a5c8472",
       "platform": "Ootle mainnet template"
+    },
+    {
+      "url": "https://www.reddit.com/r/tari/comments/1xus72v/hidebox_is_on_ootle_mainnet_sell_encrypted_files/",
+      "platform": "Reddit mainnet beta announcement"
     }
   ],
   "resourceIds": [
