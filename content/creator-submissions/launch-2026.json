@@ -245,23 +245,24 @@
           "title": "wXTM on Uniswap: creator tutorial discussion",
           "format": "Reddit follow-up",
           "url": "https://www.reddit.com/r/tari/comments/1xwunxa/heres_how_you_can_buy_xtm_from_anywhere_in_the/"
-        }
-      ],
-      "note": "Later follow-up posts are reading links, not additional launch-contest entries. Market commentary is the creator’s opinion; linked media stays at its original source.",
-      "discussionLinks": [
+        },
         {
-          "label": "Creator’s linked original X post",
+          "title": "Confidentiality skit: linked original",
+          "format": "X source",
           "url": "https://x.com/DNodeCapital/status/2122990288431968660"
         },
         {
-          "label": "Creator’s linked original X post",
+          "title": "Demand and supply commentary: linked original",
+          "format": "X source",
           "url": "https://x.com/DNodeCapital/status/2122269042090410398"
         },
         {
-          "label": "Creator’s linked original X post",
+          "title": "wXTM tutorial: linked original",
+          "format": "X source",
           "url": "https://x.com/DNodeCapital/status/2121945396457148420"
         }
-      ]
+      ],
+      "note": "Later follow-up posts are reading links, not additional launch-contest entries. Market commentary is the creator’s opinion; linked media stays at its original source."
     },
     {
       "id": "creator-503-15",
