@@ -200,7 +200,7 @@
     {
       "id": "creator-503-14",
       "creator": "Digital Node Capital",
-      "title": "Private stablecoins & the Turbine",
+      "title": "DNC’s Tari explainers and follow-ups",
       "sourceUrl": "https://community.tari.com/t/ootle-launch-event-creator-contest/503/14",
       "publishedAt": "2026-11-01T12:31:15.482Z",
       "updatedAt": "2026-11-02T00:01:49.066Z",
@@ -230,9 +230,39 @@
           "title": "The Turbine Model: burn-and-mint design",
           "format": "Reddit",
           "url": "https://www.reddit.com/r/CryptoTechnology/comments/1xl8nrz/taris_turbine_model_a_burnandmint_design_linking/"
+        },
+        {
+          "title": "Default confidentiality: creator skit discussion",
+          "format": "Reddit follow-up",
+          "url": "https://www.reddit.com/r/tari/comments/1xzbbck/ledgers_ceo_says_everyone_will_eventually_be/"
+        },
+        {
+          "title": "XTM demand and supply: creator commentary",
+          "format": "Reddit follow-up",
+          "url": "https://www.reddit.com/r/tari/comments/1xxlr6n/the_demand_and_supply_side_catalysts_lining_up/"
+        },
+        {
+          "title": "wXTM on Uniswap: creator tutorial discussion",
+          "format": "Reddit follow-up",
+          "url": "https://www.reddit.com/r/tari/comments/1xwunxa/heres_how_you_can_buy_xtm_from_anywhere_in_the/"
+        },
+        {
+          "title": "Confidentiality skit: linked original",
+          "format": "X source",
+          "url": "https://x.com/DNodeCapital/status/2122990288431968660"
+        },
+        {
+          "title": "Demand and supply commentary: linked original",
+          "format": "X source",
+          "url": "https://x.com/DNodeCapital/status/2122269042090410398"
+        },
+        {
+          "title": "wXTM tutorial: linked original",
+          "format": "X source",
+          "url": "https://x.com/DNodeCapital/status/2121945396457148420"
         }
       ],
-      "note": null
+      "note": "Later follow-up posts are reading links, not additional launch-contest entries. Market commentary is the creator’s opinion; linked media stays at its original source."
     },
     {
       "id": "creator-503-15",
