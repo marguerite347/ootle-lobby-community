@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-17T19:12:46.830Z",
+  "checkedAt": "2026-11-18T14:01:34.363Z",
   "guides": {
     "docs/developer-docs/src/content/docs/guides/agent-api-keys.mdx": {
-      "sha": "458bd24f1cb0eb420049226331161de1df5987db",
+      "sha": "79646e951e16d41ce6aa5eadf3bbd4138809c731",
       "url": "https://ootle.tari.com/guides/agent-api-keys/"
     },
     "docs/developer-docs/src/content/docs/guides/authorization-and-access.mdx": {
@@ -96,7 +96,8 @@
     "sourceContentSha256": "9ae8f5780e234d0e15fdfed1fafd66231c72719e90cf6efec30c560186f08bfd"
   },
   "communityGuides": {
+    "522": "833fe36cb00db0a2055f8e739d46721f7806ef353ee726510383c81f6832ff7a",
     "643": "6ed4ab74f0e4a5e96df22677b4163a2fd024694ddf142505074d346be5e38355"
   },
-  "communityGuidesCheckedAt": "2026-11-17T19:12:46.830Z"
+  "communityGuidesCheckedAt": "2026-11-18T14:01:34.363Z"
 }

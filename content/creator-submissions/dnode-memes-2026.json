@@ -220,6 +220,25 @@
       "note": null,
       "discussionLinks": [],
       "sourceContentSha256": "860c2ff12f0b5dc44d002e506a414e7e755041669f0c07e0f171396628c29a66"
+    },
+    {
+      "id": "creator-531-16",
+      "creator": "kenichi",
+      "title": "Mining Tari from Lagos",
+      "sourceUrl": "https://community.tari.com/t/make-me-laugh-win-75k-xtm-100/531/16",
+      "publishedAt": "2026-11-18T13:32:40.580Z",
+      "updatedAt": "2026-11-18T13:32:40.580Z",
+      "resourceIds": [],
+      "works": [
+        {
+          "title": "Mining Tari from Lagos",
+          "format": "Forum post",
+          "url": "https://community.tari.com/t/make-me-laugh-win-75k-xtm-100/531/16"
+        }
+      ],
+      "note": null,
+      "discussionLinks": [],
+      "sourceContentSha256": "a10d988e760d6498519b3d3db70569feaf79e79a3f3c17edb83b91f380d3e421"
     }
   ]
 }
