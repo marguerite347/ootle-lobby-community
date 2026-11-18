@@ -391,6 +391,12 @@
         "url": "https://indexer-a.ootle.tari.com/templates/catalogue?limit=100",
         "observedAt": "2026-11-18T15:50:16.663313+00:00",
         "detail": "Both official mainnet catalogues match SpecterReportReceipt address 9b41600aec8aaefb3c66e00567a060cafbb1e51fb4a904074f4faaabff6cb725, author da8b317049487cc2097430891b3d6761c6d693e61bdd7ee3ccc2e0f3c17f222c, binary hash 27c16be6367eabd4b314eeedbb22349bc1be8fba248cac678a68e1971bc3161c and epoch 38460 against the creator deployment manifest. Template publication only."
+      },
+      "showcase": {
+        "label": "Mainnet template · Transaction inspector",
+        "actionLabel": "View template",
+        "url": "https://explorer.tari.mw/template/9b41600aec8aaefb3c66e00567a060cafbb1e51fb4a904074f4faaabff6cb725",
+        "summary": "Inspect public transaction fields and compare report evidence, with optional report-hash receipts described by the creator."
       }
     },
     {
