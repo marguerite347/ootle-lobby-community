@@ -270,7 +270,7 @@
       "ecosystem": "tari-ootle",
       "group": "Guides",
       "title": "Official docs & agent setup",
-      "summary": "Read official developer guides and the machine-readable documentation index. The index and agent API-key guide were accessible on October 11, 2026. The linked skill index and Codex skill returned 404 on October 11, following 404 and 403 observations on October 10; their last successful review date is retained. The same two skill URLs returned 404 on October 12; the index and API-key guide remain accessible.",
+      "summary": "Read official developer guides and the machine-readable documentation index. The index and agent API-key guide were accessible on October 11, 2026. The linked skill index and Codex skill returned 404 on October 11, following 404 and 403 observations on October 10; their last successful review date is retained. The same two skill URLs returned 404 on October 12; the index and API-key guide remain accessible. November 18, 2026: reviewed the updated API-key guide at Git blob 79646e951e16d41ce6aa5eadf3bbd4138809c731. It documents optional expiry, least-privilege scopes, and an interactive WebAuthn user session for creating, listing or revoking keys; even Admin-scoped API keys cannot manage other keys. The existing dated recording remains a general documentation walkthrough. No credential or wallet operation was performed.",
       "status": "Official documentation",
       "sourceUrl": "https://ootle.tari.com/llms.txt",
       "repoUrl": null,
@@ -282,7 +282,7 @@
       "license": null,
       "network": "Ootle L2",
       "platform": null,
-      "upstreamRevision": "d3967ba75429b439bba0b237706272043e8048f4509b285dc84469f6f3da6464",
+      "upstreamRevision": "79646e951e16d41ce6aa5eadf3bbd4138809c731",
       "sourceUpdatedAt": null,
       "lastCheckedAt": "2026-10-31T14:00:56.589Z",
       "verification": "source-attested",
@@ -305,7 +305,8 @@
         }
       ],
       "cardSummary": "Find official guidance for Ootle templates, transactions, wallets and agent setup.",
-      "cardStatus": "Docs"
+      "cardStatus": "Docs",
+      "lastAttemptAt": "2026-11-18T14:07:12.602340+00:00"
     },
     {
       "id": "tari-ootle:component:ootle-ts",
@@ -5546,6 +5547,55 @@
       },
       "lastCheckedAt": null,
       "demoUrl": "https://itaro9110.github.io/tari-arisan/"
+    },
+    {
+      "id": "tari-ootle:component:piecework",
+      "key": "piecework",
+      "type": "component",
+      "ecosystem": "tari-ootle",
+      "group": "Community projects",
+      "title": "PieceWork",
+      "summary": "MIT-licensed Rust milestone-escrow template source with a walletless browser simulation. The creator describes a fixed payee, client funding and approval, payee delivery marking, and refunds of unreleased funds after an epoch deadline. November 18, 2026: the public README explicitly says the template is unpublished on Esmeralda and mainnet, and the simulation uses pretend balances. The creator reports engine tests; no code, wallet or transaction was run here. The linked demo could not be extracted by the server-side reader in this review. This recording is a continuous walkthrough of the public README.",
+      "status": "Source code · Simulation",
+      "cardStatus": "Source code · Simulation",
+      "cardSummary": "Model freelance milestone payments with client approval, fixed payees and refunds for unreleased funds after the agreement deadline.",
+      "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/27",
+      "repoUrl": "https://github.com/tegar07257/piecework",
+      "docsUrl": "https://github.com/tegar07257/piecework#readme",
+      "creator": {
+        "name": "tegar07257",
+        "url": "https://github.com/tegar07257"
+      },
+      "license": "MIT",
+      "network": "Ootle template source; walletless simulation",
+      "platform": "Rust · Browser simulation",
+      "upstreamRevision": "5241b3c108765374a7d31921868231a69167fff1",
+      "sourceUpdatedAt": "2026-11-18T05:36:23.303Z",
+      "lastAttemptAt": "2026-11-18T14:07:12.602340+00:00",
+      "verification": "source-attested",
+      "readiness": "conceptual",
+      "tags": [
+        "ecosystem-resources",
+        "piecework"
+      ],
+      "discussionLinks": [
+        {
+          "url": "https://community.tari.com/t/november-build-contest-thread-mvp/520/27",
+          "platform": "Tari Community forum",
+          "context": "Original November MVP submission"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=Qg4zfUy4w5E",
+          "platform": "YouTube announcement"
+        }
+      ],
+      "preview": {
+        "video": "https://lobby.tari.com/previews/community/resource-piecework-20261118.mp4",
+        "image": "https://lobby.tari.com/previews/community/resource-piecework-20261118.png",
+        "source": "Docs walkthrough"
+      },
+      "lastCheckedAt": null,
+      "demoUrl": "https://tegar07257.github.io/piecework/"
     }
   ],
   "opportunities": [

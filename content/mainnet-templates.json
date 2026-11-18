@@ -1,6 +1,6 @@
 {
   "network": "mainnet",
-  "checkedAt": "2026-11-17T19:04:56.458Z",
+  "checkedAt": "2026-11-18T14:01:34.363Z",
   "sources": [
     "https://indexer-a.ootle.tari.com/templates/catalogue?limit=100",
     "https://indexer-b.ootle.tari.com/templates/catalogue?limit=100"
@@ -59,6 +59,15 @@
       "binaryHash": "f86dcd7a75c8bded2c62e1ad0ebdd26b37f2b5b60349e25c1530d4c329a4e7ba",
       "authorPublicKey": "0000000000000000000000000000000000000000000000000000000000000000",
       "project": "Ootle protocol"
+    },
+    {
+      "name": "PublicGrant",
+      "address": "098accfc8e69ea08ea14e676ad0973fc1ccd6f3d8f677d5bb4cfc144049562b0",
+      "epoch": 38890,
+      "kind": "community",
+      "binaryHash": "9fcc4eb7e337aeac3f3f70161fc322a56d9bb7504ca4b819486d3795b3fedc3e",
+      "authorPublicKey": "70b06443297e340257c4cd21f17586735a43f7ef57310177abe2984a581e406b",
+      "project": "Public Grant Ledger"
     },
     {
       "name": "SapientEscrow",

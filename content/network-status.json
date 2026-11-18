@@ -472,6 +472,13 @@
       "evidenceUrl": "https://esme-indexer-a.ootle.tari.com/substates/component_fe42c4e6f21f2066cac7acdabb5fabcd9bd365af8aadd154ece22dd0d2f601e8",
       "evidence": "MIT-licensed rotating savings-circle source with a walletless simulation and a documented Esmeralda deployment. Fixed members contribute each round; unpaid contributions become arrears, and a recipient in arrears misses that round's payout. The creator documents template f230b6fbe6409c10c8f3d9dbf47a722a0b7ab956d32ed5b57a1fd35e9e8399a5 and circle component_fe42c4e6f21f2066cac7acdabb5fabcd9bd365af8aadd154ece22dd0d2f601e8. November 17, 2026: the official Esmeralda indexer returned that circle as an up substate at version 3. The hosted page opens in simulation mode and its extracted live-mode instructions still contain older Phase 3 setup text; use the dated creator proof for deployment scope. No mainnet deployment is claimed. This README walkthrough does not demonstrate wallet interaction or independently replay the creator's payout tests.",
       "testnetUrl": "https://itaro9110.github.io/tari-arisan/"
+    },
+    {
+      "ref": "tari-ootle:component:piecework",
+      "state": "unconfirmed",
+      "checkedAt": "2026-11-18T14:07:12.602340+00:00",
+      "evidenceUrl": "https://github.com/tegar07257/piecework#readme",
+      "evidence": "MIT-licensed Rust milestone-escrow template source with a walletless browser simulation. The creator describes a fixed payee, client funding and approval, payee delivery marking, and refunds of unreleased funds after an epoch deadline. November 18, 2026: the public README explicitly says the template is unpublished on Esmeralda and mainnet, and the simulation uses pretend balances. The creator reports engine tests; no code, wallet or transaction was run here. The linked demo could not be extracted by the server-side reader in this review. This recording is a continuous walkthrough of the public README."
     }
   ]
 }
