@@ -462,6 +462,12 @@
         "url": "https://indexer-a.ootle.tari.com/templates/catalogue?limit=100",
         "observedAt": "2026-11-18T14:01:34.363Z",
         "detail": "Both official mainnet indexer catalogues list PublicGrant 098accfc8e69ea08ea14e676ad0973fc1ccd6f3d8f677d5bb4cfc144049562b0 at epoch 38890 with matching binary hash 9fcc4eb7e337aeac3f3f70161fc322a56d9bb7504ca4b819486d3795b3fedc3e and author key. Template publication only; demo grant execution remains local."
+      },
+      "showcase": {
+        "url": "https://explorer.tari.mw/template/098accfc8e69ea08ea14e676ad0973fc1ccd6f3d8f677d5bb4cfc144049562b0",
+        "label": "Mainnet template · Read-only app",
+        "summary": "Compare approved payments with archived transaction receipts, flag discrepancies and duplicate entries, and export evidence-linked reconciliation rows.",
+        "actionLabel": "View template"
       }
     },
     {
