@@ -546,6 +546,13 @@
       "evidence": "November 19 current README describes a source-only educational app with local sender/recipient simulations and a public Esmeralda indexer feed. No live payment or mainnet deployment is established.",
       "testnetUrl": "https://github.com/penielgold-hub/Ghost-Lantern/blob/main/README.md",
       "actionLabel": "Open source"
+    },
+    {
+      "ref": "tari-ootle:app:tari-l1-web-wallet",
+      "state": "unconfirmed",
+      "checkedAt": "2026-11-19T19:34:59.674203+00:00",
+      "evidenceUrl": "https://github.com/chironbuilds/tari-l1-wallet-ui/blob/2277575fb0f2a5f6abee78f3528e80a67d9053fb/src/ootle/index.ts",
+      "evidence": "Current source maps Ootle accounts to mainnet and Esmeralda. The public landing page confirms Tari L1 MainNet and Esmeralda creation/import choices, while the README retains pre-launch wording. No current deployed Ootle network or mainnet-claim behavior is established; source configuration alone is not deployment evidence."
     }
   ]
 }
