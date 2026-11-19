@@ -521,6 +521,13 @@
       "evidence": "Current repository README scopes the backend to Esmeralda with Ootle v0.47-era pins; no mainnet deployment evidence or release is supplied.",
       "testnetUrl": "https://github.com/tari-project/cw_tari_ootle_wallet",
       "actionLabel": "Open source"
+    },
+    {
+      "ref": "tari-ootle:component:poolsplit",
+      "state": "unconfirmed",
+      "checkedAt": "2026-11-19T14:14:49.404631+00:00",
+      "evidenceUrl": "https://github.com/Darkernity/poolsplit#readme",
+      "evidence": "Current README describes off-chain Python and walletless browser calculations with no chain calls. Ootle template port is planned; no Ootle deployment is claimed."
     }
   ]
 }
