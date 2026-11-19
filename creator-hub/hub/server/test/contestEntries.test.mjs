@@ -9,7 +9,9 @@ test('all fourteen reviewed submissions have unique profiles and attributed crea
  assert.equal(records.length,14);
  assert.equal(new Set(records.map(record=>record.id)).size,14);
  const shadow=records.find(record=>record.id===original.id);
- assert.equal(shadow.summary,original.summary);
+ assert.ok(shadow.summary.startsWith(original.summary));
+ assert.match(shadow.summary,/November 19, 2026:/);
+ assert.equal(withContestEntries(records).find(record=>record.id===original.id).summary,shadow.summary,'enrichment adds the dated note only once');
  assert.equal(shadow.contest.socialUrl,null);
  assert.equal(shadow.contest.paymentAddressPresent,true);
  assert.equal(contestCreators.length,12);

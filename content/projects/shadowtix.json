@@ -1,7 +1,7 @@
 {
   "id": "tari-ootle:app:shadowtix",
   "title": "ShadowTix",
-  "summary": "An event ticketing platform built on Tari Ootle. ShadowTix provides a public event catalogue, on-chain ticket purchases, QR-based door check-in, refunds, and a capped resale market. Independent community-built project — not production-ready. November 19, 2026: the current creator README still identifies Esmeralda testnet. Server-side extraction of the public app returned no text, so this source review does not establish current app availability or a mainnet deployment.",
+  "summary": "An event ticketing platform built on Tari Ootle. ShadowTix provides a public event catalogue, on-chain ticket purchases, QR-based door check-in, refunds, and a capped resale market. Independent community-built project \u2014 not production-ready.",
   "technologies": [
     {
       "label": "TicketingPlatform",
@@ -13,5 +13,6 @@
     }
   ],
   "cardSummary": "Explore on-chain event tickets, QR check-in, refunds and capped resale on Tari Ootle.",
-  "cardStatus": "Testnet · Experimental"
+  "cardStatus": "Testnet \u00b7 Experimental",
+  "reviewNote": "November 19, 2026: the current creator README still identifies Esmeralda testnet. Server-side extraction of the public app returned no text, so this source review does not establish current app availability or a mainnet deployment."
 }

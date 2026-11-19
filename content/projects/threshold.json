@@ -1,7 +1,7 @@
 {
   "id": "tari-ootle:app:threshold",
   "title": "Threshold",
-  "summary": "Configurable community funding with sponsor matching, milestones and reviewer approvals. November 19, 2026: the current public site describes a walletless simulation. Its recorded contract demonstrations used the former Esmeralda testnet; additional funding templates remain proofs of concept. Released payments cannot be recovered. No current mainnet deployment is established by these sources.",
+  "summary": "Configurable community funding with sponsor matching, milestones and reviewer approvals.",
   "technologies": [
     {
       "label": "Threshold template",
@@ -13,5 +13,6 @@
     }
   ],
   "cardSummary": "Explore community funding, sponsor matching and milestone approvals through a walletless simulation and Rust contract source.",
-  "cardStatus": "Simulation · Historical testnet"
+  "cardStatus": "Simulation \u00b7 Historical testnet",
+  "reviewNote": "November 19, 2026: the current public site describes a walletless simulation. Its recorded contract demonstrations used the former Esmeralda testnet; additional funding templates remain proofs of concept. Released payments cannot be recovered. No current mainnet deployment is established by these sources."
 }

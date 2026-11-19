@@ -1,7 +1,7 @@
 {
   "id": "tari-ootle:app:threshold-bounties",
   "title": "Bounties powered by Threshold",
-  "summary": "Reviewer-approved GitHub bounty escrow with a historical Ootle testnet proof archive. November 19, 2026: the public archive explicitly preserves five synthetic components recorded on September 30 before the Esmeralda reset. Its balances and reviewer identities are historical demo data. This is an independent proposal, not an official Tari bounty program or current-chain funding.",
+  "summary": "Reviewer-approved GitHub bounty escrow with a historical Ootle testnet proof archive.",
   "technologies": [
     {
       "label": "BountyEscrow template",
@@ -13,5 +13,6 @@
     }
   ],
   "cardSummary": "Inspect council-reviewed GitHub bounty escrows and saved transaction proofs from the former Esmeralda testnet.",
-  "cardStatus": "Historical testnet archive"
+  "cardStatus": "Historical testnet archive",
+  "reviewNote": "November 19, 2026: the public archive explicitly preserves five synthetic components recorded on September 30 before the Esmeralda reset. Its balances and reviewer identities are historical demo data. This is an independent proposal, not an official Tari bounty program or current-chain funding."
 }

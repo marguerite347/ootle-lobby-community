@@ -1,9 +1,10 @@
 import {readFileSync} from 'node:fs';
+import {withProjectReviewNote} from '../shared/projectReview.mjs';
 import {makeResource} from './model.mjs';
 export const contestRegistry = JSON.parse(readFileSync(new URL('../data/contests/september-2026.json', import.meta.url), 'utf8'));
 const cardCopy = new Map(contestRegistry.entries.map(entry => {
   const project=JSON.parse(readFileSync(new URL(`../../../content/projects/${entry.id.replace('tari-ootle:app:','')}.json`,import.meta.url),'utf8'));
-  return [entry.id,{cardSummary:project.cardSummary,cardStatus:project.cardStatus}];
+  return [entry.id,{cardSummary:project.cardSummary,cardStatus:project.cardStatus,reviewNote:project.reviewNote}];
 }));
 // A creator may submit multiple distinct projects to the same contest.
 const creatorsById = new Map();
@@ -28,7 +29,8 @@ export function withContestEntries(records) {
       readiness:'conceptual', network:entry.network || 'Ootle testnet (submission-reported)',
       setupHint:'Read the source repository setup and testnet requirements. This imported profile does not deploy or verify the application.',
     });
-    merged.set(entry.id, {...resource, ...cardCopy.get(entry.id), repoUrl:entry.repoUrl, demoUrl:entry.demoUrl || resource.demoUrl,
+    const {reviewNote,...cardFields}=cardCopy.get(entry.id);
+    merged.set(entry.id, {...resource, ...cardFields, summary:withProjectReviewNote(resource.summary,reviewNote), repoUrl:entry.repoUrl, demoUrl:entry.demoUrl || resource.demoUrl,
       license:entry.license || resource.license, tags:[...new Set([...(resource.tags||[]),'september-contest-2026'])],
       creator:{name:entry.creator,url:`/creators/${entry.creatorId}`},
       contest:{...entry,checkedAt:contestRegistry.checkedAt,edition:'September 2026',rulesUrl:'https://community.tari.com/t/ootle-launch-date-and-launch-contest-rules/323',status:entry.status || 'Imported submission; result not recorded'},
