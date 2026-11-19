@@ -11,6 +11,7 @@ test('rejects injected links, markup, duplicate ids and unsupported fields', () 
     const value=project();value.technologies[0].sourceUrl=url;assert.throws(()=>validateProjects([value]));
   }
   assert.throws(()=>validateProjects([{...project(),summary:'<script>alert(1)</script>'}]));
+  assert.throws(()=>validateProjects([{...project(),reviewNote:'<script>alert(1)</script>'}]));
   assert.throws(()=>validateProjects([project(),project()]));
   assert.throws(()=>validateProjects([{...project(),stars:1000}]));
   assert.throws(()=>validateFeed({schemaVersion:1,revision:'main',publishedAt:'bad',projects:[project()]}));
