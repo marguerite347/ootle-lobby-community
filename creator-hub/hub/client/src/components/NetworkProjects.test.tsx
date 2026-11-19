@@ -84,3 +84,11 @@ test('the header reflects reviewed mainnet evidence instead of the expired launc
  const testnet=renderToStaticMarkup(<MemoryRouter><NetworkProjects initialNetwork="testnet"/></MemoryRouter>);
  expect(testnet).not.toContain('Published mainnet templates');
  });
+
+test('source-only community links are not presented as original announcements and platform limits remain visible',()=>{
+ const selected=[{...entries[0],ref:'community:ghost-lantern'},{...entries[0],ref:'community:clew'}];
+ const html=renderToStaticMarkup(<MemoryRouter><NetworkProjects entries={selected} initialNetwork="testnet"/></MemoryRouter>);
+ expect(html).toContain('href="https://github.com/penielgold-hub/Ghost-Lantern" target="_blank" rel="noreferrer">Source</a>');
+ expect(html).toContain('macOS 14+');expect(html).toContain('Not notarized');
+ expect(html).toContain('href="https://community.tari.com/t/clew-a-small-private-tari-wallet-for-mac/424" target="_blank" rel="noreferrer">Original post</a>');
+});

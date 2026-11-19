@@ -11,7 +11,7 @@ import {ResourceCardMedia, type CardMediaResource} from '../ui';
 import CollapsibleProjects from './CollapsibleProjects';
 import './ContestHologram.css';
 
-type CatalogItem={preview?:CardMediaResource['preview'];media?:{image:string;video:string;label:string};recording?:{url:string;posterUrl:string;credit:string};id?:string;slug?:string;title:string;cardSummary?:string;summary:string;type?:string;sourceUrl:string;discussionLinks?:{url:string}[];creator:string|{name:string};};
+type CatalogItem={preview?:CardMediaResource['preview'];media?:{image:string;video:string;label:string};recording?:{url:string;posterUrl:string;credit:string};id?:string;slug?:string;title:string;cardSummary?:string;summary:string;type?:string;sourceUrl:string;sourceLabel?:string;cardStatus?:string;discussionLinks?:{url:string}[];creator:string|{name:string};};
 const community=import.meta.glob<CatalogItem>('../../../../../content/community-projects/*.json',{eager:true,import:'default'});
 const submissions=import.meta.glob<CatalogItem>('../../../../../content/submissions/*/*.json',{eager:true,import:'default'});
 const projectOverrides=import.meta.glob<Partial<CatalogItem>>('../../../../../content/projects/*.json',{eager:true,import:'default'});
@@ -54,14 +54,17 @@ export default function NetworkProjects({initialNetwork='mainnet',entries=review
         const confirmed=inNetwork(entry,'mainnet')&&network!=='testnet';
         const evidenceUrl=confirmed?entry.deploymentEvidence?.url||entry.evidenceUrl:entry.evidenceUrl;
         const label=network==='testnet'?networkLabel:showcase?.label||networkLabel;
+        const platformRestrictions=entry.ref.startsWith('community:')?item.cardStatus:undefined;
+        const sourceLabel=item.sourceLabel==='Public repository'?'Source':'Original post';
         const preview=item.preview||catalogPreviews[entry.ref]||(item.media?{image:item.media.image,video:item.media.video,source:item.media.label}:item.recording?{image:item.recording.posterUrl,video:item.recording.url,source:item.recording.credit}:null);
         return <article className="network-project contest-hologram" key={entry.ref}>
           <div className="network-project-cover"><ResourceCardMedia r={{id:entry.ref,title:item.title,ecosystem:"tari-ootle",native:true,preview}} showControls showEcosystem={false}/></div>
           <div className="network-project-status"><span>{label}</span>{item.type==='learn'&&<span>Guide</span>}</div>
+          {platformRestrictions&&<p className="network-platform">{platformRestrictions}</p>}
           <h3><a href={href} target="_blank" rel="noreferrer">{item.title}</a></h3>
           <p>{network==='testnet'?item.cardSummary||item.summary:showcase?.summary||item.cardSummary||item.summary}</p>
           {!confirmed&&entry.mainnetPlan&&<p className="network-plan">{entry.mainnetPlan}</p>}
-          <div className="network-project-links"><a className="network-project-open" href={href} target="_blank" rel="noreferrer" aria-label={`${entry.actionLabel||showcase?.actionLabel||'Open app'}: ${item.title}`}>{entry.actionLabel||showcase?.actionLabel||'Open app'}</a>{isCatalog?<Link to={details}>Project details</Link>:<a href={details} target="_blank" rel="noreferrer">Original post</a>}</div>
+          <div className="network-project-links"><a className="network-project-open" href={href} target="_blank" rel="noreferrer" aria-label={`${entry.actionLabel||showcase?.actionLabel||'Open app'}: ${item.title}`}>{entry.actionLabel||showcase?.actionLabel||'Open app'}</a>{isCatalog?<Link to={details}>Project details</Link>:<a href={details} target="_blank" rel="noreferrer">{sourceLabel}</a>}</div>
           <details className="network-project-evidence"><summary>Review notes</summary><p>{entry.evidence}</p>{preview?.source&&<p>Recording: {preview.source}</p>}<a href={evidenceUrl} target="_blank" rel="noreferrer">{confirmed?'Mainnet evidence':'Network source'}</a></details>
           <small>{typeof item.creator==='string'?item.creator:item.creator.name} · Checked {new Date(entry.checkedAt).toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:'UTC'})}{showcase?.version&&` · ${showcase.version}`}</small>
         </article>;
