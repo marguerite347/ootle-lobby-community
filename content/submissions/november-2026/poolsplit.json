@@ -1,0 +1,38 @@
+{
+  "slug": "poolsplit",
+  "title": "PoolSplit",
+  "creator": "lestermorgan702 / Darkernity",
+  "summary": "MIT-licensed Python payout engine, CLI and walletless browser calculator for Tari mining co-ops. It allocates an operator fee and proportional member payouts using integer microTari and the largest-remainder method, then produces a SHA-256 payout manifest. November 19, 2026: the README and announcement describe off-chain computation; the demo holds no keys and makes no chain calls. An Ootle vault/share-table template is a roadmap item, not a deployed component. Review covered the full README, MIT license, submission, Bluesky announcement, repository metadata and public demo text. No releases are listed. Creator-reported tests were not rerun. The recording is a continuous README walkthrough with page scripts and downloads disabled.",
+  "cardSummary": "Calculate mining co-op payouts by contributed shares and publish a checksum manifest members can independently recompute.",
+  "cardStatus": "Off-chain tool",
+  "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/28",
+  "publishedAt": "2026-11-19T07:16:20.647Z",
+  "updatedAt": "2026-11-19T07:16:20.647Z",
+  "sourceContentSha256": "b5276b7fa721d0a4f5bdcf31db9a434b11905d41e0828507a0b63797d2edf883",
+  "repoUrl": "https://github.com/Darkernity/poolsplit",
+  "demoUrl": "https://darkernity.github.io/poolsplit/web/",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Python \u00b7 MIT",
+      "sourceUrl": "https://github.com/Darkernity/poolsplit"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-poolsplit-20261119.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-poolsplit-20261119.png",
+    "capturedAt": "2026-11-19T14:12:08.031Z",
+    "sourceRevision": "384d8300eb4ca4f491f0bd3301fcbfb5b9fc4099",
+    "kind": "public-page",
+    "credit": "Docs walkthrough"
+  },
+  "discussionLinks": [
+    {
+      "url": "https://bsky.app/profile/darkernity-tari.bsky.social/post/3n2njltfthe2x",
+      "platform": "Bluesky"
+    }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:poolsplit"
+  ]
+}
