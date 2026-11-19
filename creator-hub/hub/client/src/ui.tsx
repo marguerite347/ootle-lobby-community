@@ -17,7 +17,7 @@ export function PopularityChip({ p, compact }: { p?: Popularity; compact?: boole
   const tier = p.score == null ? 'new' : p.tier;
   const title = p.score == null
     ? 'No popularity signal yet — new listing'
-    : `Popularity ${p.score}/100 (${p.tierLabel}, ${p.confidence} confidence) from ${p.sources.join(', ')}. Click to learn how this is measured.`;
+    : `Popularity ${p.score}/100 (${p.tierLabel}, ${p.confidence} confidence)${p.sources.length ? ` from ${p.sources.join(', ')}` : ''}. Click to learn how this is measured.`;
   return (
     <Link to="/popularity" className={`pop pop-${tier}`} title={title} onClick={(e) => e.stopPropagation()}>
       <span className="pop-flame">{p.score == null ? '✦' : '▲'}</span>
@@ -220,7 +220,7 @@ export function PopularityPanel({ p }: { p?: Popularity }) {
             ))}
           </div>
           <p className="faint mt8" style={{ fontSize: 12 }}>
-            {p.tierLabel} · {p.confidence} confidence · from {p.sources.join(', ')}. <Link to="/popularity" style={{ color: 'var(--accent)' }}>How is this measured?</Link>
+            {p.tierLabel} · {p.confidence} confidence{p.sources.length > 0 && <> · from {p.sources.join(', ')}</>}. <Link to="/popularity" style={{ color: 'var(--accent)' }}>How is this measured?</Link>
           </p>
         </>
       )}
