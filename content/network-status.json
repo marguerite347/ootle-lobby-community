@@ -23,9 +23,9 @@
       "ref": "tari-ootle:integration:veil",
       "state": "both",
       "testnetUrl": "https://testnet-explorer.tari.mw/",
-      "checkedAt": "2026-11-11T12:16:00Z",
-      "evidenceUrl": "https://indexer-b.ootle.tari.com/info",
-      "evidence": "November 11 live explorer shows mainnet transactions and components matching both official indexers, network byte 0. The separate testnet explorer remains available.",
+      "checkedAt": "2026-11-19T17:30:26.184881+00:00",
+      "evidenceUrl": "https://indexer-a.ootle.tari.com/info",
+      "evidence": "November 19: Veil displays Campaign template fea387a at epoch 38471, matching the 271869-byte template and function metadata returned by both official Ootle mainnet indexers. Both report mainnet network byte 0; the separate Esmeralda explorer remains reachable. Source README describes the historical testnet default, not the deployed mainnet build.",
       "showcase": {
         "url": "https://explorer.tari.mw/",
         "label": "Confirmed mainnet · Explorer",
@@ -33,9 +33,9 @@
       },
       "mainnetUrl": "https://explorer.tari.mw/",
       "deploymentEvidence": {
-        "url": "https://explorer.tari.mw/tx/f5d8b2dc047a6ddbb9f82801448e1128996812a2d97e0eec236ffdd5e3bc0745",
-        "observedAt": "2026-11-11T12:16:00Z",
-        "detail": "Explorer displays the committed OotleAccord fund transaction also returned by official mainnet indexers."
+        "url": "https://explorer.tari.mw/template/fea387ae896b72b9be93426ffa34da7498336f81c023fc2a65e556cfc13fba75",
+        "observedAt": "2026-11-19T17:30:26.184881+00:00",
+        "detail": "Campaign template identity, code size and function metadata on Veil match both official mainnet indexers on November 19. No wallet, transaction or proof-verifier execution."
       }
     },
     {
@@ -94,9 +94,9 @@
     {
       "ref": "community:skydrop",
       "state": "mainnet",
-      "checkedAt": "2026-11-11T12:16:00Z",
-      "evidenceUrl": "https://explorer.tari.mw/tx/e96fb795d238adea62244fabe71c6af0993f2d1dc1108d5b90d53cc149bda119",
-      "evidence": "Live app mainnet Escrow matches successful open_account and deposit transaction on both official network-byte-0 indexers. Link binding also committed. Recipient gift collection was not independently verified.",
+      "checkedAt": "2026-11-19T17:30:26.184881+00:00",
+      "evidenceUrl": "https://skydrop.tari.mw/__network",
+      "evidence": "November 19: the network endpoint reports mainnet and current creator deployment configuration retains the Escrow component matched to the November 11 deposit receipt. Current landing-page text extraction returned no content, so this check does not refresh app interaction or recipient collection evidence. The original November 11 deployment receipt and observation time remain unchanged.",
       "showcase": {
         "url": "https://skydrop.tari.mw/",
         "label": "Confirmed mainnet · Deposits",
@@ -198,14 +198,14 @@
       "ref": "tari-ootle:learn:atproto-identity",
       "state": "both",
       "testnetUrl": "https://testnet-atproto.tari.mw/",
-      "checkedAt": "2026-11-17T14:52:58.557383+00:00",
-      "evidenceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/10",
-      "evidence": "Current network endpoints distinguish mainnet and Esmeralda. Pinned deployment configuration matches the mainnet Campaign v3 template shown on Veil at epoch 38471. Old extracted guide/README content predates this deployment; no campaign funding or payout was exercised. November 17 text extraction shows the mainnet campaign builder and proof tools; both named network endpoints retain their respective mainnet and Esmeralda identities. Existing template deployment evidence is retained with its original observation date.",
+      "checkedAt": "2026-11-19T17:30:26.184881+00:00",
+      "evidenceUrl": "https://atproto.tari.mw/__network",
+      "evidence": "November 19: named endpoints report mainnet and Esmeralda respectively. Current repository deployment configuration matches the 271869-byte Campaign v3 template returned by both official network-byte-0 indexers and displayed on Veil at epoch 38471. Original creator threads and replies reconciled. The root README still describes historical testnet behavior; no funding, claim or payout was exercised.",
       "mainnetUrl": "https://atproto.tari.mw/",
       "deploymentEvidence": {
         "url": "https://explorer.tari.mw/template/fea387ae896b72b9be93426ffa34da7498336f81c023fc2a65e556cfc13fba75",
-        "observedAt": "2026-11-12T17:29:51.553414+00:00",
-        "detail": "Matching Campaign v3 template fea387ae896b72b9be93426ffa34da7498336f81c023fc2a65e556cfc13fba75 exists on the mainnet explorer at epoch 38471; live network endpoint reports mainnet."
+        "observedAt": "2026-11-19T17:30:26.184881+00:00",
+        "detail": "Current deployment source and both mainnet indexers agree on Campaign v3 template fea387ae896b72b9be93426ffa34da7498336f81c023fc2a65e556cfc13fba75; the live network endpoint reports mainnet."
       },
       "showcase": {
         "url": "https://atproto.tari.mw/",
