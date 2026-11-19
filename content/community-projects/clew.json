@@ -4,9 +4,9 @@
   "summary": "Community wallet for Apple Silicon Macs running macOS 14+. The creator reports XTM mainnet support and a separate Ootle testnet app. Release v0.8.1 is available; not installed or independently audited here. Not Apple notarized.",
   "creator": "okxmr / big-chief-1889",
   "sourceUrl": "https://community.tari.com/t/clew-a-small-private-tari-wallet-for-mac/424",
-  "sourceLabel": "Creator\u2019s announcement",
+  "sourceLabel": "Creator’s announcement",
   "publishedAt": "2026-10-09T22:22:53.252Z",
-  "publicationBasis": "Timestamp of the creator\u2019s dedicated forum announcement.",
+  "publicationBasis": "Timestamp of the creator’s dedicated forum announcement.",
   "publicationLabel": "Announced",
   "publicationUrl": "https://community.tari.com/t/clew-a-small-private-tari-wallet-for-mac/424",
   "repoUrl": "https://github.com/big-chief-1889/Clew",
@@ -21,12 +21,12 @@
   "media": {
     "image": "/previews/community/resource-clew-20261010.jpg",
     "video": "/previews/community/resource-clew-20261010.mp4",
-    "label": "Source/docs walkthrough \u2014 application not demonstrated",
+    "label": "Source/docs walkthrough — application not demonstrated",
     "sourceUrl": "https://github.com/big-chief-1889/Clew#clew",
     "capturedAt": "2026-10-10T12:50:53.922559+00:00",
     "reviewedAt": "2026-10-10T12:52:14.081454+00:00",
     "sha256": "800f5bd58e12857e4f362e02d8803cd4c0dbc0810a6378270979749b932e9568"
   },
   "cardSummary": "A community Tari wallet for Apple Silicon Macs, with a separate Ootle testnet app.",
-  "cardStatus": "Desktop app \u00b7 macOS 14+ \u00b7 Not Apple notarized"
+  "cardStatus": "Desktop app · macOS 14+ · Ootle testnet · Not notarized"
 }
