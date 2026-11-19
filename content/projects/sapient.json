@@ -1,7 +1,7 @@
 {
   "id": "tari-ootle:app:sapient",
   "title": "Sapient",
-  "summary": "Self-custody wallet for Tari Ootle. The Chrome Web Store review on November 17 recorded extension 0.10.0 and creator-confirmed mainnet/testnet switching. Separately, the creator published Android 0.10.1 on November 18 for Android 10 or newer: release notes announce NFT viewing, sending and receiving, token privacy actions, and a fix for WalletConnect requests received while locked. These are creator release claims. This review read the release notes without acquiring or installing an APK, connecting a wallet or transacting. The new recording shows the Android release announcement; it does not demonstrate the application. The Android version does not replace the recorded Chrome extension version.",
+  "summary": "Self-custody wallet for Tari Ootle. The Chrome Web Store review on November 19 shows extension 0.10.1, updated November 18; its older testnet-only overview does not override retained creator mainnet/testnet deployment evidence. Separately, Android 0.10.2 was published November 19 for Android 10 or newer. Its release notes describe recovery when a private fee UTXO was already spent, earlier balance correction and updated Ootle libraries. These are creator release claims. No APK or extension was acquired or installed, and no wallet was connected or transaction submitted. The recording shows the Android 0.10.2 announcement; Chrome and Android versions remain separate.",
   "technologies": [
     {
       "label": "Ootle SDK",
@@ -13,9 +13,9 @@
     },
     {
       "label": "Android release notes",
-      "sourceUrl": "https://github.com/chironbuilds/tari-wallet/releases/tag/android-v0.10.1"
+      "sourceUrl": "https://github.com/chironbuilds/tari-wallet/releases/tag/android-v0.10.2"
     }
   ],
   "cardSummary": "Manage Ootle accounts with Sapient’s browser wallet, or explore its Android release with NFT and token tools.",
-  "cardStatus": "Mainnet / Testnet · Chrome 0.10.0 · Android 10+ / 0.10.1"
+  "cardStatus": "Mainnet / Testnet · Chrome 0.10.1 · Android 10+ / 0.10.2"
 }

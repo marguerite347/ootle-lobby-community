@@ -41,15 +41,15 @@
     {
       "ref": "tari-ootle:app:sapient",
       "state": "both",
-      "checkedAt": "2026-11-17T17:15:42.839513+00:00",
+      "checkedAt": "2026-11-19T14:38:04.287325+00:00",
       "evidenceUrl": "https://chromewebstore.google.com/detail/tari-ootle-wallet/demkeckolenopkgnfbnpflkpbbdhpgkl",
-      "evidence": "November 17: official Chrome Web Store lists Sapient 0.10.0, updated today. The creator website confirms Ootle mainnet support and network switching; the store overview still contains older testnet-only copy. The owner-confirmed mainnet classification is retained. No extension was installed and no transaction was submitted.",
+      "evidence": "November 19: Chrome Web Store shows extension 0.10.1, updated November 18. The older store overview still says testnet; the retained creator mainnet deployment evidence takes precedence. Android 0.10.2 is a separate release. No extension or APK was installed, and no transaction was submitted.",
       "showcase": {
         "url": "https://chromewebstore.google.com/detail/tari-ootle-wallet/demkeckolenopkgnfbnpflkpbbdhpgkl",
         "label": "Mainnet · Browser wallet · Android release",
         "summary": "Manage Ootle accounts and app approvals with Sapient’s browser wallet, with a separate Android release now available.",
         "actionLabel": "Get latest extension",
-        "version": "Chrome Web Store: 0.10.0"
+        "version": "Chrome Web Store: 0.10.1"
       },
       "mainnetUrl": "https://sapient.tari.mw/",
       "testnetUrl": "https://chromewebstore.google.com/detail/tari-ootle-wallet/demkeckolenopkgnfbnpflkpbbdhpgkl",
