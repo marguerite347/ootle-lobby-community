@@ -1,7 +1,7 @@
 {
   "id": "tari-ootle:app:threshold",
   "title": "Threshold",
-  "summary": "Configurable community funding with sponsor matching, milestones and reviewer approvals.",
+  "summary": "Configurable community funding with sponsor matching, milestones and reviewer approvals. November 19, 2026: the current public site describes a walletless simulation. Its recorded contract demonstrations used the former Esmeralda testnet; additional funding templates remain proofs of concept. Released payments cannot be recovered. No current mainnet deployment is established by these sources.",
   "technologies": [
     {
       "label": "Threshold template",
@@ -12,6 +12,6 @@
       "sourceUrl": "https://github.com/Seal-Clubber/Threshold/blob/4ccfd91688a3124c634436282f3aa25b873d9fe3/crates/threshold-template/src/lib.rs"
     }
   ],
-  "cardSummary": "Coordinate community funding with sponsor matching, milestones and reviewer approvals.",
-  "cardStatus": "Source code"
+  "cardSummary": "Explore community funding, sponsor matching and milestone approvals through a walletless simulation and Rust contract source.",
+  "cardStatus": "Simulation · Historical testnet"
 }
