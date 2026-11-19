@@ -20,3 +20,8 @@ test('gallery and resource details share dated reviews without replacing importe
   const original={id:'tari-ootle:app:sapient',summary:'A newer Sapient release.'};
   assert.equal(withContestEntries([original]).find(item=>item.id===original.id).summary,original.summary);
 });
+
+test('notes remain distinct when HTML collapses whitespace',()=>{
+  assert.equal(withProjectReviewNote('Description without punctuation','November 19: current source note.'),'Description without punctuation.\n\nNovember 19: current source note.');
+  assert.equal(withProjectReviewNote('Already punctuated!','Dated note.'),'Already punctuated!\n\nDated note.');
+});
