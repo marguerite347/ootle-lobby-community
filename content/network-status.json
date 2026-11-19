@@ -243,15 +243,15 @@
     {
       "ref": "tari-ootle:app:private-ballot",
       "state": "mainnet",
-      "checkedAt": "2026-11-14T15:34:48.664803+00:00",
+      "checkedAt": "2026-11-19T15:56:43.574638+00:00",
       "evidenceUrl": "https://community.tari.com/t/november-bonus-contest-first-to-launch/521/11",
-      "evidence": "November 14 explorer text displays TariPrivateBallotAnchorV2, 43 KB and publish_anchor_v2, matching the November 12 creator announcement. Anchor template only; the hosted website and browser-wallet integration remain in configuration.",
+      "evidence": "November 19 complete creator-thread read retains the November 12 mainnet anchor-template announcement. Both official mainnet indexer catalogues list TariPrivateBallotAnchorV2 at the same address, epoch38551 and binary hash f2e1ba76bbd7485ccf54263be387fe3d2fff39b5a187f73cb3a5226aab212f25. The hosted website/browser-wallet configuration is still not established as live.",
       "actionLabel": "Open source",
       "mainnetUrl": "https://explorer.tari.mw/template/ef4d7f348a4c3db7b6f9a9c30ac4fcbfdfb73e8bec59a808258861fcbbdc6cdb",
       "deploymentEvidence": {
-        "url": "https://explorer.tari.mw/template/ef4d7f348a4c3db7b6f9a9c30ac4fcbfdfb73e8bec59a808258861fcbbdc6cdb",
-        "observedAt": "2026-11-14T15:34:48.664803+00:00",
-        "detail": "November 14 explorer text displays TariPrivateBallotAnchorV2, 43 KB and publish_anchor_v2, matching the November 12 creator announcement. Anchor template only; the hosted website and browser-wallet integration remain in configuration."
+        "url": "https://indexer-a.ootle.tari.com/templates/catalogue?limit=100",
+        "observedAt": "2026-11-19T14:09:56.646Z",
+        "detail": "Both official indexers list template ef4d7f348a4c3db7b6f9a9c30ac4fcbfdfb73e8bec59a808258861fcbbdc6cdb as TariPrivateBallotAnchorV2, epoch38551, binary hash f2e1ba76bbd7485ccf54263be387fe3d2fff39b5a187f73cb3a5226aab212f25. This confirms the template, not a hosted application."
       },
       "showcase": {
         "url": "https://explorer.tari.mw/template/ef4d7f348a4c3db7b6f9a9c30ac4fcbfdfb73e8bec59a808258861fcbbdc6cdb",
@@ -262,10 +262,10 @@
     {
       "ref": "tari-ootle:app:ootle-surveys",
       "state": "testnet",
-      "checkedAt": "2026-11-11T13:16:51.196914+00:00",
+      "checkedAt": "2026-11-19T15:56:43.574638+00:00",
       "evidenceUrl": "https://github.com/JustAResearcher/ootle-surveys/blob/main/README.md",
-      "evidence": "The current README describes a local prototype using Esmeralda test tokens and explicitly excludes a hosted public service and mainnet support.",
-      "testnetUrl": "https://github.com/JustAResearcher/ootle-surveys",
+      "evidence": "November 19 current README describes a local encrypted-questionnaire prototype using Esmeralda test-token rewards, with no public hosted service or mainnet support.",
+      "testnetUrl": "https://github.com/JustAResearcher/ootle-surveys/blob/main/README.md",
       "actionLabel": "Open source"
     },
     {
@@ -528,6 +528,24 @@
       "checkedAt": "2026-11-19T14:14:49.404631+00:00",
       "evidenceUrl": "https://github.com/Darkernity/poolsplit#readme",
       "evidence": "Current README describes off-chain Python and walletless browser calculations with no chain calls. Ootle template port is planned; no Ootle deployment is claimed."
+    },
+    {
+      "ref": "community:clew",
+      "state": "testnet",
+      "checkedAt": "2026-11-19T15:56:43.574638+00:00",
+      "evidenceUrl": "https://github.com/big-chief-1889/Clew/blob/main/README.md",
+      "evidence": "November 19 current README and creator thread retain a separate Ootle testnet app. Tari XTM mainnet wallet support is L1 and does not establish Ootle mainnet support.",
+      "testnetUrl": "https://github.com/big-chief-1889/Clew/blob/main/README.md",
+      "actionLabel": "Open source"
+    },
+    {
+      "ref": "community:ghost-lantern",
+      "state": "testnet",
+      "checkedAt": "2026-11-19T15:56:43.574638+00:00",
+      "evidenceUrl": "https://github.com/penielgold-hub/Ghost-Lantern/blob/main/README.md",
+      "evidence": "November 19 current README describes a source-only educational app with local sender/recipient simulations and a public Esmeralda indexer feed. No live payment or mainnet deployment is established.",
+      "testnetUrl": "https://github.com/penielgold-hub/Ghost-Lantern/blob/main/README.md",
+      "actionLabel": "Open source"
     }
   ]
 }
