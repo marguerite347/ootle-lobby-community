@@ -20,6 +20,7 @@ describe('loaded recording controls',()=>{
     'Announcement',
     'Concept overview',
     'App demo',
+    'Public app introduction',
   ])('keeps independent playback controls for %s',(source)=>{
     const r={id:'recording',title:'Recording',ecosystem:'tari',native:true,preview:{image:null,video:'/recording.mp4',source}};
     const html=renderToStaticMarkup(<ResourceCardMedia r={r}/>);
