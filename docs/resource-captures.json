@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-17T19:10:27.896Z",
+  "updatedAt": "2026-11-19T19:09:51.323480+00:00",
   "records": [
     {
       "resourceId": "candy-summoner",
@@ -127,7 +127,7 @@
     {
       "resourceId": "erebus-ootle-sdk",
       "title": "Erebus / Chiron Ootle SDK",
-      "targetUrl": "https://github.com/chironbuilds/ootle-sdk-ts/commit/e203233e0e3642c3c19d694258fd3342db32aac0",
+      "targetUrl": "https://github.com/chironbuilds/ootle-sdk-ts/commit/6ceee27610862ef264224df06b8b0f107fc5de03",
       "originalPosts": [
         {
           "url": "https://x.com/DNodeCapital/status/2108867690085421447",
@@ -145,44 +145,40 @@
           "foundOn": "2026-11-04",
           "context": "Erebus / Chiron Ootle SDK 0.2.2 update",
           "visibility": "public"
+        },
+        {
+          "url": "https://github.com/chironbuilds/ootle-sdk-ts/commit/6ceee27610862ef264224df06b8b0f107fc5de03",
+          "platform": "GitHub commit",
+          "author": "chironbuilds",
+          "publishedAt": "2026-11-18T23:47:56Z",
+          "foundOn": "2026-11-19",
+          "context": "npm0.5.4 publication source; retrieved through registry gitHead",
+          "visibility": "public"
         }
       ],
-      "captureType": "docs-walkthrough",
-      "capturedAt": "2026-11-04T13:42:17.352Z",
-      "observedRevision": "e203233e0e3642c3c19d694258fd3342db32aac0",
-      "version": "0.2.2",
+      "captureType": "announcement",
+      "capturedAt": "2026-11-19T19:07:23.553Z",
+      "observedRevision": "6ceee27610862ef264224df06b8b0f107fc5de03",
+      "version": "0.5.4",
       "viewport": {
         "width": 1280,
         "height": 800
       },
       "durationSeconds": 12,
-      "publicMediaUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-erebus-ootle-sdk-20261104.mp4",
-      "publicPosterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-erebus-ootle-sdk-20261104.png",
-      "caption": "Docs walkthrough",
-      "method": "Existing continuous browser capture pipeline; public documentation or commit view with scroll. No code executed, extension installed, keys created or wallet interaction.",
-      "sha256": "40b35ec1d3fe01008072d43773bae730519fae017280c95d9e71faa32493fe8e",
-      "posterSha256": "e81c47b18b3b536af24e5bae8dc94fabf8f8b30ff8ddd4e558d06b534afa0510",
-      "status": "published-live-verified",
+      "publicMediaUrl": "https://lobby.tari.com/previews/community/resource-erebus-ootle-sdk-20261119.mp4",
+      "publicPosterUrl": "https://lobby.tari.com/previews/community/resource-erebus-ootle-sdk-20261119.png",
+      "caption": "Announcement",
+      "method": "Continuous browser capture of the public creator commit, JavaScript disabled, downloads disabled, no credentials or wallet interactions.",
+      "sha256": "c4528666e7c2d08fcbe57856380feb92dd19bc5a7431c209be6b16feb70438af",
+      "posterSha256": "3ac4f21735d7a83dbedffa4ac0cf3a632c4c13ee6d84acb3cd047b0821714ca2",
+      "status": "captured-publication-pending",
       "verification": {
         "framesReviewed": [
-          0.48,
+          0.04,
           6,
-          11
+          11.6
         ],
-        "localPlaybackEvidence": "work/daily-2026-11-04/sdk-wallet-local-playback.json",
-        "livePlayback": {
-          "checkedAt": "2026-11-04T14:11:02.279915+00:00",
-          "evidence": "work/daily-2026-11-04/sdk-refresh-live-ui.json",
-          "products": [
-            "Lobby",
-            "Workbench"
-          ],
-          "viewports": [
-            "desktop",
-            "phone"
-          ],
-          "result": "12-second playback reached end without media errors; tablet layout separately reviewed."
-        }
+        "frameReview": "Opening and closing identify commit0.5.4; middle shows package version/dependency diff. Current genuine source recording; live playback pending."
       },
       "previousCaptures": [
         {
@@ -219,6 +215,213 @@
             "workbenchMobile": true,
             "mediaHashMatched": true,
             "checkedAt": "2026-10-10T13:04:24.362462+00:00"
+          }
+        }
+      ],
+      "history": [
+        {
+          "resourceId": "erebus-ootle-sdk",
+          "title": "Erebus / Chiron Ootle SDK",
+          "targetUrl": "https://github.com/chironbuilds/ootle-sdk-ts/commit/e203233e0e3642c3c19d694258fd3342db32aac0",
+          "originalPosts": [
+            {
+              "url": "https://x.com/DNodeCapital/status/2108867690085421447",
+              "platform": "X",
+              "author": "Digital Node Capital (@DNodeCapital)",
+              "publishedAt": "2026-10-10",
+              "foundOn": "2026-10-12",
+              "context": "Thread post 2 recommends the Erebus/Chiron SDK.",
+              "visibility": "public"
+            },
+            {
+              "url": "https://github.com/chironbuilds/ootle-sdk-ts/commit/e203233e0e3642c3c19d694258fd3342db32aac0",
+              "platform": "GitHub commit",
+              "author": "chironbuilds",
+              "foundOn": "2026-11-04",
+              "context": "Erebus / Chiron Ootle SDK 0.2.2 update",
+              "visibility": "public"
+            }
+          ],
+          "captureType": "docs-walkthrough",
+          "capturedAt": "2026-11-04T13:42:17.352Z",
+          "observedRevision": "e203233e0e3642c3c19d694258fd3342db32aac0",
+          "version": "0.2.2",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "durationSeconds": 12,
+          "publicMediaUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-erebus-ootle-sdk-20261104.mp4",
+          "publicPosterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-erebus-ootle-sdk-20261104.png",
+          "caption": "Docs walkthrough",
+          "method": "Existing continuous browser capture pipeline; public documentation or commit view with scroll. No code executed, extension installed, keys created or wallet interaction.",
+          "sha256": "40b35ec1d3fe01008072d43773bae730519fae017280c95d9e71faa32493fe8e",
+          "posterSha256": "e81c47b18b3b536af24e5bae8dc94fabf8f8b30ff8ddd4e558d06b534afa0510",
+          "status": "published-live-verified",
+          "verification": {
+            "framesReviewed": [
+              0.48,
+              6,
+              11
+            ],
+            "localPlaybackEvidence": "work/daily-2026-11-04/sdk-wallet-local-playback.json",
+            "livePlayback": {
+              "checkedAt": "2026-11-04T14:11:02.279915+00:00",
+              "evidence": "work/daily-2026-11-04/sdk-refresh-live-ui.json",
+              "products": [
+                "Lobby",
+                "Workbench"
+              ],
+              "viewports": [
+                "desktop",
+                "phone"
+              ],
+              "result": "12-second playback reached end without media errors; tablet layout separately reviewed."
+            }
+          },
+          "previousCaptures": [
+            {
+              "resourceId": "erebus-ootle-sdk",
+              "title": "Erebus / Chiron Ootle SDK",
+              "targetUrl": "https://github.com/chironbuilds/ootle-sdk-ts",
+              "originalPosts": [],
+              "captureType": "source-docs-walkthrough",
+              "capturedAt": "2026-10-10T12:49:12.215444+00:00",
+              "observedRevision": "6c3f6b54d5af881bef1162cf416fdf2e4a6c3bca",
+              "viewport": {
+                "width": 1280,
+                "height": 800
+              },
+              "exportDimensions": {
+                "codec_name": "h264",
+                "width": 1280,
+                "height": 720,
+                "pix_fmt": "yuv420p"
+              },
+              "durationSeconds": 12,
+              "publicMediaUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-erebus-ootle-sdk-20261010.mp4",
+              "publicPosterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-erebus-ootle-sdk-20261010.jpg",
+              "lobbyUrl": "https://ootle-lobby-preview.vercel.app/resource/tari-ootle:component:erebus-ootle-sdk",
+              "workbenchUrl": "https://ootle-workbench.vercel.app/",
+              "caption": "Source/docs walkthrough — application not demonstrated",
+              "sha256": "dca2316555bf248018c7abe4c2cba778b5671ef887c05fb2ff6479614fa7453f",
+              "frameReview": "opening/middle/closing inspected; genuine source content, no black or frozen capture",
+              "verification": "published; desktop and mobile playback verified",
+              "liveVerification": {
+                "lobbyDesktop": true,
+                "lobbyMobile": true,
+                "workbenchDesktop": true,
+                "workbenchMobile": true,
+                "mediaHashMatched": true,
+                "checkedAt": "2026-10-10T13:04:24.362462+00:00"
+              }
+            }
+          ],
+          "currentSourceReview": {
+            "attemptedAt": "2026-11-08T18:32:35.681751+00:00",
+            "status": "recording-scope-review-pending",
+            "reason": "November 8 primary text changed version, network or replay details. Compare existing footage to current text before relabeling or replacing it.",
+            "evidence": "work/daily-2026-11-08/repository-change-review.json",
+            "nextReviewAt": "2026-11-09T14:00:00Z",
+            "safety": "Use safe text walkthrough; no third-party app execution, artifact acquisition or local parsing authorized."
+          }
+        },
+        {
+          "resourceId": "erebus-ootle-sdk",
+          "title": "Erebus / Chiron Ootle SDK",
+          "targetUrl": "https://github.com/chironbuilds/ootle-sdk-ts/commit/f3c18cffffad35d5b69987421654512a2df6b355",
+          "originalPosts": [
+            {
+              "url": "https://x.com/DNodeCapital/status/2108867690085421447",
+              "platform": "X",
+              "author": "Digital Node Capital (@DNodeCapital)",
+              "publishedAt": "2026-10-10",
+              "foundOn": "2026-10-12",
+              "context": "Thread post 2 recommends the Erebus/Chiron SDK.",
+              "visibility": "public"
+            },
+            {
+              "url": "https://github.com/chironbuilds/ootle-sdk-ts/commit/e203233e0e3642c3c19d694258fd3342db32aac0",
+              "platform": "GitHub commit",
+              "author": "chironbuilds",
+              "foundOn": "2026-11-04",
+              "context": "Erebus / Chiron Ootle SDK 0.2.2 update",
+              "visibility": "public"
+            }
+          ],
+          "captureType": "docs-walkthrough",
+          "capturedAt": "2026-11-18T17:50:03.585Z",
+          "observedRevision": "f3c18cffffad35d5b69987421654512a2df6b355",
+          "version": "0.2.2",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "durationSeconds": 12,
+          "publicMediaUrl": "https://lobby.tari.com/previews/community/resource-erebus-ootle-sdk-20261118.mp4",
+          "publicPosterUrl": "https://lobby.tari.com/previews/community/resource-erebus-ootle-sdk-20261118.png",
+          "caption": "Docs walkthrough",
+          "method": "Static source-page walkthrough; JavaScript and downloads disabled; no wallet or commands operated.",
+          "sha256": "b34c14d23ed2223da06d246b6f05db34c5ce6d14e4b0484d3fd7e4f022ea6bec",
+          "posterSha256": "e81c47b18b3b536af24e5bae8dc94fabf8f8b30ff8ddd4e558d06b534afa0510",
+          "status": "published-live-verified",
+          "verification": {
+            "framesReviewed": [
+              "opening",
+              "middle",
+              "closing"
+            ],
+            "livePlayback": "work/daily-2026-11-18/sdk-source-acceptance.json",
+            "revisions": {
+              "lobby": "493747e9f6fbbef768a74bd8df091de13435b324",
+              "workbench": "c043de58ada4155014adc5ee583fc4c01dea2b11"
+            }
+          },
+          "previousCaptures": [
+            {
+              "resourceId": "erebus-ootle-sdk",
+              "title": "Erebus / Chiron Ootle SDK",
+              "targetUrl": "https://github.com/chironbuilds/ootle-sdk-ts",
+              "originalPosts": [],
+              "captureType": "source-docs-walkthrough",
+              "capturedAt": "2026-10-10T12:49:12.215444+00:00",
+              "observedRevision": "6c3f6b54d5af881bef1162cf416fdf2e4a6c3bca",
+              "viewport": {
+                "width": 1280,
+                "height": 800
+              },
+              "exportDimensions": {
+                "codec_name": "h264",
+                "width": 1280,
+                "height": 720,
+                "pix_fmt": "yuv420p"
+              },
+              "durationSeconds": 12,
+              "publicMediaUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-erebus-ootle-sdk-20261010.mp4",
+              "publicPosterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-erebus-ootle-sdk-20261010.jpg",
+              "lobbyUrl": "https://ootle-lobby-preview.vercel.app/resource/tari-ootle:component:erebus-ootle-sdk",
+              "workbenchUrl": "https://ootle-workbench.vercel.app/",
+              "caption": "Source/docs walkthrough — application not demonstrated",
+              "sha256": "dca2316555bf248018c7abe4c2cba778b5671ef887c05fb2ff6479614fa7453f",
+              "frameReview": "opening/middle/closing inspected; genuine source content, no black or frozen capture",
+              "verification": "published; desktop and mobile playback verified",
+              "liveVerification": {
+                "lobbyDesktop": true,
+                "lobbyMobile": true,
+                "workbenchDesktop": true,
+                "workbenchMobile": true,
+                "mediaHashMatched": true,
+                "checkedAt": "2026-10-10T13:04:24.362462+00:00"
+              }
+            }
+          ],
+          "currentSourceReview": {
+            "attemptedAt": "2026-11-08T18:32:35.681751+00:00",
+            "status": "recording-scope-review-pending",
+            "reason": "November 8 primary text changed version, network or replay details. Compare existing footage to current text before relabeling or replacing it.",
+            "evidence": "work/daily-2026-11-08/repository-change-review.json",
+            "nextReviewAt": "2026-11-09T14:00:00Z",
+            "safety": "Use safe text walkthrough; no third-party app execution, artifact acquisition or local parsing authorized."
           }
         }
       ]
