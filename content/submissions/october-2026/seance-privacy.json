@@ -1,7 +1,7 @@
 {
   "slug": "seance-privacy",
   "title": "Seance — privacy demo",
-  "summary": "Compare what strangers, recipients and auditors can learn from private Esmeralda payments. The creator’s v2 searches the latest 40 indexer transactions locally before asking for a user-entered ID; an explicit Ask for it anyway action can disclose that ID. November 5 review read both live versions, the original announcements and creator videos. The initial example remains a labeled saved October 20 copy. A read-only Summon inspection during this review returned a current Commit receipt; request counters are the page’s own report. The creator’s November 4 update identifies a republished SeanceAuditorToken template after the November 2 reset; its indexer ABI page was reachable. Old token state and payments were removed, while the saved ledger remains available. Receipts alone cannot reverify missing encrypted transaction bodies. Optional Sapient payments go to a demonstration recipient whose view key is public. Timing, fees and spend links remain visible; the quantum discussion is a simulation using published demo keys. The unchanged October 31 recording covers the transaction picker and request disclosure, with no wallet or payment. Historical creator wallet footage is not a new transaction test. v1 remains available at its earlier URL; this project is distinct from DevXTools’ sealed polls.",
+  "summary": "Compare stranger, recipient and auditor views of private Esmeralda payments. November 20, 2026: the creator submitted SeanceAuditorToken to First to Launch; public Ootle mainnet metadata confirms its template publication committed at 13:36:30 UTC. The creator says the app is being switched; the reviewed app text and README still identify Esmeralda, so the browser app remains labeled Testnet. The v2 searches 40 recent indexer transactions locally before asking for an ID; Ask for it anyway can disclose that ID. The saved October 20 example remains historical. November 5 read-only review returned a Commit receipt, but receipts cannot reconstruct missing encrypted bodies. The November 2 reset removed old payments and token state. Optional Sapient payments use a demo recipient with a public view key; timing, fees and spend links remain visible. The quantum discussion uses published demo keys. The retained October 31 walkthrough covers the picker and request disclosure without a wallet or payment; it does not demonstrate the planned mainnet app. This project is distinct from DevXTools’ sealed polls.",
   "cardSummary": "Compare what strangers, recipients and auditors can read from private testnet payments, including the metadata that remains public.",
   "cardStatus": "Web app · Testnet",
   "creator": "Kylne700",
@@ -41,7 +41,11 @@
     },
     {
       "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/44",
-      "platform": "Testnet reset notice"
+      "platform": "Tari Community forum"
+    },
+    {
+      "url": "https://community.tari.com/t/november-bonus-contest-first-to-launch/521/18",
+      "platform": "Tari Community forum"
     }
   ],
   "resourceIds": [

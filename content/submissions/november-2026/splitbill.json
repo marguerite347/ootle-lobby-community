@@ -1,0 +1,38 @@
+{
+  "slug": "splitbill",
+  "title": "SplitBill",
+  "creator": "Sandixhunter / Sandi Priatna",
+  "summary": "MIT-licensed group-expense template and walletless browser simulation. Members pay equal shares; the organizer can claim only when all required shares are paid, while contributors can request refunds after an incomplete bill reaches its deadline. November 20, 2026: the creator explicitly states that the template is not published to a network and the Live tab is a placeholder. The README pins tari_template_lib 0.40; its 15 engine-test results are creator-reported. Local personas and simulated balances are separate from a deployed application. Review used the original forum post, full README, MIT license, public page text and available deployment metadata. No third-party code was installed or executed, and no wallet or transaction was operated. The recording is a continuous README walkthrough with page scripts and downloads disabled.",
+  "cardSummary": "Model equal group expenses, exact share payments and deadline refunds through a walletless simulation and Rust template source.",
+  "cardStatus": "Browser simulation · Rust source",
+  "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/29",
+  "publishedAt": "2026-11-19T17:02:40.062Z",
+  "updatedAt": "2026-11-19T17:02:40.062Z",
+  "sourceContentSha256": "9cfc56b3de6392c23303f8515d9afb7e1511328abecc29aa8c0425d20c4f47c4",
+  "repoUrl": "https://github.com/sandi215/splitbill",
+  "demoUrl": "https://sandi215.github.io/splitbill/",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust · MIT",
+      "sourceUrl": "https://github.com/sandi215/splitbill"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-splitbill-20261120.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-splitbill-20261120.png",
+    "capturedAt": "2026-11-20T14:12:45.729Z",
+    "sourceRevision": "590c9ca7dee7b3d26c4603b0db07eaeaf0c99a5e",
+    "kind": "public-page",
+    "credit": "Docs walkthrough"
+  },
+  "discussionLinks": [
+    {
+      "url": "https://bsky.app/profile/sandixhunter.bsky.social/post/3n2o26mpfqu2t",
+      "platform": "Bluesky"
+    }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:splitbill"
+  ]
+}

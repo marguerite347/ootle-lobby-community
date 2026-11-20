@@ -553,6 +553,48 @@
       "checkedAt": "2026-11-19T19:34:59.674203+00:00",
       "evidenceUrl": "https://github.com/chironbuilds/tari-l1-wallet-ui/blob/2277575fb0f2a5f6abee78f3528e80a67d9053fb/src/ootle/index.ts",
       "evidence": "Current source maps Ootle accounts to mainnet and Esmeralda. The public landing page confirms Tari L1 MainNet and Esmeralda creation/import choices, while the README retains pre-launch wording. No current deployed Ootle network or mainnet-claim behavior is established; source configuration alone is not deployment evidence."
+    },
+    {
+      "ref": "tari-ootle:component:splitbill",
+      "state": "unconfirmed",
+      "checkedAt": "2026-11-20T14:13:21.060080+00:00",
+      "evidenceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/29",
+      "evidence": "MIT-licensed group-expense template and walletless browser simulation. Members pay equal shares; the organizer can claim only when all required shares are paid, while contributors can request refunds after an incomplete bill reaches its deadline. November 20, 2026: the creator explicitly states that the template is not published to a network and the Live tab is a placeholder. The README pins tari_template_lib 0.40; its 15 engine-test results are creator-reported. Local personas and simulated balances are separate from a deployed application."
+    },
+    {
+      "ref": "tari-ootle:component:stillhere",
+      "state": "testnet",
+      "checkedAt": "2026-11-20T14:13:21.060080+00:00",
+      "evidenceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/30",
+      "evidence": "MIT-licensed dead-man’s-switch vault with an owner badge, beneficiary, epoch deadline and walletless simulation. The badge holder can check in, withdraw, change the beneficiary or close the vault; after the deadline anyone may trigger payment directly to the beneficiary. A late check-in before release revives the vault. November 20, 2026: the official Esmeralda indexer records the submitted template publication as committed on November 19, network byte 38. The browser is a simulation, not a wallet interface. The README reports 55 engine tests; these were not rerun.",
+      "testnetUrl": "https://godson-droid.github.io/stillhere/sim/"
+    },
+    {
+      "ref": "tari-ootle:component:semvi",
+      "state": "mainnet",
+      "checkedAt": "2026-11-20T14:13:21.060080+00:00",
+      "evidenceUrl": "https://explorer.tari.mw/tx/568fae79b3f70690c1434ce9487dd7c12c6a2cb40c547d4a86995d9cd0c785ab",
+      "evidence": "MIT-licensed Ootle vault and read-only proof interface for at-most-once business payments. The contract consumes a job ID together with payment, across fresh transactions and different relayers. November 20, 2026: official mainnet metadata confirms the Semvi template publication, constructor transaction and a committed execute call on the creator’s published vault at 10:24:57 UTC; the retry at 10:25:07 finalized with only its fee intent committed. The creator’s proof describes OperationConsumed and both relayers belong to one demo wallet. This does not establish independent-user adoption or guaranteed delivery. Each vault has a permanent 256-job limit; amounts, recipients and job IDs are public. Refused retries can cost fees, signed intents cannot be revoked before expiry, and losing the payer key prevents recovery. Template library 0.41.0 and engine tooling 0.54.0 are declared in the README.",
+      "mainnetUrl": "https://emmagh1.github.io/semvi/",
+      "deploymentEvidence": {
+        "url": "https://explorer.tari.mw/tx/568fae79b3f70690c1434ce9487dd7c12c6a2cb40c547d4a86995d9cd0c785ab",
+        "observedAt": "2026-11-20T14:13:21.060080+00:00",
+        "detail": "Official mainnet network byte 0 and Commit outcome for execute on component_ca0301bc6756c5979099d681f5184872f1f18ec521388c660e2477bbdd82635a, matching creator proof and hosted read-only interface. No transaction submitted by this review."
+      },
+      "showcase": {
+        "url": "https://emmagh1.github.io/semvi/",
+        "label": "Mainnet · Public payment records · Retry fees",
+        "summary": "Inspect a payment vault that consumes business job IDs once, with public records for checking payments and retries.",
+        "actionLabel": "View proof"
+      }
+    },
+    {
+      "ref": "tari-ootle:component:seance-privacy",
+      "state": "testnet",
+      "testnetUrl": "https://kylne700.github.io/seance-v2/",
+      "checkedAt": "2026-11-20T14:18:31.773623+00:00",
+      "evidenceUrl": "https://community.tari.com/t/november-bonus-contest-first-to-launch/521/18",
+      "evidence": "November 20: SeanceAuditorToken template publication 3147e80ea9bf2ba7ab6d1d5d3a85c256ec58af71e19b1b816d3da0770b6b2c97 committed on Ootle mainnet at 13:36:30 UTC. The creator describes the browser migration as pending; current app text and README still identify Esmeralda. Template publication does not establish the live app switch."
     }
   ]
 }

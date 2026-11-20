@@ -1,0 +1,46 @@
+{
+  "slug": "semvi",
+  "title": "Semvi",
+  "creator": "heisemma / emmaGH1",
+  "summary": "MIT-licensed Ootle vault and read-only proof interface for at-most-once business payments. The contract consumes a job ID together with payment, across fresh transactions and different relayers. November 20, 2026: official mainnet metadata confirms the Semvi template publication, constructor transaction and a committed execute call on the creator’s published vault at 10:24:57 UTC; the retry at 10:25:07 finalized with only its fee intent committed. The creator’s proof describes OperationConsumed and both relayers belong to one demo wallet. This does not establish independent-user adoption or guaranteed delivery. Each vault has a permanent 256-job limit; amounts, recipients and job IDs are public. Refused retries can cost fees, signed intents cannot be revoked before expiry, and losing the payer key prevents recovery. Template library 0.41.0 and engine tooling 0.54.0 are declared in the README. Review used the original forum post, full README, MIT license, public page text and available deployment metadata. No third-party code was installed or executed, and no wallet or transaction was operated. The recording is a continuous README walkthrough with page scripts and downloads disabled.",
+  "cardSummary": "Inspect a payment vault that consumes business job IDs once, with public records for checking payments and retries.",
+  "cardStatus": "Mainnet · Public payment records · Retry fees",
+  "sourceUrl": "https://community.tari.com/t/november-bonus-contest-first-to-launch/521/19",
+  "publishedAt": "2026-11-20T13:46:44.082Z",
+  "updatedAt": "2026-11-20T13:46:44.082Z",
+  "sourceContentSha256": "b56c20542ce6ed91fb417e0e1316f611f5a68b45b38c83477da9121c0195f0ca",
+  "repoUrl": "https://github.com/emmaGH1/semvi",
+  "demoUrl": "https://emmagh1.github.io/semvi/",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust · MIT",
+      "sourceUrl": "https://github.com/emmaGH1/semvi"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-semvi-20261120.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-semvi-20261120.png",
+    "capturedAt": "2026-11-20T14:13:21.792Z",
+    "sourceRevision": "60957dcd58c494365bfaca2f7cfd6ab920229d7d",
+    "kind": "public-page",
+    "credit": "Docs walkthrough"
+  },
+  "discussionLinks": [
+    {
+      "url": "https://community.tari.com/t/november-build-contest-thread-mvp/520/31",
+      "platform": "Tari Community forum"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=wkOu1xMxNpE",
+      "platform": "YouTube"
+    },
+    {
+      "url": "https://explorer.tari.mw/tx/568fae79b3f70690c1434ce9487dd7c12c6a2cb40c547d4a86995d9cd0c785ab",
+      "platform": "Mainnet explorer"
+    }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:semvi"
+  ]
+}
