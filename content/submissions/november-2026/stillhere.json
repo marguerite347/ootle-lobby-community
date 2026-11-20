@@ -1,0 +1,42 @@
+{
+  "slug": "stillhere",
+  "title": "StillHere",
+  "creator": "Godson-droid",
+  "summary": "MIT-licensed dead-man’s-switch vault with an owner badge, beneficiary, epoch deadline and walletless simulation. The badge holder can check in, withdraw, change the beneficiary or close the vault; after the deadline anyone may trigger payment directly to the beneficiary. A late check-in before release revives the vault. November 20, 2026: the official Esmeralda indexer records the submitted template publication as committed on November 19, network byte 38. The browser is a simulation, not a wallet interface. The README reports 55 engine tests; these were not rerun. Review used the original forum post, full README, MIT license, public page text and available deployment metadata. No third-party code was installed or executed, and no wallet or transaction was operated. The recording is a continuous README walkthrough with page scripts and downloads disabled.",
+  "cardSummary": "Explore heartbeat check-ins and beneficiary releases through an Esmeralda vault template and walletless browser simulation.",
+  "cardStatus": "Testnet template · Browser simulation",
+  "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/30",
+  "publishedAt": "2026-11-19T17:02:46.669Z",
+  "updatedAt": "2026-11-20T08:10:19.334Z",
+  "sourceContentSha256": "2aa13196983b7513cd89b8dfd873075ff9d1f54281db3a90dc0424938477e7e0",
+  "repoUrl": "https://github.com/Godson-droid/stillhere",
+  "demoUrl": "https://godson-droid.github.io/stillhere/sim/",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Rust · MIT",
+      "sourceUrl": "https://github.com/Godson-droid/stillhere"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-stillhere-20261120.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-stillhere-20261120.png",
+    "capturedAt": "2026-11-20T14:13:03.680Z",
+    "sourceRevision": "0a7b5cada6d6f5012dccc4b5fae2a1123b47755f",
+    "kind": "public-page",
+    "credit": "Docs walkthrough"
+  },
+  "discussionLinks": [
+    {
+      "url": "https://www.youtube.com/watch?v=FG9eTxrUMZw",
+      "platform": "YouTube"
+    },
+    {
+      "url": "https://esme-indexer-a.ootle.tari.com/transactions/217ce22b3f7ee37a4df0efb5c728d255dfe546dd30deb93e45b9163cdf766e4b",
+      "platform": "Esmeralda indexer"
+    }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:stillhere"
+  ]
+}

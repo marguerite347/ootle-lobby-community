@@ -1,0 +1,54 @@
+{
+  "slug": "seance-privacy",
+  "title": "Seance — privacy demo",
+  "summary": "Compare stranger, recipient and auditor views of private Esmeralda payments. November 20, 2026: the creator submitted SeanceAuditorToken to First to Launch; public Ootle mainnet metadata confirms its template publication committed at 13:36:30 UTC. The creator says the app is being switched; the reviewed app text and README still identify Esmeralda, so the browser app remains labeled Testnet. The v2 searches 40 recent indexer transactions locally before asking for an ID; Ask for it anyway can disclose that ID. The saved October 20 example remains historical. November 5 read-only review returned a Commit receipt, but receipts cannot reconstruct missing encrypted bodies. The November 2 reset removed old payments and token state. Optional Sapient payments use a demo recipient with a public view key; timing, fees and spend links remain visible. The quantum discussion uses published demo keys. The retained October 31 walkthrough covers the picker and request disclosure without a wallet or payment; it does not demonstrate the planned mainnet app. This project is distinct from DevXTools’ sealed polls.",
+  "cardSummary": "Compare what strangers, recipients and auditors can read from private testnet payments, including the metadata that remains public.",
+  "cardStatus": "Web app · Testnet",
+  "creator": "Kylne700",
+  "sourceUrl": "https://community.tari.com/t/november-bonus-contest-first-to-launch/521/18",
+  "publishedAt": "2026-11-20T02:44:10.857Z",
+  "updatedAt": "2026-11-20T13:42:24.267Z",
+  "sourceContentSha256": "0e50c7518fca65002a49b5c6dbdd2d1c3c26c3703ca006740316c1e7deed7a34",
+  "repoUrl": "https://github.com/Kylne700/seance-v2",
+  "demoUrl": "https://kylne700.github.io/seance-v2/",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "TypeScript · Rust · MIT",
+      "sourceUrl": "https://github.com/Kylne700/seance-v2"
+    }
+  ],
+  "recording": {
+    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-seance-v2-20261031.mp4",
+    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-seance-v2-20261031.png",
+    "capturedAt": "2026-10-31T10:16:48.676Z",
+    "sourceRevision": "b8c7bc8eb270433857fdc72778309ad09bf41cd2",
+    "kind": "public-page",
+    "credit": "Docs walkthrough"
+  },
+  "discussionLinks": [
+    {
+      "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/17",
+      "platform": "Tari Community forum"
+    },
+    {
+      "url": "https://bsky.app/profile/kylne700.bsky.social/post/3myda5pbxgk22",
+      "platform": "Bluesky"
+    },
+    {
+      "url": "https://bsky.app/profile/tariproject.bsky.social/post/3mywsm2tpqm2b",
+      "platform": "Bluesky"
+    },
+    {
+      "url": "https://x.com/tari/status/2115428367486836872",
+      "platform": "X"
+    },
+    {
+      "url": "https://community.tari.com/t/october-build-contest-thread-spooky-secrets/396/44",
+      "platform": "Tari Community forum"
+    }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:seance-privacy"
+  ]
+}
