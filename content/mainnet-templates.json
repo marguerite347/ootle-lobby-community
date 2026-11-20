@@ -1,6 +1,6 @@
 {
   "network": "mainnet",
-  "checkedAt": "2026-11-19T14:09:56.646Z",
+  "checkedAt": "2026-11-20T14:00:54.768Z",
   "sources": [
     "https://indexer-a.ootle.tari.com/templates/catalogue?limit=100",
     "https://indexer-b.ootle.tari.com/templates/catalogue?limit=100"
@@ -11,7 +11,7 @@
       "address": "0000000000000000000000000000000000000000000000000000000000000000",
       "epoch": 0,
       "kind": "builtin",
-      "binaryHash": "886fdbf1c6b9458f9ce5a16802390d64ae216d1af99176772211c05190c9de61",
+      "binaryHash": "75b528668468864993312f58af1abc52857e2587754f6544ec6e041db871dd83",
       "authorPublicKey": "0000000000000000000000000000000000000000000000000000000000000000",
       "project": "Ootle protocol"
     },
@@ -20,7 +20,7 @@
       "address": "0000000000000000000000000000000000000000000000000000000000000001",
       "epoch": 0,
       "kind": "builtin",
-      "binaryHash": "6f93b3f6dbc0c3ca938b08c1c3dd605f168f0b10fa770dc78b199c0c217b9c0c",
+      "binaryHash": "1dc98f3da30038efe6d431659dd078668d61ef4d6a41abc0b8603742a23bbc45",
       "authorPublicKey": "0000000000000000000000000000000000000000000000000000000000000000",
       "project": "Ootle protocol"
     },
@@ -29,7 +29,7 @@
       "address": "0000000000000000000000000000000000000000000000000000000000000002",
       "epoch": 0,
       "kind": "builtin",
-      "binaryHash": "6744c7298cd117efd88c51a29065d4b6b66f6bd773bea97932a67b62ab4faa65",
+      "binaryHash": "929469280e150871bbb6b01f214eb0cf5b539b9cebf23cde68f39d75377c91c9",
       "authorPublicKey": "0000000000000000000000000000000000000000000000000000000000000000",
       "project": "Ootle protocol"
     },
@@ -38,7 +38,7 @@
       "address": "0000000000000000000000000000000000000000000000000000000000000003",
       "epoch": 0,
       "kind": "builtin",
-      "binaryHash": "8f2d1c6242a2a7621ed72e981aa420443e781f4a8943a0b4335790723c31e2d9",
+      "binaryHash": "f3e227cdfe78daa8e5dee37debd6c9c3a00ee3c1bb5d9843a39040d3788d8e73",
       "authorPublicKey": "0000000000000000000000000000000000000000000000000000000000000000",
       "project": "Ootle protocol"
     },
@@ -56,7 +56,7 @@
       "address": "0102030000000000000000000000000000000000000000000000000000000000",
       "epoch": 0,
       "kind": "builtin",
-      "binaryHash": "f86dcd7a75c8bded2c62e1ad0ebdd26b37f2b5b60349e25c1530d4c329a4e7ba",
+      "binaryHash": "39dd74fd8882e526483a88767808d8b6190cab4c38b988d4d8a8effccc7733b0",
       "authorPublicKey": "0000000000000000000000000000000000000000000000000000000000000000",
       "project": "Ootle protocol"
     },
@@ -142,6 +142,15 @@
       "project": "Signal Desk"
     },
     {
+      "name": "TideToken",
+      "address": "52ed4c1df314c86b39accb537b75054b43577433ffbfd8b724c24ed63d0014d1",
+      "epoch": 39077,
+      "kind": "community",
+      "binaryHash": "f5f32a1e04a896a95f09072d34dc9ab6299b9aa682ad1722ba67159a535593f7",
+      "authorPublicKey": "7c3e2aef3f4b796faeee5f83e2358a42dff088e4872d33183ae0cff651ef5374",
+      "project": "Community template"
+    },
+    {
       "name": "SooonTokenV1",
       "address": "57567fcbba92012fa39c9a479ca0ffe8995eeac58f123b6e901129b4f84b0285",
       "epoch": 38472,
@@ -178,12 +187,30 @@
       "project": "Skydrop"
     },
     {
+      "name": "TidexFarm",
+      "address": "6aee0666ff6b05728c4c24a43d040f1b5cee1b2dd9d7b605417cadb9eafdc2cd",
+      "epoch": 39077,
+      "kind": "community",
+      "binaryHash": "c0a807dcc991e4443da54769213bc2b445388afc4d9ce9ff7bdb8915160785d7",
+      "authorPublicKey": "7c3e2aef3f4b796faeee5f83e2358a42dff088e4872d33183ae0cff651ef5374",
+      "project": "Community template"
+    },
+    {
       "name": "GhostItems",
       "address": "6c01842eaff712ff8f61e7d710a6ba6b62406919b81830bdd2af9982f118dedc",
       "epoch": 38565,
       "kind": "community",
       "binaryHash": "af3cf219f825f8b1ab4edf4ce762cfda494cee8fead5dcacb63a2235590f6c78",
       "authorPublicKey": "561844e9b304e08903a51bce4b24e41296ff56b9658982f93d634755e9d3e234",
+      "project": "Community template"
+    },
+    {
+      "name": "Semvi",
+      "address": "84f1d72f8b9e38d104e639de9fcce8d6f71098daa825c56ea0b2772d35f60580",
+      "epoch": 39067,
+      "kind": "community",
+      "binaryHash": "b37f29d78d1f15cba11265dc24f45c5d8fc70020090c90ca23399e58f359b342",
+      "authorPublicKey": "10595ea2a8484dcb957bed589919aac8dd5f0d363766aec8e9ac8d73deb6f157",
       "project": "Community template"
     },
     {
@@ -211,6 +238,15 @@
       "kind": "community",
       "binaryHash": "27c16be6367eabd4b314eeedbb22349bc1be8fba248cac678a68e1971bc3161c",
       "authorPublicKey": "da8b317049487cc2097430891b3d6761c6d693e61bdd7ee3ccc2e0f3c17f222c",
+      "project": "Community template"
+    },
+    {
+      "name": "TidexPool",
+      "address": "9ee4ecc58b60475d7c24c38e0aae817afade22b124c17e8c61a1fc1def942956",
+      "epoch": 39077,
+      "kind": "community",
+      "binaryHash": "ab8c97cb24a38d76a10e3bae43865782ab96cc18801522cf6ead17a1acf76f7b",
+      "authorPublicKey": "7c3e2aef3f4b796faeee5f83e2358a42dff088e4872d33183ae0cff651ef5374",
       "project": "Community template"
     },
     {
@@ -266,6 +302,15 @@
       "binaryHash": "7bc0832ea40b235eb01a0e5ad0e22aa472de5d97c92e25055555099fc888791d",
       "authorPublicKey": "66fb73201ee4eb423cf5e5c1c31e6520c576f1e6d1041e72ccd026593025e354",
       "project": "Signal Desk"
+    },
+    {
+      "name": "SeanceAuditorToken",
+      "address": "ca8e5e00366732b59856e9a4a12874b55d464bc39d42547da869155611ffea41",
+      "epoch": 39083,
+      "kind": "community",
+      "binaryHash": "87652a6addebad6bba11f47d3074160ee5ea1b348ecf57f88a92acd954bfc939",
+      "authorPublicKey": "c645223dc1e5c8759fd1d23e5b16143f1f1358d7724a3450565d739028b63a65",
+      "project": "Community template"
     },
     {
       "name": "MoonMail",

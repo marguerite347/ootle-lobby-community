@@ -8,12 +8,12 @@
       "type": "learn",
       "ecosystem": "tari-ootle",
       "group": "Releases",
-      "title": "Ootle v0.54.0 release notes",
-      "summary": "Ootle v0.54.0, published November 17, removes in-place component template changes. Validators and indexers must upgrade together; UpdateComponentTemplate is rejected without an activation epoch. In tari_template_lib 0.41.0, remove ComponentBuilder::with_upgrade_rule when compiling. Previously deployed templates run unchanged. Review the full release notes before upgrading. No software was installed during this source review. The November 17 recording walks through the original source page, with page scripts and downloads disabled.",
+      "title": "Ootle v0.55.0 release notes",
+      "summary": "Ootle v0.55.0, published November 20, introduces transaction schema V2 while accepting V1 transactions, per-component rules updaters and paged validator catch-up. Wallet key management removes keys.create, keys.list and keys.set_active; validator-fee permissions change to vn_fees:read and vn_fees:claim. Template library 0.42.0 defaults new components to RulesUpdater::Locked. The release also changes the WalletNetworkInterface SDK requirement and FFI ABI to ootle-sdk-ffi-c/20, and patches libz-sys for RUSTSEC-2026-0544. Review the complete notes before upgrading. The previous v0.54.0 prohibition on in-place template changes remains documented at its retained link. Source review only; no node, wallet or template upgrade was performed. The November 20 recording is a scripts-disabled walkthrough of these release notes.",
       "status": "Official stable release",
-      "sourceUrl": "https://github.com/tari-project/tari-ootle/releases/tag/v0.54.0",
+      "sourceUrl": "https://github.com/tari-project/tari-ootle/releases/tag/v0.55.0",
       "repoUrl": null,
-      "docsUrl": "https://github.com/tari-project/tari-ootle/releases/tag/v0.54.0",
+      "docsUrl": "https://github.com/tari-project/tari-ootle/releases/tag/v0.55.0",
       "demoUrl": null,
       "creator": {
         "name": "Tari contributors",
@@ -22,9 +22,9 @@
       "license": "BSD-3-Clause",
       "network": "Ootle mainnet and Esmeralda",
       "platform": "Documentation",
-      "upstreamRevision": "v0.54.0",
-      "sourceUpdatedAt": "2026-11-17T09:32:16Z",
-      "lastCheckedAt": "2026-11-17T19:04:56.458Z",
+      "upstreamRevision": "v0.55.0",
+      "sourceUpdatedAt": "2026-11-20T06:21:53Z",
+      "lastCheckedAt": "2026-11-20T14:00:54.768Z",
       "verification": "source-attested",
       "readiness": "conceptual",
       "tags": [
@@ -37,14 +37,19 @@
           "url": "https://github.com/tari-project/tari-ootle/pull/3824",
           "platform": "GitHub",
           "context": "Release change: disable in-place component template updates"
+        },
+        {
+          "url": "https://github.com/tari-project/tari-ootle/releases/tag/v0.54.0",
+          "platform": "GitHub",
+          "context": "Previous stable release v0.54.0 and its compatibility notes"
         }
       ],
       "cardSummary": "Check the latest Ootle upgrade requirements and changes affecting validators, indexers and template authors.",
-      "cardStatus": "Stable release · v0.54.0",
-      "sourceContentSha256": "9ae8f5780e234d0e15fdfed1fafd66231c72719e90cf6efec30c560186f08bfd",
+      "cardStatus": "Stable release · v0.55.0",
+      "sourceContentSha256": "083ce5fbffe7351784c364337baddda0cee05a7c7eefe58454fba857c52ac477",
       "preview": {
-        "video": "https://lobby.tari.com/previews/community/resource-ootle-releases-20261117.mp4",
-        "image": "https://lobby.tari.com/previews/community/resource-ootle-releases-20261117.jpg",
+        "video": "https://lobby.tari.com/previews/community/resource-ootle-releases-20261120.mp4",
+        "image": "https://lobby.tari.com/previews/community/resource-ootle-releases-20261120.png",
         "source": "Docs walkthrough"
       }
     },
