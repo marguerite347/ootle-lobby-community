@@ -1,0 +1,38 @@
+{
+  "slug": "contari",
+  "title": "Contari",
+  "creator": "fawaztechyt",
+  "summary": "November 22, 2026: React/Vite and Supabase preview for encrypted note lockers with wallet allowlists. Although note encryption happens in the client, the server holds a master key and the operator can decrypt notes; this is not operator-blind end-to-end encryption. Legacy URL-key lockers refuse unlocking. The README says contract publication/instantiation and wallet integration testing remain pending. Sapient or a compatible web-wallet provider is required for intended wallet flows. No locker was created or accessed. Review used original submission text, README, license metadata and extracted public-page text. Creator test results were not rerun. This recording is a continuous README walkthrough with page scripts and downloads disabled; no wallet, funds or third-party code was operated.",
+  "cardSummary": "Explore encrypted note sharing with wallet-based access lists in a preview that uses operator-managed decryption keys.",
+  "cardStatus": "Web preview · Wallet provider required",
+  "sourceUrl": "https://community.tari.com/t/november-bonus-contest-first-to-launch/521/23",
+  "publishedAt": "2026-11-21T13:44:40.212Z",
+  "updatedAt": "2026-11-21T13:44:40.212Z",
+  "sourceContentSha256": "32990463258c9f7d87a0942f24556649306aca92d5ff0724d498452104163cc8",
+  "repoUrl": "https://github.com/fawazfff/Contari",
+  "demoUrl": "https://contari-ten.vercel.app",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Browser · Source code",
+      "sourceUrl": "https://github.com/fawazfff/Contari"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-contari-20261122.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-contari-20261122.png",
+    "capturedAt": "2026-11-22T18:19:56.468Z",
+    "sourceRevision": "fe7fadcef27d3acb18b791331fbfadcb910d570e",
+    "kind": "public-page",
+    "credit": "Docs walkthrough"
+  },
+  "discussionLinks": [
+    {
+      "url": "https://community.tari.com/t/november-mvp-build/732",
+      "platform": "Tari Community forum"
+    }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:contari"
+  ]
+}

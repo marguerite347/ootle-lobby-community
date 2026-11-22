@@ -595,6 +595,72 @@
       "checkedAt": "2026-11-20T14:18:31.773623+00:00",
       "evidenceUrl": "https://community.tari.com/t/november-bonus-contest-first-to-launch/521/18",
       "evidence": "November 20: SeanceAuditorToken template publication 3147e80ea9bf2ba7ab6d1d5d3a85c256ec58af71e19b1b816d3da0770b6b2c97 committed on Ootle mainnet at 13:36:30 UTC. The creator describes the browser migration as pending; current app text and README still identify Esmeralda. Template publication does not establish the live app switch."
+    },
+    {
+      "ref": "tari-ootle:component:cappurse",
+      "state": "unconfirmed",
+      "checkedAt": "2026-11-22T18:20:20.370790+00:00",
+      "evidenceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/32",
+      "evidence": "A payer funds a vault and grants a helper spending limits, optional expiry and merchant restrictions. Limits do not reserve funds; payment also depends on the available vault balance. Amounts and memos are public and refunds are not provided. The creator explicitly says the template has not been published to Esmeralda or mainnet."
+    },
+    {
+      "ref": "tari-ootle:component:ootle-split",
+      "state": "mainnet",
+      "checkedAt": "2026-11-22T18:20:20.370790+00:00",
+      "evidenceUrl": "https://explorer.tari.mw/template/6494a4fe7ea2de9276aada3b77086dfc14242fe4b96629a694745b24e49fb2d2",
+      "evidence": "Shares total 10,000 basis points; anyone may deposit and request distribution, and rounding dust remains in the vault. Recipient accounts must accept deposits: an incompatible fixed recipient can lock funds. Recipients and amounts are public. The browser offers experimental Sapient distribution; creation and deposits use wallet CLI tooling. The README still contains a placeholder demo component. Current official catalogue metadata confirms the Split template; the submitted publication transaction was not known to the queried indexer, and no funded application flow was established by this review.",
+      "mainnetUrl": "https://techkeyy.github.io/ootle-split/",
+      "deploymentEvidence": {
+        "url": "https://explorer.tari.mw/template/6494a4fe7ea2de9276aada3b77086dfc14242fe4b96629a694745b24e49fb2d2",
+        "observedAt": "2026-11-22T14:37:42.276Z",
+        "detail": "Both official mainnet catalogues agree on Split template 6494a4fe7ea2de9276aada3b77086dfc14242fe4b96629a694745b24e49fb2d2 at epoch 39100. This establishes template deployment, not a demonstrated browser payment flow."
+      },
+      "showcase": {
+        "url": "https://techkeyy.github.io/ootle-split/",
+        "label": "Mainnet template · Fixed recipients",
+        "summary": "Inspect a fixed-share payment splitter with up to 32 recipients, public distributions and immutable recipient settings.",
+        "actionLabel": "View project"
+      }
+    },
+    {
+      "ref": "tari-ootle:component:steady",
+      "state": "mainnet",
+      "checkedAt": "2026-11-22T18:20:20.370790+00:00",
+      "evidenceUrl": "https://explorer.tari.mw/template/54d64fdd5af8a40fe9331611e1f37f473c1bf670f32523e2b093d704e76e3983",
+      "evidence": "The Payroll contract locks an aggregate budget and lets the employer release it; it does not enforce individual employee payments. Separate stealth payouts are outside that contract. Monthly total, headcount and roster hash are public, so small-team inference remains possible. Employer and claim interfaces are simulations; the proof page reads indexer metadata. The creator supplies a funded-vault and release history, but those submitted transaction IDs were not known to the queried indexer today. Both official catalogues independently confirm the deployed Payroll template.",
+      "mainnetUrl": "https://devendurance.github.io/steady/",
+      "deploymentEvidence": {
+        "url": "https://explorer.tari.mw/template/54d64fdd5af8a40fe9331611e1f37f473c1bf670f32523e2b093d704e76e3983",
+        "observedAt": "2026-11-22T14:37:42.276Z",
+        "detail": "Both official mainnet catalogues agree on Payroll template 54d64fdd5af8a40fe9331611e1f37f473c1bf670f32523e2b093d704e76e3983 at epoch 39096. This establishes template deployment, not a demonstrated browser payment flow."
+      },
+      "showcase": {
+        "url": "https://devendurance.github.io/steady/",
+        "label": "Mainnet template · Payroll simulation",
+        "summary": "Explore aggregate payroll funding and release records alongside simulated employer and employee views and a public proof page.",
+        "actionLabel": "View project"
+      }
+    },
+    {
+      "ref": "tari-ootle:component:paidseal",
+      "state": "unconfirmed",
+      "checkedAt": "2026-11-22T18:20:20.370790+00:00",
+      "evidenceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/36",
+      "evidence": "A receipt generator uses the receiver’s wallet export secret; this review did not operate it or acquire any secret. The browser verifier distinguishes chain amount/time evidence from a signed memo. A receipt does not establish the payer, an unspent balance or completion of promised work. Public-node queries expose the queried receipt, and receipts can be linked through the spend public key. The creator’s example is Tari L1 Esmeralda, separate from Ootle. GitHub’s license endpoint returned 404; the README claims MIT."
+    },
+    {
+      "ref": "tari-ootle:component:undibukti",
+      "state": "unconfirmed",
+      "checkedAt": "2026-11-22T18:20:20.370790+00:00",
+      "evidenceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/38",
+      "evidence": "The Rust draw template derives a result from the first eight epoch-hash bytes interpreted little-endian, modulo the public entry count. This is reproducible but not a claim of unbiased randomness: consensus influence and multiple accounts remain relevant. One account is not one person. The creator states no network template has been published. No draw, entry or transaction was performed."
+    },
+    {
+      "ref": "tari-ootle:component:contari",
+      "state": "unconfirmed",
+      "checkedAt": "2026-11-22T18:20:20.370790+00:00",
+      "evidenceUrl": "https://community.tari.com/t/november-bonus-contest-first-to-launch/521/23",
+      "evidence": "React/Vite and Supabase preview for encrypted note lockers with wallet allowlists. Although note encryption happens in the client, the server holds a master key and the operator can decrypt notes; this is not operator-blind end-to-end encryption. Legacy URL-key lockers refuse unlocking. The README says contract publication/instantiation and wallet integration testing remain pending. Sapient or a compatible web-wallet provider is required for intended wallet flows. No locker was created or accessed."
     }
   ]
 }

@@ -1,0 +1,38 @@
+{
+  "slug": "paidseal",
+  "title": "PaidSeal",
+  "creator": "Heisdave",
+  "summary": "November 22, 2026: A receipt generator uses the receiver’s wallet export secret; this review did not operate it or acquire any secret. The browser verifier distinguishes chain amount/time evidence from a signed memo. A receipt does not establish the payer, an unspent balance or completion of promised work. Public-node queries expose the queried receipt, and receipts can be linked through the spend public key. The creator’s example is Tari L1 Esmeralda, separate from Ootle. GitHub’s license endpoint returned 404; the README claims MIT. Review used original submission text, README, license metadata and extracted public-page text. Creator test results were not rerun. This recording is a continuous README walkthrough with page scripts and downloads disabled; no wallet, funds or third-party code was operated.",
+  "cardSummary": "Inspect receiver-issued Tari payment receipts with separate chain evidence, signed notes and explicit privacy limits.",
+  "cardStatus": "Tari L1 testnet · Receipt tool",
+  "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/36",
+  "publishedAt": "2026-11-21T12:32:21.249Z",
+  "updatedAt": "2026-11-21T12:32:21.249Z",
+  "sourceContentSha256": "bfb9b8bbbbc5b542af65b282d9d18f975964ab05a3c7cacac75f36705999db8f",
+  "repoUrl": "https://github.com/Heisdave/paidseal",
+  "demoUrl": "https://heisdave.github.io/paidseal/verify.html",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Browser · Source code",
+      "sourceUrl": "https://github.com/Heisdave/paidseal"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-paidseal-20261122.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-paidseal-20261122.png",
+    "capturedAt": "2026-11-22T18:06:01.323870+00:00",
+    "sourceRevision": "7612ab3604e616796dc88f7cdf7b4bab78e26c20",
+    "kind": "public-page",
+    "credit": "Docs walkthrough"
+  },
+  "discussionLinks": [
+    {
+      "url": "https://youtu.be/to6edoNX_yk",
+      "platform": "Creator-linked source"
+    }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:paidseal"
+  ]
+}

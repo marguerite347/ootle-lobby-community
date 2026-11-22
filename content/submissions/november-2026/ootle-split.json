@@ -1,0 +1,42 @@
+{
+  "slug": "ootle-split",
+  "title": "Ootle Split",
+  "creator": "praise / Techkeyy",
+  "summary": "November 22, 2026: Shares total 10,000 basis points; anyone may deposit and request distribution, and rounding dust remains in the vault. Recipient accounts must accept deposits: an incompatible fixed recipient can lock funds. Recipients and amounts are public. The browser offers experimental Sapient distribution; creation and deposits use wallet CLI tooling. The README still contains a placeholder demo component. Current official catalogue metadata confirms the Split template; the submitted publication transaction was not known to the queried indexer, and no funded application flow was established by this review. Review used original submission text, README, license metadata and extracted public-page text. Creator test results were not rerun. This recording is a continuous README walkthrough with page scripts and downloads disabled; no wallet, funds or third-party code was operated.",
+  "cardSummary": "Inspect a fixed-share payment splitter with up to 32 recipients, public distributions and immutable recipient settings.",
+  "cardStatus": "Mainnet template · Fixed recipients",
+  "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/34",
+  "publishedAt": "2026-11-21T06:32:55.228Z",
+  "updatedAt": "2026-11-21T06:32:55.228Z",
+  "sourceContentSha256": "dea1b68a1011cbe439f7c709b17a859f9ae474f847d15fb15b3c780443a34930",
+  "repoUrl": "https://github.com/Techkeyy/ootle-split",
+  "demoUrl": "https://techkeyy.github.io/ootle-split/",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Browser · Source code",
+      "sourceUrl": "https://github.com/Techkeyy/ootle-split"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-ootle-split-20261122.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-ootle-split-20261122.png",
+    "capturedAt": "2026-11-22T18:02:51.673777+00:00",
+    "sourceRevision": "3680564e6144c8d52fbbf2d59ccf9287b540eb67",
+    "kind": "public-page",
+    "credit": "Docs walkthrough"
+  },
+  "discussionLinks": [
+    {
+      "url": "https://bsky.app/profile/praiseprodigyy.bsky.social/post/3n2rfl6he7c2b",
+      "platform": "Creator-linked source"
+    },
+    {
+      "url": "https://community.tari.com/t/november-bonus-contest-first-to-launch/521/21",
+      "platform": "Tari Community forum"
+    }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:ootle-split"
+  ]
+}

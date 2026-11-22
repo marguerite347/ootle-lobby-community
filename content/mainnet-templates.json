@@ -1,6 +1,6 @@
 {
   "network": "mainnet",
-  "checkedAt": "2026-11-20T14:00:54.768Z",
+  "checkedAt": "2026-11-22T14:37:42.276Z",
   "sources": [
     "https://indexer-a.ootle.tari.com/templates/catalogue?limit=100",
     "https://indexer-b.ootle.tari.com/templates/catalogue?limit=100"
@@ -97,12 +97,30 @@
       "project": "Community template"
     },
     {
+      "name": "StillHere",
+      "address": "207a50d20c6bac05cac441fa3560377e92ed493217fbac3147f72405c27b38bb",
+      "epoch": 39124,
+      "kind": "community",
+      "binaryHash": "c1f527b6b3ca9f59927224c702977c0bac755bca0bb84cddee7dd4a937c13a8a",
+      "authorPublicKey": "6a2a078ee0c507bec9dab94d9c74a5c6b85ba8e48e76cefa6d2ee39b669eb11d",
+      "project": "Community template"
+    },
+    {
       "name": "PredictionMarketV7",
       "address": "25ef5046cd8419001430c8e0b80c4d7eccad7a815cd470bb5993b9663edfdbd1",
       "epoch": 38472,
       "kind": "community",
       "binaryHash": "83f1b5e092d235e48f6a33f516c9ba59de4559fff9cbacaa7dc80a99e33e9018",
       "authorPublicKey": "dc8b5ed935991d43ca987ad626764a9c6f2fe6539dfe459d331d797ed49c2721",
+      "project": "Community template"
+    },
+    {
+      "name": "Tender",
+      "address": "267d1d73da73ec990e8711e492bccb9112076051d396922bdef2b9d667c684eb",
+      "epoch": 39212,
+      "kind": "community",
+      "binaryHash": "c6e763cede31e536e08ec54fb6a45c581cd67fdb023e5982d29c7bf862a095a7",
+      "authorPublicKey": "34726116b849710654266b9285f2c904a2ff45938b70a836a24d39f3af886650",
       "project": "Community template"
     },
     {
@@ -151,12 +169,30 @@
       "project": "Community template"
     },
     {
+      "name": "Payroll",
+      "address": "54d64fdd5af8a40fe9331611e1f37f473c1bf670f32523e2b093d704e76e3983",
+      "epoch": 39096,
+      "kind": "community",
+      "binaryHash": "7d2413e9700810368f252abe0cea0380da45078e5fec2cd51144aff4c5357a68",
+      "authorPublicKey": "beec685a3e606bc04676fd4c807e0c1b72b68e7a31d34584e9a3e6297ca73d27",
+      "project": "Community template"
+    },
+    {
       "name": "SooonTokenV1",
       "address": "57567fcbba92012fa39c9a479ca0ffe8995eeac58f123b6e901129b4f84b0285",
       "epoch": 38472,
       "kind": "community",
       "binaryHash": "7143c69c2f4dad401a917581c72bec58ff90260afc3eca23074fafe76526b8d7",
       "authorPublicKey": "dc8b5ed935991d43ca987ad626764a9c6f2fe6539dfe459d331d797ed49c2721",
+      "project": "Community template"
+    },
+    {
+      "name": "Split",
+      "address": "6494a4fe7ea2de9276aada3b77086dfc14242fe4b96629a694745b24e49fb2d2",
+      "epoch": 39100,
+      "kind": "community",
+      "binaryHash": "555bbaa5d6410e5dd4deda9a562f9e236770cc720bdbc9b2cbc27c203d9b78a3",
+      "authorPublicKey": "1a8baa583b0068359004ec094cd06f68b908ccae3bc2d41c46cd7a851e98e862",
       "project": "Community template"
     },
     {
@@ -302,6 +338,15 @@
       "binaryHash": "7bc0832ea40b235eb01a0e5ad0e22aa472de5d97c92e25055555099fc888791d",
       "authorPublicKey": "66fb73201ee4eb423cf5e5c1c31e6520c576f1e6d1041e72ccd026593025e354",
       "project": "Signal Desk"
+    },
+    {
+      "name": "Circle",
+      "address": "b86a46241753b8b8e4c2e9571c0db727925d77e1274009175e4f0b0e18cf466b",
+      "epoch": 39212,
+      "kind": "community",
+      "binaryHash": "66d855f875a80d092a3c616fff0a6426e4a28320467a21ce75ce99c04a0319d3",
+      "authorPublicKey": "34726116b849710654266b9285f2c904a2ff45938b70a836a24d39f3af886650",
+      "project": "Community template"
     },
     {
       "name": "SeanceAuditorToken",

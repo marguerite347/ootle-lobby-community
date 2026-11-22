@@ -1,0 +1,38 @@
+{
+  "slug": "undibukti",
+  "title": "UndiBukti",
+  "creator": "biggals",
+  "summary": "November 22, 2026: The Rust draw template derives a result from the first eight epoch-hash bytes interpreted little-endian, modulo the public entry count. This is reproducible but not a claim of unbiased randomness: consensus influence and multiple accounts remain relevant. One account is not one person. The creator states no network template has been published. No draw, entry or transaction was performed. Review used original submission text, README, license metadata and extracted public-page text. Creator test results were not rerun. This recording is a continuous README walkthrough with page scripts and downloads disabled; no wallet, funds or third-party code was operated.",
+  "cardSummary": "Explore community draws whose results can be recomputed from public entries and epoch hashes in a walletless simulation.",
+  "cardStatus": "Browser simulation · Rust source",
+  "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/38",
+  "publishedAt": "2026-11-21T15:57:35.384Z",
+  "updatedAt": "2026-11-21T15:57:35.384Z",
+  "sourceContentSha256": "54fe53638d7f4b79c61c22986b9704546bef473c225a9ac0dfe3fc157afa506f",
+  "repoUrl": "https://github.com/kungker/undibukti",
+  "demoUrl": "https://kungker.github.io/undibukti/",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Browser · Source code",
+      "sourceUrl": "https://github.com/kungker/undibukti"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-undibukti-20261122.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-undibukti-20261122.png",
+    "capturedAt": "2026-11-22T18:06:25.188675+00:00",
+    "sourceRevision": "40905d6f241cdd1dd6ac847cbfad691942c8b139",
+    "kind": "public-page",
+    "credit": "Docs walkthrough"
+  },
+  "discussionLinks": [
+    {
+      "url": "https://www.reddit.com/r/tari/comments/1y076hd/i_built_undibukti_a_tari_ootle_draw_where_anyone/",
+      "platform": "Creator-linked source"
+    }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:undibukti"
+  ]
+}

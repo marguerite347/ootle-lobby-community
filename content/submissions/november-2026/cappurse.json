@@ -1,0 +1,38 @@
+{
+  "slug": "cappurse",
+  "title": "CapPurse",
+  "creator": "cappurse_dev / Ali Ghaedi",
+  "summary": "November 22, 2026: A payer funds a vault and grants a helper spending limits, optional expiry and merchant restrictions. Limits do not reserve funds; payment also depends on the available vault balance. Amounts and memos are public and refunds are not provided. The creator explicitly says the template has not been published to Esmeralda or mainnet. Review used original submission text, README, license metadata and extracted public-page text. Creator test results were not rerun. This recording is a continuous README walkthrough with page scripts and downloads disabled; no wallet, funds or third-party code was operated.",
+  "cardSummary": "Explore delegated spending caps, merchant allowlists and revocation through a walletless simulation and Rust vault template.",
+  "cardStatus": "Browser simulation · Rust source",
+  "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/32",
+  "publishedAt": "2026-11-20T20:34:47.496Z",
+  "updatedAt": "2026-11-20T20:34:47.496Z",
+  "sourceContentSha256": "737bed8d8a4e940b8dcd8bafcfbddd874a7d6e04d7d1e8f59b5e94cb161af9e0",
+  "repoUrl": "https://github.com/halfabillion/cappurse",
+  "demoUrl": "https://halfabillion.github.io/cappurse/web/",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Browser · Source code",
+      "sourceUrl": "https://github.com/halfabillion/cappurse"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-cappurse-20261122.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-cappurse-20261122.png",
+    "capturedAt": "2026-11-22T16:35:01.027Z",
+    "sourceRevision": "963f64cc7d919b8ab0e1fe984892ca6b01437169",
+    "kind": "public-page",
+    "credit": "Docs walkthrough"
+  },
+  "discussionLinks": [
+    {
+      "url": "https://www.reddit.com/r/tari/comments/1y0bs1m/cappurse_a_spendcapped_allowance_vault_on_tari/",
+      "platform": "Creator-linked source"
+    }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:cappurse"
+  ]
+}
