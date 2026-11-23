@@ -1,0 +1,38 @@
+{
+  "slug": "ootle-street-nights",
+  "title": "Ootle Street: Nights Edition",
+  "creator": "Snateri",
+  "summary": "November 23, 2026: The creator describes browser racing with islands, bridges, ghost-mode timing and collisions. The browser demo runs client-side; its displayed escrow balances are not blockchain payment evidence. The README identifies companion Esmeralda template f96acf40ccf1dd2084b89c964a7ed1d2130b3fbb5a5aba2fb264dbb583da4a71 and reports nine engine tests. These results were not rerun; current deployment confirmation remains pending. Review covered the complete submission, README and MIT license metadata. Public app text extraction failed; app availability and operation were not established today. The recording shows the README with page scripts and downloads disabled. No wallet, funds or third-party code was operated.",
+  "cardSummary": "Explore a Miami street-racing prototype with local escrow simulation and a separately described Esmeralda contract.",
+  "cardStatus": "Browser prototype · Testnet companion",
+  "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/40",
+  "publishedAt": "2026-11-22T10:23:26.196Z",
+  "updatedAt": "2026-11-22T17:04:30.864Z",
+  "sourceContentSha256": "786e10f0a1ad884e2154b5579592d8fc6d6853c614df355ece17a1a539b9acc1",
+  "repoUrl": "https://github.com/Snateri999/ootle-street-nights-1.0",
+  "demoUrl": "https://snateri999.github.io/ootle-street-nights-1.0/",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Browser · Source code",
+      "sourceUrl": "https://github.com/Snateri999/ootle-street-nights-1.0"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-ootle-street-nights-20261123.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-ootle-street-nights-20261123.png",
+    "capturedAt": "2026-11-23T14:35:33.202Z",
+    "sourceRevision": "README-blob:bd38f23df369e0f3246e44cc8d1f95f999a369d8",
+    "kind": "public-page",
+    "credit": "Docs walkthrough"
+  },
+  "discussionLinks": [
+    {
+      "url": "https://www.reddit.com/r/tari/comments/1y2m4i2/november_build_mvp_ootle_street_nights_edition/",
+      "platform": "Creator-linked source"
+    }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:ootle-street-nights"
+  ]
+}

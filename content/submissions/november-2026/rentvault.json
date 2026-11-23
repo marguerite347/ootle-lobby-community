@@ -1,0 +1,38 @@
+{
+  "slug": "rentvault",
+  "title": "RentVault",
+  "creator": "cherry / factoruuu",
+  "summary": "November 23, 2026: Rental terms are fixed at creation. Both parties can confirm a full refund, owners can claim after the rental ends, renters can dispute within the window, and anyone can trigger settlement after eligible deadlines. A timely dispute always refunds the renter in full; the template does not adjudicate damage or split a contested claim. Deposit amounts and events are public. The creator reports twenty engine tests and explicitly states that the template is unpublished on Esmeralda and mainnet, with no wallet-connected frontend. Review covered the complete submission, README and MIT license metadata. Public app text extraction failed; app availability and operation were not established today. The recording shows the README with page scripts and downloads disabled. No wallet, funds or third-party code was operated.",
+  "cardSummary": "Explore rental-deposit escrow rules with mutual release, claims, dispute refunds and deadlines in a walletless simulation.",
+  "cardStatus": "Browser simulation · Rust source",
+  "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/41",
+  "publishedAt": "2026-11-22T23:55:01.779Z",
+  "updatedAt": "2026-11-22T23:55:01.779Z",
+  "sourceContentSha256": "5b30c800c0ad0651b0710b27c880a8310d425f436784a13166319733592b8b99",
+  "repoUrl": "https://github.com/factoruuu/rentvault",
+  "demoUrl": "https://longan.celurut.online/rentvault/",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Browser · Source code",
+      "sourceUrl": "https://github.com/factoruuu/rentvault"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-rentvault-20261123.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-rentvault-20261123.png",
+    "capturedAt": "2026-11-23T14:35:53.096Z",
+    "sourceRevision": "7e956ac124ee27548d3c9ca4921de8733b0fe652",
+    "kind": "public-page",
+    "credit": "Docs walkthrough"
+  },
+  "discussionLinks": [
+    {
+      "url": "https://medium.com/@v_sraddha/rentvault-the-rental-deposit-without-the-argument-7c71c7451f39",
+      "platform": "Creator-linked source"
+    }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:rentvault"
+  ]
+}

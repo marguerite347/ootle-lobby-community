@@ -1,6 +1,6 @@
 {
   "network": "mainnet",
-  "checkedAt": "2026-11-22T14:37:42.276Z",
+  "checkedAt": "2026-11-23T14:12:46.306Z",
   "sources": [
     "https://indexer-a.ootle.tari.com/templates/catalogue?limit=100",
     "https://indexer-b.ootle.tari.com/templates/catalogue?limit=100"
@@ -355,6 +355,15 @@
       "kind": "community",
       "binaryHash": "87652a6addebad6bba11f47d3074160ee5ea1b348ecf57f88a92acd954bfc939",
       "authorPublicKey": "c645223dc1e5c8759fd1d23e5b16143f1f1358d7724a3450565d739028b63a65",
+      "project": "Community template"
+    },
+    {
+      "name": "AnomiToken",
+      "address": "d389fc411cfe200fd1b8b23987986fa8c69540aee9be2832a4256659e00db35f",
+      "epoch": 39287,
+      "kind": "community",
+      "binaryHash": "cddd286c0b306386de725c9567479846c2f3458c24be40a43ad0c41a9df6b31d",
+      "authorPublicKey": "9e84b6cd0c09fbb033e8e8e6919c053107c8d2a5df462caa6bbb3073cb61e340",
       "project": "Community template"
     },
     {
