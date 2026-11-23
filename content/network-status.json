@@ -661,6 +661,20 @@
       "checkedAt": "2026-11-22T18:20:20.370790+00:00",
       "evidenceUrl": "https://community.tari.com/t/november-bonus-contest-first-to-launch/521/23",
       "evidence": "React/Vite and Supabase preview for encrypted note lockers with wallet allowlists. Although note encryption happens in the client, the server holds a master key and the operator can decrypt notes; this is not operator-blind end-to-end encryption. Legacy URL-key lockers refuse unlocking. The README says contract publication/instantiation and wallet integration testing remain pending. Sapient or a compatible web-wallet provider is required for intended wallet flows. No locker was created or accessed."
+    },
+    {
+      "ref": "tari-ootle:component:ootle-street-nights",
+      "state": "unconfirmed",
+      "checkedAt": "2026-11-23T14:48:03.487809+00:00",
+      "evidenceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/40",
+      "evidence": "The creator describes browser racing with islands, bridges, ghost-mode timing and collisions. The browser demo runs client-side; its displayed escrow balances are not blockchain payment evidence. The README identifies companion Esmeralda template f96acf40ccf1dd2084b89c964a7ed1d2130b3fbb5a5aba2fb264dbb583da4a71 and reports nine engine tests. These results were not rerun; current deployment confirmation remains pending."
+    },
+    {
+      "ref": "tari-ootle:component:rentvault",
+      "state": "unconfirmed",
+      "checkedAt": "2026-11-23T14:48:03.487809+00:00",
+      "evidenceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/41",
+      "evidence": "Rental terms are fixed at creation. Both parties can confirm a full refund, owners can claim after the rental ends, renters can dispute within the window, and anyone can trigger settlement after eligible deadlines. A timely dispute always refunds the renter in full; the template does not adjudicate damage or split a contested claim. Deposit amounts and events are public. The creator reports twenty engine tests and explicitly states that the template is unpublished on Esmeralda and mainnet, with no wallet-connected frontend."
     }
   ]
 }
