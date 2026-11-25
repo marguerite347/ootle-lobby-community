@@ -1,6 +1,6 @@
 {
   "network": "mainnet",
-  "checkedAt": "2026-11-23T14:12:46.306Z",
+  "checkedAt": "2026-11-25T14:05:34.705Z",
   "sources": [
     "https://indexer-a.ootle.tari.com/templates/catalogue?limit=100",
     "https://indexer-b.ootle.tari.com/templates/catalogue?limit=100"
@@ -11,7 +11,7 @@
       "address": "0000000000000000000000000000000000000000000000000000000000000000",
       "epoch": 0,
       "kind": "builtin",
-      "binaryHash": "75b528668468864993312f58af1abc52857e2587754f6544ec6e041db871dd83",
+      "binaryHash": "34d4b249c660e0db3d9b36ec3ddd210d7b2cce167c8ce3e42303767fd80d4abe",
       "authorPublicKey": "0000000000000000000000000000000000000000000000000000000000000000",
       "project": "Ootle protocol"
     },
@@ -20,7 +20,7 @@
       "address": "0000000000000000000000000000000000000000000000000000000000000001",
       "epoch": 0,
       "kind": "builtin",
-      "binaryHash": "1dc98f3da30038efe6d431659dd078668d61ef4d6a41abc0b8603742a23bbc45",
+      "binaryHash": "0385d40f26b217e0396c9cf0069a65c8713db02742eab9fd5104536e0fc0298a",
       "authorPublicKey": "0000000000000000000000000000000000000000000000000000000000000000",
       "project": "Ootle protocol"
     },
@@ -29,7 +29,7 @@
       "address": "0000000000000000000000000000000000000000000000000000000000000002",
       "epoch": 0,
       "kind": "builtin",
-      "binaryHash": "929469280e150871bbb6b01f214eb0cf5b539b9cebf23cde68f39d75377c91c9",
+      "binaryHash": "e6c61ac10309dcae812f3e833f9a5fd43727aa5081b2ea0cda90219f4b30067b",
       "authorPublicKey": "0000000000000000000000000000000000000000000000000000000000000000",
       "project": "Ootle protocol"
     },
@@ -38,7 +38,7 @@
       "address": "0000000000000000000000000000000000000000000000000000000000000003",
       "epoch": 0,
       "kind": "builtin",
-      "binaryHash": "f3e227cdfe78daa8e5dee37debd6c9c3a00ee3c1bb5d9843a39040d3788d8e73",
+      "binaryHash": "8aee093b8d1e4201acc148e5234a7757780c5d22d1a59a2278432f451f95d64d",
       "authorPublicKey": "0000000000000000000000000000000000000000000000000000000000000000",
       "project": "Ootle protocol"
     },
@@ -56,7 +56,7 @@
       "address": "0102030000000000000000000000000000000000000000000000000000000000",
       "epoch": 0,
       "kind": "builtin",
-      "binaryHash": "39dd74fd8882e526483a88767808d8b6190cab4c38b988d4d8a8effccc7733b0",
+      "binaryHash": "5e678d568d6fd6245f7411077da3ef8177b8ae99706ed790a6fc2c77f977a46a",
       "authorPublicKey": "0000000000000000000000000000000000000000000000000000000000000000",
       "project": "Ootle protocol"
     },
@@ -187,6 +187,15 @@
       "project": "Community template"
     },
     {
+      "name": "SourceRegistry",
+      "address": "5b0efecc709ce6885b69738ce8f774f086ef0c6cb7b2a58920f8bab3e38f8b13",
+      "epoch": 39294,
+      "kind": "community",
+      "binaryHash": "b21b1b4326bcb183a6dedcfbf9f60bb72b25e6b2a5e7bc96320b7a612f20c144",
+      "authorPublicKey": "1a8baa583b0068359004ec094cd06f68b908ccae3bc2d41c46cd7a851e98e862",
+      "project": "Community template"
+    },
+    {
       "name": "Split",
       "address": "6494a4fe7ea2de9276aada3b77086dfc14242fe4b96629a694745b24e49fb2d2",
       "epoch": 39100,
@@ -238,6 +247,15 @@
       "kind": "community",
       "binaryHash": "af3cf219f825f8b1ab4edf4ce762cfda494cee8fead5dcacb63a2235590f6c78",
       "authorPublicKey": "561844e9b304e08903a51bce4b24e41296ff56b9658982f93d634755e9d3e234",
+      "project": "Community template"
+    },
+    {
+      "name": "Campaign",
+      "address": "7d80993c271e39f70577f4a9f63c667d415cc64cafba4465d3b96d6607a5bc46",
+      "epoch": 39327,
+      "kind": "community",
+      "binaryHash": "0cb5490a68c4d54ee855cfc8b4c98571bb638bebcb665ed0b85cd65ab76bb2d5",
+      "authorPublicKey": "38f5e4091bb27a33dc3babd220fe1620a2d04cd8fc6145b49de711501013330f",
       "project": "Community template"
     },
     {
@@ -301,6 +319,15 @@
       "kind": "community",
       "binaryHash": "1b0d42e09a2a9d8564b5856c9ecdec8b18f3eb8bfa2a876398f9ee1e0376bff8",
       "authorPublicKey": "dc8b5ed935991d43ca987ad626764a9c6f2fe6539dfe459d331d797ed49c2721",
+      "project": "Community template"
+    },
+    {
+      "name": "SooonPictureV1",
+      "address": "a7e1d3b80cac992dfe700745ebe34ecd0edbc29421179a5cdee0bea370c196a1",
+      "epoch": 39378,
+      "kind": "community",
+      "binaryHash": "d04b9e67957882c7e05b75fbdf8dbc7b761f3aa5f13ea2451f9c74a1323e8ebc",
+      "authorPublicKey": "023ea1bfba60070145733f021fece70e6f8a8ccee04a8add2f8fb20e249fc561",
       "project": "Community template"
     },
     {
@@ -427,6 +454,15 @@
       "kind": "community",
       "binaryHash": "8ec7fbdbb7d7621373d05124ad2e11647a5521e88c40a60e4856419d171bf8d9",
       "authorPublicKey": "3a16518803c51e8ceff24d26dc8d2d1b252f61e4d13a06487e5e3ed3d7725772",
+      "project": "Community template"
+    },
+    {
+      "name": "SodPay",
+      "address": "f633483cd1d57317f6d9e104ecb2c5c1a37a8def33abf3784c15207d47fd3855",
+      "epoch": 39309,
+      "kind": "community",
+      "binaryHash": "4d473e3185f0a0c26ed2140d9e17f90125a9faecb86f61efaeb68861ca8b78f7",
+      "authorPublicKey": "4454f2a979f22020504bb6a87daaec470c6351b796c9f04d6d95a84ea8f40736",
       "project": "Community template"
     },
     {

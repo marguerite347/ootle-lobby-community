@@ -675,6 +675,13 @@
       "checkedAt": "2026-11-23T14:48:03.487809+00:00",
       "evidenceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/41",
       "evidence": "Rental terms are fixed at creation. Both parties can confirm a full refund, owners can claim after the rental ends, renters can dispute within the window, and anyone can trigger settlement after eligible deadlines. A timely dispute always refunds the renter in full; the template does not adjudicate damage or split a contested claim. Deposit amounts and events are public. The creator reports twenty engine tests and explicitly states that the template is unpublished on Esmeralda and mainnet, with no wallet-connected frontend."
+    },
+    {
+      "ref": "tari-ootle:component:ootlegig",
+      "state": "unconfirmed",
+      "checkedAt": "2026-11-25T14:05:34.705Z",
+      "evidenceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/43",
+      "evidence": "Creator submission and README explicitly state the template has not been published on Esmeralda or mainnet. The linked frontend is a walletless browser simulation."
     }
   ]
 }
