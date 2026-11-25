@@ -27,7 +27,7 @@ export function withContestEntries(records) {
       summary:entry.summary, sourceId:'september-contest-2026', sourceName:'September contest submissions',
       sourceUrl:entry.sourceUrl, sourceUpdatedAt:entry.updatedAt, fetchedAt:contestRegistry.fetchedAt, verification:'source-attested',
       readiness:'conceptual', network:entry.network || 'Ootle testnet (submission-reported)',
-      setupHint:'Read the source repository setup and testnet requirements. This imported profile does not deploy or verify the application.',
+      setupHint:'Read the project’s current setup, network requirements and review notes before using it.',
     });
     const {reviewNote,...cardFields}=cardCopy.get(entry.id);
     merged.set(entry.id, {...resource, ...cardFields, summary:withProjectReviewNote(resource.summary,reviewNote), repoUrl:entry.repoUrl, demoUrl:entry.demoUrl || resource.demoUrl,

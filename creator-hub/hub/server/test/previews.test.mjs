@@ -31,12 +31,12 @@ test('unreviewed generic covers are suppressed independently of current seed cap
       const {load,previewFor}=await import(${JSON.stringify(new URL('../previews.mjs', import.meta.url).href)});
       load();
       assert.equal(previewFor({type:'app',title:'Unreviewed fixture',sourceUrl:'https://fixture.invalid/'}),null);
-      writeFileSync(dir+'/index.json',JSON.stringify([{slug:'unreviewed-fixture',url:'https://fixture.invalid/',source:'capture',image:'/previews/unreviewed-fixture.poster.png'}]));
+      writeFileSync(dir+'/index.json',JSON.stringify([{slug:'unreviewed-fixture',url:'https://fixture.invalid/',source:'capture',caption:'Docs walkthrough',image:'/previews/unreviewed-fixture.poster.png'}]));
       load();
       const captured=previewFor({type:'app',title:'Unreviewed fixture',sourceUrl:'https://fixture.invalid/'});
       assert.equal(captured.image,'/previews/unreviewed-fixture.poster.png');
       assert.equal(captured.video,null);
-      assert.match(captured.source,/Recorded webpage/);
+      assert.equal(captured.source,'Docs walkthrough');
     `], {env: {...process.env, CREATOR_HUB_PREVIEWS_DIR: empty}, encoding:'utf8'});
     assert.equal(result.status, 0, result.stderr);
   } finally { rmSync(empty, {recursive:true, force:true}); }
