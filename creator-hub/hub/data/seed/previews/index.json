@@ -144,16 +144,30 @@
   {
     "id": "tari-ootle:app:tari-l1-web-wallet",
     "slug": "tari-l1-web-wallet",
-    "url": "https://universe.tari.mw",
+    "url": "https://community.tari.com/t/retiring-the-web-universe-wallet-universe-tari-mw/750/1",
     "source": "capture",
-    "video": "/previews/media-b26542a4cb6d6916d8d64ccedaf65f015749416a3264eea8c6834659257e2a26.mp4",
-    "image": "/previews/media-2a5f5a7c61b7ee20dc0217a5051398a07ec827f96d6d733080fae1ece8ec5b40.poster.png",
+    "video": "/previews/resource-wallet-retirement-20261125.mp4",
+    "image": "/previews/resource-wallet-retirement-20261125.poster.png",
     "review": {
-      "reviewedAt": "2026-10-03",
-      "videoSha256": "b26542a4cb6d6916d8d64ccedaf65f015749416a3264eea8c6834659257e2a26",
-      "scope": "Public app introduction",
-      "notes": "Recorded from the project public page in Chrome. Opening and motion frames reviewed; no login, wallet creation, secrets, transactions, or gameplay claim.",
-      "captureFrames": 371
+      "reviewedAt": "2026-11-25T14:25:17.418983+00:00",
+      "videoSha256": "6dcf1bd190a09d97b5c4f7edeb1d8e324665766c168b62e2fbcd4958f6c25a19",
+      "scope": "Announcement",
+      "notes": "Continuous source walkthrough with scripts and downloads disabled. Opening, middle and closing frames inspected. Retirement planned after January1,2027; no wallet interaction. Previous capture retained in previousCapture."
+    },
+    "previousCapture": {
+      "id": "tari-ootle:app:tari-l1-web-wallet",
+      "slug": "tari-l1-web-wallet",
+      "url": "https://universe.tari.mw",
+      "source": "capture",
+      "video": "/previews/media-b26542a4cb6d6916d8d64ccedaf65f015749416a3264eea8c6834659257e2a26.mp4",
+      "image": "/previews/media-2a5f5a7c61b7ee20dc0217a5051398a07ec827f96d6d733080fae1ece8ec5b40.poster.png",
+      "review": {
+        "reviewedAt": "2026-10-03",
+        "videoSha256": "b26542a4cb6d6916d8d64ccedaf65f015749416a3264eea8c6834659257e2a26",
+        "scope": "Public app introduction",
+        "notes": "Recorded from the project public page in Chrome. Opening and motion frames reviewed; no login, wallet creation, secrets, transactions, or gameplay claim.",
+        "captureFrames": 371
+      }
     }
   },
   {
