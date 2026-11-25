@@ -2,13 +2,13 @@
   "slug": "stillhere",
   "title": "StillHere",
   "creator": "Godson-droid",
-  "summary": "MIT-licensed dead-man’s-switch vault with an owner badge, beneficiary, epoch deadline and walletless simulation. The badge holder can check in, withdraw, change the beneficiary or close the vault; after the deadline anyone may trigger payment directly to the beneficiary. A late check-in before release revives the vault. November 20, 2026: the official Esmeralda indexer records the submitted template publication as committed on November 19, network byte 38. The browser is a simulation, not a wallet interface. The README reports 55 engine tests; these were not rerun. Review used the original forum post, full README, MIT license, public page text and available deployment metadata. No third-party code was installed or executed, and no wallet or transaction was operated. The recording is a continuous README walkthrough with page scripts and downloads disabled.",
-  "cardSummary": "Explore heartbeat check-ins and beneficiary releases through an Esmeralda vault template and walletless browser simulation.",
-  "cardStatus": "Testnet template · Browser simulation",
+  "summary": "MIT-licensed heartbeat vault with an owner badge, beneficiary and epoch deadline. A late check-in before release revives the vault. November 25, 2026: the creator’s edited submission and current Veil metadata identify a mainnet StillHere template published at epoch 39124; the official indexer serves its matching publish receipt. Earlier Esmeralda deployment evidence is retained. The browser demo is a walletless simulation, not a live vault interface. README revision 0a7b5cada6d6f5012dccc4b5fae2a1123b47755f is unchanged from the retained November 20 docs recording and still describes the earlier testnet deployment. Current mainnet evidence is linked separately. No wallet, deposit, transaction, third-party code execution or independent engine test was performed.",
+  "cardSummary": "Explore heartbeat check-ins and beneficiary releases through Ootle mainnet and testnet templates and a walletless simulation.",
+  "cardStatus": "Mainnet template · Testnet · Browser simulation",
   "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/30",
   "publishedAt": "2026-11-19T17:02:46.669Z",
-  "updatedAt": "2026-11-20T08:10:19.334Z",
-  "sourceContentSha256": "2aa13196983b7513cd89b8dfd873075ff9d1f54281db3a90dc0424938477e7e0",
+  "updatedAt": "2026-11-21T13:08:07.893Z",
+  "sourceContentSha256": "7c0b902467827b6674b096bdae9d1b72c8f5f563a240ee752fe5e1843ba579a9",
   "repoUrl": "https://github.com/Godson-droid/stillhere",
   "demoUrl": "https://godson-droid.github.io/stillhere/sim/",
   "ecosystem": "tari-ootle",
@@ -34,6 +34,10 @@
     {
       "url": "https://esme-indexer-a.ootle.tari.com/transactions/217ce22b3f7ee37a4df0efb5c728d255dfe546dd30deb93e45b9163cdf766e4b",
       "platform": "Esmeralda indexer"
+    },
+    {
+      "url": "https://explorer.tari.mw/template/207a50d20c6bac05cac441fa3560377e92ed493217fbac3147f72405c27b38bb",
+      "platform": "Mainnet template"
     }
   ],
   "resourceIds": [

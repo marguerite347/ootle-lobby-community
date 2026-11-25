@@ -566,11 +566,22 @@
     },
     {
       "ref": "tari-ootle:component:stillhere",
-      "state": "testnet",
-      "checkedAt": "2026-11-20T14:13:21.060080+00:00",
-      "evidenceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/30",
-      "evidence": "MIT-licensed dead-man’s-switch vault with an owner badge, beneficiary, epoch deadline and walletless simulation. The badge holder can check in, withdraw, change the beneficiary or close the vault; after the deadline anyone may trigger payment directly to the beneficiary. A late check-in before release revives the vault. November 20, 2026: the official Esmeralda indexer records the submitted template publication as committed on November 19, network byte 38. The browser is a simulation, not a wallet interface. The README reports 55 engine tests; these were not rerun.",
-      "testnetUrl": "https://godson-droid.github.io/stillhere/sim/"
+      "state": "both",
+      "checkedAt": "2026-11-25T15:14:04.662355+00:00",
+      "evidenceUrl": "https://explorer.tari.mw/template/207a50d20c6bac05cac441fa3560377e92ed493217fbac3147f72405c27b38bb",
+      "evidence": "November 25, 2026: the updated original submission identifies a mainnet template, and current Veil metadata independently shows StillHere at address 207a50d20c6bac05cac441fa3560377e92ed493217fbac3147f72405c27b38bb, published at epoch 39124 with 15 functions and a 144.1 KB binary. The official mainnet indexer serves the matching publish transaction receipt. This establishes template publication, not a wallet-connected app or a tested vault. Esmeralda template evidence remains retained. The browser demo is a simulation. Current README revision 0a7b5cada6d6f5012dccc4b5fae2a1123b47755f remains identical to the November 20 source recording and still describes the earlier testnet deployment; the newer mainnet evidence is the creator edit and explorer record. No wallet, deposit, third-party code execution or independent engine-test run was performed.",
+      "testnetUrl": "https://testnet-explorer.tari.mw/template/e7164ec19c5c7ea0e84c8d0cce06c874565cd44e97109088bf3eedfdd5a1664d",
+      "mainnetUrl": "https://explorer.tari.mw/template/207a50d20c6bac05cac441fa3560377e92ed493217fbac3147f72405c27b38bb",
+      "deploymentEvidence": {
+        "url": "https://explorer.tari.mw/template/207a50d20c6bac05cac441fa3560377e92ed493217fbac3147f72405c27b38bb",
+        "observedAt": "2026-11-25T15:14:04.662355+00:00",
+        "detail": "Current mainnet explorer identifies StillHere, template address, epoch 39124 and 15 functions; matching official indexer publish receipt is reachable."
+      },
+      "showcase": {
+        "url": "https://explorer.tari.mw/template/207a50d20c6bac05cac441fa3560377e92ed493217fbac3147f72405c27b38bb",
+        "label": "Mainnet template · Testnet · Browser simulation",
+        "summary": "Explore heartbeat check-ins and beneficiary releases through Ootle mainnet and testnet templates and a walletless simulation."
+      }
     },
     {
       "ref": "tari-ootle:component:semvi",
