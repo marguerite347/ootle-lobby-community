@@ -2,15 +2,13 @@
   {
     "id": "tari-ootle:app:private-ballot",
     "slug": "private-ballot",
-    "url": "https://github.com/GSXRspartan/private-ballot",
-    "source": "capture",
-    "video": "/previews/media-29069caef9c888d6f786f9a2c878cc04b802d284a413abde8a06a890b225d5d0.mp4",
-    "image": "/previews/media-9a465cd12268fd5ed8c9b25a8f1024ced058fb9f3152639dd0fe4e6c64c641f7.poster.png",
+    "url": "https://private-ballot-staging.ghostgate.boo/",
+    "source": "Docs walkthrough",
+    "video": "/previews/resource-private-ballot-hosted-20261125.mp4",
+    "image": "/previews/resource-private-ballot-hosted-20261125.poster.png",
     "review": {
-      "reviewedAt": "2026-09-22",
-      "videoSha256": "29069caef9c888d6f786f9a2c878cc04b802d284a413abde8a06a890b225d5d0",
-      "scope": "Public repository and README",
-      "notes": "Reviewed four spaced frames for correct project, readable content and scroll movement. No wallet operations, functionality verification or gameplay claim."
+      "reviewedAt": "2026-11-25T14:56:20.816465+00:00",
+      "scope": "Current public README walkthrough with scripts and downloads disabled; opening, middle and closing frames reviewed. No runtime, wallet or transaction claim."
     }
   },
   {
@@ -203,16 +201,13 @@
   {
     "id": "tari-ootle:app:caravel",
     "slug": "caravel",
-    "url": "https://caravellabs.net",
-    "source": "capture",
-    "video": "/previews/media-b72d50c07a451f4c3d27b57acf8f24b6c376237806601640cef84bca97112f5e.mp4",
-    "image": "/previews/media-90f39b5af76a89065fdfccbd7540230a347163433539a9a690cb080962bf056e.poster.png",
+    "url": "https://caravellabs.net/",
+    "source": "Docs walkthrough",
+    "video": "/previews/resource-caravel-mainnet-20261125.mp4",
+    "image": "/previews/resource-caravel-mainnet-20261125.poster.png",
     "review": {
-      "reviewedAt": "2026-10-03",
-      "videoSha256": "b72d50c07a451f4c3d27b57acf8f24b6c376237806601640cef84bca97112f5e",
-      "scope": "Public app introduction",
-      "notes": "Recorded from the project public page in Chrome. Opening and motion frames reviewed; no login, wallet creation, secrets, transactions, or gameplay claim.",
-      "captureFrames": 51
+      "reviewedAt": "2026-11-25T14:56:20.816465+00:00",
+      "scope": "Current public README walkthrough with scripts and downloads disabled; opening, middle and closing frames reviewed. No runtime, wallet or transaction claim."
     }
   }
 ]
