@@ -2,7 +2,7 @@
   "slug": "ootle-street-nights",
   "title": "Ootle Street: Nights Edition",
   "creator": "Snateri",
-  "summary": "November 23, 2026: The creator describes browser racing with islands, bridges, ghost-mode timing and collisions. The browser demo runs client-side; its displayed escrow balances are not blockchain payment evidence. The README identifies companion Esmeralda template f96acf40ccf1dd2084b89c964a7ed1d2130b3fbb5a5aba2fb264dbb583da4a71 and reports nine engine tests. These results were not rerun; current deployment confirmation remains pending. Review covered the complete submission, README and MIT license metadata. Public app text extraction failed; app availability and operation were not established today. The recording shows the README with page scripts and downloads disabled. No wallet, funds or third-party code was operated.",
+  "summary": "November 23, 2026: The creator describes browser racing with islands, bridges, ghost-mode timing and collisions. The browser demo runs client-side; its displayed escrow balances are not blockchain payment evidence. The README identifies companion Esmeralda template f96acf40ccf1dd2084b89c964a7ed1d2130b3fbb5a5aba2fb264dbb583da4a71 and reports nine engine tests. These results were not rerun; current deployment confirmation remains pending. Review covered the complete submission, README and MIT license metadata. Public app text extraction failed; app availability and operation were not established today. The recording shows the README with page scripts and downloads disabled. No wallet, funds or third-party code was operated. November25: the creator reports a v14 browser update with revised mobile controls, camera look-ahead and an in-game controls guide in the linked follow-up. This is an attributed update, not a new runtime test; the November23 README recording remains a dated source overview.",
   "cardSummary": "Explore a Miami street-racing prototype with local escrow simulation and a separately described Esmeralda contract.",
   "cardStatus": "Browser prototype · Testnet companion",
   "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/40",
@@ -30,6 +30,10 @@
     {
       "url": "https://www.reddit.com/r/tari/comments/1y2m4i2/november_build_mvp_ootle_street_nights_edition/",
       "platform": "Creator-linked source"
+    },
+    {
+      "url": "https://community.tari.com/t/november-build-contest-thread-mvp/520/42",
+      "platform": "Tari Community forum"
     }
   ],
   "resourceIds": [
