@@ -3,13 +3,14 @@
     "id": "tari-ootle:app:private-ballot",
     "slug": "private-ballot",
     "url": "https://private-ballot-staging.ghostgate.boo/",
-    "source": "Docs walkthrough",
+    "source": "capture",
     "video": "/previews/resource-private-ballot-hosted-20261125.mp4",
     "image": "/previews/resource-private-ballot-hosted-20261125.poster.png",
     "review": {
       "reviewedAt": "2026-11-25T14:56:20.816465+00:00",
       "scope": "Current public README walkthrough with scripts and downloads disabled; opening, middle and closing frames reviewed. No runtime, wallet or transaction claim."
-    }
+    },
+    "caption": "Docs walkthrough"
   },
   {
     "id": "tari-ootle:app:sapient",
@@ -202,12 +203,13 @@
     "id": "tari-ootle:app:caravel",
     "slug": "caravel",
     "url": "https://caravellabs.net/",
-    "source": "Docs walkthrough",
+    "source": "capture",
     "video": "/previews/resource-caravel-mainnet-20261125.mp4",
     "image": "/previews/resource-caravel-mainnet-20261125.poster.png",
     "review": {
       "reviewedAt": "2026-11-25T14:56:20.816465+00:00",
       "scope": "Current public README walkthrough with scripts and downloads disabled; opening, middle and closing frames reviewed. No runtime, wallet or transaction claim."
-    }
+    },
+    "caption": "Docs walkthrough"
   }
 ]

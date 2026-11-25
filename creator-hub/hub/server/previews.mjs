@@ -42,7 +42,8 @@ function applyIndex(indexFile, mediaDir) {
         if(hash!==e.review.videoSha256 || usedCoverHashes.has(hash))continue;
         usedCoverHashes.add(hash);
       }
-      const preview = { image, video, source: e.source==='capture'?'Recorded webpage · not gameplay':'Animated album artwork · illustration' };
+      const captureCaption = ['Docs walkthrough','Concept overview','Announcement','App demo'].includes(e.caption) ? e.caption : 'Recorded webpage · not gameplay';
+      const preview = { image, video, source: e.source==='capture'?captureCaption:'Animated album artwork · illustration' };
       if(!preview.image && !preview.video)continue;
       if (e.id) byId.set(e.id, preview);
       if(e.source!=='capture')continue; // Generated previews never match another resource by title/URL.
