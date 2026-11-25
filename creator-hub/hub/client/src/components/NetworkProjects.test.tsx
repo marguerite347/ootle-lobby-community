@@ -33,25 +33,25 @@ test('existing September projects use their catalog identity and current card co
  const entry={...entries[0],ref:'tari-ootle:app:caravel',testnetUrl:'https://example.com/caravel'};
  const html=renderToStaticMarkup(<MemoryRouter><NetworkProjects entries={[entry]} initialNetwork="testnet"/></MemoryRouter>);
  expect(html).toContain('/resource/tari-ootle%3Aapp%3Acaravel');
- expect(html).toContain('Combine an Ootle wallet');
+ expect(html).toContain('Combine encrypted Nostr conversations');
 });
 
 test('mainnet is the default, includes every confirmed project and removes the watch',()=>{
  const html=renderToStaticMarkup(<MemoryRouter><NetworkProjects/></MemoryRouter>);
- for(const name of ['OotleAccord','Skydrop','Veil Ootle Explorer','Sapient','Signal Desk','Sealed Bids at Midnight','Ootle Lockbox','Launch Commitments','The Cursed Pumpkin','AT Protocol identity on Ootle','Ghostline','HideBox','Private Ballot','MoonMail','Ootle Fee Check','Public Grant Ledger','Specter','Semvi','Ootle Split','Steady'])expect(html).toContain(name);
+ for(const name of ['OotleAccord','Skydrop','Veil Ootle Explorer','Sapient','Signal Desk','Sealed Bids at Midnight','Ootle Lockbox','Launch Commitments','The Cursed Pumpkin','AT Protocol identity on Ootle','Ghostline','HideBox','Private Ballot','MoonMail','Ootle Fee Check','Public Grant Ledger','Specter','Semvi','Ootle Split','Steady','Caravel'])expect(html).toContain(name);
  for(const name of ['Grave Robber','StillHere','SplitBill','Seance — privacy demo','Tari Cipherseed'])expect(html.slice(0,html.indexOf('id="mainnet-templates"'))).not.toContain(`>${name}</a>`);
  expect(html).not.toContain('Mainnet watch');expect(html).not.toContain('All apps');
- expect(html.match(/class="network-project contest-hologram"/g)).toHaveLength(20);
+ expect(html.match(/class="network-project contest-hologram"/g)).toHaveLength(21);
  expect(html).toContain('Review notes');expect(html).toContain('Get latest extension');
  expect(html).toContain('href="https://chromewebstore.google.com/detail/tari-ootle-wallet/demkeckolenopkgnfbnpflkpbbdhpgkl"');
  expect(html).not.toContain('releases/download/');
 });
 test('network filters keep pending apps out of confirmed mainnet and preserve testnet destinations',()=>{
  const mainnet=renderToStaticMarkup(<MemoryRouter><NetworkProjects initialNetwork="mainnet"/></MemoryRouter>);
- expect(mainnet.match(/class="network-project contest-hologram"/g)).toHaveLength(20);
- expect(mainnet).toContain('Mainnet anchor template · Non-binding pilots');expect(mainnet).toContain('hosted website and browser-wallet integration are still being configured');expect(mainnet).toContain('Read guide');expect(mainnet).toContain('Open source');expect(mainnet).toContain('unrevealed bids forfeit bonds permanently');expect(mainnet).toContain('Mainnet evidence');expect(mainnet.slice(0,mainnet.indexOf('id="mainnet-templates"'))).toContain('>MoonMail</a>');
+ expect(mainnet.match(/class="network-project contest-hologram"/g)).toHaveLength(21);
+ expect(mainnet).toContain('Mainnet · Hosted staging · Non-binding pilots');expect(mainnet).toContain('https://private-ballot-staging.ghostgate.boo/');expect(mainnet).toContain('Read guide');expect(mainnet).toContain('Open source');expect(mainnet).toContain('unrevealed bids forfeit bonds permanently');expect(mainnet).toContain('Mainnet evidence');expect(mainnet.slice(0,mainnet.indexOf('id="mainnet-templates"'))).toContain('>MoonMail</a>');
  const testnet=renderToStaticMarkup(<MemoryRouter><NetworkProjects initialNetwork="testnet"/></MemoryRouter>);
- expect(testnet).toContain('>StillHere</a>');expect(testnet).toContain('>Seance — privacy demo</a>');expect(testnet).not.toContain('>Semvi</a>');
+ expect(testnet).not.toContain('>Caravel</a>');expect(testnet).toContain('>StillHere</a>');expect(testnet).toContain('>Seance — privacy demo</a>');expect(testnet).not.toContain('>Semvi</a>');
  expect(testnet).toContain('href="https://testnet-explorer.tari.mw/"');
  expect(testnet).not.toContain('href="https://explorer.tari.mw/"');
  expect(testnet).toContain('href="https://testnet-atproto.tari.mw/"');

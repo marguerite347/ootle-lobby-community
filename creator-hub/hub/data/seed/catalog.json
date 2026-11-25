@@ -392403,20 +392403,20 @@
       "ecosystem": "tari-ootle",
       "native": true,
       "title": "Private Ballot",
-      "summary": "Privacy-preserving voting pilots with independently verifiable offline archives and optional Ootle anchoring. November 14 review: Veil displays TariPrivateBallotAnchorV2 (43 KB) with publish_anchor_v2, matching the creator’s November 12 mainnet publication announcement. This establishes the anchor template deployment. The creator says the hosted website and browser-wallet integration are still being configured and will provide the final website link and completed live-anchor evidence later. The older README describes an Esmeralda desktop alpha for non-binding governance pilots; no production election or working hosted mainnet app is claimed here. The new recording is the creator announcement walkthrough. Original repository, earlier testnet observations and media are retained in maintenance history.",
+      "summary": "Run non-binding voting pilots in a hosted staging app, with verifiable archives and optional Ootle mainnet anchoring. November 25, 2026: current README revision fa5597f identifies the live hosted staging site and a November 23 mainnet anchor. Trusted text extraction reached its Home page and the official indexer-b durable receipt for transaction 28c789e60e696a4bcfe56a4b9ff3b6b69d4c1d38deebe71273e18a80a2bf01f2; both indexers report mainnet. The creator’s report binds this receipt to the existing V2 template. The separate transaction-result extraction failed, so this review does not independently replay or certify the creator’s full execution verification. Staging is for non-binding pilots only; hosted mode exposes more network metadata than Desktop/Tor. The production hostname is not deployed. The creator reports Sapient qualification; live Tari Universe qualification and a new release-qualified desktop installer remain outstanding. The recording is a README walkthrough, not an election or wallet demonstration.",
       "audience": null,
       "sourceUrl": "https://github.com/GSXRspartan/private-ballot",
       "repoUrl": "https://github.com/GSXRspartan/private-ballot",
       "docsUrl": "https://github.com/GSXRspartan/private-ballot/blob/main/docs/OPERATOR_SETUP.md",
-      "demoUrl": null,
-      "network": "Ootle mainnet anchor template; Esmeralda desktop alpha",
+      "demoUrl": "https://private-ballot-staging.ghostgate.boo/",
+      "network": "Ootle mainnet · Hosted staging",
       "readiness": "runnable-example",
       "license": "MIT OR Apache-2.0",
       "prerequisites": [
         "Independent project (not Tari Labs)",
         "Optional Ootle anchoring"
       ],
-      "setupHint": "Inspect the mainnet anchor template and creator announcement. Hosted website and browser-wallet configuration remain pending; desktop pilots are non-binding.",
+      "setupHint": "Use the staging website for non-binding pilots; inspect source and mainnet evidence before optional organizer anchoring.",
       "compatibility": [],
       "tags": [
         "governance",
@@ -392437,7 +392437,7 @@
         "name": "GSXRspartan",
         "url": "https://github.com/GSXRspartan"
       },
-      "attribution": "Private Ballot by GSXRspartan — independent project, optional Tari Ootle anchoring (not a verified integration)",
+      "attribution": "Private Ballot by GSXRspartan, an independent open-source project.",
       "provenance": {
         "sourceId": "governance-resources",
         "sourceName": "Community governance & balancing",
@@ -392452,9 +392452,9 @@
       "lastVerifiedAt": "2026-09-19",
       "signals": {},
       "preview": {
-        "video": "https://lobby.tari.com/previews/community/resource-private-ballot-20261114.mp4",
-        "image": "https://lobby.tari.com/previews/community/resource-private-ballot-20261114.jpg",
-        "source": "Announcement"
+        "video": "https://lobby.tari.com/previews/resource-private-ballot-hosted-20261125.mp4",
+        "image": "https://lobby.tari.com/previews/resource-private-ballot-hosted-20261125.poster.png",
+        "source": "Docs walkthrough"
       },
       "tariCompatible": null,
       "editorial": {

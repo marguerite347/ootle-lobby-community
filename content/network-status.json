@@ -79,17 +79,21 @@
     },
     {
       "ref": "tari-ootle:app:caravel",
-      "state": "testnet",
-      "checkedAt": "2026-11-11T12:16:00Z",
+      "state": "mainnet",
+      "checkedAt": "2026-11-25T14:56:20.816465+00:00",
       "evidenceUrl": "https://caravellabs.net/",
-      "evidence": "Deployed wallet code uses Esmeralda wallets and testnet indexers. No mainnet transaction attributed to this app.",
-      "testnetUrl": "https://caravellabs.net/",
+      "evidence": "November 25, 2026: the live Caravel landing page explicitly identifies Ootle mainnet, matching the creator’s November 21 update in topic 276/22. Current README revision 189fb5e describes Nostr messaging and Sapient payments, including Android WalletConnect. The current app does not hold payment keys; the former embedded wallet, on-chain names and trading description is superseded. Desktop Chrome, Brave or Edge is recommended. The README walkthrough was captured with scripts and downloads disabled; no identity, wallet connection, message or payment was created. Separate historical Caravel Faucet, Burn Wallet and Trade templates retain their own network and availability evidence.",
       "showcase": {
         "url": "https://caravellabs.net/",
-        "label": "Testnet · Wallet and chat",
-        "summary": "Private messaging, payments and peer-to-peer trading in one browser app."
+        "label": "Mainnet · Web app · Desktop browser",
+        "summary": "Combine encrypted Nostr conversations and confidential Ootle mainnet payments through Sapient in a browser."
       },
-      "mainnetPlan": "The current browser wallet still targets Esmeralda testnet."
+      "mainnetUrl": "https://caravellabs.net/",
+      "deploymentEvidence": {
+        "url": "https://caravellabs.net/",
+        "observedAt": "2026-11-25T14:56:20.816465+00:00",
+        "detail": "Live destination identifies Ootle mainnet and matches the creator November 21 deployment announcement. Read-only text review; no payment test."
+      }
     },
     {
       "ref": "community:skydrop",
@@ -243,20 +247,19 @@
     {
       "ref": "tari-ootle:app:private-ballot",
       "state": "mainnet",
-      "checkedAt": "2026-11-19T15:56:43.574638+00:00",
-      "evidenceUrl": "https://community.tari.com/t/november-bonus-contest-first-to-launch/521/11",
-      "evidence": "November 19 complete creator-thread read retains the November 12 mainnet anchor-template announcement. Both official mainnet indexer catalogues list TariPrivateBallotAnchorV2 at the same address, epoch38551 and binary hash f2e1ba76bbd7485ccf54263be387fe3d2fff39b5a187f73cb3a5226aab212f25. The hosted website/browser-wallet configuration is still not established as live.",
-      "actionLabel": "Open source",
-      "mainnetUrl": "https://explorer.tari.mw/template/ef4d7f348a4c3db7b6f9a9c30ac4fcbfdfb73e8bec59a808258861fcbbdc6cdb",
+      "checkedAt": "2026-11-25T14:56:20.816465+00:00",
+      "evidenceUrl": "https://private-ballot-staging.ghostgate.boo/",
+      "evidence": "November 25, 2026: current README revision fa5597f identifies the live hosted staging site and a November 23 mainnet anchor. Trusted text extraction reached its Home page and the official indexer-b durable receipt for transaction 28c789e60e696a4bcfe56a4b9ff3b6b69d4c1d38deebe71273e18a80a2bf01f2; both indexers report mainnet. The creator’s report binds this receipt to the existing V2 template. The separate transaction-result extraction failed, so this review does not independently replay or certify the creator’s full execution verification. Staging is for non-binding pilots only; hosted mode exposes more network metadata than Desktop/Tor. The production hostname is not deployed. The creator reports Sapient qualification; live Tari Universe qualification and a new release-qualified desktop installer remain outstanding. The recording is a README walkthrough, not an election or wallet demonstration.",
+      "mainnetUrl": "https://private-ballot-staging.ghostgate.boo/",
       "deploymentEvidence": {
-        "url": "https://indexer-a.ootle.tari.com/templates/catalogue?limit=100",
-        "observedAt": "2026-11-19T14:09:56.646Z",
-        "detail": "Both official indexers list template ef4d7f348a4c3db7b6f9a9c30ac4fcbfdfb73e8bec59a808258861fcbbdc6cdb as TariPrivateBallotAnchorV2, epoch38551, binary hash f2e1ba76bbd7485ccf54263be387fe3d2fff39b5a187f73cb3a5226aab212f25. This confirms the template, not a hosted application."
+        "url": "https://indexer-b.ootle.tari.com/transaction-receipts/28c789e60e696a4bcfe56a4b9ff3b6b69d4c1d38deebe71273e18a80a2bf01f2",
+        "observedAt": "2026-11-25T14:56:20.816465+00:00",
+        "detail": "Live staging Home page and a durable receipt served by the official mainnet indexer corroborate the creator’s V2 anchor report. Current template identity is retained; this is not production-election qualification or independent proof replay."
       },
       "showcase": {
-        "url": "https://explorer.tari.mw/template/ef4d7f348a4c3db7b6f9a9c30ac4fcbfdfb73e8bec59a808258861fcbbdc6cdb",
-        "label": "Mainnet anchor template · Non-binding pilots",
-        "summary": "Inspect the deployed voting-anchor template. The hosted website and browser-wallet integration are still being configured."
+        "url": "https://private-ballot-staging.ghostgate.boo/",
+        "label": "Mainnet · Hosted staging · Non-binding pilots",
+        "summary": "Run non-binding voting pilots in a hosted staging app, with verifiable archives and optional Ootle mainnet anchoring."
       }
     },
     {

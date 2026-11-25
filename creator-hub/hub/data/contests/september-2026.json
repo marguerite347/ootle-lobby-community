@@ -67,8 +67,8 @@
       "creator": "GSXRspartan",
       "creatorId": "forum-gsxrspartan",
       "repoUrl": "https://github.com/GSXRspartan/private-ballot",
-      "demoUrl": null,
-      "summary": "Privacy-preserving desktop voting for nonbinding governance pilots.",
+      "demoUrl": "https://private-ballot-staging.ghostgate.boo/",
+      "summary": "Run non-binding voting pilots in a hosted staging app, with verifiable archives and optional Ootle mainnet anchoring.",
       "postNumber": 3,
       "postId": 1338,
       "sourceUrl": "https://community.tari.com/t/september-contest-thread/324/3",
@@ -78,7 +78,8 @@
       "license": "MIT OR Apache-2.0",
       "updates": [],
       "notes": "Requirements recorded from public submission; originality, eligibility, safety and Council acceptance are not independently certified.",
-      "publishedAt": "2026-09-07T16:33:16.498Z"
+      "publishedAt": "2026-09-07T16:33:16.498Z",
+      "network": "Ootle mainnet"
     },
     {
       "id": "tari-ootle:app:signal-vault",
@@ -371,8 +372,8 @@
       "creator": "Okz",
       "creatorId": "forum-okz",
       "repoUrl": "https://github.com/okansaglam016161-pixel/caravel",
-      "demoUrl": "https://caravellabs.net",
-      "summary": "Ootle wallet, encrypted Nostr chat and on-chain names in one browser app.",
+      "demoUrl": "https://caravellabs.net/",
+      "summary": "Combine encrypted Nostr conversations and confidential Ootle mainnet payments through Sapient in a browser.",
       "postNumber": 25,
       "postId": 1626,
       "sourceUrl": "https://community.tari.com/t/september-contest-thread/324/25",
@@ -382,7 +383,8 @@
       "license": "MIT",
       "updates": [],
       "notes": "Requirements recorded from public submission; originality, eligibility, safety and Council acceptance are not independently certified.",
-      "publishedAt": "2026-09-29T11:17:12.661Z"
+      "publishedAt": "2026-09-29T11:17:12.661Z",
+      "network": "Ootle mainnet"
     },
     {
       "id": "tari-ootle:app:threshold-bounties",

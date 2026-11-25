@@ -1,17 +1,22 @@
 {
   "id": "tari-ootle:app:caravel",
   "title": "Caravel",
-  "summary": "Ootle wallet, encrypted Nostr chat and on-chain names in one browser app.",
+  "summary": "Combine encrypted Nostr conversations and confidential Ootle mainnet payments through Sapient in a browser. November 25, 2026: the live Caravel landing page explicitly identifies Ootle mainnet, matching the creator’s November 21 update in topic 276/22. Current README revision 189fb5e describes Nostr messaging and Sapient payments, including Android WalletConnect. The current app does not hold payment keys; the former embedded wallet, on-chain names and trading description is superseded. Desktop Chrome, Brave or Edge is recommended. The README walkthrough was captured with scripts and downloads disabled; no identity, wallet connection, message or payment was created. Separate historical Caravel Faucet, Burn Wallet and Trade templates retain their own network and availability evidence.",
   "technologies": [
     {
-      "label": "Ootle SDK",
-      "sourceUrl": "https://github.com/okansaglam016161-pixel/caravel/blob/5763c824eb5711d96efe081127e7329e8f9e4a93/package.json"
+      "label": "Nostr",
+      "sourceUrl": "https://github.com/okansaglam016161-pixel/caravel/blob/189fb5e00edd18ab73b5ac435e34b0c81f241dee/README.md"
     },
     {
-      "label": "Ootle Name Service",
-      "sourceUrl": "https://github.com/okansaglam016161-pixel/caravel/blob/5763c824eb5711d96efe081127e7329e8f9e4a93/vendor/README.md"
+      "label": "Sapient payments",
+      "sourceUrl": "https://github.com/okansaglam016161-pixel/caravel/blob/189fb5e00edd18ab73b5ac435e34b0c81f241dee/README.md"
+    },
+    {
+      "label": "Creator mainnet update",
+      "sourceUrl": "https://community.tari.com/t/caravel-private-messages-and-private-money-in-one-conversation/276/22"
     }
   ],
-  "cardSummary": "Combine an Ootle wallet, encrypted Nostr chat and on-chain names in one browser app.",
-  "cardStatus": "Web app"
+  "cardSummary": "Combine encrypted Nostr conversations and confidential Ootle mainnet payments through Sapient in a browser.",
+  "cardStatus": "Mainnet · Web app · Desktop browser",
+  "reviewNote": "November 25, 2026: the live Caravel landing page explicitly identifies Ootle mainnet, matching the creator’s November 21 update in topic 276/22. Current README revision 189fb5e describes Nostr messaging and Sapient payments, including Android WalletConnect. The current app does not hold payment keys; the former embedded wallet, on-chain names and trading description is superseded. Desktop Chrome, Brave or Edge is recommended. The README walkthrough was captured with scripts and downloads disabled; no identity, wallet connection, message or payment was created. Separate historical Caravel Faucet, Burn Wallet and Trade templates retain their own network and availability evidence."
 }
