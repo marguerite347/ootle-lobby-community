@@ -270,7 +270,13 @@
       "socialUrl": "https://x.com/Erebus_Lab/status/2103207133026406589",
       "paymentAddressPresent": true,
       "license": "CPAL-1.0",
-      "updates": [],
+      "updates": [
+        {
+          "postNumber": 1,
+          "url": "https://community.tari.com/t/retiring-the-web-universe-wallet-universe-tari-mw/750/1",
+          "updatedAt": "2026-11-25T13:36:03.095Z"
+        }
+      ],
       "notes": "Requirements recorded from public submission; originality, eligibility, safety and Council acceptance are not independently certified.",
       "network": "Tari L1 MainNet and Esmeralda; Ootle deployment unconfirmed",
       "publishedAt": "2026-09-24T19:48:39.257Z"

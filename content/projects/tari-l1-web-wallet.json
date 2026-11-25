@@ -13,6 +13,6 @@
     }
   ],
   "cardSummary": "Manage Tari L1 and Ootle accounts in a browser wallet; burning XTM is irreversible.",
-  "cardStatus": "Web app",
-  "reviewNote": "November 19, 2026: the public landing page offers Tari L1 MainNet and Esmeralda wallet creation or import. Current repository revision 2277575fb0f2 maps Ootle accounts to mainnet or Esmeralda, while its README retains pre-launch wording. Source configuration does not establish which Ootle version is deployed or successful mainnet burn claims. Original creator examples describe Esmeralda. CPAL-1.0 source; no wallet creation, import or transaction was performed."
+  "cardStatus": "Web app \u00b7 Maintenance ends Jan 1, 2027",
+  "reviewNote": "November 19, 2026: the public landing page offers Tari L1 MainNet and Esmeralda wallet creation or import. Current repository revision 2277575fb0f2 maps Ootle accounts to mainnet or Esmeralda, while its README retains pre-launch wording. Source configuration does not establish which Ootle version is deployed or successful mainnet burn claims. Original creator examples describe Esmeralda. CPAL-1.0 source; no wallet creation, import or transaction was performed. November 25, 2026: creator 0xhra announced that the hosted web Universe wallet will no longer be maintained after January 1, 2027 and may go offline. The announcement recommends backing up the recovery phrase and migrating to a maintained wallet before then. This is a planned retirement, not an observed shutdown. The creator describes MIT licensing, but the currently retrieved LICENSE begins CPAL-1.0; the existing license is retained pending clarification. Earlier app footage is historical; no wallet interaction was performed."
 }

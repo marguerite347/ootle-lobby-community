@@ -24,9 +24,8 @@ export const NOVEMBER_CONTESTS: NovemberContest[] = [
     slug: 'first-to-launch', category: 'Mainnet bonus', title: 'First to', accent: 'launch.',
     description: 'Already entered a build contest? Be among the first 20 to bring your entry to mainnet.',
     prize: '100,000 XTM each', prizeNote: 'First 20 qualifying launches',
-    // The source combines midnight, 11:11:11, November 21 and "one week".
-    // No date is asserted until an organizer resolves that contradiction.
-    deadline: 'Launch Nov 11 · Cutoff to be confirmed', closesAt: null, opensAt: null,
+    // Organizer clarification: topic521 post20 confirms November21, 11:11:11 UTC.
+    deadline: 'Closed Nov 21 · 11:11:11 UTC', closesAt: '2026-11-21T11:11:11Z', opensAt: null,
     threadUrl: 'https://community.tari.com/t/november-bonus-contest-first-to-launch/521', action: 'See launch requirements',
     steps: [
       'Have a contest entry already submitted. This is an additional reward for taking that entry live.',

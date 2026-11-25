@@ -6,7 +6,7 @@ import {NOVEMBER_CONTESTS, novemberContestPhase, novemberContestTiming} from './
 import {NovemberContestCards, NovemberContestDetail} from './components/NovemberContests';
 
 describe('November contest routes and closing boundaries', () => {
-  it('closes each dated contest at its own UTC cutoff, without inventing a bonus cutoff', () => {
+  it('closes each dated contest at its own UTC cutoff, including the clarified bonus cutoff', () => {
     const [mvp, bonus, creator] = NOVEMBER_CONTESTS;
     expect(novemberContestPhase(mvp, new Date('2026-11-01T12:00:00Z'))).toBe('upcoming');
     expect(novemberContestPhase(mvp, new Date('2026-11-30T23:59:59Z'))).toBe('open');
@@ -15,8 +15,8 @@ describe('November contest routes and closing boundaries', () => {
     expect(novemberContestPhase(creator, new Date('2026-11-12T00:00:00Z'))).toBe('open');
     expect(novemberContestPhase(creator, new Date('2026-11-16T14:59:59Z'))).toBe('open');
     expect(novemberContestTiming(creator, new Date('2026-11-16T15:00:00Z'))).toBe('Entries closed');
-    expect(bonus.closesAt).toBeNull();
-    expect(novemberContestPhase(bonus, new Date('2026-11-21T12:00:00Z'))).toBe('unconfirmed');
+    expect(novemberContestPhase(bonus, new Date('2026-11-21T11:11:10Z'))).toBe('open');
+    expect(novemberContestPhase(bonus, new Date('2026-11-21T11:11:11Z'))).toBe('closed');
   });
   it('gives all three cards distinct briefs with the correct official entry path', () => {
     const cards = renderToStaticMarkup(<MemoryRouter><NovemberContestCards/></MemoryRouter>);
