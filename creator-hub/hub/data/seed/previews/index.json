@@ -211,5 +211,18 @@
       "scope": "Current public README walkthrough with scripts and downloads disabled; opening, middle and closing frames reviewed. No runtime, wallet or transaction claim."
     },
     "caption": "Docs walkthrough"
+  },
+  {
+    "id": "tari-ootle:component:onescan",
+    "slug": "onescan",
+    "url": "https://techkeyy.github.io/onescan-ootle/",
+    "source": "capture",
+    "video": "/previews/community/resource-onescan-20261126.mp4",
+    "image": "/previews/community/resource-onescan-20261126.png",
+    "caption": "Docs walkthrough",
+    "review": {
+      "reviewedAt": "2026-11-26T17:40:08.150236+00:00",
+      "scope": "Genuine scrolling README; scripts and downloads disabled. Opening, middle and closing frames reviewed. No runtime or source rebuild claim."
+    }
   }
 ]

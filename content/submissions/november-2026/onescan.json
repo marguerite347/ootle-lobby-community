@@ -1,0 +1,38 @@
+{
+  "slug": "onescan",
+  "title": "OneScan",
+  "creator": "praise / Techkeyy",
+  "summary": "November 26, 2026: OneScan compares published Ootle template bytes with public source rebuilds and displays verifier-key attestations. The current mainnet explorer shows its SourceRegistry component, template 5b0efecc709ce6885b69738ce8f774f086ef0c6cb7b2a58920f8bab3e38f8b13 and SourceAttested events. The creator reports eight matching third-party templates out of thirteen checked, with warnings on some builds; those rebuilds and security tests were not rerun. Source matching is not a code audit. The site explains that Windows rebuilds lack its Linux container isolation and that an attestation is a statement by its verifier key. Current README, public site text and explorer metadata were reviewed. The recording is a genuine README walkthrough with scripts and downloads disabled; no template binaries, repository code, wallet or verification jobs were executed.",
+  "cardSummary": "Compare Ootle mainnet templates with public source rebuilds and inspect on-chain attestations, build settings and warnings.",
+  "cardStatus": "Web tool · Mainnet registry",
+  "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/44",
+  "publishedAt": "2026-11-25T15:30:25.263Z",
+  "updatedAt": "2026-11-25T15:30:25.263Z",
+  "sourceContentSha256": "b2523b0ce5d703df8987a57d266cbc6feb9d3719f6866566192479354e782c66",
+  "repoUrl": "https://github.com/Techkeyy/onescan-ootle",
+  "demoUrl": "https://techkeyy.github.io/onescan-ootle/",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Browser · Rust",
+      "sourceUrl": "https://github.com/Techkeyy/onescan-ootle"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-onescan-20261126.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-onescan-20261126.png",
+    "capturedAt": "2026-11-26T17:27:30.412Z",
+    "sourceRevision": "README-blob:cbc23b9a26da6f5d4156843fabba3be79ae31677",
+    "kind": "public-page",
+    "credit": "Docs walkthrough"
+  },
+  "discussionLinks": [
+    {
+      "url": "https://bsky.app/profile/praiseprodigyy.bsky.social/post/3n35egw7lvs2l",
+      "platform": "Bluesky"
+    }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:onescan"
+  ]
+}
