@@ -2,13 +2,13 @@
   "slug": "ootlegig",
   "title": "OotleGig",
   "creator": "Indra Dwi Junianto / IndraDJ",
-  "summary": "November 25, 2026: The creator describes a client-funded job escrow with signer-checked acceptance and delivery, client approval, a review-window timeout payout and collectible delivery-receipt NFTs. Cancellation refunds an open job. Arbitration is outside v1; amounts and parties are public, while task and delivery texts remain off-chain. The creator reports eleven engine integration tests; these were not rerun. The README explicitly says the template is unpublished on Esmeralda and mainnet and the browser demo is a walletless simulation. The submission and README were read, and MIT license metadata confirmed. Public demo text extraction failed, so availability and operation were not established. The recording shows the source README with scripts and downloads disabled. No submission code, wallet or funds were operated.",
+  "summary": "November 26, 2026: The creator describes a client-funded job escrow with signer-checked acceptance and delivery, client approval, a review-window timeout payout and collectible delivery-receipt NFTs. Cancellation refunds an open job. Arbitration is outside v1; amounts and parties are public, while task and delivery texts remain off-chain. The creator reports eleven engine integration tests; these were not rerun. The README explicitly says the template is unpublished on Esmeralda and mainnet and the browser demo is a walletless simulation. The submission and README were read, and MIT license metadata confirmed. Public demo text extraction recovered on November 26 and confirms the simulation label, role controls, epoch clock and receipt flow. This was a read-only text review; simulation operation was not tested. The earlier failed read remains in the private review history. The recording shows the source README with scripts and downloads disabled. No submission code, wallet or funds were operated.",
   "cardSummary": "Explore freelance job escrow, review-window payouts and delivery receipts through a walletless simulation and Rust template source.",
   "cardStatus": "Browser simulation · Rust source",
   "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/43",
   "publishedAt": "2026-11-25T10:28:55.057Z",
-  "updatedAt": "2026-11-25T10:28:55.057Z",
-  "sourceContentSha256": "13d775c352e387c1472201275474e02b64bbbdfb976c0efaa8a835a023d0f4fb",
+  "updatedAt": "2026-11-25T21:48:36.597Z",
+  "sourceContentSha256": "b3f05bafb545489a180de0bae6757b24d782dfeca2a7283986adbcb3a936cd6b",
   "repoUrl": "https://github.com/GHEA12/ootlegig",
   "demoUrl": "https://ghea12.github.io/ootlegig/",
   "ecosystem": "tari-ootle",
@@ -26,7 +26,12 @@
     "kind": "public-page",
     "credit": "Docs walkthrough"
   },
-  "discussionLinks": [],
+  "discussionLinks": [
+    {
+      "url": "https://www.reddit.com/r/tari/comments/1y53ua1/i_built_ootlegig_escrow_for_freelance_gigs_as_an/",
+      "platform": "Reddit"
+    }
+  ],
   "resourceIds": [
     "tari-ootle:component:ootlegig"
   ]

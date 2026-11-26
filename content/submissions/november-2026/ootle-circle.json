@@ -1,0 +1,38 @@
+{
+  "slug": "ootle-circle",
+  "title": "Ootle Circle",
+  "creator": "Metaz Al Khazmi / Khazmi-lab",
+  "summary": "November 26, 2026: The creator describes rotating savings circles with equal round contributions, one scheduled recipient per round and collateral to cover missed payments. The organizer can arrange the payout order and start or cancel a circle, but cannot withdraw its funds. Amounts are public. The current README and public page explicitly identify a walletless simulation and a template not published to Esmeralda or mainnet. Creator-reported engine and simulation tests were not rerun. MIT source and README were reviewed; the genuine recording scrolls the README with scripts and downloads disabled. No repository code, wallet, funds or simulation controls were operated.",
+  "cardSummary": "Explore rotating savings circles, scheduled pot payouts and collateral rules through a walletless simulation and Rust template source.",
+  "cardStatus": "Browser simulation · Rust source",
+  "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/45",
+  "publishedAt": "2026-11-25T19:20:41.149Z",
+  "updatedAt": "2026-11-25T19:20:41.149Z",
+  "sourceContentSha256": "2a30e9c3d6882a2ee24f0790f13a6333d398163c65bf9d17278c2ee722bb13cd",
+  "repoUrl": "https://github.com/Khazmi-lab/ootle-circle",
+  "demoUrl": "https://khazmi-lab.github.io/ootle-circle/",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Browser · Rust source",
+      "sourceUrl": "https://github.com/Khazmi-lab/ootle-circle"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-ootle-circle-20261126.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-ootle-circle-20261126.png",
+    "capturedAt": "2026-11-26T18:19:22.747289+00:00",
+    "sourceRevision": "README-blob:08848b17ff59d4136d32eda205f4e617f2143422",
+    "kind": "public-page",
+    "credit": "Docs walkthrough"
+  },
+  "discussionLinks": [
+    {
+      "url": "https://www.reddit.com/r/tari/comments/1y5djxl/ootle_circle_a_jamiya_tontine_susu_savings_circle/",
+      "platform": "Reddit"
+    }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:ootle-circle"
+  ]
+}

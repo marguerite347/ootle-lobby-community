@@ -709,6 +709,13 @@
         "observedAt": "2026-11-26T17:40:08.150236+00:00",
         "detail": "Current explorer text exposes SourceRegistry component 9f72dfb5c6994599299c2498cd17540573edff3b6773a94c6636763abf3153ea, template 5b0efecc709ce6885b69738ce8f774f086ef0c6cb7b2a58920f8bab3e38f8b13 and ten SourceAttested events."
       }
+    },
+    {
+      "ref": "tari-ootle:component:ootle-circle",
+      "state": "unconfirmed",
+      "checkedAt": "2026-11-26T19:30:54.119564+00:00",
+      "evidenceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/45",
+      "evidence": "Current creator submission, README and public page explicitly identify an unpublished template and walletless simulation; no mainnet or testnet deployment is claimed."
     }
   ]
 }
