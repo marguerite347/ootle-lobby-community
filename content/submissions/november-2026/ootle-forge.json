@@ -2,7 +2,7 @@
   "slug": "ootle-forge",
   "title": "Ootle Forge",
   "creator": "Mystiy",
-  "summary": "MIT-licensed collectible-crafting game source and walletless simulation. The proposed Rust template burns EMBER and a forge fee to mint tiered relics, combines three matching relics into a higher tier, and melts duplicates into materials. The admin-badge holder controls fee withdrawals. The README and hosted page explicitly say the template is unpublished on Esmeralda and mainnet. Simulation amounts and NFTs have no real value; creator engine-test claims remain attributed source statements. The source warns that its randomness is game-grade. This recording shows the README and deployment limits; no game or template was executed.",
+  "summary": "MIT-licensed collectible-crafting game source and walletless simulation. The proposed Rust template burns EMBER and a forge fee to mint tiered relics, combines three matching relics into a higher tier, and melts duplicates into materials. The admin-badge holder controls fee withdrawals. The README and hosted page explicitly say the template is unpublished on Esmeralda and mainnet. Simulation amounts and NFTs have no real value; creator engine-test claims remain attributed source statements. The source warns that its randomness is game-grade. This recording shows the README and deployment limits; no game or template was executed. November 26: repeated submission, current README text and hosted-page text retain the unpublished simulation status. The original listing, source post and November 17 walkthrough are preserved; the new post does not identify a material product change.",
   "cardSummary": "Gather crafting materials, forge collectible relics, combine matching tiers and recycle duplicates in a walletless browser simulation.",
   "cardStatus": "Browser simulation · Rust source",
   "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/25",
@@ -29,6 +29,10 @@
     {
       "url": "https://medium.com/@rismahamja01/ootle-forge-a-collectible-crafting-game-on-tari-ootle-november-build-contest-entry-3e6d3d9cd8f6",
       "platform": "Medium"
+    },
+    {
+      "url": "https://community.tari.com/t/november-build-contest-thread-mvp/520/46",
+      "platform": "Tari Community forum"
     }
   ],
   "resourceIds": [

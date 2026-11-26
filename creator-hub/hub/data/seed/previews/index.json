@@ -224,5 +224,18 @@
       "reviewedAt": "2026-11-26T17:40:08.150236+00:00",
       "scope": "Genuine scrolling README; scripts and downloads disabled. Opening, middle and closing frames reviewed. No runtime or source rebuild claim."
     }
+  },
+  {
+    "id": "tari-ootle:component:ootle-circle",
+    "slug": "ootle-circle",
+    "url": "https://khazmi-lab.github.io/ootle-circle/",
+    "source": "capture",
+    "video": "/previews/community/resource-ootle-circle-20261126.mp4",
+    "image": "/previews/community/resource-ootle-circle-20261126.png",
+    "caption": "Docs walkthrough",
+    "review": {
+      "reviewedAt": "2026-11-26T19:30:54.119564+00:00",
+      "scope": "Genuine source walkthrough with scripts and downloads disabled. Opening, middle and closing frames reviewed. No runtime testing claim."
+    }
   }
 ]
