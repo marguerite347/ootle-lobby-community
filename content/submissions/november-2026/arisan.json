@@ -1,0 +1,38 @@
+{
+  "slug": "arisan",
+  "title": "Arisan",
+  "creator": "sandirumput",
+  "summary": "November 27, 2026: Members contribute equal amounts each round, with payouts fixed by joining order and the creator receiving the first pot. An epoch deadline lets anyone settle a default: remove the nonpayer, refund that round’s payers and continue with remaining members. An early recipient can still stop contributing after receiving a pot; the contract does not eliminate this loss. Contribution amounts and payout order are public. No published network deployment is established. Creator-reported engine and simulation parity tests were not rerun. This is distinct from the existing Arisan Circle, Tari Arisan and Ootle Circle projects. MIT source and public creator evidence were reviewed. The genuine recording is a source/docs walkthrough with scripts and downloads disabled. No repository code, installed software, wallet or transaction was executed.",
+  "cardSummary": "Explore rotating savings pots, fixed payout order and missed-payment refunds through a walletless simulation and Rust template.",
+  "cardStatus": "Browser simulation · Rust source",
+  "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/53",
+  "publishedAt": "2026-11-27T14:36:52.316Z",
+  "updatedAt": "2026-11-27T14:36:52.316Z",
+  "sourceContentSha256": "90ad4ca3863b59780eab0c9f6c7d2a50c0b06480dc4d697800ef565103b2f1b2",
+  "repoUrl": "https://github.com/sandirumput/arisan",
+  "demoUrl": "https://sandirumput.github.io/arisan/",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Browser · Source code",
+      "sourceUrl": "https://github.com/sandirumput/arisan"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-arisan-20261127.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-arisan-20261127.png",
+    "capturedAt": "2026-11-27T17:18:36.381Z",
+    "sourceRevision": "README-blob:23e2e239dfdc342de1a3a7d0eae3a12b66dfa8fb",
+    "kind": "public-page",
+    "credit": "Docs walkthrough"
+  },
+  "discussionLinks": [
+    {
+      "url": "https://medium.com/@sandirumput0415/arisan-rotating-savings-circles-on-tari-ootle-d200c54b742a",
+      "platform": "Medium"
+    }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:arisan"
+  ]
+}

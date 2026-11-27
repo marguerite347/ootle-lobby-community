@@ -289,5 +289,57 @@
       "reviewedAt": "2026-11-27T17:08:04.580595+00:00",
       "scope": "Genuine scrolling README. Opening, middle and closing frames reviewed; scripts and downloads disabled. No runtime test claim."
     }
+  },
+  {
+    "id": "tari-ootle:component:sadar-badge",
+    "slug": "sadar-badge",
+    "url": "https://real0xsi.github.io/sadar-badge/",
+    "source": "capture",
+    "video": "/previews/community/resource-sadar-badge-20261127.mp4",
+    "image": "/previews/community/resource-sadar-badge-20261127.png",
+    "caption": "Docs walkthrough",
+    "review": {
+      "reviewedAt": "2026-11-27T17:26:44.645002+00:00",
+      "scope": "Genuine scrolling README. Opening, middle and closing frames reviewed; scripts and downloads disabled. No runtime test claim."
+    }
+  },
+  {
+    "id": "tari-ootle:component:arisan",
+    "slug": "arisan",
+    "url": "https://sandirumput.github.io/arisan/",
+    "source": "capture",
+    "video": "/previews/community/resource-arisan-20261127.mp4",
+    "image": "/previews/community/resource-arisan-20261127.png",
+    "caption": "Docs walkthrough",
+    "review": {
+      "reviewedAt": "2026-11-27T17:26:44.645002+00:00",
+      "scope": "Genuine scrolling README. Opening, middle and closing frames reviewed; scripts and downloads disabled. No runtime test claim."
+    }
+  },
+  {
+    "id": "tari-ootle:component:stubmark",
+    "slug": "stubmark",
+    "url": "https://stubmark.pages.dev/demo/",
+    "source": "capture",
+    "video": "/previews/community/resource-stubmark-20261127.mp4",
+    "image": "/previews/community/resource-stubmark-20261127.png",
+    "caption": "Docs walkthrough",
+    "review": {
+      "reviewedAt": "2026-11-27T17:26:44.645002+00:00",
+      "scope": "Genuine scrolling README. Opening, middle and closing frames reviewed; scripts and downloads disabled. No runtime test claim."
+    }
+  },
+  {
+    "id": "tari:component:tari-mining-calculator",
+    "slug": "tari-mining-calculator",
+    "url": "https://mining.tari.mw",
+    "source": "capture",
+    "video": "/previews/community/resource-tari-mining-calculator-20261127.mp4",
+    "image": "/previews/community/resource-tari-mining-calculator-20261127.png",
+    "caption": "Announcement",
+    "review": {
+      "reviewedAt": "2026-11-27T17:27:56.682859+00:00",
+      "scope": "Genuine source announcement recording; opening, middle and closing frames reviewed. Short static page; live cursor/scroll capture, no generated still-image video. Scripts and downloads disabled."
+    }
   }
 ]

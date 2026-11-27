@@ -393967,7 +393967,7 @@
       "repoUrl": "https://github.com/chironbuilds/tari-wallet",
       "docsUrl": "https://universe.tari.mw/integration",
       "demoUrl": "https://sapient.tari.mw/",
-      "network": "Testnet",
+      "network": "Ootle mainnet / Esmeralda testnet",
       "readiness": "conceptual",
       "license": null,
       "prerequisites": [],
@@ -394009,8 +394009,8 @@
         }
       },
       "preview": {
-        "video": "https://lobby.tari.com/previews/community/resource-sapient-android-0102-20261119.mp4",
-        "image": "https://lobby.tari.com/previews/community/resource-sapient-android-0102-20261119.png",
+        "video": "https://lobby.tari.com/previews/community/resource-sapient-android-0113-20261127.mp4",
+        "image": "https://lobby.tari.com/previews/community/resource-sapient-android-0113-20261127.png",
         "source": "Announcement"
       },
       "tariCompatible": null,
@@ -394021,7 +394021,19 @@
         "spotlight": false,
         "moderation": null
       },
-      "relationships": []
+      "relationships": [],
+      "discussionLinks": [
+        {
+          "url": "https://community.tari.com/t/november-build-contest-thread-mvp/520/51",
+          "platform": "Tari Community forum",
+          "context": "November 27 creator update"
+        },
+        {
+          "url": "https://github.com/chironbuilds/tari-wallet/releases/tag/android-v0.11.3",
+          "platform": "GitHub release",
+          "context": "Android 0.11.3 announcement"
+        }
+      ]
     },
     {
       "schemaVersion": 1,

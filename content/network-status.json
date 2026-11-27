@@ -41,22 +41,22 @@
     {
       "ref": "tari-ootle:app:sapient",
       "state": "both",
-      "checkedAt": "2026-11-19T14:38:04.287325+00:00",
+      "checkedAt": "2026-11-27T17:13:12.734554+00:00",
       "evidenceUrl": "https://chromewebstore.google.com/detail/tari-ootle-wallet/demkeckolenopkgnfbnpflkpbbdhpgkl",
-      "evidence": "November 19: Chrome Web Store shows extension 0.10.1, updated November 18. The older store overview still says testnet; the retained creator mainnet deployment evidence takes precedence. Android 0.10.2 is a separate release. No extension or APK was installed, and no transaction was submitted.",
+      "evidence": "Self-custody wallet for Ootle mainnet and Esmeralda. November 27, 2026: the Chrome Web Store lists version 0.11.3, updated November 25; its older testnet-only overview conflicts with the current creator site, which explicitly offers mainnet and Esmeralda switching. Separately, Android 0.11.3 was published November 26 for Android 10 or newer. Its notes describe fixing Make public after shielding the whole balance and restoring privacy actions for imported accounts, using Ootle SDK 0.6.4. These are creator release claims, not tests performed here. Firefox and iOS submissions mentioned by the creator are not treated as available store releases. No package or extension was downloaded or installed and no wallet or transaction was operated. The new genuine recording shows the Android release announcement; Chrome and Android versions are tracked separately.",
       "showcase": {
         "url": "https://chromewebstore.google.com/detail/tari-ootle-wallet/demkeckolenopkgnfbnpflkpbbdhpgkl",
         "label": "Mainnet · Browser wallet · Android release",
         "summary": "Manage Ootle accounts and app approvals with Sapient’s browser wallet, with a separate Android release now available.",
         "actionLabel": "Get latest extension",
-        "version": "Chrome Web Store: 0.10.1"
+        "version": "Chrome Web Store: 0.11.3"
       },
       "mainnetUrl": "https://sapient.tari.mw/",
       "testnetUrl": "https://chromewebstore.google.com/detail/tari-ootle-wallet/demkeckolenopkgnfbnpflkpbbdhpgkl",
       "deploymentEvidence": {
         "url": "https://sapient.tari.mw/",
-        "observedAt": "2026-11-11T12:41:26.863665+00:00",
-        "detail": "User confirmed Sapient is live on mainnet. Official Chrome Web Store version 0.9.6 matches current package.json, and published source includes mainnet support and the November 11 default-network transition. This verifies an available mainnet wallet; this audit did not install it or submit a transfer. Public transfers do not independently identify which wallet client submitted them."
+        "observedAt": "2026-11-27T17:13:12.734554+00:00",
+        "detail": "Current creator page explicitly states live Ootle mainnet with Esmeralda switching; Chrome Web Store version 0.11.3 is available. No extension was installed or wallet transaction submitted."
       }
     },
     {
@@ -722,7 +722,7 @@
       "state": "testnet",
       "checkedAt": "2026-11-27T17:08:04.580595+00:00",
       "evidenceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/47",
-      "evidence": "A sender locks a payment with an epoch deadline, secret hash and receiver key, with cancellation before the reveal epoch. The README changed during review: it now reports a November 27 Esmeralda deployment, although older unpublished-status sections remain. Current testnet explorer metadata identifies InvisiblePayment template 7cc97df35dd28e88dc3932e9fc0a2e49fd59b84d760defa1b4482b72a6e3746d and a committed claim transaction with a PaymentRevealed event for 1,000,000 micro-TARI. The event exposes its amount and receiver, so the creator’s blanket invisibility claim is not adopted. The public demo defaults to simulation; its wallet-connected behavior was not operated.",
+      "evidence": "A sender locks a payment with an epoch deadline, secret hash and receiver key, with cancellation before the reveal epoch. The README changed during review: it now reports a November 27 Esmeralda deployment, although older unpublished-status sections remain. Current testnet explorer metadata identifies the published InvisiblePayment template and a committed claim transaction with a PaymentRevealed event for 1,000,000 micro-TARI. The event exposes its amount and receiver, so the creator’s blanket invisibility claim is not adopted. The public demo defaults to simulation; its wallet-connected behavior was not operated.",
       "testnetUrl": "https://testnet-explorer.tari.mw/tx/06595f82498fc7942314b75e8c36d43d59602d8fa5e3243788019639febf3c93"
     },
     {
@@ -730,13 +730,13 @@
       "state": "both",
       "checkedAt": "2026-11-27T17:08:04.580595+00:00",
       "evidenceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/48",
-      "evidence": "Buying circles lock budgets before sealed bidding; revealed prices determine the award, with a documented threshold-approval override. Budgets, escrow and revealed prices are public. Unrevealed bids can forfeit bonds at award, including a permanently locked half; the creator documents full bond returns on expiry without a valid reveal. Current mainnet explorer data shows the Heartland Provisions Circle tender at version 16 with committed, revealed, awarded, awaiting-delivery and settled events under template 267d1d73da73ec990e8711e492bccb9112076051d396922bdef2b9d667c684eb. The creator also describes Esmeralda deployments and tests; those tests were not rerun. The README notes one incomplete live evidence check because historical reveal bodies were pruned. The app requires Sapient for transactions; none were performed.",
+      "evidence": "Buying circles lock budgets before sealed bidding; revealed prices determine the award, with a documented threshold-approval override. Budgets, escrow and revealed prices are public. Unrevealed bids can forfeit bonds at award, including a permanently locked half; the creator documents full bond returns on expiry without a valid reveal. Current mainnet explorer data shows the Heartland Provisions Circle tender at version 16 with committed, revealed, awarded, awaiting-delivery and settled events under the published Tender template. The creator also describes Esmeralda deployments and tests; those tests were not rerun. The README notes one incomplete live evidence check because historical reveal bodies were pruned. The app requires Sapient for transactions; none were performed.",
       "mainnetUrl": "https://asiri-xi.vercel.app",
       "testnetUrl": "https://testnet-explorer.tari.mw/substate/component_3dbc5322267ca40712de3876c651938bf51730c0e4f29487c39c9e2dcdb36850",
       "deploymentEvidence": {
         "url": "https://explorer.tari.mw/substate/component_84e25948c447c3ee437e783fc29b4bfebf18fb2cc1bee1c0ed41598113ad37f2",
         "observedAt": "2026-11-27T17:08:04.580595+00:00",
-        "detail": "Current mainnet component version 16, matching Tender template, deposits and tender state events through settlement. Separate Esmeralda creator evidence identifies template ad7e4c4b5d19f0bc4c9a22d3dd52d73ad5e2d374d7c79361558d338919ccfbf2; the testnet explorer serves the linked gate tender at version 17."
+        "detail": "Current mainnet component version 16, matching Tender template, deposits and tender state events through settlement. Separate Esmeralda creator evidence identifies a separate published Tender template; the testnet explorer serves the linked gate tender at version 17."
       },
       "showcase": {
         "url": "https://asiri-xi.vercel.app",
@@ -750,6 +750,28 @@
       "checkedAt": "2026-11-27T17:08:04.580595+00:00",
       "evidenceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/52",
       "evidence": "The Rust template fixes buyer, seller, payment resource, exact amount, deadline and arbitrator at creation. Its public simulation illustrates funding, release, refunds, disputes and deadline claims. A human arbitrator is trusted to choose the outcome of a dispute. The README and page identify the simulation; no mainnet or Esmeralda deployment is established. Creator-reported engine and simulation parity tests were not rerun."
+    },
+    {
+      "ref": "tari-ootle:component:sadar-badge",
+      "state": "unconfirmed",
+      "checkedAt": "2026-11-27T17:26:44.645002+00:00",
+      "evidenceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/50",
+      "evidence": "The creator proposes non-transferable literacy badges with facilitator issue and revoke controls and public verification using opaque learner identifiers. The public page explicitly identifies a simulation. No mainnet or Esmeralda deployment is established. The README retains stale not-submitted and not-hosted statements despite the current public submission and page; it also discloses first-come-first-served administrator bootstrap and an unfinished issued-epoch field. Creator-reported engine tests were not rerun. The recording shows the README concept section, not a working on-chain badge service."
+    },
+    {
+      "ref": "tari-ootle:component:arisan",
+      "state": "unconfirmed",
+      "checkedAt": "2026-11-27T17:26:44.645002+00:00",
+      "evidenceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/53",
+      "evidence": "Members contribute equal amounts each round, with payouts fixed by joining order and the creator receiving the first pot. An epoch deadline lets anyone settle a default: remove the nonpayer, refund that round’s payers and continue with remaining members. An early recipient can still stop contributing after receiving a pot; the contract does not eliminate this loss. Contribution amounts and payout order are public. No published network deployment is established. Creator-reported engine and simulation parity tests were not rerun. This is distinct from the existing Arisan Circle, Tari Arisan and Ootle Circle projects."
+    },
+    {
+      "ref": "tari-ootle:component:stubmark",
+      "state": "testnet",
+      "checkedAt": "2026-11-27T17:26:44.645002+00:00",
+      "evidenceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/54",
+      "evidence": "Transferable ticket NFTs can be refunded by their current holder before the cutoff, or after organizer cancellation. Refunds do not reopen seats. The organizer or authorized staff can check in each ticket once and issue a non-transferable attendance badge; organizer payout waits until the event ends. QR rotation is an off-chain application feature. Current Esmeralda explorer data confirms a committed template publication on November 27 with network byte 38 and a 2.29495 tTARI fee. Individual check-in receipt reads timed out or returned empty content, so the creator’s complete event-cycle claims are not independently established here. Creator-reported engine tests were not rerun. The linked demo is a walletless simulation; mainnet fee figures in the README are estimates, not measurements.",
+      "testnetUrl": "https://testnet-explorer.tari.mw/tx/a4daa677c64833430ccb48e9f2da7a087e68da4b7c3acedccec77bed71f3ab12"
     }
   ]
 }
