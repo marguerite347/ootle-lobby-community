@@ -1,0 +1,38 @@
+{
+  "slug": "ootle-escrow",
+  "title": "OotleEscrow",
+  "creator": "junnn / JUNNN26",
+  "summary": "November 27, 2026: The Rust template fixes buyer, seller, payment resource, exact amount, deadline and arbitrator at creation. Its public simulation illustrates funding, release, refunds, disputes and deadline claims. A human arbitrator is trusted to choose the outcome of a dispute. The README and page identify the simulation; no mainnet or Esmeralda deployment is established. Creator-reported engine and simulation parity tests were not rerun. MIT source and public creator evidence were reviewed. The genuine recording is a source/docs walkthrough with scripts and downloads disabled. No repository code, installed software, wallet or transaction was executed.",
+  "cardSummary": "Explore two-party trade escrow with fixed terms, release, refund, dispute and timeout paths through a walletless simulation.",
+  "cardStatus": "Browser simulation · Rust source",
+  "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/52",
+  "publishedAt": "2026-11-27T07:24:44.294Z",
+  "updatedAt": "2026-11-27T07:24:44.294Z",
+  "sourceContentSha256": "62e4f34b05dd12ae10043a8aa4e328d58b5b94e3f0d68595b93f91bf38a0f983",
+  "repoUrl": "https://github.com/JUNNN26/ootle-escrow",
+  "demoUrl": "https://junnn26.github.io/ootle-escrow/",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Browser · Source code",
+      "sourceUrl": "https://github.com/JUNNN26/ootle-escrow"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-ootle-escrow-20261127.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-ootle-escrow-20261127.png",
+    "capturedAt": "2026-11-27T16:32:47.761Z",
+    "sourceRevision": "README-blob:7c627b72fc8033ec9b573f52e7787db770cb13c8",
+    "kind": "public-page",
+    "credit": "Docs walkthrough"
+  },
+  "discussionLinks": [
+    {
+      "url": "https://medium.com/@junihendrawan26061995/ootleescrow-trust-minimized-escrow-for-two-strangers-trading-on-tari-a3b4a45bbc6e",
+      "platform": "Medium"
+    }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:ootle-escrow"
+  ]
+}

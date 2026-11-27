@@ -1,0 +1,38 @@
+{
+  "slug": "tari-bounty-desk",
+  "title": "Tari Bounty Desk",
+  "creator": "MarcoBountyDesk / MarcoDiPolo",
+  "summary": "November 27, 2026: An independent French-language reader of official Tari bounty records, with an offline snapshot, source links and hardware filters. A listed XTM amount is an advertised reward, not evidence of payment. Retrospective awards are separated from open work. The public page’s text shell and complete README were read; its JavaScript filters and refresh action were not executed. This is an off-chain reader, not an Ootle deployment. MIT source and public creator evidence were reviewed. The genuine recording is a source/docs walkthrough with scripts and downloads disabled. No repository code, installed software, wallet or transaction was executed.",
+  "cardSummary": "Browse Tari bounties in French, distinguish active work from retrospective awards, and filter hardware requirements.",
+  "cardStatus": "Web tool · French",
+  "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/49",
+  "publishedAt": "2026-11-27T01:09:06.071Z",
+  "updatedAt": "2026-11-27T01:09:06.071Z",
+  "sourceContentSha256": "54d68dfbc937c120934fa3c4a578dcdcb9296d7d4edeb37e78b5e99dcd166649",
+  "repoUrl": "https://github.com/MarcoDiPolo/tari-bounty-desk",
+  "demoUrl": "https://marcodipolo.github.io/tari-bounty-desk/",
+  "ecosystem": "tari",
+  "technologies": [
+    {
+      "label": "Browser · Source code",
+      "sourceUrl": "https://github.com/MarcoDiPolo/tari-bounty-desk"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-tari-bounty-desk-20261127.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-tari-bounty-desk-20261127.png",
+    "capturedAt": "2026-11-27T16:31:06.863Z",
+    "sourceRevision": "README-blob:35cd360dfeffd2f5391c1fc1f89be90c01f244fb",
+    "kind": "public-page",
+    "credit": "Docs walkthrough"
+  },
+  "discussionLinks": [
+    {
+      "url": "https://www.reddit.com/r/tari/comments/1y6eup7/tari_bounty_desk_a_frenchlanguage_bounty_reader/",
+      "platform": "Reddit"
+    }
+  ],
+  "resourceIds": [
+    "tari:component:tari-bounty-desk"
+  ]
+}
