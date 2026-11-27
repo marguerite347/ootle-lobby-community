@@ -41,14 +41,14 @@ test('mainnet is the default, includes every confirmed project and removes the w
  for(const name of ['OotleAccord','Skydrop','Veil Ootle Explorer','Sapient','Signal Desk','Sealed Bids at Midnight','Ootle Lockbox','Launch Commitments','The Cursed Pumpkin','AT Protocol identity on Ootle','Ghostline','HideBox','Private Ballot','MoonMail','Ootle Fee Check','Public Grant Ledger','Specter','Semvi','Ootle Split','Steady','Caravel','StillHere','OneScan','Asiri'])expect(html).toContain(name);
  for(const name of ['Grave Robber','SplitBill','Seance — privacy demo','Tari Cipherseed'])expect(html.slice(0,html.indexOf('id="mainnet-templates"'))).not.toContain(`>${name}</a>`);
  expect(html).not.toContain('Mainnet watch');expect(html).not.toContain('All apps');
- expect(html.match(/class="network-project contest-hologram"/g)).toHaveLength(24);
+ expect(html.match(/class="network-project contest-hologram"/g)).toHaveLength(25);
  expect(html).toContain('Review notes');expect(html).toContain('Get latest extension');
  expect(html).toContain('href="https://chromewebstore.google.com/detail/tari-ootle-wallet/demkeckolenopkgnfbnpflkpbbdhpgkl"');
  expect(html).not.toContain('releases/download/');
 });
 test('network filters keep pending apps out of confirmed mainnet and preserve testnet destinations',()=>{
  const mainnet=renderToStaticMarkup(<MemoryRouter><NetworkProjects initialNetwork="mainnet"/></MemoryRouter>);
- expect(mainnet.match(/class="network-project contest-hologram"/g)).toHaveLength(24);
+ expect(mainnet.match(/class="network-project contest-hologram"/g)).toHaveLength(25);
  expect(mainnet).toContain('Mainnet · Hosted staging · Non-binding pilots');expect(mainnet).toContain('https://private-ballot-staging.ghostgate.boo/');expect(mainnet).toContain('Read guide');expect(mainnet).toContain('Open source');expect(mainnet).toContain('unrevealed bids forfeit bonds permanently');expect(mainnet).toContain('Mainnet evidence');expect(mainnet.slice(0,mainnet.indexOf('id="mainnet-templates"'))).toContain('>MoonMail</a>');
  const testnet=renderToStaticMarkup(<MemoryRouter><NetworkProjects initialNetwork="testnet"/></MemoryRouter>);
  expect(mainnet).toContain('href="https://explorer.tari.mw/template/207a50d20c6bac05cac441fa3560377e92ed493217fbac3147f72405c27b38bb"');

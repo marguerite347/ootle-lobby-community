@@ -341,5 +341,18 @@
       "reviewedAt": "2026-11-27T17:27:56.682859+00:00",
       "scope": "Genuine source announcement recording; opening, middle and closing frames reviewed. Short static page; live cursor/scroll capture, no generated still-image video. Scripts and downloads disabled."
     }
+  },
+  {
+    "id": "tari-ootle:component:ootle-indexer-check",
+    "slug": "ootle-indexer-check",
+    "url": "https://luxedigitalnest.github.io/ldn-ootle-indexer-check/",
+    "source": "capture",
+    "video": "/previews/community/resource-ootle-indexer-check-20261127.mp4",
+    "image": "/previews/community/resource-ootle-indexer-check-20261127.png",
+    "caption": "Docs walkthrough",
+    "review": {
+      "reviewedAt": "2026-11-27T18:47:28.826542+00:00",
+      "scope": "Genuine README scrolling capture, opening/middle/closing reviewed; scripts/downloads disabled. No runtime test claim."
+    }
   }
 ]

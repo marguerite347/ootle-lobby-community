@@ -779,6 +779,25 @@
       "evidenceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/54",
       "evidence": "Transferable ticket NFTs can be refunded by their current holder before the cutoff, or after organizer cancellation. Refunds do not reopen seats. The organizer or authorized staff can check in each ticket once and issue a non-transferable attendance badge; organizer payout waits until the event ends. QR rotation is an off-chain application feature. Current Esmeralda explorer data confirms a committed template publication on November 27 with network byte 38 and a 2.29495 tTARI fee. Individual check-in receipt reads timed out or returned empty content, so the creator’s complete event-cycle claims are not independently established here. Creator-reported engine tests were not rerun. The linked demo is a walletless simulation; mainnet fee figures in the README are estimates, not measurements.",
       "testnetUrl": "https://testnet-explorer.tari.mw/tx/a4daa677c64833430ccb48e9f2da7a087e68da4b7c3acedccec77bed71f3ab12"
+    },
+    {
+      "ref": "tari-ootle:component:ootle-indexer-check",
+      "state": "both",
+      "checkedAt": "2026-11-27T18:47:28.826542+00:00",
+      "mainnetUrl": "https://luxedigitalnest.github.io/ldn-ootle-indexer-check/",
+      "testnetUrl": "https://luxedigitalnest.github.io/ldn-ootle-indexer-check/",
+      "evidenceUrl": "https://www.reddit.com/r/tari/comments/1y615sr/november_mvp_ootle_indexer_check_free_readonly/",
+      "evidence": "November 27, 2026: LuxeDigitalNest publishes an MIT-licensed browser diagnostic tool for the two official Ootle indexers on mainnet and Esmeralda. Current hosted HTML returned HTTP 200 and exposes both network options, live-check and explicitly captured-testnet modes, retention estimates and JSON export. The two indexers share one provider; agreement is not independent consensus or proof of settlement. Configured retention does not establish whether an individual record exists. Creator-reported November 26 tests and live requests were not rerun. This is off-chain read-only tooling, not a deployed smart contract. The Reddit announcement has no comments and says its forum entry is still being prepared. The genuine recording shows the README with scripts and downloads disabled; no submission code, wallet, transaction or report download was executed.",
+      "deploymentEvidence": {
+        "url": "https://luxedigitalnest.github.io/ldn-ootle-indexer-check/",
+        "observedAt": "2026-11-27T18:47:28.826542+00:00",
+        "detail": "Hosted diagnostic web page returned HTTP 200 with explicit Mainnet and Esmeralda options and allowlisted official indexer destinations. Off-chain tool deployment only; live diagnostic operations were not executed."
+      },
+      "showcase": {
+        "url": "https://luxedigitalnest.github.io/ldn-ootle-indexer-check/",
+        "label": "Mainnet / Testnet · Read-only diagnostics",
+        "summary": "Compare public Ootle indexer health, readiness and retention windows, then export dated diagnostic observations without connecting a wallet."
+      }
     }
   ]
 }
