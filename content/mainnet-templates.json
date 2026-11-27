@@ -1,6 +1,6 @@
 {
   "network": "mainnet",
-  "checkedAt": "2026-11-25T14:05:34.705Z",
+  "checkedAt": "2026-11-27T14:10:07.958Z",
   "sources": [
     "https://indexer-a.ootle.tari.com/templates/catalogue?limit=100",
     "https://indexer-b.ootle.tari.com/templates/catalogue?limit=100"
@@ -259,12 +259,39 @@
       "project": "Community template"
     },
     {
+      "name": "MilestoneEscrow",
+      "address": "7f4f64ae9fd2e0f3b1062071fe6c169feb84c671c2b0cafda882ba82b1f07262",
+      "epoch": 39566,
+      "kind": "community",
+      "binaryHash": "5dc33d7ce7fa7e7b833e044361f21175c821cb77830abacd700d663c9c928bb0",
+      "authorPublicKey": "50219c1fcc63ad6fd00f30f27d6e3f58c32bb66583fdb54c8c1db6794ca7445a",
+      "project": "Community template"
+    },
+    {
       "name": "Semvi",
       "address": "84f1d72f8b9e38d104e639de9fcce8d6f71098daa825c56ea0b2772d35f60580",
       "epoch": 39067,
       "kind": "community",
       "binaryHash": "b37f29d78d1f15cba11265dc24f45c5d8fc70020090c90ca23399e58f359b342",
       "authorPublicKey": "10595ea2a8484dcb957bed589919aac8dd5f0d363766aec8e9ac8d73deb6f157",
+      "project": "Community template"
+    },
+    {
+      "name": "PaymentEscrow",
+      "address": "8cdf3c6c92f4c5454b9866a5b77621227153d76df9169b43030cad052cf32f0a",
+      "epoch": 39566,
+      "kind": "community",
+      "binaryHash": "6a96594b3c43760c0fec7bf3b6736b4e11b170d1d17375cdbc137f9eddfc6e4f",
+      "authorPublicKey": "50219c1fcc63ad6fd00f30f27d6e3f58c32bb66583fdb54c8c1db6794ca7445a",
+      "project": "Community template"
+    },
+    {
+      "name": "Verdict",
+      "address": "8e6ffa95e2139aecd38f1ecfc6e2040b3f087f8ddda33fbbcc4d7ca7ef5e5515",
+      "epoch": 39559,
+      "kind": "community",
+      "binaryHash": "f3e3323974eb2809aae34346395c06e2518def9cc2ee4a7d4dbd7de6feb1e38f",
+      "authorPublicKey": "50219c1fcc63ad6fd00f30f27d6e3f58c32bb66583fdb54c8c1db6794ca7445a",
       "project": "Community template"
     },
     {
@@ -409,6 +436,15 @@
       "kind": "community",
       "binaryHash": "de22118b0b442b384708ccccd52e98e6c57506f417bfc13cb3c97f1d660fadc7",
       "authorPublicKey": "66ff4b83d0c720c1e309d1fd385335a9f28605a033f67e767546db0536dbf22b",
+      "project": "Community template"
+    },
+    {
+      "name": "StealthFaucet",
+      "address": "e0bf7e8e66fcf3aec559893b273c718cab10d59fc7cdaffe8ac1915ec30237b8",
+      "epoch": 39567,
+      "kind": "community",
+      "binaryHash": "b3d05e1a966217e192df782ef71fd3546ec983f273775de995218ce372b95504",
+      "authorPublicKey": "0470654e1b5fc151431b09af16e83cbd5f457a27013c87f023183477fb230a72",
       "project": "Community template"
     },
     {
