@@ -1,0 +1,38 @@
+{
+  "slug": "sadar-badge",
+  "title": "Sadar Badge",
+  "creator": "real0xs / real0xSI",
+  "summary": "November 27, 2026: The creator proposes non-transferable literacy badges with facilitator issue and revoke controls and public verification using opaque learner identifiers. The public page explicitly identifies a simulation. No mainnet or Esmeralda deployment is established. The README retains stale not-submitted and not-hosted statements despite the current public submission and page; it also discloses first-come-first-served administrator bootstrap and an unfinished issued-epoch field. Creator-reported engine tests were not rerun. The recording shows the README concept section, not a working on-chain badge service. MIT source and public creator evidence were reviewed. The genuine recording is a source/docs walkthrough with scripts and downloads disabled. No repository code, installed software, wallet or transaction was executed.",
+  "cardSummary": "Explore issuing, verifying and revoking literacy-achievement badges through a walletless simulation and facilitator-controlled NFT template.",
+  "cardStatus": "Browser simulation · Rust source",
+  "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/50",
+  "publishedAt": "2026-11-27T04:31:18.205Z",
+  "updatedAt": "2026-11-27T04:31:18.205Z",
+  "sourceContentSha256": "51479b52762726be2058a22b2e0772e0277c0526a5869663bae085f36e54701a",
+  "repoUrl": "https://github.com/real0xSI/sadar-badge",
+  "demoUrl": "https://real0xsi.github.io/sadar-badge/",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Browser · Source code",
+      "sourceUrl": "https://github.com/real0xSI/sadar-badge"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-sadar-badge-20261127.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-sadar-badge-20261127.png",
+    "capturedAt": "2026-11-27T17:19:58.299Z",
+    "sourceRevision": "README-blob:5c5647567870060014f8a9a86d15c10c866c3419",
+    "kind": "public-page",
+    "credit": "Docs walkthrough"
+  },
+  "discussionLinks": [
+    {
+      "url": "https://www.youtube.com/watch?v=scu5kgF-ruc",
+      "platform": "YouTube"
+    }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:sadar-badge"
+  ]
+}
