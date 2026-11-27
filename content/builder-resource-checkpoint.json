@@ -92,12 +92,12 @@
     }
   },
   "release": {
-    "tag": "v0.56.0",
-    "sourceContentSha256": "ed84323468971811e962f3d14657814ce51e2ae18849b98f9eca50f8139e6936"
+    "tag": "v0.57.0",
+    "sourceContentSha256": "d85fbeb2f6e59676112abb8db3164a58a803b3f541c01aaad2524b021cd41856"
   },
   "communityGuides": {
     "522": "833fe36cb00db0a2055f8e739d46721f7806ef353ee726510383c81f6832ff7a",
     "643": "6ed4ab74f0e4a5e96df22677b4163a2fd024694ddf142505074d346be5e38355"
   },
-  "communityGuidesCheckedAt": "2026-11-25T14:05:34.705Z"
+  "communityGuidesCheckedAt": "2026-11-27T14:10:07.958Z"
 }
