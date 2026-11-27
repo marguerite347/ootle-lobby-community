@@ -237,5 +237,57 @@
       "reviewedAt": "2026-11-26T19:30:54.119564+00:00",
       "scope": "Genuine source walkthrough with scripts and downloads disabled. Opening, middle and closing frames reviewed. No runtime testing claim."
     }
+  },
+  {
+    "id": "tari-ootle:component:invisible-payment",
+    "slug": "invisible-payment",
+    "url": "https://skymiller1509-blip.github.io/invisible-payment/",
+    "source": "capture",
+    "video": "/previews/community/resource-invisible-payment-20261127.mp4",
+    "image": "/previews/community/resource-invisible-payment-20261127.png",
+    "caption": "Docs walkthrough",
+    "review": {
+      "reviewedAt": "2026-11-27T17:08:04.580595+00:00",
+      "scope": "Genuine scrolling README. Opening, middle and closing frames reviewed; scripts and downloads disabled. No runtime test claim."
+    }
+  },
+  {
+    "id": "tari-ootle:component:asiri",
+    "slug": "asiri",
+    "url": "https://asiri-xi.vercel.app",
+    "source": "capture",
+    "video": "/previews/community/resource-asiri-20261127.mp4",
+    "image": "/previews/community/resource-asiri-20261127.png",
+    "caption": "Docs walkthrough",
+    "review": {
+      "reviewedAt": "2026-11-27T17:08:04.580595+00:00",
+      "scope": "Genuine scrolling README. Opening, middle and closing frames reviewed; scripts and downloads disabled. No runtime test claim."
+    }
+  },
+  {
+    "id": "tari:component:tari-bounty-desk",
+    "slug": "tari-bounty-desk",
+    "url": "https://marcodipolo.github.io/tari-bounty-desk/",
+    "source": "capture",
+    "video": "/previews/community/resource-tari-bounty-desk-20261127.mp4",
+    "image": "/previews/community/resource-tari-bounty-desk-20261127.png",
+    "caption": "Docs walkthrough",
+    "review": {
+      "reviewedAt": "2026-11-27T17:08:04.580595+00:00",
+      "scope": "Genuine scrolling README. Opening, middle and closing frames reviewed; scripts and downloads disabled. No runtime test claim."
+    }
+  },
+  {
+    "id": "tari-ootle:component:ootle-escrow",
+    "slug": "ootle-escrow",
+    "url": "https://junnn26.github.io/ootle-escrow/",
+    "source": "capture",
+    "video": "/previews/community/resource-ootle-escrow-20261127.mp4",
+    "image": "/previews/community/resource-ootle-escrow-20261127.png",
+    "caption": "Docs walkthrough",
+    "review": {
+      "reviewedAt": "2026-11-27T17:08:04.580595+00:00",
+      "scope": "Genuine scrolling README. Opening, middle and closing frames reviewed; scripts and downloads disabled. No runtime test claim."
+    }
   }
 ]

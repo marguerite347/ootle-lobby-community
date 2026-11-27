@@ -1,0 +1,42 @@
+{
+  "slug": "invisible-payment",
+  "title": "The Invisible Payment",
+  "creator": "Ihu / Princess Ada-ihuoma",
+  "summary": "November 27, 2026: A sender locks a payment with an epoch deadline, secret hash and receiver key, with cancellation before the reveal epoch. The README changed during review: it now reports a November 27 Esmeralda deployment, although older unpublished-status sections remain. Current testnet explorer metadata identifies InvisiblePayment template 7cc97df35dd28e88dc3932e9fc0a2e49fd59b84d760defa1b4482b72a6e3746d and a committed claim transaction with a PaymentRevealed event for 1,000,000 micro-TARI. The event exposes its amount and receiver, so the creator’s blanket invisibility claim is not adopted. The public demo defaults to simulation; its wallet-connected behavior was not operated. MIT source and public creator evidence were reviewed. The genuine recording is a source/docs walkthrough with scripts and downloads disabled. No repository code, installed software, wallet or transaction was executed.",
+  "cardSummary": "Explore payments unlocked by time, a secret and a recipient key, with a testnet contract and walletless simulation.",
+  "cardStatus": "Testnet · Browser simulation",
+  "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/47",
+  "publishedAt": "2026-11-26T19:44:06.104Z",
+  "updatedAt": "2026-11-26T19:44:06.104Z",
+  "sourceContentSha256": "ccc27b696de9ce141b9fd8d124d36fbbfb4e672e712d581973ba1f74c29e4527",
+  "repoUrl": "https://github.com/skymiller1509-blip/invisible-payment",
+  "demoUrl": "https://skymiller1509-blip.github.io/invisible-payment/",
+  "ecosystem": "tari-ootle",
+  "technologies": [
+    {
+      "label": "Browser · Source code",
+      "sourceUrl": "https://github.com/skymiller1509-blip/invisible-payment"
+    }
+  ],
+  "recording": {
+    "url": "https://lobby.tari.com/previews/community/resource-invisible-payment-20261127.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-invisible-payment-20261127.png",
+    "capturedAt": "2026-11-27T16:29:36.672Z",
+    "sourceRevision": "README-blob:0310310e74ec142aded82748d0cd39c586730758",
+    "kind": "public-page",
+    "credit": "Docs walkthrough"
+  },
+  "discussionLinks": [
+    {
+      "url": "https://medium.com/@poppyemerald3/the-invisible-payment-a-stealth-vault-on-tari-a1a0805c15cb",
+      "platform": "Medium"
+    },
+    {
+      "url": "https://testnet-explorer.tari.mw/tx/06595f82498fc7942314b75e8c36d43d59602d8fa5e3243788019639febf3c93",
+      "platform": "Network explorer"
+    }
+  ],
+  "resourceIds": [
+    "tari-ootle:component:invisible-payment"
+  ]
+}

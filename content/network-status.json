@@ -567,15 +567,15 @@
     {
       "ref": "tari-ootle:component:stillhere",
       "state": "both",
-      "checkedAt": "2026-11-25T15:14:04.662355+00:00",
-      "evidenceUrl": "https://explorer.tari.mw/template/207a50d20c6bac05cac441fa3560377e92ed493217fbac3147f72405c27b38bb",
-      "evidence": "November 25, 2026: the updated original submission identifies a mainnet template, and current Veil metadata independently shows StillHere at address 207a50d20c6bac05cac441fa3560377e92ed493217fbac3147f72405c27b38bb, published at epoch 39124 with 15 functions and a 144.1 KB binary. The official mainnet indexer serves the matching publish transaction receipt. This establishes template publication, not a wallet-connected app or a tested vault. Esmeralda template evidence remains retained. The browser demo is a simulation. Current README revision 0a7b5cada6d6f5012dccc4b5fae2a1123b47755f remains identical to the November 20 source recording and still describes the earlier testnet deployment; the newer mainnet evidence is the creator edit and explorer record. No wallet, deposit, third-party code execution or independent engine-test run was performed.",
+      "checkedAt": "2026-11-27T17:09:16.193685+00:00",
+      "evidenceUrl": "https://explorer.tari.mw/substate/component_963cc172a05b5f41ebbafea9a78ae364c163f1ba6e841a600a243f63ba4a77f1",
+      "evidence": "November 25, 2026: the updated original submission identifies a mainnet template, and current Veil metadata independently shows StillHere at address 207a50d20c6bac05cac441fa3560377e92ed493217fbac3147f72405c27b38bb, published at epoch 39124 with 15 functions and a 144.1 KB binary. The official mainnet indexer serves the matching publish transaction receipt. This establishes template publication, not a wallet-connected app or a tested vault. Esmeralda template evidence remains retained. The browser demo is a simulation. Current README revision 0a7b5cada6d6f5012dccc4b5fae2a1123b47755f remains identical to the November 20 source recording and still describes the earlier testnet deployment; the newer mainnet evidence is the creator edit and explorer record. No wallet, deposit, third-party code execution or independent engine-test run was performed. November 27, 2026: the edited creator submission adds a mainnet release example. Current Veil data shows a 0.4 TARI deposit and withdrawal with a StillHere.released event for 400,000 micro-TARI at epoch 39553 under the previously published StillHere template. This is a read-only chain observation; no vault or wallet was operated here. The public browser remains a walletless simulation. The November 20 recording is a dated README walkthrough and does not demonstrate this later mainnet release.",
       "testnetUrl": "https://testnet-explorer.tari.mw/template/e7164ec19c5c7ea0e84c8d0cce06c874565cd44e97109088bf3eedfdd5a1664d",
       "mainnetUrl": "https://explorer.tari.mw/template/207a50d20c6bac05cac441fa3560377e92ed493217fbac3147f72405c27b38bb",
       "deploymentEvidence": {
-        "url": "https://explorer.tari.mw/template/207a50d20c6bac05cac441fa3560377e92ed493217fbac3147f72405c27b38bb",
-        "observedAt": "2026-11-25T15:14:04.662355+00:00",
-        "detail": "Current mainnet explorer identifies StillHere, template address, epoch 39124 and 15 functions; matching official indexer publish receipt is reachable."
+        "url": "https://explorer.tari.mw/substate/component_963cc172a05b5f41ebbafea9a78ae364c163f1ba6e841a600a243f63ba4a77f1",
+        "observedAt": "2026-11-27T17:09:16.193685+00:00",
+        "detail": "November 27, 2026: the edited creator submission adds a mainnet release example. Current Veil data shows a 0.4 TARI deposit and withdrawal with a StillHere.released event for 400,000 micro-TARI at epoch 39553 under the previously published StillHere template. This is a read-only chain observation; no vault or wallet was operated here. The public browser remains a walletless simulation. The November 20 recording is a dated README walkthrough and does not demonstrate this later mainnet release."
       },
       "showcase": {
         "url": "https://explorer.tari.mw/template/207a50d20c6bac05cac441fa3560377e92ed493217fbac3147f72405c27b38bb",
@@ -716,6 +716,40 @@
       "checkedAt": "2026-11-26T19:30:54.119564+00:00",
       "evidenceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/45",
       "evidence": "Current creator submission, README and public page explicitly identify an unpublished template and walletless simulation; no mainnet or testnet deployment is claimed."
+    },
+    {
+      "ref": "tari-ootle:component:invisible-payment",
+      "state": "testnet",
+      "checkedAt": "2026-11-27T17:08:04.580595+00:00",
+      "evidenceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/47",
+      "evidence": "A sender locks a payment with an epoch deadline, secret hash and receiver key, with cancellation before the reveal epoch. The README changed during review: it now reports a November 27 Esmeralda deployment, although older unpublished-status sections remain. Current testnet explorer metadata identifies InvisiblePayment template 7cc97df35dd28e88dc3932e9fc0a2e49fd59b84d760defa1b4482b72a6e3746d and a committed claim transaction with a PaymentRevealed event for 1,000,000 micro-TARI. The event exposes its amount and receiver, so the creator’s blanket invisibility claim is not adopted. The public demo defaults to simulation; its wallet-connected behavior was not operated.",
+      "testnetUrl": "https://testnet-explorer.tari.mw/tx/06595f82498fc7942314b75e8c36d43d59602d8fa5e3243788019639febf3c93"
+    },
+    {
+      "ref": "tari-ootle:component:asiri",
+      "state": "both",
+      "checkedAt": "2026-11-27T17:08:04.580595+00:00",
+      "evidenceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/48",
+      "evidence": "Buying circles lock budgets before sealed bidding; revealed prices determine the award, with a documented threshold-approval override. Budgets, escrow and revealed prices are public. Unrevealed bids can forfeit bonds at award, including a permanently locked half; the creator documents full bond returns on expiry without a valid reveal. Current mainnet explorer data shows the Heartland Provisions Circle tender at version 16 with committed, revealed, awarded, awaiting-delivery and settled events under template 267d1d73da73ec990e8711e492bccb9112076051d396922bdef2b9d667c684eb. The creator also describes Esmeralda deployments and tests; those tests were not rerun. The README notes one incomplete live evidence check because historical reveal bodies were pruned. The app requires Sapient for transactions; none were performed.",
+      "mainnetUrl": "https://asiri-xi.vercel.app",
+      "testnetUrl": "https://testnet-explorer.tari.mw/substate/component_3dbc5322267ca40712de3876c651938bf51730c0e4f29487c39c9e2dcdb36850",
+      "deploymentEvidence": {
+        "url": "https://explorer.tari.mw/substate/component_84e25948c447c3ee437e783fc29b4bfebf18fb2cc1bee1c0ed41598113ad37f2",
+        "observedAt": "2026-11-27T17:08:04.580595+00:00",
+        "detail": "Current mainnet component version 16, matching Tender template, deposits and tender state events through settlement. Separate Esmeralda creator evidence identifies template ad7e4c4b5d19f0bc4c9a22d3dd52d73ad5e2d374d7c79361558d338919ccfbf2; the testnet explorer serves the linked gate tender at version 17."
+      },
+      "showcase": {
+        "url": "https://asiri-xi.vercel.app",
+        "label": "Mainnet / Testnet · Unrevealed bonds at risk",
+        "summary": "Run buying-circle tenders with sealed bids, locked budgets and delivery escrow, with public mainnet settlement records."
+      }
+    },
+    {
+      "ref": "tari-ootle:component:ootle-escrow",
+      "state": "unconfirmed",
+      "checkedAt": "2026-11-27T17:08:04.580595+00:00",
+      "evidenceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/52",
+      "evidence": "The Rust template fixes buyer, seller, payment resource, exact amount, deadline and arbitrator at creation. Its public simulation illustrates funding, release, refunds, disputes and deadline claims. A human arbitrator is trusted to choose the outcome of a dispute. The README and page identify the simulation; no mainnet or Esmeralda deployment is established. Creator-reported engine and simulation parity tests were not rerun."
     }
   ]
 }

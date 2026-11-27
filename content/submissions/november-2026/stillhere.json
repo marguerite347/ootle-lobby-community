@@ -2,13 +2,13 @@
   "slug": "stillhere",
   "title": "StillHere",
   "creator": "Godson-droid",
-  "summary": "MIT-licensed heartbeat vault with an owner badge, beneficiary and epoch deadline. A late check-in before release revives the vault. November 25, 2026: the creator’s edited submission and current Veil metadata identify a mainnet StillHere template published at epoch 39124; the official indexer serves its matching publish receipt. Earlier Esmeralda deployment evidence is retained. The browser demo is a walletless simulation, not a live vault interface. README revision 0a7b5cada6d6f5012dccc4b5fae2a1123b47755f is unchanged from the retained November 20 docs recording and still describes the earlier testnet deployment. Current mainnet evidence is linked separately. No wallet, deposit, transaction, third-party code execution or independent engine test was performed.",
+  "summary": "MIT-licensed heartbeat vault with an owner badge, beneficiary and epoch deadline. A late check-in before release revives the vault. November 25, 2026: the creator’s edited submission and current Veil metadata identify a mainnet StillHere template published at epoch 39124; the official indexer serves its matching publish receipt. Earlier Esmeralda deployment evidence is retained. The browser demo is a walletless simulation, not a live vault interface. README revision 0a7b5cada6d6f5012dccc4b5fae2a1123b47755f is unchanged from the retained November 20 docs recording and still describes the earlier testnet deployment. Current mainnet evidence is linked separately. No wallet, deposit, transaction, third-party code execution or independent engine test was performed. November 27, 2026: the edited creator submission adds a mainnet release example. Current Veil data shows a 0.4 TARI deposit and withdrawal with a StillHere.released event for 400,000 micro-TARI at epoch 39553 under the previously published StillHere template. This is a read-only chain observation; no vault or wallet was operated here. The public browser remains a walletless simulation. The November 20 recording is a dated README walkthrough and does not demonstrate this later mainnet release.",
   "cardSummary": "Explore heartbeat check-ins and beneficiary releases through Ootle mainnet and testnet templates and a walletless simulation.",
   "cardStatus": "Mainnet template · Testnet · Browser simulation",
   "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/30",
   "publishedAt": "2026-11-19T17:02:46.669Z",
-  "updatedAt": "2026-11-21T13:08:07.893Z",
-  "sourceContentSha256": "7c0b902467827b6674b096bdae9d1b72c8f5f563a240ee752fe5e1843ba579a9",
+  "updatedAt": "2026-11-27T08:07:51.499Z",
+  "sourceContentSha256": "6a72b28dd68feb36de701591fa2abd4782fea97b074bdf6228dbb8aa08faac75",
   "repoUrl": "https://github.com/Godson-droid/stillhere",
   "demoUrl": "https://godson-droid.github.io/stillhere/sim/",
   "ecosystem": "tari-ootle",
@@ -38,6 +38,10 @@
     {
       "url": "https://explorer.tari.mw/template/207a50d20c6bac05cac441fa3560377e92ed493217fbac3147f72405c27b38bb",
       "platform": "Mainnet template"
+    },
+    {
+      "url": "https://explorer.tari.mw/substate/component_963cc172a05b5f41ebbafea9a78ae364c163f1ba6e841a600a243f63ba4a77f1",
+      "platform": "Mainnet release record"
     }
   ],
   "resourceIds": [
