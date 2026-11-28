@@ -394009,8 +394009,8 @@
         }
       },
       "preview": {
-        "video": "https://lobby.tari.com/previews/community/resource-sapient-android-0113-20261127.mp4",
-        "image": "https://lobby.tari.com/previews/community/resource-sapient-android-0113-20261127.png",
+        "video": "https://lobby.tari.com/previews/community/resource-sapient-android-0114-20261128.mp4",
+        "image": "https://lobby.tari.com/previews/community/resource-sapient-android-0114-20261128.png",
         "source": "Announcement"
       },
       "tariCompatible": null,
@@ -394032,6 +394032,12 @@
           "url": "https://github.com/chironbuilds/tari-wallet/releases/tag/android-v0.11.3",
           "platform": "GitHub release",
           "context": "Android 0.11.3 announcement"
+        },
+        {
+          "url": "https://github.com/chironbuilds/tari-wallet/releases/tag/android-v0.11.4",
+          "platform": "GitHub release",
+          "context": "Android 0.11.4 announcement",
+          "publishedAt": "2026-11-28T05:10:13Z"
         }
       ]
     },
