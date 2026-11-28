@@ -1,7 +1,7 @@
 {
   "id": "tari-ootle:app:sapient",
   "title": "Sapient",
-  "summary": "Self-custody wallet for Ootle mainnet and Esmeralda. November 27, 2026: the Chrome Web Store lists version 0.11.3, updated November 25; its older testnet-only overview conflicts with the current creator site, which explicitly offers mainnet and Esmeralda switching. Separately, Android 0.11.3 was published November 26 for Android 10 or newer. Its notes describe fixing Make public after shielding the whole balance and restoring privacy actions for imported accounts, using Ootle SDK 0.6.4. These are creator release claims, not tests performed here. Firefox and iOS submissions mentioned by the creator are not treated as available store releases. No package or extension was downloaded or installed and no wallet or transaction was operated. The new genuine recording shows the Android release announcement; Chrome and Android versions are tracked separately.",
+  "summary": "Self-custody wallet for Ootle mainnet and Esmeralda. November 28, 2026: Android 0.11.4 was published today for Android 10 or newer. The creator reports Ootle 0.57 support through Ootle SDK 0.7.0, a fix for new-wallet Home screens retaining a testnet address after switching to mainnet, and a Receive shortcut when Send has no tokens. Chrome version 0.11.3 was last observed November 27; Android and extension versions are tracked separately. The older store overview says testnet-only, while the creator site documents mainnet and Esmeralda switching. Firefox and iOS submissions are not treated as available store releases. Review covered primary release notes and repository text; no package, extension, wallet or transaction was operated. The recording shows the Android 0.11.4 announcement.",
   "technologies": [
     {
       "label": "Ootle SDK",
@@ -13,9 +13,9 @@
     },
     {
       "label": "Android release notes",
-      "sourceUrl": "https://github.com/chironbuilds/tari-wallet/releases/tag/android-v0.11.3"
+      "sourceUrl": "https://github.com/chironbuilds/tari-wallet/releases/tag/android-v0.11.4"
     }
   ],
   "cardSummary": "Manage Ootle accounts with Sapient’s browser wallet, or explore its Android release with NFT and token tools.",
-  "cardStatus": "Mainnet / Testnet · Chrome 0.11.3 · Android 10+ / 0.11.3"
+  "cardStatus": "Mainnet / Testnet · Chrome 0.11.3 · Android 10+ / 0.11.4"
 }
