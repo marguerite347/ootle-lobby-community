@@ -23,9 +23,9 @@
       "ref": "tari-ootle:integration:veil",
       "state": "both",
       "testnetUrl": "https://testnet-explorer.tari.mw/",
-      "checkedAt": "2026-11-27T17:53:52.809110+00:00",
+      "checkedAt": "2026-11-28T15:13:08.134862+00:00",
       "evidenceUrl": "https://explorer.tari.mw/",
-      "evidence": "November 27: current server-extracted explorer shows Ootle L2 activity, including epoch 39551 and 59448 receipts. The mainnet Campaign and Skydrop Escrow pages provide current deployment state. The source README still contains historical Esmeralda setup text; the live observation and separate testnet URL remain distinct. No wallet actions were performed.",
+      "evidence": "November 28: current server-extracted explorer shows Ootle L2 epoch 39626 and 59685 receipts. The Campaign template remains readable at epoch 38471 with 14 functions. The separate testnet explorer page is reachable and links back to mainnet, but no fresh testnet transaction list was returned by the reader. No wallet actions were performed.",
       "showcase": {
         "url": "https://explorer.tari.mw/",
         "label": "Confirmed mainnet · Explorer",
@@ -34,8 +34,8 @@
       "mainnetUrl": "https://explorer.tari.mw/",
       "deploymentEvidence": {
         "url": "https://explorer.tari.mw/template/fea387ae896b72b9be93426ffa34da7498336f81c023fc2a65e556cfc13fba75",
-        "observedAt": "2026-11-27T17:53:52.809110+00:00",
-        "detail": "Current live Ootle mainnet explorer text and linked template/component data are readable. Network classification is based on deployment evidence, not the historic switch announcement."
+        "observedAt": "2026-11-28T15:13:08.134862+00:00",
+        "detail": "November 28: current server-extracted explorer shows Ootle L2 epoch 39626 and 59685 receipts. The Campaign template remains readable at epoch 38471 with 14 functions. The separate testnet explorer page is reachable and links back to mainnet, but no fresh testnet transaction list was returned by the reader. No wallet actions were performed."
       }
     },
     {
@@ -98,9 +98,9 @@
     {
       "ref": "community:skydrop",
       "state": "mainnet",
-      "checkedAt": "2026-11-27T17:53:52.809110+00:00",
+      "checkedAt": "2026-11-28T15:13:08.134862+00:00",
       "evidenceUrl": "https://github.com/chironbuilds/skydrop/blob/bb4aa3c70a6844ea30376e50138f760e94f7641a/web/src/config.ts",
-      "evidence": "November 27: immutable creator configuration still identifies the mainnet Escrow. Current Veil component data reports version 18, two revealed TARI holdings and deposit/withdraw activity. The public landing page and separate testnet destination returned no readable server-extracted content; this is not an app-interaction review. Prior deployment history is retained. Recipient gift collection was not independently tested.",
+      "evidence": "November 28: the public landing text is readable and the network endpoint identifies mainnet. Current Veil Escrow data reports version 18, revealed holdings of 247 TARI and 100.682832 TARI, and deposit/withdraw activity. The repository revision is unchanged from the previously reviewed creator configuration. Recipient gift collection was not independently tested.",
       "showcase": {
         "url": "https://skydrop.tari.mw/",
         "label": "Confirmed mainnet · Deposits",
@@ -109,8 +109,8 @@
       "mainnetUrl": "https://skydrop.tari.mw/",
       "deploymentEvidence": {
         "url": "https://explorer.tari.mw/substate/component_b51d366c73d397f5c094039db95de00423a123af998d46d5a5f6a88fe69b14c5",
-        "observedAt": "2026-11-27T17:53:52.809110+00:00",
-        "detail": "Current creator configuration matches the live mainnet Escrow at version 18, with 247 TARI and 100.682832 TARI revealed holdings and recorded deposits and withdrawals. This evidence does not establish all recipient collection flows.",
+        "observedAt": "2026-11-28T15:13:08.134862+00:00",
+        "detail": "November 28: the public landing text is readable and the network endpoint identifies mainnet. Current Veil Escrow data reports version 18, revealed holdings of 247 TARI and 100.682832 TARI, and deposit/withdraw activity. The repository revision is unchanged from the previously reviewed creator configuration. Recipient gift collection was not independently tested.",
         "history": [
           {
             "url": "https://explorer.tari.mw/tx/e96fb795d238adea62244fabe71c6af0993f2d1dc1108d5b90d53cc149bda119",
@@ -209,14 +209,14 @@
       "ref": "tari-ootle:learn:atproto-identity",
       "state": "both",
       "testnetUrl": "https://testnet-atproto.tari.mw/",
-      "checkedAt": "2026-11-27T17:53:52.809110+00:00",
+      "checkedAt": "2026-11-28T15:13:08.134862+00:00",
       "evidenceUrl": "https://github.com/chironbuilds/skydrop/blob/bb4aa3c70a6844ea30376e50138f760e94f7641a/web-atproto/src/data/deployment.ts",
-      "evidence": "November 27: current public text identifies live mainnet campaign tools. Immutable creator deployment configuration separates mainnet and Esmeralda. Veil serves the matching Campaign template at epoch 38471 with 14 functions. The root README retains historical testnet descriptions. No funding, claim, payout or wallet action was performed.",
+      "evidence": "November 28: mainnet landing text and its network endpoint identify mainnet; the separate testnet page explicitly identifies Esmeralda. Veil still serves the matching Campaign template at epoch 38471 with 14 functions. Current repository revision is unchanged from the previously reviewed creator deployment configuration. No funding, claim, payout or wallet action was performed.",
       "mainnetUrl": "https://atproto.tari.mw/",
       "deploymentEvidence": {
         "url": "https://explorer.tari.mw/template/fea387ae896b72b9be93426ffa34da7498336f81c023fc2a65e556cfc13fba75",
-        "observedAt": "2026-11-27T17:53:52.809110+00:00",
-        "detail": "Current creator deployment configuration matches the mainnet Campaign template served by Veil; live atproto page identifies mainnet. Earlier both-indexer confirmation remains historical evidence."
+        "observedAt": "2026-11-28T15:13:08.134862+00:00",
+        "detail": "November 28: mainnet landing text and its network endpoint identify mainnet; the separate testnet page explicitly identifies Esmeralda. Veil still serves the matching Campaign template at epoch 38471 with 14 functions. Current repository revision is unchanged from the previously reviewed creator deployment configuration. No funding, claim, payout or wallet action was performed."
       },
       "showcase": {
         "url": "https://atproto.tari.mw/",

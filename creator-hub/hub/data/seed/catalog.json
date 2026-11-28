@@ -393961,7 +393961,7 @@
       "ecosystem": "tari-ootle",
       "native": true,
       "title": "Sapient",
-      "summary": "A self-custody browser wallet for Tari Ootle.",
+      "summary": "Self-custody wallet for Ootle mainnet and Esmeralda. November 28, 2026: Android 0.11.4 was published today for Android 10 or newer. The creator reports Ootle 0.57 support through Ootle SDK 0.7.0, a fix for new-wallet Home screens retaining a testnet address after switching to mainnet, and a Receive shortcut when Send has no tokens. Chrome version 0.11.3 was last observed November 27; Android and extension versions are tracked separately. The older store overview says testnet-only, while the creator site documents mainnet and Esmeralda switching. Firefox and iOS submissions are not treated as available store releases. Review covered primary release notes and repository text; no package, extension, wallet or transaction was operated. The recording shows the Android 0.11.4 announcement.",
       "audience": null,
       "sourceUrl": "https://wiki.tari.com/resources:app_directory:sapient",
       "repoUrl": "https://github.com/chironbuilds/tari-wallet",
@@ -394039,7 +394039,9 @@
           "context": "Android 0.11.4 announcement",
           "publishedAt": "2026-11-28T05:10:13Z"
         }
-      ]
+      ],
+      "lastAttemptAt": "2026-11-28T15:13:08.134862+00:00",
+      "lastCheckedAt": "2026-11-28T15:13:08.134862+00:00"
     },
     {
       "schemaVersion": 1,
