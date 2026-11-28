@@ -1,28 +1,28 @@
 {
   "slug": "seance-privacy",
   "title": "Seance — privacy demo",
-  "summary": "Compare stranger, recipient and auditor views of private Esmeralda payments. November 20, 2026: the creator submitted SeanceAuditorToken to First to Launch; public Ootle mainnet metadata confirms its template publication committed at 13:36:30 UTC. The creator says the app is being switched; the reviewed app text and README still identify Esmeralda, so the browser app remains labeled Testnet. The v2 searches 40 recent indexer transactions locally before asking for an ID; Ask for it anyway can disclose that ID. The saved October 20 example remains historical. November 5 read-only review returned a Commit receipt, but receipts cannot reconstruct missing encrypted bodies. The November 2 reset removed old payments and token state. Optional Sapient payments use a demo recipient with a public view key; timing, fees and spend links remain visible. The quantum discussion uses published demo keys. The retained October 31 walkthrough covers the picker and request disclosure without a wallet or payment; it does not demonstrate the planned mainnet app. This project is distinct from DevXTools’ sealed polls.",
-  "cardSummary": "Compare what strangers, recipients and auditors can read from private testnet payments, including the metadata that remains public.",
-  "cardStatus": "Web app · Testnet",
+  "summary": "November 28, 2026: The creator’s current Seance website and README identify Ootle mainnet. Both official mainnet template catalogues list SeanceAuditorToken at ca8e5e00366732b59856e9a4a12874b55d464bc39d42547da869155611ffea41 with matching binary hash 87652a6addebad6bba11f47d3074160ee5ea1b348ecf57f88a92acd954bfc939. The current creator announcement identifies the November 20 publication and replacement mainnet demo payments. The page offers stranger, recipient and token-auditor views and explicitly distinguishes saved demo answers from live indexer reads. Demo view keys are public; timing, fees and spend links remain visible. The app trusts indexer answers, and transaction-ID lookups disclose the requested ID to that service. Historical October figures and footage describe Esmeralda; some lower README sections retain outdated testnet wording. Today’s individual receipt and resource reads returned HTTP 403, and explorer text extraction returned empty content; those reads do not establish current receipt availability. The current deployment classification uses the hosted page, creator migration evidence and matching current template catalogues. The new genuine recording is a scrolling README walkthrough with scripts and downloads disabled, not a decryption or payment test. The previous seance-v2 source, destination and October recording remain in the provenance history. This project is distinct from DevXTools’ sealed polls.",
+  "cardSummary": "Compare stranger, recipient and auditor views of private Ootle mainnet payments, including the metadata that remains public.",
+  "cardStatus": "Web app · Mainnet",
   "creator": "Kylne700",
   "sourceUrl": "https://community.tari.com/t/november-bonus-contest-first-to-launch/521/18",
   "publishedAt": "2026-11-20T02:44:10.857Z",
-  "updatedAt": "2026-11-20T13:42:24.267Z",
-  "sourceContentSha256": "0e50c7518fca65002a49b5c6dbdd2d1c3c26c3703ca006740316c1e7deed7a34",
-  "repoUrl": "https://github.com/Kylne700/seance-v2",
-  "demoUrl": "https://kylne700.github.io/seance-v2/",
+  "updatedAt": "2026-11-20T14:23:43.422Z",
+  "sourceContentSha256": "8a63b381306695ae21e1d8f078bad428a48b012a29f255367a74f826371aa85e",
+  "repoUrl": "https://github.com/Kylne700/seance",
+  "demoUrl": "https://kylne700.github.io/seance/",
   "ecosystem": "tari-ootle",
   "technologies": [
     {
       "label": "TypeScript · Rust · MIT",
-      "sourceUrl": "https://github.com/Kylne700/seance-v2"
+      "sourceUrl": "https://github.com/Kylne700/seance"
     }
   ],
   "recording": {
-    "url": "https://ootle-lobby-preview.vercel.app/previews/community/resource-seance-v2-20261031.mp4",
-    "posterUrl": "https://ootle-lobby-preview.vercel.app/previews/community/resource-seance-v2-20261031.png",
-    "capturedAt": "2026-10-31T10:16:48.676Z",
-    "sourceRevision": "b8c7bc8eb270433857fdc72778309ad09bf41cd2",
+    "url": "https://lobby.tari.com/previews/community/resource-seance-mainnet-20261128.mp4",
+    "posterUrl": "https://lobby.tari.com/previews/community/resource-seance-mainnet-20261128.png",
+    "capturedAt": "2026-11-28T14:15:42.220Z",
+    "sourceRevision": "ebd23c2a24c82292d21ca79e216130568607807c",
     "kind": "public-page",
     "credit": "Docs walkthrough"
   },

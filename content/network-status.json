@@ -611,11 +611,21 @@
     },
     {
       "ref": "tari-ootle:component:seance-privacy",
-      "state": "testnet",
-      "testnetUrl": "https://kylne700.github.io/seance-v2/",
-      "checkedAt": "2026-11-20T14:18:31.773623+00:00",
+      "state": "mainnet",
+      "checkedAt": "2026-11-28T14:18:23.674810+00:00",
       "evidenceUrl": "https://community.tari.com/t/november-bonus-contest-first-to-launch/521/18",
-      "evidence": "November 20: SeanceAuditorToken template publication 3147e80ea9bf2ba7ab6d1d5d3a85c256ec58af71e19b1b816d3da0770b6b2c97 committed on Ootle mainnet at 13:36:30 UTC. The creator describes the browser migration as pending; current app text and README still identify Esmeralda. Template publication does not establish the live app switch."
+      "evidence": "Current hosted page and README identify Ootle mainnet; both official mainnet catalogues retain the matching SeanceAuditorToken address and binary hash. Current source describes saved demo answers separately from live reads. Individual receipt lookups were inaccessible today.",
+      "mainnetUrl": "https://kylne700.github.io/seance/",
+      "deploymentEvidence": {
+        "url": "https://indexer-a.ootle.tari.com/templates/catalogue?limit=100",
+        "observedAt": "2026-11-28T14:14:10.012Z",
+        "detail": "Both official mainnet indexers list SeanceAuditorToken ca8e5e00366732b59856e9a4a12874b55d464bc39d42547da869155611ffea41, binary hash 87652a6addebad6bba11f47d3074160ee5ea1b348ecf57f88a92acd954bfc939, epoch 39083; the current hosted app identifies the mainnet migration."
+      },
+      "showcase": {
+        "url": "https://kylne700.github.io/seance/",
+        "label": "Mainnet · Privacy education",
+        "summary": "Compare stranger, recipient and auditor views of private Ootle mainnet payments, including the metadata that remains public."
+      }
     },
     {
       "ref": "tari-ootle:component:cappurse",
