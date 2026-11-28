@@ -2,15 +2,15 @@
   "slug": "stubmark",
   "title": "Stubmark",
   "creator": "dannytungadi5",
-  "summary": "November 27, 2026: Transferable ticket NFTs can be refunded by their current holder before the cutoff, or after organizer cancellation. Refunds do not reopen seats. The organizer or authorized staff can check in each ticket once and issue a non-transferable attendance badge; organizer payout waits until the event ends. QR rotation is an off-chain application feature. Current Esmeralda explorer data confirms a committed template publication on November 27 with network byte 38 and a 2.29495 tTARI fee. Individual check-in receipt reads timed out or returned empty content, so the creator’s complete event-cycle claims are not independently established here. Creator-reported engine tests were not rerun. The linked demo is a walletless simulation; mainnet fee figures in the README are estimates, not measurements. MIT source and public creator evidence were reviewed. The genuine recording is a source/docs walkthrough with scripts and downloads disabled. No repository code, installed software, wallet or transaction was executed.",
+  "summary": "November 28, 2026: The edited creator post directs readers to the project website, with a linked walletless demo. The website continues to identify Esmeralda testnet. November 27, 2026: Transferable ticket NFTs can be refunded by their current holder before the cutoff, or after organizer cancellation. Refunds do not reopen seats. The organizer or authorized staff can check in each ticket once and issue a non-transferable attendance badge; organizer payout waits until the event ends. QR rotation is an off-chain application feature. Current Esmeralda explorer data confirms a committed template publication on November 27 with network byte 38 and a 2.29495 tTARI fee. Individual check-in receipt reads timed out or returned empty content, so the creator’s complete event-cycle claims are not independently established here. Creator-reported engine tests were not rerun. The linked demo is a walletless simulation; mainnet fee figures in the README are estimates, not measurements. MIT source and public creator evidence were reviewed. The genuine recording is a source/docs walkthrough with scripts and downloads disabled. No repository code, installed software, wallet or transaction was executed.",
   "cardSummary": "Explore event tickets, holder refunds, one-time check-in and attendance badges through an Esmeralda template and walletless simulation.",
   "cardStatus": "Testnet · Browser simulation",
   "sourceUrl": "https://community.tari.com/t/november-build-contest-thread-mvp/520/54",
   "publishedAt": "2026-11-27T16:52:08.065Z",
-  "updatedAt": "2026-11-27T17:16:13.320Z",
-  "sourceContentSha256": "33ffb5498dd302b36ca8920a7c1df508d120e82086de63790f2c92706f63bea9",
+  "updatedAt": "2026-11-27T17:23:09.372Z",
+  "sourceContentSha256": "c7a4360f40df83385eb4f741302ae5aeb3ad7d592c3a3ff5347399fce5d5b7a4",
   "repoUrl": "https://github.com/dannytungadi5/stubmark",
-  "demoUrl": "https://stubmark.pages.dev/demo/",
+  "demoUrl": "https://stubmark.pages.dev/",
   "ecosystem": "tari-ootle",
   "technologies": [
     {
@@ -34,6 +34,14 @@
     {
       "url": "https://testnet-explorer.tari.mw/tx/a4daa677c64833430ccb48e9f2da7a087e68da4b7c3acedccec77bed71f3ab12",
       "platform": "Network explorer"
+    },
+    {
+      "url": "https://medium.com/@dannytungadi5/tickets-that-keep-their-own-rules-building-stubmark-on-tari-ootle-8432b72b714d",
+      "platform": "Medium"
+    },
+    {
+      "url": "https://youtu.be/cFXifmyB5Rs",
+      "platform": "YouTube"
     }
   ],
   "resourceIds": [
